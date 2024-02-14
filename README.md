@@ -4,11 +4,6 @@ This application offers the possibility to control the defined PiHole instances 
 
 > Important: This app uses a local api available on your PiHole that is undocumented and unsupported by PiHole. If PiHole decides to remove this api in a future upgrade this app will stop working.
 
-## Donations
-If you like the work on this project please consider a donation. Of course, this is optional and you should in no way feel obligated to send a donation.  The donations will be spent on buying a second Homey to use as a development Homey which supports me to keep this app running on future firmware versions of Homey.
-
-[<img src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif">](paypal.me/troron)
-
 # Capabilities
 
 # Flow cards
