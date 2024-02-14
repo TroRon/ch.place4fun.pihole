@@ -1,0 +1,22 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Advertisements blocked / day",
+    "de": "Geblockte Werbeanzeigen / Tag",
+    "nl": "Advertenties geblokkeerd / dag",
+    "fr": "Publicités bloquées / jour",
+    "it": "Pubblicità bloccate / giorno",
+    "sv": "Annonser blockerade / dag",
+    "no": "Annonser blokkert / dag",
+    "es": "Anuncios bloqueados / día",
+    "da": "Annoncer blokeret / dag",
+    "ru": "Реклама заблокирована / день",
+    "pl": "Reklamy zablokowane / dzień"
+    },
+    "insights": true,
+    "getable": true,
+    "setable": true,
+    "uiComponent": "sensor",
+    "uiQuickAction": false,
+    "icon": "/assets/capability_icons/ADDs.svg" 
+}

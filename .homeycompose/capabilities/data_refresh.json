@@ -1,0 +1,21 @@
+{
+    "type": "boolean",
+    "title": {
+      "en": "Update",
+      "de": "Aktualisieren",
+      "nl": "Bijwerken",
+      "fr": "Mettre à jour",
+      "it": "Aggiorna",
+      "sv": "Uppdatera",
+      "no": "Oppdater",
+      "es": "Actualizar",
+      "da": "Opdater",
+      "ru": "Обновить",
+      "pl": "Zaktualizować"
+    },
+    "insights": false,
+    "getable": false,
+    "setable": true,
+    "uiComponent": "button",
+    "icon": "./assets/capability_icons/Refresh.svg"
+  }

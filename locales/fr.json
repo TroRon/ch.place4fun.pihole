@@ -1,0 +1,56 @@
+{
+  "settings": {
+    "information_about_pihole": "INFORMATION IMPORTANTE:<br><br>L'application a subi une importante mise à jour. Les réglages ne sont désormais plus nécessaires.<br><br>Les appareils existants continueront à fonctionner pendant un certain temps. Un jour, l'ancien pilote sera supprimé.<br><br>Pour pouvoir utiliser les nouvelles fonctions, il FAUT utiliser le nouveau pilote."
+  },
+  "devices": {
+    "unavailable": "L'appareil n'a pas pu être atteint sur le réseau."
+  },
+  "warnings": {
+    "deprecated1": "ATTENTION : Les appareils / flux doivent être reconfigurés. L'ancien pilote sera supprimé dans une prochaine version !",
+    "deprecated2": "REMARQUE : Les nouvelles fonctions ne sont disponibles qu'avec le nouveau pilote, donc après la nouvelle configuration !"
+  },
+  "capabilities": {
+    "gravity_days": "jour(s)",
+    "gravity_hours": "heure(s)",
+    "gravity_minutes": "minute(s)"
+  },
+  "welcome": {
+    "titles": {
+      "header": "Configurer le dispositif PiHole",
+      "page": "La mise en place est très simple ..."
+    },
+    "step_by_step": {
+      "intro": "En cliquant sur 'Continuer', une page de paramètres s'affiche.<br><br>Les réglages suivants doivent être effectués sur cette page :",
+      "steps": "<li>Adresse IP :<b>z.B. 192.168.10.1</b></li><li>Port Key: <b>80</b></li><li>API Key: <b>0imfnc8mVLWwsAawjYr4Rx-Af50DDqtl</b></li>",
+      "outro": "<b>WICHTIG:</b><br>L'indication du port est <b>TOUJOURS</b> nécessaire, même si le PiHole écoute sur le port 80, ce qui serait la norme.<br><br>Si un service DNS est en service, le PiHole peut aussi être adressé par son nom DNS.<br><br><b>Information:</b><br>Lorsque des flux sont exécutés, il se peut que rien ne soit visible sur le PiHole. <br><br>Ce n'est pas une erreur de l'application, mais une erreur d'affichage du côté du PiHole.<br><br>Si c'est le cas, l'affichage du PiHole peut être rechargé."
+    },
+    "buttons": {
+      "continue": "Continuer"
+    }
+  },
+  "manual_input": {
+    "title": "Ajouter une instance PiHole",
+    "intro": "<i>Veuillez saisir les données demandées pour l'ajout de l'appareil.<br><br><br><b>IMPORTANT:</b><br>Si un service DNS est en service, le PiHole peut aussi être adressé par son nom DNS.</i>",
+    "inputs": {
+      "name": {
+        "label": "Nom <b>(en option)</b>:",
+        "placeholder": "Nom de l'instance"
+      },
+      "url": {
+        "label": "Adresse IP / FQDN avec http(s) prédéfini(e)://",
+        "placeholder": "Veuillez utiliser le FQDN ou l'adresse IP avec HTTP(s) présenté(s) !"
+      },
+      "port": {
+        "label": "Port:",
+        "placeholder": "80"
+      },
+      "api": {
+        "label": "API:",
+        "placeholder": "veuillez saisir ici la clé API du Pihole"
+      }
+    },
+    "buttons": {
+      "next": "Ajouter un appareil"
+    }
+  }
+}

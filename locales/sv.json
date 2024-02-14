@@ -1,0 +1,56 @@
+{
+  "settings": {
+    "information_about_pihole": "VIKTIG INFORMATION:<br><br>Applikationen har genomgått en större uppdatering. Inställningarna är inte längre nödvändiga.<br><br>Befintliga enheter kommer att fortsätta att köras ett tag till. Den gamla drivrutinen kommer att tas bort vid någon tidpunkt.<br><br>För att kunna använda de nya funktionerna MÅSTE den nya drivrutinen användas."
+  },
+  "devices": {
+    "unavailable": "Enheten kunde inte nås på nätverket."
+  },
+  "warnings": {
+    "deprecated1": "OBSERVERA: Enheter/flöden måste konfigureras om. Gammal drivrutin kommer att tas bort i nästa version!",
+    "deprecated2": "OBS: De nya funktionerna är ENDAST tillgängliga med den nya drivrutinen, dvs. efter den nya konfigurationen!"
+  },
+  "capabilities": {
+    "gravity_days": "Tagg(ar)",
+    "gravity_hours": "Timme(r)",
+    "gravity_minutes": "Minut(er)"
+  },
+  "welcome": {
+    "titles": {
+      "header": "Ställ in PiHole-enheten",
+      "page": "Installationen är mycket enkel ..."
+    },
+    "step_by_step": {
+      "intro": "Genom att klicka på 'Fortsätta' en inställningssida visas.<br><br>Följande inställningar måste göras på denna sida:",
+      "steps": "<li>IP-adress:<b>z.B. 192.168.10.1</b></li><li>Port Key: <b>80</b></li><li>API Key: <b>0imfnc8mVLWwsAawjYr4Rx-Af50DDqtl</b></li>",
+      "outro": "<b>VIKTIGT:</b><br>Portspecifikationen är <b>ALLTID</b> krävs, även om PiHole lyssnar på port 80, vilket skulle vara standard.<br><br>Om en DNS-tjänst är i drift kan PiHole också adresseras med sitt DNS-namn.<br><br><b>Information:</b><br>När flöden körs kan det hända att ingenting syns på PiHole.<br><br>Detta är inte ett fel i appen, utan ett visningsfel på PiHole-sidan.<br><br>Om så är fallet kan PiHole-displayen laddas om."
+    },
+    "buttons": {
+      "continue": "Vidare"
+    }
+  },
+  "manual_input": {
+    "title": "Lägg till PiHole-instans",
+    "intro": "<i>Ange de data som krävs för att lägga till enheten.<br><br><br><b>WICHTIG:</b><br>Om en DNS-tjänst är i drift kan PiHole också adresseras med sitt DNS-namn.</i>",
+    "inputs": {
+      "name": {
+        "label": "Namn <b>(valfri)</b>:",
+        "placeholder": "Instansens namn"
+      },
+      "url": {
+        "label": "IP-adress / FQDN med prefixet http(s)://",
+        "placeholder": "Använd FQDN eller IP-adress med prefixet HTTP(s)!"
+      },
+      "port": {
+        "label": "Port:",
+        "placeholder": "80"
+      },
+      "api": {
+        "label": "API:",
+        "placeholder": "Vänligen ange API-nyckeln för Pihole här"
+      }
+    },
+    "buttons": {
+      "next": "Lägg till enhet"
+    }
+  }
+}

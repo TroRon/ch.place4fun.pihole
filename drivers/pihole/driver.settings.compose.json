@@ -1,0 +1,85 @@
+[
+    {
+        "type": "group",
+        "label": {
+             "en": "Device Settings",
+             "de": "Geräte Einstellungen"
+            },
+        "children": [
+          {
+            "id": "url",
+            "type": "text",
+            "label": { 
+                "en": "Device URL",
+                "de": "Geräte URL"
+            },
+            "value": "",
+            "hint": {
+                 "en": "Bitte FQDN oder IP Adresse mit vorgestelltem HTTP(s) nutzen!",
+                 "de": "Bitte FQDN oder IP Adresse mit vorgestelltem HTTP(s) nutzen!"
+                }   
+          },
+          {
+            "id": "port",
+            "type": "text",
+            "label": { 
+                "en": "Port",
+                "de": "Port"
+            },
+            "value": "",
+            "hint": {
+                "en": "Der Port MUSS angegeben werden, Standard ist immer 80!",
+                "de": "Der Port MUSS angegeben werden, Standard ist immer 80!"
+               }   
+          },
+          {
+            "id": "api",
+            "type": "text",
+            "label": { 
+                "en": "API",
+                "de": "API"
+            },
+            "value": ""
+          }
+        ]
+      },
+    {
+        "id": "interval",
+        "type": "number",
+        "label": { 
+            "en": "Poll interval",
+            "de": "Aktualisierungs-Intervall"
+        },
+        "hint": { 
+            "en": "Choose a refresh interval. Choose an interval of up to 10 minutes to enable live updates from the device. For larger intervals, live updates are resent with the next action or interval for another 10 minutes.",
+            "de": "Wähle ein Aktualisierungs-Intervall. Wähle eine Intervall bis zu 10 min., um Live-Updates vom Gerät zu ermöglichen. Bei größeren Intervallen werden Live-Updates mit der nächsten Aktion oder Intervall für weitere 10 min. erneut gesendet."
+        },
+        "min": 1,
+        "value": 1
+    },
+    {
+        "id": "interval_unit",
+        "type": "dropdown",
+        "label": { 
+            "en": "Interval unit",
+            "de": "Intervall-Einheit"
+        },
+        "value": "min",
+        "values":[
+            {
+                "id": "min",
+                "label":{
+                    "en": "Minutes",
+                    "de": "Minuten"
+                }
+            },
+            {
+                "id": "sec",
+                "label":{
+                    "en": "Seconds",
+                    "de": "Sekunden"
+                }
+            }
+        ]
+    }
+]

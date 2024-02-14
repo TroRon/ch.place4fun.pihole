@@ -1,0 +1,43 @@
+{
+  "name": {
+    "en": "Pi-Hole Instances",
+    "da": "Pi-Hole Instanser",
+    "de": "Pi-Hole Instanzen",
+    "es": "Instancias de Pi-Hole",
+    "fr": "Instances Pi-Hole",
+    "nl": "Pi-Hole-instanties",
+    "no": "Pi-Hole-instanser",
+    "pl": "Instancje Pi-Hole",
+    "ru": "Экземпляры Pi-Hole",
+    "sv": "Pi-Hole-instanser"
+  },
+  "deprecated": true,
+  "class": "button",
+  "capabilities": [
+    "onoff"    
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "pair": [
+      {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next" : "add_devices"
+      }
+      },
+      {
+      "id": "add_devices",
+      "template": "add_devices"
+      }
+  ]
+}

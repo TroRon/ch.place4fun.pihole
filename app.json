@@ -1,0 +1,1822 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "ch.place4fun.pihole",
+  "version": "1.3.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "brandColor": "#000000",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "PiHole Control",
+    "de": "PiHole Control"
+  },
+  "description": {
+    "en": "New possibilities of PiHole controls",
+    "de": "Neue Möglichkeiten der PiHole Steuerungen",
+    "da": "Nye muligheder for PiHole kontrol",
+    "es": "Nuevas posibilidades de control de PiHole",
+    "fr": "Nouvelles possibilités de contrôle de PiHole",
+    "nl": "Nieuwe mogelijkheden voor PiHole-bediening",
+    "no": "Nye muligheter for PiHole-kontroller",
+    "pl": "Nowe możliwości sterowania PiHole",
+    "ru": "Новые возможности управления PiHole",
+    "sv": "Nya möjligheter med PiHole-kontroller"
+  },
+  "category": [
+    "tools"
+  ],
+  "tags": {
+    "en": [
+      "pihole",
+      "pi-hole",
+      "remote",
+      "control"
+    ],
+    "de": [
+      "pihole",
+      "pi-hole",
+      "remote",
+      "control"
+    ]
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Ronny Troxler",
+    "email": "ronny.troxler@bluewin.ch"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Ronny Troxler",
+        "email": "ronny.troxler@bluewin.ch",
+        "website": "https://place4fun.ch"
+      }
+    ],
+    "translators": [
+      {
+        "name": "Daniel Wiget"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "troron"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/TroRon/homey.pihole-control/issues"
+  },
+  "support": "mailto:webmaster@syen.ch",
+  "homepage": "https://github.com/TroRon/homey.pihole-control/wiki",
+  "flow": {
+    "actions": [
+      {
+        "id": "disable-pihole-for",
+        "title": {
+          "en": "Deprecated: Disable PiHole [[pihole]] for [[time]]",
+          "de": "Veraltet: Deaktiviere PiHole [[pihole]] für [[time]]",
+          "nl": "Verouderd: Schakel PiHole [[pihole]] uit voor [[time]]",
+          "fr": "Obsolète : Désactivez PiHole [[pihole]] pendant [[time]]",
+          "it": "Deprecato: Disabilita PiHole [[pihole]] per [[time]]",
+          "sv": "Inaktiverad: Avaktivera PiHole [[pihole]] under [[time]]",
+          "no": "Utgått: Deaktiver PiHole [[pihole]] for [[time]]",
+          "es": "Obsoleto: Desactivar PiHole [[pihole]] durante [[time]]",
+          "da": "Forældet: Deaktiver PiHole [[pihole]] i [[time]]",
+          "ru": "Устарело: Отключите PiHole [[pihole]] на [[time]]",
+          "pl": "Przestarzałe: Wyłącz PiHole [[pihole]] na [[time]]"
+        },
+        "titleFormatted": {
+          "en": "Deprecated: Disable PiHole [[pihole]] for [[time]]",
+          "de": "Veraltet: Deaktiviere den PiHole [[pihole]] für [[time]]",
+          "nl": "Verouderd: Schakel PiHole [[pihole]] uit voor [[time]]",
+          "fr": "Obsolète : Désactivez PiHole [[pihole]] pour [[time]]",
+          "it": "Deprecato: Disattiva PiHole [[pihole]] per [[time]]",
+          "sv": "Inaktiverad: Avaktivera PiHole [[pihole]] för [[time]]",
+          "no": "Utgått: Deaktiver PiHole [[pihole]] for [[time]]",
+          "es": "Obsoleto: Desactivar PiHole [[pihole]] por [[time]]",
+          "da": "Forældet: Deaktiver PiHole [[pihole]] for [[time]]",
+          "ru": "Устарело: Отключите PiHole [[pihole]] на [[time]]",
+          "pl": "Przestarzałe: Wyłącz PiHole [[pihole]] na [[time]]"
+        },
+        "hint": {
+          "en": "Offer the possibility to stop, or start the filter for the selected instance.",
+          "de": "Bietet die Möglichkeit den gewünschten PiHole für eine bestimmte Zeitspanne zu deaktivieren.",
+          "nl": "Biedt de mogelijkheid om de filter voor de geselecteerde instantie te stoppen of te starten.",
+          "fr": "Offre la possibilité d'arrêter ou de démarrer le filtre pour l'instance sélectionnée.",
+          "it": "Offre la possibilità di fermare o avviare il filtro per l'istanza selezionata.",
+          "sv": "Erbjuder möjlighet att stoppa eller starta filtret för det valda instansen.",
+          "no": "Tilbyr muligheten til å stoppe eller starte filteret for den valgte instansen.",
+          "es": "Ofrece la posibilidad de detener o iniciar el filtro para la instancia seleccionada.",
+          "da": "Tilbyder muligheden for at stoppe eller starte filteret for den valgte instans.",
+          "ru": "Предлагает возможность остановить или начать фильтрацию для выбранного экземпляра.",
+          "pl": "Oferuje możliwość zatrzymania lub uruchomienia filtra dla wybranej instancji."
+        },
+        "deprecated": true,
+        "args": [
+          {
+            "name": "pihole",
+            "type": "dropdown",
+            "placeholder": {
+              "en": "Instance 1",
+              "de": "Instanz 1",
+              "nl": "Instantie 1",
+              "fr": "Instance 1",
+              "it": "Istanza 1",
+              "sv": "Instans 1",
+              "no": "Instans 1",
+              "es": "Instancia 1",
+              "da": "Instans 1",
+              "ru": "Экземпляр 1",
+              "pl": "Instancja 1"
+            },
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "Instance 1",
+                  "de": "Instanz 1",
+                  "nl": "Instantie 1",
+                  "fr": "Instance 1",
+                  "it": "Istanza 1",
+                  "sv": "Instans 1",
+                  "no": "Instans 1",
+                  "es": "Instancia 1",
+                  "da": "Instans 1",
+                  "ru": "Экземпляр 1",
+                  "pl": "Instancja 1"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Instance 2",
+                  "de": "Instanz 2",
+                  "nl": "Instantie 2",
+                  "fr": "Instance 2",
+                  "it": "Istanza 2",
+                  "sv": "Instans 2",
+                  "no": "Instans 2",
+                  "es": "Instancia 2",
+                  "da": "Instans 2",
+                  "ru": "Экземпляр 2",
+                  "pl": "Instancja 2"
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "Instance 3",
+                  "de": "Instanz 3",
+                  "nl": "Instantie 3",
+                  "fr": "Instance 3",
+                  "it": "Istanza 3",
+                  "sv": "Instans 3",
+                  "no": "Instans 3",
+                  "es": "Instancia 3",
+                  "da": "Instans 3",
+                  "ru": "Экземпляр 3",
+                  "pl": "Instancja 3"
+                }
+              },
+              {
+                "id": "20",
+                "label": {
+                  "en": "Instance 4",
+                  "de": "Instanz 4",
+                  "nl": "Instantie 4",
+                  "fr": "Instance 4",
+                  "it": "Istanza 4",
+                  "sv": "Instans 4",
+                  "no": "Instans 4",
+                  "es": "Instancia 4",
+                  "da": "Instans 4",
+                  "ru": "Экземпляр 4",
+                  "pl": "Instancja 4"
+                }
+              }
+            ]
+          },
+          {
+            "name": "time",
+            "type": "dropdown",
+            "placeholder": {
+              "en": "5 Minutes",
+              "de": "5 Minuten",
+              "nl": "5 minuten",
+              "fr": "5 minutes",
+              "it": "5 minuti",
+              "sv": "5 minuter",
+              "no": "5 minutter",
+              "es": "5 minutos",
+              "da": "5 minutter",
+              "ru": "5 минут",
+              "pl": "5 minut"
+            },
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "5 Minutes",
+                  "de": "5 Minuten",
+                  "nl": "5 minuten",
+                  "fr": "5 minutes",
+                  "it": "5 minuti",
+                  "sv": "5 minuter",
+                  "no": "5 minutter",
+                  "es": "5 minutos",
+                  "da": "5 minutter",
+                  "ru": "5 минут",
+                  "pl": "5 minut"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "10 Minutes",
+                  "de": "10 Minuten",
+                  "nl": "10 minuten",
+                  "fr": "10 minutes",
+                  "it": "10 minuti",
+                  "sv": "10 minuter",
+                  "no": "10 minutter",
+                  "es": "10 minutos",
+                  "da": "10 minutter",
+                  "ru": "10 минут",
+                  "pl": "10 minut"
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "15 Minutes",
+                  "de": "15 Minuten",
+                  "nl": "15 minuten",
+                  "fr": "15 minutes",
+                  "it": "15 minuti",
+                  "sv": "15 minuter",
+                  "no": "15 minutter",
+                  "es": "15 minutos",
+                  "da": "15 minutter",
+                  "ru": "15 минут",
+                  "pl": "15 minut"
+                }
+              },
+              {
+                "id": "30",
+                "label": {
+                  "en": "30 Minutes",
+                  "de": "30 Minuten",
+                  "nl": "30 minuten",
+                  "fr": "30 minutes",
+                  "it": "30 minuti",
+                  "sv": "30 minuter",
+                  "no": "30 minutter",
+                  "es": "30 minutos",
+                  "da": "30 minutter",
+                  "ru": "30 минут",
+                  "pl": "30 minut"
+                }
+              },
+              {
+                "id": "45",
+                "label": {
+                  "en": "45 Minutes",
+                  "de": "45 Minuten",
+                  "nl": "45 minuten",
+                  "fr": "45 minutes",
+                  "it": "45 minuti",
+                  "sv": "45 minuter",
+                  "no": "45 minutter",
+                  "es": "45 minutos",
+                  "da": "45 minutter",
+                  "ru": "45 минут",
+                  "pl": "45 minut"
+                }
+              },
+              {
+                "id": "60",
+                "label": {
+                  "en": "60 Minutes",
+                  "de": "60 Minuten",
+                  "nl": "60 minuten",
+                  "fr": "60 minutes",
+                  "it": "60 minuti",
+                  "sv": "60 minuter",
+                  "no": "60 minutter",
+                  "es": "60 minutos",
+                  "da": "60 minutter",
+                  "ru": "60 минут",
+                  "pl": "60 minut"
+                }
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "instance",
+            "type": "string",
+            "title": {
+              "en": "Instance",
+              "de": "Instanz",
+              "nl": "Instantie",
+              "fr": "Instance",
+              "it": "Istanza",
+              "sv": "Instans",
+              "no": "Instans",
+              "es": "Instancia",
+              "da": "Instans",
+              "ru": "Экземпляр",
+              "pl": "Instancja"
+            },
+            "example": {
+              "en": "Instance",
+              "de": "Instanz",
+              "nl": "Instantie",
+              "fr": "Instance",
+              "it": "Istanza",
+              "sv": "Instans",
+              "no": "Instans",
+              "es": "Instancia",
+              "da": "Instans",
+              "ru": "Экземпляр",
+              "pl": "Instancja"
+            }
+          },
+          {
+            "name": "time",
+            "type": "number",
+            "title": {
+              "de": "Inaktivität für (in Minuten)",
+              "en": "Inactive for (in minutes)",
+              "nl": "Inactief gedurende (in minuten)",
+              "fr": "Inactif pendant (en minutes)",
+              "it": "Inattivo per (in minuti)",
+              "sv": "Inaktiv i (i minuter)",
+              "no": "Inaktiv i (i minutter)",
+              "es": "Inactivo durante (en minutos)",
+              "da": "Inaktiv i (i minutter)",
+              "ru": "Неактивен в течение (в минутах)",
+              "pl": "Nieaktywny przez (w minutach)"
+            },
+            "example": {
+              "en": "10 Minutes",
+              "de": "10 Minuten",
+              "nl": "10 minuten",
+              "fr": "10 minutes",
+              "it": "10 minuti",
+              "sv": "10 minuter",
+              "no": "10 minutter",
+              "es": "10 minutos",
+              "da": "10 minutter",
+              "ru": "10 минут",
+              "pl": "10 minut"
+            }
+          }
+        ]
+      },
+      {
+        "id": "disable-piholes",
+        "title": {
+          "en": "Deprecated: Disable all PiHole(s)",
+          "de": "Veraltet: Alle PiHole(s) deaktivieren",
+          "nl": "Verouderd: Schakel alle pihole(s) uit",
+          "fr": "Obsolète : Désactivez tous les PiHole(s)",
+          "it": "Deprecato: Disabilita tutti i PiHole(s)",
+          "sv": "Inaktiverad: Avaktivera alla PiHole(s)",
+          "no": "Utgått: Deaktiver alle PiHole(r)",
+          "es": "Obsoleto: Desactivar todos los PiHole(s)",
+          "da": "Forældet: Deaktiver alle PiHole(r)",
+          "ru": "Устарело: Отключить все PiHole(ы)",
+          "pl": "Przestarzałe: Wyłącz wszystkie PiHole(s)"
+        },
+        "hint": {
+          "en": "Disable the defined PiHole Instance(s).",
+          "de": "Deaktiviert die definierte(n) PiHole Instanz(en).",
+          "nl": "Deactiveert de gedefinieerde PiHole-instantie(s).",
+          "fr": "Désactive les instance(s) PiHole définie(s).",
+          "it": "Disabilita l'istanza(e) PiHole definita(e)",
+          "sv": "Inaktiverar de definierade PiHole-instansen(s).",
+          "no": "Deaktiverer den definerte PiHole-instansen(e).",
+          "es": "Desactiva la(s) instancia(s) PiHole definida(s).",
+          "da": "Deaktiver den/de definerede PiHole-instans(er).",
+          "ru": "Отключает определенный(ые) экземпляр(ы) PiHole.",
+          "pl": "Wyłącza zdefiniowaną(e) instancję(e) PiHole."
+        },
+        "deprecated": true
+      },
+      {
+        "id": "disable-piholes-for",
+        "title": {
+          "en": "Deprecated: Disable all PiHoles for [[time]]",
+          "de": "Veraltet: Deaktiviere alle PiHoles für [[time]]",
+          "nl": "Verouderd: Schakel alle PiHoles uit voor [[time]]",
+          "fr": "Obsolète : Désactivez tous les PiHoles pour [[time]]",
+          "it": "Deprecato: Disabilita tutti i PiHoles per [[time]]",
+          "sv": "Inaktiverad: Avaktivera alla PiHoles för [[time]]",
+          "no": "Utgått: Deaktiver alle PiHoles for [[time]]",
+          "es": "Obsoleto: Desactivar todos los PiHoles durante [[time]]",
+          "da": "Forældet: Deaktiver alle PiHoles i [[time]]",
+          "ru": "Устарело: Отключите все PiHoles на [[time]]",
+          "pl": "Przestarzałe: Wyłącz wszystkie PiHoles na [[time]]"
+        },
+        "titleFormatted": {
+          "en": "Deprecated: Disable all PiHoles for [[time]]",
+          "de": "Veraltet: Deaktiviere alle PiHoles für [[time]]",
+          "nl": "Verouderd: Schakel alle PiHoles uit voor [[time]]",
+          "fr": "Obsolète : Désactivez tous les PiHoles pour [[time]]",
+          "it": "Deprecato: Disabilita tutti i PiHoles per [[time]]",
+          "sv": "Inaktiverad: Avaktivera alla PiHoles för [[time]]",
+          "no": "Utgått: Deaktiver alle PiHoles for [[time]]",
+          "es": "Obsoleto: Desactivar todos los PiHoles durante [[time]]",
+          "da": "Forældet: Deaktiver alle PiHoles i [[time]]",
+          "ru": "Устарело: Отключите все PiHoles на [[time]]",
+          "pl": "Przestarzałe: Wyłącz wszystkie PiHoles na [[time]]"
+        },
+        "hint": {
+          "en": "Offer the possibility disable all Piholes for an amount of time.",
+          "de": "Bietet die Möglichkeit alles Piholes für einen bestimmten Zeitraum zu deaktivieren.",
+          "nl": "Biedt de mogelijkheid om alle Piholes uit te schakelen voor een bepaalde tijd.",
+          "fr": "Offre la possibilité de désactiver tous les Piholes pour une certaine durée.",
+          "it": "Offre la possibilità di disabilitare tutti i Piholes per un certo periodo di tempo.",
+          "sv": "Erbjuder möjligheten att inaktivera alla Piholes för en angiven tid.",
+          "no": "Tilbyr muligheten til å deaktivere alle Piholes for en bestemt tidsperiode.",
+          "es": "Ofrece la posibilidad de desactivar todos los Piholes durante un periodo de tiempo.",
+          "da": "Tilbyder muligheden for at deaktivere alle Piholes i en bestemt tidsperiode.",
+          "ru": "Предлагает возможность отключения всех PiHoles на определенное время.",
+          "pl": "Oferuje możliwość wyłączenia wszystkich PiHoles na określony czas."
+        },
+        "deprecated": true,
+        "args": [
+          {
+            "name": "time",
+            "type": "dropdown",
+            "placeholder": {
+              "en": "5 Minutes",
+              "de": "5 Minuten",
+              "nl": "5 Notulen",
+              "fr": "5 minutes",
+              "it": "5 minuti",
+              "sv": "5 minuter",
+              "no": "5 minutter",
+              "es": "5 minutos",
+              "da": "5 minutter",
+              "ru": "5 минут",
+              "pl": "5 minut"
+            },
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "5 Minutes",
+                  "de": "5 Minuten",
+                  "nl": "5 Notulen",
+                  "fr": "5 minutes",
+                  "it": "5 minuti",
+                  "sv": "5 minuter",
+                  "no": "5 minutter",
+                  "es": "5 minutos",
+                  "da": "5 minutter",
+                  "ru": "5 минут",
+                  "pl": "5 minut"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "10 Minutes",
+                  "de": "10 Minuten",
+                  "nl": "10 Notulen",
+                  "fr": "10 minutes",
+                  "it": "10 minuti",
+                  "sv": "10 minuter",
+                  "no": "10 minutter",
+                  "es": "10 minutos",
+                  "da": "10 minutter",
+                  "ru": "10 минут",
+                  "pl": "10 minut"
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "15 Minutes",
+                  "de": "15 Minuten",
+                  "nl": "15 Notulen",
+                  "fr": "15 minutes",
+                  "it": "15 minuti",
+                  "sv": "15 minuter",
+                  "no": "15 minutter",
+                  "es": "15 minutos",
+                  "da": "15 minutter",
+                  "ru": "15 минут",
+                  "pl": "15 minut"
+                }
+              },
+              {
+                "id": "30",
+                "label": {
+                  "en": "30 Minutes",
+                  "de": "30 Minuten",
+                  "nl": "30 Notulen",
+                  "fr": "30 minutes",
+                  "it": "30 minuti",
+                  "sv": "30 minuter",
+                  "no": "30 minutter",
+                  "es": "30 minutos",
+                  "da": "30 minutter",
+                  "ru": "30 минут",
+                  "pl": "30 minut"
+                }
+              },
+              {
+                "id": "45",
+                "label": {
+                  "en": "45 Minutes",
+                  "de": "45 Minuten",
+                  "nl": "45 Notulen",
+                  "fr": "45 minutes",
+                  "it": "45 minuti",
+                  "sv": "45 minuter",
+                  "no": "45 minutter",
+                  "es": "45 minutos",
+                  "da": "45 minutter",
+                  "ru": "45 минут",
+                  "pl": "45 minut"
+                }
+              },
+              {
+                "id": "60",
+                "label": {
+                  "en": "60 Minutes",
+                  "de": "60 Minuten",
+                  "nl": "60 Notulen",
+                  "fr": "60 minutes",
+                  "it": "60 minuti",
+                  "sv": "60 minuter",
+                  "no": "60 minutter",
+                  "es": "60 minutos",
+                  "da": "60 minutter",
+                  "ru": "60 минут",
+                  "pl": "60 minut"
+                }
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "time",
+            "type": "number",
+            "title": {
+              "de": "Inaktivität für (in Minuten)",
+              "en": "Inactive for (in minutes)",
+              "nl": "Inactief gedurende (in minuten)",
+              "fr": "Inactif pendant (en minutes)",
+              "it": "Inattivo per (in minuti)",
+              "sv": "Inaktiv i (i minuter)",
+              "no": "Inaktiv i (i minutter)",
+              "es": "Inactivo durante (en minutos)",
+              "da": "Inaktiv i (i minutter)",
+              "ru": "Неактивен в течение (в минутах)",
+              "pl": "Nieaktywny przez (w minutach)"
+            },
+            "example": {
+              "en": "10 Minutes",
+              "de": "10 Minuten",
+              "nl": "10 minuten",
+              "fr": "10 minutes",
+              "it": "10 minuti",
+              "sv": "10 minuter",
+              "no": "10 minutter",
+              "es": "10 minutos",
+              "da": "10 minutter",
+              "ru": "10 минут",
+              "pl": "10 minut"
+            }
+          }
+        ]
+      },
+      {
+        "id": "enable-piholes",
+        "title": {
+          "en": "Deprecated: Enable all PiHole(s)",
+          "de": "Veraltet: Alle PiHole(s) aktivieren",
+          "nl": "Verouderd: Activeer alle PiHole(s)",
+          "fr": "Obsolète : Activez tous les PiHole(s)",
+          "it": "Deprecato: Abilita tutti i PiHole(s)",
+          "sv": "Inaktiverad: Aktivera alla PiHole(s)",
+          "no": "Utgått: Aktiver alle PiHole(r)",
+          "es": "Obsoleto: Activar todos los PiHole(s)",
+          "da": "Forældet: Aktiver alle PiHole(r)",
+          "ru": "Устарело: Включить все PiHole(ы)",
+          "pl": "Przestarzałe: Włącz wszystkie PiHole(s)"
+        },
+        "hint": {
+          "en": "Enable the defined PiHole Instance(s).",
+          "de": "Aktiviert die definierten PiHole Instanzen.",
+          "nl": "Activeert de gedefinieerde PiHole instanties.",
+          "fr": "Active les instance(s) PiHole définie(s).",
+          "it": "Abilita l'istanza(e) PiHole definita(e)",
+          "sv": "Aktiverar de definierade PiHole-instansen(s).",
+          "no": "Aktiverer den definerte PiHole-instansen(e).",
+          "es": "Activa la(s) instancia(s) PiHole definida(s).",
+          "da": "Aktiver den/de definerede PiHole-instans(er).",
+          "ru": "Включает определенный(ые) экземпляр(ы) PiHole.",
+          "pl": "Włącza zdefiniowaną(e) instancję(e) PiHole."
+        },
+        "deprecated": true
+      },
+      {
+        "id": "pihole-disable-pihole-for",
+        "title": {
+          "en": "Disable PiHole for [[time]]",
+          "de": "Deaktiviere PiHole für [[time]]",
+          "nl": "Schakel PiHole uit voor [[time]]",
+          "fr": "Désactivez PiHole pendant [[time]]",
+          "it": "Disabilita PiHole per [[time]]",
+          "sv": "Avaktivera PiHole under [[time]]",
+          "no": "Deaktiver PiHole for [[time]]",
+          "es": "Desactivar PiHole durante [[time]]",
+          "da": "Deaktiver PiHole i [[time]]",
+          "ru": "Отключите PiHole на [[time]]",
+          "pl": "Wyłącz PiHole na [[time]]"
+        },
+        "titleFormatted": {
+          "en": "Disable PiHole for [[time]]",
+          "de": "Deaktiviere den PiHole für [[time]]",
+          "nl": "Schakel PiHole uit voor [[time]]",
+          "fr": "Désactivez PiHole pour [[time]]",
+          "it": "Disattiva PiHole per [[time]]",
+          "sv": "Avaktivera PiHole för [[time]]",
+          "no": "Deaktiver PiHole for [[time]]",
+          "es": "Desactivar PiHole por [[time]]",
+          "da": "Deaktiver PiHole for [[time]]",
+          "ru": "Отключите PiHole на [[time]]",
+          "pl": "Wyłącz PiHole na [[time]]"
+        },
+        "hint": {
+          "en": "Offers the possibility to disable the current PiHole for a specific period of time.",
+          "de": "Bietet die Möglichkeit, den aktuellen PiHole für eine bestimmte Zeitspanne zu deaktivieren.",
+          "nl": "Biedt de mogelijkheid om de huidige PiHole voor een bepaalde tijd te deactiveren.",
+          "fr": "Offre la possibilité de désactiver le PiHole actuel pour une période spécifique.",
+          "it": "Offre la possibilità di disattivare l'attuale PiHole per un periodo di tempo specifico.",
+          "sv": "Erbjuder möjligheten att inaktivera den aktuella PiHole för en specifik tidsperiod.",
+          "no": "Tilbyr muligheten til å deaktivere den nåværende PiHole for en bestemt tidsperiode.",
+          "es": "Ofrece la posibilidad de desactivar el PiHole actual por un período de tiempo específico.",
+          "da": "Tilbyder muligheden for at deaktivere den nuværende PiHole i en bestemt tidsperiode.",
+          "ru": "Предлагает возможность отключить текущий PiHole на определенный период времени.",
+          "pl": "Oferuje możliwość wyłączenia aktualnego PiHole na określony okres czasu."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          },
+          {
+            "name": "time",
+            "type": "dropdown",
+            "placeholder": {
+              "en": "5 Minutes",
+              "de": "5 Minuten",
+              "nl": "5 minuten",
+              "fr": "5 minutes",
+              "it": "5 minuti",
+              "sv": "5 minuter",
+              "no": "5 minutter",
+              "es": "5 minutos",
+              "da": "5 minutter",
+              "ru": "5 минут",
+              "pl": "5 minut"
+            },
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "5 Minutes",
+                  "de": "5 Minuten",
+                  "nl": "5 minuten",
+                  "fr": "5 minutes",
+                  "it": "5 minuti",
+                  "sv": "5 minuter",
+                  "no": "5 minutter",
+                  "es": "5 minutos",
+                  "da": "5 minutter",
+                  "ru": "5 минут",
+                  "pl": "5 minut"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "10 Minutes",
+                  "de": "10 Minuten",
+                  "nl": "10 minuten",
+                  "fr": "10 minutes",
+                  "it": "10 minuti",
+                  "sv": "10 minuter",
+                  "no": "10 minutter",
+                  "es": "10 minutos",
+                  "da": "10 minutter",
+                  "ru": "10 минут",
+                  "pl": "10 minut"
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "15 Minutes",
+                  "de": "15 Minuten",
+                  "nl": "15 minuten",
+                  "fr": "15 minutes",
+                  "it": "15 minuti",
+                  "sv": "15 minuter",
+                  "no": "15 minutter",
+                  "es": "15 minutos",
+                  "da": "15 minutter",
+                  "ru": "15 минут",
+                  "pl": "15 minut"
+                }
+              },
+              {
+                "id": "30",
+                "label": {
+                  "en": "30 Minutes",
+                  "de": "30 Minuten",
+                  "nl": "30 minuten",
+                  "fr": "30 minutes",
+                  "it": "30 minuti",
+                  "sv": "30 minuter",
+                  "no": "30 minutter",
+                  "es": "30 minutos",
+                  "da": "30 minutter",
+                  "ru": "30 минут",
+                  "pl": "30 minut"
+                }
+              },
+              {
+                "id": "45",
+                "label": {
+                  "en": "45 Minutes",
+                  "de": "45 Minuten",
+                  "nl": "45 minuten",
+                  "fr": "45 minutes",
+                  "it": "45 minuti",
+                  "sv": "45 minuter",
+                  "no": "45 minutter",
+                  "es": "45 minutos",
+                  "da": "45 minutter",
+                  "ru": "45 минут",
+                  "pl": "45 minut"
+                }
+              },
+              {
+                "id": "60",
+                "label": {
+                  "en": "60 Minutes",
+                  "de": "60 Minuten",
+                  "nl": "60 minuten",
+                  "fr": "60 minutes",
+                  "it": "60 minuti",
+                  "sv": "60 minuter",
+                  "no": "60 minutter",
+                  "es": "60 minutos",
+                  "da": "60 minutter",
+                  "ru": "60 минут",
+                  "pl": "60 minut"
+                }
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "time",
+            "type": "number",
+            "title": {
+              "de": "Inaktivität für (in Minuten)",
+              "en": "Inactive for (in minutes)",
+              "nl": "Inactief gedurende (in minuten)",
+              "fr": "Inactif pendant (en minutes)",
+              "it": "Inattivo per (in minuti)",
+              "sv": "Inaktiv i (i minuter)",
+              "no": "Inaktiv i (i minutter)",
+              "es": "Inactivo durante (en minutos)",
+              "da": "Inaktiv i (i minutter)",
+              "ru": "Неактивен в течение (в минутах)",
+              "pl": "Nieaktywny przez (w minutach)"
+            },
+            "example": {
+              "en": "10 Minutes",
+              "de": "10 Minuten",
+              "nl": "10 minuten",
+              "fr": "10 minutes",
+              "it": "10 minuti",
+              "sv": "10 minuter",
+              "no": "10 minutter",
+              "es": "10 minutos",
+              "da": "10 minutter",
+              "ru": "10 минут",
+              "pl": "10 minut"
+            }
+          }
+        ]
+      },
+      {
+        "id": "pihole-disable-piholes",
+        "title": {
+          "en": "Disable all PiHole(s),",
+          "de": "Alle Pihole(s) deaktivieren",
+          "nl": "Deactiveer alle pihole(s)",
+          "fr": "Désactivez tous les PiHole(s)",
+          "it": "Disabilita tutti i PiHole(s)",
+          "sv": "Inaktivera alla PiHole(s)",
+          "no": "Deaktiver alle PiHole(r)",
+          "es": "Desactivar todos los PiHole(s)",
+          "da": "Deaktiver alle PiHole(r)",
+          "ru": "Отключить все PiHole(ы)",
+          "pl": "Wyłącz wszystkie PiHole(s)"
+        },
+        "hint": {
+          "en": "Disable the defined PiHole Instance(s).",
+          "de": "Deaktiviert die definierte(n) PiHole Instanz(en).",
+          "nl": "Deactiveert de gedefinieerde PiHole-instantie(s).",
+          "fr": "Désactive les instance(s) PiHole définie(s).",
+          "it": "Disabilita l'istanza(e) PiHole definita(e)",
+          "sv": "Inaktiverar de definierade PiHole-instansen(s).",
+          "no": "Deaktiverer den definerte PiHole-instansen(e).",
+          "es": "Desactiva la(s) instancia(s) PiHole definida(s).",
+          "da": "Deaktiver den/de definerede PiHole-instans(er).",
+          "ru": "Отключает определенный(ые) экземпляр(ы) PiHole.",
+          "pl": "Wyłącza zdefiniowaną(e) instancję(e) PiHole."
+        }
+      },
+      {
+        "id": "pihole-disable-piholes-for",
+        "title": {
+          "en": "Disable all PiHoles for [[time]]",
+          "de": "Deaktiviere alle PiHoles für [[time]]",
+          "nl": "Schakel alle PiHoles uit voor [[time]]",
+          "fr": "Désactivez tous les PiHoles pour [[time]]",
+          "it": "Disabilita tutti i PiHoles per [[time]]",
+          "sv": "Avaktivera alla PiHoles för [[time]]",
+          "no": "Deaktiver alle PiHoles for [[time]]",
+          "es": "Desactivar todos los PiHoles durante [[time]]",
+          "da": "Deaktiver alle PiHoles i [[time]]",
+          "ru": "Отключите все PiHoles на [[time]]",
+          "pl": "Wyłącz wszystkie PiHoles na [[time]]"
+        },
+        "titleFormatted": {
+          "en": "Disable all PiHoles for [[time]]",
+          "de": "Deaktiviere alle PiHoles für [[time]]",
+          "nl": "Schakel alle PiHoles uit voor [[time]]",
+          "fr": "Désactivez tous les PiHoles pour [[time]]",
+          "it": "Disabilita tutti i PiHoles per [[time]]",
+          "sv": "Avaktivera alla PiHoles för [[time]]",
+          "no": "Deaktiver alle PiHoles for [[time]]",
+          "es": "Desactivar todos los PiHoles durante [[time]]",
+          "da": "Deaktiver alle PiHoles i [[time]]",
+          "ru": "Отключите все PiHoles на [[time]]",
+          "pl": "Wyłącz wszystkie PiHoles na [[time]]"
+        },
+        "hint": {
+          "en": "Offer the possibility disable all Piholes for an amount of time.",
+          "de": "Bietet die Möglichkeit alles Piholes für einen bestimmten Zeitraum zu deaktivieren.",
+          "nl": "Biedt de mogelijkheid om alle Piholes uit te schakelen voor een bepaalde tijd.",
+          "fr": "Offre la possibilité de désactiver tous les Piholes pour une certaine durée.",
+          "it": "Offre la possibilità di disabilitare tutti i Piholes per un certo periodo di tempo.",
+          "sv": "Erbjuder möjligheten att inaktivera alla Piholes för en angiven tid.",
+          "no": "Tilbyr muligheten til å deaktivere alle Piholes for en bestemt tidsperiode.",
+          "es": "Ofrece la posibilidad de desactivar todos los Piholes durante un periodo de tiempo.",
+          "da": "Tilbyder muligheden for at deaktivere alle Piholes i en bestemt tidsperiode.",
+          "ru": "Предлагает возможность отключения всех PiHoles на определенное время.",
+          "pl": "Oferuje możliwość wyłączenia wszystkich PiHoles na określony czas."
+        },
+        "args": [
+          {
+            "name": "time",
+            "type": "dropdown",
+            "placeholder": {
+              "en": "5 Minutes",
+              "de": "5 Minuten",
+              "nl": "5 Notulen",
+              "fr": "5 minutes",
+              "it": "5 minuti",
+              "sv": "5 minuter",
+              "no": "5 minutter",
+              "es": "5 minutos",
+              "da": "5 minutter",
+              "ru": "5 минут",
+              "pl": "5 minut"
+            },
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "5 Minutes",
+                  "de": "5 Minuten",
+                  "nl": "5 Notulen",
+                  "fr": "5 minutes",
+                  "it": "5 minuti",
+                  "sv": "5 minuter",
+                  "no": "5 minutter",
+                  "es": "5 minutos",
+                  "da": "5 minutter",
+                  "ru": "5 минут",
+                  "pl": "5 minut"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "10 Minutes",
+                  "de": "10 Minuten",
+                  "nl": "10 Notulen",
+                  "fr": "10 minutes",
+                  "it": "10 minuti",
+                  "sv": "10 minuter",
+                  "no": "10 minutter",
+                  "es": "10 minutos",
+                  "da": "10 minutter",
+                  "ru": "10 минут",
+                  "pl": "10 minut"
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "15 Minutes",
+                  "de": "15 Minuten",
+                  "nl": "15 Notulen",
+                  "fr": "15 minutes",
+                  "it": "15 minuti",
+                  "sv": "15 minuter",
+                  "no": "15 minutter",
+                  "es": "15 minutos",
+                  "da": "15 minutter",
+                  "ru": "15 минут",
+                  "pl": "15 minut"
+                }
+              },
+              {
+                "id": "30",
+                "label": {
+                  "en": "30 Minutes",
+                  "de": "30 Minuten",
+                  "nl": "30 Notulen",
+                  "fr": "30 minutes",
+                  "it": "30 minuti",
+                  "sv": "30 minuter",
+                  "no": "30 minutter",
+                  "es": "30 minutos",
+                  "da": "30 minutter",
+                  "ru": "30 минут",
+                  "pl": "30 minut"
+                }
+              },
+              {
+                "id": "45",
+                "label": {
+                  "en": "45 Minutes",
+                  "de": "45 Minuten",
+                  "nl": "45 Notulen",
+                  "fr": "45 minutes",
+                  "it": "45 minuti",
+                  "sv": "45 minuter",
+                  "no": "45 minutter",
+                  "es": "45 minutos",
+                  "da": "45 minutter",
+                  "ru": "45 минут",
+                  "pl": "45 minut"
+                }
+              },
+              {
+                "id": "60",
+                "label": {
+                  "en": "60 Minutes",
+                  "de": "60 Minuten",
+                  "nl": "60 Notulen",
+                  "fr": "60 minutes",
+                  "it": "60 minuti",
+                  "sv": "60 minuter",
+                  "no": "60 minutter",
+                  "es": "60 minutos",
+                  "da": "60 minutter",
+                  "ru": "60 минут",
+                  "pl": "60 minut"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pihole-enable-piholes",
+        "title": {
+          "en": "Enable all PiHole(s)",
+          "de": "Alle PiHole(s) aktivieren",
+          "nl": "Activeer alle PiHole(s)",
+          "fr": "Activez tous les PiHole(s)",
+          "it": "Abilita tutti i PiHole(s)",
+          "sv": "Aktivera alla PiHole(s)",
+          "no": "Aktiver alle PiHole(r)",
+          "es": "Activar todos los PiHole(s)",
+          "da": "Aktiver alle PiHole(r)",
+          "ru": "Включить все PiHole(ы)",
+          "pl": "Włącz wszystkie PiHole(s)"
+        },
+        "hint": {
+          "en": "Enable the defined PiHole Instance(s).",
+          "de": "Aktiviert die definierten PiHole Instanzen.",
+          "nl": "Activeert de gedefinieerde PiHole instanties.",
+          "fr": "Active les instance(s) PiHole définie(s).",
+          "it": "Abilita l'istanza(e) PiHole definita(e)",
+          "sv": "Aktiverar de definierade PiHole-instansen(s).",
+          "no": "Aktiverer den definerte PiHole-instansen(e).",
+          "es": "Activa la(s) instancia(s) PiHole definida(s).",
+          "da": "Aktiver den/de definerede PiHole-instans(er).",
+          "ru": "Включает определенный(ые) экземпляр(ы) PiHole.",
+          "pl": "Włącza zdefiniowaną(e) instancję(e) PiHole."
+        }
+      },
+      {
+        "id": "pihole-set-pihole",
+        "title": {
+          "en": "[[[state]] PiHole",
+          "de": "[[state]] PiHole",
+          "nl": "[[state]] PiHole",
+          "fr": "[[state]] PiHole",
+          "it": "[[state]] PiHole",
+          "sv": "[[state]] PiHole",
+          "no": "[[state]] PiHole",
+          "es": "[[state]] PiHole",
+          "da": "[[state]] PiHole",
+          "ru": "[[state]] PiHole",
+          "pl": "[[state]] PiHole"
+        },
+        "titleFormatted": {
+          "en": "[[state]] PiHole",
+          "de": "[[state]] PiHole",
+          "nl": "[[state]] PiHole",
+          "fr": "[[state]] PiHole",
+          "it": "[[state]] PiHole",
+          "sv": "[[state]] PiHole",
+          "no": "[[state]] PiHole",
+          "es": "[[state]] PiHole",
+          "da": "[[state]] PiHole",
+          "ru": "[[state]] PiHole",
+          "pl": "[[state]] PiHole"
+        },
+        "hint": {
+          "en": "Offer the possibility to stop, or start the filter for the selected instance.",
+          "de": "Bietet die Möglichkeit den Filter für die gewählte Instanz zu stoppen, oder zu starten.",
+          "nl": "Biedt de optie om het filter voor de geselecteerde instantie te stoppen of te starten.",
+          "fr": "Offre la possibilité d'arrêter ou de démarrer le filtre pour l'instance sélectionnée.",
+          "it": "Offre la possibilità di fermare o avviare il filtro per l'istanza selezionata.",
+          "sv": "Erbjuder möjlighet att stoppa eller starta filtret för det valda instansen.",
+          "no": "Tilbyr muligheten til å stoppe eller starte filteret for den valgte instansen.",
+          "es": "Ofrece la posibilidad de detener o iniciar el filtro para la instancia seleccionada.",
+          "da": "Tilbyder muligheden for at stoppe eller starte filteret for den valgte instans.",
+          "ru": "Предлагает возможность остановить или начать фильтрацию для выбранного экземпляра.",
+          "pl": "Oferuje możliwość zatrzymania lub uruchomienia filtra dla wybranej instancji."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "placeholder": {
+              "en": "Activate",
+              "de": "Aktivieren",
+              "nl": "Activeer",
+              "fr": "Activer",
+              "it": "Attiva",
+              "sv": "Aktivera",
+              "no": "Aktiver",
+              "es": "Activar",
+              "da": "Aktivere",
+              "ru": "Активировать",
+              "pl": "Aktywować"
+            },
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "Activate",
+                  "de": "Aktivieren",
+                  "nl": "Activeer",
+                  "fr": "Activer",
+                  "it": "Attiva",
+                  "sv": "Aktivera",
+                  "no": "Aktiver",
+                  "es": "Activar",
+                  "da": "Aktivere",
+                  "ru": "Активировать",
+                  "pl": "Aktywować"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Deactivate",
+                  "de": "Deaktivieren",
+                  "nl": "Deactiveer",
+                  "fr": "Désactiver",
+                  "it": "Disattiva",
+                  "sv": "Inaktivera",
+                  "no": "Deaktiver",
+                  "es": "Desactivar",
+                  "da": "Deaktiver",
+                  "ru": "Деактивировать",
+                  "pl": "Dezaktywować"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set-piholes",
+        "title": {
+          "en": "Deprecated: [[state]] PiHole [[instance]]",
+          "de": "Veraltet: [[state]] PiHole [[instance]]",
+          "nl": "Verouderd: [[state]] PiHole [[instance]]",
+          "fr": "Obsolète : [[state]] PiHole [[instance]]",
+          "it": "Deprecato: [[state]] PiHole [[instance]]",
+          "sv": "Inaktiverad: [[state]] PiHole [[instance]]",
+          "no": "Utgått: [[state]] PiHole [[instance]]",
+          "es": "Obsoleto: [[state]] PiHole [[instance]]",
+          "da": "Forældet: [[state]] PiHole [[instance]]",
+          "ru": "Устарело: [[state]] PiHole [[instance]]",
+          "pl": "Przestarzałe: [[state]] PiHole [[instance]]"
+        },
+        "titleFormatted": {
+          "en": "Deprecated: [[state]] PiHole [[instance]]",
+          "de": "Veraltet: [[state]] PiHole [[instance]]",
+          "nl": "Verouderd: [[state]] PiHole [[instance]]",
+          "fr": "Obsolète : [[state]] PiHole [[instance]]",
+          "it": "Deprecato: [[state]] PiHole [[instance]]",
+          "sv": "Inaktiverad: [[state]] PiHole [[instance]]",
+          "no": "Utgått: [[state]] PiHole [[instance]]",
+          "es": "Obsoleto: [[state]] PiHole [[instance]]",
+          "da": "Forældet: [[state]] PiHole [[instance]]",
+          "ru": "Устарело: [[state]] PiHole [[instance]]",
+          "pl": "Przestarzałe: [[state]] PiHole [[instance]]"
+        },
+        "hint": {
+          "en": "Offer the possibility to stop, or start the filter for the selected instance.",
+          "de": "Bietet die Möglichkeit den Filter für die gewählte Instanz zu stoppen, oder zu starten.",
+          "nl": "Biedt de optie om het filter voor de geselecteerde instantie te stoppen of te starten.",
+          "fr": "Offre la possibilité d'arrêter ou de démarrer le filtre pour l'instance sélectionnée.",
+          "it": "Offre la possibilità di fermare o avviare il filtro per l'istanza selezionata.",
+          "sv": "Erbjuder möjlighet att stoppa eller starta filtret för det valda instansen.",
+          "no": "Tilbyr muligheten til å stoppe eller starte filteret for den valgte instansen.",
+          "es": "Ofrece la posibilidad de detener o iniciar el filtro para la instancia seleccionada.",
+          "da": "Tilbyder muligheden for at stoppe eller starte filteret for den valgte instans.",
+          "ru": "Предлагает возможность остановить или начать фильтрацию для выбранного экземпляра.",
+          "pl": "Oferuje możliwość zatrzymania lub uruchomienia filtra dla wybranej instancji."
+        },
+        "deprecated": true,
+        "args": [
+          {
+            "name": "state",
+            "type": "dropdown",
+            "placeholder": {
+              "en": "Activate",
+              "de": "Aktivieren",
+              "nl": "Activeer",
+              "fr": "Activer",
+              "it": "Attiva",
+              "sv": "Aktivera",
+              "no": "Aktiver",
+              "es": "Activar",
+              "da": "Aktivere",
+              "ru": "Активировать",
+              "pl": "Aktywować"
+            },
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "Activate",
+                  "de": "Aktivieren",
+                  "nl": "Activeer",
+                  "fr": "Activer",
+                  "it": "Attiva",
+                  "sv": "Aktivera",
+                  "no": "Aktiver",
+                  "es": "Activar",
+                  "da": "Aktivere",
+                  "ru": "Активировать",
+                  "pl": "Aktywować"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Deactivate",
+                  "de": "Deaktivieren",
+                  "nl": "Deactiveer",
+                  "fr": "Désactiver",
+                  "it": "Disattiva",
+                  "sv": "Inaktivera",
+                  "no": "Deaktiver",
+                  "es": "Desactivar",
+                  "da": "Deaktiver",
+                  "ru": "Деактивировать",
+                  "pl": "Dezaktywować"
+                }
+              }
+            ]
+          },
+          {
+            "name": "instance",
+            "type": "dropdown",
+            "placeholder": {
+              "en": "Instance 1",
+              "de": "Instanz 1",
+              "nl": "Instantie 1",
+              "fr": "Instance 1",
+              "it": "Istanza 1",
+              "sv": "Instans 1",
+              "no": "Instans 1",
+              "es": "Instancia 1",
+              "da": "Instans 1",
+              "ru": "Экземпляр 1",
+              "pl": "Instancja 1"
+            },
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "Instance 1",
+                  "de": "Instanz 1",
+                  "nl": "Instantie 1",
+                  "fr": "Instance 1",
+                  "it": "Istanza 1",
+                  "sv": "Instans 1",
+                  "no": "Instans 1",
+                  "es": "Instancia 1",
+                  "da": "Instans 1",
+                  "ru": "Экземпляр 1",
+                  "pl": "Instancja 1"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Instance 2",
+                  "de": "Instanz 2",
+                  "nl": "Instantie 2",
+                  "fr": "Instance 2",
+                  "it": "Istanza 2",
+                  "sv": "Instans 2",
+                  "no": "Instans 2",
+                  "es": "Instancia 2",
+                  "da": "Instans 2",
+                  "ru": "Экземпляр 2",
+                  "pl": "Instancja "
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "Instance 3",
+                  "de": "Instanz 3",
+                  "nl": "Instantie 3",
+                  "fr": "Instance 3",
+                  "it": "Istanza 3",
+                  "sv": "Instans 3",
+                  "no": "Instans 3",
+                  "es": "Instancia 3",
+                  "da": "Instans 3",
+                  "ru": "Экземпляр 3",
+                  "pl": "Instancja 3"
+                }
+              },
+              {
+                "id": "20",
+                "label": {
+                  "en": "Instance 4",
+                  "de": "Instanz 4",
+                  "nl": "Instantie 4",
+                  "fr": "Instance 4",
+                  "it": "Istanza 4",
+                  "sv": "Instans 4",
+                  "no": "Instans 4",
+                  "es": "Instancia 4",
+                  "da": "Instans 4",
+                  "ru": "Экземпляр 4",
+                  "pl": "Instancja 4"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "triggers": [
+      {
+        "id": "measure_ads_blocked_today_changed",
+        "title": {
+          "en": "Blocked advertisements / day updated",
+          "de": "Geblockte Werbeanzeigen / Tag aktualisiert",
+          "nl": "Geblokkeerde advertenties / dag bijgewerkt",
+          "fr": "Publicités bloquées / jour mises à jour",
+          "it": "Pubblicità bloccate / giorno aggiornate",
+          "sv": "Blockerade annonser / dag uppdaterad",
+          "no": "Blokkerte annonser / dag oppdatert",
+          "es": "Anuncios bloqueados / día actualizado",
+          "da": "Blokerede annoncer / dag opdateret",
+          "ru": "Заблокированные объявления / день обновлены",
+          "pl": "Zablokowane reklamy / dzień zaktualizowany"
+        },
+        "tokens": [
+          {
+            "name": "measure_ads_blocked_today",
+            "type": "number",
+            "title": {
+              "en": "Blocked advertisements / day",
+              "de": "Geblockte Werbeanzeigen / Tag",
+              "nl": "Geblokkeerde advertenties / dag",
+              "fr": "Publicités bloquées / jour",
+              "it": "Pubblicità bloccate / giorno",
+              "sv": "Blockerade annonser / dag",
+              "no": "Blokkerte annonser / dag",
+              "es": "Anuncios bloqueados / día",
+              "da": "Blokerede annoncer / dag",
+              "ru": "Заблокированные объявления / день",
+              "pl": "Zablokowane reklamy / dzień"
+            },
+            "example": {
+              "en": "1234"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pihole"
+          }
+        ]
+      },
+      {
+        "id": "measure_dns_queries_today_changed",
+        "title": {
+          "en": "Blocked DNS requests / day updated",
+          "de": "Geblockte DNS Anfragen / Tag aktualisiert",
+          "nl": "Geblokkeerde DNS-aanvragen / dag bijgewerkt",
+          "fr": "Requêtes DNS bloquées / jour mises à jour",
+          "it": "Richieste DNS bloccate / giorno aggiornate",
+          "sv": "Blockerade DNS-förfrågningar / dag uppdaterade",
+          "no": "Blokkerte DNS-forespørsler / dag oppdatert",
+          "es": "Solicitudes de DNS bloqueadas / día actualizadas",
+          "da": "Blokerede DNS-forespørgsler / dag opdateret",
+          "ru": "Заблокированные DNS-запросы / день обновлены",
+          "pl": "Zablokowane zapytania DNS / dzień zaktualizowany"
+        },
+        "tokens": [
+          {
+            "name": "measure_dns_queries_today",
+            "type": "number",
+            "title": {
+              "en": "Blocked DNS requests / day updated",
+              "de": "Geblockte DNS Anfragen / Tag aktualisiert",
+              "nl": "Geblokkeerde DNS-verzoeken / dag bijgewerkt",
+              "fr": "Requêtes DNS bloquées / jour mises à jour",
+              "it": "Richieste DNS bloccate / giorno aggiornate",
+              "sv": "Blockerade DNS-förfrågningar / dag uppdaterade",
+              "no": "Blokkerte DNS-forespørsler / dag oppdatert",
+              "es": "Solicitudes de DNS bloqueadas / día actualizadas",
+              "da": "Blokerede DNS-forespørgsler / dag opdateret",
+              "ru": "Заблокированные DNS-запросы / день обновлены",
+              "pl": "Zablokowane zapytania DNS / dzień zaktualizowany"
+            },
+            "example": {
+              "en": "1234"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pihole"
+          }
+        ]
+      },
+      {
+        "id": "measure_ads_blocked_today_percent_changed",
+        "title": {
+          "en": "Blocked advertisements %) / day updated",
+          "de": "Geblockte Werbeanzeigen (%) / Tag aktualisiert",
+          "nl": "Geblokkeerde advertenties %) / dag bijgewerkt",
+          "fr": "Publicités bloquées %) / jour mises à jour",
+          "it": "Pubblicità bloccate %) / giorno aggiornate",
+          "sv": "Blockerade annonser %) / dag uppdaterad",
+          "no": "Blokkerte annonser %) / dag oppdatert",
+          "es": "Anuncios bloqueados %) / día actualizado",
+          "da": "Blokerede annoncer %) / dag opdateret",
+          "ru": "Заблокированные объявления %) / день обновлены",
+          "pl": "Zablokowane reklamy %) / dzień zaktualizowany"
+        },
+        "tokens": [
+          {
+            "name": "measure_ads_blocked_today_percent",
+            "type": "number",
+            "title": {
+              "en": "Blocked advertisements (%) / day",
+              "de": "Geblockte Werbeanzeigen (%) / Tag",
+              "nl": "Geblokkeerde advertenties (%) / dag",
+              "fr": "Publicités bloquées (%) / jour",
+              "it": "Pubblicità bloccate (%) / giorno",
+              "sv": "Blockerade annonser (%) / dag",
+              "no": "Blokkerte annonser (%) / dag",
+              "es": "Anuncios bloqueados (%) / día",
+              "da": "Blokerede annoncer (%) / dag",
+              "ru": "Заблокированные объявления (%) / день",
+              "pl": "Zablokowane reklamy (%) / dzień"
+            },
+            "example": {
+              "en": "2.2%"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pihole"
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Pi-Hole Instances",
+        "da": "Pi-Hole Instanser",
+        "de": "Pi-Hole Instanzen",
+        "es": "Instancias de Pi-Hole",
+        "fr": "Instances Pi-Hole",
+        "nl": "Pi-Hole-instanties",
+        "no": "Pi-Hole-instanser",
+        "pl": "Instancje Pi-Hole",
+        "ru": "Экземпляры Pi-Hole",
+        "sv": "Pi-Hole-instanser"
+      },
+      "deprecated": true,
+      "class": "button",
+      "capabilities": [
+        "onoff"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/pi-hole/assets/images/small.png",
+        "large": "/drivers/pi-hole/assets/images/large.png",
+        "xlarge": "/drivers/pi-hole/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "pi-hole"
+    },
+    {
+      "id": "pihole",
+      "name": {
+        "en": "Add PiHole",
+        "da": "Tilføj PiHole",
+        "de": "PiHole hinzufügen",
+        "es": "Agregar PiHole",
+        "fr": "Ajouter PiHole",
+        "nl": "PiHole toevoegen",
+        "no": "Legg til PiHole",
+        "pl": "Dodaj PiHole",
+        "ru": "Добавить PiHole",
+        "sv": "Lägg till PiHole"
+      },
+      "class": "socket",
+      "capabilities": [
+        "data_refresh",
+        "alarm_filter_state",
+        "last_sync",
+        "measure_dns_queries_today",
+        "measure_ads_blocked_today",
+        "gravity_last_update",
+        "measure_ads_blocked_today_percent"
+      ],
+      "images": {
+        "small": "/drivers/pihole/assets/images/small.png",
+        "large": "/drivers/pihole/assets/images/large.png",
+        "xlarge": "/drivers/pihole/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "welcome",
+          "next": "manual_input"
+        },
+        {
+          "id": "manual_input",
+          "prev": "welcome",
+          "next": "list_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Settings",
+            "de": "Geräte Einstellungen"
+          },
+          "children": [
+            {
+              "id": "url",
+              "type": "text",
+              "label": {
+                "en": "Device URL",
+                "de": "Geräte URL"
+              },
+              "value": "",
+              "hint": {
+                "en": "Bitte FQDN oder IP Adresse mit vorgestelltem HTTP(s) nutzen!",
+                "de": "Bitte FQDN oder IP Adresse mit vorgestelltem HTTP(s) nutzen!"
+              }
+            },
+            {
+              "id": "port",
+              "type": "text",
+              "label": {
+                "en": "Port",
+                "de": "Port"
+              },
+              "value": "",
+              "hint": {
+                "en": "Der Port MUSS angegeben werden, Standard ist immer 80!",
+                "de": "Der Port MUSS angegeben werden, Standard ist immer 80!"
+              }
+            },
+            {
+              "id": "api",
+              "type": "text",
+              "label": {
+                "en": "API",
+                "de": "API"
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "id": "interval",
+          "type": "number",
+          "label": {
+            "en": "Poll interval",
+            "de": "Aktualisierungs-Intervall"
+          },
+          "hint": {
+            "en": "Choose a refresh interval. Choose an interval of up to 10 minutes to enable live updates from the device. For larger intervals, live updates are resent with the next action or interval for another 10 minutes.",
+            "de": "Wähle ein Aktualisierungs-Intervall. Wähle eine Intervall bis zu 10 min., um Live-Updates vom Gerät zu ermöglichen. Bei größeren Intervallen werden Live-Updates mit der nächsten Aktion oder Intervall für weitere 10 min. erneut gesendet."
+          },
+          "min": 1,
+          "value": 1
+        },
+        {
+          "id": "interval_unit",
+          "type": "dropdown",
+          "label": {
+            "en": "Interval unit",
+            "de": "Intervall-Einheit"
+          },
+          "value": "min",
+          "values": [
+            {
+              "id": "min",
+              "label": {
+                "en": "Minutes",
+                "de": "Minuten"
+              }
+            },
+            {
+              "id": "sec",
+              "label": {
+                "en": "Seconds",
+                "de": "Sekunden"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "alarm_filter_state": {
+      "type": "boolean",
+      "title": {
+        "en": "Filter deactivated?",
+        "de": "Filter deaktiviert?",
+        "nl": "Filter uitgeschakeld?",
+        "fr": "Filtre désactivé?",
+        "it": "Filtro disattivato?",
+        "sv": "Filter inaktiverat?",
+        "no": "Filter deaktivert?",
+        "es": "Filtro desactivado?",
+        "da": "Filter deaktiveret?",
+        "ru": "Фильтр отключен?",
+        "pl": "Filtr wyłączony?"
+      },
+      "titleTrue": {
+        "en": "Filter deactivated?",
+        "de": "Filter deaktiviert?",
+        "nl": "Filter uitgeschakeld?",
+        "fr": "Filtre désactivé?",
+        "it": "Filtro disattivato?",
+        "sv": "Filter inaktiverat?",
+        "no": "Filter deaktivert?",
+        "es": "Filtro desactivado?",
+        "da": "Filter deaktiveret?",
+        "ru": "Фильтр отключен?",
+        "pl": "Filtr wyłączony?"
+      },
+      "titleFalse": {
+        "en": "Your filter is DEACTIVATED",
+        "de": "Ihr Filter ist DEAKTIVIERT",
+        "nl": "Uw filter is UITGESCHAKELD",
+        "fr": "Votre filtre est DÉSACTIVÉ",
+        "it": "Il tuo filtro è DISATTIVATO",
+        "sv": "Ditt filter är INAKTIVERAT",
+        "no": "Filteret ditt er DEAKTIVERT",
+        "es": "Tu filtro está DESACTIVADO",
+        "da": "Dit filter er DEAKTIVERET",
+        "ru": "Ваш фильтр ДЕАКТИВИРОВАН",
+        "pl": "Twój filtr jest WYŁĄCZONY"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/State.svg"
+    },
+    "data_refresh": {
+      "type": "boolean",
+      "title": {
+        "en": "Update",
+        "de": "Aktualisieren",
+        "nl": "Bijwerken",
+        "fr": "Mettre à jour",
+        "it": "Aggiorna",
+        "sv": "Uppdatera",
+        "no": "Oppdater",
+        "es": "Actualizar",
+        "da": "Opdater",
+        "ru": "Обновить",
+        "pl": "Zaktualizować"
+      },
+      "insights": false,
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "./assets/capability_icons/Refresh.svg"
+    },
+    "gravity_last_update": {
+      "type": "string",
+      "title": {
+        "en": "Last Gravity update",
+        "de": "Letztes Gravity-Update",
+        "nl": "Laatste Gravity-update",
+        "fr": "Dernière mise à jour de Gravity",
+        "it": "Ultimo aggiornamento Gravity",
+        "sv": "Senaste Gravity-uppdateringen",
+        "no": "Siste Gravity-oppdatering",
+        "es": "Última actualización de Gravity",
+        "da": "Seneste Gravity-opdatering",
+        "ru": "Последнее обновление Gravity",
+        "pl": "Ostatnia aktualizacja Gravity"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/Gravity.svg"
+    },
+    "last_sync": {
+      "type": "string",
+      "title": {
+        "en": "Last update",
+        "de": "Letzte Aktualisierung",
+        "nl": "Laatste update",
+        "fr": "Dernière mise à jour",
+        "it": "Ultimo aggiornamento",
+        "sv": "Senaste uppdateringen",
+        "no": "Siste oppdatering",
+        "es": "Última actualización",
+        "da": "Seneste opdatering",
+        "ru": "Последнее обновление",
+        "pl": "Ostatnia aktualizacja"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/LastSync.svg"
+    },
+    "measure_ads_blocked_today": {
+      "type": "number",
+      "title": {
+        "en": "Advertisements blocked / day",
+        "de": "Geblockte Werbeanzeigen / Tag",
+        "nl": "Advertenties geblokkeerd / dag",
+        "fr": "Publicités bloquées / jour",
+        "it": "Pubblicità bloccate / giorno",
+        "sv": "Annonser blockerade / dag",
+        "no": "Annonser blokkert / dag",
+        "es": "Anuncios bloqueados / día",
+        "da": "Annoncer blokeret / dag",
+        "ru": "Реклама заблокирована / день",
+        "pl": "Reklamy zablokowane / dzień"
+      },
+      "insights": true,
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/ADDs.svg"
+    },
+    "measure_ads_blocked_today_percent": {
+      "type": "number",
+      "title": {
+        "en": "Advertisements blocked / day",
+        "de": "Geblockte Werbeanzeigen / Tag",
+        "nl": "Advertenties geblokkeerd / dag",
+        "fr": "Publicités bloquées / jour",
+        "it": "Pubblicità bloccate  / giorno",
+        "sv": "Annonser blockerade  / dag",
+        "no": "Annonser blokkert / dag",
+        "es": "Anuncios bloqueados / día",
+        "da": "Annoncer blokeret / dag",
+        "ru": "Реклама заблокирована / день",
+        "pl": "Reklamy zablokowane / dzień"
+      },
+      "units": {
+        "en": "%"
+      },
+      "insights": true,
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/ADDs.svg"
+    },
+    "measure_dns_queries_today": {
+      "type": "number",
+      "title": {
+        "en": "DNS requests / day",
+        "de": "DNS-Anfragen / Tag",
+        "nl": "DNS-verzoeken / dag",
+        "fr": "Requêtes DNS / jour",
+        "it": "Richieste DNS / giorno",
+        "sv": "DNS-förfrågningar / dag",
+        "no": "DNS-forespørsler / dag",
+        "es": "Solicitudes de DNS / día",
+        "da": "DNS-forespørgsler / dag",
+        "ru": "DNS-запросы / день",
+        "pl": "Zapytania DNS / dzień"
+      },
+      "insights": true,
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/DNS.svg"
+    }
+  }
+}

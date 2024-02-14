@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Die '/homey.js'-Datei muss in Ihrer Einstellungsansicht eingebunden sein, um zu funktionieren -->
+    <script
+        type="text/javascript"
+        src="/homey.js"
+        data-origin="settings"
+    ></script>
+
+    <style>
+        /* Allgemeine Stile für das Layout der Homey-App */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .full-width-button {
+           width: 100%;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th,
+        table td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+
+        /* Stil für den "Speichern"-Button */
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            margin: 0 auto;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #success-message {
+        color: green;
+        font-weight: bold;
+        margin-top: 20px;
+        text-align: center;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        width: 80%;
+        max-width: 400px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+       
+    </style>
+    
+    <script>
+
+
+</script>
+</head>
+<body>
+  <div class="container">
+    
+      <table>
+        <tr>
+          <th colspan="2" data-i18n="settings.information_about_pihole"></th>
+      </tr>
+      </table>
+
+
+    <script type="text/javascript">
+      // a method named 'onHomeyReady' must be present in your code
+      function onHomeyReady(Homey) {
+        // Tell Homey we're ready to be displayed
+        Homey.ready();
+    }
+
+</script>
+  </body>
+</html>

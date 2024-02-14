@@ -1,0 +1,56 @@
+{
+  "settings": {
+    "information_about_pihole": "IMPORTANT INFORMATION:<br><br>The application has undergone a major update. The settings are no longer necessary.<br><br>Existing devices will continue to run for a while. The old driver will be removed at some point.<br><br>In order to use the new functions, the new driver MUST be used."
+  },
+  "warnings": {
+  "deprecated1": "ATTENTION: Devices / flows must be reconfigured. Old driver will be deleted in the next version!",
+  "deprecated2": "NOTE: The new functions are ONLY available with the new driver, i.e. after the new configuration!"
+  },
+  "devices": {
+    "unavailable": "The device could not be reached on the network."
+  },
+  "capabilities": {
+    "gravity_days": "Day(s)",
+    "gravity_hours": "Hour(s)",
+    "gravity_minutes": "Minute(s)"
+  },
+  "welcome": {
+    "titles": {
+      "header": "Set up PiHole device",
+      "page": "Setting up is very simple ..."
+    },
+    "step_by_step": {
+      "intro": "Click on 'Continue' to display a settings page.<br><br>The following settings must be made on this page:",
+      "steps": "<li>IP Adresse:<b>z.B. 192.168.10.1</b></li><li>Port Key: <b>80</b></li><li>API Key: <b>0imfnc8mVLWwsAawjYr4Rx-Af50DDqtl</b></li>",
+      "outro": "<b>IMPORTANT:</b><br>The port specification is<b>ALWAYS</b> is required, even if the PiHole is listening on port 80, which would be standard.<br><br>If a DNS service is in operation, the PiHole can also be addressed with its DNS name.<br><br><b>Information:</b><br>When flows are executed, it may be that nothing is visible on the PiHole.<br><br>This is not an error in the app, but a display error on the PiHole side.<br><br>If this is the case, the PiHole display can be reloaded."
+    },
+    "buttons": {
+      "continue": "Continue"
+    }
+  },
+  "manual_input": {
+    "title": "Add PiHole instance",
+    "intro": "<i>Please enter the requested data for adding the device.<br><br><br><b>IMPORTANT:</b><br>If a DNS service is in operation, the PiHole can also be addressed with its DNS name.</i>",
+    "inputs": {
+      "name": {
+        "label": "Name <b>(optional)</b>:",
+        "placeholder": "Name of the instance"
+      },
+      "url": {
+        "label": "IP address / FQDN with prefixed http(s)://",
+        "placeholder": "Please use FQDN or IP address with prefixed HTTP(s)!"
+      },
+      "port": {
+        "label": "Port:",
+        "placeholder": "80"
+      },
+      "api": {
+        "label": "API:",
+        "placeholder": "Please enter the API key of the Pihole here"
+      }
+    },
+    "buttons": {
+      "next": "Add device"
+    }
+  }
+}

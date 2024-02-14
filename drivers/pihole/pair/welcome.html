@@ -1,0 +1,74 @@
+<main class="hy-tmpl-welcome">
+  <div class="hy-tmpl-welcome-row">
+    <h1 data-i18n="welcome.titles.page"></h1>
+    <p data-i18n="welcome.intro"></p>
+  </div>
+  <div class="hy-tmpl-welcome-row">
+    <p data-i18n="welcome.step_by_step.intro"></p>
+    <ul data-i18n="welcome.step_by_step.steps"></ul>
+  </div>
+  <div class="hy-tmpl-welcome-row">
+    <p data-i18n="welcome.step_by_step.outro"></p>
+  </div>
+  <div class="homey-form-group">
+    <button class="homey-button-primary-full" type="button"
+      onclick="Homey.nextView()" data-i18n="welcome.buttons.continue"></button>
+  </div>
+</main>
+
+<script type="text/javascript">
+  class PiHoleInstallInstructions {
+    constructor() {
+      Homey.setTitle(Homey.__("welcome.titles.header"));
+    
+
+    }
+
+    onClickContinue(e) {
+      Homey.getViewStoreValue('welcome', 'previous_view', (err, viewId) => {
+
+        if (err) {
+          Homey.alert(Homey.__("errors.previous_view"));
+        }
+        viewId = 'manual_input'
+        Homey.showView(viewId);
+      });
+    }
+
+  }
+
+  const PiHoleInstallInstructions = new PiHoleInstallInstructions();
+</script>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Workaround for views without buttons */
+  #hy-views>.hy-view {
+    overflow: initial !important;
+  }
+
+  .hy-tmpl-welcome {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hy-tmpl-welcome ul li {
+    font-size: 13px;
+  }
+
+  .hy-tmpl-welcome-row {
+    margin-bottom: 1em;
+  }
+
+</style>

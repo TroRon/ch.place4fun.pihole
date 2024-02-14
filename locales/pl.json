@@ -1,0 +1,56 @@
+{
+  "settings": {
+    "information_about_pihole": "WAŻNE INFORMACJE:<br><br>Aplikacja przeszła dużą aktualizację. Ustawienia nie są już potrzebne.<br><br>Istniejące urządzenia będą nadal działać przez pewien czas. Stary sterownik zostanie w pewnym momencie usunięty.<br><br>Aby móc korzystać z nowych funkcji, MUSI być używany nowy sterownik."
+  },
+  "devices": {
+    "unavailable": "Urządzenie nie może być osiągnięte w sieci."
+  },
+  "warnings": {
+    "deprecated1": "UWAGA: Urządzenia / przepływy muszą zostać ponownie skonfigurowane. Stary sterownik zostanie usunięty w następnej wersji!",
+    "deprecated2": "UWAGA: Nowe funkcje są dostępne TYLKO z nowym sterownikiem, tj. po nowej konfiguracji!"
+  },
+  "capabilities": {
+    "gravity_days": "Dzień (dni)",
+    "gravity_hours": "Godziny",
+    "gravity_minutes": "Minuty"
+  },
+  "welcome": {
+    "titles": {
+      "header": "Konfiguracja urządzenia PiHole",
+      "page": "Konfiguracja jest bardzo prosta ..."
+    },
+    "step_by_step": {
+      "intro": "Klikając na 'Kontynuuj' zostanie wyświetlona strona ustawień.<br><br>Na tej stronie należy wprowadzić następujące ustawienia:",
+      "steps": "<li>Adres IP:<b>z.B. 192.168.10.1</b></li><li>Port Key: <b>80</b></li><li>API Key: <b>0imfnc8mVLWwsAawjYr4Rx-Af50DDqtl</b></li>",
+      "outro": "<b>WAŻNE:</b><br>Specyfikacja portu to <b>ZAWSZE</b> jest wymagane, nawet jeśli PiHole nasłuchuje na porcie 80, co byłoby standardem.<br><br>Jeśli działa usługa DNS, PiHole można również zaadresować za pomocą nazwy DNS.<br><br><b>Informacje:</b><br>Gdy przepływy są wykonywane, może się okazać, że nic nie jest widoczne w PiHole.<br><br>Nie jest to błąd w aplikacji, ale błąd wyświetlania po stronie PiHole.<br><br>W takim przypadku można ponownie załadować wyświetlacz PiHole."
+    },
+    "buttons": {
+      "continue": "Dalej"
+    }
+  },
+  "manual_input": {
+    "title": "Dodaj instancję PiHole",
+    "intro": "<i>Wprowadź wymagane dane w celu dodania urządzenia.<br><br><br><b>WICHTIG:</b><br>Jeśli działa usługa DNS, PiHole można również zaadresować za pomocą nazwy DNS.</i>",
+    "inputs": {
+      "name": {
+        "label": "Nazwa <b>(opcjonalny)</b>:",
+        "placeholder": "Nazwa instancji"
+      },
+      "url": {
+        "label": "IAdres P / FQDN z prefiksem http(s)://",
+        "placeholder": "Należy użyć FQDN lub adresu IP z prefiksem HTTP(s)!"
+      },
+      "port": {
+        "label": "Port:",
+        "placeholder": "80"
+      },
+      "api": {
+        "label": "API:",
+        "placeholder": "Wprowadź tutaj klucz API Pihole"
+      }
+    },
+    "buttons": {
+      "next": "Dodaj urządzenie"
+    }
+  }
+}
