@@ -72,10 +72,11 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/TroRon/homey.pihole-control/issues"
+    "url": "https://github.com/TroRon/ch.place4fun.pihole/issues"
   },
   "support": "mailto:webmaster@syen.ch",
-  "homepage": "https://github.com/TroRon/homey.pihole-control/wiki",
+  "homepage": "https://github.com/TroRon/ch.place4fun.pihole/wiki",
+  "source": "https://github.com/TroRon/ch.place4fun.pihole",
   "flow": {
     "actions": [
       {
@@ -1525,7 +1526,7 @@
         "ru": "Добавить PiHole",
         "sv": "Lägg till PiHole"
       },
-      "class": "socket",
+      "class": "sensor",
       "capabilities": [
         "data_refresh",
         "alarm_filter_state",
@@ -1593,45 +1594,6 @@
                 "de": "API"
               },
               "value": ""
-            }
-          ]
-        },
-        {
-          "id": "interval",
-          "type": "number",
-          "label": {
-            "en": "Poll interval",
-            "de": "Aktualisierungs-Intervall"
-          },
-          "hint": {
-            "en": "Choose a refresh interval. Choose an interval of up to 10 minutes to enable live updates from the device. For larger intervals, live updates are resent with the next action or interval for another 10 minutes.",
-            "de": "Wähle ein Aktualisierungs-Intervall. Wähle eine Intervall bis zu 10 min., um Live-Updates vom Gerät zu ermöglichen. Bei größeren Intervallen werden Live-Updates mit der nächsten Aktion oder Intervall für weitere 10 min. erneut gesendet."
-          },
-          "min": 1,
-          "value": 1
-        },
-        {
-          "id": "interval_unit",
-          "type": "dropdown",
-          "label": {
-            "en": "Interval unit",
-            "de": "Intervall-Einheit"
-          },
-          "value": "min",
-          "values": [
-            {
-              "id": "min",
-              "label": {
-                "en": "Minutes",
-                "de": "Minuten"
-              }
-            },
-            {
-              "id": "sec",
-              "label": {
-                "en": "Seconds",
-                "de": "Sekunden"
-              }
             }
           ]
         }

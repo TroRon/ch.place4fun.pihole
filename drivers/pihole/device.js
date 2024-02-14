@@ -49,9 +49,9 @@ class PiHoleDevice extends Homey.Device {
       },CAPABILITY_DEBOUNCE);
 
       // Regelmässig ausgeführte Funktion
-          const regularTask = () => {
-                this._updateDeviceData(status_url);
-            };
+          const regularTask = () => {           
+            this._updateDeviceData(status_url);
+           };
 
       //Startet den Abgleich
       this.DeviceUpdateTask = setInterval(regularTask, 60000);
@@ -190,79 +190,78 @@ async _makeAPICall(url) {
     }
 }
 
+
 async _updateDeviceData(url) {
-    fetch(url).then(response => response.json())
-    .then(data => {
+  fetch(url).then(response => response.json())
+  .then(data => {
 
-      //Saubere Formatierung des Status   
-        let PiHoleState = false
+    //Saubere Formatierung des Status   
+      let PiHoleState = false
 
-        if(data.status === 'enabled') {
-          PiHoleState = false
-        } else {
-          PiHoleState = true
-        }
-         //Datum sauber formatieren
-        let syncDate = new Date();
-        let day = syncDate.toLocaleDateString('de-DE', { 
-          day: '2-digit', 
-          month: '2-digit', 
-          year: '2-digit', 
-          timeZone: 'Europe/Berlin' 
-        });
-        let time = syncDate.toLocaleTimeString('de-DE', { 
-          hour: '2-digit', 
-          minute: '2-digit',
-          timeZone: 'Europe/Berlin' 
-        });
+      if(data.status === 'enabled') {
+        PiHoleState = false
+      } else {
+        PiHoleState = true
+      }
+       //Datum sauber formatieren
+      let syncDate = new Date();
+      let day = syncDate.toLocaleDateString('de-DE', { 
+        day: '2-digit', 
+        month: '2-digit', 
+        year: '2-digit', 
+        timeZone: this.homey.clock.getTimezone() 
+      });
+      let time = syncDate.toLocaleTimeString('de-DE', { 
+        hour: '2-digit', 
+        minute: '2-digit',
+        timeZone: this.homey.clock.getTimezone()
+      });
 
-        // Datum und Uhrzeit zusammenführen
-        let formattedSyncDate = `${time} | ${day}`;
+      // Datum und Uhrzeit zusammenführen
+      let formattedSyncDate = `${time} | ${day}`;
 
-        //DNS Anfragen pro Tag
-        let dns_queries_today = data.dns_queries_today;
-        let formatted_dns_queries_today = dns_queries_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'");
-        
-        //Geblockte ADDs pro Tag
-        let blocked_adds_today = data.ads_blocked_today;
-        let formatted_blocked_adds_today = blocked_adds_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'");
-
-        //Geblockte ADD pro Tag in %
-        let blocked_adds_today_percent = data.ads_percentage_today;
-        let formated_blocked_adds_today_percent = blocked_adds_today_percent.toFixed(1) + " %"
-        
-        //Letztes Update der Gravity Datenbank
-        let gravity_update_days = data.gravity_last_updated.relative.days;
-        let gravity_update_hours = data.gravity_last_updated.relative.hours;
-        let gravity_update_minutes = data.gravity_last_updated.relative.minutes;
-
-        //let gravity_update_minutes = data.gravity_last_updated.relative.minutes;
-        let gravity_update_string = gravity_update_days + ' Tg. ' + gravity_update_hours +' Std. ' + gravity_update_minutes + ' Min.';        
-        
-        // Loggen der Werte zwecks Diagnose
-        this.log('');
-        this.log('PiHole Control: *******************************************************');
-        this.log('PiHole Control: Task Geräte Abgleich: GESTARTET');
-        this.log('PiHole Control: Status Filter:' , data.status);
-        this.log('PiHole Control: DNS Querys pro Tag:' , formatted_dns_queries_today);
-        this.log('PiHole Control: Werbeanzeigen geblockt:' , formatted_blocked_adds_today);
-        this.log('PiHole Control: Werbeanzeigen geblockt in Prozent:' , formated_blocked_adds_today_percent);
-        this.log('PiHole Control: Letzter Gravity Update:' ,gravity_update_string);
-        this.log('PiHole Control: Letzter Sync' , formattedSyncDate);
-        this.log('PiHole Control: Task Geräte Abgleich: BEENDET');
-        this.log('PiHole Control: *******************************************************');
-        this.log('');
-
-        // Jetzt können Sie Capabilities für dieses Gerät setzen
-        this.setCapabilityValue('alarm_filter_state', PiHoleState);
-        this.setCapabilityValue('measure_dns_queries_today', dns_queries_today);
-        this.setCapabilityValue('measure_ads_blocked_today', blocked_adds_today);
-        this.setCapabilityValue('last_sync', formattedSyncDate);
-        this.setCapabilityValue('measure_ads_blocked_today_percent', blocked_adds_today_percent);
-        this.setCapabilityValue('gravity_last_update', gravity_update_string);
+      //DNS Anfragen pro Tag
+      let dns_queries_today = data.dns_queries_today;
+      let formatted_dns_queries_today = dns_queries_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'");
       
+      //Geblockte ADDs pro Tag
+      let blocked_adds_today = data.ads_blocked_today;
+      let formatted_blocked_adds_today = blocked_adds_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'");
+
+      //Geblockte ADD pro Tag in %
+      let blocked_adds_today_percent = data.ads_percentage_today;
+      let formated_blocked_adds_today_percent = blocked_adds_today_percent.toFixed(1) + " %"
+      
+      //Letztes Update der Gravity Datenbank
+      let gravity_update_days = data.gravity_last_updated.relative.days;
+      let gravity_update_hours = data.gravity_last_updated.relative.hours;
+      let gravity_update_minutes = data.gravity_last_updated.relative.minutes;
+
+      //let gravity_update_minutes = data.gravity_last_updated.relative.minutes;
+      let gravity_update_string = gravity_update_days + ' Tg. ' + gravity_update_hours +' Std. ' + gravity_update_minutes + ' Min.';        
+      
+      // Loggen der Werte zwecks Diagnose
+      this.log('');
+      this.log('PiHole Control: *******************************************************');
+      this.log('PiHole Control: Task Geräte Abgleich: GESTARTET');
+      this.log('PiHole Control: Status Filter:' , data.status);
+      this.log('PiHole Control: DNS Querys pro Tag:' , formatted_dns_queries_today);
+      this.log('PiHole Control: Werbeanzeigen geblockt:' , formatted_blocked_adds_today);
+      this.log('PiHole Control: Werbeanzeigen geblockt in Prozent:' , formated_blocked_adds_today_percent);
+      this.log('PiHole Control: Letzter Gravity Update:' ,gravity_update_string);
+      this.log('PiHole Control: Letzter Sync' , formattedSyncDate);
+      this.log('PiHole Control: Task Geräte Abgleich: BEENDET');
+      this.log('PiHole Control: *******************************************************');
+      this.log('');
+
+      // Jetzt können Sie Capabilities für dieses Gerät setzen
+      this.setCapabilityValue('alarm_filter_state', PiHoleState);
+      this.setCapabilityValue('measure_dns_queries_today', dns_queries_today);
+      this.setCapabilityValue('measure_ads_blocked_today', blocked_adds_today);
+      this.setCapabilityValue('last_sync', formattedSyncDate);
+      this.setCapabilityValue('measure_ads_blocked_today_percent', blocked_adds_today_percent);
+      this.setCapabilityValue('gravity_last_update', gravity_update_string);
 });
 } 
 }
-
 module.exports = PiHoleDevice;

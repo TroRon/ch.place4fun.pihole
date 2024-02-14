@@ -12,7 +12,7 @@
      "ru": "Добавить PiHole",
      "sv": "Lägg till PiHole"
     },
-  "class": "socket",
+  "class": "sensor",
   "capabilities": [
     "data_refresh",
     "alarm_filter_state",

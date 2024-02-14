@@ -74,5 +74,6 @@
     "url": "https://github.com/TroRon/ch.place4fun.pihole/issues"
   },
   "support": "mailto:webmaster@syen.ch",
-  "homepage": "https://github.com/TroRon/ch.place4fun.pihole/wiki"
+  "homepage": "https://github.com/TroRon/ch.place4fun.pihole/wiki",
+  "source": "https://github.com/TroRon/ch.place4fun.pihole"
 }
