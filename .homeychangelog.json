@@ -219,5 +219,18 @@
   "da": "Fejlrettelser / Optimeringer / Ny driver (Nye funktioner: Evner / Insights)", 
   "ru": "Исправление ошибок / Оптимизации / Новый драйвер (Новые функции: Возможности / Insights)", 
   "pl": "Naprawy błędów / Optymalizacje / Nowy sterownik (Nowe funkcje: Możliwości / Insights)"
+},
+"1.3.1": {
+  "de": "Bugfixes / Optimierungen / Neuer Treiber (Neue Funktionen: Capabilities / Insights)", 
+  "en": "Bug fixes / Optimizations / New Driver (New features: Capabilities / Insights)", 
+  "nl": "Bugfixes / Optimalisaties / Nieuwe driver (Nieuwe functies: Capaciteiten / Insights)", 
+  "fr": "Correctifs / Optimisations / Nouveau pilote (Nouvelles fonctionnalités : Capacités / Insights)", 
+  "it": "Bug fix / Ottimizzazioni / Nuovo driver (Nuove funzionalità: Capabilities / Insights)",
+  "sv": "Buggrättningar / Optimeringar / Ny drivrutin (Nya funktioner: Förmågor / Insights)", 
+  "no": "Feilrettinger / Optimaliseringer / Ny driver (Nye funksjoner: Evner / Insights)", 
+  "es": "Corrección de errores / Optimizaciones / Nuevo controlador (Nuevas funciones: Capabilities / Insights)", 
+  "da": "Fejlrettelser / Optimeringer / Ny driver (Nye funktioner: Evner / Insights)", 
+  "ru": "Исправление ошибок / Оптимизации / Новый драйвер (Новые функции: Возможности / Insights)", 
+  "pl": "Naprawy błędów / Optymalizacje / Nowy sterownik (Nowe funkcje: Możliwości / Insights)"
 }
 }

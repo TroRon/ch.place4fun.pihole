@@ -2,9 +2,14 @@
 
 This application offers the possibility to control the defined PiHole instances via Homey and to send various functions via the PiHole API.
 
-> Important: This app uses a local api available on your PiHole that is undocumented and unsupported by PiHole. If PiHole decides to remove this api in a future upgrade this app will stop working.
+> Important: This application uses the PiHole API. If the developers decide to change parts or the entire API, the application may no longer work.
 
 # Capabilities
+Adds per Day
+DNS Requests per Day
+Last Gravity Update
+Last Sync
+Current State
 
 # Flow cards
 Flowcards can be used to build flows in Homey's flow editor.
@@ -35,6 +40,28 @@ This card adds the functionality that all Piholes can be disabled for a limited 
 
 
 # Version History
+
+
+### v1.3.1 (Store Release Version)
+- Bug fixes / Optimizations / New Driver (New features: Capabilities / Insights)
+
+### v1.3.0
+- Bug fixes / Optimizations / New Driver (New features: Capabilities / Insights)
+
+### v1.2.2
+- Bug fixes / Optimizations / Capabilities
+
+### v1.2.1
+- Bug fixes / Optimizations / Capabilities
+
+### v1.2.0
+- Bug fixes / Optimizations / Capabilities
+
+### v1.1.1
+- Bugfixes / Optimierungen
+
+### v1.1.0
+- Bugfixes / Optimierungen
 
 ### v1.0.9
 - Bugfixes / Optimierungen
