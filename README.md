@@ -7,8 +7,7 @@ This application offers the possibility to control the defined PiHole instances 
 ## Donations
 If you like the work on this project please consider a donation. Of course, this is optional and you should in no way feel obligated to send a donation.  The donations will be spent on buying a second Homey to use as a development Homey which supports me to keep this app running on future firmware versions of Homey.
 
-[<img src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif">](paypal.me/troron
-)
+[<img src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif">](paypal.me/troron)
 
 # Capabilities
 
