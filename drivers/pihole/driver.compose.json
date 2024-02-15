@@ -20,7 +20,8 @@
     "measure_dns_queries_today",
     "measure_ads_blocked_today",
     "gravity_last_update",
-    "measure_ads_blocked_today_percent"    
+    "measure_ads_blocked_today_percent",
+    "alarm_communication_error"
   ],
     "images": {
     "small": "{{driverAssetsPath}}/images/small.png",
@@ -37,5 +38,5 @@
       "prev": "welcome",
       "next": "list_devices"
     }
-  ]
+    ]
 }

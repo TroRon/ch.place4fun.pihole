@@ -1534,7 +1534,8 @@
         "measure_dns_queries_today",
         "measure_ads_blocked_today",
         "gravity_last_update",
-        "measure_ads_blocked_today_percent"
+        "measure_ads_blocked_today_percent",
+        "alarm_communication_error"
       ],
       "images": {
         "small": "/drivers/pihole/assets/images/small.png",
@@ -1601,6 +1602,53 @@
     }
   ],
   "capabilities": {
+    "alarm_communication_error": {
+      "type": "boolean",
+      "title": {
+        "en": "Communication interrupted?",
+        "de": "Kommunikation unterbrochen?",
+        "nl": "Communicatie onderbroken?",
+        "fr": "Communication interrompue?",
+        "it": "Comunicazione interrotta?",
+        "sv": "Kommunikation avbruten?",
+        "no": "Kommunikasjon avbrutt?",
+        "es": "¿Comunicación interrumpida",
+        "da": "Kommunikation afbrudt?",
+        "ru": "Связь прервана?",
+        "pl": "Komunikacja przerwana?"
+      },
+      "titleTrue": {
+        "en": "Communication Error!",
+        "de": "Kommunikations-Fehler!",
+        "nl": "Communicatie Fout!",
+        "fr": "Erreur de communication!",
+        "it": "Errore di comunicazione!",
+        "sv": "Kommunikationsfel!",
+        "no": "Kommunikasjonsfeil!",
+        "es": "¡Error de comunicación!",
+        "da": "Kommunikationsfejl!",
+        "ru": "Ошибка связи!",
+        "pl": "Błąd komunikacji!"
+      },
+      "titleFalse": {
+        "en": "Communication is fine",
+        "de": "Kommunikation in Ordnung",
+        "nl": "Communicatie is in orde",
+        "fr": "Communication en ordre",
+        "it": "Comunicazione a posto",
+        "sv": "Kommunikationen är bra",
+        "no": "Kommunikasjon er i orden",
+        "es": "Comunicación está bien",
+        "da": "Kommunikation er i orden",
+        "ru": "Связь в порядке",
+        "pl": "Komunikacja jest w porządku"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/Communication.svg"
+    },
     "alarm_filter_state": {
       "type": "boolean",
       "title": {

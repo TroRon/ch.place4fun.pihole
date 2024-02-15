@@ -18,9 +18,9 @@ class PiHoleDevice extends Homey.Device {
       const device_api = deviceSettings.api
    
       //Schreiben ins Log File
-      this.log('PiHole Control: URL ->', device_url);
+      this.log('PiHole Control: URL  ->', device_url);
       this.log('PiHole Control: Port ->', device_port);
-      this.log('PiHole Control: Key ->', device_api);
+      this.log('PiHole Control: Key  ->', device_api);
   
       //Herausfinden welches Gerät das ist
       this.log('PiHole Control: Identifiziert und initialisiert ..')
@@ -91,7 +91,7 @@ class PiHoleDevice extends Homey.Device {
  * @returns {Promise<string|void>} return a custom message that will be displayed
  */
 async onSettings({ oldSettings, newSettings, changedKeys }) {
-  this.log(`[Device] ${this.getName()}: settings where changed: ${changedKeys}`);
+  this.log(`PiHole Control: [Device] ${this.getName()}: Einstellung geändert: ${changedKeys}`);
   this._settings = newSettings;
 }
 
@@ -192,11 +192,13 @@ async _makeAPICall(url) {
 
 
 async _updateDeviceData(url) {
-  
+
   try {
     const response = await fetch(url);
-    if (!response.ok) { // Überprüft, ob der Statuscode im Erfolgsbereich liegt (200-299)
-      throw new Error('PiHole Control: Status Filter:' , data.status);
+    // Überprüft, ob der Statuscode im Erfolgsbereich liegt (200-299) oder 403 ist
+    if (!response.ok && response.status !== 403) { 
+        throw new Error(`PiHole Control: Status Filter: ${response.status}`);
+    } else {
     }
 
     const data = await response.json();
@@ -253,6 +255,7 @@ async _updateDeviceData(url) {
       this.log('');
       this.log('PiHole Control: *******************************************************');
       this.log('PiHole Control: Task Geräte Abgleich: GESTARTET');
+//      this.log('PiHole Control: Kommunikation:' , CommunicationState);
       this.log('PiHole Control: Status Filter:' , data.status);
       this.log('PiHole Control: DNS Querys pro Tag:' , formatted_dns_queries_today);
       this.log('PiHole Control: Werbeanzeigen geblockt:' , formatted_blocked_adds_today);
@@ -264,6 +267,7 @@ async _updateDeviceData(url) {
       this.log('');
 
       // Jetzt können Sie Capabilities für dieses Gerät setzen
+      this.setCapabilityValue('alarm_communication_error', false);
       this.setCapabilityValue('alarm_filter_state', PiHoleState);
       this.setCapabilityValue('measure_dns_queries_today', dns_queries_today);
       this.setCapabilityValue('measure_ads_blocked_today', blocked_adds_today);
@@ -271,10 +275,11 @@ async _updateDeviceData(url) {
       this.setCapabilityValue('measure_ads_blocked_today_percent', blocked_adds_today_percent);
       this.setCapabilityValue('gravity_last_update', gravity_update_string);
 });
-
 } catch (error) {
-  this.log('Ein Fehler ist aufgetreten: ', error.message);
-  // Hier können Sie weitere Fehlerbehandlungen durchführen, z.B. Benutzer benachrichtigen, Wiederholungsversuche planen usw.
+  this.log('PiHole Control: Ein Fehler ist aufgetreten ->', error.message);
+  
+  // Jetzt können Sie Capabilities für dieses Gerät setzen
+  this.setCapabilityValue('alarm_communication_error', true); 
 }
 } 
 }
