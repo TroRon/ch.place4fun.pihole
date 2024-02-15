@@ -4,7 +4,7 @@ This application offers the possibility to control the defined PiHole instances 
 
 > Important: This application uses the PiHole API. If the developers decide to change parts or the entire API, the application may no longer work.
 
-Many thanks to [Ronny Winkler](https://github.com/RonnyWinkler) for his support.
+Many thanks to [Ronny Winkler](https://rwdevelopment.de/) for his support.
 
 # Capabilities
 Adds per Day
