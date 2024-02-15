@@ -14,14 +14,14 @@
     },
   "class": "sensor",
   "capabilities": [
-    "data_refresh",
+    "alarm_communication_error",
     "alarm_filter_state",
     "last_sync",
     "measure_dns_queries_today",
     "measure_ads_blocked_today",
-    "gravity_last_update",
     "measure_ads_blocked_today_percent",
-    "alarm_communication_error"
+    "gravity_last_update",
+    "data_refresh"    
   ],
     "images": {
     "small": "{{driverAssetsPath}}/images/small.png",
