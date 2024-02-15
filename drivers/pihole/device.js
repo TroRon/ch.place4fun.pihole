@@ -48,13 +48,26 @@ class PiHoleDevice extends Homey.Device {
         // }
       },CAPABILITY_DEBOUNCE);
 
-      // Regelmässig ausgeführte Funktion
-          const regularTask = () => {           
-            this._updateDeviceData(status_url);
-           };
-
-      //Startet den Abgleich
-      this.DeviceUpdateTask = setInterval(regularTask, 60000);
+      let deviceSettingsArray = [
+        {
+          url: device_url,
+          port: device_port,
+          api: device_api
+        },
+      ]; // Angenommen, dies ist bereits mit den Geräteeinstellungen gefüllt
+      let intervalIds = new Map(); // Zum Speichern der intervalId für jedes Gerät
+      
+      deviceSettingsArray.forEach(deviceSettings => {
+        const status_url = `${device_url}:${device_port}/admin/api.php?summaryRaw&auth=${device_api}`;
+      
+        // Erstellen des wiederkehrenden Tasks
+        const intervalId = setInterval(() => {
+          this._updateDeviceData(status_url);
+        }, 60000); // alle 60 Sekunden
+      
+        // Speichern der intervalId mit der Geräte-ID als Schlüssel
+        intervalIds.set(deviceSettings.id, intervalId);
+      });
 
       //Schreibt den Status, bei Veränderung, ins Log File
       this.registerCapabilityListener('onoff', async (value) => {
@@ -109,7 +122,23 @@ async onRenamed(name) {
  */
 async onDeleted() {
   this.log('PiHole Control: Gerät wurde gelöscht' ,value);
-  clearInterval(this.homeyApp.DeviceUpdateTask); // stoppe das Intervall, wenn das Gerät gelöscht wird
+  //clearInterval(this.homeyApp.DeviceUpdateTask); // stoppe das Intervall, wenn das Gerät gelöscht wird
+
+ // Finde das Gerät mit der gegebenen ID
+ const device = deviceSettingsArray.find(d => d.id === deviceId);
+  
+  // Überprüfe, ob eine intervalId für das Gerät existiert
+  if (intervalIds.has(deviceId)) {
+    // Hole die intervalId und stoppe das Intervall
+    clearInterval(intervalIds.get(deviceId));
+    console.log(`Task für Gerät ${deviceId} gestoppt.`);
+
+    // Entferne die intervalId aus der Map
+    intervalIds.delete(deviceId);
+  } else {
+    console.log(`Kein Task gefunden für Gerät ${deviceId}.`);
+  }
+
 }
 
 async _updateCapabilities(){
@@ -255,7 +284,6 @@ async _updateDeviceData(url) {
       this.log('');
       this.log('PiHole Control: *******************************************************');
       this.log('PiHole Control: Task Geräte Abgleich: GESTARTET');
-//      this.log('PiHole Control: Kommunikation:' , CommunicationState);
       this.log('PiHole Control: Status Filter:' , data.status);
       this.log('PiHole Control: DNS Querys pro Tag:' , formatted_dns_queries_today);
       this.log('PiHole Control: Werbeanzeigen geblockt:' , formatted_blocked_adds_today);
