@@ -284,6 +284,7 @@ async _updateDeviceData(url) {
       this.log('');
       this.log('PiHole Control: *******************************************************');
       this.log('PiHole Control: Task Geräte Abgleich: GESTARTET');
+      this.log('PiHole Control: Aktuelles Gerät:', deviceName);
       this.log('PiHole Control: Status Filter:' , data.status);
       this.log('PiHole Control: DNS Querys pro Tag:' , formatted_dns_queries_today);
       this.log('PiHole Control: Werbeanzeigen geblockt:' , formatted_blocked_adds_today);
