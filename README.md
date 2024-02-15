@@ -45,9 +45,9 @@ This card adds the functionality that all Piholes can be disabled for a limited 
 
 
 ### v1.3.2 (Store Release Version)
-- Bug fixes / Optimizations
+- Bug fixes / Optimizations / New Driver (New features: Capabilities / Insights)
 
-### v1.3.1 (Store Release Version)
+### v1.3.1
 - Bug fixes / Optimizations / New Driver (New features: Capabilities / Insights)
 
 ### v1.3.0
