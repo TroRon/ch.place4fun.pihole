@@ -192,6 +192,15 @@ async _makeAPICall(url) {
 
 
 async _updateDeviceData(url) {
+  
+  try {
+    const response = await fetch(url);
+    if (!response.ok) { // Überprüft, ob der Statuscode im Erfolgsbereich liegt (200-299)
+      throw new Error('PiHole Control: Status Filter:' , data.status);
+    }
+
+    const data = await response.json();
+  
   fetch(url).then(response => response.json())
   .then(data => {
 
@@ -262,6 +271,11 @@ async _updateDeviceData(url) {
       this.setCapabilityValue('measure_ads_blocked_today_percent', blocked_adds_today_percent);
       this.setCapabilityValue('gravity_last_update', gravity_update_string);
 });
+
+} catch (error) {
+  this.log('Ein Fehler ist aufgetreten: ', error.message);
+  // Hier können Sie weitere Fehlerbehandlungen durchführen, z.B. Benutzer benachrichtigen, Wiederholungsversuche planen usw.
+}
 } 
 }
 module.exports = PiHoleDevice;
