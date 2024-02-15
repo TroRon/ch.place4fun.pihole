@@ -235,7 +235,9 @@ async _updateDeviceData(url) {
   fetch(url).then(response => response.json())
   .then(data => {
 
-    //Saubere Formatierung des Status   
+      const deviceName = this.getName()
+
+      //Saubere Formatierung des Status   
       let PiHoleState = false
 
       if(data.status === 'enabled') {
