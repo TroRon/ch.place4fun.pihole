@@ -1,5 +1,9 @@
-Extend Homey with the ability to control your PiHole installation(s).
+Extend Homey with the option of controlling your PiHoles.
 
-Connect up to 4 PiHole installations and control whether to filter, how long not to filter and much more.
+Connect any number of PiHoles to Homey and control them centrally.
 
-The possibilities are endless when you extend Homey with this capability.
+With displays such as the number of requests, filtered requests, etc., you are always up to date.
+
+The possibilities are endless if you expand Homey with this function.
+
+Have fun with this app

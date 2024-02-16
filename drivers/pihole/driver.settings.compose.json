@@ -2,42 +2,90 @@
     {
         "type": "group",
         "label": {
-             "en": "Device Settings",
-             "de": "Geräte Einstellungen"
-            },
+          "de": "Geräte Einstellungen",
+          "da": "Enhedsindstillinger",
+          "en": "Device Settings",
+          "fr": "Paramètres de l'appareil",
+          "it": "Impostazioni del dispositivo",
+          "nl": "Apparaatinstellingen",
+          "no": "Enhetsinnstillinger",
+          "pl": "Ustawienia urządzenia",
+          "ru": "Настройки устройства",
+          "sv": "Enhetsinställningar"
+        },
         "children": [
           {
             "id": "url",
             "type": "text",
             "label": { 
-                "en": "Device URL",
-                "de": "Geräte URL"
+              "de": "Geräte URL",
+              "da": "Enheds URL",
+              "en": "Device URL",
+              "fr": "URL de l'appareil",
+              "it": "URL del dispositivo",
+              "nl": "Apparaat URL",
+              "no": "Enhets URL",
+              "pl": "URL urządzenia",
+              "ru": "URL устройства",
+              "sv": "Enhetens URL"
             },
             "value": "",
             "hint": {
-                 "en": "Bitte FQDN oder IP Adresse mit vorgestelltem HTTP(s) nutzen!",
-                 "de": "Bitte FQDN oder IP Adresse mit vorgestelltem HTTP(s) nutzen!"
-                }   
+              "de": "Bitte FQDN oder IP Adresse mit vorgestelltem HTTP(s) nutzen!",
+              "da": "Brug venligst FQDN eller IP-adresse med forudstillet HTTP(s)!",
+              "en": "Please use FQDN or IP address with prepended HTTP(s)!",
+              "fr": "Veuillez utiliser FQDN ou adresse IP avec HTTP(s) préfixé!",
+              "it": "Si prega di utilizzare FQDN o indirizzo IP con HTTP(s) anteposto!",
+              "nl": "Gebruik a.u.b. FQDN of IP-adres met voorgevoegd HTTP(s)!",
+              "no": "Vennligst bruk FQDN eller IP-adresse med foranstilt HTTP(s)!",
+              "pl": "Proszę używać FQDN lub adresu IP z poprzedzonym HTTP(s)!",
+              "ru": "Пожалуйста, используйте FQDN или IP-адрес с префиксом HTTP(s)!",
+              "sv": "Använd gärna FQDN eller IP-adress med föregående HTTP(s)!"
+             }   
           },
           {
             "id": "port",
             "type": "text",
             "label": { 
-                "en": "Port",
-                "de": "Port"
+              "de": "Port",
+              "da": "Port",
+              "en": "Port",
+              "fr": "Port",
+              "it": "Porta",
+              "nl": "Poort",
+              "no": "Port",
+              "pl": "Port",
+              "ru": "Порт",
+              "sv": "Port"            
             },
             "value": "",
             "hint": {
-                "en": "Der Port MUSS angegeben werden, Standard ist immer 80!",
-                "de": "Der Port MUSS angegeben werden, Standard ist immer 80!"
-               }   
+              "de": "Der Port MUSS angegeben werden, Standard ist immer 80!",
+              "da": "Porten SKAL angives, standard er altid 80!",
+              "en": "The port MUST be specified, default is always 80!",
+              "fr": "Le port DOIT être spécifié, par défaut c'est toujours 80!",
+              "it": "La porta DEVE essere specificata, di default è sempre 80!",
+              "nl": "De poort MOET worden opgegeven, standaard is altijd 80!",
+              "no": "Porten MÅ angis, standard er alltid 80!",
+              "pl": "Port MUSI być podany, domyślnie zawsze jest to 80!",
+              "ru": "Порт ДОЛЖЕН быть указан, по умолчанию всегда 80!",
+              "sv": "Porten MÅSTE anges, standard är alltid 80!"
+            }   
           },
           {
             "id": "api",
             "type": "text",
             "label": { 
-                "en": "API",
-                "de": "API"
+              "de": "API",
+              "da": "API",
+              "en": "API",
+              "fr": "API",
+              "it": "API",
+              "nl": "API",
+              "no": "API",
+              "pl": "API",
+              "ru": "API",
+              "sv": "API"
             },
             "value": ""
           }

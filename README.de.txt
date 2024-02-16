@@ -5,3 +5,5 @@ Schliessen Sie eine beliebige Anzahl von PiHole's an Homey an und steuern Sie di
 Durch Anzeigen wie die Anzahl der Anfrage, gefilterte Anfragen etc. sind Sie immer auf dem aktuellsten Stand.
 
 Die Möglichkeiten sind endlos, wenn Sie Homey mit dieser Funktion erweitern.
+
+Viel Spass mit dieser App

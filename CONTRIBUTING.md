@@ -7,7 +7,6 @@ The following is a set of guidelines for contributing to Athom and its packages,
 Please join our [community slack](https://slack.athom.com), if you have not done so already.
 We also have a [community forum](https://community.homey.app) for general discussions.
 
-
 ## Before submitting a bug or feature request
 
 * **Have you actually read the error message**?

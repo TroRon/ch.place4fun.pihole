@@ -4,4 +4,6 @@ Collegate un numero qualsiasi di PiHoles a Homey e controllateli a livello centr
 
 Con visualizzazioni quali il numero di richieste, le richieste filtrate e così via, sarete sempre aggiornati.
 
-Le possibilità sono infinite se si estende Homey con questa funzione.
+Le possibilità sono infinite se si espande Homey con questa funzione.
+
+Divertitevi con questa applicazione

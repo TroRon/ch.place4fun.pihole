@@ -7,11 +7,13 @@ This application offers the possibility to control the defined PiHole instances 
 Many thanks to [Ronny Winkler](https://rwdevelopment.de/) for his support.
 
 # Capabilities
-Adds per Day
-DNS Requests per Day
-Last Gravity Update
+Connection State
+Filter State
 Last Sync
-Current State
+DNS Requests per Day
+Blocked Adds per Day
+Blocked Add per Day %
+Last Gravity Update
 
 # Flow cards
 Flowcards can be used to build flows in Homey's flow editor.
@@ -29,12 +31,12 @@ To use the application cards select 'PiHole Control' in the 'then' column.
 This card starts or stops filtering on the selected PiHole.
 
 #### "Disable all PiHole(s)"
-This card stops filtering on all PiHoles defined in the settings.
+This card stops the filtering on all PiHoles
 
-#### "Enable/Disable PiHole Instance"
-This card starts filtering on all PiHoles defined in the settings.
+#### "Enable/Disable PiHole"
+This card switches the filter on the selected PiHole on or off
 
-#### "Disable PiHole Instance(x) for (x) Minutes"
+#### "Disable PiHole for (x) Minutes"
 This card adds the functionality that a Pihole can be disabled for a limited time.
 
 #### "Disable all PiHoles for (x) Minutes"

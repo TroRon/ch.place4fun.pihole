@@ -1,6 +1,5 @@
 const Homey = require('homey');
 const CAPABILITY_DEBOUNCE = 500;
-const CONSTANTS = require('../../lib/constants');
 const PiholeDevice = require('./device');
 
 class PiholeDriver extends Homey.Driver {
