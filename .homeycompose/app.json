@@ -75,5 +75,6 @@
   },
   "support": "mailto:webmaster@syen.ch",
   "homepage": "https://github.com/TroRon/ch.place4fun.pihole/wiki",
-  "source": "https://github.com/TroRon/ch.place4fun.pihole"
+  "source": "https://github.com/TroRon/ch.place4fun.pihole",
+  "homeyCommunityTopicId": 104113
 }
