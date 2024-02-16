@@ -189,7 +189,8 @@ async _onCapability( capabilityValues, capabilityOptions){
   this.log('PiHole Control: Key ->', device_api);
 
   //Herausfinden welches Gerät das ist
-  this.log('PiHole Control: ', deviceSettings.name, deviceSettings.id, ': Identifiziert und initialisiert ..')
+  const deviceName = this.getName()
+  this.log('PiHole Control: ', deviceName, ': Identifiziert und initialisiert ..')
  
   //Bereitstellen der nötigen URLs für Aktionen / Abfragen
   const status_url = `${device_url}:${device_port}/admin/api.php?summaryRaw&auth=${device_api}`;
@@ -234,7 +235,8 @@ async _updateDeviceData(url) {
   
   fetch(url).then(response => response.json())
   .then(data => {
-
+      
+      //Fülle Variable mit Gerätename ab
       const deviceName = this.getName()
 
       //Saubere Formatierung des Status   
