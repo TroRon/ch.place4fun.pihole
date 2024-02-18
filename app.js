@@ -1,6 +1,10 @@
 'use strict';
 
 const Homey = require('homey');
+////////////////////////////////////////////////////////////////////////////////////////
+// Definieren Sie die Variable alarmFilterState
+let alarmFilterState = true; // Beispiel: Filter ist aktiviert
+////////////////////////////////////////////////////////////////////////////////////////
 
 class PiHoleControl extends Homey.App {
   async onInit() {
@@ -29,45 +33,59 @@ class PiHoleControl extends Homey.App {
 
   //pihole-disable-piholes.json
     const disablePiholes = this.homey.flow.getActionCard('pihole-disable-piholes');
+    await updateFilterStateAndTrigger();
     disablePiholes.registerRunListener(async (args, state) => {
       return await this.disablePiholes(args, state);
   });
 
   //pihole-enable-piholes.json
     const enablePiholes = this.homey.flow.getActionCard('pihole-enable-piholes');
+    await updateFilterStateAndTrigger();
     enablePiholes.registerRunListener(async (args, state) => {
       return await this.enablePiholes(args, state);
   });
 
   //pihole-disable-pihole-for.json
   const disablePiholeFor = this.homey.flow.getActionCard('pihole-disable-pihole-for');
+  await updateFilterStateAndTrigger();
   disablePiholeFor.registerRunListener(async (args, state) => {
     return await this.disablePiholeFor(args, state);
   });
   
   //pihole-disable-piholes-for.json
   const disablePiholesFor = this.homey.flow.getActionCard('pihole-disable-piholes-for');
+  await updateFilterStateAndTrigger();
   disablePiholesFor.registerRunListener(async (args, state) => {
     return await this.disablePiholesFor(args, state);
   });
 
   //pihole-set-pihole.json
   const setPihole = this.homey.flow.getActionCard('pihole-set-pihole');
+  await updateFilterStateAndTrigger();
   setPihole.registerRunListener(async (args, state) => {
     return await this.setPihole(args, state);
   });
 
-  //TODO ALLE TRIGGER KARTEN
-  async function triggerAlarmFilterStateChanged(alarmFilterState) {
-    const connectionStateTrigger = this.homey.flow.getTriggerCard('alarm_filter_state_changed');
-    console.log("**************** DEBUG Trigger FIRED")
-    await connectionStateTrigger.trigger({
-      alarm_filter_state: alarmFilterState
-    });
-  }
+  ///////////////////////////////////////////////////////////////////////////////////////
 
+  // IN PROGRESS
   
+   //TODO ALLE TRIGGER KARTEN
+    async function updateFilterStateAndTrigger() {
+    // Annahme: Der Filterstatus wird aktualisiert und alarmFilterState wird entsprechend gesetzt
+    let alarmFilterState = true; // Beispiel: Der Filter ist aktiviert
 
+    // Auslösen des Flow-Kartenereignisses "alarm_filter_state_changed"
+    const connectionStateTrigger = this.homey.flow.getTriggerCard('alarm_filter_state_changed');
+    await connectionStateTrigger.trigger({
+        alarm_filter_state: alarmFilterState
+    });
+}
+
+
+
+// IN PROGRESS
+///////////////////////////////////////////////////////////////////////////////////////
 
 
 //TODO ALLE TRIGGER KARTEN

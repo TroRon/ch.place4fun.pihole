@@ -282,8 +282,6 @@ async _updateDeviceData(url) {
       //Letztes Update der Gravity Datenbank
       let absoluteTimestamp = data.gravity_last_updated.absolute;
 
-              console.log('*********************** DEBUG ABSOLUTE TIMESTAMP Bug DATA: ',  absoluteTimestamp)
-
       //Aktueller Zeitstempel
       const currentTimestamp = Math.floor(Date.now() / 1000); // in Sekunden
 
@@ -296,8 +294,6 @@ async _updateDeviceData(url) {
       const gravity_update_minutes = Math.floor((timeDifference % 3600) / 60);
 
       let gravity_update_string = gravity_update_days + ' Tg. ' + gravity_update_hours +' Std. ' + gravity_update_minutes + ' Min.';        
-
-              console.log('*********************** DEBUG ABSOLUTE TIMESTAMP Bug Converted: ',  gravity_update_string)
 
       // Loggen der Werte zwecks Diagnose
       this.log('');
@@ -316,16 +312,20 @@ async _updateDeviceData(url) {
 
       //Fehlerüberprüfung, sollte UNDEFINED zurückkommen
       if (typeof data.dns_queries_today !== 'undefined') {
+        let dns_queries_today = data.dns_queries_today;
+        let formatted_dns_queries_today = dns_queries_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'");
         this.setCapabilityValue('measure_dns_queries_today', dns_queries_today);
-    } else {
+      } else {
         this.log('PiHole Control: Fehler --> dns_queries_today ist nicht definiert');
-    }
+      }
 
     if (typeof data.ads_blocked_today !== 'undefined') {
+        let blocked_adds_today = data.ads_blocked_today;
+        let formatted_blocked_adds_today = blocked_adds_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'");
         this.setCapabilityValue('measure_ads_blocked_today', blocked_adds_today);
     } else {
         this.log('PiHole Control: Fehler --> blocked_adds_today ist nicht definiert');
-    }
+      }
 
     if (typeof formattedSyncDate !== 'undefined') {
         this.setCapabilityValue('last_sync', formattedSyncDate);
