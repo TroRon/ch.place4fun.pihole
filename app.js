@@ -33,35 +33,30 @@ class PiHoleControl extends Homey.App {
 
   //pihole-disable-piholes.json
     const disablePiholes = this.homey.flow.getActionCard('pihole-disable-piholes');
-    await updateFilterStateAndTrigger();
     disablePiholes.registerRunListener(async (args, state) => {
       return await this.disablePiholes(args, state);
   });
 
   //pihole-enable-piholes.json
     const enablePiholes = this.homey.flow.getActionCard('pihole-enable-piholes');
-    await updateFilterStateAndTrigger();
     enablePiholes.registerRunListener(async (args, state) => {
       return await this.enablePiholes(args, state);
   });
 
   //pihole-disable-pihole-for.json
   const disablePiholeFor = this.homey.flow.getActionCard('pihole-disable-pihole-for');
-  await updateFilterStateAndTrigger();
   disablePiholeFor.registerRunListener(async (args, state) => {
     return await this.disablePiholeFor(args, state);
   });
   
   //pihole-disable-piholes-for.json
   const disablePiholesFor = this.homey.flow.getActionCard('pihole-disable-piholes-for');
-  await updateFilterStateAndTrigger();
   disablePiholesFor.registerRunListener(async (args, state) => {
     return await this.disablePiholesFor(args, state);
   });
 
   //pihole-set-pihole.json
   const setPihole = this.homey.flow.getActionCard('pihole-set-pihole');
-  await updateFilterStateAndTrigger();
   setPihole.registerRunListener(async (args, state) => {
     return await this.setPihole(args, state);
   });
