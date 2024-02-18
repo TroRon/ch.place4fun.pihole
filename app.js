@@ -56,7 +56,21 @@ class PiHoleControl extends Homey.App {
   setPihole.registerRunListener(async (args, state) => {
     return await this.setPihole(args, state);
   });
+
+  //TODO ALLE TRIGGER KARTEN
+  async function triggerAlarmFilterStateChanged(alarmFilterState) {
+    const connectionStateTrigger = this.homey.flow.getTriggerCard('alarm_filter_state_changed');
+    console.log("**************** DEBUG Trigger FIRED")
+    await connectionStateTrigger.trigger({
+      alarm_filter_state: alarmFilterState
+    });
+  }
+
   
+
+
+
+//TODO ALLE TRIGGER KARTEN
 
   // *****************************************************************************************************************
   //ALTER TREIBER PI-HOLE //
@@ -478,9 +492,6 @@ async disablePiholesFor(args, state) {
             //Loggt in die Konsole
             this.log('PiHole Control: Alle PiHoles', 'für ' ,selectedTime,  'deaktiviert');
 }
-
-
-//IN Progress
 
 async setPihole(args, state) {
   

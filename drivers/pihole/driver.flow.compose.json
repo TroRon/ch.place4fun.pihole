@@ -113,6 +113,88 @@
                 }
             }
           ]
+      },
+
+      {
+        "id": "alarm_communication_error_changed",
+        "title": { 
+          "en": "Blocked advertisements %) / day updated",
+          "de": "Verbindungs-Status hat sich geändert",
+          "nl": "Geblokkeerde advertenties %) / dag bijgewerkt",
+          "fr": "Publicités bloquées %) / jour mises à jour",
+          "it": "Pubblicità bloccate %) / giorno aggiornate",
+          "sv": "Blockerade annonser %) / dag uppdaterad",
+          "no": "Blokkerte annonser %) / dag oppdatert",
+          "es": "Anuncios bloqueados %) / día actualizado",
+          "da": "Blokerede annoncer %) / dag opdateret",
+          "ru": "Заблокированные объявления %) / день обновлены",
+          "pl": "Zablokowane reklamy %) / dzień zaktualizowany"
+              },
+        "tokens": [
+            {
+              "name": "alarm_communication_error",
+              "type": "boolean",
+              "title": {
+                "en": "Connection status has changed",
+                "de": "Verbindungs-Status hat sich geändert",
+                "nl": "Verbindingsstatus is veranderd",
+                "fr": "Le statut de la connexion a changé",
+                "it": "Lo stato della connessione è cambiato",
+                "sv": "Anslutningsstatus har ändrats",
+                "no": "Tilkoblingsstatus har endret seg",
+                "es": "El estado de la conexión ha cambiado",
+                "da": "Forbindelsesstatus er ændret",
+                "ru": "Состояние подключения изменилось",
+                "pl": "Stan połączenia uległ zmianie"
+              },
+              "example": {
+                "en": "True / False" 
+                }
+            }
+          ]
+      },
+
+      {
+        "id": "alarm_filter_state_changed",
+        "title": { 
+          "en": "Filter status has changed",
+          "de": "Filter Status hat sich geändert",
+          "nl": "Filterstatus is veranderd",
+          "fr": "Le statut du filtre a changé",
+          "it": "Lo stato del filtro è cambiato",
+          "sv": "Filterstatus har ändrats",
+          "no": "Filterstatus har endret seg",
+          "es": "El estado del filtro ha cambiado",
+          "da": "Filterstatus er ændret",
+          "ru": "Статус фильтра изменился",
+          "pl": "Stan filtra uległ zmianie"
+              },
+        "tokens": [
+            {
+              "name": "alarm_filter_state",
+              "type": "boolean",
+              "title": {
+                "en": "Filter active?",
+                "de": "Filter aktiv?",
+                "nl": "Filter actief?",
+                "fr": "Filtre actif?",
+                "it": "Filtro attivo?",
+                "sv": "Filter aktivt?",
+                "no": "Filter aktiv?",
+                "es": "¿Filtro activo?",
+                "da": "Filter aktive?",
+                "ru": "Фильтр активен?",
+                "pl": "Filtr aktywny?"
+              },
+              "example": {
+                "en": "True / False" 
+                }
+            }
+          ]
       }
+
+
+
+      
      ]
   }

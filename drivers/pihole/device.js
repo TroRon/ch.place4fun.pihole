@@ -18,10 +18,12 @@ class PiHoleDevice extends Homey.Device {
       const device_api = deviceSettings.api
    
       //Schreiben ins Log File
+      this.log('PiHole Control: *******************************************************')
       this.log('PiHole Control: URL  ->', device_url);
       this.log('PiHole Control: Port ->', device_port);
       this.log('PiHole Control: Key  ->', device_api);
-  
+      this.log('PiHole Control: *******************************************************')
+
       //Herausfinden welches Gerät das ist
       this.log('PiHole Control: Identifiziert und initialisiert ..')
      
@@ -184,19 +186,20 @@ async _onCapability( capabilityValues, capabilityOptions){
   const device_api = deviceSettings.api
 
   //Schreiben ins Log File
-  this.log('PiHole Control: URL ->', device_url);
+  this.log('PiHole Control: *******************************************************')
+  this.log('PiHole Control: URL  ->', device_url);
   this.log('PiHole Control: Port ->', device_port);
-  this.log('PiHole Control: Key ->', device_api);
+  this.log('PiHole Control: Key  ->', device_api);
+  this.log('PiHole Control: *******************************************************')
 
   //Herausfinden welches Gerät das ist
   const deviceName = this.getName()
-  this.log('PiHole Control: ', deviceName, ': Identifiziert und initialisiert ..')
+  this.log('PiHole Control:',deviceName, '-> Identifiziert und initialisiert ..')
  
   //Bereitstellen der nötigen URLs für Aktionen / Abfragen
   const status_url = `${device_url}:${device_port}/admin/api.php?summaryRaw&auth=${device_api}`;
 
   if( capabilityValues["data_refresh"] != undefined){
-    this.log('PiHole Control: Manueller Refresh gestartet');
     this._updateDeviceData(status_url);
  }
 }
@@ -277,13 +280,25 @@ async _updateDeviceData(url) {
       let formated_blocked_adds_today_percent = blocked_adds_today_percent.toFixed(1) + " %"
       
       //Letztes Update der Gravity Datenbank
-      let gravity_update_days = data.gravity_last_updated.relative.days;
-      let gravity_update_hours = data.gravity_last_updated.relative.hours;
-      let gravity_update_minutes = data.gravity_last_updated.relative.minutes;
+      let absoluteTimestamp = data.gravity_last_updated.absolute;
 
-      //let gravity_update_minutes = data.gravity_last_updated.relative.minutes;
+              console.log('*********************** DEBUG ABSOLUTE TIMESTAMP Bug DATA: ',  absoluteTimestamp)
+
+      //Aktueller Zeitstempel
+      const currentTimestamp = Math.floor(Date.now() / 1000); // in Sekunden
+
+      //Zeitdifferenz berechnen
+      const timeDifference = currentTimestamp - absoluteTimestamp;
+
+      //In Tage, Stunden und Minuten umrechnen
+      const gravity_update_days = Math.floor(timeDifference / (24 * 3600));
+      const gravity_update_hours = Math.floor((timeDifference % (24 * 3600)) / 3600);
+      const gravity_update_minutes = Math.floor((timeDifference % 3600) / 60);
+
       let gravity_update_string = gravity_update_days + ' Tg. ' + gravity_update_hours +' Std. ' + gravity_update_minutes + ' Min.';        
-      
+
+              console.log('*********************** DEBUG ABSOLUTE TIMESTAMP Bug Converted: ',  gravity_update_string)
+
       // Loggen der Werte zwecks Diagnose
       this.log('');
       this.log('PiHole Control: *******************************************************');
@@ -299,14 +314,41 @@ async _updateDeviceData(url) {
       this.log('PiHole Control: *******************************************************');
       this.log('');
 
-      // Jetzt können Sie Capabilities für dieses Gerät setzen
-      this.setCapabilityValue('alarm_communication_error', false);
-      this.setCapabilityValue('alarm_filter_state', PiHoleState);
-      this.setCapabilityValue('measure_dns_queries_today', dns_queries_today);
-      this.setCapabilityValue('measure_ads_blocked_today', blocked_adds_today);
-      this.setCapabilityValue('last_sync', formattedSyncDate);
-      this.setCapabilityValue('measure_ads_blocked_today_percent', blocked_adds_today_percent);
-      this.setCapabilityValue('gravity_last_update', gravity_update_string);
+      //Fehlerüberprüfung, sollte UNDEFINED zurückkommen
+      if (typeof data.dns_queries_today !== 'undefined') {
+        this.setCapabilityValue('measure_dns_queries_today', dns_queries_today);
+    } else {
+        this.log('PiHole Control: Fehler --> dns_queries_today ist nicht definiert');
+    }
+
+    if (typeof data.ads_blocked_today !== 'undefined') {
+        this.setCapabilityValue('measure_ads_blocked_today', blocked_adds_today);
+    } else {
+        this.log('PiHole Control: Fehler --> blocked_adds_today ist nicht definiert');
+    }
+
+    if (typeof formattedSyncDate !== 'undefined') {
+        this.setCapabilityValue('last_sync', formattedSyncDate);
+    } else {
+        this.log('PiHole Control: Fehler --> last_sync ist nicht definiert');
+    }
+
+    if (typeof blocked_adds_today_percent !== 'undefined') {
+        this.setCapabilityValue('measure_ads_blocked_today_percent', blocked_adds_today_percent);
+    } else {
+        this.log('PiHole Control: Fehler --> measure_ads_blocked_today_percent ist nicht definiert');
+    }
+
+    if (typeof gravity_update_string !== 'undefined') {
+        this.setCapabilityValue('gravity_last_update', gravity_update_string);
+    } else {
+        this.log('PiHole Control: Fehler --> gravity_last_update ist nicht definiert');
+    }
+
+    // Capabilities für den Rest setzen
+    this.setCapabilityValue('alarm_communication_error', false);
+    this.setCapabilityValue('alarm_filter_state', PiHoleState);
+
 });
 } catch (error) {
   this.log('PiHole Control: Ein Fehler ist aufgetreten ->', error.message);
