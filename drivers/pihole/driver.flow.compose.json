@@ -135,21 +135,30 @@
               "name": "alarm_communication_error",
               "type": "boolean",
               "title": {
-                "en": "Connection status has changed",
-                "de": "Verbindungs-Status hat sich geändert",
-                "nl": "Verbindingsstatus is veranderd",
-                "fr": "Le statut de la connexion a changé",
-                "it": "Lo stato della connessione è cambiato",
-                "sv": "Anslutningsstatus har ändrats",
-                "no": "Tilkoblingsstatus har endret seg",
-                "es": "El estado de la conexión ha cambiado",
-                "da": "Forbindelsesstatus er ændret",
-                "ru": "Состояние подключения изменилось",
-                "pl": "Stan połączenia uległ zmianie"
+                "en": "Connection available?",
+                "de": "Verbindung vorhanden?",
+                "nl": "Verbinding beschikbaar?",
+                "fr": "Connexion disponible?",
+                "it": "Connessione disponibile?",
+                "sv": "Anslutning tillgänglig?",
+                "no": "Tilkobling tilgjengelig?",
+                "es": "Conexión disponible?",
+                "da": "Forbindelse tilgængelig?",
+                "ru": "Подключение доступно?",
+                "pl": "Połączenie dostępne?"
               },
               "example": {
-                "en": "True / False" 
-                }
+                "en": "Yes / No",
+                "de": "Ja / Nein",
+                "nl": "Ja / Nee",
+                "fr": "Oui / Non",
+                "it": "Sì / No",
+                "sv": "Ja / Nej",
+                "no": "Ja / Nei",
+                "es": "Sí / No",
+                "da": "Ja / Nej",
+                "ru": "Да / Нет",
+                "pl": "Tak / Nie"                }
             }
           ]
       },
@@ -187,8 +196,17 @@
                 "pl": "Filtr aktywny?"
               },
               "example": {
-                "en": "True / False" 
-                }
+                "en": "Yes / No",
+                "de": "Ja / Nein",
+                "nl": "Ja / Nee",
+                "fr": "Oui / Non",
+                "it": "Sì / No",
+                "sv": "Ja / Nej",
+                "no": "Ja / Nei",
+                "es": "Sí / No",
+                "da": "Ja / Nej",
+                "ru": "Да / Нет",
+                "pl": "Tak / Nie"                }
             }
           ]
       }
