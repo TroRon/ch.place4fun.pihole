@@ -117,6 +117,7 @@
 
       {
         "id": "alarm_communication_error_changed",
+        "type": "boolean",
         "title": { 
           "en": "Blocked advertisements %) / day updated",
           "de": "Verbindungs-Status hat sich geändert",
@@ -129,42 +130,11 @@
           "da": "Blokerede annoncer %) / dag opdateret",
           "ru": "Заблокированные объявления %) / день обновлены",
           "pl": "Zablokowane reklamy %) / dzień zaktualizowany"
-              },
-        "tokens": [
-            {
-              "name": "alarm_communication_error",
-              "type": "boolean",
-              "title": {
-                "en": "Connection available?",
-                "de": "Verbindung vorhanden?",
-                "nl": "Verbinding beschikbaar?",
-                "fr": "Connexion disponible?",
-                "it": "Connessione disponibile?",
-                "sv": "Anslutning tillgänglig?",
-                "no": "Tilkobling tilgjengelig?",
-                "es": "Conexión disponible?",
-                "da": "Forbindelse tilgængelig?",
-                "ru": "Подключение доступно?",
-                "pl": "Połączenie dostępne?"
-              },
-              "example": {
-                "en": "Yes / No",
-                "de": "Ja / Nein",
-                "nl": "Ja / Nee",
-                "fr": "Oui / Non",
-                "it": "Sì / No",
-                "sv": "Ja / Nej",
-                "no": "Ja / Nei",
-                "es": "Sí / No",
-                "da": "Ja / Nej",
-                "ru": "Да / Нет",
-                "pl": "Tak / Nie"                }
-            }
-          ]
+       }
       },
-
       {
         "id": "alarm_filter_state_changed",
+        "type": "boolean",
         "title": { 
           "en": "Filter status has changed",
           "de": "Filter Status hat sich geändert",
@@ -177,42 +147,7 @@
           "da": "Filterstatus er ændret",
           "ru": "Статус фильтра изменился",
           "pl": "Stan filtra uległ zmianie"
-              },
-        "tokens": [
-            {
-              "name": "alarm_filter_state",
-              "type": "boolean",
-              "title": {
-                "en": "Filter active?",
-                "de": "Filter aktiv?",
-                "nl": "Filter actief?",
-                "fr": "Filtre actif?",
-                "it": "Filtro attivo?",
-                "sv": "Filter aktivt?",
-                "no": "Filter aktiv?",
-                "es": "¿Filtro activo?",
-                "da": "Filter aktive?",
-                "ru": "Фильтр активен?",
-                "pl": "Filtr aktywny?"
-              },
-              "example": {
-                "en": "Yes / No",
-                "de": "Ja / Nein",
-                "nl": "Ja / Nee",
-                "fr": "Oui / Non",
-                "it": "Sì / No",
-                "sv": "Ja / Nej",
-                "no": "Ja / Nei",
-                "es": "Sí / No",
-                "da": "Ja / Nej",
-                "ru": "Да / Нет",
-                "pl": "Tak / Nie"                }
-            }
-          ]
-      }
-
-
-
-      
+        }
+      }      
      ]
   }

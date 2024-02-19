@@ -32,14 +32,14 @@ class PiHoleControl extends Homey.App {
   //Aktions-Karten
 
   //pihole-disable-piholes.json
-    const disablePiholes = this.homey.flow.getActionCard('pihole-disable-piholes');
-    disablePiholes.registerRunListener(async (args, state) => {
+  const disablePiholes = this.homey.flow.getActionCard('pihole-disable-piholes');
+  disablePiholes.registerRunListener(async (args, state) => {
       return await this.disablePiholes(args, state);
   });
 
   //pihole-enable-piholes.json
-    const enablePiholes = this.homey.flow.getActionCard('pihole-enable-piholes');
-    enablePiholes.registerRunListener(async (args, state) => {
+  const enablePiholes = this.homey.flow.getActionCard('pihole-enable-piholes');
+  enablePiholes.registerRunListener(async (args, state) => {
       return await this.enablePiholes(args, state);
   });
 
@@ -64,9 +64,8 @@ class PiHoleControl extends Homey.App {
   ///////////////////////////////////////////////////////////////////////////////////////
 
   // IN PROGRESS
-  // Trigger registrieren
-
   
+
 
 
 
@@ -256,7 +255,7 @@ this.homey.flow.getActionCard('disable-pihole-for').registerRunListener(async(ar
         api: this.homey.settings.get('Instance4_API')
       }
     };
-    
+   
     const selectedInstance = args.pihole;
     const selectedTime = args.time;
     
