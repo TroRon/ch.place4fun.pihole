@@ -64,18 +64,9 @@ class PiHoleControl extends Homey.App {
   ///////////////////////////////////////////////////////////////////////////////////////
 
   // IN PROGRESS
-  
-   //TODO ALLE TRIGGER KARTEN
-    async function updateFilterStateAndTrigger() {
-    // Annahme: Der Filterstatus wird aktualisiert und alarmFilterState wird entsprechend gesetzt
-    let alarmFilterState = true; // Beispiel: Der Filter ist aktiviert
+  // Trigger registrieren
 
-    // Auslösen des Flow-Kartenereignisses "alarm_filter_state_changed"
-    const connectionStateTrigger = this.homey.flow.getTriggerCard('alarm_filter_state_changed');
-    await connectionStateTrigger.trigger({
-        alarm_filter_state: alarmFilterState
-    });
-}
+  
 
 
 

@@ -319,6 +319,13 @@ async _updateDeviceData(url) {
         this.log('PiHole Control: Fehler --> dns_queries_today ist nicht definiert');
       }
 
+      if (dns_queries_today !== undefined) {
+          formatted_dns_queries_today = dns_queries_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'");
+      } else {
+          // Wenn dns_queries_today nicht definiert ist, setzen Sie formatted_dns_queries_today auf einen Standardwert oder handhaben Sie den Fall entsprechend
+          formatted_dns_queries_today = 'N/A';
+      }
+
     if (typeof data.ads_blocked_today !== 'undefined') {
         let blocked_adds_today = data.ads_blocked_today;
         let formatted_blocked_adds_today = blocked_adds_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'");

@@ -79,17 +79,17 @@
       {
         "id": "measure_ads_blocked_today_percent_changed",
         "title": { 
-          "en": "Blocked advertisements %) / day updated",
+          "en": "Blocked advertisements (%) / day updated",
           "de": "Geblockte Werbeanzeigen (%) / Tag aktualisiert",
-          "nl": "Geblokkeerde advertenties %) / dag bijgewerkt",
-          "fr": "Publicités bloquées %) / jour mises à jour",
-          "it": "Pubblicità bloccate %) / giorno aggiornate",
-          "sv": "Blockerade annonser %) / dag uppdaterad",
-          "no": "Blokkerte annonser %) / dag oppdatert",
-          "es": "Anuncios bloqueados %) / día actualizado",
-          "da": "Blokerede annoncer %) / dag opdateret",
-          "ru": "Заблокированные объявления %) / день обновлены",
-          "pl": "Zablokowane reklamy %) / dzień zaktualizowany"
+          "nl": "Geblokkeerde advertenties (%) / dag bijgewerkt",
+          "fr": "Publicités bloquées (%) / jour mises à jour",
+          "it": "Pubblicità bloccate (%) / giorno aggiornate",
+          "sv": "Blockerade annonser (%) / dag uppdaterad",
+          "no": "Blokkerte annonser (%) / dag oppdatert",
+          "es": "Anuncios bloqueados (%) / día actualizado",
+          "da": "Blokerede annoncer (%) / dag opdateret",
+          "ru": "Заблокированные объявления (%) / день обновлены",
+          "pl": "Zablokowane reklamy (%) / dzień zaktualizowany"
               },
         "tokens": [
             {
