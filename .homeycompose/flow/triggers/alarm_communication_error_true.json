@@ -1,0 +1,41 @@
+{
+    "title": { 
+      "en": "Filter status has changed",
+      "de": "Verbindung unterbrochen",
+      "nl": "Filterstatus is veranderd",
+      "fr": "Le statut du filtre a changé",
+      "it": "Lo stato del filtro è cambiato",
+      "sv": "Filterstatus har ändrats",
+      "no": "Filterstatus har endret seg",
+      "es": "El estado del filtro ha cambiado",
+      "da": "Filterstatus er ændret",
+      "ru": "Статус фильтра изменился",
+      "pl": "Stan filtra uległ zmianie" 
+      },
+      "tokens": [
+        {
+          "name": "alarm_filter_state",
+          "type": "boolean",
+          "title": { 
+            "en": "Connection status",
+            "de": "Verbindungsstatus",
+            "nl": "Verbindingsstatus",
+            "fr": "Statut de la connexion",
+            "it": "Stato della connessione",
+            "sv": "Anslutningsstatus",
+            "no": "Tilkoblingsstatus",
+            "es": "Estado de conexión",
+            "da": "Forbindelsesstatus",
+            "ru": "Статус подключения",
+            "pl": "Status połączenia"
+         }
+        }
+      ],
+      "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+        }
+      ]
+    }

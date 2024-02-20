@@ -1,0 +1,40 @@
+{
+"title": { 
+    "en": "Blocked advertisements (%) / day updated",
+    "de": "Geblockte Werbeanzeigen (%) / Tag aktualisiert",
+    "nl": "Geblokkeerde advertenties (%) / dag bijgewerkt",
+    "fr": "Publicités bloquées (%) / jour mises à jour",
+    "it": "Pubblicità bloccate (%) / giorno aggiornate",
+    "sv": "Blockerade annonser (%) / dag uppdaterad",
+    "no": "Blokkerte annonser (%) / dag oppdatert",
+    "es": "Anuncios bloqueados (%) / día actualizado",
+    "da": "Blokerede annoncer (%) / dag opdateret",
+    "ru": "Заблокированные объявления (%) / день обновлены",
+    "pl": "Zablokowane reklamy (%) / dzień zaktualizowany"
+        },
+  "tokens": [
+      {
+        "name": "measure_ads_blocked_today_percent",
+        "type": "number",
+        "title": {
+          "en": "Blocked advertisements (%) / day",
+          "de": "Geblockte Werbeanzeigen (%) / Tag",
+          "nl": "Geblokkeerde advertenties (%) / dag",
+          "fr": "Publicités bloquées (%) / jour",
+          "it": "Pubblicità bloccate (%) / giorno",
+          "sv": "Blockerade annonser (%) / dag",
+          "no": "Blokkerte annonser (%) / dag",
+          "es": "Anuncios bloqueados (%) / día",
+          "da": "Blokerede annoncer (%) / dag",
+          "ru": "Заблокированные объявления (%) / день",
+          "pl": "Zablokowane reklamy (%) / dzień"
+        }
+      }
+    ],
+    "args": [{
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=pihole"
+    }]
+  }
+

@@ -79,6 +79,302 @@
   "source": "https://github.com/TroRon/ch.place4fun.pihole",
   "homeyCommunityTopicId": 104113,
   "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "Connection restored",
+          "de": "Verbindung wiederhergestellt",
+          "nl": "Verbinding hersteld",
+          "fr": "Connexion restaurée",
+          "it": "Connessione ripristinata",
+          "sv": "Anslutning återställd",
+          "no": "Tilkoblingen gjenopprettet",
+          "es": "Conexión restablecida",
+          "da": "Forbindelse genoprettet",
+          "ru": "Соединение восстановлено",
+          "pl": "Połączenie przywrócone"
+        },
+        "tokens": [
+          {
+            "name": "alarm_filter_state",
+            "type": "boolean",
+            "title": {
+              "en": "Connection status",
+              "de": "Verbindungsstatus",
+              "nl": "Verbindingsstatus",
+              "fr": "Statut de la connexion",
+              "it": "Stato della connessione",
+              "sv": "Anslutningsstatus",
+              "no": "Tilkoblingsstatus",
+              "es": "Estado de conexión",
+              "da": "Forbindelsesstatus",
+              "ru": "Статус подключения",
+              "pl": "Status połączenia"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "alarm_communication_error_false"
+      },
+      {
+        "title": {
+          "en": "Filter status has changed",
+          "de": "Verbindung unterbrochen",
+          "nl": "Filterstatus is veranderd",
+          "fr": "Le statut du filtre a changé",
+          "it": "Lo stato del filtro è cambiato",
+          "sv": "Filterstatus har ändrats",
+          "no": "Filterstatus har endret seg",
+          "es": "El estado del filtro ha cambiado",
+          "da": "Filterstatus er ændret",
+          "ru": "Статус фильтра изменился",
+          "pl": "Stan filtra uległ zmianie"
+        },
+        "tokens": [
+          {
+            "name": "alarm_filter_state",
+            "type": "boolean",
+            "title": {
+              "en": "Connection status",
+              "de": "Verbindungsstatus",
+              "nl": "Verbindingsstatus",
+              "fr": "Statut de la connexion",
+              "it": "Stato della connessione",
+              "sv": "Anslutningsstatus",
+              "no": "Tilkoblingsstatus",
+              "es": "Estado de conexión",
+              "da": "Forbindelsesstatus",
+              "ru": "Статус подключения",
+              "pl": "Status połączenia"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "alarm_communication_error_true"
+      },
+      {
+        "title": {
+          "en": "Filter status has changed",
+          "de": "Filter wurde aktiviert",
+          "nl": "Filterstatus is veranderd",
+          "fr": "Le statut du filtre a changé",
+          "it": "Lo stato del filtro è cambiato",
+          "sv": "Filterstatus har ändrats",
+          "no": "Filterstatus har endret seg",
+          "es": "El estado del filtro ha cambiado",
+          "da": "Filterstatus er ændret",
+          "ru": "Статус фильтра изменился",
+          "pl": "Stan filtra uległ zmianie"
+        },
+        "tokens": [
+          {
+            "name": "alarm_filter_state",
+            "type": "boolean",
+            "title": {
+              "en": "Filter status",
+              "de": "Filterstatus",
+              "nl": "Filterstatus",
+              "fr": "Statut du filtre",
+              "it": "Stato del filtro",
+              "sv": "Filterstatus",
+              "no": "Filterstatus",
+              "es": "Estado del filtro",
+              "da": "Filterstatus",
+              "ru": "Статус фильтра",
+              "pl": "Stan filtra"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "alarm_filter_state_false"
+      },
+      {
+        "title": {
+          "en": "Filter status has changed",
+          "de": "Filter wurde deaktiviert",
+          "nl": "Filterstatus is veranderd",
+          "fr": "Le statut du filtre a changé",
+          "it": "Lo stato del filtro è cambiato",
+          "sv": "Filterstatus har ändrats",
+          "no": "Filterstatus har endret seg",
+          "es": "El estado del filtro ha cambiado",
+          "da": "Filterstatus er ændret",
+          "ru": "Статус фильтра изменился",
+          "pl": "Stan filtra uległ zmianie"
+        },
+        "tokens": [
+          {
+            "name": "alarm_filter_state",
+            "type": "boolean",
+            "title": {
+              "en": "Filter status",
+              "de": "Filterstatus",
+              "nl": "Filterstatus",
+              "fr": "Statut du filtre",
+              "it": "Stato del filtro",
+              "sv": "Filterstatus",
+              "no": "Filterstatus",
+              "es": "Estado del filtro",
+              "da": "Filterstatus",
+              "ru": "Статус фильтра",
+              "pl": "Stan filtra"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "alarm_filter_state_true"
+      },
+      {
+        "title": {
+          "en": "Blocked advertisements / day updated",
+          "de": "Geblockte Werbeanzeigen / Tag aktualisiert",
+          "nl": "Geblokkeerde advertenties / dag bijgewerkt",
+          "fr": "Publicités bloquées / jour mises à jour",
+          "it": "Pubblicità bloccate / giorno aggiornate",
+          "sv": "Blockerade annonser / dag uppdaterad",
+          "no": "Blokkerte annonser / dag oppdatert",
+          "es": "Anuncios bloqueados / día actualizado",
+          "da": "Blokerede annoncer / dag opdateret",
+          "ru": "Заблокированные объявления / день обновлены",
+          "pl": "Zablokowane reklamy / dzień zaktualizowany"
+        },
+        "tokens": [
+          {
+            "name": "measure_ads_blocked_today",
+            "type": "number",
+            "title": {
+              "en": "Blocked advertisements / day",
+              "de": "Geblockte Werbeanzeigen / Tag",
+              "nl": "Geblokkeerde advertenties / dag",
+              "fr": "Publicités bloquées / jour",
+              "it": "Pubblicità bloccate / giorno",
+              "sv": "Blockerade annonser / dag",
+              "no": "Blokkerte annonser / dag",
+              "es": "Anuncios bloqueados / día",
+              "da": "Blokerede annoncer / dag",
+              "ru": "Заблокированные объявления / день",
+              "pl": "Zablokowane reklamy / dzień"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "measure_ads_blocked_today_changed"
+      },
+      {
+        "title": {
+          "en": "Blocked advertisements (%) / day updated",
+          "de": "Geblockte Werbeanzeigen (%) / Tag aktualisiert",
+          "nl": "Geblokkeerde advertenties (%) / dag bijgewerkt",
+          "fr": "Publicités bloquées (%) / jour mises à jour",
+          "it": "Pubblicità bloccate (%) / giorno aggiornate",
+          "sv": "Blockerade annonser (%) / dag uppdaterad",
+          "no": "Blokkerte annonser (%) / dag oppdatert",
+          "es": "Anuncios bloqueados (%) / día actualizado",
+          "da": "Blokerede annoncer (%) / dag opdateret",
+          "ru": "Заблокированные объявления (%) / день обновлены",
+          "pl": "Zablokowane reklamy (%) / dzień zaktualizowany"
+        },
+        "tokens": [
+          {
+            "name": "measure_ads_blocked_today_percent",
+            "type": "number",
+            "title": {
+              "en": "Blocked advertisements (%) / day",
+              "de": "Geblockte Werbeanzeigen (%) / Tag",
+              "nl": "Geblokkeerde advertenties (%) / dag",
+              "fr": "Publicités bloquées (%) / jour",
+              "it": "Pubblicità bloccate (%) / giorno",
+              "sv": "Blockerade annonser (%) / dag",
+              "no": "Blokkerte annonser (%) / dag",
+              "es": "Anuncios bloqueados (%) / día",
+              "da": "Blokerede annoncer (%) / dag",
+              "ru": "Заблокированные объявления (%) / день",
+              "pl": "Zablokowane reklamy (%) / dzień"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "measure_ads_blocked_today_percent_changed"
+      },
+      {
+        "title": {
+          "en": "Blocked DNS requests / day updated",
+          "de": "Geblockte DNS Anfragen / Tag aktualisiert",
+          "nl": "Geblokkeerde DNS-aanvragen / dag bijgewerkt",
+          "fr": "Requêtes DNS bloquées / jour mises à jour",
+          "it": "Richieste DNS bloccate / giorno aggiornate",
+          "sv": "Blockerade DNS-förfrågningar / dag uppdaterade",
+          "no": "Blokkerte DNS-forespørsler / dag oppdatert",
+          "es": "Solicitudes de DNS bloqueadas / día actualizadas",
+          "da": "Blokerede DNS-forespørgsler / dag opdateret",
+          "ru": "Заблокированные DNS-запросы / день обновлены",
+          "pl": "Zablokowane zapytania DNS / dzień zaktualizowany"
+        },
+        "tokens": [
+          {
+            "name": "measure_dns_queries_today",
+            "type": "number",
+            "title": {
+              "en": "Blocked DNS requests / day updated",
+              "de": "Geblockte DNS Anfragen / Tag aktualisiert",
+              "nl": "Geblokkeerde DNS-verzoeken / dag bijgewerkt",
+              "fr": "Requêtes DNS bloquées / jour mises à jour",
+              "it": "Richieste DNS bloccate / giorno aggiornate",
+              "sv": "Blockerade DNS-förfrågningar / dag uppdaterade",
+              "no": "Blokkerte DNS-forespørsler / dag oppdatert",
+              "es": "Solicitudes de DNS bloqueadas / día actualizadas",
+              "da": "Blokerede DNS-forespørgsler / dag opdateret",
+              "ru": "Заблокированные DNS-запросы / день обновлены",
+              "pl": "Zablokowane zapytania DNS / dzień zaktualizowany"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "measure_dns_queries_today_changed"
+      }
+    ],
     "actions": [
       {
         "id": "disable-pihole-for",
@@ -1326,191 +1622,6 @@
                 }
               }
             ]
-          }
-        ]
-      }
-    ],
-    "triggers": [
-      {
-        "id": "measure_ads_blocked_today_changed",
-        "title": {
-          "en": "Blocked advertisements / day updated",
-          "de": "Geblockte Werbeanzeigen / Tag aktualisiert",
-          "nl": "Geblokkeerde advertenties / dag bijgewerkt",
-          "fr": "Publicités bloquées / jour mises à jour",
-          "it": "Pubblicità bloccate / giorno aggiornate",
-          "sv": "Blockerade annonser / dag uppdaterad",
-          "no": "Blokkerte annonser / dag oppdatert",
-          "es": "Anuncios bloqueados / día actualizado",
-          "da": "Blokerede annoncer / dag opdateret",
-          "ru": "Заблокированные объявления / день обновлены",
-          "pl": "Zablokowane reklamy / dzień zaktualizowany"
-        },
-        "tokens": [
-          {
-            "name": "measure_ads_blocked_today",
-            "type": "number",
-            "title": {
-              "en": "Blocked advertisements / day",
-              "de": "Geblockte Werbeanzeigen / Tag",
-              "nl": "Geblokkeerde advertenties / dag",
-              "fr": "Publicités bloquées / jour",
-              "it": "Pubblicità bloccate / giorno",
-              "sv": "Blockerade annonser / dag",
-              "no": "Blokkerte annonser / dag",
-              "es": "Anuncios bloqueados / día",
-              "da": "Blokerede annoncer / dag",
-              "ru": "Заблокированные объявления / день",
-              "pl": "Zablokowane reklamy / dzień"
-            },
-            "example": {
-              "en": "1234"
-            }
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=pihole"
-          }
-        ]
-      },
-      {
-        "id": "measure_dns_queries_today_changed",
-        "title": {
-          "en": "Blocked DNS requests / day updated",
-          "de": "Geblockte DNS Anfragen / Tag aktualisiert",
-          "nl": "Geblokkeerde DNS-aanvragen / dag bijgewerkt",
-          "fr": "Requêtes DNS bloquées / jour mises à jour",
-          "it": "Richieste DNS bloccate / giorno aggiornate",
-          "sv": "Blockerade DNS-förfrågningar / dag uppdaterade",
-          "no": "Blokkerte DNS-forespørsler / dag oppdatert",
-          "es": "Solicitudes de DNS bloqueadas / día actualizadas",
-          "da": "Blokerede DNS-forespørgsler / dag opdateret",
-          "ru": "Заблокированные DNS-запросы / день обновлены",
-          "pl": "Zablokowane zapytania DNS / dzień zaktualizowany"
-        },
-        "tokens": [
-          {
-            "name": "measure_dns_queries_today",
-            "type": "number",
-            "title": {
-              "en": "Blocked DNS requests / day updated",
-              "de": "Geblockte DNS Anfragen / Tag aktualisiert",
-              "nl": "Geblokkeerde DNS-verzoeken / dag bijgewerkt",
-              "fr": "Requêtes DNS bloquées / jour mises à jour",
-              "it": "Richieste DNS bloccate / giorno aggiornate",
-              "sv": "Blockerade DNS-förfrågningar / dag uppdaterade",
-              "no": "Blokkerte DNS-forespørsler / dag oppdatert",
-              "es": "Solicitudes de DNS bloqueadas / día actualizadas",
-              "da": "Blokerede DNS-forespørgsler / dag opdateret",
-              "ru": "Заблокированные DNS-запросы / день обновлены",
-              "pl": "Zablokowane zapytania DNS / dzień zaktualizowany"
-            },
-            "example": {
-              "en": "1234"
-            }
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=pihole"
-          }
-        ]
-      },
-      {
-        "id": "measure_ads_blocked_today_percent_changed",
-        "title": {
-          "en": "Blocked advertisements (%) / day updated",
-          "de": "Geblockte Werbeanzeigen (%) / Tag aktualisiert",
-          "nl": "Geblokkeerde advertenties (%) / dag bijgewerkt",
-          "fr": "Publicités bloquées (%) / jour mises à jour",
-          "it": "Pubblicità bloccate (%) / giorno aggiornate",
-          "sv": "Blockerade annonser (%) / dag uppdaterad",
-          "no": "Blokkerte annonser (%) / dag oppdatert",
-          "es": "Anuncios bloqueados (%) / día actualizado",
-          "da": "Blokerede annoncer (%) / dag opdateret",
-          "ru": "Заблокированные объявления (%) / день обновлены",
-          "pl": "Zablokowane reklamy (%) / dzień zaktualizowany"
-        },
-        "tokens": [
-          {
-            "name": "measure_ads_blocked_today_percent",
-            "type": "number",
-            "title": {
-              "en": "Blocked advertisements (%) / day",
-              "de": "Geblockte Werbeanzeigen (%) / Tag",
-              "nl": "Geblokkeerde advertenties (%) / dag",
-              "fr": "Publicités bloquées (%) / jour",
-              "it": "Pubblicità bloccate (%) / giorno",
-              "sv": "Blockerade annonser (%) / dag",
-              "no": "Blokkerte annonser (%) / dag",
-              "es": "Anuncios bloqueados (%) / día",
-              "da": "Blokerede annoncer (%) / dag",
-              "ru": "Заблокированные объявления (%) / день",
-              "pl": "Zablokowane reklamy (%) / dzień"
-            },
-            "example": {
-              "en": "2.2%"
-            }
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=pihole"
-          }
-        ]
-      },
-      {
-        "id": "alarm_communication_error_changed",
-        "type": "boolean",
-        "title": {
-          "en": "Blocked advertisements %) / day updated",
-          "de": "Verbindungs-Status hat sich geändert",
-          "nl": "Geblokkeerde advertenties %) / dag bijgewerkt",
-          "fr": "Publicités bloquées %) / jour mises à jour",
-          "it": "Pubblicità bloccate %) / giorno aggiornate",
-          "sv": "Blockerade annonser %) / dag uppdaterad",
-          "no": "Blokkerte annonser %) / dag oppdatert",
-          "es": "Anuncios bloqueados %) / día actualizado",
-          "da": "Blokerede annoncer %) / dag opdateret",
-          "ru": "Заблокированные объявления %) / день обновлены",
-          "pl": "Zablokowane reklamy %) / dzień zaktualizowany"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=pihole"
-          }
-        ]
-      },
-      {
-        "id": "alarm_filter_state_changed",
-        "type": "boolean",
-        "title": {
-          "en": "Filter status has changed",
-          "de": "Filter Status hat sich geändert",
-          "nl": "Filterstatus is veranderd",
-          "fr": "Le statut du filtre a changé",
-          "it": "Lo stato del filtro è cambiato",
-          "sv": "Filterstatus har ändrats",
-          "no": "Filterstatus har endret seg",
-          "es": "El estado del filtro ha cambiado",
-          "da": "Filterstatus er ændret",
-          "ru": "Статус фильтра изменился",
-          "pl": "Stan filtra uległ zmianie"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=pihole"
           }
         ]
       }

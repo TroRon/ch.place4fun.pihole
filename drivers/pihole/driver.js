@@ -5,6 +5,5 @@ const PiholeDevice = require('./device');
 class PiholeDriver extends Homey.Driver {
   async onInit() {
   }
-}
-
+  }
 module.exports = PiholeDriver;

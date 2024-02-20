@@ -1,10 +1,6 @@
 'use strict';
 
 const Homey = require('homey');
-////////////////////////////////////////////////////////////////////////////////////////
-// Definieren Sie die Variable alarmFilterState
-let alarmFilterState = true; // Beispiel: Filter ist aktiviert
-////////////////////////////////////////////////////////////////////////////////////////
 
 class PiHoleControl extends Homey.App {
   async onInit() {
@@ -60,18 +56,6 @@ class PiHoleControl extends Homey.App {
   setPihole.registerRunListener(async (args, state) => {
     return await this.setPihole(args, state);
   });
-
-  ///////////////////////////////////////////////////////////////////////////////////////
-
-  // IN PROGRESS
- 
-  
-  // IN PROGRESS
-
-  ///////////////////////////////////////////////////////////////////////////////////////
-
-
-//TODO ALLE TRIGGER KARTEN
 
   // *****************************************************************************************************************
   //ALTER TREIBER PI-HOLE //
@@ -542,6 +526,9 @@ async setPihole(args, state) {
   return true; // Gibt an, dass der Listener erfolgreich ausgeführt wurde
 }
 }
+
+
+
 module.exports = PiHoleControl;
 
 //Hilfs-Funktion für API Aufruf

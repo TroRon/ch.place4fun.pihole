@@ -75,7 +75,7 @@ class PiHoleDevice extends Homey.Device {
       this.registerCapabilityListener('onoff', async (value) => {
       this.log('PiHole Control: Eingeschaltet:' ,value);
       const deviceId = this.getData().id;
-  
+
       //Reagiert darauf, wenn das Gerät nicht erreichbar ist
       this.setUnavailable(this.homey.__('device.unavailable')).catch(this.error);
 
