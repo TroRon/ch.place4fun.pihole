@@ -90,5 +90,88 @@
             "value": ""
           }
         ]
+      },
+      {
+        "type": "group",
+        "label": { 
+          "de": "Aktualisierungs-Intervall",
+          "da": "Opdateringsinterval",
+          "en": "Update Interval",
+          "fr": "Intervalle de mise à jour",
+          "it": "Intervallo di aggiornamento",
+          "nl": "Update-interval",
+          "no": "Oppdateringsintervall",
+          "pl": "Interwał aktualizacji",
+          "ru": "Интервал обновления",
+          "sv": "Uppdateringsintervall"
+          },
+        "children": [
+       {
+              "id": "interval",
+              "type": "number",
+              "label": { 
+                "de": "Abruf-Intervall",
+                "da": "Hentningsinterval",
+                "en": "Fetch Interval",
+                "fr": "Intervalle de récupération",
+                "it": "Intervallo di recupero",
+                "nl": "Ophaalinterval",
+                "no": "Henteintervall",
+                "pl": "Interwał pobierania",
+                "ru": "Интервал запроса",
+                "sv": "Hämtningsintervall"
+              },
+              "hint": { 
+                "de": "Wähle ein Aktualisierungs-Intervall. Wähle eine Intervall bis zu 10 min., um Live-Updates vom Gerät zu ermöglichen.",
+                "da": "Vælg et opdateringsinterval. Vælg et interval på op til 10 min., for at muliggøre live-opdateringer fra enheden.",
+                "en": "Choose an update interval. Select an interval of up to 10 mins to enable live updates from the device.",
+                "fr": "Choisissez un intervalle de mise à jour. Sélectionnez un intervalle jusqu'à 10 min, pour permettre les mises à jour en direct de l'appareil.",
+                "it": "Scegli un intervallo di aggiornamento. Seleziona un intervallo fino a 10 min., per abilitare gli aggiornamenti live dal dispositivo.",
+                "nl": "Kies een update-interval. Kies een interval tot 10 min., om live-updates van het apparaat mogelijk te maken.",
+                "no": "Velg et oppdateringsintervall. Velg et intervall på opptil 10 min., for å muliggjøre direkteoppdateringer fra enheten.",
+                "pl": "Wybierz interwał aktualizacji. Wybierz interwał do 10 min., aby umożliwić aktualizacje na żywo z urządzenia.",
+                "ru": "Выберите интервал обновления. Выберите интервал до 10 мин., чтобы включить живые обновления с устройства.",
+                "sv": "Välj ett uppdateringsintervall. Välj ett intervall på upp till 10 min., för att möjliggöra live-uppdateringar från enheten."
+            },
+              "min": 1,
+              "value": 1
+            },
+            {
+              "id": "interval_unit",
+              "type": "dropdown",
+              "label": { 
+                "de": "Intervall-Einheit",
+                "da": "Intervalenhed",
+                "en": "Interval Unit",
+                "fr": "Unité d'intervalle",
+                "it": "Unità d'intervallo",
+                "nl": "Interval-eenheid",
+                "no": "Intervallenhet",
+                "pl": "Jednostka interwału",
+                "ru": "Единица интервала",
+                "sv": "Intervallenhet"              },
+              "value": "min",
+              "values":[
+                  {
+                      "id": "min",
+                      "label":{
+                        "de": "Minuten",
+                        "da": "Minutter",
+                        "en": "Minutes",
+                        "fr": "Minutes",
+                        "it": "Minuti",
+                        "nl": "Minuten",
+                        "no": "Minutter",
+                        "pl": "Minuty",
+                        "ru": "Минуты",
+                        "sv": "Minuter"
+                      }
+                  }
+              ]
+          }
+        ]
       }
+
+     
+
 ]

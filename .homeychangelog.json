@@ -336,5 +336,18 @@
   "da": "Fejlrettelser / Optimeringer", 
   "ru": "Исправление ошибок / Оптимизации", 
   "pl": "Naprawy błędów / Optymalizacje"
+},
+"1.4.0": {
+  "de": "Bugfixes und Optimierungen bei neuem Treiber", 
+  "en": "Bug fixes and optimizations for new driver", 
+  "nl": "Bugfixes en optimalisaties voor nieuwe driver", 
+  "fr": "Correctifs et optimisations pour nouveau pilote", 
+  "it": "Bug fix e ottimizzazioni per nuovo driver",
+  "sv": "Buggrättningar och optimeringar för ny drivrutin", 
+  "no": "Feilrettinger og optimaliseringer for ny driver", 
+  "es": "Corrección de errores y optimizaciones para nuevo controlador", 
+  "da": "Fejlrettelser og optimeringer for ny driver", 
+  "ru": "Исправление ошибок и оптимизации для нового драйвера", 
+  "pl": "Naprawy błędów i optymalizacje dla nowego sterownika"
 }
 }

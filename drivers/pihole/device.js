@@ -2,6 +2,8 @@ const Homey = require('homey');
 const PiholeDevice = require('./device'); // Stellen Sie sicher, dass der Pfad korrekt ist.
 const CAPABILITY_DEBOUNCE = 500;
 
+//Festlegen einer Map für die Task-Verwaltung
+let intervalIds = new Map();
 
 class PiHoleDevice extends Homey.Device {
 
@@ -16,12 +18,14 @@ class PiHoleDevice extends Homey.Device {
       const device_url = deviceSettings.url
       const device_port = deviceSettings.port
       const device_api = deviceSettings.api
-   
+      const device_interval = deviceSettings.interval
+      
       //Schreiben ins Log File
       this.log('PiHole Control: *******************************************************')
       this.log('PiHole Control: URL  ->', device_url);
       this.log('PiHole Control: Port ->', device_port);
       this.log('PiHole Control: Key  ->', device_api);
+      this.log('PiHole Control: Key  ->', device_interval, 'Minute(n)');
       this.log('PiHole Control: *******************************************************')
 
       //Herausfinden welches Gerät das ist
@@ -54,22 +58,21 @@ class PiHoleDevice extends Homey.Device {
         {
           url: device_url,
           port: device_port,
-          api: device_api
+          api: device_api,
+          interval: device_interval
         },
-      ]; // Angenommen, dies ist bereits mit den Geräteeinstellungen gefüllt
-      let intervalIds = new Map(); // Zum Speichern der intervalId für jedes Gerät
-      
+      ]; 
+
       deviceSettingsArray.forEach(deviceSettings => {
         const status_url = `${device_url}:${device_port}/admin/api.php?summaryRaw&auth=${device_api}`;
       
         // Erstellen des wiederkehrenden Tasks
-        const intervalId = setInterval(() => {
-          this._updateDeviceData(status_url);
-        }, 60000); // alle 60 Sekunden
-      
-        // Speichern der intervalId mit der Geräte-ID als Schlüssel
-        intervalIds.set(deviceSettings.id, intervalId);
+        const deviceId = this.getId();
+        
+        //Task neu erstellen
+        this.createTask(deviceId)
       });
+
 
       //Schreibt den Status, bei Veränderung, ins Log File
       this.registerCapabilityListener('onoff', async (value) => {
@@ -108,6 +111,39 @@ class PiHoleDevice extends Homey.Device {
 async onSettings({ oldSettings, newSettings, changedKeys }) {
   this.log(`PiHole Control: [Device] ${this.getName()}: Einstellung geändert: ${changedKeys}`);
   this._settings = newSettings;
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  if (changedKeys.includes('interval')) {
+    // 'interval' wurde geändert
+    this.log(`PiHole Control: [Device] ${this.getName()}: Intervall-Einstellung geändert: ${newSettings.interval} Minute(n)`);
+
+    const deviceId = this.getId();
+    this.log('DEVICE ID' ,deviceId)
+    this.log(`PiHole Control: TASK gelöscht: `, deviceId);
+
+
+    //Task löschen
+    this.deleteTask(deviceId)
+    this.log('TASK gelöscht' ,deviceId)
+    this.log(`PiHole Control: TASK gelöscht: `, deviceId);
+
+    //Task neu erstellen
+    this.createTask(deviceId)
+    this.log(`PiHole Control: TASK erstellt: `, deviceId);
+
+
+    
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  }
+
+
+
+
+
+
+
 }
 
 /**
@@ -123,24 +159,10 @@ async onRenamed(name) {
  * onDeleted is called when the user deleted the device.
  */
 async onDeleted() {
-  this.log('PiHole Control: Gerät wurde gelöscht' ,value);
-  //clearInterval(this.homeyApp.DeviceUpdateTask); // stoppe das Intervall, wenn das Gerät gelöscht wird
+  const deviceId = this.getId();
 
- // Finde das Gerät mit der gegebenen ID
- const device = deviceSettingsArray.find(d => d.id === deviceId);
-  
-  // Überprüfe, ob eine intervalId für das Gerät existiert
-  if (intervalIds.has(deviceId)) {
-    // Hole die intervalId und stoppe das Intervall
-    clearInterval(intervalIds.get(deviceId));
-    console.log(`Task für Gerät ${deviceId} gestoppt.`);
-
-    // Entferne die intervalId aus der Map
-    intervalIds.delete(deviceId);
-  } else {
-    console.log(`Kein Task gefunden für Gerät ${deviceId}.`);
-  }
-
+  //Task löschen
+  this.deleteTask(deviceId)
 }
 
 async _updateCapabilities(){
@@ -357,5 +379,51 @@ async _updateDeviceData(url) {
   this.setCapabilityValue('alarm_communication_error', true); 
 }
 } 
+
+
+//TASK Verwaltung
+async deleteTask(deviceId) {
+  // Überprüfen, ob für die deviceId ein Task existiert
+  if (intervalIds.has(deviceId)) {
+    // Hole die intervalId und stoppe das Intervall
+    clearInterval(intervalIds.get(deviceId));
+    this.log('PiHole Control: Task für Gerät' ,deviceId, 'gestoppt.');
+
+    // Entferne die intervalId aus der Map
+    intervalIds.delete(deviceId);
+  } else {
+    this.log('PiHole Control: Kein Task gefunden für Gerät' ,deviceId,);
+  }
+}
+
+async createTask(deviceId) {
+  
+  //Ansprechen der Einstellungen, damit Zugriff darauf gewähleistet ist
+  const deviceSettings = this.getSettings();
+
+  //Die nötigen Einstellungen holen und bereitstellen
+  const device_url = deviceSettings.url
+  const device_port = deviceSettings.port
+  const device_api = deviceSettings.api
+
+  //Bereitstellen der nötigen URLs für Aktionen / Abfragen
+  const status_url = `${device_url}:${device_port}/admin/api.php?summaryRaw&auth=${device_api}`;
+
+  //Die nötigen Einstellungen holen und bereitstellen
+  const device_interval = deviceSettings.interval
+
+  // Umrechnen der Interval ID in Sekunden
+  let device_interval_minutes = device_interval; // Der Wert von device_interval in Minuten
+  let device_interval_milliseconds = device_interval_minutes * 60000;
+ 
+  // Erstelle einen neuen Task (z.B. eine Funktion, die regelmäßig ausgeführt wird)
+  const intervalId = setInterval(() => {
+    this._updateDeviceData(status_url);
+  }, device_interval_milliseconds); // gem. eingestelltem Intervall
+  
+  // Speichere die neue intervalId in der Map
+  intervalIds.set(deviceId, intervalId);
+  this.log('PiHole Control: Neuer Task erstellt für Gerät: ' ,deviceId);
+}
 }
 module.exports = PiHoleDevice;

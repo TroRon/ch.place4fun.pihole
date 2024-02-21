@@ -45,6 +45,10 @@ This card adds the functionality that all Piholes can be disabled for a limited 
 
 # Version History
 
+
+### v1.4.0 (Store Release Version)
+- Bug fixes and optimizations for new driver
+
 ### v1.3.9 (Store Release Version)
 - Bug fixes / Optimizations
 
