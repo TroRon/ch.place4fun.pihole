@@ -82,6 +82,88 @@
     "triggers": [
       {
         "title": {
+          "en": "Filter status has changed",
+          "de": "TEST Filter wurde aktiviert",
+          "nl": "Filterstatus is veranderd",
+          "fr": "Le statut du filtre a changé",
+          "it": "Lo stato del filtro è cambiato",
+          "sv": "Filterstatus har ändrats",
+          "no": "Filterstatus har endret seg",
+          "es": "El estado del filtro ha cambiado",
+          "da": "Filterstatus er ændret",
+          "ru": "Статус фильтра изменился",
+          "pl": "Stan filtra uległ zmianie"
+        },
+        "tokens": [
+          {
+            "name": "alarm_filter_state",
+            "type": "boolean",
+            "title": {
+              "en": "Filter status",
+              "de": "Filterstatus",
+              "nl": "Filterstatus",
+              "fr": "Statut du filtre",
+              "it": "Stato del filtro",
+              "sv": "Filterstatus",
+              "no": "Filterstatus",
+              "es": "Estado del filtro",
+              "da": "Filterstatus",
+              "ru": "Статус фильтра",
+              "pl": "Stan filtra"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device"
+          }
+        ],
+        "id": "alarm_all_filter_state_false"
+      },
+      {
+        "title": {
+          "en": "Filter status has changed",
+          "de": "TEST Filter wurde deaktiviert",
+          "nl": "Filterstatus is veranderd",
+          "fr": "Le statut du filtre a changé",
+          "it": "Lo stato del filtro è cambiato",
+          "sv": "Filterstatus har ändrats",
+          "no": "Filterstatus har endret seg",
+          "es": "El estado del filtro ha cambiado",
+          "da": "Filterstatus er ændret",
+          "ru": "Статус фильтра изменился",
+          "pl": "Stan filtra uległ zmianie"
+        },
+        "tokens": [
+          {
+            "name": "alarm_filter_state",
+            "type": "boolean",
+            "title": {
+              "en": "Filter status",
+              "de": "Filterstatus",
+              "nl": "Filterstatus",
+              "fr": "Statut du filtre",
+              "it": "Stato del filtro",
+              "sv": "Filterstatus",
+              "no": "Filterstatus",
+              "es": "Estado del filtro",
+              "da": "Filterstatus",
+              "ru": "Статус фильтра",
+              "pl": "Stan filtra"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device"
+          }
+        ],
+        "id": "alarm_all_filter_state_true"
+      },
+      {
+        "title": {
           "en": "Connection restored",
           "de": "Verbindung wiederhergestellt",
           "nl": "Verbinding hersteld",
@@ -278,6 +360,9 @@
               "da": "Blokerede annoncer / dag",
               "ru": "Заблокированные объявления / день",
               "pl": "Zablokowane reklamy / dzień"
+            },
+            "example": {
+              "en": "16549"
             }
           }
         ],
@@ -320,6 +405,9 @@
               "da": "Blokerede annoncer (%) / dag",
               "ru": "Заблокированные объявления (%) / день",
               "pl": "Zablokowane reklamy (%) / dzień"
+            },
+            "example": {
+              "en": "1.2%"
             }
           }
         ],
@@ -362,6 +450,9 @@
               "da": "Blokerede DNS-forespørgsler / dag opdateret",
               "ru": "Заблокированные DNS-запросы / день обновлены",
               "pl": "Zablokowane zapytania DNS / dzień zaktualizowany"
+            },
+            "example": {
+              "en": "16549"
             }
           }
         ],
@@ -1711,6 +1802,21 @@
           "id": "manual_input",
           "prev": "welcome",
           "next": "list_devices"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices",
+            "prev": "manual_input"
+          },
+          "options": {
+            "singular": false
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
         }
       ],
       "settings": [

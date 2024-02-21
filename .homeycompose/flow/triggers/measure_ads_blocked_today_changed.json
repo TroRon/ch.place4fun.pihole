@@ -28,9 +28,10 @@
           "da": "Blokerede annoncer / dag",
           "ru": "Заблокированные объявления / день",
           "pl": "Zablokowane reklamy / dzień"
-          }
+        },          
+        "example": { "en": "16549" }
       }
-    ],
+],
     "args": [{
         "name": "device",
         "type": "device",

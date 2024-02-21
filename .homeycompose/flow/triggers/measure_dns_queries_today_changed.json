@@ -28,7 +28,8 @@
                 "da": "Blokerede DNS-forespørgsler / dag opdateret",
                 "ru": "Заблокированные DNS-запросы / день обновлены",
                 "pl": "Zablokowane zapytania DNS / dzień zaktualizowany"
-              }
+              },          
+              "example": { "en": "16549" }
             }
           ], 
     "args": [{
