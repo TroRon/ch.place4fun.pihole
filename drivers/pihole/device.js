@@ -9,11 +9,14 @@ class PiHoleDevice extends Homey.Device {
 
     async onInit() {
 
-      this.log('PiHole Control: Gerät wurde initialisiert');
-
+      this.log('Gerät wurde initialisiert');
+      
       //Ansprechen der Einstellungen, damit Zugriff darauf gewähleistet ist
       const deviceSettings = this.getSettings();
              
+   // Prüfen, ob Geräteeinstellungen vorhanden sind
+   if (deviceSettings) {
+
       //Die nötigen Einstellungen holen und bereitstellen
       const device_url = deviceSettings.url
       const device_port = deviceSettings.port
@@ -21,15 +24,15 @@ class PiHoleDevice extends Homey.Device {
       const device_interval = deviceSettings.interval
       
       //Schreiben ins Log File
-      this.log('PiHole Control: *******************************************************')
-      this.log('PiHole Control: URL  ->', device_url);
-      this.log('PiHole Control: Port ->', device_port);
-      this.log('PiHole Control: Key  ->', device_api);
-      this.log('PiHole Control: Key  ->', device_interval, 'Minute(n)');
-      this.log('PiHole Control: *******************************************************')
+      this.log('*******************************************************')
+      this.log('URL   ->', device_url);
+      this.log('Port  ->', device_port);
+      this.log('Key   ->', device_api);
+      this.log('Akt.  ->', device_interval, 'Minute(n)');
+      this.log('*******************************************************')
 
       //Herausfinden welches Gerät das ist
-      this.log('PiHole Control: Identifiziert und initialisiert ..')
+      this.log('Identifiziert und initialisiert ..')
      
       //Bereitstellen der nötigen URLs für Aktionen / Abfragen
       const disable_url = `${device_url}:${device_port}/admin/api.php?disable&auth=${device_api}`;
@@ -37,9 +40,9 @@ class PiHoleDevice extends Homey.Device {
       const status_url = `${device_url}:${device_port}/admin/api.php?summaryRaw&auth=${device_api}`;
   
       //Schreiben ins Log File
-      this.log('PiHole Control: URL Disable ->', disable_url);
-      this.log('PiHole Control: URL Enable ->', enable_url);
-      this.log('PiHole Control: URL Status ->', status_url);
+      this.log('URL Disable ->', disable_url);
+      this.log('URL Enable  ->', enable_url);
+      this.log('URL Status  ->', status_url);
 
       //Capabilities Updaten (Danke Ronny Winkler)
       await this._updateCapabilities();
@@ -76,28 +79,32 @@ class PiHoleDevice extends Homey.Device {
 
       //Schreibt den Status, bei Veränderung, ins Log File
       this.registerCapabilityListener('onoff', async (value) => {
-      this.log('PiHole Control: Eingeschaltet:' ,value);
+      this.log('Eingeschaltet:' ,value);
       const deviceId = this.getData().id;
 
       //Reagiert darauf, wenn das Gerät nicht erreichbar ist
       this.setUnavailable(this.homey.__('device.unavailable')).catch(this.error);
 
       if (value) {
-        this.log('PiHole Control: Eingeschaltet:' ,value);
+        this.log('Eingeschaltet:' ,value);
         this._makeAPICall(enable_url)
       } else {
-        this.log('PiHole Control: Ausgeschaltet:' ,value);
+        this.log('Ausgeschaltet:' ,value);
         this._makeAPICall(disable_url)
       }
       }
     )
+      } else {
+        this.log('Keine Geräteeinstellungen gefunden. Aktionen werden nicht ausgeführt.');
+    }
+  
   }
 
  /**
    * onAdded is called when the user adds the device, called just after pairing.
    */
  async onAdded() {
-  this.log('PiHole Control: Gerät wurde hinzugefügt' ,value);
+  this.log('Gerät wurde hinzugefügt' ,value);
 }
 
 /**
@@ -109,41 +116,27 @@ class PiHoleDevice extends Homey.Device {
  * @returns {Promise<string|void>} return a custom message that will be displayed
  */
 async onSettings({ oldSettings, newSettings, changedKeys }) {
-  this.log(`PiHole Control: [Device] ${this.getName()}: Einstellung geändert: ${changedKeys}`);
+  this.log(`[Device] ${this.getName()}: Einstellung geändert: ${changedKeys}`);
   this._settings = newSettings;
-
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   if (changedKeys.includes('interval')) {
     // 'interval' wurde geändert
-    this.log(`PiHole Control: [Device] ${this.getName()}: Intervall-Einstellung geändert: ${newSettings.interval} Minute(n)`);
+    this.log(`[Device] ${this.getName()}: Intervall-Einstellung geändert: ${newSettings.interval} Minute(n)`);
 
     const deviceId = this.getId();
-    this.log('DEVICE ID' ,deviceId)
-    this.log(`PiHole Control: TASK gelöscht: `, deviceId);
+
+    //Task löschen
+    setTimeout(() => {
+      this.deleteTask(deviceId)
+    }, 1000); // Verzögerung von einer Sekunde (1000 Millisekunden)
 
 
     //Task löschen
-    this.deleteTask(deviceId)
-    this.log('TASK gelöscht' ,deviceId)
-    this.log(`PiHole Control: TASK gelöscht: `, deviceId);
+    setTimeout(() => {
+      this.createTask(deviceId)
+    }, 1000); // Verzögerung von einer Sekunde (1000 Millisekunden)
 
-    //Task neu erstellen
-    this.createTask(deviceId)
-    this.log(`PiHole Control: TASK erstellt: `, deviceId);
-
-
-    
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  }
-
-
-
-
-
-
-
+   }
 }
 
 /**
@@ -152,7 +145,7 @@ async onSettings({ oldSettings, newSettings, changedKeys }) {
  * @param {string} name The new name
  */
 async onRenamed(name) {
-  this.log('PiHole Control: Gerät wurde umbenannt' ,value);
+  this.log('Gerät wurde umbenannt' ,value);
 }
 
 /**
@@ -206,24 +199,23 @@ async _onCapability( capabilityValues, capabilityOptions){
   const device_url = deviceSettings.url
   const device_port = deviceSettings.port
   const device_api = deviceSettings.api
+  const device_Name = this.getName()
+
 
   //Schreiben ins Log File
-  this.log('PiHole Control: *******************************************************')
-  this.log('PiHole Control: URL  ->', device_url);
-  this.log('PiHole Control: Port ->', device_port);
-  this.log('PiHole Control: Key  ->', device_api);
-  this.log('PiHole Control: *******************************************************')
+  this.log('*******************************************************')
+  this.log('ID   ->', device_Name);
+  this.log('URL  ->', device_url);
+  this.log('Port ->', device_port);
+  this.log('Key  ->', device_api);
+  this.log('*******************************************************')
 
-  //Herausfinden welches Gerät das ist
-  const deviceName = this.getName()
-  this.log('PiHole Control:',deviceName, '-> Identifiziert und initialisiert ..')
- 
   //Bereitstellen der nötigen URLs für Aktionen / Abfragen
   const status_url = `${device_url}:${device_port}/admin/api.php?summaryRaw&auth=${device_api}`;
 
   if( capabilityValues["data_refresh"] != undefined){
     this._updateDeviceData(status_url);
- }
+  }
 }
 
 // Helpers =======================================================================================
@@ -235,11 +227,11 @@ async _makeAPICall(url) {
       if (!response.ok) {
         throw new Error(response.statusText);
       }
-      this.log('PiHole Control: API Aufruf erfolgreich');
+      this.log('API Aufruf erfolgreich');
       return { success: true }; // Erfolgsstatus zurückgeben
   
     } catch (error) {
-      this.log('PiHole Control: API Aufruf fehlgeschlagen:');
+      this.log('API Aufruf fehlgeschlagen:');
       this.log(errorMessage);
       return { success: false, errorMessage: error.message }; // Fehlerstatus und Fehlermeldung zurückgeben
     }
@@ -252,7 +244,7 @@ async _updateDeviceData(url) {
     const response = await fetch(url);
     // Überprüft, ob der Statuscode im Erfolgsbereich liegt (200-299) oder 403 ist
     if (!response.ok && response.status !== 403) { 
-        throw new Error(`PiHole Control: Status Filter: ${response.status}`);
+        throw new Error(`Status Filter: ${response.status}`);
     } else {
     }
 
@@ -319,17 +311,17 @@ async _updateDeviceData(url) {
 
       // Loggen der Werte zwecks Diagnose
       this.log('');
-      this.log('PiHole Control: *******************************************************');
-      this.log('PiHole Control: Task Geräte Abgleich: GESTARTET');
-      this.log('PiHole Control: Aktuelles Gerät:', deviceName);
-      this.log('PiHole Control: Status Filter:' , data.status);
-      this.log('PiHole Control: DNS Querys pro Tag:' , formatted_dns_queries_today);
-      this.log('PiHole Control: Werbeanzeigen geblockt:' , formatted_blocked_adds_today);
-      this.log('PiHole Control: Werbeanzeigen geblockt in Prozent:' , formated_blocked_adds_today_percent);
-      this.log('PiHole Control: Letzter Gravity Update:' ,gravity_update_string);
-      this.log('PiHole Control: Letzter Sync' , formattedSyncDate);
-      this.log('PiHole Control: Task Geräte Abgleich: BEENDET');
-      this.log('PiHole Control: *******************************************************');
+      this.log('*******************************************************');
+      this.log('Task Geräte Abgleich: GESTARTET');
+      this.log('Aktuelles Gerät:', deviceName);
+      this.log('Status Filter:' , data.status);
+      this.log('DNS Querys pro Tag:' , formatted_dns_queries_today);
+      this.log('Werbeanzeigen geblockt:' , formatted_blocked_adds_today);
+      this.log('Werbeanzeigen geblockt in Prozent:' , formated_blocked_adds_today_percent);
+      this.log('Letztes Gravity Update:' ,gravity_update_string);
+      this.log('Letzter Sync' , formattedSyncDate);
+      this.log('Task Geräte Abgleich: BEENDET');
+      this.log('*******************************************************');
       this.log('');
 
       //Fehlerüberprüfung, sollte UNDEFINED zurückkommen
@@ -338,7 +330,7 @@ async _updateDeviceData(url) {
         let formatted_dns_queries_today = dns_queries_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'");
         this.setCapabilityValue('measure_dns_queries_today', dns_queries_today);
       } else {
-        this.log('PiHole Control: Fehler --> dns_queries_today ist nicht definiert');
+        this.log('Fehler --> dns_queries_today ist nicht definiert');
       }
 
     if (typeof data.ads_blocked_today !== 'undefined') {
@@ -346,25 +338,25 @@ async _updateDeviceData(url) {
         let formatted_blocked_adds_today = blocked_adds_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'");
         this.setCapabilityValue('measure_ads_blocked_today', blocked_adds_today);
     } else {
-        this.log('PiHole Control: Fehler --> blocked_adds_today ist nicht definiert');
+        this.log('Fehler --> blocked_adds_today ist nicht definiert');
       }
 
     if (typeof formattedSyncDate !== 'undefined') {
         this.setCapabilityValue('last_sync', formattedSyncDate);
     } else {
-        this.log('PiHole Control: Fehler --> last_sync ist nicht definiert');
+        this.log('Fehler --> last_sync ist nicht definiert');
     }
 
     if (typeof blocked_adds_today_percent !== 'undefined') {
         this.setCapabilityValue('measure_ads_blocked_today_percent', blocked_adds_today_percent);
     } else {
-        this.log('PiHole Control: Fehler --> measure_ads_blocked_today_percent ist nicht definiert');
+        this.log('Fehler --> measure_ads_blocked_today_percent ist nicht definiert');
     }
 
     if (typeof gravity_update_string !== 'undefined') {
         this.setCapabilityValue('gravity_last_update', gravity_update_string);
     } else {
-        this.log('PiHole Control: Fehler --> gravity_last_update ist nicht definiert');
+        this.log('Fehler --> gravity_last_update ist nicht definiert');
     }
 
     // Capabilities für den Rest setzen
@@ -373,7 +365,7 @@ async _updateDeviceData(url) {
 
 });
 } catch (error) {
-  this.log('PiHole Control: Ein Fehler ist aufgetreten ->', error.message);
+  this.log('Ein Fehler ist aufgetreten ->', error.message);
   
   // Jetzt können Sie Capabilities für dieses Gerät setzen
   this.setCapabilityValue('alarm_communication_error', true); 
@@ -387,43 +379,52 @@ async deleteTask(deviceId) {
   if (intervalIds.has(deviceId)) {
     // Hole die intervalId und stoppe das Intervall
     clearInterval(intervalIds.get(deviceId));
-    this.log('PiHole Control: Task für Gerät' ,deviceId, 'gestoppt.');
+    this.log('Task für Gerät' ,deviceId, 'gestoppt.');
 
     // Entferne die intervalId aus der Map
     intervalIds.delete(deviceId);
+    this.log('Task für Gerät' ,deviceId, 'gelöscht.');
+
   } else {
-    this.log('PiHole Control: Kein Task gefunden für Gerät' ,deviceId,);
+    this.log('Kein Task gefunden für Gerät' ,deviceId,);
   }
 }
 
 async createTask(deviceId) {
   
-  //Ansprechen der Einstellungen, damit Zugriff darauf gewähleistet ist
-  const deviceSettings = this.getSettings();
-
-  //Die nötigen Einstellungen holen und bereitstellen
-  const device_url = deviceSettings.url
-  const device_port = deviceSettings.port
-  const device_api = deviceSettings.api
-
-  //Bereitstellen der nötigen URLs für Aktionen / Abfragen
-  const status_url = `${device_url}:${device_port}/admin/api.php?summaryRaw&auth=${device_api}`;
-
-  //Die nötigen Einstellungen holen und bereitstellen
-  const device_interval = deviceSettings.interval
-
-  // Umrechnen der Interval ID in Sekunden
-  let device_interval_minutes = device_interval; // Der Wert von device_interval in Minuten
-  let device_interval_milliseconds = device_interval_minutes * 60000;
- 
-  // Erstelle einen neuen Task (z.B. eine Funktion, die regelmäßig ausgeführt wird)
-  const intervalId = setInterval(() => {
-    this._updateDeviceData(status_url);
-  }, device_interval_milliseconds); // gem. eingestelltem Intervall
+    // Vorhandenes Intervall beenden, falls es bereits existiert
+    const existingIntervalId = intervalIds.get(deviceId);
+    if (existingIntervalId) {
+      clearInterval(existingIntervalId);
+      intervalIds.delete(deviceId); // Entferne das Intervall aus der Map
+    }
   
-  // Speichere die neue intervalId in der Map
-  intervalIds.set(deviceId, intervalId);
-  this.log('PiHole Control: Neuer Task erstellt für Gerät: ' ,deviceId);
+    // Ansprechen der Einstellungen, um darauf zugreifen zu können
+    const deviceSettings = this.getSettings();
+  
+    // Die nötigen Einstellungen holen und bereitstellen
+    const device_url = deviceSettings.url;
+    const device_port = deviceSettings.port;
+    const device_api = deviceSettings.api;
+  
+    // Bereitstellen der nötigen URLs für Aktionen / Abfragen
+    const status_url = `${device_url}:${device_port}/admin/api.php?summaryRaw&auth=${device_api}`;
+  
+    // Die nötigen Einstellungen holen und bereitstellen
+    const device_interval = deviceSettings.interval;
+  
+    // Umrechnen der Interval ID in Millisekunden
+    const device_interval_minutes = device_interval; // Der Wert von device_interval in Minuten
+    const device_interval_milliseconds = device_interval_minutes * 60000;
+  
+    // Erstelle einen neuen Task (z.B. eine Funktion, die regelmäßig ausgeführt wird)
+    const intervalId = setInterval(() => {
+      this._updateDeviceData(status_url);
+    }, device_interval_milliseconds); // gem. eingestelltem Intervall
+  
+    // Speichere die neue intervalId in der Map
+    intervalIds.set(deviceId, intervalId);
+    this.log('Neuer Task erstellt für Gerät:', deviceId);
 }
 }
 module.exports = PiHoleDevice;

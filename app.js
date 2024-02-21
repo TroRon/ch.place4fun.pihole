@@ -352,7 +352,7 @@ this.homey.flow.getActionCard('disable-pihole-for').registerRunListener(async(ar
             // Füge die relevanten Einstellungen zum Array hinzu
             deviceSettingsArray.push(relevantSettings);
         } else {
-            this.log('PiHole Control: Settings not found for device', device);
+            this.log('Settings not found for device', device);
         }
     });
   }
@@ -389,7 +389,7 @@ this.homey.flow.getActionCard('disable-pihole-for').registerRunListener(async(ar
             // Füge die relevanten Einstellungen zum Array hinzu
             deviceSettingsArray.push(relevantSettings);
         } else {
-          this.log('PiHole Control: Settings not found for device', device);
+          this.log('Settings not found for device', device);
         }
     });
     
@@ -398,7 +398,7 @@ this.homey.flow.getActionCard('disable-pihole-for').registerRunListener(async(ar
   async disablePiholeFor(args, state) {
 
   // Logge die Aktion für Debugging-Zwecke
-  this.log('PiHole Control: pihole-disable-pihole-for ausgeführt');
+  this.log('pihole-disable-pihole-for ausgeführt');
 
   // args.device gibt das ausgewählte Gerät an
   const device = args.device; // Stelle sicher, dass 'device' korrekt auf das Geräteargument in deiner Flow-Karte verweist
@@ -415,7 +415,7 @@ this.homey.flow.getActionCard('disable-pihole-for').registerRunListener(async(ar
     }
     
     //Loggt in die Konsole
-    this.log('PiHole Control: PiHole', settings.name, ' für ' ,selectedTime,  'deaktiviert');
+    this.log('PiHole', settings.name, ' für ' ,selectedTime,  'deaktiviert');
 
     //Füllt das Token ab und gibt es zurück
     const selectedTimeMinutes = Number(selectedTime);
@@ -423,7 +423,7 @@ this.homey.flow.getActionCard('disable-pihole-for').registerRunListener(async(ar
 
   } catch (err) {
     console.error('Error in "pihole-disable-pihole-for" actionCard:', err);
-    this.log('PiHole Control: Error in disable-pihole-for actionCard:', err);
+    this.log('Error in disable-pihole-for actionCard:', err);
     throw new Error("Error in API processing (pihole-disable-pihole-for)"); // oder irgendeine andere passende Meldung, die im Flow erscheinen soll.
   }
   return true; // Gibt an, dass der Listener erfolgreich ausgeführt wurde
@@ -468,20 +468,20 @@ async disablePiholesFor(args, state) {
             }
           } catch (err) {
             console.error('Error in "pihole-disable-piholes-for" actionCard:', err);
-            this.log('PiHole Control: Error in disable-piholes-for actionCard:', err);
+            this.log('Error in disable-piholes-for actionCard:', err);
             throw new Error("Error in API processing (pihole-disable-piholes-for)"); // oder irgendeine andere passende Meldung, die im Flow erscheinen soll.
           }
            return true; // Gibt an, dass der Listener erfolgreich ausgeführt wurde
         }
   });
             //Loggt in die Konsole
-            this.log('PiHole Control: Alle PiHoles', 'für ' ,selectedTime,  'deaktiviert');
+            this.log('Alle PiHoles', 'für ' ,selectedTime,  'deaktiviert');
 }
 
 async setPihole(args, state) {
   
   // Logge die Aktion für Debugging-Zwecke
-  this.log('PiHole Control: pihole-set-pihole-for ausgeführt');
+  this.log('pihole-set-pihole-for ausgeführt');
 
   // make sure args.state and args.instance are not undefined
   let selectedState = args.state || '5';
@@ -517,10 +517,10 @@ async setPihole(args, state) {
     }
     
     //Loggt in die Konsole
-    this.log('PiHole Control: Set-PiHole:', ActionState);
+    this.log('Set-PiHole:', ActionState);
   } catch (err) {
     console.error('Error in "pihole-set-pihole" actionCard:', err);
-    this.log('PiHole Control: Error in pihole-set-pihole actionCard:', err);
+    this.log('Error in pihole-set-pihole actionCard:', err);
     throw new Error("Error in API processing (pihole-set-pihole)"); // oder irgendeine andere passende Meldung, die im Flow erscheinen soll.
   }
   return true; // Gibt an, dass der Listener erfolgreich ausgeführt wurde
@@ -540,7 +540,7 @@ async function makeAPICall(url) {
       throw new Error(response.statusText);
     }
 
-    console.log('PiHole Control: API-Aufruf erfolgreich');
+    console.log('API-Aufruf erfolgreich');
     return { success: true }; // Erfolgsstatus zurückgeben
 
   } catch (error) {

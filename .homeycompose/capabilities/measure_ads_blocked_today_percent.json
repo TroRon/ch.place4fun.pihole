@@ -1,17 +1,17 @@
 {
   "type": "number",
   "title": {
-    "en": "Advertisements blocked / day",
-    "de": "Geblockte Werbeanzeigen / Tag",
-    "nl": "Advertenties geblokkeerd / dag",
-    "fr": "Publicités bloquées / jour",
-    "it": "Pubblicità bloccate  / giorno",
-    "sv": "Annonser blockerade  / dag",
-    "no": "Annonser blokkert / dag",
-    "es": "Anuncios bloqueados / día",
-    "da": "Annoncer blokeret / dag",
-    "ru": "Реклама заблокирована / день",
-    "pl": "Reklamy zablokowane / dzień"
+    "en": "Advertisements (%) / day",
+    "de": "Werbeanzeigen (%) / Tag",
+    "nl": "Advertenties (%) / dag",
+    "fr": "Publicités (%) / jour",
+    "it": "Pubblicità (%) / giorno",
+    "sv": "Annonser (%) / dag",
+    "no": "Annonser (%) / dag",
+    "es": "Anuncios (%) / día",
+    "da": "Annoncer (%) / dag",
+    "ru": "Реклама (%) / день",
+    "pl": "Reklamy (%)/ dzień"
     },
     "units": {
     "en": "%"
