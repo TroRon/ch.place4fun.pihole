@@ -281,13 +281,20 @@ async _updateDeviceData(url) {
       // Datum und Uhrzeit zusammenführen
       let formattedSyncDate = `${time} | ${day}`;
 
-      //DNS Anfragen pro Tag
+      // DNS Anfragen pro Tag
       let dns_queries_today = data.dns_queries_today;
-      let formatted_dns_queries_today = dns_queries_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'");
-      
-      //Geblockte ADDs pro Tag
+      let formatted_dns_queries_today;
+
+      if (dns_queries_today !== undefined && dns_queries_today !== null) {
+        formatted_dns_queries_today = dns_queries_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'");
+      } else {
+        formatted_dns_queries_today = "N/A";
+      }
+
+
+      // Geblockte ADDs pro Tag
       let blocked_adds_today = data.ads_blocked_today;
-      let formatted_blocked_adds_today = blocked_adds_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'");
+      let formatted_blocked_adds_today = blocked_adds_today ? blocked_adds_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'") : "N/A";
 
       //Geblockte ADD pro Tag in %
       let blocked_adds_today_percent = data.ads_percentage_today;
