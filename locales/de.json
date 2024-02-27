@@ -3,7 +3,7 @@
     "information_about_pihole": "WICHTIGE INFORMATION:<br><br>Die Applikation hat ein grosses Update erfahren. Die Settings sind nun nicht mehr nötig.<br><br>Bestehende Geräte laufen noch eine Zeitlang weiter. Irgendwann wird der alte Treiber entfernt.<br><br>Um die neuen Funktionen nutzen zu können, MUSS der neue Treiber verwendet werden."
   },
   "warnings": {
-    "deprecated1": "ACHTUNG: Geräte / Flows müssen neu konfiguriert werden. Alter Treiber wird in einer nächsten Version gelöscht werden!",
+    "deprecated1": "ACHTUNG: Geräte / Flows müssen neu konfiguriert werden. Alter Treiber wird in DER NÄCHSTEN VERSION entfernt werden!",
     "deprecated2": "HINWEIS: Die neuen Funktionen stehen NUR mit dem neuen Treiber, also nach der neu Konfiguration zur Verfügung!"
   },
   "devices": {

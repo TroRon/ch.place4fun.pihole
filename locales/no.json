@@ -6,7 +6,7 @@
     "unavailable": "Enheten kunne ikke nås på nettverket."
   },
   "warnings": {
-    "deprecated1": "OBS: Enheter/flyter må konfigureres på nytt. Den gamle driveren vil bli slettet i neste versjon!",
+    "deprecated1": "ADVARSEL: Enheter / Flows må konfigureres på nytt. Gammel driver vil bli fjernet i NESTE VERSJON!",
     "deprecated2": "MERK: De nye funksjonene er KUN tilgjengelige med den nye driveren, dvs. etter den nye konfigurasjonen!"
   },
   "capabilities": {

@@ -23,10 +23,7 @@ class PiHoleControl extends Homey.App {
   this.homey.notifications.createNotification({excerpt: this.homey.__('warnings.deprecated1')}).catch(error => {this.error('Error sending notification: '+error.message)});
   this.homey.notifications.createNotification({excerpt: this.homey.__('warnings.deprecated2')}).catch(error => {this.error('Error sending notification: '+error.message)});
 
-  // *****************************************************************************************************************
-  // NEUER TREIBER: PIHOLE
   //Aktions-Karten
-
   //pihole-disable-piholes.json
   const disablePiholes = this.homey.flow.getActionCard('pihole-disable-piholes');
   disablePiholes.registerRunListener(async (args, state) => {
@@ -58,6 +55,9 @@ class PiHoleControl extends Homey.App {
   });
 
   // *****************************************************************************************************************
+  // **************************************Begin: Ready for Delete****************************************************
+  // *****************************************************************************************************************
+
   //ALTER TREIBER PI-HOLE //
   //Bereitstellen der nötigen Informationen
   const instance1_url = this.homey.settings.get('Instance1_URL');
@@ -314,11 +314,11 @@ this.homey.flow.getActionCard('disable-pihole-for').registerRunListener(async(ar
     }
     });
 }
-  //ALTER TREIBER PI-HOLE //
+  // *****************************************************************************************************************
+  // ***************************************End : Ready for Delete****************************************************
   // *****************************************************************************************************************
   
-  
-  
+    
   //Funktionen für die Aktions-Karten
   async disablePiholes(args, state) {
 
@@ -526,8 +526,6 @@ async setPihole(args, state) {
   return true; // Gibt an, dass der Listener erfolgreich ausgeführt wurde
 }
 }
-
-
 
 module.exports = PiHoleControl;
 

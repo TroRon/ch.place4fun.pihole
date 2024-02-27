@@ -14,7 +14,7 @@
       },
       "tokens": [
         {
-          "name": "alarm_filter_state",
+          "name": "alarm_communication_error",
           "type": "boolean",
           "title": { 
             "en": "Connection status",

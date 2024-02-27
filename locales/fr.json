@@ -6,7 +6,7 @@
     "unavailable": "L'appareil n'a pas pu être atteint sur le réseau."
   },
   "warnings": {
-    "deprecated1": "ATTENTION : Les appareils / flux doivent être reconfigurés. L'ancien pilote sera supprimé dans une prochaine version !",
+    "deprecated1": "ATTENTION : Les appareils / Flows doivent être reconfigurés. L'ancien pilote sera supprimé dans la PROCHAINE VERSION !",
     "deprecated2": "REMARQUE : Les nouvelles fonctions ne sont disponibles qu'avec le nouveau pilote, donc après la nouvelle configuration !"
   },
   "capabilities": {

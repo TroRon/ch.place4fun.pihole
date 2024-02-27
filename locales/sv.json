@@ -6,7 +6,7 @@
     "unavailable": "Enheten kunde inte nås på nätverket."
   },
   "warnings": {
-    "deprecated1": "OBSERVERA: Enheter/flöden måste konfigureras om. Gammal drivrutin kommer att tas bort i nästa version!",
+    "deprecated1": "VARNING: Enheter / Flöden måste konfigureras om. Gamla drivrutinen kommer att tas bort i NÄSTA VERSION!",
     "deprecated2": "OBS: De nya funktionerna är ENDAST tillgängliga med den nya drivrutinen, dvs. efter den nya konfigurationen!"
   },
   "capabilities": {

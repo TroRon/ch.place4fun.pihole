@@ -6,7 +6,7 @@
     "unavailable": "Urządzenie nie może być osiągnięte w sieci."
   },
   "warnings": {
-    "deprecated1": "UWAGA: Urządzenia / przepływy muszą zostać ponownie skonfigurowane. Stary sterownik zostanie usunięty w następnej wersji!",
+    "deprecated1": "UWAGA: Urządzenia / Przepływy muszą być ponownie skonfigurowane. Stary sterownik zostanie usunięty w NAJBLIŻSZEJ WERSJI",
     "deprecated2": "UWAGA: Nowe funkcje są dostępne TYLKO z nowym sterownikiem, tj. po nowej konfiguracji!"
   },
   "capabilities": {

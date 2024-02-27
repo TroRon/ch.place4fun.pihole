@@ -1,0 +1,53 @@
+
+{
+    "settings": {
+    "information_about_pihole": "INFORMAZIONI IMPORTANTI:<br><br>L'applicazione ha subito un grande aggiornamento. Le impostazioni non sono più necessarie.<br><br>I dispositivi esistenti continueranno a funzionare per un po 'di tempo. Ad un certo punto, il vecchio driver verrà rimosso.<br><br>Per poter utilizzare le nuove funzionalità, È NECESSARIO utilizzare il nuovo driver."
+    },
+    "warnings": {
+    "deprecated1": "ATTENZIONE: Dispositivi / Flows devono essere riconfigurati. Il vecchio driver verrà rimosso nella PROSSIMA VERSIONE!",
+    "deprecated2": "NOTA: Le nuove funzionalità sono disponibili SOLO con il nuovo driver, quindi dopo la nuova configurazione!"
+    },
+    "devices": {
+    "unavailable": "Impossibile raggiungere il dispositivo nella rete."
+    },
+    "capabilities": {
+    "gravity_days": "Giorno(i)",
+    "gravity_hours": "Ora(e)",
+    "gravity_minutes": "Minuto(i)"
+    },
+    "welcome": {
+    "step_by_step": {
+    "intro": "Cliccando su 'Continua', verrà visualizzata una pagina di impostazioni.<br><br>In questa pagina è necessario impostare quanto segue:",
+    "steps": "<li>Indirizzo IP:<b>es. 192.168.10.1</b></li><li>Chiave Porta: <b>80</b></li><li>Chiave API: <b>0imfnc8mVLWwsAawjYr4Rx-Af50DDqtl</b></li>",
+    "outro": "<b>IMPORTANTE:</b><br>La specifica della porta è <b>SEMPRE</b> necessaria, anche se PiHole è in ascolto sulla porta 80, che sarebbe lo standard.<br><br>Se è in funzione un servizio DNS, PiHole può essere contattato anche con il suo nome DNS.<br><br><b>Informazione:</b><br>Se vengono eseguiti Flows, potrebbe non essere visibile nulla su PiHole.<br><br>Questo non è un errore dell'applicazione, ma un problema di visualizzazione da parte di PiHole.<br><br>Se ciò accade, è possibile ricaricare la visualizzazione di PiHole."
+    },
+    "buttons": {
+    "continue": "Continua"
+    }
+    },
+    "manual_input": {
+    "title": "Aggiungi Istanza PiHole",
+    "intro": "<i>Inserisci i dati richiesti per aggiungere il dispositivo.<br><br><br><b>IMPORTANTE:</b><br>Se è in funzione un servizio DNS, PiHole può essere contattato anche con il suo nome DNS.</i>",
+    "inputs": {
+    "name": {
+    "label": "Nome <b>(opzionale)</b>:",
+    "placeholder": "Nome dell'istanza"
+    },
+    "url": {
+    "label": "Indirizzo IP / FQDN con http(s):// anteposto",
+    "placeholder": "Si prega di utilizzare il FQDN o l'indirizzo IP con http(s) anteposto!"
+    },
+    "port": {
+    "label": "Porta:",
+    "placeholder": "80"
+    },
+    "api": {
+    "label": "API:",
+    "placeholder": "Inserisci qui la chiave API di PiHole"
+    }
+    },
+    "buttons": {
+    "next": "Aggiungi dispositivo"
+    }
+    }
+    }
