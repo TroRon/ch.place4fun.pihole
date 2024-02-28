@@ -119,10 +119,9 @@ async onSettings({ oldSettings, newSettings, changedKeys }) {
   this.log(`[Device] ${this.getName()}: Einstellung geändert: ${changedKeys}`);
   this._settings = newSettings;
 
-  if (changedKeys.includes('interval')) {
-    // 'interval' wurde geändert
-    this.log(`[Device] ${this.getName()}: Intervall-Einstellung geändert: ${newSettings.interval} Minute(n)`);
-
+  if (changedKeys.includes('url')) {
+    // 'url' wurde geändert
+    this.log(`[Device] ${this.getName()}: URL-Einstellung geändert: ${newSettings.url}`);
     const deviceId = this.getId();
 
     //Task löschen
@@ -130,14 +129,64 @@ async onSettings({ oldSettings, newSettings, changedKeys }) {
       this.deleteTask(deviceId)
     }, 1000); // Verzögerung von einer Sekunde (1000 Millisekunden)
 
+    //Task löschen
+    setTimeout(() => {
+      this.createTask(deviceId)
+    }, 1000); // Verzögerung von einer Sekunde (1000 Millisekunden)
+   }
+
+   if (changedKeys.includes('port')) {
+    // 'port' wurde geändert
+    this.log(`[Device] ${this.getName()}: Port-Einstellung geändert: ${newSettings.interval}`);
+    const deviceId = this.getId();
+
+    //Task löschen
+    setTimeout(() => {
+      this.deleteTask(deviceId)
+    }, 1000); // Verzögerung von einer Sekunde (1000 Millisekunden)
 
     //Task löschen
     setTimeout(() => {
       this.createTask(deviceId)
     }, 1000); // Verzögerung von einer Sekunde (1000 Millisekunden)
-
    }
-}
+
+   if (changedKeys.includes('api')) {
+    // 'api' wurde geändert
+    this.log(`[Device] ${this.getName()}: API-Einstellung geändert: ${newSettings.interval}`);
+    const deviceId = this.getId();
+
+    //Task löschen
+    setTimeout(() => {
+      this.deleteTask(deviceId)
+    }, 1000); // Verzögerung von einer Sekunde (1000 Millisekunden)
+
+    //Task löschen
+    setTimeout(() => {
+      this.createTask(deviceId)
+    }, 1000); // Verzögerung von einer Sekunde (1000 Millisekunden)
+   }
+
+  if (changedKeys.includes('interval')) {
+    // 'interval' wurde geändert
+    this.log(`[Device] ${this.getName()}: Intervall-Einstellung geändert: ${newSettings.interval} Minute(n)`);
+    const deviceId = this.getId();
+
+    //Task löschen
+    setTimeout(() => {
+      this.deleteTask(deviceId)
+    }, 1000); // Verzögerung von einer Sekunde (1000 Millisekunden)
+
+    //Task löschen
+    setTimeout(() => {
+      this.createTask(deviceId)
+    }, 1000); // Verzögerung von einer Sekunde (1000 Millisekunden)
+   }
+
+
+
+
+  }
 
 /**
  * onRenamed is called when the user updates the device's name.
