@@ -21,7 +21,10 @@
     "measure_ads_blocked_today",
     "measure_ads_blocked_today_percent",
     "gravity_last_update",
-    "data_refresh"    
+    "data_refresh",
+    "core_update_available",
+    "web_update_available",
+    "ftl_update_available"
   ],
     "images": {
     "small": "{{driverAssetsPath}}/images/small.png",

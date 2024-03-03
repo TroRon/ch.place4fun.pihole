@@ -1,5 +1,6 @@
 'use strict';
 
+const { triggerAsyncId } = require('async_hooks');
 const Homey = require('homey');
 
 class PiHoleControl extends Homey.App {
@@ -53,6 +54,54 @@ class PiHoleControl extends Homey.App {
   setPihole.registerRunListener(async (args, state) => {
     return await this.setPihole(args, state);
   });
+
+
+  //Bereich für Triggerkarten
+  //alarm_core_update_available_true.json
+  this._coreUpdateAvailable = this.homey.flow.getTriggerCard('alarm_core_update_available_true')
+    this._coreUpdateAvailable.registerRunListener(async (args, state) => {
+      try{
+
+        await args.device.device(this.getName());
+        await args.device.service('Core');
+        return true;
+      }
+      catch(error){
+        this.error("Error executing flowAction 'alarm_core_update_available_true': "+  error.message);
+        throw new Error(error.message);
+      }
+    });
+
+  //alarm_ftl_update_available_true.json
+  this._FTLUpdateAvailable = this.homey.flow.getTriggerCard('alarm_ftl_update_available_true')
+    this._FTLUpdateAvailable.registerRunListener(async (args, state) => {
+    try{
+
+      await args.device.device(this.getName());
+      await args.device.service('FTL');
+      return true;
+    }
+    catch(error){
+      this.error("Error executing flowAction 'alarm_ftl_update_available_true': "+  error.message);
+      throw new Error(error.message);
+    }
+  });
+
+  // alarm_web_update_available_true.json
+  this._coreUpdateAvailable = this.homey.flow.getTriggerCard('alarm_web_update_available_true')
+    this._coreUpdateAvailable.registerRunListener(async (args, state) => {
+      try{
+
+      await args.device.device(this.getName());
+      await args.device.service('Web');
+      return true;
+    }
+      catch(error){
+      this.error("Error executing flowAction 'alarm_web_update_available_true': "+  error.message);
+      throw new Error(error.message);
+    }
+  });
+ 
 
   // *****************************************************************************************************************
   // **************************************Begin: Ready for Delete****************************************************

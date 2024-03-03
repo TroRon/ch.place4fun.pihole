@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "ch.place4fun.pihole",
-  "version": "1.4.2",
+  "version": "1.4.4",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#000000",
@@ -124,17 +124,17 @@
       },
       {
         "title": {
-          "en": "Filter status has changed",
+          "en": "Connection interrupted",
           "de": "Verbindung unterbrochen",
-          "nl": "Filterstatus is veranderd",
-          "fr": "Le statut du filtre a changé",
-          "it": "Lo stato del filtro è cambiato",
-          "sv": "Filterstatus har ändrats",
-          "no": "Filterstatus har endret seg",
-          "es": "El estado del filtro ha cambiado",
-          "da": "Filterstatus er ændret",
-          "ru": "Статус фильтра изменился",
-          "pl": "Stan filtra uległ zmianie"
+          "nl": "Verbinding onderbroken",
+          "fr": "Connexion interrompue",
+          "it": "Connessione interrotta",
+          "sv": "Anslutning avbruten",
+          "no": "Forbindelsen er brutt",
+          "es": "Conexión interrumpida",
+          "da": "Forbindelsen er afbrudt",
+          "ru": "Соединение прервано",
+          "pl": "Połączenie przerwane"
         },
         "tokens": [
           {
@@ -163,6 +163,98 @@
           }
         ],
         "id": "alarm_communication_error_true"
+      },
+      {
+        "title": {
+          "en": "Core update available",
+          "de": "Core Update vorhanden",
+          "nl": "Kernupdate beschikbaar",
+          "fr": "Mise à jour du noyau disponible",
+          "it": "Aggiornamento del core disponibile",
+          "sv": "Kärnuppdatering tillgänglig",
+          "no": "Kjerneoppdatering tilgjengelig",
+          "es": "Actualización del núcleo disponible",
+          "da": "Kerneopdatering tilgængelig",
+          "ru": "Обновление ядра доступно",
+          "pl": "Aktualizacja jądra dostępna"
+        },
+        "tokens": [
+          {
+            "name": "software_update_available",
+            "type": "boolean",
+            "title": {
+              "en": "Core Update",
+              "de": "Core Update",
+              "nl": "Kernupdate",
+              "fr": "Mise à jour du noyau",
+              "it": "Aggiornamento del core",
+              "sv": "Kärnuppdatering",
+              "no": "Kjerneoppdatering",
+              "es": "Actualización del núcleo",
+              "da": "Kerneopdatering",
+              "ru": "Обновление ядра",
+              "pl": "Aktualizacja jądra"
+            }
+          },
+          {
+            "name": "device",
+            "type": "string",
+            "title": {
+              "en": "Current Device",
+              "de": "Aktuelles Gerät",
+              "nl": "Huidig Apparaat",
+              "fr": "Appareil Actuel",
+              "it": "Dispositivo Attuale",
+              "sv": "Nuvarande Enhet",
+              "no": "Nåværende Enhed",
+              "es": "Dispositivo Actual",
+              "da": "Aktuel Enhed",
+              "ru": "Текущее Устройство",
+              "pl": "Aktualne Urządzenie"
+            },
+            "example": {
+              "en": "PiHole 1"
+            }
+          },
+          {
+            "name": "service",
+            "type": "string",
+            "title": {
+              "en": "Update Type",
+              "de": "Art des Updates",
+              "nl": "Type update",
+              "fr": "Type de mise à jour",
+              "it": "Tipo di aggiornamento",
+              "sv": "Uppdateringstyp",
+              "no": "Oppdateringstype",
+              "es": "Tipo de actualización",
+              "da": "Opdateringstype",
+              "ru": "Тип обновления",
+              "pl": "Typ aktualizacji"
+            },
+            "example": {
+              "en": "Core Update",
+              "de": "Core Update",
+              "nl": "Kernupdate",
+              "fr": "Mise à jour du noyau",
+              "it": "Aggiornamento del core",
+              "sv": "Kärnuppdatering",
+              "no": "Kjerneoppdatering",
+              "es": "Actualización del núcleo",
+              "da": "Kerneopdatering",
+              "ru": "Обновление ядра",
+              "pl": "Aktualizacja jądra"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "alarm_core_update_available_true"
       },
       {
         "title": {
@@ -247,6 +339,190 @@
           }
         ],
         "id": "alarm_filter_state_true"
+      },
+      {
+        "title": {
+          "en": "FTL Update available",
+          "de": "FTL Update vorhanden",
+          "nl": "FTL Update beschikbaar",
+          "fr": "Mise à jour FTL disponible",
+          "it": "Aggiornamento FTL disponibile",
+          "sv": "FTL-uppdatering tillgänglig",
+          "no": "FTL-oppdatering tilgjengelig",
+          "es": "Actualización de FTL disponible",
+          "da": "FTL-opdatering tilgængelig",
+          "ru": "Доступно обновление FTL",
+          "pl": "Dostępna aktualizacja FTL"
+        },
+        "tokens": [
+          {
+            "name": "software_update_available",
+            "type": "boolean",
+            "title": {
+              "en": "FTL Update",
+              "de": "FTL Update",
+              "nl": "FTL Update",
+              "fr": "Mise à jour FTL",
+              "it": "Aggiornamento FTL",
+              "sv": "FTL-uppdatering",
+              "no": "FTL-oppdatering",
+              "es": "Actualización de FTL",
+              "da": "FTL-opdatering",
+              "ru": "Обновление FTL",
+              "pl": "Aktualizacja FTL"
+            }
+          },
+          {
+            "name": "device",
+            "type": "string",
+            "title": {
+              "en": "Current Device",
+              "de": "Aktuelles Gerät",
+              "nl": "Huidig Apparaat",
+              "fr": "Appareil Actuel",
+              "it": "Dispositivo Attuale",
+              "sv": "Nuvarande Enhet",
+              "no": "Nåværende Enhed",
+              "es": "Dispositivo Actual",
+              "da": "Aktuel Enhed",
+              "ru": "Текущее Устройство",
+              "pl": "Aktualne Urządzenie"
+            },
+            "example": {
+              "en": "PiHole 1"
+            }
+          },
+          {
+            "name": "service",
+            "type": "string",
+            "title": {
+              "en": "Update Type",
+              "de": "Art des Updates",
+              "nl": "Type update",
+              "fr": "Type de mise à jour",
+              "it": "Tipo di aggiornamento",
+              "sv": "Uppdateringstyp",
+              "no": "Oppdateringstype",
+              "es": "Tipo de actualización",
+              "da": "Opdateringstype",
+              "ru": "Тип обновления",
+              "pl": "Typ aktualizacji"
+            },
+            "example": {
+              "en": "FTL Update",
+              "de": "FTL-Aktualisierung",
+              "nl": "FTL-update",
+              "fr": "Mise à jour FTL",
+              "it": "Aggiornamento FTL",
+              "sv": "FTL-uppdatering",
+              "no": "FTL-oppdatering",
+              "es": "Actualización de FTL",
+              "da": "FTL-opdatering",
+              "ru": "Обновление FTL",
+              "pl": "Aktualizacja FTL"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "alarm_ftl_update_available_true"
+      },
+      {
+        "title": {
+          "en": "Web Update available",
+          "de": "Web Update vorhanden",
+          "nl": "Web Update beschikbaar",
+          "fr": "Mise à jour Web disponible",
+          "it": "Aggiornamento web disponibile",
+          "sv": "Webbuppdatering tillgänglig",
+          "no": "Weboppdatering tilgjengelig",
+          "es": "Actualización web disponible",
+          "da": "Webopdatering tilgængelig",
+          "ru": "Доступно обновление веб",
+          "pl": "Dostępna aktualizacja webowa"
+        },
+        "tokens": [
+          {
+            "name": "software_update_available",
+            "type": "boolean",
+            "title": {
+              "en": "Web Update",
+              "de": "Web Update",
+              "nl": "Web Update",
+              "fr": "Mise à jour Web",
+              "it": "Aggiornamento web",
+              "sv": "Webbuppdatering",
+              "no": "Weboppdatering",
+              "es": "Actualización web",
+              "da": "Webopdatering",
+              "ru": "Обновление веб",
+              "pl": "Aktualizacja webowa"
+            }
+          },
+          {
+            "name": "device",
+            "type": "string",
+            "title": {
+              "en": "Current Device",
+              "de": "Aktuelles Gerät",
+              "nl": "Huidig Apparaat",
+              "fr": "Appareil Actuel",
+              "it": "Dispositivo Attuale",
+              "sv": "Nuvarande Enhet",
+              "no": "Nåværende Enhed",
+              "es": "Dispositivo Actual",
+              "da": "Aktuel Enhed",
+              "ru": "Текущее Устройство",
+              "pl": "Aktualne Urządzenie"
+            },
+            "example": {
+              "en": "PiHole 1"
+            }
+          },
+          {
+            "name": "service",
+            "type": "string",
+            "title": {
+              "en": "Update Type",
+              "de": "Art des Updates",
+              "nl": "Type update",
+              "fr": "Type de mise à jour",
+              "it": "Tipo di aggiornamento",
+              "sv": "Uppdateringstyp",
+              "no": "Oppdateringstype",
+              "es": "Tipo de actualización",
+              "da": "Opdateringstype",
+              "ru": "Тип обновления",
+              "pl": "Typ aktualizacji"
+            },
+            "example": {
+              "en": "Web Update",
+              "de": "Web-Aktualisierung",
+              "nl": "Webupdate",
+              "fr": "Mise à jour Web",
+              "it": "Aggiornamento Web",
+              "sv": "Webbuppdatering",
+              "no": "Weboppdatering",
+              "es": "Actualización web",
+              "da": "Webopdatering",
+              "ru": "Обновление веб-сайта",
+              "pl": "Aktualizacja sieciowa"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "alarm_web_update_available_true"
       },
       {
         "title": {
@@ -1704,7 +1980,10 @@
         "measure_ads_blocked_today",
         "measure_ads_blocked_today_percent",
         "gravity_last_update",
-        "data_refresh"
+        "data_refresh",
+        "core_update_available",
+        "web_update_available",
+        "ftl_update_available"
       ],
       "images": {
         "small": "/drivers/pihole/assets/images/small.png",
@@ -1968,6 +2247,27 @@
       "uiQuickAction": false,
       "icon": "/assets/capability_icons/State.svg"
     },
+    "core_update_available": {
+      "type": "boolean",
+      "title": {
+        "en": "Core Update?",
+        "de": "Core Update?",
+        "nl": "Kernupdate?",
+        "fr": "Mise à jour du noyau?",
+        "it": "Aggiornamento del core?",
+        "sv": "Kärnuppdatering?",
+        "no": "Kjerneoppdatering?",
+        "es": "Actualización del núcleo?",
+        "da": "Kerneopdatering?",
+        "ru": "Обновление ядра?",
+        "pl": "Aktualizacja jądra?"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/UpdateVersion.svg"
+    },
     "data_refresh": {
       "type": "boolean",
       "title": {
@@ -1988,6 +2288,27 @@
       "setable": true,
       "uiComponent": "button",
       "icon": "./assets/capability_icons/Refresh.svg"
+    },
+    "ftl_update_available": {
+      "type": "boolean",
+      "title": {
+        "en": "FTL Update?",
+        "de": "FTL Update?",
+        "nl": "FTL Update?",
+        "fr": "Mise à jour FTL ?",
+        "it": "Aggiornamento FTL?",
+        "sv": "FTL-uppdatering?",
+        "no": "FTL-oppdatering?",
+        "es": "¿Actualización de FTL?",
+        "da": "FTL-opdatering?",
+        "ru": "Обновление FTL?",
+        "pl": "Aktualizacja FTL?"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/UpdateVersion.svg"
     },
     "gravity_last_update": {
       "type": "string",
@@ -2099,6 +2420,27 @@
       "uiComponent": "sensor",
       "uiQuickAction": false,
       "icon": "/assets/capability_icons/DNS.svg"
+    },
+    "web_update_available": {
+      "type": "boolean",
+      "title": {
+        "en": "Web Update?",
+        "de": "Web Update?",
+        "nl": "Web Update?",
+        "fr": "Mise à jour Web ?",
+        "it": "Aggiornamento web?",
+        "sv": "Webbuppdatering?",
+        "no": "Weboppdatering?",
+        "es": "¿Actualización web?",
+        "da": "Webopdatering?",
+        "ru": "Обновление веб?",
+        "pl": "Aktualizacja webowa?"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/UpdateVersion.svg"
     }
   }
 }

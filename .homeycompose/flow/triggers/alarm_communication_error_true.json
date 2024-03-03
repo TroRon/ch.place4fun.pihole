@@ -1,16 +1,16 @@
 {
     "title": { 
-      "en": "Filter status has changed",
+      "en": "Connection interrupted",
       "de": "Verbindung unterbrochen",
-      "nl": "Filterstatus is veranderd",
-      "fr": "Le statut du filtre a changé",
-      "it": "Lo stato del filtro è cambiato",
-      "sv": "Filterstatus har ändrats",
-      "no": "Filterstatus har endret seg",
-      "es": "El estado del filtro ha cambiado",
-      "da": "Filterstatus er ændret",
-      "ru": "Статус фильтра изменился",
-      "pl": "Stan filtra uległ zmianie" 
+      "nl": "Verbinding onderbroken",
+      "fr": "Connexion interrompue",
+      "it": "Connessione interrotta",
+      "sv": "Anslutning avbruten",
+      "no": "Forbindelsen er brutt",
+      "es": "Conexión interrumpida",
+      "da": "Forbindelsen er afbrudt",
+      "ru": "Соединение прервано",
+      "pl": "Połączenie przerwane" 
       },
       "tokens": [
         {

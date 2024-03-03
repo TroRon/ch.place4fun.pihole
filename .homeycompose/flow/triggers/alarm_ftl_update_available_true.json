@@ -1,0 +1,91 @@
+{
+    "title": { 
+      "en": "FTL Update available",
+      "de": "FTL Update vorhanden",
+      "nl": "FTL Update beschikbaar",
+      "fr": "Mise à jour FTL disponible",
+      "it": "Aggiornamento FTL disponibile",
+      "sv": "FTL-uppdatering tillgänglig",
+      "no": "FTL-oppdatering tilgjengelig",
+      "es": "Actualización de FTL disponible",
+      "da": "FTL-opdatering tilgængelig",
+      "ru": "Доступно обновление FTL",
+      "pl": "Dostępna aktualizacja FTL"
+      },
+      "tokens": [
+        {
+          "name": "software_update_available",
+          "type": "boolean",
+          "title": { 
+            "en": "FTL Update",
+            "de": "FTL Update",
+            "nl": "FTL Update",
+            "fr": "Mise à jour FTL",
+            "it": "Aggiornamento FTL",
+            "sv": "FTL-uppdatering",
+            "no": "FTL-oppdatering",
+            "es": "Actualización de FTL",
+            "da": "FTL-opdatering",
+            "ru": "Обновление FTL",
+            "pl": "Aktualizacja FTL"
+          }
+        },
+        {
+          "name": "device",
+          "type": "string",
+          "title": {
+            "en": "Current Device",
+            "de": "Aktuelles Gerät",
+            "nl": "Huidig Apparaat",
+            "fr": "Appareil Actuel",
+            "it": "Dispositivo Attuale",
+            "sv": "Nuvarande Enhet",
+            "no": "Nåværende Enhed",
+            "es": "Dispositivo Actual",
+            "da": "Aktuel Enhed",
+            "ru": "Текущее Устройство",
+            "pl": "Aktualne Urządzenie"
+             },
+          "example": { 
+            "en": "PiHole 1" 
+          }
+        },
+        {
+          "name": "service",
+          "type": "string",
+          "title": {
+            "en": "Update Type",
+            "de": "Art des Updates",
+            "nl": "Type update",
+            "fr": "Type de mise à jour",
+            "it": "Tipo di aggiornamento",
+            "sv": "Uppdateringstyp",
+            "no": "Oppdateringstype",
+            "es": "Tipo de actualización",
+            "da": "Opdateringstype",
+            "ru": "Тип обновления",
+            "pl": "Typ aktualizacji"
+             },
+          "example": { 
+            "en": "FTL Update",
+            "de": "FTL-Aktualisierung",
+            "nl": "FTL-update",
+            "fr": "Mise à jour FTL",
+            "it": "Aggiornamento FTL",
+            "sv": "FTL-uppdatering",
+            "no": "FTL-oppdatering",
+            "es": "Actualización de FTL",
+            "da": "FTL-opdatering",
+            "ru": "Обновление FTL",
+            "pl": "Aktualizacja FTL"
+          }
+        }
+      ],
+      "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+        }
+      ]
+    }

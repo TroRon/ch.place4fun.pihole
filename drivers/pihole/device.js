@@ -261,6 +261,8 @@ async _onCapability( capabilityValues, capabilityOptions){
 
   //Bereitstellen der nötigen URLs für Aktionen / Abfragen
   const status_url = `${device_url}:${device_port}/admin/api.php?summaryRaw&auth=${device_api}`;
+  const update_url = `${device_url}:${device_port}/admin/api.php??versions`;
+
 
   if( capabilityValues["data_refresh"] != undefined){
     this._updateDeviceData(status_url);
@@ -285,7 +287,6 @@ async _makeAPICall(url) {
       return { success: false, errorMessage: error.message }; // Fehlerstatus und Fehlermeldung zurückgeben
     }
 }
-
 
 async _updateDeviceData(url) {
 
@@ -339,6 +340,26 @@ async _updateDeviceData(url) {
       } else {
         formatted_dns_queries_today = "N/A";
       }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+      // Update Prüfung
+
+      //Ansprechen der Einstellungen, damit Zugriff darauf gewähleistet ist
+      const deviceSettings = this.getSettings();
+      const device_Name = this.getName()
+             
+      //Die nötigen Einstellungen holen und bereitstellen
+      const device_url = deviceSettings.url
+      const device_port = deviceSettings.port
+     
+      const update_url = `${device_url}:${device_port}/admin/api.php?versions`;
+      this.checkUpdateAvailable(deviceName, update_url)
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 
       // Geblockte ADDs pro Tag
@@ -482,5 +503,49 @@ async createTask(deviceId) {
     intervalIds.set(deviceId, intervalId);
     this.log('Neuer Task erstellt für Gerät:', deviceId);
 }
+
+async checkUpdateAvailable(device, url) {
+  try {
+
+    const response = await fetch(url);
+    const data = await response.json();
+    
+    this.log('Update Prüfung beginnt');
+
+    // Überprüfe ob ein Core Update vorhanden ist
+    if (data.core_updatee === true) {
+      this.log(device,': Core Update von', data.core_current, 'zu',  data.core_latest, 'verfügbar');
+      this.setCapabilityValue('core_update_available', true);
+    } else {
+      this.log(device,': Kein Core Update verfügbar.');
+      this.setCapabilityValue('core_update_available', false);         
+    }
+
+    // Überprüfe ob ein Core Update vorhanden ist
+    if (data.web_update === true) {
+      this.log(device,': Web Update von', data.web_update, 'zu',  data.web_latest, 'verfügbar');
+      this.setCapabilityValue('web_update_available', true);
+
+    } else {
+      this.log(device,': Kein Web Update verfügbar.');
+      this.setCapabilityValue('web_update_available', false);         
+    }
+
+    // Überprüfe ob ein Core Update vorhanden ist
+    if (data.FTL_update === true) {
+       this.log(device,': FTL Update von', data.FTL_current, 'zu',  data.FTL_latest, 'verfügbar');
+       this.setCapabilityValue('ftl_update_available', true);
+    } else {
+       this.log(device,': Kein FTL Update verfügbar.');
+       this.setCapabilityValue('ftl_update_available', false);         
+    }
+
+  } catch (error) {
+    this.error('Fehler beim Abrufen der Pi-hole-Daten:', error);
+  }
+
+  this.log('Update Prüfung beendet');
+}
+
 }
 module.exports = PiHoleDevice;

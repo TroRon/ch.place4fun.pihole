@@ -1,0 +1,21 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Core Update?",
+    "de": "Core Update?",
+    "nl": "Kernupdate?",
+    "fr": "Mise à jour du noyau?",
+    "it": "Aggiornamento del core?",
+    "sv": "Kärnuppdatering?",
+    "no": "Kjerneoppdatering?",
+    "es": "Actualización del núcleo?",
+    "da": "Kerneopdatering?",
+    "ru": "Обновление ядра?",
+    "pl": "Aktualizacja jądra?"
+    },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "/assets/capability_icons/UpdateVersion.svg"
+}
