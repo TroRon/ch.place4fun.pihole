@@ -341,10 +341,7 @@ async _updateDeviceData(url) {
         formatted_dns_queries_today = "N/A";
       }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
       // Update Prüfung
-
       //Ansprechen der Einstellungen, damit Zugriff darauf gewähleistet ist
       const deviceSettings = this.getSettings();
       const device_Name = this.getName()
@@ -356,20 +353,14 @@ async _updateDeviceData(url) {
       const update_url = `${device_url}:${device_port}/admin/api.php?versions`;
       this.checkUpdateAvailable(deviceName, update_url)
 
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
       // Geblockte ADDs pro Tag
       let blocked_adds_today = data.ads_blocked_today;
       let formatted_blocked_adds_today = blocked_adds_today ? blocked_adds_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'") : "N/A";
 
       //Geblockte ADD pro Tag in %
-      let blocked_adds_today_percent = data.ads_percentage_today;
+      let blocked_adds_today_percent = parseFloat(data.ads_percentage_today.toFixed(1));
       let formated_blocked_adds_today_percent = blocked_adds_today_percent.toFixed(1) + " %"
-      
+
       //Letztes Update der Gravity Datenbank
       let absoluteTimestamp = data.gravity_last_updated.absolute;
 
@@ -384,7 +375,7 @@ async _updateDeviceData(url) {
       const gravity_update_hours = Math.floor((timeDifference % (24 * 3600)) / 3600);
       const gravity_update_minutes = Math.floor((timeDifference % 3600) / 60);
 
-      let gravity_update_string = gravity_update_days + ' Tg. ' + gravity_update_hours +' Std. ' + gravity_update_minutes + ' Min.';        
+      let gravity_update_string = gravity_update_days + ' ' + this.homey.__('capabilities.gravity_days') + ' ' +  gravity_update_hours + ' ' +  this.homey.__('capabilities.gravity_hours') + ' ' +  gravity_update_minutes + ' ' + this.homey.__('capabilities.gravity_minutes');        
 
       // Loggen der Werte zwecks Diagnose
       this.log('');

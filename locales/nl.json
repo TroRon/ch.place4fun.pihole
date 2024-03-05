@@ -10,9 +10,9 @@
     "deprecated2": "OPMERKING: De nieuwe functies zijn ALLEEN beschikbaar met het nieuwe stuurprogramma, d.w.z. na de nieuwe configuratie!"
   },
   "capabilities": {
-    "gravity_days": "Dag(en)",
-    "gravity_hours": "Uur(en)",
-    "gravity_minutes": "Minuut(en)"
+    "gravity_days": "dagen",
+    "gravity_hours": "uren",
+    "gravity_minutes": "min."
   },
   "welcome": {
     "titles": {

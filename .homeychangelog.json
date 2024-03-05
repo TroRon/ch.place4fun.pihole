@@ -389,17 +389,43 @@
     "ru": "Исправление ошибок / Оптимизации / Последняя версия с старым драйвером",
     "pl": "Naprawy błędów / Optymalizacje / Ostatnia wersja z starym sterownikiem"
     },
-  "1.4.4": {
-    "de": "Bugfixes / Optimierungen / Alter Treiber entfernt",
-    "en": "Bug fixes / Optimizations / Old driver removed",
-    "nl": "Bugfixes / Optimalisaties / Oude driver verwijderd",
-    "fr": "Correctifs / Optimisations / Ancien pilote supprimé",
-    "it": "Bug fix / Ottimizzazioni / Vecchio driver rimosso",
-    "sv": "Buggrättningar / Optimeringar / Gammal drivrutin borttagen",
-    "no": "Feilrettinger / Optimaliseringer / Gammel driver fjernet",
-    "es": "Corrección de errores / Optimizaciones / Controlador antiguo eliminado",
-    "da": "Fejlrettelser / Optimeringer / Gammel driver fjernet",
-    "ru": "Исправление ошибок / Оптимизации / Старый драйвер удален",
-    "pl": "Naprawy błędów / Optymalizacje / Stary sterownik usunięty"
-    }
-}
+    "1.4.4": {
+      "de": "Bugfixes / Optimierungen",
+      "en": "Bug fixes / Optimizations",
+      "nl": "Bugfixes / Optimalisaties",
+      "fr": "Correctifs / Optimisations",
+      "it": "Bug fix / Ottimizzazioni",
+      "sv": "Buggrättningar / Optimeringar",
+      "no": "Feilrettinger / Optimaliseringer",
+      "es": "Corrección de errores / Optimizaciones",
+      "da": "Fejlrettelser / Optimeringer",
+      "ru": "Исправление ошибок / Оптимизации",
+      "pl": "Naprawy błędów / Optymalizacje"
+      },
+    "1.4.5": {
+      "de": "Bugfixes / Optimierungen",
+      "en": "Bug fixes / Optimizations",
+      "nl": "Bugfixes / Optimalisaties",
+      "fr": "Correctifs / Optimisations",
+      "it": "Bug fix / Ottimizzazioni",
+      "sv": "Buggrättningar / Optimeringar",
+      "no": "Feilrettinger / Optimaliseringer",
+      "es": "Corrección de errores / Optimizaciones",
+      "da": "Fejlrettelser / Optimeringer",
+      "ru": "Исправление ошибок / Оптимизации",
+      "pl": "Naprawy błędów / Optymalizacje"
+    },
+    "1.4.6": {
+      "de": "Bugfixes / Optimierungen / Letzte Version mit altem Treiber",
+      "en": "Bug fixes / Optimizations / Last version with old driver",
+      "nl": "Bugfixes / Optimalisaties / Laatste versie met oude driver",
+      "fr": "Correctifs / Optimisations / Dernière version avec ancien pilote",
+      "it": "Bug fix / Ottimizzazioni / Ultima versione con vecchio driver",
+      "sv": "Buggrättningar / Optimeringar / Senaste versionen med gammal drivrutin",
+      "no": "Feilrettinger / Optimaliseringer / Siste versjon med gammel driver",
+      "es": "Corrección de errores / Optimizaciones / Última versión con controlador antiguo",
+      "da": "Fejlrettelser / Optimeringer / Seneste version med gammel driver",
+      "ru": "Исправление ошибок / Оптимизации / Последняя версия с старым драйвером",
+      "pl": "Naprawy błędów / Optymalizacje / Ostatnia wersja z starym sterownikiem"
+      }  
+ }

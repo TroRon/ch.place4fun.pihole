@@ -2,7 +2,7 @@
     "title": { 
       "en": "Core update available",
       "de": "Core Update vorhanden",
-      "nl": "Kernupdate beschikbaar",
+      "nl": "Core Update beschikbaar",
       "fr": "Mise à jour du noyau disponible",
       "it": "Aggiornamento del core disponibile",
       "sv": "Kärnuppdatering tillgänglig",
@@ -19,7 +19,7 @@
           "title": { 
             "en": "Core Update",
             "de": "Core Update",
-            "nl": "Kernupdate",
+            "nl": "Core Update",
             "fr": "Mise à jour du noyau",
             "it": "Aggiornamento del core",
             "sv": "Kärnuppdatering",
@@ -69,7 +69,7 @@
           "example": { 
             "en": "Core Update",
             "de": "Core Update",
-            "nl": "Kernupdate",
+            "nl": "Core Update",
             "fr": "Mise à jour du noyau",
             "it": "Aggiornamento del core",
             "sv": "Kärnuppdatering",

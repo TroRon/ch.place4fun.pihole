@@ -10,9 +10,9 @@
     "unavailable": "Das Gerät konnte im Netzwerk nicht erreicht werden."
   },
   "capabilities": {
-    "gravity_days": "Tag(e)",
-    "gravity_hours": "Stunde(n)",
-    "gravity_minutes": "Minute(n)"
+    "gravity_days": "Tg.",
+    "gravity_hours": "Std.",
+    "gravity_minutes": "Min."
   },
   "welcome": {
     "titles": {
