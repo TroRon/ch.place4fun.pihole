@@ -416,6 +416,19 @@
       "pl": "Naprawy błędów / Optymalizacje"
     },
     "1.4.6": {
+      "de": "Bugfixes / Optimierungen",
+      "en": "Bug fixes / Optimizations",
+      "nl": "Bugfixes / Optimalisaties",
+      "fr": "Correctifs / Optimisations",
+      "it": "Bug fix / Ottimizzazioni",
+      "sv": "Buggrättningar / Optimeringar",
+      "no": "Feilrettinger / Optimaliseringer",
+      "es": "Corrección de errores / Optimizaciones",
+      "da": "Fejlrettelser / Optimeringer",
+      "ru": "Исправление ошибок / Оптимизации",
+      "pl": "Naprawy błędów / Optymalizacje"
+      },  
+     "1.4.7": {
       "de": "Bugfixes / Optimierungen / Letzte Version mit altem Treiber",
       "en": "Bug fixes / Optimizations / Last version with old driver",
       "nl": "Bugfixes / Optimalisaties / Laatste versie met oude driver",
@@ -428,4 +441,4 @@
       "ru": "Исправление ошибок / Оптимизации / Последняя версия с старым драйвером",
       "pl": "Naprawy błędów / Optymalizacje / Ostatnia wersja z starym sterownikiem"
       }  
- }
+  }

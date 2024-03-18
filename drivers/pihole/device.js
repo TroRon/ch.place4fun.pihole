@@ -5,6 +5,13 @@ const CAPABILITY_DEBOUNCE = 500;
 //Festlegen einer Map für die Task-Verwaltung
 let intervalIds = new Map();
 
+//Allgemeine Parameter
+let absoluteTimestamp;
+let blocked_adds_today_percent;
+let formated_blocked_adds_today_percent;
+
+
+
 class PiHoleDevice extends Homey.Device {
 
     async onInit() {
@@ -342,7 +349,7 @@ async _updateDeviceData(url) {
       }
 
       // Update Prüfung
-      //Ansprechen der Einstellungen, damit Zugriff darauf gewähleistet ist
+      //Ansprechen der Einstellungen, damit Zugriff darauf gewährleistet ist
       const deviceSettings = this.getSettings();
       const device_Name = this.getName()
              
@@ -358,12 +365,22 @@ async _updateDeviceData(url) {
       let formatted_blocked_adds_today = blocked_adds_today ? blocked_adds_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'") : "N/A";
 
       //Geblockte ADD pro Tag in %
-      let blocked_adds_today_percent = parseFloat(data.ads_percentage_today.toFixed(1));
-      let formated_blocked_adds_today_percent = blocked_adds_today_percent.toFixed(1) + " %"
+      if (data.ads_percentage_today !== undefined) {
+        blocked_adds_today_percent = parseFloat(data.ads_percentage_today.toFixed(1));
+        formated_blocked_adds_today_percent = blocked_adds_today_percent.toFixed(1) + " %";
+    } else {
+        // Handle den Fall, wenn data.ads_percentage_today undefined ist
+        blocked_adds_today_percent = 0; // Setze einen Standardwert
+        formated_blocked_adds_today_percent = "n/a";
+    }
 
       //Letztes Update der Gravity Datenbank
-      let absoluteTimestamp = data.gravity_last_updated.absolute;
-
+      if (data.gravity_last_updated && data.gravity_last_updated.absolute !== undefined) {
+        absoluteTimestamp = data.gravity_last_updated.absolute;
+      } else {
+        // Handle den Fall, wenn data.gravity_last_updated.absolute undefined ist
+        absoluteTimestamp = "n/a"; // Setze einen Standardwert
+      }
       //Aktueller Zeitstempel
       const currentTimestamp = Math.floor(Date.now() / 1000); // in Sekunden
 
@@ -393,6 +410,12 @@ async _updateDeviceData(url) {
       this.log('');
 
       //Fehlerüberprüfung, sollte UNDEFINED zurückkommen
+      if (typeof formattedSyncDate !== 'undefined') {
+        this.setCapabilityValue('last_sync', formattedSyncDate);
+      } else {
+        this.log('Fehler --> last_sync ist nicht definiert');
+      }
+
       if (typeof data.dns_queries_today !== 'undefined') {
         let dns_queries_today = data.dns_queries_today;
         let formatted_dns_queries_today = dns_queries_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'");
@@ -401,33 +424,27 @@ async _updateDeviceData(url) {
         this.log('Fehler --> dns_queries_today ist nicht definiert');
       }
 
-    if (typeof data.ads_blocked_today !== 'undefined') {
+      if (typeof data.ads_blocked_today !== 'undefined') {
         let blocked_adds_today = data.ads_blocked_today;
         let formatted_blocked_adds_today = blocked_adds_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1'");
         this.setCapabilityValue('measure_ads_blocked_today', blocked_adds_today);
-    } else {
+      } else {
         this.log('Fehler --> blocked_adds_today ist nicht definiert');
       }
 
-    if (typeof formattedSyncDate !== 'undefined') {
-        this.setCapabilityValue('last_sync', formattedSyncDate);
-    } else {
-        this.log('Fehler --> last_sync ist nicht definiert');
-    }
-
-    if (typeof blocked_adds_today_percent !== 'undefined') {
+      if (typeof blocked_adds_today_percent !== 'undefined') {
         this.setCapabilityValue('measure_ads_blocked_today_percent', blocked_adds_today_percent);
-    } else {
+      } else {
         this.log('Fehler --> measure_ads_blocked_today_percent ist nicht definiert');
-    }
+      }
 
-    if (typeof gravity_update_string !== 'undefined') {
+      if (typeof gravity_update_string !== 'undefined') {
         this.setCapabilityValue('gravity_last_update', gravity_update_string);
-    } else {
+      } else {
         this.log('Fehler --> gravity_last_update ist nicht definiert');
-    }
+      }
 
-    // Capabilities für den Rest setzen
+      // Capabilities für den Rest setzen
     this.setCapabilityValue('alarm_communication_error', false);
     this.setCapabilityValue('alarm_filter_state', PiHoleState);
 
