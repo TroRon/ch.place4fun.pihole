@@ -6,8 +6,7 @@
     "unavailable": "Enheten kunde inte nås på nätverket."
   },
   "warnings": {
-    "deprecated1": "VARNING: Enheter / Flöden måste konfigureras om. Gamla drivrutinen kommer att tas bort i NÄSTA VERSION!",
-    "deprecated2": "OBS: De nya funktionerna är ENDAST tillgängliga med den nya drivrutinen, dvs. efter den nya konfigurationen!"
+    "deprecated1": "OBS: Den gamla drivrutinen har tagits bort i version 1.5.0, som tidigare meddelats!"
   },
   "capabilities": {
     "gravity_days": "Tagg(ar)",

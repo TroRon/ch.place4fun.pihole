@@ -6,8 +6,7 @@
     "unavailable": "Het apparaat kon niet worden bereikt op het netwerk."
   },
   "warnings": {
-    "deprecated1": "LET OP: Apparaten / Flows moeten opnieuw geconfigureerd worden. Oude driver zal in de VOLGENDE VERSIE worden verwijderd!",
-    "deprecated2": "OPMERKING: De nieuwe functies zijn ALLEEN beschikbaar met het nieuwe stuurprogramma, d.w.z. na de nieuwe configuratie!"
+    "deprecated1": "LET OP: De oude driver is verwijderd in versie 1.5.0, zoals aangekondigd!"
   },
   "capabilities": {
     "gravity_days": "dagen",

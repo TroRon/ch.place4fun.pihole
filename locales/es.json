@@ -3,8 +3,7 @@
     "information_about_pihole": "INFORMACIÓN IMPORTANTE:<br><br>La aplicación ha sufrido una actualización importante. Los ajustes ya no son necesarios.<br><br>Los dispositivos existentes seguirán funcionando durante un tiempo. El antiguo controlador se eliminará en algún momento.<br><br>Para poder utilizar las nuevas funciones, DEBE utilizarse el nuevo controlador."
   },
   "warnings": {
-    "deprecated1": "¡ATENCIÓN: Los dispositivos / flujos deben reconfigurarse. El controlador antiguo se eliminará en la PRÓXIMA VERSIÓN!",
-    "deprecated2": "NOTA: ¡Las nuevas funciones SÓLO están disponibles con el nuevo controlador, es decir, después de la nueva configuración!"
+    "deprecated1": "¡ATENCIÓN: El controlador antiguo ha sido eliminado en la versión 1.5.0, como se anunció!"
   },
   "devices": {
     "unavailable": "No se pudo acceder al dispositivo en la red."

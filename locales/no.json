@@ -6,8 +6,7 @@
     "unavailable": "Enheten kunne ikke nås på nettverket."
   },
   "warnings": {
-    "deprecated1": "ADVARSEL: Enheter / Flows må konfigureres på nytt. Gammel driver vil bli fjernet i NESTE VERSJON!",
-    "deprecated2": "MERK: De nye funksjonene er KUN tilgjengelige med den nye driveren, dvs. etter den nye konfigurasjonen!"
+    "deprecated1": "ADVARSEL: Den gamle driveren ble fjernet i versjon 1.5.0, som annonsert!"
   },
   "capabilities": {
     "gravity_days": "Dag(er)",

@@ -6,8 +6,7 @@
     "unavailable": "Urządzenie nie może być osiągnięte w sieci."
   },
   "warnings": {
-    "deprecated1": "UWAGA: Urządzenia / Przepływy muszą być ponownie skonfigurowane. Stary sterownik zostanie usunięty w NAJBLIŻSZEJ WERSJI",
-    "deprecated2": "UWAGA: Nowe funkcje są dostępne TYLKO z nowym sterownikiem, tj. po nowej konfiguracji!"
+    "deprecated1": "UWAGA: Stary sterownik został usunięty w wersji 1.5.0, jak zapowiedziano!"
   },
   "capabilities": {
     "gravity_days": "Dzień (dni)",

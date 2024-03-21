@@ -14,6 +14,9 @@ DNS Requests per Day
 Blocked Adds per Day
 Blocked Add per Day %
 Last Gravity Update
+Core Update
+FTL Update
+Web Update
 
 # Flow cards
 Flowcards can be used to build flows in Homey's flow editor.
@@ -44,6 +47,9 @@ This card adds the functionality that all Piholes can be disabled for a limited 
 
 
 # Version History
+
+### v1.5.0 (Store Release)
+- Removing the old driver
 
 ### v1.4.7 (Store Release)
 - Bug fixes / Optimizations / Last version with old driver

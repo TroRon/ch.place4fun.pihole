@@ -440,5 +440,18 @@
       "da": "Fejlrettelser / Optimeringer / Seneste version med gammel driver",
       "ru": "Исправление ошибок / Оптимизации / Последняя версия с старым драйвером",
       "pl": "Naprawy błędów / Optymalizacje / Ostatnia wersja z starym sterownikiem"
-      }  
+      },  
+     "1.5.0": {
+       "de": "Entfernen des alten Treibers",
+      "en": "Removing the old driver",
+      "nl": "Verwijderen van de oude driver",
+      "fr": "Suppression de l'ancien pilote",
+      "it": "Rimozione del vecchio driver",
+      "sv": "Ta bort den gamla drivrutinen",
+      "no": "Fjerning av gammel driver",
+      "es": "Eliminación del controlador antiguo",
+      "da": "Fjernelse af den gamle driver",
+      "ru": "Удаление старого драйвера",
+      "pl": "Usuwanie starego sterownika"
+    }  
   }

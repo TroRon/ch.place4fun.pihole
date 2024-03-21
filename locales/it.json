@@ -3,8 +3,7 @@
     "information_about_pihole": "INFORMAZIONI IMPORTANTI:<br><br>L'applicazione ha subito un grande aggiornamento. Le impostazioni non sono più necessarie.<br><br>I dispositivi esistenti continueranno a funzionare per un po 'di tempo. Ad un certo punto, il vecchio driver verrà rimosso.<br><br>Per poter utilizzare le nuove funzionalità, È NECESSARIO utilizzare il nuovo driver."
   },
   "warnings": {
-    "deprecated1": "ATTENZIONE: Dispositivi / Flows devono essere riconfigurati. Il vecchio driver verrà rimosso nella PROSSIMA VERSIONE!",
-    "deprecated2": "NOTA: Le nuove funzionalità sono disponibili SOLO con il nuovo driver, quindi dopo la nuova configurazione!"
+    "deprecated1": "ATTENZIONE: Il vecchio driver è stato rimosso nella versione 1.5.0, come annunciato!"
   },
   "devices": {
     "unavailable": "Impossibile raggiungere il dispositivo nella rete."

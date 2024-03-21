@@ -1,6 +1,6 @@
 {
   "id": "ch.place4fun.pihole",
-  "version": "1.4.7",
+  "version": "1.5.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#000000",
