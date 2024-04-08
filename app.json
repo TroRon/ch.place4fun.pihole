@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "ch.place4fun.pihole",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#000000",
@@ -1916,16 +1916,16 @@
     {
       "id": "pihole",
       "name": {
-        "en": "Add PiHole",
-        "da": "Tilføj PiHole",
-        "de": "PiHole hinzufügen",
-        "es": "Agregar PiHole",
-        "fr": "Ajouter PiHole",
-        "nl": "PiHole toevoegen",
-        "no": "Legg til PiHole",
-        "pl": "Dodaj PiHole",
-        "ru": "Добавить PiHole",
-        "sv": "Lägg till PiHole"
+        "en": "PiHole",
+        "da": "PiHole",
+        "de": "PiHole",
+        "es": "PiHole",
+        "fr": "PiHole",
+        "nl": "PiHole",
+        "no": "PiHole",
+        "pl": "PiHole",
+        "ru": "PiHole",
+        "sv": "PiHole"
       },
       "class": "sensor",
       "capabilities": [

@@ -442,7 +442,7 @@
       "pl": "Naprawy błędów / Optymalizacje / Ostatnia wersja z starym sterownikiem"
       },  
      "1.5.0": {
-       "de": "Entfernen des alten Treibers",
+      "de": "Entfernen des alten Treibers",
       "en": "Removing the old driver",
       "nl": "Verwijderen van de oude driver",
       "fr": "Suppression de l'ancien pilote",
@@ -453,5 +453,18 @@
       "da": "Fjernelse af den gamle driver",
       "ru": "Удаление старого драйвера",
       "pl": "Usuwanie starego sterownika"
-    }  
+    },
+    "1.5.1": {
+      "de": "Fehler in Update Erkennung behoben",
+      "en": "Fixed update detection issue",
+      "nl": "Probleem met update detectie opgelost",
+      "fr": "Problème de détection de mise à jour corrigé",
+      "it": "Risolto problema di rilevamento dell'aggiornamento",
+      "sv": "Åtgärdade upptäcktsproblem för uppdatering",
+      "no": "Fikset oppdateringsdeteksjonsproblem",
+      "es": "Corregido problema de detección de actualizaciones",
+      "da": "Løst problem med opdateringsregistrering",
+      "ru": "Исправлена проблема обнаружения обновлений",
+      "pl": "Naprawiono problem wykrywania aktualizacji"
+    }    
   }

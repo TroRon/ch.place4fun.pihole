@@ -521,7 +521,7 @@ async checkUpdateAvailable(device, url) {
     this.log('Update Prüfung beginnt');
 
     // Überprüfe ob ein Core Update vorhanden ist
-    if (data.core_updatee === true) {
+    if (data.core_update == true) {
       this.log(device,': Core Update von', data.core_current, 'zu',  data.core_latest, 'verfügbar');
       this.setCapabilityValue('core_update_available', true);
     } else {
@@ -530,7 +530,7 @@ async checkUpdateAvailable(device, url) {
     }
 
     // Überprüfe ob ein Core Update vorhanden ist
-    if (data.web_update === true) {
+    if (data.web_update == true) {
       this.log(device,': Web Update von', data.web_update, 'zu',  data.web_latest, 'verfügbar');
       this.setCapabilityValue('web_update_available', true);
 
@@ -540,7 +540,7 @@ async checkUpdateAvailable(device, url) {
     }
 
     // Überprüfe ob ein Core Update vorhanden ist
-    if (data.FTL_update === true) {
+    if (data.FTL_update == true) {
        this.log(device,': FTL Update von', data.FTL_current, 'zu',  data.FTL_latest, 'verfügbar');
        this.setCapabilityValue('ftl_update_available', true);
     } else {
