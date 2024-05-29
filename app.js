@@ -21,7 +21,7 @@ class PiHoleControl extends Homey.App {
   await super.onInit();
 
   //Schreibe eine Meldung in die Time-Line wegen altem Treiber-Modell
-  this.homey.notifications.createNotification({excerpt: this.homey.__('warnings.deprecated1')}).catch(error => {this.error('Error sending notification: '+error.message)});
+  //this.homey.notifications.createNotification({excerpt: this.homey.__('warnings.deprecated1')}).catch(error => {this.error('Error sending notification: '+error.message)});
 
   //Aktions-Karten
   //pihole-disable-piholes.json

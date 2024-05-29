@@ -466,5 +466,18 @@
       "da": "Løst problem med opdateringsregistrering",
       "ru": "Исправлена проблема обнаружения обновлений",
       "pl": "Naprawiono problem wykrywania aktualizacji"
-    }    
+    },
+    "1.5.2": {
+      "de": "Entfernen Hinweis für alten Treiber",
+      "en": "Removing notice for old driver",
+      "nl": "Verwijderen van melding voor oude driver",
+      "fr": "Suppression de l'avis pour l'ancien pilote",
+      "it": "Rimozione dell'avviso per il vecchio driver",
+      "sv": "Ta bort meddelande för gammal drivrutin",
+      "no": "Fjerning av varsel for gammel driver",
+      "es": "Eliminando aviso para el controlador antiguo",
+      "da": "Fjernelse af meddelelse for gammel driver",
+      "ru": "Удаление уведомления о старом драйвере",
+      "pl": "Usuwanie powiadomienia o starym sterowniku"
+    }      
   }
