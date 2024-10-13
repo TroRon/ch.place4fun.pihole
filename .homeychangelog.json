@@ -481,6 +481,16 @@
     "pl": "Usuwanie powiadomienia o starym sterowniku"
   },
   "1.5.3": {
-    "en": "Bugfixes, thx @Bertware"
+    "en": "Bugfixes, thx @Bertware",
+    "de": "Bugfixes, danke @Bertware",
+    "nl": "Bugfixes, bedankt @Bertware",
+    "fr": "Correctifs, merci @Bertware",
+    "it": "Correzioni di bug, grazie @Bertware",
+    "sv": "Bugfixar, tack @Bertware",
+    "no": "Feilrettinger, takk @Bertware",
+    "es": "Correcciones de errores, gracias @Bertware",
+    "da": "Fejlrettelser, tak @Bertware",
+    "ru": "Исправления ошибок, спасибо @Bertware",
+    "pl": "Poprawki, dzięki @Bertware"
   }
 }
