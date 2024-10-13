@@ -58,15 +58,21 @@ class PiHoleDevice extends Homey.Device {
      this.registerCapabilityListener('onoff', async (value) => {
          this.log('Eingeschaltet:', value);
 
-         if (value) {
-           this.log('Eingeschaltet:', value);
-           this._makeAPICall(enable_url)
-         } else {
-           this.log('Ausgeschaltet:', value);
-           this._makeAPICall(disable_url)
-         }
-       }
-     )
+          if (value) {
+            this.log('Eingeschaltet:', value);
+            this._makeAPICall(enable_url).then(
+              // update data so it reflects the correct status. Little delay so pihole has time to actually enable
+              () => setTimeout(() => this._updateDeviceData(), 600)
+            )
+          } else {
+            this.log('Ausgeschaltet:', value);
+            this._makeAPICall(disable_url).then(
+              // update data so it reflects the correct status. Little delay so pihole has time to actually enable
+              () => setTimeout(() => this._updateDeviceData(), 600)
+            )
+          }
+        }
+      )
 
        this.registerCapabilityListener('data_refresh', async (value) => {
            const api_key = deviceSettings.api
@@ -376,13 +382,14 @@ async _updateDeviceData() {
         this.log('Fehler --> gravity_last_update ist nicht definiert');
       }
 
-      // Capabilities für den Rest setzen
-    this.setCapabilityValue('alarm_communication_error', false);
-    this.setCapabilityValue('alarm_filter_state', PiHoleState);
-    })
-  });
-} catch (error) {
-  this.log('Ein Fehler ist aufgetreten ->', error.message);
+          // Capabilities für den Rest setzen
+          this.setCapabilityValue('alarm_communication_error', false);
+          this.setCapabilityValue('alarm_filter_state', PiHoleState);
+          this.setCapabilityValue('onoff', data.status === 'enabled');
+        })
+      });
+    } catch (error) {
+      this.log('Ein Fehler ist aufgetreten ->', error.message);
 
   // Jetzt können Sie Capabilities für dieses Gerät setzen
   this.setCapabilityValue('alarm_communication_error', true);
