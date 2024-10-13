@@ -1950,16 +1950,52 @@
       "capabilitiesOptions": {
         "onoff": {
           "titleTrue": {
-            "en": "Adblocking enabled"
+            "en": "Adblocking enabled",
+            "da": "Adblocking aktiveret",
+            "de": "Werbeblocker aktiviert",
+            "es": "Bloqueo de anuncios activado",
+            "fr": "Blocage des publicités activé",
+            "nl": "Advertentieblokkering ingeschakeld",
+            "no": "Annonsesperring aktivert",
+            "pl": "Blokowanie reklam włączone",
+            "ru": "Блокировка рекламы включена",
+            "sv": "Annonsblockering aktiverad"
           },
           "titleFalse": {
-            "en": "Adblocking disabled"
+            "en": "Adblocking disabled",
+            "da": "Adblocking deaktiveret",
+            "de": "Werbeblocker deaktiviert",
+            "es": "Bloqueo de anuncios desactivado",
+            "fr": "Blocage des publicités désactivé",
+            "nl": "Advertentieblokkering uitgeschakeld",
+            "no": "Annonsesperring deaktivert",
+            "pl": "Blokowanie reklam wyłączone",
+            "ru": "Блокировка рекламы отключена",
+            "sv": "Annonsblockering inaktiverad"
           },
           "insightsTitleTrue": {
-            "en": "Adblocking has been enabled"
+            "en": "Adblocking has been enabled",
+            "da": "Annonceblokering er blevet aktiveret",
+            "de": "Werbeblocker wurde aktiviert",
+            "es": "El bloqueo de anuncios ha sido activado",
+            "fr": "Le blocage des publicités a été activé",
+            "nl": "Advertentieblokkering is ingeschakeld",
+            "no": "Annonsesperring har blitt aktivert",
+            "pl": "Blokowanie reklam zostało włączone",
+            "ru": "Блокировка рекламы была включена",
+            "sv": "Annonsblockering har aktiverats"
           },
           "insightsTitleFalse": {
-            "en": "Adblocking has been disabled"
+            "en": "Adblocking has been disabled",
+            "da": "Annonceblokering er blevet deaktiveret",
+            "de": "Werbeblocker wurde deaktiviert",
+            "es": "El bloqueo de anuncios ha sido desactivado",
+            "fr": "Le blocage des publicités a été désactivé",
+            "nl": "Advertentieblokkering is uitgeschakeld",
+            "no": "Annonsesperring har blitt deaktivert",
+            "pl": "Blokowanie reklam zostało wyłączone",
+            "ru": "Блокировка рекламы была отключена",
+            "sv": "Annonsblockering har inaktiverats"
           }
         }
       },
