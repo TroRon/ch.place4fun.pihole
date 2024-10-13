@@ -1950,16 +1950,56 @@
       "capabilitiesOptions": {
         "onoff": {
           "titleTrue": {
-            "en": "Adblocking enabled"
+            "en": "Adblocking enabled",
+            "de": "Werbeblocker aktiviert",
+            "nl": "Adblocker ingeschakeld",
+            "fr": "Bloqueur de publicités activé",
+            "it": "Blocco degli annunci attivato",
+            "sv": "Annonsblockering aktiverad",
+            "no": "Annonsblokkering aktivert",
+            "es": "Bloqueo de anuncios activado",
+            "da": "Annonceblokering aktiveret",
+            "ru": "Блокировка рекламы включена",
+            "pl": "Blokowanie reklam włączone"
           },
           "titleFalse": {
-            "en": "Adblocking disabled"
+            "en": "Adblocking disabled",
+            "de": "Werbeblocker deaktiviert",
+            "nl": "Adblocker uitgeschakeld",
+            "fr": "Bloqueur de publicités désactivé",
+            "it": "Blocco degli annunci disattivato",
+            "sv": "Annonsblockering inaktiverad",
+            "no": "Annonsblokkering deaktivert",
+            "es": "Bloqueo de anuncios desactivado",
+            "da": "Annonceblokering deaktiveret",
+            "ru": "Блокировка рекламы отключена",
+            "pl": "Blokowanie reklam wyłączone"
           },
           "insightsTitleTrue": {
-            "en": "Adblocking has been enabled"
+            "en": "Adblocking has been enabled",
+            "de": "Werbeblocker wurde aktiviert",
+            "nl": "Adblocker is ingeschakeld",
+            "fr": "Le bloqueur de publicités a été activé",
+            "it": "Il blocco degli annunci è stato attivato",
+            "sv": "Annonsblockering har aktiverats",
+            "no": "Annonsblokkering har blitt aktivert",
+            "es": "El bloqueo de anuncios ha sido activado",
+            "da": "Annonceblokering er blevet aktiveret",
+            "ru": "Блокировка рекламы была включена",
+            "pl": "Blokowanie reklam zostało włączone"
           },
           "insightsTitleFalse": {
-            "en": "Adblocking has been disabled"
+            "en": "Adblocking has been disabled",
+            "de": "Werbeblocker wurde deaktiviert",
+            "nl": "Adblocker is uitgeschakeld",
+            "fr": "Le bloqueur de publicités a été désactivé",
+            "it": "Il blocco degli annunci è stato disattivato",
+            "sv": "Annonsblockering har inaktiverats",
+            "no": "Annonsblokkering har blitt deaktivert",
+            "es": "El bloqueo de anuncios ha sido desactivado",
+            "da": "Annonceblokering er blevet deaktiveret",
+            "ru": "Блокировка рекламы была отключена",
+            "pl": "Blokowanie reklam zostało wyłączone"
           }
         }
       },
