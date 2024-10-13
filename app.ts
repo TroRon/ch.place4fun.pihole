@@ -1,24 +1,12 @@
-'use strict';
-
-const { triggerAsyncId } = require('async_hooks');
+// @ts-nocheck
+import sourceMapSupport from 'source-map-support';
+sourceMapSupport.install();
 const Homey = require('homey');
 
 class PiHoleControl extends Homey.App {
   async onInit() {
-
-    if (process.env.DEBUG === '1'){
-      try{ 
-        require('inspector').waitForDebugger();
-      }
-      catch(error){
-        require('inspector').open(9225, '0.0.0.0', true);
-      }
-  }
-
   //Schreibe ins Log
   this.log(`${Homey.manifest.id}-${Homey.manifest.version}-Initialization ....`);
-
-  await super.onInit();
 
   //Schreibe eine Meldung in die Time-Line wegen altem Treiber-Modell
   //this.homey.notifications.createNotification({excerpt: this.homey.__('warnings.deprecated1')}).catch(error => {this.error('Error sending notification: '+error.message)});
@@ -26,7 +14,7 @@ class PiHoleControl extends Homey.App {
   //Aktions-Karten
   //pihole-disable-piholes.json
   const disablePiholes = this.homey.flow.getActionCard('pihole-disable-piholes');
-  disablePiholes.registerRunListener(async (args, state) => {
+      disablePiholes.registerRunListener(async (args, state) => {
       return await this.disablePiholes(args, state);
   });
 
@@ -101,6 +89,7 @@ class PiHoleControl extends Homey.App {
     }
   });
 
+  this.log(`${Homey.manifest.id}-${Homey.manifest.version}-Initialized`);
 }
     
   //Funktionen für die Aktions-Karten

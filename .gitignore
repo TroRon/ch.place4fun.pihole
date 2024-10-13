@@ -3,3 +3,7 @@
 /.homeybuild/
 /PiHoleInstances.txt
 /ToDo.txt
+/.vscode/
+/.idea/
+*.iml
+app.json

@@ -1,7 +1,0 @@
-{
-    "githubPullRequests.ignoredPullRequestBranches": [
-        "main"
-    ],
-    "github.branchProtection": true,
-    "github.gitAuthentication": true
-}

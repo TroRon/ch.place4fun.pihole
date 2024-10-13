@@ -1,0 +1,20 @@
+{
+  "title": {
+    "en": "DNS request for domain [[domain]] blocked"
+  },
+  "tokens": [
+    {
+      "name": "clientIp",
+      "type": "string",
+      "title": {
+        "en": "Client ip-address"
+      }
+    }
+  ],
+  "args": [
+    {
+      "name": "domain",
+      "type": "text"
+    }
+  ]
+}

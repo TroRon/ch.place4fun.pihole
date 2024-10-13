@@ -1,0 +1,11 @@
+{
+  "title": {
+    "en": "DNS-request from client with ip [[clientIp]] blocked"
+  },
+  "args": [
+    {
+      "name": "clientIp",
+      "type": "text"
+    }
+  ]
+}

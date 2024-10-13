@@ -1,0 +1,11 @@
+{
+  "title": {
+    "en": "Pause pi-hole filtering for [[seconds]] seconds"
+  },
+  "args": [
+    {
+      "name": "seconds",
+      "type": "number"
+    }
+  ]
+}

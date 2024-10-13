@@ -1,0 +1,15 @@
+{
+  "type": "number",
+  "title": {
+    "en": "CPU usage"
+  },
+  "units": {
+    "en": "°C"
+  },
+  "insights": true,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "/assets/capability_icons/temperature.svg"
+}
