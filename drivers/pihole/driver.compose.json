@@ -60,7 +60,10 @@
       }
     },
     {
-      "id": "configure_device"
+      "id": "configure_device",
+      "navigation": {
+        "prev": "list_devices"
+      }
     },
     {
       "id": "add_device",

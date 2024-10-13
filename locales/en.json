@@ -52,6 +52,10 @@
   "settings": {
     "title": "Device Settings",
     "test_connection": "Test connection",
+    "name": {
+      "title": "Device name",
+      "hint": "How the device should be named in Homey"
+    },
     "host": {
       "title": "Device host",
       "hint": "Please use FQDN or IP address with prepended HTTP(s)"

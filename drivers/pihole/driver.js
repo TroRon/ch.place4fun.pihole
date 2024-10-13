@@ -24,10 +24,15 @@ class PiholeDriver extends Homey.Driver {
       },
     }]
 
+    let autoDiscoverStarted = false
+
     session.setHandler("list_devices", async () => {
       this.log("list_devices");
-      // Automatic detection of DNS servers
-      this.emitAutodetectedPiHoles(session, devices);
+      if (!autoDiscoverStarted){
+        // Prevent multiple searches when navigating back and forth in the pairing process
+        this.emitAutodetectedPiHoles(session, devices);
+        autoDiscoverStarted = true;
+      }
       return devices;
     });
 
@@ -134,11 +139,12 @@ class PiholeDriver extends Homey.Driver {
       let addresses = await this.getIpsInSubnet();
       let result = [];
       this.log("Testing " + addresses.length + " ip addresses...")
-      for (const ipAddress of addresses) {
+      addresses = ["pi.hole", "pihole.local", ... addresses] // also search two DNS names which are likely matches
+      for (const address of addresses) {
         // this.homey.arp.getMAC(ipAddress) is horribly slow and unusable as help, so we have to brute-force discovery
-        let isValid = (await this.valid_host("http://" + ipAddress, 80, 50));
+        let isValid = (await this.valid_host("http://" + address, 80, 50));
         if (isValid) {
-          devices.push(this.createDeviceStub(ipAddress));
+          devices.push(this.createDeviceStub(address));
           session.emit("list_devices", devices); // emit while discovering for faster feedback in the UI
         }
       }
