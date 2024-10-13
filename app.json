@@ -1929,6 +1929,7 @@
       },
       "class": "sensor",
       "capabilities": [
+        "onoff",
         "alarm_communication_error",
         "alarm_filter_state",
         "last_sync",
@@ -1941,6 +1942,22 @@
         "web_update_available",
         "ftl_update_available"
       ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "titleTrue": {
+            "en": "Adblocking enabled"
+          },
+          "titleFalse": {
+            "en": "Adblocking disabled"
+          },
+          "insightsTitleTrue": {
+            "en": "Adblocking has been enabled"
+          },
+          "insightsTitleFalse": {
+            "en": "Adblocking has been disabled"
+          }
+        }
+      },
       "images": {
         "small": "/drivers/pihole/assets/images/small.png",
         "large": "/drivers/pihole/assets/images/large.png",
@@ -1954,7 +1971,7 @@
         {
           "id": "manual_input",
           "prev": "welcome",
-          "next": "list_devices"
+          "next": "done"
         }
       ],
       "settings": [

@@ -1,9 +1,4 @@
 const Homey = require('homey');
-const PiholeDevice = require('./device'); // Stellen Sie sicher, dass der Pfad korrekt ist.
-const CAPABILITY_DEBOUNCE = 500;
-
-//Festlegen einer Map für die Task-Verwaltung
-let intervalIds = new Map();
 
 //Allgemeine Parameter
 let absoluteTimestamp;
@@ -14,13 +9,15 @@ let formated_blocked_adds_today_percent;
 
 class PiHoleDevice extends Homey.Device {
 
+    intervalId = undefined
+
     async onInit() {
 
       this.log('Gerät wurde initialisiert');
-      
+
       //Ansprechen der Einstellungen, damit Zugriff darauf gewähleistet ist
       const deviceSettings = this.getSettings();
-             
+
    // Prüfen, ob Geräteeinstellungen vorhanden sind
    if (deviceSettings) {
 
@@ -29,7 +26,7 @@ class PiHoleDevice extends Homey.Device {
       const device_port = deviceSettings.port
       const device_api = deviceSettings.api
       const device_interval = deviceSettings.interval
-      
+
       //Schreiben ins Log File
       this.log('*******************************************************')
       this.log('URL   ->', device_url);
@@ -40,12 +37,12 @@ class PiHoleDevice extends Homey.Device {
 
       //Herausfinden welches Gerät das ist
       this.log('Identifiziert und initialisiert ..')
-     
+
       //Bereitstellen der nötigen URLs für Aktionen / Abfragen
       const disable_url = `${device_url}:${device_port}/admin/api.php?disable&auth=${device_api}`;
       const enable_url = `${device_url}:${device_port}/admin/api.php?enable&auth=${device_api}`;
       const status_url = `${device_url}:${device_port}/admin/api.php?summaryRaw&auth=${device_api}`;
-  
+
       //Schreiben ins Log File
       this.log('URL Disable ->', disable_url);
       this.log('URL Enable  ->', enable_url);
@@ -53,58 +50,40 @@ class PiHoleDevice extends Homey.Device {
 
       //Capabilities Updaten (Danke Ronny Winkler)
       await this._updateCapabilities();
-
-      //Capabilities Listener
-       this.registerMultipleCapabilityListener(this.getCapabilities(), async (capabilityValues, capabilityOptions) => {
-        // try{
-            await this._onCapability( capabilityValues, capabilityOptions);
-        // }
-        // catch(error){
-        //     this.log("_onCapability() Error: ",error);
-        // }
-      },CAPABILITY_DEBOUNCE);
-
-      let deviceSettingsArray = [
-        {
-          url: device_url,
-          port: device_port,
-          api: device_api,
-          interval: device_interval
-        },
-      ]; 
-
-      deviceSettingsArray.forEach(deviceSettings => {
-        const status_url = `${device_url}:${device_port}/admin/api.php?summaryRaw&auth=${device_api}`;
-      
-        // Erstellen des wiederkehrenden Tasks
-        const deviceId = this.getId();
-        
-        //Task neu erstellen
-        this.createTask(deviceId)
-      });
+     //Task neu erstellen
+     this.createTask()
 
 
-      //Schreibt den Status, bei Veränderung, ins Log File
-      this.registerCapabilityListener('onoff', async (value) => {
-      this.log('Eingeschaltet:' ,value);
-      const deviceId = this.getData().id;
+     //Schreibt den Status, bei Veränderung, ins Log File
+     this.registerCapabilityListener('onoff', async (value) => {
+         this.log('Eingeschaltet:', value);
 
-      //Reagiert darauf, wenn das Gerät nicht erreichbar ist
-      this.setUnavailable(this.homey.__('device.unavailable')).catch(this.error);
+          if (value) {
+            this.log('Eingeschaltet:', value);
+            this._makeAPICall(enable_url).then(
+              // update data so it reflects the correct status. Little delay so pihole has time to actually enable
+              () => setTimeout(() => this._updateDeviceData(), 600)
+            )
+          } else {
+            this.log('Ausgeschaltet:', value);
+            this._makeAPICall(disable_url).then(
+              // update data so it reflects the correct status. Little delay so pihole has time to actually enable
+              () => setTimeout(() => this._updateDeviceData(), 600)
+            )
+          }
+        }
+      )
 
-      if (value) {
-        this.log('Eingeschaltet:' ,value);
-        this._makeAPICall(enable_url)
-      } else {
-        this.log('Ausgeschaltet:' ,value);
-        this._makeAPICall(disable_url)
-      }
-      }
-    )
-      } else {
-        this.log('Keine Geräteeinstellungen gefunden. Aktionen werden nicht ausgeführt.');
-    }
-  
+       this.registerCapabilityListener('data_refresh', async (value) => {
+           const api_key = deviceSettings.api
+           const status_url = `${this.getHost()}/admin/api.php?summaryRaw&auth=${api_key}`;
+           this._updateDeviceData(status_url);
+           }
+       )
+   } else {
+       this.log('Keine Geräteeinstellungen gefunden. Aktionen werden nicht ausgeführt.');
+   }
+
   }
 
  /**
@@ -211,7 +190,7 @@ async onDeleted() {
   const deviceId = this.getId();
 
   //Task löschen
-  this.deleteTask(deviceId)
+    this.deleteTask()
 }
 
 async _updateCapabilities(){
@@ -244,50 +223,19 @@ async _updateCapabilities(){
   }
 }
 
-// CAPABILITIES =======================================================================================
-
-async _onCapability( capabilityValues, capabilityOptions){
-
-  //Ansprechen der Einstellungen, damit Zugriff darauf gewähleistet ist
-  const deviceSettings = this.getSettings();
-             
-  //Die nötigen Einstellungen holen und bereitstellen
-  const device_url = deviceSettings.url
-  const device_port = deviceSettings.port
-  const device_api = deviceSettings.api
-  const device_Name = this.getName()
-
-
-  //Schreiben ins Log File
-  this.log('*******************************************************')
-  this.log('ID   ->', device_Name);
-  this.log('URL  ->', device_url);
-  this.log('Port ->', device_port);
-  this.log('Key  ->', device_api);
-  this.log('*******************************************************')
-
-  //Bereitstellen der nötigen URLs für Aktionen / Abfragen
-  const status_url = `${device_url}:${device_port}/admin/api.php?summaryRaw&auth=${device_api}`;
-  const update_url = `${device_url}:${device_port}/admin/api.php??versions`;
-
-
-  if( capabilityValues["data_refresh"] != undefined){
-    this._updateDeviceData(status_url);
-  }
-}
 
 // Helpers =======================================================================================
 async _makeAPICall(url) {
 
     try {
       const response = await fetch(url);
-  
+
       if (!response.ok) {
         throw new Error(response.statusText);
       }
       this.log('API Aufruf erfolgreich');
       return { success: true }; // Erfolgsstatus zurückgeben
-  
+
     } catch (error) {
       this.log('API Aufruf fehlgeschlagen:');
       this.log(errorMessage);
@@ -295,25 +243,23 @@ async _makeAPICall(url) {
     }
 }
 
-async _updateDeviceData(url) {
+async _updateDeviceData() {
+  const deviceSettings = this.getSettings();
+  // Die nötigen Einstellungen holen und bereitstellen
+  const api_key = deviceSettings.api;
+  const url = `${this.getHost()}/admin/api.php?summaryRaw&auth=${api_key}`;
 
   try {
-    const response = await fetch(url);
-    // Überprüft, ob der Statuscode im Erfolgsbereich liegt (200-299) oder 403 ist
-    if (!response.ok && response.status !== 403) { 
-        throw new Error(`Status Filter: ${response.status}`);
-    } else {
+  fetch(url).then(response => {
+    if (!response.ok && response.status !== 403) {
+      throw new Error(`Status Filter: ${response.status}`);
     }
+    response.json().then(data => {
 
-    const data = await response.json();
-  
-  fetch(url).then(response => response.json())
-  .then(data => {
-      
       //Fülle Variable mit Gerätename ab
       const deviceName = this.getName()
 
-      //Saubere Formatierung des Status   
+      //Saubere Formatierung des Status
       let PiHoleState = false
 
       if(data.status === 'enabled') {
@@ -323,14 +269,14 @@ async _updateDeviceData(url) {
       }
        //Datum sauber formatieren
       let syncDate = new Date();
-      let day = syncDate.toLocaleDateString('de-DE', { 
-        day: '2-digit', 
-        month: '2-digit', 
-        year: '2-digit', 
-        timeZone: this.homey.clock.getTimezone() 
+      let day = syncDate.toLocaleDateString('de-DE', {
+        day: '2-digit',
+        month: '2-digit',
+        year: '2-digit',
+        timeZone: this.homey.clock.getTimezone()
       });
-      let time = syncDate.toLocaleTimeString('de-DE', { 
-        hour: '2-digit', 
+      let time = syncDate.toLocaleTimeString('de-DE', {
+        hour: '2-digit',
         minute: '2-digit',
         timeZone: this.homey.clock.getTimezone()
       });
@@ -349,15 +295,7 @@ async _updateDeviceData(url) {
       }
 
       // Update Prüfung
-      //Ansprechen der Einstellungen, damit Zugriff darauf gewährleistet ist
-      const deviceSettings = this.getSettings();
-      const device_Name = this.getName()
-             
-      //Die nötigen Einstellungen holen und bereitstellen
-      const device_url = deviceSettings.url
-      const device_port = deviceSettings.port
-     
-      const update_url = `${device_url}:${device_port}/admin/api.php?versions`;
+      const update_url = `${this.getHost()}/admin/api.php?versions`;
       this.checkUpdateAvailable(deviceName, update_url)
 
       // Geblockte ADDs pro Tag
@@ -392,7 +330,7 @@ async _updateDeviceData(url) {
       const gravity_update_hours = Math.floor((timeDifference % (24 * 3600)) / 3600);
       const gravity_update_minutes = Math.floor((timeDifference % 3600) / 60);
 
-      let gravity_update_string = gravity_update_days + ' ' + this.homey.__('capabilities.gravity_days') + ' ' +  gravity_update_hours + ' ' +  this.homey.__('capabilities.gravity_hours') + ' ' +  gravity_update_minutes + ' ' + this.homey.__('capabilities.gravity_minutes');        
+      let gravity_update_string = gravity_update_days + ' ' + this.homey.__('capabilities.gravity_days') + ' ' +  gravity_update_hours + ' ' +  this.homey.__('capabilities.gravity_hours') + ' ' +  gravity_update_minutes + ' ' + this.homey.__('capabilities.gravity_minutes');
 
       // Loggen der Werte zwecks Diagnose
       this.log('');
@@ -444,72 +382,54 @@ async _updateDeviceData(url) {
         this.log('Fehler --> gravity_last_update ist nicht definiert');
       }
 
-      // Capabilities für den Rest setzen
-    this.setCapabilityValue('alarm_communication_error', false);
-    this.setCapabilityValue('alarm_filter_state', PiHoleState);
+          // Capabilities für den Rest setzen
+          this.setCapabilityValue('alarm_communication_error', false);
+          this.setCapabilityValue('alarm_filter_state', PiHoleState);
+          this.setCapabilityValue('onoff', data.status === 'enabled');
+        })
+      });
+    } catch (error) {
+      this.log('Ein Fehler ist aufgetreten ->', error.message);
 
-});
-} catch (error) {
-  this.log('Ein Fehler ist aufgetreten ->', error.message);
-  
   // Jetzt können Sie Capabilities für dieses Gerät setzen
-  this.setCapabilityValue('alarm_communication_error', true); 
+  this.setCapabilityValue('alarm_communication_error', true);
 }
-} 
+}
 
 
 //TASK Verwaltung
-async deleteTask(deviceId) {
-  // Überprüfen, ob für die deviceId ein Task existiert
-  if (intervalIds.has(deviceId)) {
-    // Hole die intervalId und stoppe das Intervall
-    clearInterval(intervalIds.get(deviceId));
-    this.log('Task für Gerät' ,deviceId, 'gestoppt.');
-
-    // Entferne die intervalId aus der Map
-    intervalIds.delete(deviceId);
-    this.log('Task für Gerät' ,deviceId, 'gelöscht.');
-
-  } else {
-    this.log('Kein Task gefunden für Gerät' ,deviceId,);
-  }
-}
-
-async createTask(deviceId) {
-  
-    // Vorhandenes Intervall beenden, falls es bereits existiert
-    const existingIntervalId = intervalIds.get(deviceId);
-    if (existingIntervalId) {
-      clearInterval(existingIntervalId);
-      intervalIds.delete(deviceId); // Entferne das Intervall aus der Map
+  async deleteTask() {
+    // Überprüfen, ob für die deviceId ein Task existiert
+    if (this.intervalId) {
+      // Hole die intervalId und stoppe das Intervall
+      clearInterval(this.intervalId);
+      this.log('Task für Gerät', this.getId(), 'gestoppt.');
+      this.intervalId = undefined
+      this.log('Task für Gerät', this.getId(), 'gelöscht.');
+    } else {
+      this.log('Kein Task gefunden für Gerät', this.getId(),);
     }
-  
+  }
+
+async createTask() {
+
+    // Vorhandenes Intervall beenden, falls es bereits existiert
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+
     // Ansprechen der Einstellungen, um darauf zugreifen zu können
     const deviceSettings = this.getSettings();
-  
-    // Die nötigen Einstellungen holen und bereitstellen
-    const device_url = deviceSettings.url;
-    const device_port = deviceSettings.port;
-    const device_api = deviceSettings.api;
-  
+
     // Bereitstellen der nötigen URLs für Aktionen / Abfragen
-    const status_url = `${device_url}:${device_port}/admin/api.php?summaryRaw&auth=${device_api}`;
-  
-    // Die nötigen Einstellungen holen und bereitstellen
-    const device_interval = deviceSettings.interval;
-  
-    // Umrechnen der Interval ID in Millisekunden
-    const device_interval_minutes = device_interval; // Der Wert von device_interval in Minuten
-    const device_interval_milliseconds = device_interval_minutes * 60000;
-  
+    const device_interval_milliseconds = deviceSettings.interval * 60_000;
+
     // Erstelle einen neuen Task (z.B. eine Funktion, die regelmäßig ausgeführt wird)
-    const intervalId = setInterval(() => {
-      this._updateDeviceData(status_url);
+    this.intervalId = setInterval(() => {
+      this._updateDeviceData();
     }, device_interval_milliseconds); // gem. eingestelltem Intervall
-  
-    // Speichere die neue intervalId in der Map
-    intervalIds.set(deviceId, intervalId);
-    this.log('Neuer Task erstellt für Gerät:', deviceId);
+
+    this.log('Neuer Task erstellt für Gerät:', this.getId());
 }
 
 async checkUpdateAvailable(device, url) {
@@ -517,7 +437,7 @@ async checkUpdateAvailable(device, url) {
 
     const response = await fetch(url);
     const data = await response.json();
-    
+
     this.log('Update Prüfung beginnt');
 
     // Überprüfe ob ein Core Update vorhanden ist
@@ -526,7 +446,7 @@ async checkUpdateAvailable(device, url) {
       this.setCapabilityValue('core_update_available', true);
     } else {
       this.log(device,': Kein Core Update verfügbar.');
-      this.setCapabilityValue('core_update_available', false);         
+      this.setCapabilityValue('core_update_available', false);
     }
 
     // Überprüfe ob ein Core Update vorhanden ist
@@ -536,7 +456,7 @@ async checkUpdateAvailable(device, url) {
 
     } else {
       this.log(device,': Kein Web Update verfügbar.');
-      this.setCapabilityValue('web_update_available', false);         
+      this.setCapabilityValue('web_update_available', false);
     }
 
     // Überprüfe ob ein Core Update vorhanden ist
@@ -545,7 +465,7 @@ async checkUpdateAvailable(device, url) {
        this.setCapabilityValue('ftl_update_available', true);
     } else {
        this.log(device,': Kein FTL Update verfügbar.');
-       this.setCapabilityValue('ftl_update_available', false);         
+       this.setCapabilityValue('ftl_update_available', false);
     }
 
   } catch (error) {
@@ -554,6 +474,13 @@ async checkUpdateAvailable(device, url) {
 
   this.log('Update Prüfung beendet');
 }
+
+    getHost() {
+        const deviceSettings = this.getSettings();
+        const device_url = deviceSettings.url
+        const device_port = deviceSettings.port || 80
+        return `${device_url}:${device_port}`
+    }
 
 }
 module.exports = PiHoleDevice;
