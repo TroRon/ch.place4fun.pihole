@@ -1953,40 +1953,13 @@
             "en": "Adblocking enabled"
           },
           "titleFalse": {
-            "en": "Adblocking disabled",
-            "da": "Adblocking deaktiveret",
-            "de": "Werbeblocker deaktiviert",
-            "es": "Bloqueo de anuncios desactivado",
-            "fr": "Blocage des publicités désactivé",
-            "nl": "Advertentieblokkering uitgeschakeld",
-            "no": "Annonsesperring deaktivert",
-            "pl": "Blokowanie reklam wyłączone",
-            "ru": "Блокировка рекламы отключена",
-            "sv": "Annonsblockering inaktiverad"
+            "en": "Adblocking disabled"
           },
           "insightsTitleTrue": {
-            "en": "Adblocking has been enabled",
-            "da": "Annonceblokering er blevet aktiveret",
-            "de": "Werbeblocker wurde aktiviert",
-            "es": "El bloqueo de anuncios ha sido activado",
-            "fr": "Le blocage des publicités a été activé",
-            "nl": "Advertentieblokkering is ingeschakeld",
-            "no": "Annonsesperring har blitt aktivert",
-            "pl": "Blokowanie reklam zostało włączone",
-            "ru": "Блокировка рекламы была включена",
-            "sv": "Annonsblockering har aktiverats"
+            "en": "Adblocking has been enabled"
           },
           "insightsTitleFalse": {
-            "en": "Adblocking has been disabled",
-            "da": "Annonceblokering er blevet deaktiveret",
-            "de": "Werbeblocker wurde deaktiviert",
-            "es": "El bloqueo de anuncios ha sido desactivado",
-            "fr": "Le blocage des publicités a été désactivé",
-            "nl": "Advertentieblokkering is uitgeschakeld",
-            "no": "Annonsesperring har blitt deaktivert",
-            "pl": "Blokowanie reklam zostało wyłączone",
-            "ru": "Блокировка рекламы была отключена",
-            "sv": "Annonsblockering har inaktiverats"
+            "en": "Adblocking has been disabled"
           }
         }
       },
