@@ -1,7 +1,4 @@
 {
-  "settings": {
-    "information_about_pihole": "IMPORTANT INFORMATION:<br><br>The application has undergone a major update. The settings are no longer necessary.<br><br>Existing devices will continue to run for a while. The old driver will be removed at some point.<br><br>In order to use the new functions, the new driver MUST be used."
-  },
   "warnings": {
     "deprecated1": "WARNING: The old driver has been removed in version 1.5.0, as announced!"
   },
@@ -50,6 +47,29 @@
     },
     "buttons": {
       "next": "Add device"
+    }
+  },
+  "settings": {
+    "title": "Device Settings",
+    "test_connection": "Test connection",
+    "host": {
+      "title": "Device host",
+      "hint": "Please use FQDN or IP address with prepended HTTP(s)"
+    },
+    "port": {
+      "title": "Port",
+      "hint": "Default is 80"
+    },
+    "api_key": {
+      "title": "API key",
+      "hint": "Please enter the PiHole API key here. It can be obtained from the PiHole settings page"
+    }
+  },
+  "pairing":{
+    "add_manually": "Add manually",
+    "test_failed":{
+      "invalid_host": "The hostname or port are incorrect.",
+      "invalid_key": "The API key is invalid."
     }
   }
 }

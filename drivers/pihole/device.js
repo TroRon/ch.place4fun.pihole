@@ -1,5 +1,4 @@
 const Homey = require('homey');
-const CAPABILITY_DEBOUNCE = 500;
 
 //Allgemeine Parameter
 let absoluteTimestamp;
@@ -185,7 +184,7 @@ async onDeleted() {
   const deviceId = this.getId();
 
   //Task löschen
-  this.deleteTask(deviceId)
+    this.deleteTask()
 }
 
 async _updateCapabilities(){
@@ -420,7 +419,7 @@ async createTask() {
 
     // Erstelle einen neuen Task (z.B. eine Funktion, die regelmäßig ausgeführt wird)
     this.intervalId = setInterval(() => {
-      this._updateDeviceData(status_url);
+      this._updateDeviceData();
     }, device_interval_milliseconds); // gem. eingestelltem Intervall
 
     this.log('Neuer Task erstellt für Gerät:', this.getId());

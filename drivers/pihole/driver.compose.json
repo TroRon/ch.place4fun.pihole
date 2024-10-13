@@ -1,17 +1,17 @@
 {
   "id": "pihole",
   "name": {
-     "en": "PiHole",
-     "da": "PiHole",
-     "de": "PiHole",
-     "es": "PiHole",
-     "fr": "PiHole",
-     "nl": "PiHole",
-     "no": "PiHole",
-     "pl": "PiHole",
-     "ru": "PiHole",
-     "sv": "PiHole"
-    },
+    "en": "PiHole v5.x",
+    "da": "PiHole v5.x",
+    "de": "PiHole v5.x",
+    "es": "PiHole v5.x",
+    "fr": "PiHole v5.x",
+    "nl": "PiHole v5.x",
+    "no": "PiHole v5.x",
+    "pl": "PiHole v5.x",
+    "ru": "PiHole v5.x",
+    "sv": "PiHole v5.x"
+  },
   "class": "sensor",
   "capabilities": [
     "onoff",
@@ -43,20 +43,28 @@
       }
     }
   },
-    "images": {
+  "images": {
     "small": "{{driverAssetsPath}}/images/small.png",
     "large": "{{driverAssetsPath}}/images/large.png",
     "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
-   },
+  },
   "pair": [
     {
-      "id": "welcome",
-      "next": "manual_input"
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "singular": true
+      },
+      "navigation": {
+        "next": "configure_device"
+      }
     },
     {
-      "id": "manual_input",
-      "prev": "welcome",
-      "next": "done"
+      "id": "configure_device"
+    },
+    {
+      "id": "add_device",
+      "template": "add_devices"
     }
-    ]
+  ]
 }
