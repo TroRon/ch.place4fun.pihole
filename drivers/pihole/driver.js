@@ -59,7 +59,10 @@ class PiholeDriver extends Homey.Driver {
       data: {
         id: 'pihole-' + crypto.randomUUID()
       },
-      icon: "/icon.svg",
+      iconObj: {
+        // Reverse-engineered from list-devices template, icons as documented do not work correctly
+        url: "/app/ch.place4fun.pihole/drivers/pihole/assets/icon.svg",
+      },
       settings: {
         url: "http://" + ipAddress,
         port: 80,
