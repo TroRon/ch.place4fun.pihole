@@ -1950,7 +1950,7 @@
       "capabilitiesOptions": {
         "onoff": {
           "titleTrue": {
-            "en": "Adblocking enabled1",
+            "en": "Adblocking enabled",
             "de": "Werbeblocker aktiviert",
             "nl": "Adblocker ingeschakeld",
             "fr": "Bloqueur de publicités activé",
