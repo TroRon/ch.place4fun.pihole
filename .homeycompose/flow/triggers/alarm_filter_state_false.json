@@ -1,0 +1,41 @@
+{
+    "title": { 
+      "en": "Filter status has changed",
+      "de": "Filter wurde aktiviert",
+      "nl": "Filterstatus is veranderd",
+      "fr": "Le statut du filtre a changé",
+      "it": "Lo stato del filtro è cambiato",
+      "sv": "Filterstatus har ändrats",
+      "no": "Filterstatus har endret seg",
+      "es": "El estado del filtro ha cambiado",
+      "da": "Filterstatus er ændret",
+      "ru": "Статус фильтра изменился",
+      "pl": "Stan filtra uległ zmianie" 
+      },
+      "tokens": [
+        {
+          "name": "alarm_filter_state",
+          "type": "boolean",
+          "title": { 
+            "en": "Filter status",
+            "de": "Filterstatus",
+            "nl": "Filterstatus",
+            "fr": "Statut du filtre",
+            "it": "Stato del filtro",
+            "sv": "Filterstatus",
+            "no": "Filterstatus",
+            "es": "Estado del filtro",
+            "da": "Filterstatus",
+            "ru": "Статус фильтра",
+            "pl": "Stan filtra"     
+         }
+        }
+      ],
+      "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+        }
+      ]
+    }

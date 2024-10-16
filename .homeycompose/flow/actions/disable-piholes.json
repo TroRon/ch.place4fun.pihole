@@ -1,0 +1,29 @@
+{
+  "id": "disable-piholes",
+  "title": {
+    "en": "Deprecated: Disable all PiHole(s)",
+    "de": "Veraltet: Alle PiHole(s) deaktivieren",
+    "nl": "Verouderd: Schakel alle pihole(s) uit",
+    "fr": "Obsolète : Désactivez tous les PiHole(s)",
+    "it": "Deprecato: Disabilita tutti i PiHole(s)",
+    "sv": "Inaktiverad: Avaktivera alla PiHole(s)",
+    "no": "Utgått: Deaktiver alle PiHole(r)",
+    "es": "Obsoleto: Desactivar todos los PiHole(s)",
+    "da": "Forældet: Deaktiver alle PiHole(r)",
+    "ru": "Устарело: Отключить все PiHole(ы)",
+    "pl": "Przestarzałe: Wyłącz wszystkie PiHole(s)"
+    },
+  "hint": {
+    "en": "Disable the defined PiHole Instance(s).",
+    "de": "Deaktiviert die definierte(n) PiHole Instanz(en).",
+    "nl": "Deactiveert de gedefinieerde PiHole-instantie(s).",
+    "fr": "Désactive les instance(s) PiHole définie(s).",
+    "it": "Disabilita l'istanza(e) PiHole definita(e)",
+    "sv": "Inaktiverar de definierade PiHole-instansen(s).",
+    "no": "Deaktiverer den definerte PiHole-instansen(e).",
+    "es": "Desactiva la(s) instancia(s) PiHole definida(s).",
+    "da": "Deaktiver den/de definerede PiHole-instans(er).",
+    "ru": "Отключает определенный(ые) экземпляр(ы) PiHole.",
+    "pl": "Wyłącza zdefiniowaną(e) instancję(e) PiHole."
+  },"deprecated": true
+}

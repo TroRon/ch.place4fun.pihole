@@ -1,0 +1,41 @@
+{
+    "title": { 
+      "en": "Connection restored",
+      "de": "Verbindung wiederhergestellt",
+      "nl": "Verbinding hersteld",
+      "fr": "Connexion restaurée",
+      "it": "Connessione ripristinata",
+      "sv": "Anslutning återställd",
+      "no": "Tilkoblingen gjenopprettet",
+      "es": "Conexión restablecida",
+      "da": "Forbindelse genoprettet",
+      "ru": "Соединение восстановлено",
+      "pl": "Połączenie przywrócone"
+      },
+      "tokens": [
+        {
+          "name": "alarm_communication_error",
+          "type": "boolean",
+          "title": { 
+            "en": "Connection status",
+            "de": "Verbindungsstatus",
+            "nl": "Verbindingsstatus",
+            "fr": "Statut de la connexion",
+            "it": "Stato della connessione",
+            "sv": "Anslutningsstatus",
+            "no": "Tilkoblingsstatus",
+            "es": "Estado de conexión",
+            "da": "Forbindelsesstatus",
+            "ru": "Статус подключения",
+            "pl": "Status połączenia"
+          }
+        }
+      ],
+      "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+        }
+      ]
+    }
