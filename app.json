@@ -1,7 +1,6 @@
 {
-  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "ch.place4fun.pihole",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#000000",
@@ -1950,16 +1949,56 @@
       "capabilitiesOptions": {
         "onoff": {
           "titleTrue": {
-            "en": "Adblocking enabled"
+            "en": "Adblocking enabled",
+            "da": "Adblocking aktiveret",
+            "de": "Adblocking aktiviert",
+            "es": "Bloqueo de anuncios habilitado",
+            "fr": "Blocage des publicités activé",
+            "it": "Blocco degli annunci abilitato",
+            "nl": "Advertentieblokkering ingeschakeld",
+            "no": "Annonseblokkering aktivert",
+            "pl": "Blokowanie reklam włączone",
+            "ru": "Блокировка рекламы включена",
+            "sv": "Annonsblockering aktiverad"
           },
           "titleFalse": {
-            "en": "Adblocking disabled"
+            "en": "Adblocking disabled",
+            "da": "Adblocking deaktiveret",
+            "de": "Adblocking deaktiviert",
+            "es": "Bloqueo de anuncios deshabilitado",
+            "fr": "Blocage des publicités désactivé",
+            "it": "Blocco degli annunci disabilitato",
+            "nl": "Advertentieblokkering uitgeschakeld",
+            "no": "Annonseblokkering deaktivert",
+            "pl": "Blokowanie reklam wyłączone",
+            "ru": "Блокировка рекламы отключена",
+            "sv": "Annonsblockering inaktiverad"
           },
           "insightsTitleTrue": {
-            "en": "Adblocking has been enabled"
+            "en": "Adblocking has been enabled",
+            "da": "Annonceblokering er blevet aktiveret",
+            "de": "Adblocking wurde aktiviert",
+            "es": "El bloqueo de anuncios ha sido habilitado",
+            "fr": "Le blocage des publicités a été activé",
+            "it": "Il blocco degli annunci è stato abilitato",
+            "nl": "Advertentieblokkering is ingeschakeld",
+            "no": "Annonseblokkering har blitt aktivert",
+            "pl": "Blokowanie reklam zostało włączone",
+            "ru": "Блокировка рекламы была включена",
+            "sv": "Annonsblockering har aktiverats"
           },
           "insightsTitleFalse": {
-            "en": "Adblocking has been disabled"
+            "en": "Adblocking has been disabled",
+            "da": "Annonceblokering er blevet deaktiveret",
+            "de": "Adblocking wurde deaktiviert",
+            "es": "El bloqueo de anuncios ha sido deshabilitado",
+            "fr": "Le blocage des publicités a été désactivé",
+            "it": "Il blocco degli annunci è stato disabilitato",
+            "nl": "Advertentieblokkering is uitgeschakeld",
+            "no": "Annonseblokkering har blitt deaktivert",
+            "pl": "Blokowanie reklam zostało wyłączone",
+            "ru": "Блокировка рекламы была отключена",
+            "sv": "Annonsblockering har inaktiverats"
           }
         }
       },

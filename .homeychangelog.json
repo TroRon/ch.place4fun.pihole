@@ -492,5 +492,18 @@
     "da": "Fejlrettelser, tak @Bertware",
     "ru": "Исправления ошибок, спасибо @Bertware",
     "pl": "Poprawki, dzięki @Bertware"
+  },
+  "1.5.4": {
+    "en": "Bug fixing / Adjusting translations",
+    "de": "Fehlerbehebung / Anpassung der Übersetzungen",
+    "nl": "Bugfixes / Aanpassen van vertalingen",
+    "fr": "Correction de bugs / Ajustement des traductions",
+    "it": "Correzione di bug / Regolazione delle traduzioni",
+    "sv": "Bugfixar / Justering av översättningar",
+    "no": "Feilretting / Justering av oversettelser",
+    "es": "Corrección de errores / Ajuste de traducciones",
+    "da": "Fejlrettelse / Justering af oversættelser",
+    "ru": "Исправление ошибок / Настройка переводов",
+    "pl": "Naprawa błędów / Dostosowanie tłumaczeń"
   }
 }
