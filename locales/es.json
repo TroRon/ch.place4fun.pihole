@@ -1,35 +1,32 @@
 {
-  "settings": {
-    "information_about_pihole": "INFORMACIÓN IMPORTANTE:<br><br>La aplicación ha sufrido una actualización importante. Los ajustes ya no son necesarios.<br><br>Los dispositivos existentes seguirán funcionando durante un tiempo. El antiguo controlador se eliminará en algún momento.<br><br>Para poder utilizar las nuevas funciones, DEBE utilizarse el nuevo controlador."
-  },
   "warnings": {
-    "deprecated1": "¡ATENCIÓN: El controlador antiguo ha sido eliminado en la versión 1.5.0, como se anunció!"
+    "deprecated1": "ADVERTENCIA: ¡El controlador antiguo ha sido eliminado en la versión 1.5.0, como se anunció!"
   },
   "devices": {
-    "unavailable": "No se pudo acceder al dispositivo en la red."
+    "unavailable": "El dispositivo no se pudo alcanzar en la red."
   },
   "capabilities": {
-    "gravity_days": "Etiqueta(s)",
+    "gravity_days": "Día(s)",
     "gravity_hours": "Hora(s)",
     "gravity_minutes": "Minuto(s)"
   },
   "welcome": {
     "titles": {
       "header": "Configurar dispositivo PiHole",
-      "page": "La configuración es muy sencilla ..."
+      "page": "Configurar es muy simple ..."
     },
     "step_by_step": {
-      "intro": "Haga clic en 'Continuar' para mostrar una página de configuración.<br><br>En esta página deben realizarse los siguientes ajustes:",
-      "steps": "<li>IP Adresse:<b>z.B. 192.168.10.1</b></li><li>Port Key: <b>80</b></li><li>API Key: <b>0imfnc8mVLWwsAawjYr4Rx-Af50DDqtl</b></li>",
-      "outro": "<b>IMPORTANTE:</b><br>La especificación del puerto es <b>Siempre</b> necesaria, incluso si el PiHole está escuchando en el puerto 80, que sería el estándar.<br><br>Si hay un servicio DNS en funcionamiento, el PiHole también puede direccionarse con su nombre DNS.<br><br><b>Información:</b><br>Wenn Flows ausgeführt werden kann es sein, dass auf dem PiHole dazu nichts ersichtlich ist.<br><br>Dies ist kein Fehler der App, sondern ein Anzeige-Fehler auf Seiten PiHole.<br><br>Sollte dies der Fall sein, kann die Anzeige des PiHole neu geladen werden."
+      "intro": "Haga clic en 'Continuar' para mostrar una página de configuración.<br><br>Los siguientes ajustes deben realizarse en esta página:",
+      "steps": "<li>Dirección IP:<b>p.ej. 192.168.10.1</b></li><li>Clave de puerto: <b>80</b></li><li>Clave API: <b>0imfnc8mVLWwsAawjYr4Rx-Af50DDqtl</b></li>",
+      "outro": "<b>IMPORTANTE:</b><br>La especificación del puerto es<b>SIEMPRE</b> requerida, incluso si el PiHole está escuchando en el puerto 80, que sería el estándar.<br><br>Si un servicio DNS está en funcionamiento, el PiHole también puede ser dirigido con su nombre DNS.<br><br><b>Información:</b><br>Cuando se ejecutan flujos, puede ser que nada sea visible en el PiHole.<br><br>Esto no es un error en la aplicación, sino un error de visualización en el lado del PiHole.<br><br>Si este es el caso, la visualización del PiHole se puede recargar."
     },
     "buttons": {
-      "continue": "Más información en"
+      "continue": "Continuar"
     }
   },
   "manual_input": {
-    "title": "Añadir instancia PiHole",
-    "intro": "<i>Introduzca los datos solicitados para añadir el dispositivo.<br><br><br><b>IMPORTANTE:</b><br>Si hay un servicio DNS en funcionamiento, el PiHole también puede direccionarse con su nombre DNS.</i>",
+    "title": "Agregar instancia de PiHole",
+    "intro": "<i>Por favor, ingrese los datos solicitados para agregar el dispositivo.<br><br><br><b>IMPORTANTE:</b><br>Si un servicio DNS está en funcionamiento, el PiHole también puede ser dirigido con su nombre DNS.</i>",
     "inputs": {
       "name": {
         "label": "Nombre <b>(opcional)</b>:",
@@ -37,19 +34,46 @@
       },
       "url": {
         "label": "Dirección IP / FQDN con prefijo http(s)://",
-        "placeholder": "Utilice el FQDN o la dirección IP con el prefijo HTTP(s)."
+        "placeholder": "¡Por favor, use FQDN o dirección IP con prefijo HTTP(s)!"
       },
       "port": {
-        "label": "Port:",
+        "label": "Puerto:",
         "placeholder": "80"
       },
       "api": {
         "label": "API:",
-        "placeholder": "Introduzca aquí la clave API de Pihole"
+        "placeholder": "Por favor, ingrese la clave API del PiHole aquí"
       }
     },
     "buttons": {
-      "next": "Añadir dispositivo"
+      "next": "Agregar dispositivo"
+    }
+  },
+  "settings": {
+    "title": "Configuración del dispositivo",
+    "test_connection": "Probar conexión",
+    "name": {
+      "title": "Nombre del dispositivo",
+      "hint": "Cómo debe llamarse el dispositivo en Homey"
+    },
+    "host": {
+      "title": "Host del dispositivo",
+      "hint": "Por favor, use FQDN o dirección IP con prefijo HTTP(s)"
+    },
+    "port": {
+      "title": "Puerto",
+      "hint": "El predeterminado es 80"
+    },
+    "api_key": {
+      "title": "Clave API",
+      "hint": "Por favor, ingrese la clave API del PiHole aquí. Se puede obtener desde la página de configuración del PiHole"
+    }
+  },
+  "pairing": {
+    "add_manually": "Agregar manualmente",
+    "test_failed": {
+      "invalid_host": "El nombre de host o el puerto son incorrectos.",
+      "invalid_key": "La clave API es inválida."
     }
   }
 }

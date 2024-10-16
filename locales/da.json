@@ -1,43 +1,40 @@
 {
-  "settings": {
-    "information_about_pihole": "VIGTIG INFORMATION:<br><br>Programmet har gennemgået en større opdatering. Indstillingerne er ikke længere nødvendige.<br><br>Eksisterende enheder vil fortsætte med at køre i et stykke tid. Den gamle driver vil blive fjernet på et tidspunkt.<br><br>For at kunne bruge de nye funktioner SKAL den nye driver bruges."
-  },
   "warnings": {
-    "deprecated1": "ADVARSEL: Den gamle driver blev fjernet i version 1.5.0, som annonceret!"
+    "deprecated1": "ADVARSEL: Den gamle driver er blevet fjernet i version 1.5.0, som annonceret!"
   },
   "devices": {
-    "unavailable": "Enheden kunne ikke nås i netværket."
+    "unavailable": "Enheden kunne ikke nås på netværket."
   },
   "capabilities": {
     "gravity_days": "Dag(e)",
-    "gravity_hours": "Time(s)",
-    "gravity_minutes": "Minut(er)"
+    "gravity_hours": "Time(r)",
+    "gravity_minutes": "Minut(ter)"
   },
   "welcome": {
     "titles": {
-      "header": "Opsætning af PiHole-enhed",
-      "page": "Opsætningen er meget enkel ..."
+      "header": "Opsæt PiHole-enhed",
+      "page": "Opsætning er meget enkel ..."
     },
     "step_by_step": {
-      "intro": "Klik på 'Fortsæt' for at få vist en indstillingsside.<br><br>Følgende indstillinger skal foretages på denne side:",
-      "steps": "<li>IP Adresse:<b>z.B. 192.168.10.1</b></li><li>Port Key: <b>80</b></li><li>API Key: <b>0imfnc8mVLWwsAawjYr4Rx-Af50DDqtl</b></li>",
-      "outro": "<b>WICHTIG:</b><br>Portspecifikationen er <b>ALTID</b> er påkrævet, selv hvis PiHole lytter på port 80, hvilket ville være standard.<br><br>Hvis en DNS-tjeneste er i drift, kan PiHole også adresseres med sit DNS-navn.<br><br><b>Information:</b><br>Når flows eksekveres, kan det ske, at der ikke vises noget på PiHole.<br><br>Dette er ikke en fejl i appen, men en visningsfejl på PiHole-siden.<br><br>Hvis det er tilfældet, kan PiHole-displayet genindlæses."
+      "intro": "Klik på 'Fortsæt' for at vise en indstillingsside.<br><br>Følgende indstillinger skal foretages på denne side:",
+      "steps": "<li>IP-adresse:<b>f.eks. 192.168.10.1</b></li><li>Portnøgle: <b>80</b></li><li>API-nøgle: <b>0imfnc8mVLWwsAawjYr4Rx-Af50DDqtl</b></li>",
+      "outro": "<b>VIGTIGT:</b><br>Portspecifikationen er<b>ALTID</b> påkrævet, selvom PiHole lytter på port 80, hvilket ville være standard.<br><br>Hvis en DNS-tjeneste er i drift, kan PiHole også adresseres med sit DNS-navn.<br><br><b>Information:</b><br>Når flows udføres, kan det være, at intet er synligt på PiHole.<br><br>Dette er ikke en fejl i appen, men en visningsfejl på PiHole-siden.<br><br>Hvis dette er tilfældet, kan PiHole-visningen genindlæses."
     },
     "buttons": {
-      "continue": "Yderligere"
+      "continue": "Fortsæt"
     }
   },
   "manual_input": {
-    "title": "Tilføj PiHole",
+    "title": "Tilføj PiHole-instans",
     "intro": "<i>Indtast venligst de ønskede data for at tilføje enheden.<br><br><br><b>VIGTIGT:</b><br>Hvis en DNS-tjeneste er i drift, kan PiHole også adresseres med sit DNS-navn.</i>",
     "inputs": {
       "name": {
-        "label": "Navn <b>(valgfri)</b>:",
-        "placeholder": "Navn på instans"
+        "label": "Navn <b>(valgfrit)</b>:",
+        "placeholder": "Navn på instansen"
       },
       "url": {
-        "label": "IP-adresse / FQDN med præfikset http(s)://",
-        "placeholder": "Brug venligst FQDN eller IP-adresse med præfikset HTTP(s)!"
+        "label": "IP-adresse / FQDN med foranstillet http(s)://",
+        "placeholder": "Brug venligst FQDN eller IP-adresse med foranstillet HTTP(s)!"
       },
       "port": {
         "label": "Port:",
@@ -45,11 +42,38 @@
       },
       "api": {
         "label": "API:",
-        "placeholder": "Indtast venligst API-nøglen til Pihole her"
+        "placeholder": "Indtast venligst API-nøglen til PiHole her"
       }
     },
     "buttons": {
       "next": "Tilføj enhed"
+    }
+  },
+  "settings": {
+    "title": "Enhedsindstillinger",
+    "test_connection": "Test forbindelse",
+    "name": {
+      "title": "Enhedsnavn",
+      "hint": "Hvordan enheden skal navngives i Homey"
+    },
+    "host": {
+      "title": "Enhedsvært",
+      "hint": "Brug venligst FQDN eller IP-adresse med foranstillet HTTP(s)"
+    },
+    "port": {
+      "title": "Port",
+      "hint": "Standard er 80"
+    },
+    "api_key": {
+      "title": "API-nøgle",
+      "hint": "Indtast venligst PiHole API-nøglen her. Den kan fås fra PiHole-indstillingssiden"
+    }
+  },
+  "pairing": {
+    "add_manually": "Tilføj manuelt",
+    "test_failed": {
+      "invalid_host": "Værtsnavnet eller porten er forkerte.",
+      "invalid_key": "API-nøglen er ugyldig."
     }
   }
 }
