@@ -505,5 +505,18 @@
     "da": "Fejlrettelse / Justering af oversættelser",
     "ru": "Исправление ошибок / Настройка переводов",
     "pl": "Naprawa błędów / Dostosowanie tłumaczeń"
-  }
+  },
+  "1.5.5": {
+    "en": "Bugfixing synchronization error",
+    "de": "Fehlerbehebung Synchronisationsfehler",
+    "nl": "Bugfix synchronisatiefout",
+    "fr": "Correction de l'erreur de synchronisation",
+    "it": "Correzione dell'errore di sincronizzazione",
+    "sv": "Bugfix synkroniseringsfel",
+    "no": "Feilretting synkroniseringsfeil",
+    "es": "Corrección de error de sincronización",
+    "da": "Fejlrettelse af synkroniseringsfejl",
+    "ru": "Исправление ошибки синхронизации",
+    "pl": "Naprawa błędu synchronizacji"
+  } 
 }
