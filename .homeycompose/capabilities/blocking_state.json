@@ -1,0 +1,38 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Blocking state"
+  },
+  "values": [
+    {
+      "id": "enabled",
+      "title": {
+        "en": "Enabled"
+      }
+    },
+    {
+      "id": "disabled",
+      "title": {
+        "en": "Disabled"
+      }
+    },
+    {
+      "id": "failed",
+      "title": {
+        "en": "Failed"
+      }
+    },
+    {
+      "id": "unknown",
+      "title": {
+        "en": "Unknown"
+      }
+    }
+  ],
+  "insights": false,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "/assets/capability_icons/shield.svg"
+}

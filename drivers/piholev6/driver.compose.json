@@ -1,0 +1,76 @@
+{
+  "id": "piholev6",
+  "name": {
+    "en": "PiHole v6",
+    "da": "PiHole v6",
+    "de": "PiHole v6",
+    "es": "PiHole v6",
+    "fr": "PiHole v6",
+    "nl": "PiHole v6",
+    "no": "PiHole v6",
+    "pl": "PiHole v6",
+    "ru": "PiHole v6",
+    "sv": "PiHole v6"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "onoff",
+    "data_refresh",
+    "alarm_communication_error",
+    "blocking_state",
+    "measure_active_client_count",
+    "measure_queries_total_24h",
+    "measure_queries_blocked_24h",
+    "measure_queries_blocked_relative_24h",
+    "measure_relative_cpu_usage",
+    "measure_relative_memory_usage",
+    "measure_cpu_temp",
+    "measure_system_uptime_seconds",
+    "core_update_available",
+    "ftl_update_available",
+    "web_update_available"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "titleTrue": {
+        "en": "Adblocking enabled"
+      },
+      "titleFalse": {
+        "en": "Adblocking disabled"
+      },
+      "insightsTitleTrue": {
+        "en": "Adblocking has been enabled"
+      },
+      "insightsTitleFalse": {
+        "en": "Adblocking has been disabled"
+      }
+    }
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "singular": true
+      },
+      "navigation": {
+        "next": "configure_device"
+      }
+    },
+    {
+      "id": "configure_device",
+      "navigation": {
+        "prev": "list_devices"
+      }
+    },
+    {
+      "id": "add_device",
+      "template": "add_devices"
+    }
+  ]
+}

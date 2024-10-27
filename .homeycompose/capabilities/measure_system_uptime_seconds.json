@@ -1,0 +1,15 @@
+{
+  "type": "number",
+  "title": {
+    "en": "System uptime"
+  },
+  "units": {
+    "en": "s"
+  },
+  "insights": true,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "/assets/capability_icons/computer_component.svg"
+}

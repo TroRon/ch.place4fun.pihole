@@ -1,0 +1,12 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Blocked queries past 24h"
+  },
+  "insights": true,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "/assets/capability_icons/shield.svg"
+}

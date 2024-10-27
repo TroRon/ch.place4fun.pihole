@@ -52,6 +52,7 @@
   "settings": {
     "title": "Device Settings",
     "test_connection": "Test connection",
+    "add_device": "Add device",
     "name": {
       "title": "Device name",
       "hint": "How the device should be named in Homey"
@@ -60,6 +61,10 @@
       "title": "Device host",
       "hint": "Please use FQDN or IP address with prepended HTTP(s)"
     },
+    "base_url": {
+      "title": "Pi-Hole base URL",
+      "hint": "Please use FQDN or IP address with prepended HTTP(s), including the port number if it differs from the default value."
+    },
     "port": {
       "title": "Port",
       "hint": "Default is 80"
@@ -67,6 +72,10 @@
     "api_key": {
       "title": "API key",
       "hint": "Please enter the PiHole API key here. It can be obtained from the PiHole settings page"
+    },
+    "api_password": {
+      "title": "API password",
+      "hint": "Please enter the PiHole API password here. This is hte password you use to login, or an app-password if you enabled 2-factor authentication."
     }
   },
   "pairing":{

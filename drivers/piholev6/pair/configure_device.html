@@ -1,0 +1,127 @@
+<main class="hy-tmpl-manual-input">
+    <div class="hy-tmpl-manual-input-image"></div>
+    <div class="hy-tmpl-manual-input-row">
+        <p data-i18n="manual_input.intro"></p>
+    </div>
+    <form class="hy-tmpl-manual-input-form">
+
+        <div class="hy-tmpl-manual-input-row">
+            <label class="hy-label" for="name" data-i18n="settings.name.title"></label>
+        </div>
+        <div class="hy-tmpl-manual-input-row">
+            <input class="hy-input-text" type="text" id="name" name="name"
+                   data-i18n="[placeholder]settings.name.hint" required/>
+        </div>
+
+        <div class="hy-tmpl-manual-input-row">
+            <label class="homey-form-label" for="base_url" data-i18n="settings.base_url.title"></label>
+            <p data-i18n="settings.base_url.hint"></p>
+        </div>
+        <div class="hy-tmpl-manual-input-row">
+            <input class="homey-form-input" type="text" id="base_url" name="base_url" pattern="^https?:\/\/.*" required/>
+        </div>
+        
+        <div class="hy-tmpl-manual-input-row">
+            <label class="homey-form-label" for="api_password" data-i18n="settings.api_password.title"></label>
+            <p data-i18n="settings.api_password.hint"></p>
+        </div>
+        <div class="hy-tmpl-manual-input-row">
+            <input class="homey-form-input" type="text" id="api_password" name="api_password" required/>
+        </div>
+
+        <div class="hy-tmpl-button-next-row">
+            <button class="homey-button-primary-full" type="submit"
+                    data-i18n="settings.add_device"></button>
+        </div>
+    </form>
+</main>
+
+<script type="text/javascript">
+  async function init() {
+    Homey.setTitle(Homey.__('settings.title'));
+
+    // Get the device picked in list_devices. We only allowed one device to be picked through options.singular = true
+    let addDevicesViewId = await Homey.getNextViewByTemplate('add_devices');
+    console.log(Homey._viewsById.add_device.store.devices); // can also be obtained in backend through event 'list_devices_selection'
+    const chosenDevice = Homey._viewsById.add_device.store.devices[0];
+    // Load the default values from the device picked in list_devices
+    document.getElementById('name').value = chosenDevice.name;
+    document.getElementById('base_url').value = chosenDevice.settings.base_url;
+    document.getElementById('api_password').value = chosenDevice.settings.api_password;
+
+    const form = document.querySelector('form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      // Create an updated device object
+      let updatedDevice = {
+        name: document.getElementById('name').value,
+        data: {
+          id: chosenDevice.data.id
+        },
+        settings: {
+          base_url: document.getElementById('base_url').value,
+          api_password: document.getElementById('api_password').value,
+          update_interval_seconds: chosenDevice.update_interval_seconds,
+        },
+      };
+
+      // Update the device for the add_devicec step
+      Homey.setViewStoreValue(addDevicesViewId, 'devices', [updatedDevice])
+
+      // Show a loading overlay during testing
+      Homey.showLoadingOverlay()
+
+      console.log('Testing device ' + updatedDevice)
+      // Also emit for the backend, so it can be tested before we actually add the device
+      Homey.emit('test_device', updatedDevice).then( result => {
+        console.log('Device tested, result: ' + result)
+        Homey.hideLoadingOverlay()
+        if (result === 'ok') {
+          Homey.showView('add_device')
+        } else {
+          Homey.alert('Connection failed. Please check the ip/hostname, port and API key', 'error')
+        }
+      })
+
+    });
+  }
+
+  init()
+</script>
+
+
+<style>
+    /* Workaround for views without buttons */
+    #hy-views > .hy-view {
+        overflow: initial !important;
+    }
+
+    .hy-tmpl-manual-input {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    .hy-tmpl-manual-input-form {
+        position: relative;
+        width: 100%;
+    }
+
+    .hy-tmpl-manual-input-row {
+        margin-bottom: 1em;
+        max-width: 400px;
+    }
+
+    .hy-input-text {
+        max-width: 400px;
+    }
+
+
+    .hy-tmpl-button-next-row {
+        margin-bottom: 1em;
+        max-width: 400px;
+    }
+
+
+</style>
