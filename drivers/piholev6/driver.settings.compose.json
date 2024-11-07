@@ -107,7 +107,7 @@
           "ru": "Выберите интервал обновления. Выберите интервал до 10 мин., чтобы включить живые обновления с устройства.",
           "sv": "Välj ett uppdateringsintervall. Välj ett intervall på upp till 10 min., för att möjliggöra live-uppdateringar från enheten."
         },
-        "min": 15,
+        "min": 3,
         "value": "60"
       }
     ]

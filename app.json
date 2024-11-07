@@ -665,37 +665,286 @@
         "id": "measure_dns_queries_today_changed"
       },
       {
+        "id": "onoff_true",
         "title": {
-          "en": "DNS-request from client with ip [[clientIp]] blocked"
+          "en": "Adblocking turned on"
         },
         "args": [
           {
-            "name": "clientIp",
-            "type": "text"
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholev6"
           }
-        ],
-        "id": "pihole_client_blocked"
+        ]
       },
       {
+        "id": "onoff_false",
         "title": {
-          "en": "DNS request for domain [[domain]] blocked"
+          "en": "Adblocking turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholev6"
+          }
+        ]
+      },
+      {
+        "id": "pihole_client_query",
+        "title": {
+          "en": "DNS-request from client with ip ..."
+        },
+        "titleFormatted": {
+          "en": "DNS-request from client with ip [[clientIp]]"
         },
         "tokens": [
+          {
+            "name": "queryStatus",
+            "type": "string",
+            "title": {
+              "en": "Query status (FORWARDED/CACHE/BLOCKED/...)"
+            }
+          },
+          {
+            "name": "queryDuration",
+            "type": "number",
+            "title": {
+              "en": "Query duration in ms (negative if not available)"
+            }
+          },
+          {
+            "name": "domain",
+            "type": "string",
+            "title": {
+              "en": "Blocked domain name"
+            }
+          },
+          {
+            "name": "domainType",
+            "type": "string",
+            "title": {
+              "en": "Blocked domain type (A/CNAME/...)"
+            }
+          },
           {
             "name": "clientIp",
             "type": "string",
             "title": {
               "en": "Client ip-address"
             }
+          },
+          {
+            "name": "clientName",
+            "type": "string",
+            "title": {
+              "en": "Client name as reported by Pi-Hole"
+            }
           }
         ],
         "args": [
           {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholev6"
+          },
+          {
+            "name": "clientIp",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": "pihole_client_blocked",
+        "title": {
+          "en": "DNS-request from client with ip ... blocked"
+        },
+        "titleFormatted": {
+          "en": "DNS-request from client with ip [[clientIp]] blocked"
+        },
+        "tokens": [
+          {
+            "name": "queryStatus",
+            "type": "string",
+            "title": {
+              "en": "Query status (FORWARDED/CACHE/BLOCKED/...)"
+            }
+          },
+          {
+            "name": "queryDuration",
+            "type": "number",
+            "title": {
+              "en": "Query duration in ms (negative if not available)"
+            }
+          },
+          {
+            "name": "domain",
+            "type": "string",
+            "title": {
+              "en": "Blocked domain name"
+            }
+          },
+          {
+            "name": "domainType",
+            "type": "string",
+            "title": {
+              "en": "Blocked domain type (A/CNAME/...)"
+            }
+          },
+          {
+            "name": "clientIp",
+            "type": "string",
+            "title": {
+              "en": "Client ip-address"
+            }
+          },
+          {
+            "name": "clientName",
+            "type": "string",
+            "title": {
+              "en": "Client name as reported by Pi-Hole"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholev6"
+          },
+          {
+            "name": "clientIp",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": "pihole_domain_query",
+        "title": {
+          "en": "DNS request for domain ... queried"
+        },
+        "titleFormatted": {
+          "en": "DNS request for domain [[domain]] queried"
+        },
+        "tokens": [
+          {
+            "name": "queryStatus",
+            "type": "string",
+            "title": {
+              "en": "Query status (FORWARDED/CACHE/BLOCKED/...)"
+            }
+          },
+          {
+            "name": "queryDuration",
+            "type": "number",
+            "title": {
+              "en": "Query duration in ms (negative if not available)"
+            }
+          },
+          {
+            "name": "domain",
+            "type": "string",
+            "title": {
+              "en": "Blocked domain name"
+            }
+          },
+          {
+            "name": "domainType",
+            "type": "string",
+            "title": {
+              "en": "Blocked domain type (A/CNAME/...)"
+            }
+          },
+          {
+            "name": "clientIp",
+            "type": "string",
+            "title": {
+              "en": "Client ip-address"
+            }
+          },
+          {
+            "name": "clientName",
+            "type": "string",
+            "title": {
+              "en": "Client name as reported by Pi-Hole"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholev6"
+          },
+          {
             "name": "domain",
             "type": "text"
           }
+        ]
+      },
+      {
+        "id": "pihole_domain_blocked",
+        "title": {
+          "en": "DNS request for domain ... blocked"
+        },
+        "titleFormatted": {
+          "en": "DNS request for domain [[domain]] blocked"
+        },
+        "tokens": [
+          {
+            "name": "queryStatus",
+            "type": "string",
+            "title": {
+              "en": "Query status (FORWARDED/CACHE/BLOCKED/...)"
+            }
+          },
+          {
+            "name": "queryDuration",
+            "type": "number",
+            "title": {
+              "en": "Query duration in ms (negative if not available)"
+            }
+          },
+          {
+            "name": "domain",
+            "type": "string",
+            "title": {
+              "en": "Blocked domain name"
+            }
+          },
+          {
+            "name": "domainType",
+            "type": "string",
+            "title": {
+              "en": "Blocked domain type (A/CNAME/...)"
+            }
+          },
+          {
+            "name": "clientIp",
+            "type": "string",
+            "title": {
+              "en": "Client ip-address"
+            }
+          },
+          {
+            "name": "clientName",
+            "type": "string",
+            "title": {
+              "en": "Client name as reported by Pi-Hole"
+            }
+          }
         ],
-        "id": "pihole_domain_blocked"
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholev6"
+          },
+          {
+            "name": "domain",
+            "type": "text"
+          }
+        ]
       }
     ],
     "actions": [
@@ -1255,36 +1504,6 @@
           "pl": "Włącza zdefiniowaną(e) instancję(e) PiHole."
         },
         "deprecated": true
-      },
-      {
-        "title": {
-          "en": "Pause pi-hole filtering for [[seconds]] seconds"
-        },
-        "args": [
-          {
-            "name": "seconds",
-            "type": "number"
-          }
-        ],
-        "id": "pihole_pause"
-      },
-      {
-        "title": {
-          "en": "Refresh data"
-        },
-        "id": "pihole_refresh"
-      },
-      {
-        "title": {
-          "en": "Restart DNS-server"
-        },
-        "id": "pihole_restart_dns"
-      },
-      {
-        "title": {
-          "en": "Restart DNS-server"
-        },
-        "id": "pihole_update_gravity"
       },
       {
         "id": "pihole-disable-pihole-for",
@@ -1977,6 +2196,62 @@
             ]
           }
         ]
+      },
+      {
+        "id": "pihole_restart_dns",
+        "title": {
+          "en": "Restart DNS-server"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholev6"
+          }
+        ]
+      },
+      {
+        "id": "pihole_update_gravity",
+        "title": {
+          "en": "Update gravity"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholev6"
+          }
+        ]
+      },
+      {
+        "id": "pihole_refresh",
+        "title": {
+          "en": "Refresh data"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholev6"
+          }
+        ]
+      },
+      {
+        "id": "pihole_pause",
+        "title": {
+          "en": "Pause pi-hole"
+        },
+        "duration": true,
+        "titleFormatted": {
+          "en": "Pause pi-hole filtering"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholev6"
+          }
+        ]
       }
     ]
   },
@@ -2247,6 +2522,8 @@
       "capabilities": [
         "onoff",
         "data_refresh",
+        "pihole_restart_dns",
+        "pihole_update_gravity",
         "alarm_communication_error",
         "blocking_state",
         "measure_active_client_count",
@@ -2413,7 +2690,7 @@
                 "ru": "Выберите интервал обновления. Выберите интервал до 10 мин., чтобы включить живые обновления с устройства.",
                 "sv": "Välj ett uppdateringsintervall. Välj ett intervall på upp till 10 min., för att möjliggöra live-uppdateringar från enheten."
               },
-              "min": 15,
+              "min": 3,
               "value": "60"
             }
           ]
@@ -2812,6 +3089,26 @@
       "uiComponent": "sensor",
       "uiQuickAction": false,
       "icon": "/assets/capability_icons/computer_component.svg"
+    },
+    "pihole_restart_dns": {
+      "type": "boolean",
+      "title": {
+        "en": "Restart DNS"
+      },
+      "insights": false,
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button"
+    },
+    "pihole_update_gravity": {
+      "type": "boolean",
+      "title": {
+        "en": "Update gravity"
+      },
+      "insights": false,
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button"
     },
     "web_update_available": {
       "type": "boolean",

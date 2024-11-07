@@ -1,0 +1,282 @@
+{
+  "actions": [
+    {
+      "id": "pihole_restart_dns",
+      "title": {
+        "en": "Restart DNS-server"
+      }
+    },
+    {
+      "id": "pihole_update_gravity",
+      "title": {
+        "en": "Update gravity"
+      }
+    },
+    {
+      "id": "pihole_refresh",
+      "title": {
+        "en": "Refresh data"
+      }
+    },
+    {
+      "id": "pihole_pause",
+      "title": {
+        "en": "Pause pi-hole"
+      },
+      "duration": true,
+      "titleFormatted": {
+        "en": "Pause pi-hole filtering"
+      }
+    }
+  ],
+  "triggers": [
+    {
+      "id": "onoff_true",
+      "title": {
+        "en": "Adblocking turned on"
+      }
+    },
+    {
+      "id": "onoff_false",
+      "title": {
+        "en": "Adblocking turned off"
+      }
+    },
+    {
+      "id": "pihole_client_query",
+      "title": {
+        "en": "DNS-request from client with ip ..."
+      },
+      "titleFormatted": {
+        "en": "DNS-request from client with ip [[clientIp]]"
+      },
+      "tokens": [
+        {
+          "name": "queryStatus",
+          "type": "string",
+          "title": {
+            "en": "Query status (FORWARDED/CACHE/BLOCKED/...)"
+          }
+        },
+        {
+          "name": "queryDuration",
+          "type": "number",
+          "title": {
+            "en": "Query duration in ms (negative if not available)"
+          }
+        },
+        {
+          "name": "domain",
+          "type": "string",
+          "title": {
+            "en": "Blocked domain name"
+          }
+        },
+        {
+          "name": "domainType",
+          "type": "string",
+          "title": {
+            "en": "Blocked domain type (A/CNAME/...)"
+          }
+        },
+        {
+          "name": "clientIp",
+          "type": "string",
+          "title": {
+            "en": "Client ip-address"
+          }
+        },
+        {
+          "name": "clientName",
+          "type": "string",
+          "title": {
+            "en": "Client name as reported by Pi-Hole"
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "clientIp",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "id": "pihole_client_blocked",
+      "title": {
+        "en": "DNS-request from client with ip ... blocked"
+      },
+      "titleFormatted": {
+        "en": "DNS-request from client with ip [[clientIp]] blocked"
+      },
+      "tokens": [
+        {
+          "name": "queryStatus",
+          "type": "string",
+          "title": {
+            "en": "Query status (FORWARDED/CACHE/BLOCKED/...)"
+          }
+        },
+        {
+          "name": "queryDuration",
+          "type": "number",
+          "title": {
+            "en": "Query duration in ms (negative if not available)"
+          }
+        },
+        {
+          "name": "domain",
+          "type": "string",
+          "title": {
+            "en": "Blocked domain name"
+          }
+        },
+        {
+          "name": "domainType",
+          "type": "string",
+          "title": {
+            "en": "Blocked domain type (A/CNAME/...)"
+          }
+        },
+        {
+          "name": "clientIp",
+          "type": "string",
+          "title": {
+            "en": "Client ip-address"
+          }
+        },
+        {
+          "name": "clientName",
+          "type": "string",
+          "title": {
+            "en": "Client name as reported by Pi-Hole"
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "clientIp",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "id": "pihole_domain_query",
+      "title": {
+        "en": "DNS request for domain ... queried"
+      },
+      "titleFormatted": {
+        "en": "DNS request for domain [[domain]] queried"
+      },
+      "tokens": [
+        {
+          "name": "queryStatus",
+          "type": "string",
+          "title": {
+            "en": "Query status (FORWARDED/CACHE/BLOCKED/...)"
+          }
+        },
+        {
+          "name": "queryDuration",
+          "type": "number",
+          "title": {
+            "en": "Query duration in ms (negative if not available)"
+          }
+        },
+        {
+          "name": "domain",
+          "type": "string",
+          "title": {
+            "en": "Blocked domain name"
+          }
+        },
+        {
+          "name": "domainType",
+          "type": "string",
+          "title": {
+            "en": "Blocked domain type (A/CNAME/...)"
+          }
+        },
+        {
+          "name": "clientIp",
+          "type": "string",
+          "title": {
+            "en": "Client ip-address"
+          }
+        },
+        {
+          "name": "clientName",
+          "type": "string",
+          "title": {
+            "en": "Client name as reported by Pi-Hole"
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "domain",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "id": "pihole_domain_blocked",
+      "title": {
+        "en": "DNS request for domain ... blocked"
+      },
+      "titleFormatted": {
+        "en": "DNS request for domain [[domain]] blocked"
+      },
+      "tokens": [
+        {
+          "name": "queryStatus",
+          "type": "string",
+          "title": {
+            "en": "Query status (FORWARDED/CACHE/BLOCKED/...)"
+          }
+        },
+        {
+          "name": "queryDuration",
+          "type": "number",
+          "title": {
+            "en": "Query duration in ms (negative if not available)"
+          }
+        },
+        {
+          "name": "domain",
+          "type": "string",
+          "title": {
+            "en": "Blocked domain name"
+          }
+        },
+        {
+          "name": "domainType",
+          "type": "string",
+          "title": {
+            "en": "Blocked domain type (A/CNAME/...)"
+          }
+        },
+        {
+          "name": "clientIp",
+          "type": "string",
+          "title": {
+            "en": "Client ip-address"
+          }
+        },
+        {
+          "name": "clientName",
+          "type": "string",
+          "title": {
+            "en": "Client name as reported by Pi-Hole"
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "domain",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+    "type": "boolean",
+    "title": {
+      "en": "Restart DNS"
+    },
+    "insights": false,
+    "getable": false,
+    "setable": true,
+    "uiComponent": "button"
+  }

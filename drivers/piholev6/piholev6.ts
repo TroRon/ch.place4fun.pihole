@@ -7,6 +7,7 @@ export class PiHoleConnection {
     private static readonly ENDPOINT_AUTH: string = "/api/auth";
     private static readonly ENDPOINT_DNS_BLOCKING: string = "/api/dns/blocking";
     private static readonly ENDPOINT_SUMMARY: string = "/api/stats/summary";
+    private static readonly ENDPOINT_QUERIES: string = "/api/queries";
     private static readonly ENDPOINT_PADD: string = "/api/padd";
     private static readonly ENDPOINT_RESTART_DNS: string = "/api/action/restartdns";
     private static readonly ENDPOINT_UPDATE_GRAVITY: string = "/api/action/gravity";
@@ -52,13 +53,12 @@ export class PiHoleConnection {
         return this.httpGet(PiHoleConnection.ENDPOINT_PADD, true);
     }
 
-
     public async getRecentQueries(historySeconds: number = 60, limit: number = 100): Promise<Pihole6QueryListResponse> {
         return this.getQueries(this.timestamp() - historySeconds, this.timestamp(), limit);
     }
 
     public async getQueries(startTime: number = this.timestamp() - 30, endTime: number = this.timestamp(), limit: number = 100): Promise<Pihole6QueryListResponse> {
-        return this.httpGet(PiHoleConnection.ENDPOINT_PADD, true, {
+        return this.httpGet(PiHoleConnection.ENDPOINT_QUERIES, true, {
             from: startTime,
             until: endTime,
             limit: limit
@@ -70,7 +70,8 @@ export class PiHoleConnection {
     }
 
     public async updateGravity() {
-        return this.httpPost(PiHoleConnection.ENDPOINT_UPDATE_GRAVITY, true)
+        // this endpoint does not return json
+        return this.httpRaw(PiHoleConnection.ENDPOINT_UPDATE_GRAVITY, "POST",true, null).then(response => console.log(response.body))
     }
 
     public async getBlockingState(): Promise<PiHoleBlockingState> {
@@ -108,7 +109,7 @@ export class PiHoleConnection {
         return fetch(url, options)
             .then(data => data.json()
                 .then((json: any) => {
-                    console.log(json);
+                    // console.log(json);
                     if (Object.keys(json).includes('error')) {
                         throw new Error(json.error.message);
                     }
@@ -122,8 +123,32 @@ export class PiHoleConnection {
     }
 
     private async httpPost(endpoint: string, authenticate: boolean, body: any = {}): Promise<any> {
+        return this.httpRaw(endpoint, "POST", authenticate, body)
+            .then(data => data.json())
+            .then((json: any) => {
+                // console.log(json);
+                if (Object.keys(json).includes('error')) {
+                    throw new Error(json.error.message);
+                }
+                return json
+            })
+    }
+
+    private async httpDelete(endpoint: string, authenticate: boolean, body: any = {}): Promise<any> {
+        return this.httpRaw(endpoint, "DELETE", authenticate, body)
+            .then(data => data.json())
+            .then((json: any) => {
+                // console.log(json);
+                if (Object.keys(json).includes('error')) {
+                    throw new Error(json.error.message);
+                }
+                return json
+            })
+    }
+
+    private async httpRaw(endpoint: string, method: string, authenticate: boolean, body: any = {}): Promise<any> {
         let url = PiHoleConnection.createEndpointUrl(this.base_url, endpoint)
-        let options: RequestInit = {method: "POST", body: JSON.stringify(body),};
+        let options: RequestInit = {method: method, body: JSON.stringify(body)};
         if (authenticate) {
             await this.updateSessionIdIfNeeded();
             options = {
@@ -136,12 +161,12 @@ export class PiHoleConnection {
             }
         }
         return fetch(url, options)
-            .then(data => data.json())
             .catch(error => {
-                console.log("Error while fetching information from PiHole through POST request: " + error)
+                console.log("Error while fetching information from PiHole through POST request to " + url + ": " + error)
                 throw error
             });
     }
+
 
     private static createEndpointUrl(base_url: string, endpoint: string, queryParameters: any = {}) {
         return base_url + endpoint + this.objectToQueryString(queryParameters);
@@ -166,7 +191,7 @@ export class PiHoleConnection {
             let sessionResponse: Pihole6SessionResponse = await this.httpPost(PiHoleConnection.ENDPOINT_AUTH, false, {
                 password: this.api_password
             })
-            console.log(JSON.stringify(sessionResponse));
+
             if (!Object.keys(sessionResponse).includes("session")) {
                 throw new Error("Invalid base url")
             }
@@ -179,6 +204,14 @@ export class PiHoleConnection {
         } catch (e) {
             throw new Error("Invalid base url or API password: " + e)
         }
+    }
+
+    closeConnectionLogout() {
+        if (this.session_id == null || this.session_expiry_timestamp <= this.timestamp()) {
+            return // nothing to do, session token is already invalid
+        }
+        console.log("Closing pihole connection, logging out")
+        this.httpDelete(PiHoleConnection.ENDPOINT_AUTH,true)
     }
 }
 
@@ -201,26 +234,29 @@ type Pihole6Session = {
     validity: number; // Remaining lifetime of this session unless refreshed (seconds)
     message: string | null; // Human-readable message describing the session status
 }
-type Pihole6QueryListResponse = {
-    queries: [{ // Data array
-        id: number // Query ID in the long-term database
-        time: number // Timestamp
-        type: string // Query type
-        domain: string // Queried domain
-        cname: string | null // Domain blocked during deep CNAME inspection
-        status: string | null // Query status
-        client: {
-            ip: string // Requesting client's IP address
-            name: string | null // Requesting client's base_urlname (if available)
-        }
-        dnssec: string | null // DNSSEC status
-        reply: {
-            type: string | null // Reply type
-            time: number // Time until the response was received (ms, negative if N/A)
-        }
-        list_id: number | null // ID of corresponding database table (adlist for anti-/gravity, else domainlist) (NULL if N/A)
-        upstream: string | null // IP or name + port of upstream server
-    }]
+
+export type Pihole6QueryListResponseEntry = { // Data array
+    id: number // Query ID in the long-term database
+    time: number // Timestamp
+    type: string // Query type
+    domain: string // Queried domain
+    cname: string | null // Domain blocked during deep CNAME inspection
+    status: string | null // Query status
+    client: {
+        ip: string // Requesting client's IP address
+        name: string | null // Requesting client's base_urlname (if available)
+    }
+    dnssec: string | null // DNSSEC status
+    reply: {
+        type: string | null // Reply type
+        time: number // Time until the response was received (ms, negative if N/A)
+    }
+    list_id: number | null // ID of corresponding database table (adlist for anti-/gravity, else domainlist) (NULL if N/A)
+    upstream: string | null // IP or name + port of upstream server
+};
+
+export type Pihole6QueryListResponse = {
+    queries: [Pihole6QueryListResponseEntry]
     cursor: number // Database ID of most recent query to show
     recordsTotal: number // Total number of available queries
     recordsFiltered: number // Number of available queries after filtering

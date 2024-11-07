@@ -16,6 +16,8 @@
   "capabilities": [
     "onoff",
     "data_refresh",
+    "pihole_restart_dns",
+    "pihole_update_gravity",
     "alarm_communication_error",
     "blocking_state",
     "measure_active_client_count",

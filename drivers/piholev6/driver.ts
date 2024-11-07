@@ -6,8 +6,45 @@ const Homey = require('homey');
 const crypto = require("crypto");
 
 class PiholeV6Driver extends Homey.Driver {
+    public domainQueriedFlowTrigger = this.homey.flow.getDeviceTriggerCard("pihole_domain_query");
+    public domainBlockedFlowTrigger = this.homey.flow.getDeviceTriggerCard("pihole_domain_blocked");
+    public clientQueriedFlowTrigger = this.homey.flow.getDeviceTriggerCard("pihole_client_query");
+    public clientBlockedFlowTrigger = this.homey.flow.getDeviceTriggerCard("pihole_client_blocked");
+
 
     async onInit() {
+        await this.domainQueriedFlowTrigger.registerRunListener(async (args: any, state: any) => {
+            try {
+                return args.domain === state.domain;
+            } catch (e) {
+                // Any exception in the run listener is never logged by homey, so a try-catch is absolutely needed here!
+                // Even though it is not needed now, this try-catch is in place as a reminder since this is
+                // undocumented homey behaviour. You cannot stringify the args object, since it contains a homey device with
+                // circular references
+                this.error(e)
+            }
+        });
+
+        await this.domainBlockedFlowTrigger.registerRunListener(async (args: any, state: any) => {
+            try {
+                return args.domain === state.domain;
+            } catch (e) {
+                // Any exception in the run listener is never logged by homey, so a try-catch is absolutely needed here!
+                // Even though it is not needed now, this try-catch is in place as a reminder since this is
+                // undocumented homey behaviour. You cannot stringify the args object, since it contains a homey device with
+                // circular references
+                this.error(e)
+            }
+        });
+
+        await this.clientQueriedFlowTrigger.registerRunListener(async (args: any, state: any) => {
+            return args.clientIp === state.clientIp;
+        });
+
+        await this.clientBlockedFlowTrigger.registerRunListener(async (args: any, state: any) => {
+            return args.clientIp === state.clientIp;
+        });
+
         this.log("PiholeV6Driver initialized");
     }
 
@@ -28,7 +65,7 @@ class PiholeV6Driver extends Homey.Driver {
                 base_url: "",
                 port: 80,
                 api_password: "",
-                update_interval_seconds: 1
+                update_interval_seconds: 15
             },
         }]
 
@@ -87,7 +124,7 @@ class PiholeV6Driver extends Homey.Driver {
                 base_url: "http://" + ipAddress,
                 port: 80,
                 api_password: "",
-                update_interval_seconds: 1
+                update_interval_seconds: 15
             },
         };
     }
