@@ -1,4 +1,5 @@
 import {BlockingStatus, PiHoleConnection} from './piholev6';
+import {clearInterval} from "node:timers";
 
 const Homey = require('homey');
 
@@ -6,23 +7,29 @@ class PiHoleV6Device extends Homey.Device {
 
     private static readonly FLOW_TRIGGER_UPDATE_INTERVAL_SECONDS = 2;
 
-    generalUpdateIntervalId: NodeJS.Timeout | undefined = undefined
-    flowTriggerUpdateIntervalId: NodeJS.Timeout | undefined = undefined
+    // The interval for updating the homey device, always active. Interval defined by device settings
+    private generalUpdateIntervalId: NodeJS.Timeout | undefined = undefined
+    // The interval for updating flow trigger cards, only active when flow trigger cards are in use
+    private flowTriggerUpdateIntervalId: NodeJS.Timeout | undefined = undefined
 
-    piHoleConnection: PiHoleConnection | undefined = undefined
+    // The Pi-Hole API connection
+    private piHoleConnection: PiHoleConnection | undefined = undefined
 
+    // Cached trigger card parameter values, so we can use these to quickly filter through the queries list if
+    // trigger cards are used
     private domainBlockedTriggerArgs: any[] = [];
     private domainQueriedTriggerArgs: any[] = [];
     private clientQueriedTriggerArgs: any[] = [];
     private clientBlockedTriggerArgs: any[] = [];
 
     async onInit() {
-
         this.log('Initializing PiHole v6 device');
 
+        // Update and register capabilities
         this.updateCapabilities();
         this.registerCapabilityListeners();
 
+        // Connect to pihole
         const deviceSettings = this.getSettings();
         if (deviceSettings) {
             this.piHoleConnection = new PiHoleConnection(deviceSettings.base_url, deviceSettings.api_password)
@@ -30,6 +37,7 @@ class PiHoleV6Device extends Homey.Device {
             this.setUpdateInterval(update_interval_seconds)
         }
 
+        // Register trigger cards and action cards
         this.registerFlowTriggerListeners();
         this.registerFlowActionListeners();
 
@@ -44,25 +52,25 @@ class PiHoleV6Device extends Homey.Device {
                 let result = await this.piHoleConnection.setBlockingState(value)
                 // immediately update onoff capability
                 await this.setCapabilityValue("onoff", result.blocking == BlockingStatus.Enabled)
-                this.refresh()
+                this.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
             }
         })
 
         this.registerCapabilityListener('data_refresh', async () => {
-            await this.refresh()
+            await this.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
         })
 
         this.registerCapabilityListener('pihole_restart_dns', async () => {
             if (this.piHoleConnection) {
                 await this.piHoleConnection.restartDns();
-                this.refresh()
+                this.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
             }
         })
 
         this.registerCapabilityListener('pihole_update_gravity', async () => {
             if (this.piHoleConnection) {
                 await this.piHoleConnection.updateGravity();
-                this.refresh()
+                this.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
             }
         })
     }
@@ -75,7 +83,7 @@ class PiHoleV6Device extends Homey.Device {
             }
             let durationMilliSeconds = args.duration;
             await this.piHoleConnection.setBlockingState(false, durationMilliSeconds / 1000);
-            this.refresh()
+            this.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
         });
 
         const restartPiHoleDnsAction = this.homey.flow.getActionCard('pihole_restart_dns');
@@ -84,7 +92,7 @@ class PiHoleV6Device extends Homey.Device {
                 return
             }
             await this.piHoleConnection.restartDns();
-            this.refresh()
+            this.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
         });
 
         const updateGravityAction = this.homey.flow.getActionCard('pihole_update_gravity');
@@ -93,36 +101,29 @@ class PiHoleV6Device extends Homey.Device {
                 return
             }
             await this.piHoleConnection.updateGravity();
-            this.refresh()
+            this.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
         });
     }
 
-    private pauseTriggerCheckIntervalIfNeeded() {
-        if (this.domainBlockedTriggerArgs.length == 0
-            && this.clientBlockedTriggerArgs.length == 0
-            && this.flowTriggerUpdateIntervalId != undefined) {
-            this.log("Stopping flow trigger check, no registered flow cards")
-            this.homey.clearInterval(this.flowTriggerUpdateIntervalId)
-            this.flowTriggerUpdateIntervalId = undefined
-        }
-    }
-
     private registerFlowTriggerListeners() {
+        // Get the current trigger card arguments, and update the argument lists when a change is made
         this.log("Registering trigger card argument listeners")
 
-        this.registerDomainQueriedFlowTrigger()
-        this.driver.domainQueriedFlowTrigger.addListener("update", () => this.registerDomainQueriedFlowTrigger());
+        this.registerdomainQueryFlowTrigger()
+        this.driver.domainQueryFlowTrigger.addListener("update", () => this.registerdomainQueryFlowTrigger());
+
         this.registerDomainBlockedFlowTrigger()
         this.driver.domainBlockedFlowTrigger.addListener("update", () => this.registerDomainBlockedFlowTrigger());
 
-        this.registerClientQueriedFlowTrigger()
-        this.driver.clientQueriedFlowTrigger.addListener("update", () => this.registerClientQueriedFlowTrigger());
+        this.registerclientQueryFlowTrigger()
+        this.driver.clientQueryFlowTrigger.addListener("update", () => this.registerclientQueryFlowTrigger());
+
         this.registerClientBlockedFlowTrigger()
         this.driver.clientBlockedFlowTrigger.addListener("update", () => this.registerClientBlockedFlowTrigger());
     }
 
-    registerDomainQueriedFlowTrigger() {
-        this.driver.domainQueriedFlowTrigger.getArgumentValues(this).then((args: [{ domain: string }]) => {
+    registerdomainQueryFlowTrigger() {
+        this.driver.domainQueryFlowTrigger.getArgumentValues(this).then((args: [{ domain: string }]) => {
             this.domainQueriedTriggerArgs = args.map(a => a.domain);
             if (this.domainQueriedTriggerArgs.length > 0) {
                 this.startTriggerCheckInterval();
@@ -141,8 +142,8 @@ class PiHoleV6Device extends Homey.Device {
         });
     }
 
-    registerClientQueriedFlowTrigger() {
-        this.driver.clientQueriedFlowTrigger.getArgumentValues(this).then((args: [{ clientIp: string }]) => {
+    registerclientQueryFlowTrigger() {
+        this.driver.clientQueryFlowTrigger.getArgumentValues(this).then((args: [{ clientIp: string }]) => {
             this.clientQueriedTriggerArgs = args.map(a => a.clientIp);
             if (this.clientQueriedTriggerArgs.length > 0) {
                 this.startTriggerCheckInterval();
@@ -163,60 +164,101 @@ class PiHoleV6Device extends Homey.Device {
 
     private startTriggerCheckInterval() {
         if (this.flowTriggerUpdateIntervalId == undefined) {
+            this.log("Starting flow trigger check")
             let intervalMs = PiHoleV6Device.FLOW_TRIGGER_UPDATE_INTERVAL_SECONDS * 1000;
             this.flowTriggerUpdateIntervalId = this.homey.setInterval(this.checkTriggers.bind(this), intervalMs)
         }
     }
 
+    private pauseTriggerCheckIntervalIfNeeded() {
+        let anyQueryTriggerCardInUse = this.domainBlockedTriggerArgs.length == 0
+            && this.domainQueriedTriggerArgs.length == 0
+            && this.clientBlockedTriggerArgs.length == 0
+            && this.clientQueriedTriggerArgs.length == 0;
+        if (anyQueryTriggerCardInUse && this.flowTriggerUpdateIntervalId != undefined) {
+            this.log("Stopping flow trigger check, no registered flow cards")
+            this.homey.clearInterval(this.flowTriggerUpdateIntervalId)
+            this.flowTriggerUpdateIntervalId = undefined
+        }
+    }
+
     async checkTriggers() {
-        this.log("Checking triggers" + JSON.stringify(this.domainQueriedTriggerArgs))
+        // this.log("Checking trigger cards based on queries in the past " + PiHoleV6Device.FLOW_TRIGGER_UPDATE_INTERVAL_SECONDS + " seconds")
         let recentQueries = await this.piHoleConnection?.getRecentQueries(PiHoleV6Device.FLOW_TRIGGER_UPDATE_INTERVAL_SECONDS);
+
+        // We don't want to trigger the same domain twice in one loop. Therefore, 
+        // the combination of domain + record + client should be unique within each trigger card type
+        let domainQueriedTriggers: string[] = [];
+        let domainBlockedTriggers: string[] = [];
+        let clientQueriedTriggers: string[] = [];
+        let clientBlockedTriggers: string[] = [];
+
+        function getQueryIdentifier(query: any) {
+            return query.type + "::" + query.client.ip + "::" + query.domain;
+        }
 
         if (recentQueries != undefined) {
             for (const query of recentQueries.queries) {
                 this.log(JSON.stringify(query));
-                let tokens = {
-                    queryStatus: query.status,
-                    queryDuration: query.reply.time,
+
+                // the domain state object for domain-based trigger cards
+                let domainstate = {
                     domain: query.domain,
-                    domainType: query.type,
+                    recordType: query.type
+                };
+
+                // the client ip state for client-based trigger cards
+                let clientIpState = {
                     clientIp: query.client.ip,
-                    clientName: query.client.name == null ? "" : query.client.name
+                    recordType: query.type
                 };
 
                 if (this.domainQueriedTriggerArgs.includes(query.domain)) {
-                    this.driver.domainQueriedFlowTrigger.trigger(this, tokens,
-                        {
-                            domain: query.domain
-                        }
-                    );
-                }
-
-                if (this.domainBlockedTriggerArgs.includes(query.domain) && query.status == "BLOCKED") {
-                    this.driver.domainBlockedFlowTrigger.trigger(this, tokens,
-                        {
-                            domain: query.domain
-                        }
-                    );
+                    let id = getQueryIdentifier(query);
+                    if (!domainQueriedTriggers.includes(id)) {
+                        this.driver.domainQueryFlowTrigger.trigger(this, this.getQueryTriggerTokens(query), domainstate);
+                        domainQueriedTriggers.push(id)
+                    }
                 }
 
                 if (this.clientQueriedTriggerArgs.includes(query.client.ip)) {
-                    this.driver.clientQueriedFlowTrigger.trigger(this, tokens,
-                        {
-                            clientIp: query.client.ip
-                        }
-                    );
+                    let id = getQueryIdentifier(query);
+                    if (!clientQueriedTriggers.includes(id)) {
+                        this.driver.clientQueryFlowTrigger.trigger(this, this.getQueryTriggerTokens(query), clientIpState);
+                        clientQueriedTriggers.push(id)
+                    }
                 }
 
-                if (this.clientBlockedTriggerArgs.includes(query.client.ip) && query.status == "BLOCKED") {
-                    this.driver.clientBlockedFlowTrigger.trigger(this, tokens,
-                        {
-                            clientIp: query.client.ip
-                        }
-                    );
+                if (this.domainBlockedTriggerArgs.includes(query.domain) && query.status == "DENYLIST") {
+                    let id = getQueryIdentifier(query);
+                    if (!domainBlockedTriggers.includes(id)) {
+                        this.driver.domainBlockedFlowTrigger.trigger(this, this.getQueryTriggerTokens(query), domainstate);
+                        domainBlockedTriggers.push(id)
+                    }
+                }
+
+                if (this.clientBlockedTriggerArgs.includes(query.client.ip) && query.status == "DENYLIST") {
+                    let id = getQueryIdentifier(query);
+                    if (!clientBlockedTriggers.includes(id)) {
+                        this.driver.clientBlockedFlowTrigger.trigger(this, this.getQueryTriggerTokens(query), clientIpState);
+                        clientBlockedTriggers.push(id)
+                    }
                 }
             }
         }
+    }
+
+    private getQueryTriggerTokens(query: any) {
+        // The object containing all tokens, which are the same for all trigger cards reacting to queries
+        return {
+            queryStatus: query.status,
+            // round duration to 2 decimals
+            queryDuration: query.reply.time > 0 ? Math.round(query.reply.time * 100) / 100 : -1,
+            domain: query.domain,
+            recordType: query.type,
+            clientIp: query.client.ip,
+            clientName: query.client.name == null ? "" : query.client.name
+        };
     }
 
     /**
@@ -236,7 +278,6 @@ class PiHoleV6Device extends Homey.Device {
      */
     // @ts-ignore
     async onSettings({oldSettings, newSettings, changedKeys}) {
-
         if (changedKeys.includes('base_url') || changedKeys.includes('api_password')) {
             this.piholeDevice = new PiHoleConnection(newSettings.base_url, newSettings.api_password)
         }
@@ -260,6 +301,9 @@ class PiHoleV6Device extends Homey.Device {
     async onDeleted() {
         if (this.generalUpdateIntervalId) {
             clearInterval(this.generalUpdateIntervalId)
+        }
+        if (this.flowTriggerUpdateIntervalId) {
+            clearInterval(this.flowTriggerUpdateIntervalId)
         }
         if (this.piHoleConnection) {
             this.piHoleConnection.closeConnectionLogout();

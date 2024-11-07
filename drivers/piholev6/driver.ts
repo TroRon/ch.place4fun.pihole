@@ -1,51 +1,73 @@
 import {AutoDiscoveryProcess} from "./discovery";
 import PairSession from "homey/lib/PairSession";
 import {PiHoleConnection} from "./piholev6";
+import {Device} from "homey";
 
 const Homey = require('homey');
 const crypto = require("crypto");
 
 class PiholeV6Driver extends Homey.Driver {
-    public domainQueriedFlowTrigger = this.homey.flow.getDeviceTriggerCard("pihole_domain_query");
+    public domainQueryFlowTrigger = this.homey.flow.getDeviceTriggerCard("pihole_domain_query");
     public domainBlockedFlowTrigger = this.homey.flow.getDeviceTriggerCard("pihole_domain_blocked");
-    public clientQueriedFlowTrigger = this.homey.flow.getDeviceTriggerCard("pihole_client_query");
+    public clientQueryFlowTrigger = this.homey.flow.getDeviceTriggerCard("pihole_client_query");
     public clientBlockedFlowTrigger = this.homey.flow.getDeviceTriggerCard("pihole_client_blocked");
 
 
     async onInit() {
-        await this.domainQueriedFlowTrigger.registerRunListener(async (args: any, state: any) => {
-            try {
-                return args.domain === state.domain;
-            } catch (e) {
-                // Any exception in the run listener is never logged by homey, so a try-catch is absolutely needed here!
-                // Even though it is not needed now, this try-catch is in place as a reminder since this is
-                // undocumented homey behaviour. You cannot stringify the args object, since it contains a homey device with
-                // circular references
-                this.error(e)
-            }
-        });
-
-        await this.domainBlockedFlowTrigger.registerRunListener(async (args: any, state: any) => {
-            try {
-                return args.domain === state.domain;
-            } catch (e) {
-                // Any exception in the run listener is never logged by homey, so a try-catch is absolutely needed here!
-                // Even though it is not needed now, this try-catch is in place as a reminder since this is
-                // undocumented homey behaviour. You cannot stringify the args object, since it contains a homey device with
-                // circular references
-                this.error(e)
-            }
-        });
-
-        await this.clientQueriedFlowTrigger.registerRunListener(async (args: any, state: any) => {
-            return args.clientIp === state.clientIp;
-        });
-
-        await this.clientBlockedFlowTrigger.registerRunListener(async (args: any, state: any) => {
-            return args.clientIp === state.clientIp;
-        });
-
+        await this.registerTriggerCardRunListeners();
         this.log("PiholeV6Driver initialized");
+    }
+
+    /**
+     * Register run listeners, which decide which trigger card should start given a provided pihole state.
+     * Register run listeners only once since they are the same across all device instances, all information is in the parameters.
+     * @private
+     */
+    private async registerTriggerCardRunListeners() {
+        await this.domainQueryFlowTrigger.registerRunListener(async (args: {
+            device: Device,
+            domain: string,
+            recordType: string
+        }, state: any) => {
+            try {
+                return args.domain === state.domain && this.matchingRecordType(args, state);
+            } catch (e) {
+                // Any exception in the run listener is never logged by homey, so a try-catch is absolutely needed here!
+                // Even though it is not needed now, this try-catch is in place as a reminder since this is
+                // undocumented homey behaviour. You cannot stringify the args object, since it contains a homey device with
+                // circular references
+                this.error(e)
+            }
+        });
+
+        await this.domainBlockedFlowTrigger.registerRunListener(async (args: {
+            device: Device,
+            domain: string,
+            recordType: string
+        }, state: any) => {
+            return args.domain === state.domain && this.matchingRecordType(args, state);
+        });
+
+
+        await this.clientQueryFlowTrigger.registerRunListener(async (args: {
+            device: Device,
+            clientIp: string,
+            recordType: string
+        }, state: any) => {
+            return args.clientIp === state.clientIp && this.matchingRecordType(args, state);
+        });
+
+        await this.clientBlockedFlowTrigger.registerRunListener(async (args: {
+            device: Device,
+            clientIp: string,
+            recordType: string
+        }, state: any) => {
+            return args.clientIp === state.clientIp && this.matchingRecordType(args, state);
+        });
+    }
+
+    private matchingRecordType(args: { recordType: string }, state: { recordType: string }) {
+        return args.recordType === "*" || args.recordType === state.recordType;
     }
 
     async onPair(session: PairSession) {

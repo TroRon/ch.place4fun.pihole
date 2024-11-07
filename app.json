@@ -696,40 +696,62 @@
           "en": "DNS-request from client with ip ..."
         },
         "titleFormatted": {
-          "en": "DNS-request from client with ip [[clientIp]]"
+          "en": "[[recordType]] DNS query from client with ip [[clientIp]]"
         },
         "tokens": [
           {
             "name": "queryStatus",
             "type": "string",
             "title": {
-              "en": "Query status (FORWARDED/CACHE/BLOCKED/...)"
+              "en": "Query status"
+            },
+            "placeholder": {
+              "en": "DENYLIST"
+            },
+            "hint": {
+              "en": "The status from the upstream server. 'Denylist' when the request was blocked. Forwarded, cache, ..."
             }
           },
           {
             "name": "queryDuration",
             "type": "number",
+            "example": 5,
             "title": {
-              "en": "Query duration in ms (negative if not available)"
+              "en": "Query duration in ms"
+            },
+            "hint": {
+              "en": "Negative if not available"
             }
           },
           {
             "name": "domain",
             "type": "string",
+            "placeholder": {
+              "en": "example.org"
+            },
             "title": {
-              "en": "Blocked domain name"
+              "en": "Domain name"
             }
           },
           {
-            "name": "domainType",
+            "name": "recordType",
             "type": "string",
+            "placeholder": {
+              "en": "CNAME"
+            },
             "title": {
-              "en": "Blocked domain type (A/CNAME/...)"
+              "en": "Domain type"
+            },
+            "hint": {
+              "en": "A/AAAA/CNAME/..."
             }
           },
           {
             "name": "clientIp",
             "type": "string",
+            "placeholder": {
+              "en": "127.0.0.1"
+            },
             "title": {
               "en": "Client ip-address"
             }
@@ -737,8 +759,14 @@
           {
             "name": "clientName",
             "type": "string",
+            "placeholder": {
+              "en": "computer.local"
+            },
             "title": {
-              "en": "Client name as reported by Pi-Hole"
+              "en": "Client name"
+            },
+            "hint": {
+              "en": "As reported by Pi-Hole, not available for all clients"
             }
           }
         ],
@@ -750,7 +778,43 @@
           },
           {
             "name": "clientIp",
-            "type": "text"
+            "type": "text",
+            "title": {
+              "en": "Client IP address"
+            }
+          },
+          {
+            "name": "recordType",
+            "type": "dropdown",
+            "title": {
+              "en": "DNS Record type"
+            },
+            "values": [
+              {
+                "id": "*",
+                "title": {
+                  "en": "Any"
+                }
+              },
+              {
+                "id": "A",
+                "title": {
+                  "en": "A-type"
+                }
+              },
+              {
+                "id": "AAAA",
+                "title": {
+                  "en": "AAAA-type"
+                }
+              },
+              {
+                "id": "CNAME",
+                "title": {
+                  "en": "CNAME"
+                }
+              }
+            ]
           }
         ]
       },
@@ -760,40 +824,62 @@
           "en": "DNS-request from client with ip ... blocked"
         },
         "titleFormatted": {
-          "en": "DNS-request from client with ip [[clientIp]] blocked"
+          "en": "[[recordType]] DNS-request from client with ip [[clientIp]] blocked"
         },
         "tokens": [
           {
             "name": "queryStatus",
             "type": "string",
             "title": {
-              "en": "Query status (FORWARDED/CACHE/BLOCKED/...)"
+              "en": "Query status"
+            },
+            "placeholder": {
+              "en": "DENYLIST"
+            },
+            "hint": {
+              "en": "The status from the upstream server. 'Denylist' when the request was blocked. Forwarded, cache, ..."
             }
           },
           {
             "name": "queryDuration",
             "type": "number",
+            "example": 5,
             "title": {
-              "en": "Query duration in ms (negative if not available)"
+              "en": "Query duration in ms"
+            },
+            "hint": {
+              "en": "Negative if not available"
             }
           },
           {
             "name": "domain",
             "type": "string",
+            "placeholder": {
+              "en": "example.org"
+            },
             "title": {
-              "en": "Blocked domain name"
+              "en": "Domain name"
             }
           },
           {
-            "name": "domainType",
+            "name": "recordType",
             "type": "string",
+            "placeholder": {
+              "en": "CNAME"
+            },
             "title": {
-              "en": "Blocked domain type (A/CNAME/...)"
+              "en": "Domain type"
+            },
+            "hint": {
+              "en": "A/AAAA/CNAME/..."
             }
           },
           {
             "name": "clientIp",
             "type": "string",
+            "placeholder": {
+              "en": "127.0.0.1"
+            },
             "title": {
               "en": "Client ip-address"
             }
@@ -801,8 +887,14 @@
           {
             "name": "clientName",
             "type": "string",
+            "placeholder": {
+              "en": "computer.local"
+            },
             "title": {
-              "en": "Client name as reported by Pi-Hole"
+              "en": "Client name"
+            },
+            "hint": {
+              "en": "As reported by Pi-Hole, not available for all clients"
             }
           }
         ],
@@ -815,49 +907,104 @@
           {
             "name": "clientIp",
             "type": "text"
+          },
+          {
+            "name": "recordType",
+            "type": "dropdown",
+            "title": {
+              "en": "DNS Record type"
+            },
+            "values": [
+              {
+                "id": "*",
+                "title": {
+                  "en": "Any"
+                }
+              },
+              {
+                "id": "A",
+                "title": {
+                  "en": "A-type"
+                }
+              },
+              {
+                "id": "AAAA",
+                "title": {
+                  "en": "AAAA-type"
+                }
+              },
+              {
+                "id": "CNAME",
+                "title": {
+                  "en": "CNAME"
+                }
+              }
+            ]
           }
         ]
       },
       {
         "id": "pihole_domain_query",
         "title": {
-          "en": "DNS request for domain ... queried"
+          "en": "DNS request for domain ..."
         },
         "titleFormatted": {
-          "en": "DNS request for domain [[domain]] queried"
+          "en": "[[recordType]] DNS-record for domain [[domain]] queried"
         },
         "tokens": [
           {
             "name": "queryStatus",
             "type": "string",
             "title": {
-              "en": "Query status (FORWARDED/CACHE/BLOCKED/...)"
+              "en": "Query status"
+            },
+            "placeholder": {
+              "en": "DENYLIST"
+            },
+            "hint": {
+              "en": "The status from the upstream server. 'Denylist' when the request was blocked. Forwarded, cache, ..."
             }
           },
           {
             "name": "queryDuration",
             "type": "number",
+            "example": 5,
             "title": {
-              "en": "Query duration in ms (negative if not available)"
+              "en": "Query duration in ms"
+            },
+            "hint": {
+              "en": "Negative if not available"
             }
           },
           {
             "name": "domain",
             "type": "string",
+            "placeholder": {
+              "en": "example.org"
+            },
             "title": {
-              "en": "Blocked domain name"
+              "en": "Domain name"
             }
           },
           {
-            "name": "domainType",
+            "name": "recordType",
             "type": "string",
+            "placeholder": {
+              "en": "CNAME"
+            },
             "title": {
-              "en": "Blocked domain type (A/CNAME/...)"
+              "en": "Domain type"
+            },
+            "hint": {
+              "en": "A/AAAA/CNAME/..."
             }
           },
           {
             "name": "clientIp",
             "type": "string",
+            "placeholder": {
+              "en": "127.0.0.1"
+            },
             "title": {
               "en": "Client ip-address"
             }
@@ -865,8 +1012,14 @@
           {
             "name": "clientName",
             "type": "string",
+            "placeholder": {
+              "en": "computer.local"
+            },
             "title": {
-              "en": "Client name as reported by Pi-Hole"
+              "en": "Client name"
+            },
+            "hint": {
+              "en": "As reported by Pi-Hole, not available for all clients"
             }
           }
         ],
@@ -879,6 +1032,39 @@
           {
             "name": "domain",
             "type": "text"
+          },
+          {
+            "name": "recordType",
+            "type": "dropdown",
+            "title": {
+              "en": "DNS Record type"
+            },
+            "values": [
+              {
+                "id": "*",
+                "title": {
+                  "en": "Any"
+                }
+              },
+              {
+                "id": "A",
+                "title": {
+                  "en": "A-type"
+                }
+              },
+              {
+                "id": "AAAA",
+                "title": {
+                  "en": "AAAA-type"
+                }
+              },
+              {
+                "id": "CNAME",
+                "title": {
+                  "en": "CNAME"
+                }
+              }
+            ]
           }
         ]
       },
@@ -888,40 +1074,63 @@
           "en": "DNS request for domain ... blocked"
         },
         "titleFormatted": {
-          "en": "DNS request for domain [[domain]] blocked"
+          "en": "[[recordType]] record for domain [[domain]] blocked"
         },
+        "highlight": true,
         "tokens": [
           {
             "name": "queryStatus",
             "type": "string",
             "title": {
-              "en": "Query status (FORWARDED/CACHE/BLOCKED/...)"
+              "en": "Query status"
+            },
+            "placeholder": {
+              "en": "DENYLIST"
+            },
+            "hint": {
+              "en": "The status from the upstream server. 'Denylist' when the request was blocked. Forwarded, cache, ..."
             }
           },
           {
             "name": "queryDuration",
             "type": "number",
+            "example": 5,
             "title": {
-              "en": "Query duration in ms (negative if not available)"
+              "en": "Query duration in ms"
+            },
+            "hint": {
+              "en": "Negative if not available"
             }
           },
           {
             "name": "domain",
             "type": "string",
+            "placeholder": {
+              "en": "example.org"
+            },
             "title": {
-              "en": "Blocked domain name"
+              "en": "Domain name"
             }
           },
           {
-            "name": "domainType",
+            "name": "recordType",
             "type": "string",
+            "placeholder": {
+              "en": "CNAME"
+            },
             "title": {
-              "en": "Blocked domain type (A/CNAME/...)"
+              "en": "Domain type"
+            },
+            "hint": {
+              "en": "A/AAAA/CNAME/..."
             }
           },
           {
             "name": "clientIp",
             "type": "string",
+            "placeholder": {
+              "en": "127.0.0.1"
+            },
             "title": {
               "en": "Client ip-address"
             }
@@ -929,8 +1138,14 @@
           {
             "name": "clientName",
             "type": "string",
+            "placeholder": {
+              "en": "computer.local"
+            },
             "title": {
-              "en": "Client name as reported by Pi-Hole"
+              "en": "Client name"
+            },
+            "hint": {
+              "en": "As reported by Pi-Hole, not available for all clients"
             }
           }
         ],
@@ -943,6 +1158,39 @@
           {
             "name": "domain",
             "type": "text"
+          },
+          {
+            "name": "recordType",
+            "type": "dropdown",
+            "title": {
+              "en": "DNS Record type"
+            },
+            "values": [
+              {
+                "id": "*",
+                "title": {
+                  "en": "Any"
+                }
+              },
+              {
+                "id": "A",
+                "title": {
+                  "en": "A-type"
+                }
+              },
+              {
+                "id": "AAAA",
+                "title": {
+                  "en": "AAAA-type"
+                }
+              },
+              {
+                "id": "CNAME",
+                "title": {
+                  "en": "CNAME"
+                }
+              }
+            ]
           }
         ]
       }

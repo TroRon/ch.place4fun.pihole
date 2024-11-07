@@ -71,7 +71,7 @@ export class PiHoleConnection {
 
     public async updateGravity() {
         // this endpoint does not return json
-        return this.httpRaw(PiHoleConnection.ENDPOINT_UPDATE_GRAVITY, "POST",true, null).then(response => console.log(response.body))
+        return this.httpRaw(PiHoleConnection.ENDPOINT_UPDATE_GRAVITY, "POST", true, null).then(response => console.log(response.body))
     }
 
     public async getBlockingState(): Promise<PiHoleBlockingState> {
@@ -199,6 +199,7 @@ export class PiHoleConnection {
                 throw new Error("Invalid API password")
             }
             this.session_id = sessionResponse.session.sid
+            console.log("Updated session id to " + this.session_id)
             // convert TTL to absolute timestamp
             this.session_expiry_timestamp = this.timestamp() + sessionResponse.session.validity
         } catch (e) {
@@ -211,7 +212,7 @@ export class PiHoleConnection {
             return // nothing to do, session token is already invalid
         }
         console.log("Closing pihole connection, logging out")
-        this.httpDelete(PiHoleConnection.ENDPOINT_AUTH,true)
+        this.httpDelete(PiHoleConnection.ENDPOINT_AUTH, true)
     }
 }
 
