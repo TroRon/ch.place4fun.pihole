@@ -1,7 +1,7 @@
 {
   "type": "number",
   "title": {
-    "en": "CPU usage"
+    "en": "CPU temperature"
   },
   "units": {
     "en": "°C"
