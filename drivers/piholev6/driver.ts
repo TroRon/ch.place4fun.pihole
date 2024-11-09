@@ -74,26 +74,35 @@ class PiholeV6Driver extends Homey.Driver {
     }
 
     private registerFlowActionListeners() {
+
+        // Looking for the on, off, toggle action handlers? These are handled by the onoff capability, and only have adjusted titles in the flow compose file.
+
         const pauseBlockingAction = this.homey.flow.getActionCard('pihole_pause');
         pauseBlockingAction.registerRunListener(async (args: any, state: any) => {
             // The arguments contain the device on which the card was executed
-            let durationMilliSeconds = args.duration;
-            await this.requirePiholeConnection(args).setBlockingState(false, durationMilliSeconds / 1000);
-            state.device.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
+            let durationSeconds = args.duration;
+            await this.requirePiholeConnection(args).setBlockingState(false, durationSeconds);
+            args.device.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
         });
 
         const restartPiHoleDnsAction = this.homey.flow.getActionCard('pihole_restart_dns');
         restartPiHoleDnsAction.registerRunListener(async (args: any, state: any) => {
             // The arguments contain the device on which the card was executed
             await this.requirePiholeConnection(args).restartDns();
-            state.device.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
+            args.device.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
         });
 
         const updateGravityAction = this.homey.flow.getActionCard('pihole_update_gravity');
         updateGravityAction.registerRunListener(async (args: any, state: any) => {
             // The arguments contain the device on which the card was executed
             await this.requirePiholeConnection(args).updateGravity();
-            state.device.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
+            args.device.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
+        });
+
+        const refreshAction = this.homey.flow.getActionCard('pihole_refresh');
+        refreshAction.registerRunListener(async (args: any, state: any) => {
+            // The arguments contain the device on which the card was executed
+            args.device.refresh()
         });
 
         const addDomainAction = this.homey.flow.getActionCard('pihole_domain_add');

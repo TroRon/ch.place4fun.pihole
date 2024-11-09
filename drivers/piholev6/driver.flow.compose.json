@@ -1,6 +1,49 @@
 {
   "actions": [
     {
+      "id": "on",
+      "title": {
+        "en": "Enable ad-blocking"
+      }
+    },
+    {
+      "id": "off",
+      "title": {
+        "en": "Disable ad-blocking"
+      }
+    },
+    {
+      "id": "toggle",
+      "title": {
+        "en": "Toggle ad-blocking"
+      }
+    },
+    {
+      "id": "pihole_pause",
+      "highlight": true,
+      "title": {
+        "en": "Pause pi-hole for ... seconds"
+      },
+      "titleFormatted": {
+        "en": "Pause pi-hole filtering for [[duration]] seconds"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "duration",
+          "title": {
+            "en": "Duration"
+          },
+          "min": 5,
+          "max": 86400,
+          "step": 5,
+          "placeholder": {
+            "en": "Seconds"
+          }
+        }
+      ]
+    },
+    {
       "id": "pihole_restart_dns",
       "title": {
         "en": "Restart DNS-server"
@@ -16,16 +59,6 @@
       "id": "pihole_refresh",
       "title": {
         "en": "Refresh data"
-      }
-    },
-    {
-      "id": "pihole_pause",
-      "title": {
-        "en": "Pause pi-hole"
-      },
-      "duration": true,
-      "titleFormatted": {
-        "en": "Pause pi-hole filtering"
       }
     },
     {
@@ -309,13 +342,13 @@
     {
       "id": "onoff_true",
       "title": {
-        "en": "Adblocking turned on"
+        "en": "Ad-blocking enabled"
       }
     },
     {
       "id": "onoff_false",
       "title": {
-        "en": "Adblocking turned off"
+        "en": "Ad-Blocking disabled"
       }
     },
     {
@@ -816,6 +849,12 @@
     }
   ],
   "conditions": [
+    {
+      "id": "on",
+      "title": {
+        "en": "Ad-Blocking is !{{enabled|disabled}}"
+      }
+    },
     {
       "id": "pihole_rule_exists",
       "title": {
