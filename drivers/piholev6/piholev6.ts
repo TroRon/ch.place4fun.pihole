@@ -6,15 +6,14 @@ export class PiHoleConnection {
 
     private static readonly ENDPOINT_AUTH: string = "/api/auth";
     private static readonly ENDPOINT_DNS_BLOCKING: string = "/api/dns/blocking";
-    private static readonly ENDPOINT_SUMMARY: string = "/api/stats/summary";
     private static readonly ENDPOINT_QUERIES: string = "/api/queries";
     private static readonly ENDPOINT_PADD: string = "/api/padd";
     private static readonly ENDPOINT_RESTART_DNS: string = "/api/action/restartdns";
     private static readonly ENDPOINT_UPDATE_GRAVITY: string = "/api/action/gravity";
-    private static readonly ENDPOINT_FTL_INFO: string = "/api/info/ftl";
     private static readonly ENDPOINT_LOGIN_INFO: string = "/api/info/login";
-    private static readonly ENDPOINT_SYSTEM_INFO: string = "/api/info/system";
-    private static readonly ENDPOINT_SENSORS: string = "/api/info/sensors";
+    private static readonly ENDPOINT_GROUPS: string = "/api/groups";
+    private static readonly ENDPOINT_DOMAINS: string = "/api/domains";
+    private static readonly ENDPOINT_SEARCH: string = "/api/search";
 
     constructor(base_url: string, api_password: string) {
         this.base_url = base_url;
@@ -90,11 +89,126 @@ export class PiHoleConnection {
         });
     }
 
+    public async addDomain(domainName: string, kind: "exact" | "regex", type: "allow" | "block") {
+        let endpoint = PiHoleConnection.ENDPOINT_DOMAINS + "/" + type + "/" + kind;
+        return this.httpPost(endpoint, true, {
+            domain: domainName,
+            comment: "Created by Homey flow",
+            enabled: true
+        });
+    }
+
+    public async removeDomain(domainName: string, kind: "exact" | "regex", type: "allow" | "block"): Promise<void> {
+        let endpoint = PiHoleConnection.ENDPOINT_DOMAINS + "/" + type + "/" + kind + "/" + encodeURIComponent(domainName);
+        this.httpDelete(endpoint, true);
+    }
+
+    public async getDomainDetails(domainName: string, type: "allow" | "block"): Promise<Pihole6Domain[]> {
+        let endpoint = PiHoleConnection.ENDPOINT_DOMAINS + "/" + type + "/" + encodeURIComponent(domainName);
+        return this.httpGet(endpoint, true).then(json => json.domains);
+    }
+
+    public async searchDomain(domainName: string): Promise<Pihole6Domain[]> {
+        let endpoint = PiHoleConnection.ENDPOINT_SEARCH + "/" + encodeURIComponent(domainName);
+        return this.httpGet(endpoint, true, {partial: false, debug: false})
+            .then(json => [].concat(json.search.domains, json.search.gravity.map(this.gravityToDomain)));
+    }
+
+    private gravityToDomain(gravityDomain: any): Pihole6Domain {
+        return {
+            domain: gravityDomain.domain,
+            unicode: gravityDomain.domain,
+            comment: gravityDomain.address + ": " + gravityDomain.comment,
+            enabled: gravityDomain.enabled,
+            type: gravityDomain.type == "allow" ? "allow" : "deny",
+            kind: "gravity",
+            id: -1 * gravityDomain.id,
+            groups: gravityDomain.groups,
+            date_added: gravityDomain.date_added,
+            date_modified: Math.max(gravityDomain.date_modified, gravityDomain.date_updated),
+        }
+    }
+
+    /**
+     * Add a domain to a group. The domain may not exist more than once
+     * @param domainName
+     * @param groupId
+     * @return True if successful, false if no action was taken.
+     */
+    public async addDomainToGroup(domainName: string, groupId: number): Promise<boolean> {
+        return this.httpGet(PiHoleConnection.ENDPOINT_DOMAINS + "/" + domainName, true)
+            .then(
+                response => {
+                    if (response.domains.length > 1) {
+                        throw new Error("Domain " + domainName + " is present more than once in pi-hole. Cannot be added to group.")
+                    }
+                    return response.domains[0]
+                }
+            ).then(
+                domain => {
+                    if (domain.groups.includes(groupId)) {
+                        console.log("Domain " + domainName + " already in group " + groupId + ", no action required")
+                        return false;
+                    }
+
+                    domain.groups.push(groupId)
+                    // type: allow/block, kind: exact/regex
+                    let endpoint = PiHoleConnection.ENDPOINT_DOMAINS + "/" + domain.type + "/" + domain.kind + "/" + encodeURIComponent(domain.domain);
+                    return this.httpPut(endpoint, true, domain)
+                        .then(() => true)
+                        .catch((error: any) => {
+                            throw error
+                        })
+                }
+            )
+    }
+
+    /**
+     * Remove a domain from a group. The domain may not exist more than once
+     * @param domainName
+     * @param groupId
+     * @return True if successful, false if no action was taken.
+     */
+    public async removeDomainFromGroup(domainName: string, groupId: number): Promise<boolean> {
+        return this.httpGet(PiHoleConnection.ENDPOINT_DOMAINS + "/" + domainName, true)
+            .then(
+                response => {
+                    if (response.domains.length > 1) {
+                        throw new Error("Domain " + domainName + " is present more than once in pi-hole. Cannot be removed from group.")
+                    }
+                    return response.domains[0]
+                }
+            ).then(
+                domain => {
+                    if (!domain.groups.includes(groupId)) {
+                        console.log("Domain " + domainName + " is not present in group " + groupId + ", no action required")
+                        return false;
+                    }
+
+                    // remove from array
+                    const index = domain.groups.indexOf(groupId);
+                    domain.groups.splice(index, 1)
+
+                    // type: allow/block, kind: exact/regex
+                    let endpoint = PiHoleConnection.ENDPOINT_DOMAINS + "/" + domain.type + "/" + domain.kind + "/" + encodeURIComponent(domain.domain);
+                    return this.httpPut(endpoint, true, domain)
+                        .then(() => true)
+                        .catch((error: any) => {
+                            throw error
+                        })
+                }
+            )
+    }
+
+    async listGroups(): Promise<Pihole6Group[]> {
+        return this.httpGet(PiHoleConnection.ENDPOINT_GROUPS, true,).then(json => json.groups)
+    }
+
     private timestamp() {
         return Math.floor(+new Date() / 1000);
     }
 
-    private async httpGet(endpoint: string, authenticate: boolean, queryParameters: any = {}): Promise<any> {
+    private async httpGet(endpoint: string, authenticate: boolean, queryParameters: any = {}): Promise<any | null> {
         let url = PiHoleConnection.createEndpointUrl(this.base_url, endpoint, queryParameters)
         let options: RequestInit = {};
         if (authenticate) {
@@ -106,53 +220,66 @@ export class PiHoleConnection {
                 }
             }
         }
+        console.log(url);
         return fetch(url, options)
-            .then(data => data.json()
-                .then((json: any) => {
-                    // console.log(json);
-                    if (Object.keys(json).includes('error')) {
-                        throw new Error(json.error.message);
-                    }
-                    return json
-                })
-            )
+            .then(PiHoleConnection.parseOptionalJson)
+            .then((json: any) => {
+                console.log(json);
+                if (json != null && Object.keys(json).includes('error')) {
+                    throw new Error(json.error.message);
+                }
+                return json
+            })
             .catch(error => {
                 console.log("Error while fetching information from PiHole: " + error)
                 throw error
             });
     }
 
-    private async httpPost(endpoint: string, authenticate: boolean, body: any = {}): Promise<any> {
+    private async httpPost(endpoint: string, authenticate: boolean, body: any = {}): Promise<any | null> {
         return this.httpRaw(endpoint, "POST", authenticate, body)
-            .then(data => data.json())
+            .then(PiHoleConnection.parseOptionalJson)
             .then((json: any) => {
-                // console.log(json);
-                if (Object.keys(json).includes('error')) {
+                console.log(json);
+                if (json != null && Object.keys(json).includes('error')) {
                     throw new Error(json.error.message);
                 }
                 return json
             })
     }
 
-    private async httpDelete(endpoint: string, authenticate: boolean, body: any = {}): Promise<any> {
+    private async httpPut(endpoint: string, authenticate: boolean, body: any = {}): Promise<any | null> {
+        return this.httpRaw(endpoint, "PUT", authenticate, body)
+            .then(PiHoleConnection.parseOptionalJson)
+            .then((json: any) => {
+                // console.log(json);
+                if (json != null && Object.keys(json).includes('error')) {
+                    throw new Error(json.error.message);
+                }
+                return json
+            })
+    }
+
+
+    private async httpDelete(endpoint: string, authenticate: boolean, body: any = {}): Promise<any | null> {
         return this.httpRaw(endpoint, "DELETE", authenticate, body)
-            .then(data => data.json())
+            .then(PiHoleConnection.parseOptionalJson)
             .then((json: any) => {
-                // console.log(json);
-                if (Object.keys(json).includes('error')) {
+                console.log(JSON.stringify(json));
+                if (json != null && Object.keys(json).includes('error')) {
                     throw new Error(json.error.message);
                 }
                 return json
             })
     }
 
-    private async httpRaw(endpoint: string, method: string, authenticate: boolean, body: any = {}): Promise<any> {
+    private async httpRaw(endpoint: string, method: string, authenticate: boolean, body: any = {}): Promise<any | null> {
         let url = PiHoleConnection.createEndpointUrl(this.base_url, endpoint)
         let options: RequestInit = {method: method, body: JSON.stringify(body)};
         if (authenticate) {
             await this.updateSessionIdIfNeeded();
             options = {
-                method: "POST",
+                method: method,
                 body: JSON.stringify(body),
                 // @ts-ignore
                 headers: {
@@ -160,13 +287,14 @@ export class PiHoleConnection {
                 }
             }
         }
+        console.log(method + " " + endpoint);
+        console.log(JSON.stringify(body));
         return fetch(url, options)
             .catch(error => {
                 console.log("Error while fetching information from PiHole through POST request to " + url + ": " + error)
                 throw error
             });
     }
-
 
     private static createEndpointUrl(base_url: string, endpoint: string, queryParameters: any = {}) {
         return base_url + endpoint + this.objectToQueryString(queryParameters);
@@ -179,6 +307,18 @@ export class PiHoleConnection {
         return "?" + Object.keys(obj)
             .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(obj[key])}`)
             .join('&');
+    }
+
+    private static async parseOptionalJson(response: Response) {
+        const text = await response.text()
+        if (text.length == 0) {
+            return null;
+        }
+        try {
+            return JSON.parse(text)
+        } catch (err) {
+            throw new Error("Failed to parse JSON API response: " + text)
+        }
     }
 
     private async updateSessionIdIfNeeded() {
@@ -213,18 +353,12 @@ export class PiHoleConnection {
         }
         console.log("Closing pihole connection, logging out")
         this.httpDelete(PiHoleConnection.ENDPOINT_AUTH, true)
+        this.session_id = null
     }
 }
 
 type Pihole6SessionResponse = {
-    session: {
-        valid: boolean; // Valid session indicator (client is authenticated)
-        totp: boolean; // Whether 2FA (TOTP) is enabled on this Pi-hole
-        sid: string | null; // Session ID
-        csrf: string | null; // CSRF token
-        validity: number; // Remaining lifetime of this session unless refreshed (seconds)
-        message: string | null; // Human-readable message describing the session status
-    }
+    session: Pihole6Session
 };
 
 type Pihole6Session = {
@@ -528,6 +662,25 @@ type Pihole6PaddResponse = {
     took: number;
 };
 
+export type Pihole6Group = {
+    name: string,
+    comment: string | null,
+    enabled: boolean,
+    id: number,
+    date_added: number,
+    date_modified: number
+}
+
+export type Pihole6Domain = {
+    domain: string,
+    unicode: string,
+    comment: string,
+    type: "allow" | "deny",
+    kind: "exact" | "regex" | "gravity", // gravity is not present in the pihole api, but may be used by PiHoleConnection to signal a gravity blocklist item
+    groups: number[],
+    enabled: boolean,
+    id: number, date_added: number, date_modified: number
+}
 
 type Pihole6LoginInfo = {
     dns: boolean,

@@ -75,7 +75,7 @@
     },
     "api_password": {
       "title": "API password",
-      "hint": "Please enter the PiHole API password here. This is hte password you use to login, or an app-password if you enabled 2-factor authentication."
+      "hint": "Please enter the PiHole API password here. This is the password you use to login, or an app-password if you enabled 2-factor authentication."
     }
   },
   "pairing":{

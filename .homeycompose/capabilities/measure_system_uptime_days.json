@@ -1,15 +1,15 @@
 {
   "type": "number",
   "title": {
-    "en": "Memory usage"
+    "en": "System uptime"
   },
   "units": {
-    "en": "%"
+    "en": "days"
   },
-  "insights": true,
+  "insights": false,
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",
   "uiQuickAction": false,
-  "icon": "/assets/capability_icons/chip.svg"
+  "icon": "/assets/capability_icons/clock.svg"
 }

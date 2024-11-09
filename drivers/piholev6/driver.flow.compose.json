@@ -27,6 +27,224 @@
       "titleFormatted": {
         "en": "Pause pi-hole filtering"
       }
+    },
+    {
+      "id": "pihole_domain_add",
+      "title": {
+        "en": "Add domain to list of blocked domains"
+      },
+      "titleFormatted": {
+        "en": "Add [[domain]] to the list of [[allowedOrBlocked]] domains"
+      },
+      "hint": {
+        "en": "Adds a domain to the list of allowed or blocked domains. The domain is added to the 'default' group in Pi-Hole"
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "allowedOrBlocked",
+          "type": "dropdown",
+          "title": {
+            "en": "Allowed/Blocked"
+          },
+          "values": [
+            {
+              "id": "allow",
+              "title": {
+                "en": "allowed"
+              }
+            },
+            {
+              "id": "deny",
+              "title": {
+                "en": "blocked"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pihole_domain_add_regex",
+      "title": {
+        "en": "Add regex-expression to list of blocked domains"
+      },
+      "titleFormatted": {
+        "en": "Add regex [[domain]] to the list of [[allowedOrBlocked]] domains"
+      },
+      "hint": {
+        "en": "Adds a regex-expression to the list of allowed or blocked domains. The domain is added to the 'default' group in Pi-Hole"
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "allowedOrBlocked",
+          "type": "dropdown",
+          "title": {
+            "en": "Allowed/Blocked"
+          },
+          "values": [
+            {
+              "id": "allow",
+              "title": {
+                "en": "allowed"
+              }
+            },
+            {
+              "id": "deny",
+              "title": {
+                "en": "blocked"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pihole_domain_remove",
+      "title": {
+        "en": "Remove domain from the list of blocked domains"
+      },
+      "titleFormatted": {
+        "en": "Remove [[domain]] from the list of [[allowedOrBlocked]] domains"
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "allowedOrBlocked",
+          "type": "dropdown",
+          "title": {
+            "en": "Allowed/Blocked"
+          },
+          "values": [
+            {
+              "id": "allow",
+              "title": {
+                "en": "allowed"
+              }
+            },
+            {
+              "id": "deny",
+              "title": {
+                "en": "blocked"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pihole_domain_remove_regex",
+      "title": {
+        "en": "Remove regex-expression from the list of blocked domains"
+      },
+      "titleFormatted": {
+        "en": "Remove regex [[domain]] from the list of [[allowedOrBlocked]] domains"
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "allowedOrBlocked",
+          "type": "dropdown",
+          "title": {
+            "en": "Allowed/Blocked"
+          },
+          "values": [
+            {
+              "id": "allow",
+              "title": {
+                "en": "allowed"
+              }
+            },
+            {
+              "id": "deny",
+              "title": {
+                "en": "blocked"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pihole_group_add_domain",
+      "title": {
+        "en": "Add domain to Pi-Hole group"
+      },
+      "titleFormatted": {
+        "en": "Add [[domain]] to Pi-Hole group [[group]]"
+      },
+      "hint": {
+        "en": "For advanced pi-hole users only. Add domain to a Pi-Hole group, so it also applies to devices in that group. The domain should already be defined in Pi-Hole as a blocked or allowed domain. The group should be manually created in Pi-Hole first."
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "group",
+          "type": "autocomplete",
+          "title": {
+            "en": "group name"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pihole_group_remove_domain",
+      "title": {
+        "en": "Remove domain from Pi-Hole group"
+      },
+      "titleFormatted": {
+        "en": "Remove [[domain]] to Pi-Hole group [[group]]"
+      },
+      "hint": {
+        "en": "For advanced pi-hole users only. Remove domain from a Pi-Hole group, so it also applies to devices in that group. The domain should already be defined in Pi-Hole as a blocked or allowed domain. The domain will not be deleted, only unlinked from the group. The group should be manually created in Pi-Hole first."
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "group",
+          "type": "autocomplete",
+          "title": {
+            "en": "group name"
+          }
+        }
+      ]
     }
   ],
   "triggers": [
@@ -128,6 +346,9 @@
           "type": "text",
           "title": {
             "en": "Client IP address"
+          },
+          "placeholder": {
+            "en": "127.0.0.1"
           }
         },
         {
@@ -248,7 +469,10 @@
       "args": [
         {
           "name": "clientIp",
-          "type": "text"
+          "type": "text",
+          "placeholder": {
+            "en": "127.0.0.1"
+          }
         },
         {
           "name": "recordType",
@@ -368,7 +592,10 @@
       "args": [
         {
           "name": "domain",
-          "type": "text"
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
         },
         {
           "name": "recordType",
@@ -489,7 +716,10 @@
       "args": [
         {
           "name": "domain",
-          "type": "text"
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
         },
         {
           "name": "recordType",
@@ -523,6 +753,71 @@
               }
             }
           ]
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "pihole_rule_exists",
+      "title": {
+        "en": "An allow/block rule exists for ..."
+      },
+      "titleFormatted": {
+        "en": "An [[allowedOrBlocked]] rule [[domain]] !{{exists|doesn't exist}}"
+      },
+      "hint": {
+        "en": "Checks if a specific domain or regex expression is defined as a block or allow rule."
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "allowedOrBlocked",
+          "type": "dropdown",
+          "title": {
+            "en": "Allowed/Blocked"
+          },
+          "values": [
+            {
+              "id": "allow",
+              "title": {
+                "en": "allow"
+              }
+            },
+            {
+              "id": "deny",
+              "title": {
+                "en": "block"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pihole_domain_blocked",
+      "title": {
+        "en": "Domain ... is blocked"
+      },
+      "titleFormatted": {
+        "en": "Domain [[domain]] is !{{blocked|allowed}}"
+      },
+      "hint": {
+        "en": "Searches the blocklists and custom rules to check if a query would pass or be blocked"
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
         }
       ]
     }

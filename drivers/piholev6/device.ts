@@ -3,9 +3,9 @@ import {clearInterval} from "node:timers";
 
 const Homey = require('homey');
 
-class PiHoleV6Device extends Homey.Device {
+export class PiHoleV6Device extends Homey.Device {
 
-    private static readonly FLOW_TRIGGER_UPDATE_INTERVAL_SECONDS = 2;
+    private static readonly FLOW_TRIGGER_UPDATE_INTERVAL_SECONDS = 3;
 
     // The interval for updating the homey device, always active. Interval defined by device settings
     private generalUpdateIntervalId: NodeJS.Timeout | undefined = undefined
@@ -13,7 +13,7 @@ class PiHoleV6Device extends Homey.Device {
     private flowTriggerUpdateIntervalId: NodeJS.Timeout | undefined = undefined
 
     // The Pi-Hole API connection
-    private piHoleConnection: PiHoleConnection | undefined = undefined
+    private _piHoleConnection: PiHoleConnection | undefined = undefined
 
     // Cached trigger card parameter values, so we can use these to quickly filter through the queries list if
     // trigger cards are used
@@ -21,6 +21,14 @@ class PiHoleV6Device extends Homey.Device {
     private domainQueriedTriggerArgs: any[] = [];
     private clientQueriedTriggerArgs: any[] = [];
     private clientBlockedTriggerArgs: any[] = [];
+
+    // By keeping track of the number of failed recent query requests, we can compensate for this in the next request
+    private failedRecentQueryRequests = 0;
+
+
+    public getConnection(): PiHoleConnection | undefined {
+        return this._piHoleConnection;
+    }
 
     async onInit() {
         this.log('Initializing PiHole v6 device');
@@ -32,14 +40,12 @@ class PiHoleV6Device extends Homey.Device {
         // Connect to pihole
         const deviceSettings = this.getSettings();
         if (deviceSettings) {
-            this.piHoleConnection = new PiHoleConnection(deviceSettings.base_url, deviceSettings.api_password)
-            const update_interval_seconds = deviceSettings.update_interval_seconds
-            this.setUpdateInterval(update_interval_seconds)
+            this._piHoleConnection = new PiHoleConnection(deviceSettings.base_url, deviceSettings.api_password)
+            this.setUpdateInterval(deviceSettings.update_interval_seconds)
         }
 
-        // Register trigger cards and action cards
+        // Register trigger cards arguments and update listeners
         this.registerFlowTriggerListeners();
-        this.registerFlowActionListeners();
 
         this.log('Initialized PiHole v6 device');
     }
@@ -48,8 +54,8 @@ class PiHoleV6Device extends Homey.Device {
         // Blocking on/off toggle
         this.registerCapabilityListener('onoff', async (value: boolean) => {
             this.log('onoff value changed to ', value);
-            if (this.piHoleConnection) {
-                let result = await this.piHoleConnection.setBlockingState(value)
+            if (this._piHoleConnection) {
+                let result = await this._piHoleConnection.setBlockingState(value)
                 // immediately update onoff capability
                 await this.setCapabilityValue("onoff", result.blocking == BlockingStatus.Enabled)
                 this.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
@@ -61,48 +67,18 @@ class PiHoleV6Device extends Homey.Device {
         })
 
         this.registerCapabilityListener('pihole_restart_dns', async () => {
-            if (this.piHoleConnection) {
-                await this.piHoleConnection.restartDns();
+            if (this._piHoleConnection) {
+                await this._piHoleConnection.restartDns();
                 this.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
             }
         })
 
         this.registerCapabilityListener('pihole_update_gravity', async () => {
-            if (this.piHoleConnection) {
-                await this.piHoleConnection.updateGravity();
+            if (this._piHoleConnection) {
+                await this._piHoleConnection.updateGravity();
                 this.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
             }
         })
-    }
-
-    private registerFlowActionListeners() {
-        const pauseBlockingAction = this.homey.flow.getActionCard('pihole_pause');
-        pauseBlockingAction.registerRunListener(async (args: any, state: any) => {
-            if (!this.piHoleConnection) {
-                return
-            }
-            let durationMilliSeconds = args.duration;
-            await this.piHoleConnection.setBlockingState(false, durationMilliSeconds / 1000);
-            this.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
-        });
-
-        const restartPiHoleDnsAction = this.homey.flow.getActionCard('pihole_restart_dns');
-        restartPiHoleDnsAction.registerRunListener(async (args: any, state: any) => {
-            if (!this.piHoleConnection) {
-                return
-            }
-            await this.piHoleConnection.restartDns();
-            this.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
-        });
-
-        const updateGravityAction = this.homey.flow.getActionCard('pihole_update_gravity');
-        updateGravityAction.registerRunListener(async (args: any, state: any) => {
-            if (!this.piHoleConnection) {
-                return
-            }
-            await this.piHoleConnection.updateGravity();
-            this.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
-        });
     }
 
     private registerFlowTriggerListeners() {
@@ -166,7 +142,7 @@ class PiHoleV6Device extends Homey.Device {
         if (this.flowTriggerUpdateIntervalId == undefined) {
             this.log("Starting flow trigger check")
             let intervalMs = PiHoleV6Device.FLOW_TRIGGER_UPDATE_INTERVAL_SECONDS * 1000;
-            this.flowTriggerUpdateIntervalId = this.homey.setInterval(this.checkTriggers.bind(this), intervalMs)
+            this.flowTriggerUpdateIntervalId = this.homey.setInterval(this.runTriggerCardsCheck.bind(this), intervalMs)
         }
     }
 
@@ -182,9 +158,19 @@ class PiHoleV6Device extends Homey.Device {
         }
     }
 
-    async checkTriggers() {
+    async runTriggerCardsCheck() {
         // this.log("Checking trigger cards based on queries in the past " + PiHoleV6Device.FLOW_TRIGGER_UPDATE_INTERVAL_SECONDS + " seconds")
-        let recentQueries = await this.piHoleConnection?.getRecentQueries(PiHoleV6Device.FLOW_TRIGGER_UPDATE_INTERVAL_SECONDS);
+        let recentQueries = undefined
+        try {
+            let secondsBack = PiHoleV6Device.FLOW_TRIGGER_UPDATE_INTERVAL_SECONDS * (1 + this.failedRecentQueryRequests);
+            secondsBack = Math.max(secondsBack, 60); // never go back more than 60s
+            recentQueries = await this._piHoleConnection?.getRecentQueries(secondsBack);
+        } catch (e) {
+            this.log("Failed to fetch recent queries", e);
+            this.failedRecentQueryRequests++
+            return
+        }
+        this.failedRecentQueryRequests = 0;
 
         // We don't want to trigger the same domain twice in one loop. Therefore, 
         // the combination of domain + record + client should be unique within each trigger card type
@@ -305,8 +291,8 @@ class PiHoleV6Device extends Homey.Device {
         if (this.flowTriggerUpdateIntervalId) {
             clearInterval(this.flowTriggerUpdateIntervalId)
         }
-        if (this.piHoleConnection) {
-            this.piHoleConnection.closeConnectionLogout();
+        if (this._piHoleConnection) {
+            this._piHoleConnection.closeConnectionLogout();
         }
     }
 
@@ -355,13 +341,13 @@ class PiHoleV6Device extends Homey.Device {
 
 
     async refresh() {
-        if (!this.piHoleConnection) {
+        if (!this._piHoleConnection) {
             this.log("Cannot refresh, not connected!")
             return
         }
         try {
             // Get all statistics
-            let statistics = await this.piHoleConnection.getAllInfo();
+            let statistics = await this._piHoleConnection.getAllInfo();
             // Update capabilities
             this.setCapabilityValue('onoff', statistics.blocking == BlockingStatus.Enabled);
             this.setCapabilityValue('blocking_state', statistics.blocking);
@@ -372,7 +358,8 @@ class PiHoleV6Device extends Homey.Device {
             this.setCapabilityValue('measure_relative_cpu_usage', statistics["%cpu"]);
             this.setCapabilityValue('measure_relative_memory_usage', statistics["%mem"]);
             this.setCapabilityValue('measure_cpu_temp', statistics.sensors.cpu_temp);
-            this.setCapabilityValue('measure_system_uptime_seconds', statistics.system.uptime);
+            this.setCapabilityValue('measure_system_uptime_days', Math.floor(statistics.system.uptime / 86400));
+            this.setCapabilityValue('measure_system_uptime_minutes', Math.floor(statistics.system.uptime / 60));
             this.setCapabilityValue('core_update_available', statistics.version.core.local.version != statistics.version.core.remote.version);
             this.setCapabilityValue('ftl_update_available', statistics.version.ftl.local.version != statistics.version.ftl.remote.version);
             this.setCapabilityValue('web_update_available', statistics.version.web.local.version != statistics.version.web.remote.version);

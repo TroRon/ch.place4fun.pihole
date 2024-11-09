@@ -1,7 +1,7 @@
 {
   "type": "boolean",
   "title": {
-    "en": "Web Update?",
+    "en": "Web Update available",
     "de": "Web Update?",
     "nl": "Web Update?",
     "fr": "Mise à jour Web ?",
@@ -14,7 +14,7 @@
     "pl": "Aktualizacja webowa?"
   },
   "getable": true,
-  "setable": true,
+  "setable": false,
   "uiComponent": "sensor",
   "uiQuickAction": false,
   "icon": "/assets/capability_icons/UpdateVersion.svg"

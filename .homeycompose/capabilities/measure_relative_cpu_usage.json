@@ -11,5 +11,5 @@
   "setable": false,
   "uiComponent": "sensor",
   "uiQuickAction": false,
-  "icon": "/assets/capability_icons/computer_component.svg"
+  "icon": "/assets/capability_icons/chip.svg"
 }

@@ -1,7 +1,7 @@
 {
   "type": "boolean",
   "title": {
-    "en": "FTL Update?",
+    "en": "FTL Update available",
     "de": "FTL Update?",
     "nl": "FTL Update?",
     "fr": "Mise à jour FTL ?",
@@ -14,7 +14,7 @@
     "pl": "Aktualizacja FTL?"
     },
   "getable": true,
-  "setable": true,
+  "setable": false,
   "uiComponent": "sensor",
   "uiQuickAction": false,
   "icon": "/assets/capability_icons/UpdateVersion.svg"

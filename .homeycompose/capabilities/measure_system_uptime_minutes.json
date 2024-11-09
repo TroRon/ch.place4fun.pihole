@@ -4,12 +4,12 @@
     "en": "System uptime"
   },
   "units": {
-    "en": "s"
+    "en": "minutes"
   },
-  "insights": true,
+  "insights": false,
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",
   "uiQuickAction": false,
-  "icon": "/assets/capability_icons/computer_component.svg"
+  "icon": "/assets/capability_icons/clock.svg"
 }

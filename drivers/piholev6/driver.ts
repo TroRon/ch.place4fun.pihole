@@ -1,6 +1,7 @@
 import {AutoDiscoveryProcess} from "./discovery";
 import PairSession from "homey/lib/PairSession";
-import {PiHoleConnection} from "./piholev6";
+import {Pihole6Group, PiHoleConnection} from "./piholev6";
+import {PiHoleV6Device} from './device';
 import {Device} from "homey";
 
 const Homey = require('homey');
@@ -15,6 +16,8 @@ class PiholeV6Driver extends Homey.Driver {
 
     async onInit() {
         await this.registerTriggerCardRunListeners();
+        this.registerFlowActionListeners();
+        this.registerFlowConditionListeners();
         this.log("PiholeV6Driver initialized");
     }
 
@@ -70,6 +73,124 @@ class PiholeV6Driver extends Homey.Driver {
         return args.recordType === "*" || args.recordType === state.recordType;
     }
 
+    private registerFlowActionListeners() {
+        const pauseBlockingAction = this.homey.flow.getActionCard('pihole_pause');
+        pauseBlockingAction.registerRunListener(async (args: any, state: any) => {
+            // The arguments contain the device on which the card was executed
+            let durationMilliSeconds = args.duration;
+            await this.requirePiholeConnection(args).setBlockingState(false, durationMilliSeconds / 1000);
+            state.device.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
+        });
+
+        const restartPiHoleDnsAction = this.homey.flow.getActionCard('pihole_restart_dns');
+        restartPiHoleDnsAction.registerRunListener(async (args: any, state: any) => {
+            // The arguments contain the device on which the card was executed
+            await this.requirePiholeConnection(args).restartDns();
+            state.device.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
+        });
+
+        const updateGravityAction = this.homey.flow.getActionCard('pihole_update_gravity');
+        updateGravityAction.registerRunListener(async (args: any, state: any) => {
+            // The arguments contain the device on which the card was executed
+            await this.requirePiholeConnection(args).updateGravity();
+            state.device.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
+        });
+
+        const addDomainAction = this.homey.flow.getActionCard('pihole_domain_add');
+        addDomainAction.registerRunListener(async (args: any, state: any) => {
+            // The arguments contain the device on which the card was executed
+            await this.requirePiholeConnection(args).addDomain(args.domain, "exact", args.allowedOrBlocked).then(
+                response => {
+                    if (response.processed.errors.length) throw new Error(response.processed.errors[0].error);
+                }
+            );
+        });
+
+        const addRegexDomainAction = this.homey.flow.getActionCard('pihole_domain_add_regex');
+        addRegexDomainAction.registerRunListener(async (args: any, state: any) => {
+            // The arguments contain the device on which the card was executed
+            await this.requirePiholeConnection(args).addDomain(args.domain, "regex", args.allowedOrBlocked).then(
+                response => {
+                    if (response.processed.errors.length) throw new Error(response.processed.errors[0].error);
+                }
+            );
+        });
+
+        const removeDomainAction = this.homey.flow.getActionCard('pihole_domain_remove');
+        removeDomainAction.registerRunListener(async (args: any, state: any) => {
+            await this.requirePiholeConnection(args).removeDomain(args.domain, "exact", args.allowedOrBlocked);
+        });
+
+        const removeRegexDomainAction = this.homey.flow.getActionCard('pihole_domain_remove_regex');
+        removeRegexDomainAction.registerRunListener(async (args: any, state: any) => {
+            await this.requirePiholeConnection(args).removeDomain(args.domain, "regex", args.allowedOrBlocked);
+        });
+
+        const addDomainToGroupAction = this.homey.flow.getActionCard('pihole_group_add_domain');
+        addDomainToGroupAction.registerArgumentAutocompleteListener("group", this.autocompletePiholeGroups);
+        addDomainToGroupAction.registerRunListener(async (args: any, state: any) => {
+            await this.requirePiholeConnection(args).addDomainToGroup(args.domain, args.group.id);
+        });
+
+        const removeDomainFromGroupAction = this.homey.flow.getActionCard('pihole_group_remove_domain');
+        removeDomainFromGroupAction.registerArgumentAutocompleteListener("group", this.autocompletePiholeGroups);
+        removeDomainFromGroupAction.registerRunListener(async (args: any, state: any) => {
+            await this.requirePiholeConnection(args).removeDomainFromGroup(args.domain, args.group.id);
+        });
+    }
+
+    private async autocompletePiholeGroups(query: string, args: any): Promise<any> {
+        if (!args.device.piHoleConnection) {
+            throw new Error("Not connected to Pi-Hole")
+        }
+        const piholeGroups = await args.device.piHoleConnection.listGroups();
+        return piholeGroups
+            .filter((group: Pihole6Group) => group.name.toLowerCase().includes(query.toLowerCase()))
+            .map((group: Pihole6Group) => {
+                return {
+                    name: group.name,
+                    description: group.comment,
+                    id: group.id
+                }
+            })
+    }
+
+    private registerFlowConditionListeners() {
+        const ruleExistsCondition = this.homey.flow.getConditionCard('pihole_rule_exists');
+        ruleExistsCondition.registerRunListener(async (args: any, state: any) => {
+            return await this.requirePiholeConnection(args).getDomainDetails(args.domain, args.allowedOrBlocked).then(
+                domains => domains.filter(domain => domain.enabled).length > 0
+            );
+        });
+
+        const domainBlockedCondition = this.homey.flow.getConditionCard('pihole_domain_blocked');
+        domainBlockedCondition.registerRunListener(async (args: any, state: any) => {
+            return await this.requirePiholeConnection(args).searchDomain(args.domain).then(
+                domains => {
+                    this.log(JSON.stringify(domains))
+                    const isWhiteListed = domains.filter(domain => domain.enabled && domain.kind != "gravity" && domain.type == "allow").length > 0
+                    const isBlocklistBlocked = domains.filter(domain => domain.enabled && domain.kind == "gravity" && domain.type == "deny").length > 0
+                    const isCustomBlocked = domains.filter(domain => domain.enabled && domain.kind != "gravity" && domain.type == "deny").length > 0
+                    if (isBlocklistBlocked && isCustomBlocked) {
+                        throw new Error("Domain is both blocked and allowed by different rules, cannot determine correct answer!")
+                    }
+                    if (isWhiteListed) {
+                        return false;
+                    }
+                    return isBlocklistBlocked || isCustomBlocked;
+                }
+            );
+        });
+    }
+
+    private requirePiholeConnection(args: { device: PiHoleV6Device }): PiHoleConnection {
+        let connection = args.device.getConnection();
+        if (!connection) {
+            throw new Error("Not connected to Pi-Hole, cannot apply action!")
+        }
+        return connection
+    }
+
     async onPair(session: PairSession) {
         this.log("PiholeV6Driver onPair()");
 
@@ -85,7 +206,6 @@ class PiholeV6Driver extends Homey.Driver {
             },
             settings: {
                 base_url: "",
-                port: 80,
                 api_password: "",
                 update_interval_seconds: 15
             },
@@ -98,10 +218,10 @@ class PiholeV6Driver extends Homey.Driver {
             // Prevent multiple searches when navigating back and forth in the pairing process
             if (!autoDiscoveryProcess) {
                 autoDiscoveryProcess = new AutoDiscoveryProcess(this.log);
-                autoDiscoveryProcess.startDiscovery((ipAddress: string) => {
-                    this.log("Found pihole at address " + ipAddress)
-                    devices.push(this.createDeviceStub(ipAddress))
-                    this.emit(devices)
+                autoDiscoveryProcess.startDiscovery((address: string) => {
+                    this.log("Found pihole at address " + address)
+                    devices.push(this.createDeviceStub(address))
+                    session.emit("list_devices", devices)
                 })
             }
             return devices;
@@ -132,9 +252,9 @@ class PiholeV6Driver extends Homey.Driver {
         });
     }
 
-    createDeviceStub(ipAddress: string) {
+    createDeviceStub(address: string) {
         return {
-            name: ipAddress,
+            name: address,
             data: {
                 id: 'pihole-' + crypto.randomUUID()
             },
@@ -143,8 +263,7 @@ class PiholeV6Driver extends Homey.Driver {
                 url: "/app/ch.place4fun.pihole/drivers/pihole/assets/icon.svg",
             },
             settings: {
-                base_url: "http://" + ipAddress,
-                port: 80,
+                base_url: "http://" + address,
                 api_password: "",
                 update_interval_seconds: 15
             },

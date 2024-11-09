@@ -79,7 +79,7 @@
         if (result === 'ok') {
           Homey.showView('add_device')
         } else {
-          Homey.alert('Connection failed. Please check the ip/hostname, port and API key', 'error')
+          Homey.alert(result, 'error')
         }
       })
 

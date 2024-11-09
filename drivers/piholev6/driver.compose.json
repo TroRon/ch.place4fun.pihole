@@ -27,7 +27,8 @@
     "measure_relative_cpu_usage",
     "measure_relative_memory_usage",
     "measure_cpu_temp",
-    "measure_system_uptime_seconds",
+    "measure_system_uptime_minutes",
+    "measure_system_uptime_days",
     "core_update_available",
     "ftl_update_available",
     "web_update_available"

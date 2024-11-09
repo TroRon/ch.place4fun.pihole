@@ -1,7 +1,7 @@
 {
   "type": "boolean",
   "title": {
-    "en": "Core Update?",
+    "en": "Core Update available",
     "de": "Core Update?",
     "nl": "Core Update?",
     "fr": "Mise à jour du noyau?",
@@ -14,7 +14,7 @@
     "pl": "Aktualizacja jądra?"
     },
   "getable": true,
-  "setable": true,
+  "setable": false,
   "uiComponent": "sensor",
   "uiQuickAction": false,
   "icon": "/assets/capability_icons/UpdateVersion.svg"
