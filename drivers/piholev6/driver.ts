@@ -137,6 +137,16 @@ class PiholeV6Driver extends Homey.Driver {
         removeDomainFromGroupAction.registerRunListener(async (args: any, state: any) => {
             await this.requirePiholeConnection(args).removeDomainFromGroup(args.domain, args.group.id);
         });
+
+        const addLocalDnsRecordAction = this.homey.flow.getActionCard('pihole_local_dns_add_record');
+        addLocalDnsRecordAction.registerRunListener(async (args: any, state: any) => {
+            await this.requirePiholeConnection(args).addLocalDnsRecord(args.domain, args.ip);
+        });
+
+        const removeLocalDnsRecordAction = this.homey.flow.getActionCard('pihole_local_dns_remove_record');
+        removeLocalDnsRecordAction.registerRunListener(async (args: any, state: any) => {
+            await this.requirePiholeConnection(args).removeLocalDnsRecord(args.domain);
+        });
     }
 
     private async autocompletePiholeGroups(query: string, args: any): Promise<any> {

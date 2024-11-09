@@ -245,6 +245,64 @@
           }
         }
       ]
+    },
+    {
+      "id": "pihole_local_dns_add_record",
+      "title": {
+        "en": "Add local DNS record"
+      },
+      "titleFormatted": {
+        "en": "Add local DNS record [[domain]] pointing to IP-address [[ip]]"
+      },
+      "hint": {
+        "en": "Adds a local DNS record to Pi-Hole. This will automatically flush the DNS cache."
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "title": {
+            "en": "Domain name"
+          },
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "ip",
+          "type": "text",
+          "title": {
+            "en": "Destination IP-address"
+          },
+          "placeholder": {
+            "en": "127.0.0.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pihole_local_dns_remove_record",
+      "title": {
+        "en": "Remove local DNS record"
+      },
+      "titleFormatted": {
+        "en": "Remove local DNS record [[domain]]"
+      },
+      "hint": {
+        "en": "Removes a local DNS record from Pi-Hole"
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "title": {
+            "en": "Domain name"
+          },
+          "placeholder": {
+            "en": "example.org"
+          }
+        }
+      ]
     }
   ],
   "triggers": [

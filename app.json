@@ -1,6 +1,7 @@
 {
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "ch.place4fun.pihole",
-  "version": "1.6.0",
+  "version": "1.5.3",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#96060c",
@@ -2759,6 +2760,74 @@
             }
           }
         ]
+      },
+      {
+        "id": "pihole_local_dns_add_record",
+        "title": {
+          "en": "Add local DNS record"
+        },
+        "titleFormatted": {
+          "en": "Add local DNS record [[domain]] pointing to IP-address [[ip]]"
+        },
+        "hint": {
+          "en": "Adds a local DNS record to Pi-Hole. This will automatically flush the DNS cache."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholev6"
+          },
+          {
+            "name": "domain",
+            "type": "text",
+            "title": {
+              "en": "Domain name"
+            },
+            "placeholder": {
+              "en": "example.org"
+            }
+          },
+          {
+            "name": "ip",
+            "type": "text",
+            "title": {
+              "en": "Destination IP-address"
+            },
+            "placeholder": {
+              "en": "127.0.0.1"
+            }
+          }
+        ]
+      },
+      {
+        "id": "pihole_local_dns_remove_record",
+        "title": {
+          "en": "Remove local DNS record"
+        },
+        "titleFormatted": {
+          "en": "Remove local DNS record [[domain]]"
+        },
+        "hint": {
+          "en": "Removes a local DNS record from Pi-Hole"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholev6"
+          },
+          {
+            "name": "domain",
+            "type": "text",
+            "title": {
+              "en": "Domain name"
+            },
+            "placeholder": {
+              "en": "example.org"
+            }
+          }
+        ]
       }
     ],
     "conditions": [
@@ -3274,7 +3343,7 @@
                 "sv": "Välj ett uppdateringsintervall. Välj ett intervall på upp till 10 min., för att möjliggöra live-uppdateringar från enheten."
               },
               "min": 3,
-              "value": "60"
+              "value": "15"
             }
           ]
         }

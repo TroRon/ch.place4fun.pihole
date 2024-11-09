@@ -14,6 +14,8 @@ export class PiHoleConnection {
     private static readonly ENDPOINT_GROUPS: string = "/api/groups";
     private static readonly ENDPOINT_DOMAINS: string = "/api/domains";
     private static readonly ENDPOINT_SEARCH: string = "/api/search";
+    private static readonly ENDPOINT_LOCAL_DNS: string = "/api/config/dns/hosts";
+    private static readonly ENDPOINT_LOCAL_CNAME: string = "/api/config/dns/cnameRecords";
 
     constructor(base_url: string, api_password: string) {
         this.base_url = base_url;
@@ -114,6 +116,11 @@ export class PiHoleConnection {
             .then(json => [].concat(json.search.domains, json.search.gravity.map(this.gravityToDomain)));
     }
 
+    /**
+     * Convert a gravity blocklist to a Pihole6Domain object for easier and more consistent handling
+     * @param gravityDomain
+     * @private
+     */
     private gravityToDomain(gravityDomain: any): Pihole6Domain {
         return {
             domain: gravityDomain.domain,
@@ -200,8 +207,28 @@ export class PiHoleConnection {
             )
     }
 
-    async listGroups(): Promise<Pihole6Group[]> {
+    public async listGroups(): Promise<Pihole6Group[]> {
         return this.httpGet(PiHoleConnection.ENDPOINT_GROUPS, true,).then(json => json.groups)
+    }
+
+    public async addLocalDnsRecord(domainName: string, ipAddress: number) {
+        return this.httpPut(PiHoleConnection.ENDPOINT_LOCAL_DNS + "/" + encodeURIComponent(ipAddress + " " + domainName), true)
+    }
+
+    public async removeLocalDnsRecord(domainName: string, ipAddress: number | null = null) {
+        if (!ipAddress) {
+            let existingRecords = await this.httpGet(PiHoleConnection.ENDPOINT_LOCAL_DNS,true).then(
+                json => json.config.dns.hosts.filter((host: String) => host.endsWith(" " + domainName))
+            )
+            if (existingRecords.length == 0) {
+                throw new Error("No local DNS record found for " + domainName)
+            }
+            if (existingRecords.length > 1) {
+                throw new Error("Multiple local DNS records found for " + domainName)
+            }
+            ipAddress = existingRecords[0].split(" ")[0]
+        }
+        return this.httpDelete(PiHoleConnection.ENDPOINT_LOCAL_DNS + "/" + encodeURIComponent(ipAddress + " " + domainName), true)
     }
 
     private timestamp() {
@@ -224,7 +251,7 @@ export class PiHoleConnection {
         return fetch(url, options)
             .then(PiHoleConnection.parseOptionalJson)
             .then((json: any) => {
-                console.log(json);
+                console.log(JSON.stringify(json));
                 if (json != null && Object.keys(json).includes('error')) {
                     throw new Error(json.error.message);
                 }
@@ -287,7 +314,7 @@ export class PiHoleConnection {
                 }
             }
         }
-        console.log(method + " " + endpoint);
+        console.log(method + " " + url);
         console.log(JSON.stringify(body));
         return fetch(url, options)
             .catch(error => {
@@ -344,7 +371,7 @@ export class PiHoleConnection {
 
             // convert TTL to absolute timestamp
             this.session_expiry_timestamp = this.timestamp() + sessionResponse.session.validity
-        } catch (e:any) {
+        } catch (e: any) {
             this.handleDnsResolutionError(e);
             throw new Error("Invalid base url or API password: \n" + e + ", " + e.cause + "\n" + JSON.stringify(sessionResponse))
         }
