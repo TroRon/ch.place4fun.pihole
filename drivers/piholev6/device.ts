@@ -170,7 +170,7 @@ export class PiHoleV6Device extends Homey.Device {
         let recentQueries = undefined
         try {
             let secondsBack = PiHoleV6Device.FLOW_TRIGGER_UPDATE_INTERVAL_SECONDS * (1 + this.failedRecentQueryRequests);
-            secondsBack = Math.max(secondsBack, 60); // never go back more than 60s
+            secondsBack = Math.min(secondsBack, 60); // never go back more than 60s
             recentQueries = await this._piHoleConnection?.getRecentQueries(secondsBack);
         } catch (e) {
             this.log("Failed to fetch recent queries", e);
