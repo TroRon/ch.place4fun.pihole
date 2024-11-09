@@ -108,7 +108,7 @@
           "sv": "Välj ett uppdateringsintervall. Välj ett intervall på upp till 10 min., för att möjliggöra live-uppdateringar från enheten."
         },
         "min": 3,
-        "value": "60"
+        "value": "15"
       }
     ]
   }

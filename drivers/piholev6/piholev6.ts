@@ -1,7 +1,7 @@
 export class PiHoleConnection {
     private base_url: string;
     private api_password: string;
-    private session_id: string | null = null;
+    public session_id: string | null = null;
     private session_expiry_timestamp: number = 0;
 
     private static readonly ENDPOINT_AUTH: string = "/api/auth";
@@ -327,23 +327,36 @@ export class PiHoleConnection {
             return // nothing to do, session token still valid
         }
         // don't use the authenticate parameter, since that would call this method again.
+        let sessionResponse = null;
         try {
             let sessionResponse: Pihole6SessionResponse = await this.httpPost(PiHoleConnection.ENDPOINT_AUTH, false, {
                 password: this.api_password
             })
 
             if (!Object.keys(sessionResponse).includes("session")) {
-                throw new Error("Invalid base url")
+                throw new Error("Invalid base url, is this a PiHole v6 instance?")
             }
             if (!sessionResponse.session.valid) {
                 throw new Error("Invalid API password")
             }
             this.session_id = sessionResponse.session.sid
             console.log("Updated session id to " + this.session_id)
+
             // convert TTL to absolute timestamp
             this.session_expiry_timestamp = this.timestamp() + sessionResponse.session.validity
-        } catch (e) {
-            throw new Error("Invalid base url or API password: " + e)
+        } catch (e:any) {
+            this.handleDnsResolutionError(e);
+            throw new Error("Invalid base url or API password: \n" + e + ", " + e.cause + "\n" + JSON.stringify(sessionResponse))
+        }
+    }
+
+    private handleDnsResolutionError(e: any) {
+        if (e.cause && e.cause.message.includes("getaddrinfo")) {
+            // When querying pihole.local, homey seems to query for "local" SOA records, which aren't present in pi-hole.
+            // This probably could be fixed by using a custom DNS client implementation, which would be a massive amount of work.
+            // Since PiHole already should have a static ip, just point the user to using that instead.
+            throw new Error("Failed to resolve domain name to IP: " + this.base_url + ".\n"
+                + "This may occur even when the domain name is reachable by a web-browser. Check the DNS records, including SOA record, or use the IP address instead.")
         }
     }
 

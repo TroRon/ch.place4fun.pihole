@@ -37,10 +37,17 @@ export class PiHoleV6Device extends Homey.Device {
         this.updateCapabilities();
         this.registerCapabilityListeners();
 
+
         // Connect to pihole
         const deviceSettings = this.getSettings();
         if (deviceSettings) {
             this._piHoleConnection = new PiHoleConnection(deviceSettings.base_url, deviceSettings.api_password)
+            if (!this._piHoleConnection.hasValidBaseUrl()) {
+                this.setUnavailable("Invalid base url")
+            }
+            if (!this._piHoleConnection.hasValidPassword()) {
+                this.setUnavailable("Invalid password")
+            }
             this.setUpdateInterval(deviceSettings.update_interval_seconds)
         }
 
@@ -265,11 +272,12 @@ export class PiHoleV6Device extends Homey.Device {
     // @ts-ignore
     async onSettings({oldSettings, newSettings, changedKeys}) {
         if (changedKeys.includes('base_url') || changedKeys.includes('api_password')) {
-            this.piholeDevice = new PiHoleConnection(newSettings.base_url, newSettings.api_password)
+            this._piHoleConnection = new PiHoleConnection(newSettings.base_url, newSettings.api_password)
         }
         if (changedKeys.includes('update_interval_seconds')) {
             this.setUpdateInterval(newSettings.update_interval_seconds);
         }
+        this.refresh() // immediately refresh to try the new settings.
     }
 
     /**
@@ -365,9 +373,12 @@ export class PiHoleV6Device extends Homey.Device {
             this.setCapabilityValue('web_update_available', statistics.version.web.local.version != statistics.version.web.remote.version);
             this.setCapabilityValue('alarm_communication_error', false);
             this.setAvailable() // mark device as available in homey
-        } catch (e) {
+        } catch (e: any) {
+            // Seeing issues with resolving the domain name pi.hole or pihole.local here?
+            // This is a homey "Feature" where it completely ignores any network configuration and just uses googles DNS servers.
+            this.log("Failed to update: " + e)
             this.setCapabilityValue('alarm_communication_error', true);
-            this.setUnavailable(e) // mark device as unavailable
+            this.setUnavailable("Failed to update: " + e.message) // mark device as unavailable
         }
     }
 }
