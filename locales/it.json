@@ -1,12 +1,9 @@
 {
-  "settings": {
-    "information_about_pihole": "INFORMAZIONI IMPORTANTI:<br><br>L'applicazione ha subito un grande aggiornamento. Le impostazioni non sono più necessarie.<br><br>I dispositivi esistenti continueranno a funzionare per un po 'di tempo. Ad un certo punto, il vecchio driver verrà rimosso.<br><br>Per poter utilizzare le nuove funzionalità, È NECESSARIO utilizzare il nuovo driver."
-  },
   "warnings": {
     "deprecated1": "ATTENZIONE: Il vecchio driver è stato rimosso nella versione 1.5.0, come annunciato!"
   },
   "devices": {
-    "unavailable": "Impossibile raggiungere il dispositivo nella rete."
+    "unavailable": "Il dispositivo non è raggiungibile sulla rete."
   },
   "capabilities": {
     "gravity_days": "Giorno(i)",
@@ -14,26 +11,30 @@
     "gravity_minutes": "Minuto(i)"
   },
   "welcome": {
+    "titles": {
+      "header": "Configura dispositivo PiHole",
+      "page": "La configurazione è molto semplice ..."
+    },
     "step_by_step": {
-      "intro": "Cliccando su 'Continua', verrà visualizzata una pagina di impostazioni.<br><br>In questa pagina è necessario impostare quanto segue:",
-      "steps": "<li>Indirizzo IP:<b>es. 192.168.10.1</b></li><li>Chiave Porta: <b>80</b></li><li>Chiave API: <b>0imfnc8mVLWwsAawjYr4Rx-Af50DDqtl</b></li>",
-      "outro": "<b>IMPORTANTE:</b><br>La specifica della porta è <b>SEMPRE</b> necessaria, anche se PiHole è in ascolto sulla porta 80, che sarebbe lo standard.<br><br>Se è in funzione un servizio DNS, PiHole può essere contattato anche con il suo nome DNS.<br><br><b>Informazione:</b><br>Se vengono eseguiti Flows, potrebbe non essere visibile nulla su PiHole.<br><br>Questo non è un errore dell'applicazione, ma un problema di visualizzazione da parte di PiHole.<br><br>Se ciò accade, è possibile ricaricare la visualizzazione di PiHole."
+      "intro": "Clicca su 'Continua' per visualizzare una pagina di impostazioni.<br><br>Le seguenti impostazioni devono essere effettuate su questa pagina:",
+      "steps": "<li>Indirizzo IP:<b>es. 192.168.10.1</b></li><li>Porta Chiave: <b>80</b></li><li>Chiave API: <b>0imfnc8mVLWwsAawjYr4Rx-Af50DDqtl</b></li>",
+      "outro": "<b>IMPORTANTE:</b><br>La specifica della porta è<b>SEMPRE</b> richiesta, anche se il PiHole è in ascolto sulla porta 80, che sarebbe standard.<br><br>Se è in funzione un servizio DNS, il PiHole può essere indirizzato anche con il suo nome DNS.<br><br><b>Informazione:</b><br>Quando vengono eseguiti i flussi, potrebbe non essere visibile nulla sul PiHole.<br><br>Questo non è un errore nell'app, ma un errore di visualizzazione sul lato PiHole.<br><br>In tal caso, la visualizzazione del PiHole può essere ricaricata."
     },
     "buttons": {
       "continue": "Continua"
     }
   },
   "manual_input": {
-    "title": "Aggiungi Istanza PiHole",
-    "intro": "<i>Inserisci i dati richiesti per aggiungere il dispositivo.<br><br><br><b>IMPORTANTE:</b><br>Se è in funzione un servizio DNS, PiHole può essere contattato anche con il suo nome DNS.</i>",
+    "title": "Aggiungi istanza PiHole",
+    "intro": "<i>Si prega di inserire i dati richiesti per aggiungere il dispositivo.<br><br><br><b>IMPORTANTE:</b><br>Se è in funzione un servizio DNS, il PiHole può essere indirizzato anche con il suo nome DNS.</i>",
     "inputs": {
       "name": {
         "label": "Nome <b>(opzionale)</b>:",
         "placeholder": "Nome dell'istanza"
       },
       "url": {
-        "label": "Indirizzo IP / FQDN con http(s):// anteposto",
-        "placeholder": "Si prega di utilizzare il FQDN o l'indirizzo IP con http(s) anteposto!"
+        "label": "Indirizzo IP / FQDN con prefisso http(s)://",
+        "placeholder": "Si prega di utilizzare FQDN o indirizzo IP con prefisso HTTP(s)!"
       },
       "port": {
         "label": "Porta:",
@@ -41,11 +42,38 @@
       },
       "api": {
         "label": "API:",
-        "placeholder": "Inserisci qui la chiave API di PiHole"
+        "placeholder": "Si prega di inserire qui la chiave API del PiHole"
       }
     },
     "buttons": {
       "next": "Aggiungi dispositivo"
+    }
+  },
+  "settings": {
+    "title": "Impostazioni del dispositivo",
+    "test_connection": "Test connessione",
+    "name": {
+      "title": "Nome del dispositivo",
+      "hint": "Come il dispositivo dovrebbe essere nominato in Homey"
+    },
+    "host": {
+      "title": "Host del dispositivo",
+      "hint": "Si prega di utilizzare FQDN o indirizzo IP con prefisso HTTP(s)"
+    },
+    "port": {
+      "title": "Porta",
+      "hint": "Il valore predefinito è 80"
+    },
+    "api_key": {
+      "title": "Chiave API",
+      "hint": "Si prega di inserire qui la chiave API del PiHole. Può essere ottenuta dalla pagina delle impostazioni del PiHole"
+    }
+  },
+  "pairing": {
+    "add_manually": "Aggiungi manualmente",
+    "test_failed": {
+      "invalid_host": "Il nome host o la porta sono errati.",
+      "invalid_key": "La chiave API non è valida."
     }
   }
 }

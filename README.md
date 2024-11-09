@@ -48,6 +48,14 @@ This card adds the functionality that all Piholes can be disabled for a limited 
 
 # Version History
 
+### v1.5.5 (Store Release)
+- Bugfixing synchronization error
+
+### v1.5.4 (Store Release)
+- Bug fixing / Adjusting translations
+
+### v1.5.3 (Store Release)
+- Bugfixes, thx @Bertware
 
 ### v1.5.2 (Store Release)
 - Remove Old Driver Information
