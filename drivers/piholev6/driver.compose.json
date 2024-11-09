@@ -18,7 +18,7 @@
     "data_refresh",
     "pihole_restart_dns",
     "pihole_update_gravity",
-    "alarm_communication_error",
+    "alarm_connectivity",
     "blocking_state",
     "measure_active_client_count",
     "measure_queries_total_24h",

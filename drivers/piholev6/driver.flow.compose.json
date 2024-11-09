@@ -846,6 +846,38 @@
           ]
         }
       ]
+    },
+    {
+      "id": "alarm_connectivity_true",
+      "title": {
+        "en": "Is disconnected",
+        "nl": "Is niet verbonden",
+        "da": "Er afbrudt",
+        "fr": "Est déconnectée",
+        "it": "È disconnesso",
+        "ko": "연결 해제됨",
+        "no": "Er frakoblet",
+        "pl": "Odłączony",
+        "ru": "Отключено",
+        "sv": "Frånkopplad",
+        "es": "Está desconectado"
+      }
+    },
+    {
+      "id": "alarm_connectivity_false",
+      "title": {
+        "en": "Is connected",
+        "nl": "Is verbonden",
+        "da": "Er tilsluttet",
+        "fr": "Est connectée",
+        "it": "È connesso",
+        "ko": "연결됨",
+        "no": "Er tilkoblet",
+        "pl": "Połączony",
+        "ru": "Подключено",
+        "sv": "Ansluten",
+        "es": "Está conectado"
+      }
     }
   ],
   "conditions": [
@@ -917,6 +949,22 @@
           }
         }
       ]
+    },
+    {
+      "id": "alarm_connectivity",
+      "title": {
+        "en": "Is !{{connected|disconnected}}",
+        "nl": "Is !{{verbonden|niet verbonden}}",
+        "da": "Er !{{tilsluttet|afbrudt}}",
+        "it": "È !{{connesso|disconnesso}}",
+        "ko": "!{{연결됨|연결 해제됨}}",
+        "no": "Er !{{frakoblet|tilkoblet}}",
+        "pl": "Jest !{{połączony|niepołączony}}",
+        "ru": "Устройство !{{подключено|отключено}}",
+        "sv": "Är !{{ansluten|frånkopplad}}",
+        "es": "Está !{{conectado|desconectado}}",
+        "fr": "Est !{{connectée|déconnectée}}"
+      }
     }
   ]
 }

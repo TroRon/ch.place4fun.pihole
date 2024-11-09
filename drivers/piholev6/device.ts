@@ -371,13 +371,13 @@ export class PiHoleV6Device extends Homey.Device {
             this.setCapabilityValue('core_update_available', statistics.version.core.local.version != statistics.version.core.remote.version);
             this.setCapabilityValue('ftl_update_available', statistics.version.ftl.local.version != statistics.version.ftl.remote.version);
             this.setCapabilityValue('web_update_available', statistics.version.web.local.version != statistics.version.web.remote.version);
-            this.setCapabilityValue('alarm_communication_error', false);
+            this.setCapabilityValue('alarm_connectivity', false);
             this.setAvailable() // mark device as available in homey
         } catch (e: any) {
             // Seeing issues with resolving the domain name pi.hole or pihole.local here?
             // This is a homey "Feature" where it completely ignores any network configuration and just uses googles DNS servers.
             this.log("Failed to update: " + e)
-            this.setCapabilityValue('alarm_communication_error', true);
+            this.setCapabilityValue('alarm_connectivity', true);
             this.setUnavailable("Failed to update: " + e.message) // mark device as unavailable
         }
     }

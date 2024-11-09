@@ -67,6 +67,15 @@ class PiholeV6Driver extends Homey.Driver {
         }, state: any) => {
             return args.clientIp === state.clientIp && this.matchingRecordType(args, state);
         });
+
+        // Backwards compatibility for pre-12.2 devices. Once the app compatibility level is increased to 12.2, this custom capability can be replaced by the native one
+        this.homey.flow.getDeviceTriggerCard('alarm_connectivity_false').registerRunListener((args: any, state: any) => {
+            return args.device.getCapabilityValue('alarm_connectivity') === args.state;
+        });
+
+        this.homey.flow.getDeviceTriggerCard('alarm_connectivity_true').registerRunListener((args: any, state: any) => {
+            return args.device.getCapabilityValue('alarm_connectivity') === args.state;
+        });
     }
 
     private matchingRecordType(args: { recordType: string }, state: { recordType: string }) {
@@ -199,6 +208,10 @@ class PiholeV6Driver extends Homey.Driver {
                     return isBlocklistBlocked || isCustomBlocked;
                 }
             );
+        });
+
+        this.homey.flow.getConditionCard('alarm_connectivity').registerRunListener( (args: any, state: any) => {
+            return args.device.getCapabilityValue('alarm_connectivity');
         });
     }
 
