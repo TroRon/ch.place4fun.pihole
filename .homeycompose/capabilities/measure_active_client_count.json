@@ -1,0 +1,21 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Active client count",
+    "de": "Aktive Client-Anzahl",
+    "da": "Aktiv klientantal",
+    "es": "Recuento de clientes activos",
+    "fr": "Nombre de clients actifs",
+    "nl": "Aantal actieve clients",
+    "no": "Antall aktive klienter",
+    "pl": "Liczba aktywnych klientów",
+    "ru": "Количество активных клиентов",
+    "sv": "Antal aktiva klienter"
+  },
+  "insights": true,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "/assets/capability_icons/users.svg"
+}

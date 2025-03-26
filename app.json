@@ -1,0 +1,5073 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "ch.place4fun.pihole",
+  "version": "1.6.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "brandColor": "#96060c",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "PiHole Control",
+    "de": "PiHole Control"
+  },
+  "description": {
+    "en": "New possibilities of PiHole controls",
+    "de": "Neue Möglichkeiten der PiHole Steuerungen",
+    "da": "Nye muligheder for PiHole kontrol",
+    "es": "Nuevas posibilidades de control de PiHole",
+    "fr": "Nouvelles possibilités de contrôle de PiHole",
+    "nl": "Nieuwe mogelijkheden voor PiHole-bediening",
+    "no": "Nye muligheter for PiHole-kontroller",
+    "pl": "Nowe możliwości sterowania PiHole",
+    "ru": "Новые возможности управления PiHole",
+    "sv": "Nya möjligheter med PiHole-kontroller"
+  },
+  "category": [
+    "tools"
+  ],
+  "tags": {
+    "en": [
+      "pihole",
+      "pi-hole",
+      "remote",
+      "control"
+    ],
+    "de": [
+      "pihole",
+      "pi-hole",
+      "remote",
+      "control"
+    ]
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Ronny Troxler",
+    "email": "ronny.troxler@bluewin.ch"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Ronny Troxler",
+        "email": "ronny.troxler@bluewin.ch",
+        "website": "https://place4fun.ch"
+      },
+      {
+        "name": "Bert Marcelis",
+        "email": "homey@bertmarcelis.be",
+        "website": "https://bertmarcelis.be"
+      }
+    ],
+    "translators": [
+      {
+        "name": "Daniel Wiget"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "troron"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/TroRon/ch.place4fun.pihole/issues"
+  },
+  "support": "mailto:webmaster@syen.ch",
+  "homepage": "https://github.com/TroRon/ch.place4fun.pihole/wiki",
+  "source": "https://github.com/TroRon/ch.place4fun.pihole",
+  "homeyCommunityTopicId": 104113,
+  "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "Connection restored",
+          "de": "Verbindung wiederhergestellt",
+          "nl": "Verbinding hersteld",
+          "fr": "Connexion restaurée",
+          "it": "Connessione ripristinata",
+          "sv": "Anslutning återställd",
+          "no": "Tilkoblingen gjenopprettet",
+          "es": "Conexión restablecida",
+          "da": "Forbindelse genoprettet",
+          "ru": "Соединение восстановлено",
+          "pl": "Połączenie przywrócone"
+        },
+        "tokens": [
+          {
+            "name": "alarm_communication_error",
+            "type": "boolean",
+            "title": {
+              "en": "Connection status",
+              "de": "Verbindungsstatus",
+              "nl": "Verbindingsstatus",
+              "fr": "Statut de la connexion",
+              "it": "Stato della connessione",
+              "sv": "Anslutningsstatus",
+              "no": "Tilkoblingsstatus",
+              "es": "Estado de conexión",
+              "da": "Forbindelsesstatus",
+              "ru": "Статус подключения",
+              "pl": "Status połączenia"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "alarm_communication_error_false"
+      },
+      {
+        "title": {
+          "en": "Connection interrupted",
+          "de": "Verbindung unterbrochen",
+          "nl": "Verbinding onderbroken",
+          "fr": "Connexion interrompue",
+          "it": "Connessione interrotta",
+          "sv": "Anslutning avbruten",
+          "no": "Forbindelsen er brutt",
+          "es": "Conexión interrumpida",
+          "da": "Forbindelsen er afbrudt",
+          "ru": "Соединение прервано",
+          "pl": "Połączenie przerwane"
+        },
+        "tokens": [
+          {
+            "name": "alarm_communication_error",
+            "type": "boolean",
+            "title": {
+              "en": "Connection status",
+              "de": "Verbindungsstatus",
+              "nl": "Verbindingsstatus",
+              "fr": "Statut de la connexion",
+              "it": "Stato della connessione",
+              "sv": "Anslutningsstatus",
+              "no": "Tilkoblingsstatus",
+              "es": "Estado de conexión",
+              "da": "Forbindelsesstatus",
+              "ru": "Статус подключения",
+              "pl": "Status połączenia"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "alarm_communication_error_true"
+      },
+      {
+        "title": {
+          "en": "Core update available",
+          "de": "Core Update vorhanden",
+          "nl": "Core Update beschikbaar",
+          "fr": "Mise à jour du noyau disponible",
+          "it": "Aggiornamento del core disponibile",
+          "sv": "Kärnuppdatering tillgänglig",
+          "no": "Kjerneoppdatering tilgjengelig",
+          "es": "Actualización del núcleo disponible",
+          "da": "Kerneopdatering tilgængelig",
+          "ru": "Обновление ядра доступно",
+          "pl": "Aktualizacja jądra dostępna"
+        },
+        "tokens": [
+          {
+            "name": "software_update_available",
+            "type": "boolean",
+            "title": {
+              "en": "Core Update",
+              "de": "Core Update",
+              "nl": "Core Update",
+              "fr": "Mise à jour du noyau",
+              "it": "Aggiornamento del core",
+              "sv": "Kärnuppdatering",
+              "no": "Kjerneoppdatering",
+              "es": "Actualización del núcleo",
+              "da": "Kerneopdatering",
+              "ru": "Обновление ядра",
+              "pl": "Aktualizacja jądra"
+            }
+          },
+          {
+            "name": "device",
+            "type": "string",
+            "title": {
+              "en": "Current Device",
+              "de": "Aktuelles Gerät",
+              "nl": "Huidig Apparaat",
+              "fr": "Appareil Actuel",
+              "it": "Dispositivo Attuale",
+              "sv": "Nuvarande Enhet",
+              "no": "Nåværende Enhed",
+              "es": "Dispositivo Actual",
+              "da": "Aktuel Enhed",
+              "ru": "Текущее Устройство",
+              "pl": "Aktualne Urządzenie"
+            },
+            "example": {
+              "en": "PiHole 1"
+            }
+          },
+          {
+            "name": "service",
+            "type": "string",
+            "title": {
+              "en": "Update Type",
+              "de": "Art des Updates",
+              "nl": "Type update",
+              "fr": "Type de mise à jour",
+              "it": "Tipo di aggiornamento",
+              "sv": "Uppdateringstyp",
+              "no": "Oppdateringstype",
+              "es": "Tipo de actualización",
+              "da": "Opdateringstype",
+              "ru": "Тип обновления",
+              "pl": "Typ aktualizacji"
+            },
+            "example": {
+              "en": "Core Update",
+              "de": "Core Update",
+              "nl": "Core Update",
+              "fr": "Mise à jour du noyau",
+              "it": "Aggiornamento del core",
+              "sv": "Kärnuppdatering",
+              "no": "Kjerneoppdatering",
+              "es": "Actualización del núcleo",
+              "da": "Kerneopdatering",
+              "ru": "Обновление ядра",
+              "pl": "Aktualizacja jądra"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "alarm_core_update_available_true"
+      },
+      {
+        "title": {
+          "en": "Filter status has changed",
+          "de": "Filter wurde aktiviert",
+          "nl": "Filterstatus is veranderd",
+          "fr": "Le statut du filtre a changé",
+          "it": "Lo stato del filtro è cambiato",
+          "sv": "Filterstatus har ändrats",
+          "no": "Filterstatus har endret seg",
+          "es": "El estado del filtro ha cambiado",
+          "da": "Filterstatus er ændret",
+          "ru": "Статус фильтра изменился",
+          "pl": "Stan filtra uległ zmianie"
+        },
+        "tokens": [
+          {
+            "name": "alarm_filter_state",
+            "type": "boolean",
+            "title": {
+              "en": "Filter status",
+              "de": "Filterstatus",
+              "nl": "Filterstatus",
+              "fr": "Statut du filtre",
+              "it": "Stato del filtro",
+              "sv": "Filterstatus",
+              "no": "Filterstatus",
+              "es": "Estado del filtro",
+              "da": "Filterstatus",
+              "ru": "Статус фильтра",
+              "pl": "Stan filtra"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "alarm_filter_state_false"
+      },
+      {
+        "title": {
+          "en": "Filter status has changed",
+          "de": "Filter wurde deaktiviert",
+          "nl": "Filterstatus is veranderd",
+          "fr": "Le statut du filtre a changé",
+          "it": "Lo stato del filtro è cambiato",
+          "sv": "Filterstatus har ändrats",
+          "no": "Filterstatus har endret seg",
+          "es": "El estado del filtro ha cambiado",
+          "da": "Filterstatus er ændret",
+          "ru": "Статус фильтра изменился",
+          "pl": "Stan filtra uległ zmianie"
+        },
+        "tokens": [
+          {
+            "name": "alarm_filter_state",
+            "type": "boolean",
+            "title": {
+              "en": "Filter status",
+              "de": "Filterstatus",
+              "nl": "Filterstatus",
+              "fr": "Statut du filtre",
+              "it": "Stato del filtro",
+              "sv": "Filterstatus",
+              "no": "Filterstatus",
+              "es": "Estado del filtro",
+              "da": "Filterstatus",
+              "ru": "Статус фильтра",
+              "pl": "Stan filtra"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "alarm_filter_state_true"
+      },
+      {
+        "title": {
+          "en": "FTL Update available",
+          "de": "FTL Update vorhanden",
+          "nl": "FTL Update beschikbaar",
+          "fr": "Mise à jour FTL disponible",
+          "it": "Aggiornamento FTL disponibile",
+          "sv": "FTL-uppdatering tillgänglig",
+          "no": "FTL-oppdatering tilgjengelig",
+          "es": "Actualización de FTL disponible",
+          "da": "FTL-opdatering tilgængelig",
+          "ru": "Доступно обновление FTL",
+          "pl": "Dostępna aktualizacja FTL"
+        },
+        "tokens": [
+          {
+            "name": "software_update_available",
+            "type": "boolean",
+            "title": {
+              "en": "FTL Update",
+              "de": "FTL Update",
+              "nl": "FTL Update",
+              "fr": "Mise à jour FTL",
+              "it": "Aggiornamento FTL",
+              "sv": "FTL-uppdatering",
+              "no": "FTL-oppdatering",
+              "es": "Actualización de FTL",
+              "da": "FTL-opdatering",
+              "ru": "Обновление FTL",
+              "pl": "Aktualizacja FTL"
+            }
+          },
+          {
+            "name": "device",
+            "type": "string",
+            "title": {
+              "en": "Current Device",
+              "de": "Aktuelles Gerät",
+              "nl": "Huidig Apparaat",
+              "fr": "Appareil Actuel",
+              "it": "Dispositivo Attuale",
+              "sv": "Nuvarande Enhet",
+              "no": "Nåværende Enhed",
+              "es": "Dispositivo Actual",
+              "da": "Aktuel Enhed",
+              "ru": "Текущее Устройство",
+              "pl": "Aktualne Urządzenie"
+            },
+            "example": {
+              "en": "PiHole 1"
+            }
+          },
+          {
+            "name": "service",
+            "type": "string",
+            "title": {
+              "en": "Update Type",
+              "de": "Art des Updates",
+              "nl": "Type update",
+              "fr": "Type de mise à jour",
+              "it": "Tipo di aggiornamento",
+              "sv": "Uppdateringstyp",
+              "no": "Oppdateringstype",
+              "es": "Tipo de actualización",
+              "da": "Opdateringstype",
+              "ru": "Тип обновления",
+              "pl": "Typ aktualizacji"
+            },
+            "example": {
+              "en": "FTL Update",
+              "de": "FTL-Aktualisierung",
+              "nl": "FTL-update",
+              "fr": "Mise à jour FTL",
+              "it": "Aggiornamento FTL",
+              "sv": "FTL-uppdatering",
+              "no": "FTL-oppdatering",
+              "es": "Actualización de FTL",
+              "da": "FTL-opdatering",
+              "ru": "Обновление FTL",
+              "pl": "Aktualizacja FTL"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "alarm_ftl_update_available_true"
+      },
+      {
+        "title": {
+          "en": "Web Update available",
+          "de": "Web Update vorhanden",
+          "nl": "Web Update beschikbaar",
+          "fr": "Mise à jour Web disponible",
+          "it": "Aggiornamento web disponibile",
+          "sv": "Webbuppdatering tillgänglig",
+          "no": "Weboppdatering tilgjengelig",
+          "es": "Actualización web disponible",
+          "da": "Webopdatering tilgængelig",
+          "ru": "Доступно обновление веб",
+          "pl": "Dostępna aktualizacja webowa"
+        },
+        "tokens": [
+          {
+            "name": "software_update_available",
+            "type": "boolean",
+            "title": {
+              "en": "Web Update",
+              "de": "Web Update",
+              "nl": "Web Update",
+              "fr": "Mise à jour Web",
+              "it": "Aggiornamento web",
+              "sv": "Webbuppdatering",
+              "no": "Weboppdatering",
+              "es": "Actualización web",
+              "da": "Webopdatering",
+              "ru": "Обновление веб",
+              "pl": "Aktualizacja webowa"
+            }
+          },
+          {
+            "name": "device",
+            "type": "string",
+            "title": {
+              "en": "Current Device",
+              "de": "Aktuelles Gerät",
+              "nl": "Huidig Apparaat",
+              "fr": "Appareil Actuel",
+              "it": "Dispositivo Attuale",
+              "sv": "Nuvarande Enhet",
+              "no": "Nåværende Enhed",
+              "es": "Dispositivo Actual",
+              "da": "Aktuel Enhed",
+              "ru": "Текущее Устройство",
+              "pl": "Aktualne Urządzenie"
+            },
+            "example": {
+              "en": "PiHole 1"
+            }
+          },
+          {
+            "name": "service",
+            "type": "string",
+            "title": {
+              "en": "Update Type",
+              "de": "Art des Updates",
+              "nl": "Type update",
+              "fr": "Type de mise à jour",
+              "it": "Tipo di aggiornamento",
+              "sv": "Uppdateringstyp",
+              "no": "Oppdateringstype",
+              "es": "Tipo de actualización",
+              "da": "Opdateringstype",
+              "ru": "Тип обновления",
+              "pl": "Typ aktualizacji"
+            },
+            "example": {
+              "en": "Web Update",
+              "de": "Web-Aktualisierung",
+              "nl": "Webupdate",
+              "fr": "Mise à jour Web",
+              "it": "Aggiornamento Web",
+              "sv": "Webbuppdatering",
+              "no": "Weboppdatering",
+              "es": "Actualización web",
+              "da": "Webopdatering",
+              "ru": "Обновление веб-сайта",
+              "pl": "Aktualizacja sieciowa"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "alarm_web_update_available_true"
+      },
+      {
+        "title": {
+          "en": "Blocked advertisements / day updated",
+          "de": "Geblockte Werbeanzeigen / Tag aktualisiert",
+          "nl": "Geblokkeerde advertenties / dag bijgewerkt",
+          "fr": "Publicités bloquées / jour mises à jour",
+          "it": "Pubblicità bloccate / giorno aggiornate",
+          "sv": "Blockerade annonser / dag uppdaterad",
+          "no": "Blokkerte annonser / dag oppdatert",
+          "es": "Anuncios bloqueados / día actualizado",
+          "da": "Blokerede annoncer / dag opdateret",
+          "ru": "Заблокированные объявления / день обновлены",
+          "pl": "Zablokowane reklamy / dzień zaktualizowany"
+        },
+        "tokens": [
+          {
+            "name": "measure_ads_blocked_today",
+            "type": "number",
+            "title": {
+              "en": "Blocked advertisements / day",
+              "de": "Geblockte Werbeanzeigen / Tag",
+              "nl": "Geblokkeerde advertenties / dag",
+              "fr": "Publicités bloquées / jour",
+              "it": "Pubblicità bloccate / giorno",
+              "sv": "Blockerade annonser / dag",
+              "no": "Blokkerte annonser / dag",
+              "es": "Anuncios bloqueados / día",
+              "da": "Blokerede annoncer / dag",
+              "ru": "Заблокированные объявления / день",
+              "pl": "Zablokowane reklamy / dzień"
+            },
+            "example": {
+              "en": "16549"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "measure_ads_blocked_today_changed"
+      },
+      {
+        "title": {
+          "en": "Blocked advertisements (%) / day updated",
+          "de": "Geblockte Werbeanzeigen (%) / Tag aktualisiert",
+          "nl": "Geblokkeerde advertenties (%) / dag bijgewerkt",
+          "fr": "Publicités bloquées (%) / jour mises à jour",
+          "it": "Pubblicità bloccate (%) / giorno aggiornate",
+          "sv": "Blockerade annonser (%) / dag uppdaterad",
+          "no": "Blokkerte annonser (%) / dag oppdatert",
+          "es": "Anuncios bloqueados (%) / día actualizado",
+          "da": "Blokerede annoncer (%) / dag opdateret",
+          "ru": "Заблокированные объявления (%) / день обновлены",
+          "pl": "Zablokowane reklamy (%) / dzień zaktualizowany"
+        },
+        "tokens": [
+          {
+            "name": "measure_ads_blocked_today_percent",
+            "type": "number",
+            "title": {
+              "en": "Blocked advertisements (%) / day",
+              "de": "Geblockte Werbeanzeigen (%) / Tag",
+              "nl": "Geblokkeerde advertenties (%) / dag",
+              "fr": "Publicités bloquées (%) / jour",
+              "it": "Pubblicità bloccate (%) / giorno",
+              "sv": "Blockerade annonser (%) / dag",
+              "no": "Blokkerte annonser (%) / dag",
+              "es": "Anuncios bloqueados (%) / día",
+              "da": "Blokerede annoncer (%) / dag",
+              "ru": "Заблокированные объявления (%) / день",
+              "pl": "Zablokowane reklamy (%) / dzień"
+            },
+            "example": {
+              "en": "1.2%"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "measure_ads_blocked_today_percent_changed"
+      },
+      {
+        "title": {
+          "en": "Blocked DNS requests / day updated",
+          "de": "Geblockte DNS Anfragen / Tag aktualisiert",
+          "nl": "Geblokkeerde DNS-aanvragen / dag bijgewerkt",
+          "fr": "Requêtes DNS bloquées / jour mises à jour",
+          "it": "Richieste DNS bloccate / giorno aggiornate",
+          "sv": "Blockerade DNS-förfrågningar / dag uppdaterade",
+          "no": "Blokkerte DNS-forespørsler / dag oppdatert",
+          "es": "Solicitudes de DNS bloqueadas / día actualizadas",
+          "da": "Blokerede DNS-forespørgsler / dag opdateret",
+          "ru": "Заблокированные DNS-запросы / день обновлены",
+          "pl": "Zablokowane zapytania DNS / dzień zaktualizowany"
+        },
+        "tokens": [
+          {
+            "name": "measure_dns_queries_today",
+            "type": "number",
+            "title": {
+              "en": "Blocked DNS requests / day updated",
+              "de": "Geblockte DNS Anfragen / Tag aktualisiert",
+              "nl": "Geblokkeerde DNS-verzoeken / dag bijgewerkt",
+              "fr": "Requêtes DNS bloquées / jour mises à jour",
+              "it": "Richieste DNS bloccate / giorno aggiornate",
+              "sv": "Blockerade DNS-förfrågningar / dag uppdaterade",
+              "no": "Blokkerte DNS-forespørsler / dag oppdatert",
+              "es": "Solicitudes de DNS bloqueadas / día actualizadas",
+              "da": "Blokerede DNS-forespørgsler / dag opdateret",
+              "ru": "Заблокированные DNS-запросы / день обновлены",
+              "pl": "Zablokowane zapytania DNS / dzień zaktualizowany"
+            },
+            "example": {
+              "en": "16549"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          }
+        ],
+        "id": "measure_dns_queries_today_changed"
+      },
+      {
+        "id": "onoff_true",
+        "title": {
+          "en": "Ad-blocking enabled",
+          "de": "Werbeblocker aktiviert",
+          "da": "Annonceblokering aktiveret",
+          "es": "Bloqueo de anuncios habilitado",
+          "fr": "Blocage des publicités activé",
+          "nl": "Advertentieblokkering ingeschakeld",
+          "no": "Annonseblokkering aktivert",
+          "pl": "Blokowanie reklam włączone",
+          "ru": "Блокировка рекламы включена",
+          "sv": "Annonsblockering aktiverad"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          }
+        ]
+      },
+      {
+        "id": "onoff_false",
+        "title": {
+          "en": "Ad-Blocking disabled",
+          "de": "Werbeblocker deaktiviert",
+          "da": "Annonceblokering deaktiveret",
+          "es": "Bloqueo de anuncios deshabilitado",
+          "fr": "Blocage des publicités désactivé",
+          "nl": "Advertentieblokkering uitgeschakeld",
+          "no": "Annonseblokkering deaktivert",
+          "pl": "Blokowanie reklam wyłączone",
+          "ru": "Блокировка рекламы отключена",
+          "sv": "Annonsblockering inaktiverad"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          }
+        ]
+      },
+      {
+        "id": "pihole_client_query",
+        "title": {
+          "en": "DNS-request from client with ip ...",
+          "de": "DNS-Anfrage von Client mit IP ...",
+          "da": "DNS-forespørgsel fra klient med IP ...",
+          "es": "Solicitud DNS del cliente con IP ...",
+          "fr": "Requête DNS du client avec IP ...",
+          "nl": "DNS-verzoek van client met IP ...",
+          "no": "DNS-forespørsel fra klient med IP ...",
+          "pl": "Żądanie DNS od klienta z IP ...",
+          "ru": "DNS-запрос от клиента с IP ...",
+          "sv": "DNS-förfrågan från klient med IP ..."
+        },
+        "titleFormatted": {
+          "en": "[[recordType]] DNS query from client with ip [[clientIp]]",
+          "de": "[[recordType]] DNS-Anfrage von Client mit IP [[clientIp]]",
+          "da": "[[recordType]] DNS-forespørgsel fra klient med IP [[clientIp]]",
+          "es": "Consulta DNS [[recordType]] del cliente con IP [[clientIp]]",
+          "fr": "Requête DNS [[recordType]] du client avec IP [[clientIp]]",
+          "nl": "[[recordType]] DNS-verzoek van client met IP [[clientIp]]",
+          "no": "[[recordType]] DNS-forespørsel fra klient med IP [[clientIp]]",
+          "pl": "Zapytanie DNS [[recordType]] od klienta z IP [[clientIp]]",
+          "ru": "[[recordType]] DNS-запрос от клиента с IP [[clientIp]]",
+          "sv": "[[recordType]] DNS-förfrågan från klient med IP [[clientIp]]"
+        },
+        "tokens": [
+          {
+            "name": "queryStatus",
+            "type": "string",
+            "title": {
+              "en": "Query status",
+              "de": "Abfrage-Status",
+              "da": "Forespørgselsstatus",
+              "es": "Estado de consulta",
+              "fr": "Statut de la requête",
+              "nl": "Querystatus",
+              "no": "Forespørselsstatus",
+              "pl": "Status zapytania",
+              "ru": "Статус запроса",
+              "sv": "Förfrågningsstatus"
+            },
+            "placeholder": {
+              "en": "DENYLIST",
+              "de": "SPERRLISTE",
+              "da": "SPÆRRELISTE",
+              "es": "LISTA DE BLOQUEO",
+              "fr": "LISTE DE BLOCAGE",
+              "nl": "BLOKKERINGSLIJST",
+              "no": "SPERRELISTE",
+              "pl": "LISTA BLOKAD",
+              "ru": "ЧЕРНЫЙ СПИСОК",
+              "sv": "BLOCKLISTA"
+            },
+            "hint": {
+              "en": "The status from the upstream server. 'Denylist' when the request was blocked. Forwarded, cache, ...",
+              "de": "Der Status vom Upstream-Server. 'Sperrliste', wenn die Anfrage blockiert wurde. Weitergeleitet, Cache, ...",
+              "da": "Status fra upstream-serveren. 'Spærreliste', når forespørgslen blev blokeret. Videregivet, cache, ...",
+              "es": "El estado del servidor upstream. 'Lista de bloqueo' cuando la solicitud fue bloqueada. Reenviado, caché, ...",
+              "fr": "Le statut du serveur en amont. 'Liste de blocage' lorsque la requête a été bloquée. Transféré, cache, ...",
+              "nl": "De status van de upstream-server. 'Blokkeringslijst' wanneer het verzoek werd geblokkeerd. Doorgestuurd, cache, ...",
+              "no": "Status fra oppstrømsserveren. 'Blokkeringsliste' når forespørselen ble blokkert. Viderekoblet, cache, ...",
+              "pl": "Status z serwera nadrzędnego. 'Lista blokad', gdy żądanie zostało zablokowane. Przekazane, pamięć podręczna, ...",
+              "ru": "Статус от вышестоящего сервера. 'Черный список', если запрос был заблокирован. Перенаправлено, кэш, ...",
+              "sv": "Status från uppströmsservern. 'Blocklista' när förfrågan blockerades. Vidarebefordrad, cache, ..."
+            }
+          },
+          {
+            "name": "queryDuration",
+            "type": "number",
+            "example": 5,
+            "title": {
+              "en": "Query duration in ms",
+              "de": "Abfragedauer in ms",
+              "da": "Forespørgselsvarighed i ms",
+              "es": "Duración de la consulta en ms",
+              "fr": "Durée de la requête en ms",
+              "nl": "Queryduur in ms",
+              "no": "Forespørselsvarighet i ms",
+              "pl": "Czas trwania zapytania w ms",
+              "ru": "Длительность запроса в мс",
+              "sv": "Förfrågningsvaraktighet i ms"
+            },
+            "hint": {
+              "en": "Negative if not available",
+              "de": "Negativ, wenn nicht verfügbar",
+              "da": "Negativ, hvis ikke tilgængelig",
+              "es": "Negativo si no está disponible",
+              "fr": "Négatif si non disponible",
+              "nl": "Negatief als niet beschikbaar",
+              "no": "Negativ hvis ikke tilgjengelig",
+              "pl": "Ujemny, jeśli niedostępny",
+              "ru": "Отрицательное значение, если недоступно",
+              "sv": "Negativt om ej tillgängligt"
+            }
+          },
+          {
+            "name": "domain",
+            "type": "string",
+            "placeholder": {
+              "en": "example.org"
+            },
+            "title": {
+              "en": "Domain name",
+              "de": "Domainname",
+              "da": "Domænenavn",
+              "es": "Nombre de dominio",
+              "fr": "Nom de domaine",
+              "nl": "Domeinnaam",
+              "no": "Domenenavn",
+              "pl": "Nazwa domeny",
+              "ru": "Имя домена",
+              "sv": "Domännamn"
+            }
+          },
+          {
+            "name": "recordType",
+            "type": "string",
+            "placeholder": {
+              "en": "CNAME"
+            },
+            "title": {
+              "en": "Domain type",
+              "de": "Domänentyp",
+              "da": "Domænetype",
+              "es": "Tipo de dominio",
+              "fr": "Type de domaine",
+              "nl": "Domeintype",
+              "no": "Domene type",
+              "pl": "Typ domeny",
+              "ru": "Тип домена",
+              "sv": "Domäntyp"
+            },
+            "hint": {
+              "en": "A/AAAA/CNAME/..."
+            }
+          },
+          {
+            "name": "clientIp",
+            "type": "string",
+            "placeholder": {
+              "en": "127.0.0.1"
+            },
+            "title": {
+              "en": "Client ip-address",
+              "de": "Client-IP-Adresse",
+              "da": "Klientens IP-adresse",
+              "es": "Dirección IP del cliente",
+              "fr": "Adresse IP du client",
+              "nl": "Client-IP-adres",
+              "no": "Klientens IP-adresse",
+              "pl": "Adres IP klienta",
+              "ru": "IP-адрес клиента",
+              "sv": "Klientens IP-adress"
+            }
+          },
+          {
+            "name": "clientName",
+            "type": "string",
+            "placeholder": {
+              "en": "computer.local"
+            },
+            "title": {
+              "en": "Client name",
+              "de": "Client-Name",
+              "da": "Klientnavn",
+              "es": "Nombre del cliente",
+              "fr": "Nom du client",
+              "nl": "Clientnaam",
+              "no": "Klientnavn",
+              "pl": "Nazwa klienta",
+              "ru": "Имя клиента",
+              "sv": "Klientnamn"
+            },
+            "hint": {
+              "en": "As reported by Pi-Hole, not available for all clients",
+              "de": "Wie von Pi-Hole gemeldet, nicht für alle Clients verfügbar",
+              "da": "Som rapporteret af Pi-Hole, ikke tilgængelig for alle klienter",
+              "es": "Según lo informado por Pi-Hole, no disponible para todos los clientes",
+              "fr": "Tel que rapporté par Pi-Hole, non disponible pour tous les clients",
+              "nl": "Zoals gerapporteerd door Pi-Hole, niet beschikbaar voor alle clients",
+              "no": "Som rapportert av Pi-Hole, ikke tilgjengelig for alle klienter",
+              "pl": "Zgłoszone przez Pi-Hole, niedostępne dla wszystkich klientów",
+              "ru": "Как сообщается Pi-Hole, недоступно для всех клиентов",
+              "sv": "Som rapporterat av Pi-Hole, inte tillgängligt för alla klienter"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          },
+          {
+            "name": "clientIp",
+            "type": "text",
+            "title": {
+              "en": "Client IP address",
+              "de": "Client-IP-Adresse",
+              "da": "Klientens IP-adresse",
+              "es": "Dirección IP del cliente",
+              "fr": "Adresse IP du client",
+              "nl": "Client-IP-adres",
+              "no": "Klientens IP-adresse",
+              "pl": "Adres IP klienta",
+              "ru": "IP-адрес клиента",
+              "sv": "Klientens IP-adress"
+            },
+            "placeholder": {
+              "en": "127.0.0.1"
+            }
+          },
+          {
+            "name": "recordType",
+            "type": "dropdown",
+            "title": {
+              "en": "DNS Record type",
+              "de": "DNS-Eintragstyp",
+              "da": "DNS-posttype",
+              "es": "Tipo de registro DNS",
+              "fr": "Type d'enregistrement DNS",
+              "nl": "DNS-recordtype",
+              "no": "DNS-posttype",
+              "pl": "Typ rekordu DNS",
+              "ru": "Тип записи DNS",
+              "sv": "DNS-posttyp"
+            },
+            "values": [
+              {
+                "id": "*",
+                "title": {
+                  "en": "Any",
+                  "de": "Beliebig",
+                  "da": "Enhver",
+                  "es": "Cualquiera",
+                  "fr": "N'importe lequel",
+                  "nl": "Elke",
+                  "no": "Enhver",
+                  "pl": "Dowolny",
+                  "ru": "Любой",
+                  "sv": "Vilken som helst"
+                }
+              },
+              {
+                "id": "A",
+                "title": {
+                  "en": "A-type"
+                }
+              },
+              {
+                "id": "AAAA",
+                "title": {
+                  "en": "AAAA-type"
+                }
+              },
+              {
+                "id": "CNAME",
+                "title": {
+                  "en": "CNAME"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pihole_client_blocked",
+        "title": {
+          "en": "DNS-request from client with ip ... blocked",
+          "de": "DNS-Anfrage von Client mit IP ... blockiert",
+          "da": "DNS-forespørgsel fra klient med IP ... blokeret",
+          "es": "Solicitud DNS del cliente con IP ... bloqueada",
+          "fr": "Requête DNS du client avec IP ... bloquée",
+          "nl": "DNS-verzoek van client met IP ... geblokkeerd",
+          "no": "DNS-forespørsel fra klient med IP ... blokkert",
+          "pl": "Żądanie DNS od klienta z IP ... zablokowane",
+          "ru": "DNS-запрос от клиента с IP ... заблокирован",
+          "sv": "DNS-förfrågan från klient med IP ... blockerad"
+        },
+        "titleFormatted": {
+          "en": "[[recordType]] DNS-request from client with ip [[clientIp]] blocked",
+          "de": "[[recordType]] DNS-Anfrage von Client mit IP [[clientIp]] blockiert",
+          "da": "[[recordType]] DNS-forespørgsel fra klient med IP [[clientIp]] blokeret",
+          "es": "[[recordType]] Solicitud DNS del cliente con IP [[clientIp]] bloqueada",
+          "fr": "[[recordType]] Requête DNS du client avec IP [[clientIp]] bloquée",
+          "nl": "[[recordType]] DNS-verzoek van client met IP [[clientIp]] geblokkeerd",
+          "no": "[[recordType]] DNS-forespørsel fra klient med IP [[clientIp]] blokkert",
+          "pl": "[[recordType]] Zapytanie DNS od klienta z IP [[clientIp]] zablokowane",
+          "ru": "[[recordType]] DNS-запрос от клиента с IP [[clientIp]] заблокирован",
+          "sv": "[[recordType]] DNS-förfrågan från klient med IP [[clientIp]] blockerad"
+        },
+        "tokens": [
+          {
+            "name": "queryStatus",
+            "type": "string",
+            "title": {
+              "en": "Query status",
+              "de": "Abfrage-Status",
+              "da": "Forespørgselsstatus",
+              "es": "Estado de consulta",
+              "fr": "Statut de la requête",
+              "nl": "Querystatus",
+              "no": "Forespørselsstatus",
+              "pl": "Status zapytania",
+              "ru": "Статус запроса",
+              "sv": "Förfrågningsstatus"
+            },
+            "placeholder": {
+              "en": "DENYLIST",
+              "de": "SPERRLISTE",
+              "da": "SPÆRRELISTE",
+              "es": "LISTA DE BLOQUEO",
+              "fr": "LISTE DE BLOCAGE",
+              "nl": "BLOKKERINGSLIJST",
+              "no": "SPERRELISTE",
+              "pl": "LISTA BLOKAD",
+              "ru": "ЧЕРНЫЙ СПИСОК",
+              "sv": "BLOCKLISTA"
+            },
+            "hint": {
+              "en": "The status from the upstream server. 'Denylist' when the request was blocked. Forwarded, cache, ...",
+              "de": "Der Status vom Upstream-Server. 'Sperrliste', wenn die Anfrage blockiert wurde. Weitergeleitet, Cache, ...",
+              "da": "Status fra upstream-serveren. 'Spærreliste', når forespørgslen blev blokeret. Videregivet, cache, ...",
+              "es": "El estado del servidor upstream. 'Lista de bloqueo' cuando la solicitud fue bloqueada. Reenviado, caché, ...",
+              "fr": "Le statut du serveur en amont. 'Liste de blocage' lorsque la requête a été bloquée. Transféré, cache, ...",
+              "nl": "De status van de upstream-server. 'Blokkeringslijst' wanneer het verzoek werd geblokkeerd. Doorgestuurd, cache, ...",
+              "no": "Status fra oppstrømsserveren. 'Blokkeringsliste' når forespørselen ble blokkert. Viderekoblet, cache, ...",
+              "pl": "Status z serwera nadrzędnego. 'Lista blokad', gdy żądanie zostało zablokowane. Przekazane, pamięć podręczna, ...",
+              "ru": "Статус от вышестоящего сервера. 'Черный список', если запрос был заблокирован. Перенаправлено, кэш, ...",
+              "sv": "Status från uppströmsservern. 'Blocklista' när förfrågan blockerades. Vidarebefordrad, cache, ..."
+            }
+          },
+          {
+            "name": "queryDuration",
+            "type": "number",
+            "example": 5,
+            "title": {
+              "en": "Query duration in ms",
+              "de": "Abfragedauer in ms",
+              "da": "Forespørgselsvarighed i ms",
+              "es": "Duración de la consulta en ms",
+              "fr": "Durée de la requête en ms",
+              "nl": "Queryduur in ms",
+              "no": "Forespørselsvarighet i ms",
+              "pl": "Czas trwania zapytania w ms",
+              "ru": "Длительность запроса в мс",
+              "sv": "Förfrågningsvaraktighet i ms"
+            },
+            "hint": {
+              "en": "Negative if not available",
+              "de": "Negativ, wenn nicht verfügbar",
+              "da": "Negativ, hvis ikke tilgængelig",
+              "es": "Negativo si no está disponible",
+              "fr": "Négatif si non disponible",
+              "nl": "Negatief als niet beschikbaar",
+              "no": "Negativ hvis ikke tilgjengelig",
+              "pl": "Ujemny, jeśli niedostępny",
+              "ru": "Отрицательное значение, если недоступно",
+              "sv": "Negativt om ej tillgängligt"
+            }
+          },
+          {
+            "name": "domain",
+            "type": "string",
+            "placeholder": {
+              "en": "example.org"
+            },
+            "title": {
+              "en": "Domain name",
+              "de": "Domainname",
+              "da": "Domænenavn",
+              "es": "Nombre de dominio",
+              "fr": "Nom de domaine",
+              "nl": "Domeinnaam",
+              "no": "Domenenavn",
+              "pl": "Nazwa domeny",
+              "ru": "Имя домена",
+              "sv": "Domännamn"
+            }
+          },
+          {
+            "name": "recordType",
+            "type": "string",
+            "placeholder": {
+              "en": "CNAME"
+            },
+            "title": {
+              "en": "Domain type"
+            },
+            "hint": {
+              "en": "A/AAAA/CNAME/..."
+            }
+          },
+          {
+            "name": "clientIp",
+            "type": "string",
+            "placeholder": {
+              "en": "127.0.0.1"
+            },
+            "title": {
+              "en": "Client ip-address",
+              "de": "Client-IP-Adresse",
+              "da": "Klientens IP-adresse",
+              "es": "Dirección IP del cliente",
+              "fr": "Adresse IP du client",
+              "nl": "Client-IP-adres",
+              "no": "Klientens IP-adresse",
+              "pl": "Adres IP klienta",
+              "ru": "IP-адрес клиента",
+              "sv": "Klientens IP-adress"
+            }
+          },
+          {
+            "name": "clientName",
+            "type": "string",
+            "placeholder": {
+              "en": "computer.local"
+            },
+            "title": {
+              "en": "Client name",
+              "de": "Client-Name",
+              "da": "Klientnavn",
+              "es": "Nombre del cliente",
+              "fr": "Nom du client",
+              "nl": "Clientnaam",
+              "no": "Klientnavn",
+              "pl": "Nazwa klienta",
+              "ru": "Имя клиента",
+              "sv": "Klientnamn"
+            },
+            "hint": {
+              "en": "As reported by Pi-Hole, not available for all clients",
+              "de": "Wie von Pi-Hole gemeldet, nicht für alle Clients verfügbar",
+              "da": "Som rapporteret af Pi-Hole, ikke tilgængelig for alle klienter",
+              "es": "Según lo informado por Pi-Hole, no disponible para todos los clientes",
+              "fr": "Tel que rapporté par Pi-Hole, non disponible pour tous les clients",
+              "nl": "Zoals gerapporteerd door Pi-Hole, niet beschikbaar voor alle clients",
+              "no": "Som rapportert av Pi-Hole, ikke tilgjengelig for alle klienter",
+              "pl": "Zgłoszone przez Pi-Hole, niedostępne dla wszystkich klientów",
+              "ru": "Как сообщается Pi-Hole, недоступно для всех клиентов",
+              "sv": "Som rapporterat av Pi-Hole, inte tillgängligt för alla klienter"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          },
+          {
+            "name": "clientIp",
+            "type": "text",
+            "placeholder": {
+              "en": "127.0.0.1"
+            }
+          },
+          {
+            "name": "recordType",
+            "type": "dropdown",
+            "title": {
+              "en": "DNS Record type",
+              "de": "DNS-Eintragstyp",
+              "da": "DNS-posttype",
+              "es": "Tipo de registro DNS",
+              "fr": "Type d'enregistrement DNS",
+              "nl": "DNS-recordtype",
+              "no": "DNS-posttype",
+              "pl": "Typ rekordu DNS",
+              "ru": "Тип записи DNS",
+              "sv": "DNS-posttyp"
+            },
+            "values": [
+              {
+                "id": "*",
+                "title": {
+                  "en": "Any"
+                }
+              },
+              {
+                "id": "A",
+                "title": {
+                  "en": "A-type"
+                }
+              },
+              {
+                "id": "AAAA",
+                "title": {
+                  "en": "AAAA-type"
+                }
+              },
+              {
+                "id": "CNAME",
+                "title": {
+                  "en": "CNAME"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pihole_domain_query",
+        "title": {
+          "en": "DNS request for domain ...",
+          "de": "DNS-Anfrage für Domain ...",
+          "da": "DNS-forespørgsel for domæne ...",
+          "es": "Solicitud DNS para el dominio ...",
+          "fr": "Requête DNS pour le domaine ...",
+          "nl": "DNS-verzoek voor domein ...",
+          "no": "DNS-forespørsel for domene ...",
+          "pl": "Żądanie DNS dla domeny ...",
+          "ru": "DNS-запрос для домена ...",
+          "sv": "DNS-förfrågan för domän ..."
+        },
+        "titleFormatted": {
+          "en": "[[recordType]] DNS-record for domain [[domain]] queried",
+          "de": "[[recordType]] DNS-Eintrag für Domain [[domain]] abgefragt",
+          "da": "[[recordType]] DNS-post for domæne [[domain]] forespurgt",
+          "es": "[[recordType]] Registro DNS para el dominio [[domain]] consultado",
+          "fr": "[[recordType]] Enregistrement DNS pour le domaine [[domain]] interrogé",
+          "nl": "[[recordType]] DNS-record voor domein [[domain]] opgevraagd",
+          "no": "[[recordType]] DNS-post for domene [[domain]] forespurt",
+          "pl": "[[recordType]] Rekord DNS dla domeny [[domain]] zapytany",
+          "ru": "[[recordType]] DNS-запись для домена [[domain]] запрошена",
+          "sv": "[[recordType]] DNS-post för domän [[domain]] förfrågad"
+        },
+        "tokens": [
+          {
+            "name": "queryStatus",
+            "type": "string",
+            "title": {
+              "en": "Query status",
+              "de": "Abfrage-Status",
+              "da": "Forespørgselsstatus",
+              "es": "Estado de consulta",
+              "fr": "Statut de la requête",
+              "nl": "Querystatus",
+              "no": "Forespørselsstatus",
+              "pl": "Status zapytania",
+              "ru": "Статус запроса",
+              "sv": "Förfrågningsstatus"
+            },
+            "placeholder": {
+              "en": "DENYLIST",
+              "de": "SPERRLISTE",
+              "da": "SPÆRRELISTE",
+              "es": "LISTA DE BLOQUEO",
+              "fr": "LISTE DE BLOCAGE",
+              "nl": "BLOKKERINGSLIJST",
+              "no": "SPERRELISTE",
+              "pl": "LISTA BLOKAD",
+              "ru": "ЧЕРНЫЙ СПИСОК",
+              "sv": "BLOCKLISTA"
+            },
+            "hint": {
+              "en": "The status from the upstream server. 'Denylist' when the request was blocked. Forwarded, cache, ...",
+              "de": "Der Status vom Upstream-Server. 'Sperrliste', wenn die Anfrage blockiert wurde. Weitergeleitet, Cache, ...",
+              "da": "Status fra upstream-serveren. 'Spærreliste', når forespørgslen blev blokeret. Videregivet, cache, ...",
+              "es": "El estado del servidor upstream. 'Lista de bloqueo' cuando la solicitud fue bloqueada. Reenviado, caché, ...",
+              "fr": "Le statut du serveur en amont. 'Liste de blocage' lorsque la requête a été bloquée. Transféré, cache, ...",
+              "nl": "De status van de upstream-server. 'Blokkeringslijst' wanneer het verzoek werd geblokkeerd. Doorgestuurd, cache, ...",
+              "no": "Status fra oppstrømsserveren. 'Blokkeringsliste' når forespørselen ble blokkert. Viderekoblet, cache, ...",
+              "pl": "Status z serwera nadrzędnego. 'Lista blokad', gdy żądanie zostało zablokowane. Przekazane, pamięć podręczna, ...",
+              "ru": "Статус от вышестоящего сервера. 'Черный список', если запрос был заблокирован. Перенаправлено, кэш, ...",
+              "sv": "Status från uppströmsservern. 'Blocklista' när förfrågan blockerades. Vidarebefordrad, cache, ..."
+            }
+          },
+          {
+            "name": "queryDuration",
+            "type": "number",
+            "example": 5,
+            "title": {
+              "en": "Query duration in ms",
+              "de": "Abfragedauer in ms",
+              "da": "Forespørgselsvarighed i ms",
+              "es": "Duración de la consulta en ms",
+              "fr": "Durée de la requête en ms",
+              "nl": "Queryduur in ms",
+              "no": "Forespørselsvarighet i ms",
+              "pl": "Czas trwania zapytania w ms",
+              "ru": "Длительность запроса в мс",
+              "sv": "Förfrågningsvaraktighet i ms"
+            },
+            "hint": {
+              "en": "Negative if not available",
+              "de": "Negativ, wenn nicht verfügbar",
+              "da": "Negativ, hvis ikke tilgængelig",
+              "es": "Negativo si no está disponible",
+              "fr": "Négatif si non disponible",
+              "nl": "Negatief als niet beschikbaar",
+              "no": "Negativ hvis ikke tilgjengelig",
+              "pl": "Ujemny, jeśli niedostępny",
+              "ru": "Отрицательное значение, если недоступно",
+              "sv": "Negativt om ej tillgängligt"
+            }
+          },
+          {
+            "name": "domain",
+            "type": "string",
+            "placeholder": {
+              "en": "example.org"
+            },
+            "title": {
+              "en": "Domain name",
+              "de": "Domainname",
+              "da": "Domænenavn",
+              "es": "Nombre de dominio",
+              "fr": "Nom de domaine",
+              "nl": "Domeinnaam",
+              "no": "Domenenavn",
+              "pl": "Nazwa domeny",
+              "ru": "Имя домена",
+              "sv": "Domännamn"
+            }
+          },
+          {
+            "name": "recordType",
+            "type": "string",
+            "placeholder": {
+              "en": "CNAME"
+            },
+            "title": {
+              "en": "Domain type"
+            },
+            "hint": {
+              "en": "A/AAAA/CNAME/..."
+            }
+          },
+          {
+            "name": "clientIp",
+            "type": "string",
+            "placeholder": {
+              "en": "127.0.0.1"
+            },
+            "title": {
+              "en": "Client ip-address",
+              "de": "Client-IP-Adresse",
+              "da": "Klientens IP-adresse",
+              "es": "Dirección IP del cliente",
+              "fr": "Adresse IP du client",
+              "nl": "Client-IP-adres",
+              "no": "Klientens IP-adresse",
+              "pl": "Adres IP klienta",
+              "ru": "IP-адрес клиента",
+              "sv": "Klientens IP-adress"
+            }
+          },
+          {
+            "name": "clientName",
+            "type": "string",
+            "placeholder": {
+              "en": "computer.local"
+            },
+            "title": {
+              "en": "Client name",
+              "de": "Client-Name",
+              "da": "Klientnavn",
+              "es": "Nombre del cliente",
+              "fr": "Nom du client",
+              "nl": "Clientnaam",
+              "no": "Klientnavn",
+              "pl": "Nazwa klienta",
+              "ru": "Имя клиента",
+              "sv": "Klientnamn"
+            },
+            "hint": {
+              "en": "As reported by Pi-Hole, not available for all clients",
+              "de": "Wie von Pi-Hole gemeldet, nicht für alle Clients verfügbar",
+              "da": "Som rapporteret af Pi-Hole, ikke tilgængelig for alle klienter",
+              "es": "Según lo informado por Pi-Hole, no disponible para todos los clientes",
+              "fr": "Tel que rapporté par Pi-Hole, non disponible pour tous les clients",
+              "nl": "Zoals gerapporteerd door Pi-Hole, niet beschikbaar voor alle clients",
+              "no": "Som rapportert av Pi-Hole, ikke tilgjengelig for alle klienter",
+              "pl": "Zgłoszone przez Pi-Hole, niedostępne dla wszystkich klientów",
+              "ru": "Как сообщается Pi-Hole, недоступно для всех клиентов",
+              "sv": "Som rapporterat av Pi-Hole, inte tillgängligt för alla klienter"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          },
+          {
+            "name": "domain",
+            "type": "text",
+            "placeholder": {
+              "en": "example.org"
+            }
+          },
+          {
+            "name": "recordType",
+            "type": "dropdown",
+            "title": {
+              "en": "DNS Record type"
+            },
+            "values": [
+              {
+                "id": "*",
+                "title": {
+                  "en": "Any"
+                }
+              },
+              {
+                "id": "A",
+                "title": {
+                  "en": "A-type"
+                }
+              },
+              {
+                "id": "AAAA",
+                "title": {
+                  "en": "AAAA-type"
+                }
+              },
+              {
+                "id": "CNAME",
+                "title": {
+                  "en": "CNAME"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pihole_domain_blocked",
+        "title": {
+          "en": "DNS request for domain ... blocked",
+          "de": "DNS-Anfrage für Domain ... blockiert",
+          "da": "DNS-forespørgsel for domæne ... blokeret",
+          "es": "Solicitud DNS para el dominio ... bloqueada",
+          "fr": "Requête DNS pour le domaine ... bloquée",
+          "nl": "DNS-verzoek voor domein ... geblokkeerd",
+          "no": "DNS-forespørsel for domene ... blokkert",
+          "pl": "Żądanie DNS dla domeny ... zablokowane",
+          "ru": "DNS-запрос для домена ... заблокирован",
+          "sv": "DNS-förfrågan för domän ... blockerad"
+        },
+        "titleFormatted": {
+          "en": "[[recordType]] record for domain [[domain]] blocked",
+          "de": "[[recordType]] Eintrag für Domain [[domain]] blockiert",
+          "da": "[[recordType]] post for domæne [[domain]] blokeret",
+          "es": "[[recordType]] registro para el dominio [[domain]] bloqueado",
+          "fr": "[[recordType]] enregistrement pour le domaine [[domain]] bloqué",
+          "nl": "[[recordType]] record voor domein [[domain]] geblokkeerd",
+          "no": "[[recordType]] post for domene [[domain]] blokkert",
+          "pl": "[[recordType]] rekord dla domeny [[domain]] zablokowany",
+          "ru": "[[recordType]] запись для домена [[domain]] заблокирована",
+          "sv": "[[recordType]] post för domän [[domain]] blockerad"
+        },
+        "highlight": true,
+        "tokens": [
+          {
+            "name": "queryStatus",
+            "type": "string",
+            "title": {
+              "en": "Query status",
+              "de": "Abfrage-Status",
+              "da": "Forespørgselsstatus",
+              "es": "Estado de consulta",
+              "fr": "Statut de la requête",
+              "nl": "Querystatus",
+              "no": "Forespørselsstatus",
+              "pl": "Status zapytania",
+              "ru": "Статус запроса",
+              "sv": "Förfrågningsstatus"
+            },
+            "placeholder": {
+              "en": "DENYLIST",
+              "de": "SPERRLISTE",
+              "da": "SPÆRRELISTE",
+              "es": "LISTA DE BLOQUEO",
+              "fr": "LISTE DE BLOCAGE",
+              "nl": "BLOKKERINGSLIJST",
+              "no": "SPERRELISTE",
+              "pl": "LISTA BLOKAD",
+              "ru": "ЧЕРНЫЙ СПИСОК",
+              "sv": "BLOCKLISTA"
+            },
+            "hint": {
+              "en": "The status from the upstream server. 'Denylist' when the request was blocked. Forwarded, cache, ...",
+              "de": "Der Status vom Upstream-Server. 'Sperrliste', wenn die Anfrage blockiert wurde. Weitergeleitet, Cache, ...",
+              "da": "Status fra upstream-serveren. 'Spærreliste', når forespørgslen blev blokeret. Videregivet, cache, ...",
+              "es": "El estado del servidor upstream. 'Lista de bloqueo' cuando la solicitud fue bloqueada. Reenviado, caché, ...",
+              "fr": "Le statut du serveur en amont. 'Liste de blocage' lorsque la requête a été bloquée. Transféré, cache, ...",
+              "nl": "De status van de upstream-server. 'Blokkeringslijst' wanneer het verzoek werd geblokkeerd. Doorgestuurd, cache, ...",
+              "no": "Status fra oppstrømsserveren. 'Blokkeringsliste' når forespørselen ble blokkert. Viderekoblet, cache, ...",
+              "pl": "Status z serwera nadrzędnego. 'Lista blokad', gdy żądanie zostało zablokowane. Przekazane, pamięć podręczna, ...",
+              "ru": "Статус от вышестоящего сервера. 'Черный список', если запрос был заблокирован. Перенаправлено, кэш, ...",
+              "sv": "Status från uppströmsservern. 'Blocklista' när förfrågan blockerades. Vidarebefordrad, cache, ..."
+            }
+          },
+          {
+            "name": "queryDuration",
+            "type": "number",
+            "example": 5,
+            "title": {
+              "en": "Query duration in ms",
+              "de": "Abfragedauer in ms",
+              "da": "Forespørgselsvarighed i ms",
+              "es": "Duración de la consulta en ms",
+              "fr": "Durée de la requête en ms",
+              "nl": "Queryduur in ms",
+              "no": "Forespørselsvarighet i ms",
+              "pl": "Czas trwania zapytania w ms",
+              "ru": "Длительность запроса в мс",
+              "sv": "Förfrågningsvaraktighet i ms"
+            },
+            "hint": {
+              "en": "Negative if not available",
+              "de": "Negativ, wenn nicht verfügbar",
+              "da": "Negativ, hvis ikke tilgængelig",
+              "es": "Negativo si no está disponible",
+              "fr": "Négatif si non disponible",
+              "nl": "Negatief als niet beschikbaar",
+              "no": "Negativ hvis ikke tilgjengelig",
+              "pl": "Ujemny, jeśli niedostępny",
+              "ru": "Отрицательное значение, если недоступно",
+              "sv": "Negativt om ej tillgängligt"
+            }
+          },
+          {
+            "name": "domain",
+            "type": "string",
+            "placeholder": {
+              "en": "example.org"
+            },
+            "title": {
+              "en": "Domain name"
+            }
+          },
+          {
+            "name": "recordType",
+            "type": "string",
+            "placeholder": {
+              "en": "CNAME"
+            },
+            "title": {
+              "en": "Domain type"
+            },
+            "hint": {
+              "en": "A/AAAA/CNAME/..."
+            }
+          },
+          {
+            "name": "clientIp",
+            "type": "string",
+            "placeholder": {
+              "en": "127.0.0.1"
+            },
+            "title": {
+              "en": "Client ip-address"
+            }
+          },
+          {
+            "name": "clientName",
+            "type": "string",
+            "placeholder": {
+              "en": "computer.local"
+            },
+            "title": {
+              "en": "Client name"
+            },
+            "hint": {
+              "en": "As reported by Pi-Hole, not available for all clients"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          },
+          {
+            "name": "domain",
+            "type": "text",
+            "placeholder": {
+              "en": "example.org"
+            }
+          },
+          {
+            "name": "recordType",
+            "type": "dropdown",
+            "title": {
+              "en": "DNS Record type"
+            },
+            "values": [
+              {
+                "id": "*",
+                "title": {
+                  "en": "Any"
+                }
+              },
+              {
+                "id": "A",
+                "title": {
+                  "en": "A-type"
+                }
+              },
+              {
+                "id": "AAAA",
+                "title": {
+                  "en": "AAAA-type"
+                }
+              },
+              {
+                "id": "CNAME",
+                "title": {
+                  "en": "CNAME"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alarm_connectivity_true",
+        "title": {
+          "en": "Is disconnected",
+          "nl": "Is niet verbonden",
+          "da": "Er afbrudt",
+          "fr": "Est déconnectée",
+          "it": "È disconnesso",
+          "ko": "연결 해제됨",
+          "no": "Er frakoblet",
+          "pl": "Odłączony",
+          "ru": "Отключено",
+          "sv": "Frånkopplad",
+          "es": "Está desconectado"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          }
+        ]
+      },
+      {
+        "id": "alarm_connectivity_false",
+        "title": {
+          "en": "Is connected",
+          "nl": "Is verbonden",
+          "da": "Er tilsluttet",
+          "fr": "Est connectée",
+          "it": "È connesso",
+          "ko": "연결됨",
+          "no": "Er tilkoblet",
+          "pl": "Połączony",
+          "ru": "Подключено",
+          "sv": "Ansluten",
+          "es": "Está conectado"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "disable-pihole-for",
+        "title": {
+          "en": "Deprecated: Disable PiHole [[pihole]] for [[time]]",
+          "de": "Veraltet: Deaktiviere PiHole [[pihole]] für [[time]]",
+          "nl": "Verouderd: Schakel PiHole [[pihole]] uit voor [[time]]",
+          "fr": "Obsolète : Désactivez PiHole [[pihole]] pendant [[time]]",
+          "it": "Deprecato: Disabilita PiHole [[pihole]] per [[time]]",
+          "sv": "Inaktiverad: Avaktivera PiHole [[pihole]] under [[time]]",
+          "no": "Utgått: Deaktiver PiHole [[pihole]] for [[time]]",
+          "es": "Obsoleto: Desactivar PiHole [[pihole]] durante [[time]]",
+          "da": "Forældet: Deaktiver PiHole [[pihole]] i [[time]]",
+          "ru": "Устарело: Отключите PiHole [[pihole]] на [[time]]",
+          "pl": "Przestarzałe: Wyłącz PiHole [[pihole]] na [[time]]"
+        },
+        "titleFormatted": {
+          "en": "Deprecated: Disable PiHole [[pihole]] for [[time]]",
+          "de": "Veraltet: Deaktiviere den PiHole [[pihole]] für [[time]]",
+          "nl": "Verouderd: Schakel PiHole [[pihole]] uit voor [[time]]",
+          "fr": "Obsolète : Désactivez PiHole [[pihole]] pour [[time]]",
+          "it": "Deprecato: Disattiva PiHole [[pihole]] per [[time]]",
+          "sv": "Inaktiverad: Avaktivera PiHole [[pihole]] för [[time]]",
+          "no": "Utgått: Deaktiver PiHole [[pihole]] for [[time]]",
+          "es": "Obsoleto: Desactivar PiHole [[pihole]] por [[time]]",
+          "da": "Forældet: Deaktiver PiHole [[pihole]] for [[time]]",
+          "ru": "Устарело: Отключите PiHole [[pihole]] на [[time]]",
+          "pl": "Przestarzałe: Wyłącz PiHole [[pihole]] na [[time]]"
+        },
+        "hint": {
+          "en": "Offer the possibility to stop, or start the filter for the selected instance.",
+          "de": "Bietet die Möglichkeit den gewünschten PiHole für eine bestimmte Zeitspanne zu deaktivieren.",
+          "nl": "Biedt de mogelijkheid om de filter voor de geselecteerde instantie te stoppen of te starten.",
+          "fr": "Offre la possibilité d'arrêter ou de démarrer le filtre pour l'instance sélectionnée.",
+          "it": "Offre la possibilità di fermare o avviare il filtro per l'istanza selezionata.",
+          "sv": "Erbjuder möjlighet att stoppa eller starta filtret för det valda instansen.",
+          "no": "Tilbyr muligheten til å stoppe eller starte filteret for den valgte instansen.",
+          "es": "Ofrece la posibilidad de detener o iniciar el filtro para la instancia seleccionada.",
+          "da": "Tilbyder muligheden for at stoppe eller starte filteret for den valgte instans.",
+          "ru": "Предлагает возможность остановить или начать фильтрацию для выбранного экземпляра.",
+          "pl": "Oferuje możliwość zatrzymania lub uruchomienia filtra dla wybranej instancji."
+        },
+        "deprecated": true,
+        "args": [
+          {
+            "name": "pihole",
+            "type": "dropdown",
+            "placeholder": {
+              "en": "Instance 1",
+              "de": "Instanz 1",
+              "nl": "Instantie 1",
+              "fr": "Instance 1",
+              "it": "Istanza 1",
+              "sv": "Instans 1",
+              "no": "Instans 1",
+              "es": "Instancia 1",
+              "da": "Instans 1",
+              "ru": "Экземпляр 1",
+              "pl": "Instancja 1"
+            },
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "Instance 1",
+                  "de": "Instanz 1",
+                  "nl": "Instantie 1",
+                  "fr": "Instance 1",
+                  "it": "Istanza 1",
+                  "sv": "Instans 1",
+                  "no": "Instans 1",
+                  "es": "Instancia 1",
+                  "da": "Instans 1",
+                  "ru": "Экземпляр 1",
+                  "pl": "Instancja 1"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Instance 2",
+                  "de": "Instanz 2",
+                  "nl": "Instantie 2",
+                  "fr": "Instance 2",
+                  "it": "Istanza 2",
+                  "sv": "Instans 2",
+                  "no": "Instans 2",
+                  "es": "Instancia 2",
+                  "da": "Instans 2",
+                  "ru": "Экземпляр 2",
+                  "pl": "Instancja 2"
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "Instance 3",
+                  "de": "Instanz 3",
+                  "nl": "Instantie 3",
+                  "fr": "Instance 3",
+                  "it": "Istanza 3",
+                  "sv": "Instans 3",
+                  "no": "Instans 3",
+                  "es": "Instancia 3",
+                  "da": "Instans 3",
+                  "ru": "Экземпляр 3",
+                  "pl": "Instancja 3"
+                }
+              },
+              {
+                "id": "20",
+                "label": {
+                  "en": "Instance 4",
+                  "de": "Instanz 4",
+                  "nl": "Instantie 4",
+                  "fr": "Instance 4",
+                  "it": "Istanza 4",
+                  "sv": "Instans 4",
+                  "no": "Instans 4",
+                  "es": "Instancia 4",
+                  "da": "Instans 4",
+                  "ru": "Экземпляр 4",
+                  "pl": "Instancja 4"
+                }
+              }
+            ]
+          },
+          {
+            "name": "time",
+            "type": "dropdown",
+            "placeholder": {
+              "en": "5 Minutes",
+              "de": "5 Minuten",
+              "nl": "5 minuten",
+              "fr": "5 minutes",
+              "it": "5 minuti",
+              "sv": "5 minuter",
+              "no": "5 minutter",
+              "es": "5 minutos",
+              "da": "5 minutter",
+              "ru": "5 минут",
+              "pl": "5 minut"
+            },
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "5 Minutes",
+                  "de": "5 Minuten",
+                  "nl": "5 minuten",
+                  "fr": "5 minutes",
+                  "it": "5 minuti",
+                  "sv": "5 minuter",
+                  "no": "5 minutter",
+                  "es": "5 minutos",
+                  "da": "5 minutter",
+                  "ru": "5 минут",
+                  "pl": "5 minut"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "10 Minutes",
+                  "de": "10 Minuten",
+                  "nl": "10 minuten",
+                  "fr": "10 minutes",
+                  "it": "10 minuti",
+                  "sv": "10 minuter",
+                  "no": "10 minutter",
+                  "es": "10 minutos",
+                  "da": "10 minutter",
+                  "ru": "10 минут",
+                  "pl": "10 minut"
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "15 Minutes",
+                  "de": "15 Minuten",
+                  "nl": "15 minuten",
+                  "fr": "15 minutes",
+                  "it": "15 minuti",
+                  "sv": "15 minuter",
+                  "no": "15 minutter",
+                  "es": "15 minutos",
+                  "da": "15 minutter",
+                  "ru": "15 минут",
+                  "pl": "15 minut"
+                }
+              },
+              {
+                "id": "30",
+                "label": {
+                  "en": "30 Minutes",
+                  "de": "30 Minuten",
+                  "nl": "30 minuten",
+                  "fr": "30 minutes",
+                  "it": "30 minuti",
+                  "sv": "30 minuter",
+                  "no": "30 minutter",
+                  "es": "30 minutos",
+                  "da": "30 minutter",
+                  "ru": "30 минут",
+                  "pl": "30 minut"
+                }
+              },
+              {
+                "id": "45",
+                "label": {
+                  "en": "45 Minutes",
+                  "de": "45 Minuten",
+                  "nl": "45 minuten",
+                  "fr": "45 minutes",
+                  "it": "45 minuti",
+                  "sv": "45 minuter",
+                  "no": "45 minutter",
+                  "es": "45 minutos",
+                  "da": "45 minutter",
+                  "ru": "45 минут",
+                  "pl": "45 minut"
+                }
+              },
+              {
+                "id": "60",
+                "label": {
+                  "en": "60 Minutes",
+                  "de": "60 Minuten",
+                  "nl": "60 minuten",
+                  "fr": "60 minutes",
+                  "it": "60 minuti",
+                  "sv": "60 minuter",
+                  "no": "60 minutter",
+                  "es": "60 minutos",
+                  "da": "60 minutter",
+                  "ru": "60 минут",
+                  "pl": "60 minut"
+                }
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "instance",
+            "type": "string",
+            "title": {
+              "en": "Instance",
+              "de": "Instanz",
+              "nl": "Instantie",
+              "fr": "Instance",
+              "it": "Istanza",
+              "sv": "Instans",
+              "no": "Instans",
+              "es": "Instancia",
+              "da": "Instans",
+              "ru": "Экземпляр",
+              "pl": "Instancja"
+            },
+            "example": {
+              "en": "Instance",
+              "de": "Instanz",
+              "nl": "Instantie",
+              "fr": "Instance",
+              "it": "Istanza",
+              "sv": "Instans",
+              "no": "Instans",
+              "es": "Instancia",
+              "da": "Instans",
+              "ru": "Экземпляр",
+              "pl": "Instancja"
+            }
+          },
+          {
+            "name": "time",
+            "type": "number",
+            "title": {
+              "de": "Inaktivität für (in Minuten)",
+              "en": "Inactive for (in minutes)",
+              "nl": "Inactief gedurende (in minuten)",
+              "fr": "Inactif pendant (en minutes)",
+              "it": "Inattivo per (in minuti)",
+              "sv": "Inaktiv i (i minuter)",
+              "no": "Inaktiv i (i minutter)",
+              "es": "Inactivo durante (en minutos)",
+              "da": "Inaktiv i (i minutter)",
+              "ru": "Неактивен в течение (в минутах)",
+              "pl": "Nieaktywny przez (w minutach)"
+            },
+            "example": {
+              "en": "10 Minutes",
+              "de": "10 Minuten",
+              "nl": "10 minuten",
+              "fr": "10 minutes",
+              "it": "10 minuti",
+              "sv": "10 minuter",
+              "no": "10 minutter",
+              "es": "10 minutos",
+              "da": "10 minutter",
+              "ru": "10 минут",
+              "pl": "10 minut"
+            }
+          }
+        ]
+      },
+      {
+        "id": "disable-piholes",
+        "title": {
+          "en": "Deprecated: Disable all PiHole(s)",
+          "de": "Veraltet: Alle PiHole(s) deaktivieren",
+          "nl": "Verouderd: Schakel alle pihole(s) uit",
+          "fr": "Obsolète : Désactivez tous les PiHole(s)",
+          "it": "Deprecato: Disabilita tutti i PiHole(s)",
+          "sv": "Inaktiverad: Avaktivera alla PiHole(s)",
+          "no": "Utgått: Deaktiver alle PiHole(r)",
+          "es": "Obsoleto: Desactivar todos los PiHole(s)",
+          "da": "Forældet: Deaktiver alle PiHole(r)",
+          "ru": "Устарело: Отключить все PiHole(ы)",
+          "pl": "Przestarzałe: Wyłącz wszystkie PiHole(s)"
+        },
+        "hint": {
+          "en": "Disable the defined PiHole Instance(s).",
+          "de": "Deaktiviert die definierte(n) PiHole Instanz(en).",
+          "nl": "Deactiveert de gedefinieerde PiHole-instantie(s).",
+          "fr": "Désactive les instance(s) PiHole définie(s).",
+          "it": "Disabilita l'istanza(e) PiHole definita(e)",
+          "sv": "Inaktiverar de definierade PiHole-instansen(s).",
+          "no": "Deaktiverer den definerte PiHole-instansen(e).",
+          "es": "Desactiva la(s) instancia(s) PiHole definida(s).",
+          "da": "Deaktiver den/de definerede PiHole-instans(er).",
+          "ru": "Отключает определенный(ые) экземпляр(ы) PiHole.",
+          "pl": "Wyłącza zdefiniowaną(e) instancję(e) PiHole."
+        },
+        "deprecated": true
+      },
+      {
+        "id": "disable-piholes-for",
+        "title": {
+          "en": "Deprecated: Disable all PiHoles for [[time]]",
+          "de": "Veraltet: Deaktiviere alle PiHoles für [[time]]",
+          "nl": "Verouderd: Schakel alle PiHoles uit voor [[time]]",
+          "fr": "Obsolète : Désactivez tous les PiHoles pour [[time]]",
+          "it": "Deprecato: Disabilita tutti i PiHoles per [[time]]",
+          "sv": "Inaktiverad: Avaktivera alla PiHoles för [[time]]",
+          "no": "Utgått: Deaktiver alle PiHoles for [[time]]",
+          "es": "Obsoleto: Desactivar todos los PiHoles durante [[time]]",
+          "da": "Forældet: Deaktiver alle PiHoles i [[time]]",
+          "ru": "Устарело: Отключите все PiHoles на [[time]]",
+          "pl": "Przestarzałe: Wyłącz wszystkie PiHoles na [[time]]"
+        },
+        "titleFormatted": {
+          "en": "Deprecated: Disable all PiHoles for [[time]]",
+          "de": "Veraltet: Deaktiviere alle PiHoles für [[time]]",
+          "nl": "Verouderd: Schakel alle PiHoles uit voor [[time]]",
+          "fr": "Obsolète : Désactivez tous les PiHoles pour [[time]]",
+          "it": "Deprecato: Disabilita tutti i PiHoles per [[time]]",
+          "sv": "Inaktiverad: Avaktivera alla PiHoles för [[time]]",
+          "no": "Utgått: Deaktiver alle PiHoles for [[time]]",
+          "es": "Obsoleto: Desactivar todos los PiHoles durante [[time]]",
+          "da": "Forældet: Deaktiver alle PiHoles i [[time]]",
+          "ru": "Устарело: Отключите все PiHoles на [[time]]",
+          "pl": "Przestarzałe: Wyłącz wszystkie PiHoles na [[time]]"
+        },
+        "hint": {
+          "en": "Offer the possibility disable all Piholes for an amount of time.",
+          "de": "Bietet die Möglichkeit alles Piholes für einen bestimmten Zeitraum zu deaktivieren.",
+          "nl": "Biedt de mogelijkheid om alle Piholes uit te schakelen voor een bepaalde tijd.",
+          "fr": "Offre la possibilité de désactiver tous les Piholes pour une certaine durée.",
+          "it": "Offre la possibilità di disabilitare tutti i Piholes per un certo periodo di tempo.",
+          "sv": "Erbjuder möjligheten att inaktivera alla Piholes för en angiven tid.",
+          "no": "Tilbyr muligheten til å deaktivere alle Piholes for en bestemt tidsperiode.",
+          "es": "Ofrece la posibilidad de desactivar todos los Piholes durante un periodo de tiempo.",
+          "da": "Tilbyder muligheden for at deaktivere alle Piholes i en bestemt tidsperiode.",
+          "ru": "Предлагает возможность отключения всех PiHoles на определенное время.",
+          "pl": "Oferuje możliwość wyłączenia wszystkich PiHoles na określony czas."
+        },
+        "deprecated": true,
+        "args": [
+          {
+            "name": "time",
+            "type": "dropdown",
+            "placeholder": {
+              "en": "5 Minutes",
+              "de": "5 Minuten",
+              "nl": "5 Notulen",
+              "fr": "5 minutes",
+              "it": "5 minuti",
+              "sv": "5 minuter",
+              "no": "5 minutter",
+              "es": "5 minutos",
+              "da": "5 minutter",
+              "ru": "5 минут",
+              "pl": "5 minut"
+            },
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "5 Minutes",
+                  "de": "5 Minuten",
+                  "nl": "5 Notulen",
+                  "fr": "5 minutes",
+                  "it": "5 minuti",
+                  "sv": "5 minuter",
+                  "no": "5 minutter",
+                  "es": "5 minutos",
+                  "da": "5 minutter",
+                  "ru": "5 минут",
+                  "pl": "5 minut"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "10 Minutes",
+                  "de": "10 Minuten",
+                  "nl": "10 Notulen",
+                  "fr": "10 minutes",
+                  "it": "10 minuti",
+                  "sv": "10 minuter",
+                  "no": "10 minutter",
+                  "es": "10 minutos",
+                  "da": "10 minutter",
+                  "ru": "10 минут",
+                  "pl": "10 minut"
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "15 Minutes",
+                  "de": "15 Minuten",
+                  "nl": "15 Notulen",
+                  "fr": "15 minutes",
+                  "it": "15 minuti",
+                  "sv": "15 minuter",
+                  "no": "15 minutter",
+                  "es": "15 minutos",
+                  "da": "15 minutter",
+                  "ru": "15 минут",
+                  "pl": "15 minut"
+                }
+              },
+              {
+                "id": "30",
+                "label": {
+                  "en": "30 Minutes",
+                  "de": "30 Minuten",
+                  "nl": "30 Notulen",
+                  "fr": "30 minutes",
+                  "it": "30 minuti",
+                  "sv": "30 minuter",
+                  "no": "30 minutter",
+                  "es": "30 minutos",
+                  "da": "30 minutter",
+                  "ru": "30 минут",
+                  "pl": "30 minut"
+                }
+              },
+              {
+                "id": "45",
+                "label": {
+                  "en": "45 Minutes",
+                  "de": "45 Minuten",
+                  "nl": "45 Notulen",
+                  "fr": "45 minutes",
+                  "it": "45 minuti",
+                  "sv": "45 minuter",
+                  "no": "45 minutter",
+                  "es": "45 minutos",
+                  "da": "45 minutter",
+                  "ru": "45 минут",
+                  "pl": "45 minut"
+                }
+              },
+              {
+                "id": "60",
+                "label": {
+                  "en": "60 Minutes",
+                  "de": "60 Minuten",
+                  "nl": "60 Notulen",
+                  "fr": "60 minutes",
+                  "it": "60 minuti",
+                  "sv": "60 minuter",
+                  "no": "60 minutter",
+                  "es": "60 minutos",
+                  "da": "60 minutter",
+                  "ru": "60 минут",
+                  "pl": "60 minut"
+                }
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "time",
+            "type": "number",
+            "title": {
+              "de": "Inaktivität für (in Minuten)",
+              "en": "Inactive for (in minutes)",
+              "nl": "Inactief gedurende (in minuten)",
+              "fr": "Inactif pendant (en minutes)",
+              "it": "Inattivo per (in minuti)",
+              "sv": "Inaktiv i (i minuter)",
+              "no": "Inaktiv i (i minutter)",
+              "es": "Inactivo durante (en minutos)",
+              "da": "Inaktiv i (i minutter)",
+              "ru": "Неактивен в течение (в минутах)",
+              "pl": "Nieaktywny przez (w minutach)"
+            },
+            "example": {
+              "en": "10 Minutes",
+              "de": "10 Minuten",
+              "nl": "10 minuten",
+              "fr": "10 minutes",
+              "it": "10 minuti",
+              "sv": "10 minuter",
+              "no": "10 minutter",
+              "es": "10 minutos",
+              "da": "10 minutter",
+              "ru": "10 минут",
+              "pl": "10 minut"
+            }
+          }
+        ]
+      },
+      {
+        "id": "enable-piholes",
+        "title": {
+          "en": "Deprecated: Enable all PiHole(s)",
+          "de": "Veraltet: Alle PiHole(s) aktivieren",
+          "nl": "Verouderd: Activeer alle PiHole(s)",
+          "fr": "Obsolète : Activez tous les PiHole(s)",
+          "it": "Deprecato: Abilita tutti i PiHole(s)",
+          "sv": "Inaktiverad: Aktivera alla PiHole(s)",
+          "no": "Utgått: Aktiver alle PiHole(r)",
+          "es": "Obsoleto: Activar todos los PiHole(s)",
+          "da": "Forældet: Aktiver alle PiHole(r)",
+          "ru": "Устарело: Включить все PiHole(ы)",
+          "pl": "Przestarzałe: Włącz wszystkie PiHole(s)"
+        },
+        "hint": {
+          "en": "Enable the defined PiHole Instance(s).",
+          "de": "Aktiviert die definierten PiHole Instanzen.",
+          "nl": "Activeert de gedefinieerde PiHole instanties.",
+          "fr": "Active les instance(s) PiHole définie(s).",
+          "it": "Abilita l'istanza(e) PiHole definita(e)",
+          "sv": "Aktiverar de definierade PiHole-instansen(s).",
+          "no": "Aktiverer den definerte PiHole-instansen(e).",
+          "es": "Activa la(s) instancia(s) PiHole definida(s).",
+          "da": "Aktiver den/de definerede PiHole-instans(er).",
+          "ru": "Включает определенный(ые) экземпляр(ы) PiHole.",
+          "pl": "Włącza zdefiniowaną(e) instancję(e) PiHole."
+        },
+        "deprecated": true
+      },
+      {
+        "id": "pihole-disable-pihole-for",
+        "title": {
+          "en": "Disable PiHole for [[time]]",
+          "de": "Deaktiviere PiHole für [[time]]",
+          "nl": "Schakel PiHole uit voor [[time]]",
+          "fr": "Désactivez PiHole pendant [[time]]",
+          "it": "Disabilita PiHole per [[time]]",
+          "sv": "Avaktivera PiHole under [[time]]",
+          "no": "Deaktiver PiHole for [[time]]",
+          "es": "Desactivar PiHole durante [[time]]",
+          "da": "Deaktiver PiHole i [[time]]",
+          "ru": "Отключите PiHole на [[time]]",
+          "pl": "Wyłącz PiHole na [[time]]"
+        },
+        "titleFormatted": {
+          "en": "Disable PiHole for [[time]]",
+          "de": "Deaktiviere den PiHole für [[time]]",
+          "nl": "Schakel PiHole uit voor [[time]]",
+          "fr": "Désactivez PiHole pour [[time]]",
+          "it": "Disattiva PiHole per [[time]]",
+          "sv": "Avaktivera PiHole för [[time]]",
+          "no": "Deaktiver PiHole for [[time]]",
+          "es": "Desactivar PiHole por [[time]]",
+          "da": "Deaktiver PiHole for [[time]]",
+          "ru": "Отключите PiHole на [[time]]",
+          "pl": "Wyłącz PiHole na [[time]]"
+        },
+        "hint": {
+          "en": "Offers the possibility to disable the current PiHole for a specific period of time.",
+          "de": "Bietet die Möglichkeit, den aktuellen PiHole für eine bestimmte Zeitspanne zu deaktivieren.",
+          "nl": "Biedt de mogelijkheid om de huidige PiHole voor een bepaalde tijd te deactiveren.",
+          "fr": "Offre la possibilité de désactiver le PiHole actuel pour une période spécifique.",
+          "it": "Offre la possibilità di disattivare l'attuale PiHole per un periodo di tempo specifico.",
+          "sv": "Erbjuder möjligheten att inaktivera den aktuella PiHole för en specifik tidsperiod.",
+          "no": "Tilbyr muligheten til å deaktivere den nåværende PiHole for en bestemt tidsperiode.",
+          "es": "Ofrece la posibilidad de desactivar el PiHole actual por un período de tiempo específico.",
+          "da": "Tilbyder muligheden for at deaktivere den nuværende PiHole i en bestemt tidsperiode.",
+          "ru": "Предлагает возможность отключить текущий PiHole на определенный период времени.",
+          "pl": "Oferuje możliwość wyłączenia aktualnego PiHole na określony okres czasu."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          },
+          {
+            "name": "time",
+            "type": "dropdown",
+            "placeholder": {
+              "en": "5 Minutes",
+              "de": "5 Minuten",
+              "nl": "5 minuten",
+              "fr": "5 minutes",
+              "it": "5 minuti",
+              "sv": "5 minuter",
+              "no": "5 minutter",
+              "es": "5 minutos",
+              "da": "5 minutter",
+              "ru": "5 минут",
+              "pl": "5 minut"
+            },
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "5 Minutes",
+                  "de": "5 Minuten",
+                  "nl": "5 minuten",
+                  "fr": "5 minutes",
+                  "it": "5 minuti",
+                  "sv": "5 minuter",
+                  "no": "5 minutter",
+                  "es": "5 minutos",
+                  "da": "5 minutter",
+                  "ru": "5 минут",
+                  "pl": "5 minut"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "10 Minutes",
+                  "de": "10 Minuten",
+                  "nl": "10 minuten",
+                  "fr": "10 minutes",
+                  "it": "10 minuti",
+                  "sv": "10 minuter",
+                  "no": "10 minutter",
+                  "es": "10 minutos",
+                  "da": "10 minutter",
+                  "ru": "10 минут",
+                  "pl": "10 minut"
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "15 Minutes",
+                  "de": "15 Minuten",
+                  "nl": "15 minuten",
+                  "fr": "15 minutes",
+                  "it": "15 minuti",
+                  "sv": "15 minuter",
+                  "no": "15 minutter",
+                  "es": "15 minutos",
+                  "da": "15 minutter",
+                  "ru": "15 минут",
+                  "pl": "15 minut"
+                }
+              },
+              {
+                "id": "30",
+                "label": {
+                  "en": "30 Minutes",
+                  "de": "30 Minuten",
+                  "nl": "30 minuten",
+                  "fr": "30 minutes",
+                  "it": "30 minuti",
+                  "sv": "30 minuter",
+                  "no": "30 minutter",
+                  "es": "30 minutos",
+                  "da": "30 minutter",
+                  "ru": "30 минут",
+                  "pl": "30 minut"
+                }
+              },
+              {
+                "id": "45",
+                "label": {
+                  "en": "45 Minutes",
+                  "de": "45 Minuten",
+                  "nl": "45 minuten",
+                  "fr": "45 minutes",
+                  "it": "45 minuti",
+                  "sv": "45 minuter",
+                  "no": "45 minutter",
+                  "es": "45 minutos",
+                  "da": "45 minutter",
+                  "ru": "45 минут",
+                  "pl": "45 minut"
+                }
+              },
+              {
+                "id": "60",
+                "label": {
+                  "en": "60 Minutes",
+                  "de": "60 Minuten",
+                  "nl": "60 minuten",
+                  "fr": "60 minutes",
+                  "it": "60 minuti",
+                  "sv": "60 minuter",
+                  "no": "60 minutter",
+                  "es": "60 minutos",
+                  "da": "60 minutter",
+                  "ru": "60 минут",
+                  "pl": "60 minut"
+                }
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "time",
+            "type": "number",
+            "title": {
+              "de": "Inaktivität für (in Minuten)",
+              "en": "Inactive for (in minutes)",
+              "nl": "Inactief gedurende (in minuten)",
+              "fr": "Inactif pendant (en minutes)",
+              "it": "Inattivo per (in minuti)",
+              "sv": "Inaktiv i (i minuter)",
+              "no": "Inaktiv i (i minutter)",
+              "es": "Inactivo durante (en minutos)",
+              "da": "Inaktiv i (i minutter)",
+              "ru": "Неактивен в течение (в минутах)",
+              "pl": "Nieaktywny przez (w minutach)"
+            },
+            "example": {
+              "en": "10 Minutes",
+              "de": "10 Minuten",
+              "nl": "10 minuten",
+              "fr": "10 minutes",
+              "it": "10 minuti",
+              "sv": "10 minuter",
+              "no": "10 minutter",
+              "es": "10 minutos",
+              "da": "10 minutter",
+              "ru": "10 минут",
+              "pl": "10 minut"
+            }
+          }
+        ]
+      },
+      {
+        "id": "pihole-disable-piholes",
+        "title": {
+          "en": "Disable all PiHole(s),",
+          "de": "Alle Pihole(s) deaktivieren",
+          "nl": "Deactiveer alle pihole(s)",
+          "fr": "Désactivez tous les PiHole(s)",
+          "it": "Disabilita tutti i PiHole(s)",
+          "sv": "Inaktivera alla PiHole(s)",
+          "no": "Deaktiver alle PiHole(r)",
+          "es": "Desactivar todos los PiHole(s)",
+          "da": "Deaktiver alle PiHole(r)",
+          "ru": "Отключить все PiHole(ы)",
+          "pl": "Wyłącz wszystkie PiHole(s)"
+        },
+        "hint": {
+          "en": "Disable the defined PiHole Instance(s).",
+          "de": "Deaktiviert die definierte(n) PiHole Instanz(en).",
+          "nl": "Deactiveert de gedefinieerde PiHole-instantie(s).",
+          "fr": "Désactive les instance(s) PiHole définie(s).",
+          "it": "Disabilita l'istanza(e) PiHole definita(e)",
+          "sv": "Inaktiverar de definierade PiHole-instansen(s).",
+          "no": "Deaktiverer den definerte PiHole-instansen(e).",
+          "es": "Desactiva la(s) instancia(s) PiHole definida(s).",
+          "da": "Deaktiver den/de definerede PiHole-instans(er).",
+          "ru": "Отключает определенный(ые) экземпляр(ы) PiHole.",
+          "pl": "Wyłącza zdefiniowaną(e) instancję(e) PiHole."
+        }
+      },
+      {
+        "id": "pihole-disable-piholes-for",
+        "title": {
+          "en": "Disable all PiHoles for [[time]]",
+          "de": "Deaktiviere alle PiHoles für [[time]]",
+          "nl": "Schakel alle PiHoles uit voor [[time]]",
+          "fr": "Désactivez tous les PiHoles pour [[time]]",
+          "it": "Disabilita tutti i PiHoles per [[time]]",
+          "sv": "Avaktivera alla PiHoles för [[time]]",
+          "no": "Deaktiver alle PiHoles for [[time]]",
+          "es": "Desactivar todos los PiHoles durante [[time]]",
+          "da": "Deaktiver alle PiHoles i [[time]]",
+          "ru": "Отключите все PiHoles на [[time]]",
+          "pl": "Wyłącz wszystkie PiHoles na [[time]]"
+        },
+        "titleFormatted": {
+          "en": "Disable all PiHoles for [[time]]",
+          "de": "Deaktiviere alle PiHoles für [[time]]",
+          "nl": "Schakel alle PiHoles uit voor [[time]]",
+          "fr": "Désactivez tous les PiHoles pour [[time]]",
+          "it": "Disabilita tutti i PiHoles per [[time]]",
+          "sv": "Avaktivera alla PiHoles för [[time]]",
+          "no": "Deaktiver alle PiHoles for [[time]]",
+          "es": "Desactivar todos los PiHoles durante [[time]]",
+          "da": "Deaktiver alle PiHoles i [[time]]",
+          "ru": "Отключите все PiHoles на [[time]]",
+          "pl": "Wyłącz wszystkie PiHoles na [[time]]"
+        },
+        "hint": {
+          "en": "Offer the possibility disable all Piholes for an amount of time.",
+          "de": "Bietet die Möglichkeit alles Piholes für einen bestimmten Zeitraum zu deaktivieren.",
+          "nl": "Biedt de mogelijkheid om alle Piholes uit te schakelen voor een bepaalde tijd.",
+          "fr": "Offre la possibilité de désactiver tous les Piholes pour une certaine durée.",
+          "it": "Offre la possibilità di disabilitare tutti i Piholes per un certo periodo di tempo.",
+          "sv": "Erbjuder möjligheten att inaktivera alla Piholes för en angiven tid.",
+          "no": "Tilbyr muligheten til å deaktivere alle Piholes for en bestemt tidsperiode.",
+          "es": "Ofrece la posibilidad de desactivar todos los Piholes durante un periodo de tiempo.",
+          "da": "Tilbyder muligheden for at deaktivere alle Piholes i en bestemt tidsperiode.",
+          "ru": "Предлагает возможность отключения всех PiHoles на определенное время.",
+          "pl": "Oferuje możliwość wyłączenia wszystkich PiHoles na określony czas."
+        },
+        "args": [
+          {
+            "name": "time",
+            "type": "dropdown",
+            "placeholder": {
+              "en": "5 Minutes",
+              "de": "5 Minuten",
+              "nl": "5 Notulen",
+              "fr": "5 minutes",
+              "it": "5 minuti",
+              "sv": "5 minuter",
+              "no": "5 minutter",
+              "es": "5 minutos",
+              "da": "5 minutter",
+              "ru": "5 минут",
+              "pl": "5 minut"
+            },
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "5 Minutes",
+                  "de": "5 Minuten",
+                  "nl": "5 Notulen",
+                  "fr": "5 minutes",
+                  "it": "5 minuti",
+                  "sv": "5 minuter",
+                  "no": "5 minutter",
+                  "es": "5 minutos",
+                  "da": "5 minutter",
+                  "ru": "5 минут",
+                  "pl": "5 minut"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "10 Minutes",
+                  "de": "10 Minuten",
+                  "nl": "10 Notulen",
+                  "fr": "10 minutes",
+                  "it": "10 minuti",
+                  "sv": "10 minuter",
+                  "no": "10 minutter",
+                  "es": "10 minutos",
+                  "da": "10 minutter",
+                  "ru": "10 минут",
+                  "pl": "10 minut"
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "15 Minutes",
+                  "de": "15 Minuten",
+                  "nl": "15 Notulen",
+                  "fr": "15 minutes",
+                  "it": "15 minuti",
+                  "sv": "15 minuter",
+                  "no": "15 minutter",
+                  "es": "15 minutos",
+                  "da": "15 minutter",
+                  "ru": "15 минут",
+                  "pl": "15 minut"
+                }
+              },
+              {
+                "id": "30",
+                "label": {
+                  "en": "30 Minutes",
+                  "de": "30 Minuten",
+                  "nl": "30 Notulen",
+                  "fr": "30 minutes",
+                  "it": "30 minuti",
+                  "sv": "30 minuter",
+                  "no": "30 minutter",
+                  "es": "30 minutos",
+                  "da": "30 minutter",
+                  "ru": "30 минут",
+                  "pl": "30 minut"
+                }
+              },
+              {
+                "id": "45",
+                "label": {
+                  "en": "45 Minutes",
+                  "de": "45 Minuten",
+                  "nl": "45 Notulen",
+                  "fr": "45 minutes",
+                  "it": "45 minuti",
+                  "sv": "45 minuter",
+                  "no": "45 minutter",
+                  "es": "45 minutos",
+                  "da": "45 minutter",
+                  "ru": "45 минут",
+                  "pl": "45 minut"
+                }
+              },
+              {
+                "id": "60",
+                "label": {
+                  "en": "60 Minutes",
+                  "de": "60 Minuten",
+                  "nl": "60 Notulen",
+                  "fr": "60 minutes",
+                  "it": "60 minuti",
+                  "sv": "60 minuter",
+                  "no": "60 minutter",
+                  "es": "60 minutos",
+                  "da": "60 minutter",
+                  "ru": "60 минут",
+                  "pl": "60 minut"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pihole-enable-piholes",
+        "title": {
+          "en": "Enable all PiHole(s)",
+          "de": "Alle PiHole(s) aktivieren",
+          "nl": "Activeer alle PiHole(s)",
+          "fr": "Activez tous les PiHole(s)",
+          "it": "Abilita tutti i PiHole(s)",
+          "sv": "Aktivera alla PiHole(s)",
+          "no": "Aktiver alle PiHole(r)",
+          "es": "Activar todos los PiHole(s)",
+          "da": "Aktiver alle PiHole(r)",
+          "ru": "Включить все PiHole(ы)",
+          "pl": "Włącz wszystkie PiHole(s)"
+        },
+        "hint": {
+          "en": "Enable the defined PiHole Instance(s).",
+          "de": "Aktiviert die definierten PiHole Instanzen.",
+          "nl": "Activeert de gedefinieerde PiHole instanties.",
+          "fr": "Active les instance(s) PiHole définie(s).",
+          "it": "Abilita l'istanza(e) PiHole definita(e)",
+          "sv": "Aktiverar de definierade PiHole-instansen(s).",
+          "no": "Aktiverer den definerte PiHole-instansen(e).",
+          "es": "Activa la(s) instancia(s) PiHole definida(s).",
+          "da": "Aktiver den/de definerede PiHole-instans(er).",
+          "ru": "Включает определенный(ые) экземпляр(ы) PiHole.",
+          "pl": "Włącza zdefiniowaną(e) instancję(e) PiHole."
+        }
+      },
+      {
+        "id": "pihole-set-pihole",
+        "title": {
+          "en": "[[[state]] PiHole",
+          "de": "[[state]] PiHole",
+          "nl": "[[state]] PiHole",
+          "fr": "[[state]] PiHole",
+          "it": "[[state]] PiHole",
+          "sv": "[[state]] PiHole",
+          "no": "[[state]] PiHole",
+          "es": "[[state]] PiHole",
+          "da": "[[state]] PiHole",
+          "ru": "[[state]] PiHole",
+          "pl": "[[state]] PiHole"
+        },
+        "titleFormatted": {
+          "en": "[[state]] PiHole",
+          "de": "[[state]] PiHole",
+          "nl": "[[state]] PiHole",
+          "fr": "[[state]] PiHole",
+          "it": "[[state]] PiHole",
+          "sv": "[[state]] PiHole",
+          "no": "[[state]] PiHole",
+          "es": "[[state]] PiHole",
+          "da": "[[state]] PiHole",
+          "ru": "[[state]] PiHole",
+          "pl": "[[state]] PiHole"
+        },
+        "hint": {
+          "en": "Offer the possibility to stop, or start the filter for the selected instance.",
+          "de": "Bietet die Möglichkeit den Filter für die gewählte Instanz zu stoppen, oder zu starten.",
+          "nl": "Biedt de optie om het filter voor de geselecteerde instantie te stoppen of te starten.",
+          "fr": "Offre la possibilité d'arrêter ou de démarrer le filtre pour l'instance sélectionnée.",
+          "it": "Offre la possibilità di fermare o avviare il filtro per l'istanza selezionata.",
+          "sv": "Erbjuder möjlighet att stoppa eller starta filtret för det valda instansen.",
+          "no": "Tilbyr muligheten til å stoppe eller starte filteret for den valgte instansen.",
+          "es": "Ofrece la posibilidad de detener o iniciar el filtro para la instancia seleccionada.",
+          "da": "Tilbyder muligheden for at stoppe eller starte filteret for den valgte instans.",
+          "ru": "Предлагает возможность остановить или начать фильтрацию для выбранного экземпляра.",
+          "pl": "Oferuje możliwość zatrzymania lub uruchomienia filtra dla wybranej instancji."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=pihole"
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "placeholder": {
+              "en": "Activate",
+              "de": "Aktivieren",
+              "nl": "Activeer",
+              "fr": "Activer",
+              "it": "Attiva",
+              "sv": "Aktivera",
+              "no": "Aktiver",
+              "es": "Activar",
+              "da": "Aktivere",
+              "ru": "Активировать",
+              "pl": "Aktywować"
+            },
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "Activate",
+                  "de": "Aktivieren",
+                  "nl": "Activeer",
+                  "fr": "Activer",
+                  "it": "Attiva",
+                  "sv": "Aktivera",
+                  "no": "Aktiver",
+                  "es": "Activar",
+                  "da": "Aktivere",
+                  "ru": "Активировать",
+                  "pl": "Aktywować"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Deactivate",
+                  "de": "Deaktivieren",
+                  "nl": "Deactiveer",
+                  "fr": "Désactiver",
+                  "it": "Disattiva",
+                  "sv": "Inaktivera",
+                  "no": "Deaktiver",
+                  "es": "Desactivar",
+                  "da": "Deaktiver",
+                  "ru": "Деактивировать",
+                  "pl": "Dezaktywować"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set-piholes",
+        "title": {
+          "en": "Deprecated: [[state]] PiHole [[instance]]",
+          "de": "Veraltet: [[state]] PiHole [[instance]]",
+          "nl": "Verouderd: [[state]] PiHole [[instance]]",
+          "fr": "Obsolète : [[state]] PiHole [[instance]]",
+          "it": "Deprecato: [[state]] PiHole [[instance]]",
+          "sv": "Inaktiverad: [[state]] PiHole [[instance]]",
+          "no": "Utgått: [[state]] PiHole [[instance]]",
+          "es": "Obsoleto: [[state]] PiHole [[instance]]",
+          "da": "Forældet: [[state]] PiHole [[instance]]",
+          "ru": "Устарело: [[state]] PiHole [[instance]]",
+          "pl": "Przestarzałe: [[state]] PiHole [[instance]]"
+        },
+        "titleFormatted": {
+          "en": "Deprecated: [[state]] PiHole [[instance]]",
+          "de": "Veraltet: [[state]] PiHole [[instance]]",
+          "nl": "Verouderd: [[state]] PiHole [[instance]]",
+          "fr": "Obsolète : [[state]] PiHole [[instance]]",
+          "it": "Deprecato: [[state]] PiHole [[instance]]",
+          "sv": "Inaktiverad: [[state]] PiHole [[instance]]",
+          "no": "Utgått: [[state]] PiHole [[instance]]",
+          "es": "Obsoleto: [[state]] PiHole [[instance]]",
+          "da": "Forældet: [[state]] PiHole [[instance]]",
+          "ru": "Устарело: [[state]] PiHole [[instance]]",
+          "pl": "Przestarzałe: [[state]] PiHole [[instance]]"
+        },
+        "hint": {
+          "en": "Offer the possibility to stop, or start the filter for the selected instance.",
+          "de": "Bietet die Möglichkeit den Filter für die gewählte Instanz zu stoppen, oder zu starten.",
+          "nl": "Biedt de optie om het filter voor de geselecteerde instantie te stoppen of te starten.",
+          "fr": "Offre la possibilité d'arrêter ou de démarrer le filtre pour l'instance sélectionnée.",
+          "it": "Offre la possibilità di fermare o avviare il filtro per l'istanza selezionata.",
+          "sv": "Erbjuder möjlighet att stoppa eller starta filtret för det valda instansen.",
+          "no": "Tilbyr muligheten til å stoppe eller starte filteret for den valgte instansen.",
+          "es": "Ofrece la posibilidad de detener o iniciar el filtro para la instancia seleccionada.",
+          "da": "Tilbyder muligheden for at stoppe eller starte filteret for den valgte instans.",
+          "ru": "Предлагает возможность остановить или начать фильтрацию для выбранного экземпляра.",
+          "pl": "Oferuje możliwość zatrzymania lub uruchomienia filtra dla wybranej instancji."
+        },
+        "deprecated": true,
+        "args": [
+          {
+            "name": "state",
+            "type": "dropdown",
+            "placeholder": {
+              "en": "Activate",
+              "de": "Aktivieren",
+              "nl": "Activeer",
+              "fr": "Activer",
+              "it": "Attiva",
+              "sv": "Aktivera",
+              "no": "Aktiver",
+              "es": "Activar",
+              "da": "Aktivere",
+              "ru": "Активировать",
+              "pl": "Aktywować"
+            },
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "Activate",
+                  "de": "Aktivieren",
+                  "nl": "Activeer",
+                  "fr": "Activer",
+                  "it": "Attiva",
+                  "sv": "Aktivera",
+                  "no": "Aktiver",
+                  "es": "Activar",
+                  "da": "Aktivere",
+                  "ru": "Активировать",
+                  "pl": "Aktywować"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Deactivate",
+                  "de": "Deaktivieren",
+                  "nl": "Deactiveer",
+                  "fr": "Désactiver",
+                  "it": "Disattiva",
+                  "sv": "Inaktivera",
+                  "no": "Deaktiver",
+                  "es": "Desactivar",
+                  "da": "Deaktiver",
+                  "ru": "Деактивировать",
+                  "pl": "Dezaktywować"
+                }
+              }
+            ]
+          },
+          {
+            "name": "instance",
+            "type": "dropdown",
+            "placeholder": {
+              "en": "Instance 1",
+              "de": "Instanz 1",
+              "nl": "Instantie 1",
+              "fr": "Instance 1",
+              "it": "Istanza 1",
+              "sv": "Instans 1",
+              "no": "Instans 1",
+              "es": "Instancia 1",
+              "da": "Instans 1",
+              "ru": "Экземпляр 1",
+              "pl": "Instancja 1"
+            },
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "Instance 1",
+                  "de": "Instanz 1",
+                  "nl": "Instantie 1",
+                  "fr": "Instance 1",
+                  "it": "Istanza 1",
+                  "sv": "Instans 1",
+                  "no": "Instans 1",
+                  "es": "Instancia 1",
+                  "da": "Instans 1",
+                  "ru": "Экземпляр 1",
+                  "pl": "Instancja 1"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Instance 2",
+                  "de": "Instanz 2",
+                  "nl": "Instantie 2",
+                  "fr": "Instance 2",
+                  "it": "Istanza 2",
+                  "sv": "Instans 2",
+                  "no": "Instans 2",
+                  "es": "Instancia 2",
+                  "da": "Instans 2",
+                  "ru": "Экземпляр 2",
+                  "pl": "Instancja "
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "Instance 3",
+                  "de": "Instanz 3",
+                  "nl": "Instantie 3",
+                  "fr": "Instance 3",
+                  "it": "Istanza 3",
+                  "sv": "Instans 3",
+                  "no": "Instans 3",
+                  "es": "Instancia 3",
+                  "da": "Instans 3",
+                  "ru": "Экземпляр 3",
+                  "pl": "Instancja 3"
+                }
+              },
+              {
+                "id": "20",
+                "label": {
+                  "en": "Instance 4",
+                  "de": "Instanz 4",
+                  "nl": "Instantie 4",
+                  "fr": "Instance 4",
+                  "it": "Istanza 4",
+                  "sv": "Instans 4",
+                  "no": "Instans 4",
+                  "es": "Instancia 4",
+                  "da": "Instans 4",
+                  "ru": "Экземпляр 4",
+                  "pl": "Instancja 4"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "on",
+        "title": {
+          "en": "Enable ad-blocking",
+          "de": "Werbeblocker aktivieren",
+          "da": "Aktiver annonceblokering",
+          "es": "Habilitar bloqueo de anuncios",
+          "fr": "Activer le blocage des publicités",
+          "nl": "Advertentieblokkering inschakelen",
+          "no": "Aktiver annonseblokkering",
+          "pl": "Włącz blokowanie reklam",
+          "ru": "Включить блокировку рекламы",
+          "sv": "Aktivera annonsblockering"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          }
+        ]
+      },
+      {
+        "id": "off",
+        "title": {
+          "en": "Disable ad-blocking",
+          "de": "Werbeblocker deaktivieren",
+          "da": "Deaktiver annonceblokering",
+          "es": "Deshabilitar bloqueo de anuncios",
+          "fr": "Désactiver le blocage des publicités",
+          "nl": "Advertentieblokkering uitschakelen",
+          "no": "Deaktiver annonseblokkering",
+          "pl": "Wyłącz blokowanie reklam",
+          "ru": "Отключить блокировку рекламы",
+          "sv": "Inaktivera annonsblockering"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          }
+        ]
+      },
+      {
+        "id": "toggle",
+        "title": {
+          "en": "Toggle ad-blocking",
+          "de": "Werbeblocker umschalten",
+          "da": "Skift annonceblokering",
+          "es": "Alternar bloqueo de anuncios",
+          "fr": "Basculer le blocage des publicités",
+          "nl": "Advertentieblokkering schakelen",
+          "no": "Veksle annonseblokkering",
+          "pl": "Przełącz blokowanie reklam",
+          "ru": "Переключить блокировку рекламы",
+          "sv": "Växla annonsblockering"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          }
+        ]
+      },
+      {
+        "id": "pihole_pause",
+        "highlight": true,
+        "title": {
+          "en": "Pause pi-hole for ... seconds",
+          "de": "Pi-hole für ... Sekunden pausieren",
+          "da": "Pause pi-hole i ... sekunder",
+          "es": "Pausar pi-hole durante ... segundos",
+          "fr": "Mettre en pause pi-hole pendant ... secondes",
+          "nl": "Pauzeer pi-hole voor ... seconden",
+          "no": "Pause pi-hole i ... sekunder",
+          "pl": "Wstrzymaj pi-hole na ... sekund",
+          "ru": "Приостановить pi-hole на ... секунд",
+          "sv": "Pausa pi-hole i ... sekunder"
+        },
+        "titleFormatted": {
+          "en": "Pause pi-hole filtering for [[duration]] seconds",
+          "de": "Pi-hole-Filterung für [[duration]] Sekunden pausieren",
+          "da": "Pause pi-hole-filtrering i [[duration]] sekunder",
+          "es": "Pausar el filtrado de pi-hole durante [[duration]] segundos",
+          "fr": "Mettre en pause le filtrage de pi-hole pendant [[duration]] secondes",
+          "nl": "Pi-hole-filtering pauzeren voor [[duration]] seconden",
+          "no": "Pause pi-hole-filtrering i [[duration]] sekunder",
+          "pl": "Wstrzymaj filtrowanie pi-hole na [[duration]] sekund",
+          "ru": "Приостановить фильтрацию pi-hole на [[duration]] секунд",
+          "sv": "Pausa pi-hole-filtrering i [[duration]] sekunder"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          },
+          {
+            "type": "number",
+            "name": "duration",
+            "title": {
+              "en": "Duration",
+              "de": "Dauer",
+              "da": "Varighed",
+              "es": "Duración",
+              "fr": "Durée",
+              "nl": "Duur",
+              "no": "Varighet",
+              "pl": "Czas trwania",
+              "ru": "Продолжительность",
+              "sv": "Varaktighet"
+            },
+            "min": 5,
+            "max": 86400,
+            "step": 5,
+            "placeholder": {
+              "en": "Seconds",
+              "de": "Sekunden",
+              "da": "Sekunder",
+              "es": "Segundos",
+              "fr": "Secondes",
+              "nl": "Seconden",
+              "no": "Sekunder",
+              "pl": "Sekundy",
+              "ru": "Секунды",
+              "sv": "Sekunder"
+            }
+          }
+        ]
+      },
+      {
+        "id": "pihole_restart_dns",
+        "title": {
+          "en": "Restart DNS-server",
+          "de": "DNS-Server neu starten",
+          "da": "Genstart DNS-server",
+          "es": "Reiniciar servidor DNS",
+          "fr": "Redémarrer le serveur DNS",
+          "nl": "DNS-server herstarten",
+          "no": "Start DNS-server på nytt",
+          "pl": "Zrestartuj serwer DNS",
+          "ru": "Перезапустить DNS-сервер",
+          "sv": "Starta om DNS-servern"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          }
+        ]
+      },
+      {
+        "id": "pihole_update_gravity",
+        "title": {
+          "en": "Update gravity",
+          "de": "Gravity aktualisieren",
+          "da": "Opdater gravity",
+          "es": "Actualizar gravity",
+          "fr": "Mettre à jour gravity",
+          "nl": "Gravity bijwerken",
+          "no": "Oppdater gravity",
+          "pl": "Zaktualizuj gravity",
+          "ru": "Обновить gravity",
+          "sv": "Uppdatera gravity"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          }
+        ]
+      },
+      {
+        "id": "pihole_refresh",
+        "title": {
+          "en": "Refresh data",
+          "de": "Daten aktualisieren",
+          "da": "Opdater data",
+          "es": "Actualizar datos",
+          "fr": "Actualiser les données",
+          "nl": "Gegevens vernieuwen",
+          "no": "Oppdater data",
+          "pl": "Odśwież dane",
+          "ru": "Обновить данные",
+          "sv": "Uppdatera data"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          }
+        ]
+      },
+      {
+        "id": "pihole_domain_add",
+        "title": {
+          "en": "Add domain to list of blocked domains",
+          "de": "Domain zur Liste der blockierten Domains hinzufügen",
+          "da": "Tilføj domæne til listen over blokerede domæner",
+          "es": "Agregar dominio a la lista de dominios bloqueados",
+          "fr": "Ajouter un domaine à la liste des domaines bloqués",
+          "nl": "Domein toevoegen aan lijst met geblokkeerde domeinen",
+          "no": "Legg til domene i listen over blokkerte domener",
+          "pl": "Dodaj domenę do listy zablokowanych domen",
+          "ru": "Добавить домен в список заблокированных доменов",
+          "sv": "Lägg till domän i listan över blockerade domäner"
+        },
+        "titleFormatted": {
+          "en": "Add [[domain]] to the list of [[allowedOrBlocked]] domains",
+          "de": "Füge [[domain]] zur Liste der [[allowedOrBlocked]] Domains hinzu",
+          "da": "Tilføj [[domain]] til listen over [[allowedOrBlocked]] domæner",
+          "es": "Agregar [[domain]] a la lista de dominios [[allowedOrBlocked]]",
+          "fr": "Ajouter [[domain]] à la liste des domaines [[allowedOrBlocked]]",
+          "nl": "Voeg [[domain]] toe aan de lijst met [[allowedOrBlocked]] domeinen",
+          "no": "Legg til [[domain]] i listen over [[allowedOrBlocked]] domener",
+          "pl": "Dodaj [[domain]] do listy [[allowedOrBlocked]] domen",
+          "ru": "Добавить [[domain]] в список [[allowedOrBlocked]] доменов",
+          "sv": "Lägg till [[domain]] i listan över [[allowedOrBlocked]] domäner"
+        },
+        "hint": {
+          "en": "Adds a domain to the list of allowed or blocked domains. The domain is added to the 'default' group in Pi-Hole",
+          "de": "Fügt eine Domain zur Liste der erlaubten oder blockierten Domains hinzu. Die Domain wird der 'Standard'-Gruppe in Pi-Hole hinzugefügt",
+          "da": "Tilføjer et domæne til listen over tilladte eller blokerede domæner. Domænet tilføjes til 'standard'-gruppen i Pi-Hole",
+          "es": "Agrega un dominio a la lista de dominios permitidos o bloqueados. El dominio se agrega al grupo 'predeterminado' en Pi-Hole",
+          "fr": "Ajoute un domaine à la liste des domaines autorisés ou bloqués. Le domaine est ajouté au groupe 'par défaut' dans Pi-Hole",
+          "nl": "Voegt een domein toe aan de lijst met toegestane of geblokkeerde domeinen. Het domein wordt toegevoegd aan de 'standaard'-groep in Pi-Hole",
+          "no": "Legger til et domene i listen over tillatte eller blokkerte domener. Domenet legges til i 'standard'-gruppen i Pi-Hole",
+          "pl": "Dodaje domenę do listy dozwolonych lub zablokowanych domen. Domenę dodaje się do grupy 'domyślnej' w Pi-Hole",
+          "ru": "Добавляет домен в список разрешенных или заблокированных доменов. Домен добавляется в группу 'по умолчанию' в Pi-Hole",
+          "sv": "Lägger till en domän i listan över tillåtna eller blockerade domäner. Domänen läggs till i 'standard'-gruppen i Pi-Hole"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          },
+          {
+            "name": "domain",
+            "type": "text",
+            "placeholder": {
+              "en": "example.org"
+            }
+          },
+          {
+            "name": "allowedOrBlocked",
+            "type": "dropdown",
+            "title": {
+              "en": "Allowed/Blocked",
+              "de": "Erlaubt/Blockiert",
+              "da": "Tilladt/Blokeret",
+              "es": "Permitido/Bloqueado",
+              "fr": "Autorisé/Bloqué",
+              "nl": "Toegestaan/Geblokkeerd",
+              "no": "Tillatt/Blokkert",
+              "pl": "Dozwolone/Zablokowane",
+              "ru": "Разрешено/Заблокировано",
+              "sv": "Tillåtet/Blockerat"
+            },
+            "values": [
+              {
+                "id": "allow",
+                "title": {
+                  "en": "allowed",
+                  "de": "erlaubt",
+                  "da": "tilladt",
+                  "es": "permitido",
+                  "fr": "autorisé",
+                  "nl": "toegestaan",
+                  "no": "tillatt",
+                  "pl": "dozwolone",
+                  "ru": "разрешено",
+                  "sv": "tillåtet"
+                }
+              },
+              {
+                "id": "deny",
+                "title": {
+                  "en": "blocked",
+                  "de": "blockiert",
+                  "da": "blokeret",
+                  "es": "bloqueado",
+                  "fr": "bloqué",
+                  "nl": "geblokkeerd",
+                  "no": "blokkert",
+                  "pl": "zablokowane",
+                  "ru": "заблокировано",
+                  "sv": "blockerat"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pihole_domain_add_regex",
+        "title": {
+          "en": "Add regex-expression to list of blocked domains",
+          "de": "Regex-Ausdruck zur Liste der blockierten Domains hinzufügen",
+          "da": "Tilføj regex-udtryk til listen over blokerede domæner",
+          "es": "Agregar expresión regex a la lista de dominios bloqueados",
+          "fr": "Ajouter une expression regex à la liste des domaines bloqués",
+          "nl": "Regex-uitdrukking toevoegen aan lijst met geblokkeerde domeinen",
+          "no": "Legg til regex-uttrykk i listen over blokkerte domener",
+          "pl": "Dodaj wyrażenie regex do listy zablokowanych domen",
+          "ru": "Добавить регулярное выражение в список заблокированных доменов",
+          "sv": "Lägg till regex-uttryck i listan över blockerade domäner"
+        },
+        "titleFormatted": {
+          "en": "Add regex [[domain]] to the list of [[allowedOrBlocked]] domains",
+          "de": "Füge Regex [[domain]] zur Liste der [[allowedOrBlocked]] Domains hinzu",
+          "da": "Tilføj regex [[domain]] til listen over [[allowedOrBlocked]] domæner",
+          "es": "Agregar regex [[domain]] a la lista de dominios [[allowedOrBlocked]]",
+          "fr": "Ajouter regex [[domain]] à la liste des domaines [[allowedOrBlocked]]",
+          "nl": "Voeg regex [[domain]] toe aan de lijst met [[allowedOrBlocked]] domeinen",
+          "no": "Legg til regex [[domain]] i listen over [[allowedOrBlocked]] domener",
+          "pl": "Dodaj regex [[domain]] do listy [[allowedOrBlocked]] domen",
+          "ru": "Добавить regex [[domain]] в список [[allowedOrBlocked]] доменов",
+          "sv": "Lägg till regex [[domain]] i listan över [[allowedOrBlocked]] domäner"
+        },
+        "hint": {
+          "en": "Adds a regex-expression to the list of allowed or blocked domains. The domain is added to the 'default' group in Pi-Hole",
+          "de": "Fügt einen Regex-Ausdruck zur Liste der erlaubten oder blockierten Domains hinzu. Die Domain wird der 'Standard'-Gruppe in Pi-Hole hinzugefügt",
+          "da": "Tilføjer et regex-udtryk til listen over tilladte eller blokerede domæner. Domænet tilføjes til 'standard'-gruppen i Pi-Hole",
+          "es": "Agrega una expresión regex a la lista de dominios permitidos o bloqueados. El dominio se agrega al grupo 'predeterminado' en Pi-Hole",
+          "fr": "Ajoute une expression regex à la liste des domaines autorisés ou bloqués. Le domaine est ajouté au groupe 'par défaut' dans Pi-Hole",
+          "nl": "Voegt een regex-uitdrukking toe aan de lijst met toegestane of geblokkeerde domeinen. Het domein wordt toegevoegd aan de 'standaard'-groep in Pi-Hole",
+          "no": "Legger til et regex-uttrykk i listen over tillatte eller blokkerte domener. Domenet legges til i 'standard'-gruppen i Pi-Hole",
+          "pl": "Dodaje wyrażenie regex do listy dozwolonych lub zablokowanych domen. Domenę dodaje się do grupy 'domyślnej' w Pi-Hole",
+          "ru": "Добавляет регулярное выражение в список разрешенных или заблокированных доменов. Домен добавляется в группу 'по умолчанию' в Pi-Hole",
+          "sv": "Lägger till ett regex-uttryck i listan över tillåtna eller blockerade domäner. Domänen läggs till i 'standard'-gruppen i Pi-Hole"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          },
+          {
+            "name": "domain",
+            "type": "text",
+            "placeholder": {
+              "en": "example.org"
+            }
+          },
+          {
+            "name": "allowedOrBlocked",
+            "type": "dropdown",
+            "title": {
+              "en": "Allowed/Blocked",
+              "de": "Erlaubt/Blockiert",
+              "da": "Tilladt/Blokeret",
+              "es": "Permitido/Bloqueado",
+              "fr": "Autorisé/Bloqué",
+              "nl": "Toegestaan/Geblokkeerd",
+              "no": "Tillatt/Blokkert",
+              "pl": "Dozwolone/Zablokowane",
+              "ru": "Разрешено/Заблокировано",
+              "sv": "Tillåtet/Blockerat"
+            },
+            "values": [
+              {
+                "id": "allow",
+                "title": {
+                  "en": "allowed",
+                  "de": "erlaubt",
+                  "da": "tilladt",
+                  "es": "permitido",
+                  "fr": "autorisé",
+                  "nl": "toegestaan",
+                  "no": "tillatt",
+                  "pl": "dozwolone",
+                  "ru": "разрешено",
+                  "sv": "tillåtet"
+                }
+              },
+              {
+                "id": "deny",
+                "title": {
+                  "en": "blocked",
+                  "de": "blockiert",
+                  "da": "blokeret",
+                  "es": "bloqueado",
+                  "fr": "bloqué",
+                  "nl": "geblokkeerd",
+                  "no": "blokkert",
+                  "pl": "zablokowane",
+                  "ru": "заблокировано",
+                  "sv": "blockerat"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pihole_domain_remove",
+        "title": {
+          "en": "Remove domain from the list of blocked domains",
+          "de": "Domain aus der Liste der blockierten Domains entfernen",
+          "da": "Fjern domæne fra listen over blokerede domæner",
+          "es": "Eliminar dominio de la lista de dominios bloqueados",
+          "fr": "Supprimer le domaine de la liste des domaines bloqués",
+          "nl": "Domein verwijderen uit de lijst met geblokkeerde domeinen",
+          "no": "Fjern domene fra listen over blokkerte domener",
+          "pl": "Usuń domenę z listy zablokowanych domen",
+          "ru": "Удалить домен из списка заблокированных доменов",
+          "sv": "Ta bort domän från listan över blockerade domäner"
+        },
+        "titleFormatted": {
+          "en": "Remove [[domain]] from the list of [[allowedOrBlocked]] domains",
+          "de": "Entferne [[domain]] aus der Liste der [[allowedOrBlocked]] Domains",
+          "da": "Fjern [[domain]] fra listen over [[allowedOrBlocked]] domæner",
+          "es": "Eliminar [[domain]] de la lista de dominios [[allowedOrBlocked]]",
+          "fr": "Supprimer [[domain]] de la liste des domaines [[allowedOrBlocked]]",
+          "nl": "Verwijder [[domain]] uit de lijst met [[allowedOrBlocked]] domeinen",
+          "no": "Fjern [[domain]] fra listen over [[allowedOrBlocked]] domener",
+          "pl": "Usuń [[domain]] z listy [[allowedOrBlocked]] domen",
+          "ru": "Удалить [[domain]] из списка [[allowedOrBlocked]] доменов",
+          "sv": "Ta bort [[domain]] från listan över [[allowedOrBlocked]] domäner"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          },
+          {
+            "name": "domain",
+            "type": "text",
+            "placeholder": {
+              "en": "example.org"
+            }
+          },
+          {
+            "name": "allowedOrBlocked",
+            "type": "dropdown",
+            "title": {
+              "en": "Allowed/Blocked",
+              "de": "Erlaubt/Blockiert",
+              "da": "Tilladt/Blokeret",
+              "es": "Permitido/Bloqueado",
+              "fr": "Autorisé/Bloqué",
+              "nl": "Toegestaan/Geblokkeerd",
+              "no": "Tillatt/Blokkert",
+              "pl": "Dozwolone/Zablokowane",
+              "ru": "Разрешено/Заблокировано",
+              "sv": "Tillåtet/Blockerat"
+            },
+            "values": [
+              {
+                "id": "allow",
+                "title": {
+                  "en": "allowed",
+                  "de": "erlaubt",
+                  "da": "tilladt",
+                  "es": "permitido",
+                  "fr": "autorisé",
+                  "nl": "toegestaan",
+                  "no": "tillatt",
+                  "pl": "dozwolone",
+                  "ru": "разрешено",
+                  "sv": "tillåtet"
+                }
+              },
+              {
+                "id": "deny",
+                "title": {
+                  "en": "blocked",
+                  "de": "blockiert",
+                  "da": "blokeret",
+                  "es": "bloqueado",
+                  "fr": "bloqué",
+                  "nl": "geblokkeerd",
+                  "no": "blokkert",
+                  "pl": "zablokowane",
+                  "ru": "заблокировано",
+                  "sv": "blockerat"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pihole_domain_remove_regex",
+        "title": {
+          "en": "Remove regex-expression from the list of blocked domains",
+          "de": "Regex-Ausdruck aus der Liste der blockierten Domains entfernen",
+          "da": "Fjern regex-udtryk fra listen over blokerede domæner",
+          "es": "Eliminar expresión regex de la lista de dominios bloqueados",
+          "fr": "Supprimer l'expression regex de la liste des domaines bloqués",
+          "nl": "Regex-uitdrukking verwijderen uit de lijst met geblokkeerde domeinen",
+          "no": "Fjern regex-uttrykk fra listen over blokkerte domener",
+          "pl": "Usuń wyrażenie regex z listy zablokowanych domen",
+          "ru": "Удалить регулярное выражение из списка заблокированных доменов",
+          "sv": "Ta bort regex-uttryck från listan över blockerade domäner"
+        },
+        "titleFormatted": {
+          "en": "Remove regex [[domain]] from the list of [[allowedOrBlocked]] domains",
+          "de": "Entferne Regex [[domain]] aus der Liste der [[allowedOrBlocked]] Domains",
+          "da": "Fjern regex [[domain]] fra listen over [[allowedOrBlocked]] domæner",
+          "es": "Eliminar regex [[domain]] de la lista de dominios [[allowedOrBlocked]]",
+          "fr": "Supprimer regex [[domain]] de la liste des domaines [[allowedOrBlocked]]",
+          "nl": "Verwijder regex [[domain]] uit de lijst met [[allowedOrBlocked]] domeinen",
+          "no": "Fjern regex [[domain]] fra listen over [[allowedOrBlocked]] domener",
+          "pl": "Usuń regex [[domain]] z listy [[allowedOrBlocked]] domen",
+          "ru": "Удалить regex [[domain]] из списка [[allowedOrBlocked]] доменов",
+          "sv": "Ta bort regex [[domain]] från listan över [[allowedOrBlocked]] domäner"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          },
+          {
+            "name": "domain",
+            "type": "text",
+            "placeholder": {
+              "en": "example.org"
+            }
+          },
+          {
+            "name": "allowedOrBlocked",
+            "type": "dropdown",
+            "title": {
+              "en": "Allowed/Blocked",
+              "de": "Erlaubt/Blockiert",
+              "da": "Tilladt/Blokeret",
+              "es": "Permitido/Bloqueado",
+              "fr": "Autorisé/Bloqué",
+              "nl": "Toegestaan/Geblokkeerd",
+              "no": "Tillatt/Blokkert",
+              "pl": "Dozwolone/Zablokowane",
+              "ru": "Разрешено/Заблокировано",
+              "sv": "Tillåtet/Blockerat"
+            },
+            "values": [
+              {
+                "id": "allow",
+                "title": {
+                  "en": "allowed",
+                  "de": "erlaubt",
+                  "da": "tilladt",
+                  "es": "permitido",
+                  "fr": "autorisé",
+                  "nl": "toegestaan",
+                  "no": "tillatt",
+                  "pl": "dozwolone",
+                  "ru": "разрешено",
+                  "sv": "tillåtet"
+                }
+              },
+              {
+                "id": "deny",
+                "title": {
+                  "en": "blocked",
+                  "de": "blockiert",
+                  "da": "blokeret",
+                  "es": "bloqueado",
+                  "fr": "bloqué",
+                  "nl": "geblokkeerd",
+                  "no": "blokkert",
+                  "pl": "zablokowane",
+                  "ru": "заблокировано",
+                  "sv": "blockerat"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pihole_group_add_domain",
+        "title": {
+          "en": "Add domain to Pi-Hole group",
+          "de": "Domain zur Pi-Hole-Gruppe hinzufügen",
+          "da": "Tilføj domæne til Pi-Hole-gruppe",
+          "es": "Agregar dominio al grupo de Pi-Hole",
+          "fr": "Ajouter un domaine au groupe Pi-Hole",
+          "nl": "Domein toevoegen aan Pi-Hole-groep",
+          "no": "Legg til domene i Pi-Hole-gruppe",
+          "pl": "Dodaj domenę do grupy Pi-Hole",
+          "ru": "Добавить домен в группу Pi-Hole",
+          "sv": "Lägg till domän i Pi-Hole-grupp"
+        },
+        "titleFormatted": {
+          "en": "Add [[domain]] to Pi-Hole group [[group]]",
+          "de": "Füge [[domain]] zur Pi-Hole-Gruppe [[group]] hinzu",
+          "da": "Tilføj [[domain]] til Pi-Hole-gruppe [[group]]",
+          "es": "Agregar [[domain]] al grupo de Pi-Hole [[group]]",
+          "fr": "Ajouter [[domain]] au groupe Pi-Hole [[group]]",
+          "nl": "Voeg [[domain]] toe aan Pi-Hole-groep [[group]]",
+          "no": "Legg til [[domain]] i Pi-Hole-gruppe [[group]]",
+          "pl": "Dodaj [[domain]] do grupy Pi-Hole [[group]]",
+          "ru": "Добавить [[domain]] в группу Pi-Hole [[group]]",
+          "sv": "Lägg till [[domain]] i Pi-Hole-grupp [[group]]"
+        },
+        "hint": {
+          "en": "For advanced pi-hole users only. Add domain to a Pi-Hole group, so it also applies to devices in that group. The domain should already be defined in Pi-Hole as a blocked or allowed domain. The group should be manually created in Pi-Hole first.",
+          "de": "Nur für fortgeschrittene Pi-Hole-Benutzer. Fügen Sie eine Domain zu einer Pi-Hole-Gruppe hinzu, damit sie auch für Geräte in dieser Gruppe gilt. Die Domain sollte bereits in Pi-Hole als blockiert oder erlaubt definiert sein. Die Gruppe sollte zuerst manuell in Pi-Hole erstellt werden.",
+          "da": "Kun for avancerede Pi-Hole-brugere. Tilføj domæne til en Pi-Hole-gruppe, så det også gælder for enheder i den gruppe. Domænet skal allerede være defineret i Pi-Hole som blokeret eller tilladt. Gruppen skal først oprettes manuelt i Pi-Hole.",
+          "es": "Solo para usuarios avanzados de Pi-Hole. Agregue un dominio a un grupo de Pi-Hole, para que también se aplique a los dispositivos en ese grupo. El dominio ya debe estar definido en Pi-Hole como bloqueado o permitido. El grupo debe crearse manualmente en Pi-Hole primero.",
+          "fr": "Uniquement pour les utilisateurs avancés de Pi-Hole. Ajoutez un domaine à un groupe Pi-Hole, afin qu'il s'applique également aux appareils de ce groupe. Le domaine doit déjà être défini dans Pi-Hole comme bloqué ou autorisé. Le groupe doit d'abord être créé manuellement dans Pi-Hole.",
+          "nl": "Alleen voor gevorderde Pi-Hole-gebruikers. Voeg een domein toe aan een Pi-Hole-groep, zodat het ook van toepassing is op apparaten in die groep. Het domein moet al in Pi-Hole zijn gedefinieerd als geblokkeerd of toegestaan. De groep moet eerst handmatig in Pi-Hole worden aangemaakt.",
+          "no": "Kun for avanserte Pi-Hole-brukere. Legg til et domene i en Pi-Hole-gruppe, slik at det også gjelder for enheter i den gruppen. Domenet må allerede være definert i Pi-Hole som blokkert eller tillatt. Gruppen må først opprettes manuelt i Pi-Hole.",
+          "pl": "Tylko dla zaawansowanych użytkowników Pi-Hole. Dodaj domenę do grupy Pi-Hole, aby miała zastosowanie również do urządzeń w tej grupie. Domena powinna być już zdefiniowana w Pi-Hole jako zablokowana lub dozwolona. Grupa powinna zostać najpierw ręcznie utworzona w Pi-Hole.",
+          "ru": "Только для опытных пользователей Pi-Hole. Добавьте домен в группу Pi-Hole, чтобы он также применялся к устройствам в этой группе. Домен должен быть уже определен в Pi-Hole как заблокированный или разрешенный. Группа должна быть сначала создана вручную в Pi-Hole.",
+          "sv": "Endast för avancerade Pi-Hole-användare. Lägg till en domän i en Pi-Hole-grupp, så att den även gäller för enheter i den gruppen. Domänen måste redan vara definierad i Pi-Hole som blockerad eller tillåten. Gruppen måste först skapas manuellt i Pi-Hole."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          },
+          {
+            "name": "domain",
+            "type": "text",
+            "placeholder": {
+              "en": "example.org"
+            }
+          },
+          {
+            "name": "group",
+            "type": "autocomplete",
+            "title": {
+              "en": "group name",
+              "de": "Gruppenname",
+              "da": "Gruppenavn",
+              "es": "Nombre del grupo",
+              "fr": "Nom du groupe",
+              "nl": "Groepsnaam",
+              "no": "Gruppenavn",
+              "pl": "Nazwa grupy",
+              "ru": "Имя группы",
+              "sv": "Gruppnamn"
+            }
+          }
+        ]
+      },
+      {
+        "id": "pihole_group_remove_domain",
+        "title": {
+          "en": "Remove domain from Pi-Hole group",
+          "de": "Domain aus Pi-Hole-Gruppe entfernen",
+          "da": "Fjern domæne fra Pi-Hole-gruppe",
+          "es": "Eliminar dominio del grupo de Pi-Hole",
+          "fr": "Supprimer le domaine du groupe Pi-Hole",
+          "nl": "Domein verwijderen uit Pi-Hole-groep",
+          "no": "Fjern domene fra Pi-Hole-gruppe",
+          "pl": "Usuń domenę z grupy Pi-Hole",
+          "ru": "Удалить домен из группы Pi-Hole",
+          "sv": "Ta bort domän från Pi-Hole-grupp"
+        },
+        "titleFormatted": {
+          "en": "Remove [[domain]] from Pi-Hole group [[group]]",
+          "de": "Entferne [[domain]] aus der Pi-Hole-Gruppe [[group]]",
+          "da": "Fjern [[domain]] fra Pi-Hole-gruppe [[group]]",
+          "es": "Eliminar [[domain]] del grupo de Pi-Hole [[group]]",
+          "fr": "Supprimer [[domain]] du groupe Pi-Hole [[group]]",
+          "nl": "Verwijder [[domain]] uit Pi-Hole-groep [[group]]",
+          "no": "Fjern [[domain]] fra Pi-Hole-gruppe [[group]]",
+          "pl": "Usuń [[domain]] z grupy Pi-Hole [[group]]",
+          "ru": "Удалить [[domain]] из группы Pi-Hole [[group]]",
+          "sv": "Ta bort [[domain]] från Pi-Hole-grupp [[group]]"
+        },
+        "hint": {
+          "en": "For advanced pi-hole users only. Remove domain from a Pi-Hole group, so it also applies to devices in that group. The domain should already be defined in Pi-Hole as a blocked or allowed domain. The domain will not be deleted, only unlinked from the group. The group should be manually created in Pi-Hole first.",
+          "de": "Nur für fortgeschrittene Pi-Hole-Benutzer. Entfernen Sie eine Domain aus einer Pi-Hole-Gruppe, damit sie auch für Geräte in dieser Gruppe gilt. Die Domain sollte bereits in Pi-Hole als blockiert oder erlaubt definiert sein. Die Domain wird nicht gelöscht, sondern nur aus der Gruppe entfernt. Die Gruppe sollte zuerst manuell in Pi-Hole erstellt werden.",
+          "da": "Kun for avancerede Pi-Hole-brugere. Fjern domæne fra en Pi-Hole-gruppe, så det også gælder for enheder i den gruppe. Domænet skal allerede være defineret i Pi-Hole som blokeret eller tilladt. Domænet vil ikke blive slettet, kun fjernet fra gruppen. Gruppen skal først oprettes manuelt i Pi-Hole.",
+          "es": "Solo para usuarios avanzados de Pi-Hole. Elimine un dominio de un grupo de Pi-Hole, para que también se aplique a los dispositivos en ese grupo. El dominio ya debe estar definido en Pi-Hole como bloqueado o permitido. El dominio no se eliminará, solo se desvinculará del grupo. El grupo debe crearse manualmente en Pi-Hole primero.",
+          "fr": "Uniquement pour les utilisateurs avancés de Pi-Hole. Supprimez un domaine d'un groupe Pi-Hole, afin qu'il s'applique également aux appareils de ce groupe. Le domaine doit déjà être défini dans Pi-Hole comme bloqué ou autorisé. Le domaine ne sera pas supprimé, seulement dissocié du groupe. Le groupe doit d'abord être créé manuellement dans Pi-Hole.",
+          "nl": "Alleen voor gevorderde Pi-Hole-gebruikers. Verwijder een domein uit een Pi-Hole-groep, zodat het ook van toepassing is op apparaten in die groep. Het domein moet al in Pi-Hole zijn gedefinieerd als geblokkeerd of toegestaan. Het domein wordt niet verwijderd, alleen losgekoppeld van de groep. De groep moet eerst handmatig in Pi-Hole worden aangemaakt.",
+          "no": "Kun for avanserte Pi-Hole-brukere. Fjern et domene fra en Pi-Hole-gruppe, slik at det også gjelder for enheter i den gruppen. Domenet må allerede være definert i Pi-Hole som blokkert eller tillatt. Domenet vil ikke bli slettet, bare fjernet fra gruppen. Gruppen må først opprettes manuelt i Pi-Hole.",
+          "pl": "Tylko dla zaawansowanych użytkowników Pi-Hole. Usuń domenę z grupy Pi-Hole, aby miała zastosowanie również do urządzeń w tej grupie. Domena powinna być już zdefiniowana w Pi-Hole jako zablokowana lub dozwolona. Domena nie zostanie usunięta, tylko odłączona od grupy. Grupa powinna zostać najpierw ręcznie utworzona w Pi-Hole.",
+          "ru": "Только для опытных пользователей Pi-Hole. Удалите домен из группы Pi-Hole, чтобы он также применялся к устройствам в этой группе. Домен должен быть уже определен в Pi-Hole как заблокированный или разрешенный. Домен не будет удален, только отвязан от группы. Группа должна быть сначала создана вручную в Pi-Hole.",
+          "sv": "Endast för avancerade Pi-Hole-användare. Ta bort en domän från en Pi-Hole-grupp, så att den även gäller för enheter i den gruppen. Domänen måste redan vara definierad i Pi-Hole som blockerad eller tillåten. Domänen kommer inte att tas bort, bara kopplas bort från gruppen. Gruppen måste först skapas manuellt i Pi-Hole."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          },
+          {
+            "name": "domain",
+            "type": "text",
+            "placeholder": {
+              "en": "example.org"
+            }
+          },
+          {
+            "name": "group",
+            "type": "autocomplete",
+            "title": {
+              "en": "group name",
+              "de": "Gruppenname",
+              "da": "Gruppenavn",
+              "es": "Nombre del grupo",
+              "fr": "Nom du groupe",
+              "nl": "Groepsnaam",
+              "no": "Gruppenavn",
+              "pl": "Nazwa grupy",
+              "ru": "Имя группы",
+              "sv": "Gruppnamn"
+            }
+          }
+        ]
+      },
+      {
+        "id": "pihole_local_dns_add_record",
+        "title": {
+          "en": "Add local DNS record",
+          "de": "Lokalen DNS-Eintrag hinzufügen",
+          "da": "Tilføj lokal DNS-post",
+          "es": "Agregar registro DNS local",
+          "fr": "Ajouter un enregistrement DNS local",
+          "nl": "Lokale DNS-record toevoegen",
+          "no": "Legg til lokal DNS-post",
+          "pl": "Dodaj lokalny rekord DNS",
+          "ru": "Добавить локальную запись DNS",
+          "sv": "Lägg till lokal DNS-post"
+        },
+        "titleFormatted": {
+          "en": "Add local DNS record [[domain]] pointing to IP-address [[ip]]",
+          "de": "Lokalen DNS-Eintrag [[domain]] hinzufügen, der auf die IP-Adresse [[ip]] zeigt",
+          "da": "Tilføj lokal DNS-post [[domain]], der peger på IP-adressen [[ip]]",
+          "es": "Agregar registro DNS local [[domain]] apuntando a la dirección IP [[ip]]",
+          "fr": "Ajouter un enregistrement DNS local [[domain]] pointant vers l'adresse IP [[ip]]",
+          "nl": "Lokale DNS-record [[domain]] toevoegen die verwijst naar IP-adres [[ip]]",
+          "no": "Legg til lokal DNS-post [[domain]] som peker til IP-adressen [[ip]]",
+          "pl": "Dodaj lokalny rekord DNS [[domain]] wskazujący na adres IP [[ip]]",
+          "ru": "Добавить локальную запись DNS [[domain]], указывающую на IP-адрес [[ip]]",
+          "sv": "Lägg till lokal DNS-post [[domain]] som pekar på IP-adressen [[ip]]"
+        },
+        "hint": {
+          "en": "Adds a local DNS record to Pi-Hole. This will automatically flush the DNS cache.",
+          "de": "Fügt einen lokalen DNS-Eintrag zu Pi-Hole hinzu. Dadurch wird der DNS-Cache automatisch geleert.",
+          "da": "Tilføjer en lokal DNS-post til Pi-Hole. Dette vil automatisk tømme DNS-cachen.",
+          "es": "Agrega un registro DNS local a Pi-Hole. Esto vaciará automáticamente la caché de DNS.",
+          "fr": "Ajoute un enregistrement DNS local à Pi-Hole. Cela videra automatiquement le cache DNS.",
+          "nl": "Voegt een lokale DNS-record toe aan Pi-Hole. Dit zal automatisch de DNS-cache legen.",
+          "no": "Legger til en lokal DNS-post i Pi-Hole. Dette vil automatisk tømme DNS-cachen.",
+          "pl": "Dodaje lokalny rekord DNS do Pi-Hole. Spowoduje to automatyczne opróżnienie pamięci podręcznej DNS.",
+          "ru": "Добавляет локальную запись DNS в Pi-Hole. Это автоматически очистит кэш DNS.",
+          "sv": "Lägger till en lokal DNS-post i Pi-Hole. Detta kommer automatiskt att rensa DNS-cachen."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          },
+          {
+            "name": "domain",
+            "type": "text",
+            "title": {
+              "en": "Domain name",
+              "de": "Domainname",
+              "da": "Domænenavn",
+              "es": "Nombre de dominio",
+              "fr": "Nom de domaine",
+              "nl": "Domeinnaam",
+              "no": "Domenenavn",
+              "pl": "Nazwa domeny",
+              "ru": "Имя домена",
+              "sv": "Domännamn"
+            },
+            "placeholder": {
+              "en": "example.org"
+            }
+          },
+          {
+            "name": "ip",
+            "type": "text",
+            "title": {
+              "en": "Destination IP-address",
+              "de": "Ziel-IP-Adresse",
+              "da": "Destinationens IP-adresse",
+              "es": "Dirección IP de destino",
+              "fr": "Adresse IP de destination",
+              "nl": "Bestemmings-IP-adres",
+              "no": "Destinasjons-IP-adresse",
+              "pl": "Adres IP docelowy",
+              "ru": "IP-адрес назначения",
+              "sv": "Målets IP-adress"
+            },
+            "placeholder": {
+              "en": "127.0.0.1"
+            }
+          }
+        ]
+      },
+      {
+        "id": "pihole_local_dns_remove_record",
+        "title": {
+          "en": "Remove local DNS record",
+          "de": "Lokalen DNS-Eintrag entfernen",
+          "da": "Fjern lokal DNS-post",
+          "es": "Eliminar registro DNS local",
+          "fr": "Supprimer un enregistrement DNS local",
+          "nl": "Lokale DNS-record verwijderen",
+          "no": "Fjern lokal DNS-post",
+          "pl": "Usuń lokalny rekord DNS",
+          "ru": "Удалить локальную запись DNS",
+          "sv": "Ta bort lokal DNS-post"
+        },
+        "titleFormatted": {
+          "en": "Remove local DNS record [[domain]]",
+          "de": "Lokalen DNS-Eintrag [[domain]] entfernen",
+          "da": "Fjern lokal DNS-post [[domain]]",
+          "es": "Eliminar registro DNS local [[domain]]",
+          "fr": "Supprimer un enregistrement DNS local [[domain]]",
+          "nl": "Lokale DNS-record [[domain]] verwijderen",
+          "no": "Fjern lokal DNS-post [[domain]]",
+          "pl": "Usuń lokalny rekord DNS [[domain]]",
+          "ru": "Удалить локальную запись DNS [[domain]]",
+          "sv": "Ta bort lokal DNS-post [[domain]]"
+        },
+        "hint": {
+          "en": "Removes a local DNS record from Pi-Hole",
+          "de": "Entfernt einen lokalen DNS-Eintrag aus Pi-Hole",
+          "da": "Fjerner en lokal DNS-post fra Pi-Hole",
+          "es": "Elimina un registro DNS local de Pi-Hole",
+          "fr": "Supprime un enregistrement DNS local de Pi-Hole",
+          "nl": "Verwijdert een lokale DNS-record uit Pi-Hole",
+          "no": "Fjerner en lokal DNS-post fra Pi-Hole",
+          "pl": "Usuwa lokalny rekord DNS z Pi-Hole",
+          "ru": "Удаляет локальную запись DNS из Pi-Hole",
+          "sv": "Tar bort en lokal DNS-post från Pi-Hole"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          },
+          {
+            "name": "domain",
+            "type": "text",
+            "title": {
+              "en": "Domain name",
+              "de": "Domainname",
+              "da": "Domænenavn",
+              "es": "Nombre de dominio",
+              "fr": "Nom de domaine",
+              "nl": "Domeinnaam",
+              "no": "Domenenavn",
+              "pl": "Nazwa domeny",
+              "ru": "Имя домена",
+              "sv": "Domännamn"
+            },
+            "placeholder": {
+              "en": "example.org"
+            }
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "on",
+        "title": {
+          "en": "Ad-Blocking is !{{enabled|disabled}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          }
+        ]
+      },
+      {
+        "id": "pihole_rule_exists",
+        "title": {
+          "en": "An allow/block rule exists for ..."
+        },
+        "titleFormatted": {
+          "en": "An [[allowedOrBlocked]] rule [[domain]] !{{exists|doesn't exist}}"
+        },
+        "hint": {
+          "en": "Checks if a specific domain or regex expression is defined as a block or allow rule."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          },
+          {
+            "name": "domain",
+            "type": "text",
+            "placeholder": {
+              "en": "example.org"
+            }
+          },
+          {
+            "name": "allowedOrBlocked",
+            "type": "dropdown",
+            "title": {
+              "en": "Allowed/Blocked"
+            },
+            "values": [
+              {
+                "id": "allow",
+                "title": {
+                  "en": "allow"
+                }
+              },
+              {
+                "id": "deny",
+                "title": {
+                  "en": "block"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pihole_domain_blocked",
+        "title": {
+          "en": "Domain ... is blocked"
+        },
+        "titleFormatted": {
+          "en": "Domain [[domain]] is !{{blocked|allowed}}"
+        },
+        "hint": {
+          "en": "Searches the blocklists and custom rules to check if a query would pass or be blocked"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          },
+          {
+            "name": "domain",
+            "type": "text",
+            "placeholder": {
+              "en": "example.org"
+            }
+          }
+        ]
+      },
+      {
+        "id": "alarm_connectivity",
+        "title": {
+          "en": "Is !{{connected|disconnected}}",
+          "nl": "Is !{{verbonden|niet verbonden}}",
+          "da": "Er !{{tilsluttet|afbrudt}}",
+          "it": "È !{{connesso|disconnesso}}",
+          "ko": "!{{연결됨|연결 해제됨}}",
+          "no": "Er !{{frakoblet|tilkoblet}}",
+          "pl": "Jest !{{połączony|niepołączony}}",
+          "ru": "Устройство !{{подключено|отключено}}",
+          "sv": "Är !{{ansluten|frånkopplad}}",
+          "es": "Está !{{conectado|desconectado}}",
+          "fr": "Est !{{connectée|déconnectée}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=piholeV6"
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "id": "pihole",
+      "name": {
+        "en": "PiHole v5.x",
+        "da": "PiHole v5.x",
+        "de": "PiHole v5.x",
+        "es": "PiHole v5.x",
+        "fr": "PiHole v5.x",
+        "nl": "PiHole v5.x",
+        "no": "PiHole v5.x",
+        "pl": "PiHole v5.x",
+        "ru": "PiHole v5.x",
+        "sv": "PiHole v5.x"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "onoff",
+        "alarm_communication_error",
+        "alarm_filter_state",
+        "last_sync",
+        "measure_dns_queries_today",
+        "measure_ads_blocked_today",
+        "measure_ads_blocked_today_percent",
+        "gravity_last_update",
+        "data_refresh",
+        "core_update_available",
+        "web_update_available",
+        "ftl_update_available"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "titleTrue": {
+            "en": "Adblocking enabled"
+          },
+          "titleFalse": {
+            "en": "Adblocking disabled"
+          },
+          "insightsTitleTrue": {
+            "en": "Adblocking has been enabled"
+          },
+          "insightsTitleFalse": {
+            "en": "Adblocking has been disabled"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/pihole/assets/images/small.png",
+        "large": "/drivers/pihole/assets/images/large.png",
+        "xlarge": "/drivers/pihole/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "options": {
+            "singular": true
+          },
+          "navigation": {
+            "next": "configure_device"
+          }
+        },
+        {
+          "id": "configure_device",
+          "navigation": {
+            "prev": "list_devices"
+          }
+        },
+        {
+          "id": "add_device",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "de": "Geräte Einstellungen",
+            "da": "Enhedsindstillinger",
+            "en": "Device Settings",
+            "fr": "Paramètres de l'appareil",
+            "it": "Impostazioni del dispositivo",
+            "nl": "Apparaatinstellingen",
+            "no": "Enhetsinnstillinger",
+            "pl": "Ustawienia urządzenia",
+            "ru": "Настройки устройства",
+            "sv": "Enhetsinställningar"
+          },
+          "children": [
+            {
+              "id": "url",
+              "type": "text",
+              "label": {
+                "de": "Geräte URL",
+                "da": "Enheds URL",
+                "en": "Device URL",
+                "fr": "URL de l'appareil",
+                "it": "URL del dispositivo",
+                "nl": "Apparaat URL",
+                "no": "Enhets URL",
+                "pl": "URL urządzenia",
+                "ru": "URL устройства",
+                "sv": "Enhetens URL"
+              },
+              "value": "",
+              "hint": {
+                "de": "Bitte FQDN oder IP Adresse mit vorgestelltem HTTP(s) nutzen!",
+                "da": "Brug venligst FQDN eller IP-adresse med forudstillet HTTP(s)!",
+                "en": "Please use FQDN or IP address with prepended HTTP(s)!",
+                "fr": "Veuillez utiliser FQDN ou adresse IP avec HTTP(s) préfixé!",
+                "it": "Si prega di utilizzare FQDN o indirizzo IP con HTTP(s) anteposto!",
+                "nl": "Gebruik a.u.b. FQDN of IP-adres met voorgevoegd HTTP(s)!",
+                "no": "Vennligst bruk FQDN eller IP-adresse med foranstilt HTTP(s)!",
+                "pl": "Proszę używać FQDN lub adresu IP z poprzedzonym HTTP(s)!",
+                "ru": "Пожалуйста, используйте FQDN или IP-адрес с префиксом HTTP(s)!",
+                "sv": "Använd gärna FQDN eller IP-adress med föregående HTTP(s)!"
+              }
+            },
+            {
+              "id": "port",
+              "type": "text",
+              "label": {
+                "de": "Port",
+                "da": "Port",
+                "en": "Port",
+                "fr": "Port",
+                "it": "Porta",
+                "nl": "Poort",
+                "no": "Port",
+                "pl": "Port",
+                "ru": "Порт",
+                "sv": "Port"
+              },
+              "value": "",
+              "hint": {
+                "de": "Der Port MUSS angegeben werden, Standard ist immer 80!",
+                "da": "Porten SKAL angives, standard er altid 80!",
+                "en": "The port MUST be specified, default is always 80!",
+                "fr": "Le port DOIT être spécifié, par défaut c'est toujours 80!",
+                "it": "La porta DEVE essere specificata, di default è sempre 80!",
+                "nl": "De poort MOET worden opgegeven, standaard is altijd 80!",
+                "no": "Porten MÅ angis, standard er alltid 80!",
+                "pl": "Port MUSI być podany, domyślnie zawsze jest to 80!",
+                "ru": "Порт ДОЛЖЕН быть указан, по умолчанию всегда 80!",
+                "sv": "Porten MÅSTE anges, standard är alltid 80!"
+              }
+            },
+            {
+              "id": "api",
+              "type": "text",
+              "label": {
+                "de": "API",
+                "da": "API",
+                "en": "API",
+                "fr": "API",
+                "it": "API",
+                "nl": "API",
+                "no": "API",
+                "pl": "API",
+                "ru": "API",
+                "sv": "API"
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "de": "Aktualisierungs-Intervall",
+            "da": "Opdateringsinterval",
+            "en": "Update Interval",
+            "fr": "Intervalle de mise à jour",
+            "it": "Intervallo di aggiornamento",
+            "nl": "Update-interval",
+            "no": "Oppdateringsintervall",
+            "pl": "Interwał aktualizacji",
+            "ru": "Интервал обновления",
+            "sv": "Uppdateringsintervall"
+          },
+          "children": [
+            {
+              "id": "interval",
+              "type": "number",
+              "label": {
+                "de": "Abruf-Intervall",
+                "da": "Hentningsinterval",
+                "en": "Fetch Interval",
+                "fr": "Intervalle de récupération",
+                "it": "Intervallo di recupero",
+                "nl": "Ophaalinterval",
+                "no": "Henteintervall",
+                "pl": "Interwał pobierania",
+                "ru": "Интервал запроса",
+                "sv": "Hämtningsintervall"
+              },
+              "hint": {
+                "de": "Wähle ein Aktualisierungs-Intervall. Wähle eine Intervall bis zu 10 min., um Live-Updates vom Gerät zu ermöglichen.",
+                "da": "Vælg et opdateringsinterval. Vælg et interval på op til 10 min., for at muliggøre live-opdateringer fra enheden.",
+                "en": "Choose an update interval. Select an interval of up to 10 mins to enable live updates from the device.",
+                "fr": "Choisissez un intervalle de mise à jour. Sélectionnez un intervalle jusqu'à 10 min, pour permettre les mises à jour en direct de l'appareil.",
+                "it": "Scegli un intervallo di aggiornamento. Seleziona un intervallo fino a 10 min., per abilitare gli aggiornamenti live dal dispositivo.",
+                "nl": "Kies een update-interval. Kies een interval tot 10 min., om live-updates van het apparaat mogelijk te maken.",
+                "no": "Velg et oppdateringsintervall. Velg et intervall på opptil 10 min., for å muliggjøre direkteoppdateringer fra enheten.",
+                "pl": "Wybierz interwał aktualizacji. Wybierz interwał do 10 min., aby umożliwić aktualizacje na żywo z urządzenia.",
+                "ru": "Выберите интервал обновления. Выберите интервал до 10 мин., чтобы включить живые обновления с устройства.",
+                "sv": "Välj ett uppdateringsintervall. Välj ett intervall på upp till 10 min., för att möjliggöra live-uppdateringar från enheten."
+              },
+              "min": 1,
+              "value": 1
+            },
+            {
+              "id": "interval_unit",
+              "type": "dropdown",
+              "label": {
+                "de": "Intervall-Einheit",
+                "da": "Intervalenhed",
+                "en": "Interval Unit",
+                "fr": "Unité d'intervalle",
+                "it": "Unità d'intervallo",
+                "nl": "Interval-eenheid",
+                "no": "Intervallenhet",
+                "pl": "Jednostka interwału",
+                "ru": "Единица интервала",
+                "sv": "Intervallenhet"
+              },
+              "value": "min",
+              "values": [
+                {
+                  "id": "min",
+                  "label": {
+                    "de": "Minuten",
+                    "da": "Minutter",
+                    "en": "Minutes",
+                    "fr": "Minutes",
+                    "it": "Minuti",
+                    "nl": "Minuten",
+                    "no": "Minutter",
+                    "pl": "Minuty",
+                    "ru": "Минуты",
+                    "sv": "Minuter"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "piholeV6",
+      "name": {
+        "en": "PiHole v6.x",
+        "da": "PiHole v6.x",
+        "de": "PiHole v6.x",
+        "es": "PiHole v6.x",
+        "fr": "PiHole v6.x",
+        "nl": "PiHole v6.x",
+        "no": "PiHole v6.x",
+        "pl": "PiHole v6.x",
+        "ru": "PiHole v6.x",
+        "sv": "PiHole v6.x"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "onoff",
+        "data_refresh",
+        "pihole_restart_dns",
+        "pihole_update_gravity",
+        "alarm_connectivity",
+        "blocking_state",
+        "measure_active_client_count",
+        "measure_queries_total_24h",
+        "measure_queries_blocked_24h",
+        "measure_queries_blocked_relative_24h",
+        "measure_relative_cpu_usage",
+        "measure_relative_memory_usage",
+        "measure_cpu_temp",
+        "measure_system_uptime_minutes",
+        "measure_system_uptime_days",
+        "core_update_available",
+        "ftl_update_available",
+        "web_update_available"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "titleTrue": {
+            "de": "Adblocking aktiv",
+            "en": "Adblocking enabled",
+            "da": "Annonceblokering aktiveret",
+            "es": "Bloqueo de anuncios activado",
+            "fr": "Blocage des publicités activé",
+            "it": "Blocco degli annunci abilitato",
+            "nl": "Advertentieblokkering ingeschakeld",
+            "no": "Annonsesperring aktivert",
+            "pl": "Blokowanie reklam włączone",
+            "ru": "Блокировка рекламы включена",
+            "sv": "Annonsblockering aktiverad"
+          },
+          "titleFalse": {
+            "de": "Adblocking inaktiv",
+            "en": "Adblocking disabled",
+            "da": "Annonceblokering deaktiveret",
+            "es": "Bloqueo de anuncios desactivado",
+            "fr": "Blocage des publicités désactivé",
+            "it": "Blocco degli annunci disabilitato",
+            "nl": "Advertentieblokkering uitgeschakeld",
+            "no": "Annonsesperring deaktivert",
+            "pl": "Blokowanie reklam wyłączone",
+            "ru": "Блокировка рекламы отключена",
+            "sv": "Annonsblockering avaktiverad"
+          },
+          "insightsTitleTrue": {
+            "de": "Adblocking eingeschaltet",
+            "en": "Adblocking has been enabled",
+            "da": "Annonceblokering er blevet aktiveret",
+            "es": "El bloqueo de anuncios ha sido activado",
+            "fr": "Le blocage des publicités a été activé",
+            "it": "Il blocco degli annunci è stato abilitato",
+            "nl": "Advertentieblokkering is ingeschakeld",
+            "no": "Annonsesperring har blitt aktivert",
+            "pl": "Blokowanie reklam zostało włączone",
+            "ru": "Блокировка рекламы была включена",
+            "sv": "Annonsblockering har aktiverats"
+          },
+          "insightsTitleFalse": {
+            "de": "Adblocking ausgeschaltet",
+            "en": "Adblocking has been disabled",
+            "da": "Annonceblokering er blevet deaktiveret",
+            "es": "El bloqueo de anuncios ha sido desactivado",
+            "fr": "Le blocage des publicités a été désactivé",
+            "it": "Il blocco degli annunci è stato disabilitato",
+            "nl": "Advertentieblokkering is uitgeschakeld",
+            "no": "Annonsesperring har blitt deaktivert",
+            "pl": "Blokowanie reklam zostało wyłączone",
+            "ru": "Блокировка рекламы была отключена",
+            "sv": "Annonsblockering har avaktiverats"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/piholeV6/assets/images/small.png",
+        "large": "/drivers/piholeV6/assets/images/large.png",
+        "xlarge": "/drivers/piholeV6/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "options": {
+            "singular": true
+          },
+          "navigation": {
+            "next": "configure_device"
+          }
+        },
+        {
+          "id": "configure_device",
+          "navigation": {
+            "prev": "list_devices"
+          }
+        },
+        {
+          "id": "add_device",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "de": "Geräte Einstellungen",
+            "da": "Enhedsindstillinger",
+            "en": "Device Settings",
+            "fr": "Paramètres de l'appareil",
+            "it": "Impostazioni del dispositivo",
+            "nl": "Apparaatinstellingen",
+            "no": "Enhetsinnstillinger",
+            "pl": "Ustawienia urządzenia",
+            "ru": "Настройки устройства",
+            "sv": "Enhetsinställningar"
+          },
+          "children": [
+            {
+              "id": "base_url",
+              "type": "text",
+              "label": {
+                "de": "Geräte URL",
+                "da": "Enheds URL",
+                "en": "PiHole base URL. Starts with http or https, and includes the port number if it differs from the default port.",
+                "fr": "URL de l'appareil",
+                "it": "URL del dispositivo",
+                "nl": "Apparaat URL",
+                "no": "Enhets URL",
+                "pl": "URL urządzenia",
+                "ru": "URL устройства",
+                "sv": "Enhetens URL"
+              },
+              "value": "",
+              "hint": {
+                "de": "Bitte FQDN oder IP Adresse mit vorgestelltem HTTP(s) nutzen!",
+                "da": "Brug venligst FQDN eller IP-adresse med forudstillet HTTP(s)!",
+                "en": "Please use FQDN or IP address with prepended HTTP(s)!",
+                "fr": "Veuillez utiliser FQDN ou adresse IP avec HTTP(s) préfixé!",
+                "it": "Si prega di utilizzare FQDN o indirizzo IP con HTTP(s) anteposto!",
+                "nl": "Gebruik a.u.b. FQDN of IP-adres met voorgevoegd HTTP(s)!",
+                "no": "Vennligst bruk FQDN eller IP-adresse med foranstilt HTTP(s)!",
+                "pl": "Proszę używać FQDN lub adresu IP z poprzedzonym HTTP(s)!",
+                "ru": "Пожалуйста, используйте FQDN или IP-адрес с префиксом HTTP(s)!",
+                "sv": "Använd gärna FQDN eller IP-adress med föregående HTTP(s)!"
+              }
+            },
+            {
+              "id": "api_password",
+              "type": "text",
+              "label": {
+                "de": "API password",
+                "da": "API password",
+                "en": "API password",
+                "fr": "API password",
+                "it": "API password",
+                "nl": "API password",
+                "no": "API password",
+                "pl": "API password",
+                "ru": "API password",
+                "sv": "API password"
+              },
+              "hint": {
+                "de": "Bitte geben Sie hier das PiHole-API-Passwort ein. Dies ist das Passwort, das Sie zum Anmelden verwenden, oder ein App-Passwort, wenn Sie die Zwei-Faktor-Authentifizierung aktiviert haben.",
+                "da": "Indtast venligst PiHole API-adgangskoden her. Dette er adgangskoden, du bruger til at logge ind, eller en app-adgangskode, hvis du har aktiveret tofaktorgodkendelse.",
+                "en": "Please enter the PiHole API password here. This is the password you use to login, or an app-password if you enabled 2-factor authentication.",
+                "es": "Por favor, introduzca aquí la contraseña de la API de PiHole. Esta es la contraseña que utiliza para iniciar sesión o una contraseña de aplicación si ha habilitado la autenticación de dos factores.",
+                "fr": "Veuillez entrer ici le mot de passe de l'API PiHole. Il s'agit du mot de passe que vous utilisez pour vous connecter ou d'un mot de passe d'application si vous avez activé l'authentification à deux facteurs.",
+                "it": "Inserisci qui la password dell'API PiHole. Questa è la password che usi per accedere o una password per app se hai abilitato l'autenticazione a due fattori.",
+                "nl": "Voer hier het PiHole API-wachtwoord in. Dit is het wachtwoord dat u gebruikt om in te loggen, of een app-wachtwoord als u tweefactorauthenticatie hebt ingeschakeld.",
+                "no": "Vennligst skriv inn PiHole API-passordet her. Dette er passordet du bruker for å logge inn, eller et app-passord hvis du har aktivert tofaktorautentisering.",
+                "pl": "Proszę wprowadzić tutaj hasło API PiHole. Jest to hasło, którego używasz do logowania, lub hasło aplikacji, jeśli włączyłeś uwierzytelnianie dwuskładnikowe.",
+                "ru": "Пожалуйста, введите здесь пароль API PiHole. Это пароль, который вы используете для входа, или пароль приложения, если вы включили двухфакторную аутентификацию.",
+                "sv": "Ange PiHole API-lösenordet här. Detta är lösenordet du använder för att logga in, eller ett app-lösenord om du har aktiverat tvåfaktorsautentisering."
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "de": "Aktualisierungs-Intervall",
+            "da": "Opdateringsinterval",
+            "en": "Update Interval",
+            "fr": "Intervalle de mise à jour",
+            "it": "Intervallo di aggiornamento",
+            "nl": "Update-interval",
+            "no": "Oppdateringsintervall",
+            "pl": "Interwał aktualizacji",
+            "ru": "Интервал обновления",
+            "sv": "Uppdateringsintervall"
+          },
+          "children": [
+            {
+              "id": "update_interval_seconds",
+              "type": "text",
+              "label": {
+                "de": "Abruf-Intervall",
+                "da": "Hentningsinterval",
+                "en": "Fetch Interval",
+                "fr": "Intervalle de récupération",
+                "it": "Intervallo di recupero",
+                "nl": "Ophaalinterval",
+                "no": "Henteintervall",
+                "pl": "Interwał pobierania",
+                "ru": "Интервал запроса",
+                "sv": "Hämtningsintervall"
+              },
+              "hint": {
+                "de": "Wähle ein Aktualisierungs-Intervall. Wähle eine Intervall bis zu 10 min., um Live-Updates vom Gerät zu ermöglichen.",
+                "da": "Vælg et opdateringsinterval. Vælg et interval på op til 10 min., for at muliggøre live-opdateringer fra enheden.",
+                "en": "Choose an update interval. Select an interval of up to 10 mins to enable live updates from the device.",
+                "fr": "Choisissez un intervalle de mise à jour. Sélectionnez un intervalle jusqu'à 10 min, pour permettre les mises à jour en direct de l'appareil.",
+                "it": "Scegli un intervallo di aggiornamento. Seleziona un intervallo fino a 10 min., per abilitare gli aggiornamenti live dal dispositivo.",
+                "nl": "Kies een update-interval. Kies een interval tot 10 min., om live-updates van het apparaat mogelijk te maken.",
+                "no": "Velg et oppdateringsintervall. Velg et intervall på opptil 10 min., for å muliggjøre direkteoppdateringer fra enheten.",
+                "pl": "Wybierz interwał aktualizacji. Wybierz interwał do 10 min., aby umożliwić aktualizacje na żywo z urządzenia.",
+                "ru": "Выберите интервал обновления. Выберите интервал до 10 мин., чтобы включить живые обновления с устройства.",
+                "sv": "Välj ett uppdateringsintervall. Välj ett intervall på upp till 10 min., för att möjliggöra live-uppdateringar från enheten."
+              },
+              "min": 3,
+              "value": "15"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "alarm_communication_error": {
+      "type": "boolean",
+      "title": {
+        "en": "Connection lost?",
+        "de": "Verbindung verloren?",
+        "nl": "Verbinding verloren?",
+        "fr": "Connexion perdue?",
+        "it": "Connessione persa?",
+        "sv": "Anslutning förlorad?",
+        "no": "Tilkobling tapt?",
+        "es": "¿Conexión perdida?",
+        "da": "Forbindelse mistet?",
+        "ru": "Соединение потеряно?",
+        "pl": "Połączenie utracone?"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/Communication.svg"
+    },
+    "alarm_connectivity": {
+      "type": "boolean",
+      "icon": "/assets/capability_icons/alarm_connectivity.svg",
+      "title": {
+        "en": "Connectivity alarm",
+        "de": "Verbindungsalarm",
+        "nl": "Verbindingswaarschuwing",
+        "da": "Tilslutningsalarm",
+        "fr": "Alarme de connectivité",
+        "it": "Allarme connettività",
+        "ko": "연결성 알람",
+        "no": "Tilkoblingsalarm",
+        "pl": "Alarm łączności",
+        "ru": "Сигнал о подключении",
+        "sv": "Anslutningslarm",
+        "es": "Alarma de conexión"
+      },
+      "desc": {
+        "en": "True when disconnected from the network.",
+        "nl": "Wordt geactiveerd wanneer het apparaat niet meer verbonden is met het netwerk.",
+        "da": "Sandt, når forbindelsen til netværket er afbrudt.",
+        "fr": "Se déclenche lorsque le réseau est déconnecté.",
+        "it": "Vero quando si è disconnessi dalla rete.",
+        "ko": "네트워크에서 연결 해제되면 참입니다.",
+        "no": "Sann når koblet fra nettverket.",
+        "pl": "Prawda, gdy nastąpiło odłączenie od sieci.",
+        "ru": "Значение «истина», когда устройство отключено от сети.",
+        "sv": "Sant när den är frånkopplad från nätverket.",
+        "es": "Activado cuando se desconecta de la red."
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Disconnected",
+        "nl": "Niet verbonden",
+        "da": "Afbrudt",
+        "fr": "Déconnecté",
+        "it": "Disconnesso",
+        "ko": "연결 해제됨",
+        "no": "Frakoblet",
+        "pl": "Odłączone",
+        "ru": "Отключено",
+        "sv": "Frånkopplad",
+        "es": "Desconectado"
+      },
+      "insightsTitleFalse": {
+        "en": "Connected",
+        "nl": "Verbonden",
+        "da": "Tilsluttet",
+        "fr": "Connecté",
+        "it": "Connesso",
+        "ko": "연결됨",
+        "no": "Tilkoblet",
+        "pl": "Połączone",
+        "ru": "Подключено",
+        "sv": "Ansluten",
+        "es": "Conectado"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "alarm_filter_state": {
+      "type": "boolean",
+      "title": {
+        "en": "Filter deactivated?",
+        "de": "Filter deaktiviert?",
+        "nl": "Filter uitgeschakeld?",
+        "fr": "Filtre désactivé?",
+        "it": "Filtro disattivato?",
+        "sv": "Filter inaktiverat?",
+        "no": "Filter deaktivert?",
+        "es": "Filtro desactivado?",
+        "da": "Filter deaktiveret?",
+        "ru": "Фильтр отключен?",
+        "pl": "Filtr wyłączony?"
+      },
+      "titleTrue": {
+        "en": "Filter deactivated?",
+        "de": "Filter deaktiviert?",
+        "nl": "Filter uitgeschakeld?",
+        "fr": "Filtre désactivé?",
+        "it": "Filtro disattivato?",
+        "sv": "Filter inaktiverat?",
+        "no": "Filter deaktivert?",
+        "es": "Filtro desactivado?",
+        "da": "Filter deaktiveret?",
+        "ru": "Фильтр отключен?",
+        "pl": "Filtr wyłączony?"
+      },
+      "titleFalse": {
+        "en": "Your filter is DEACTIVATED",
+        "de": "Ihr Filter ist DEAKTIVIERT",
+        "nl": "Uw filter is UITGESCHAKELD",
+        "fr": "Votre filtre est DÉSACTIVÉ",
+        "it": "Il tuo filtro è DISATTIVATO",
+        "sv": "Ditt filter är INAKTIVERAT",
+        "no": "Filteret ditt er DEAKTIVERT",
+        "es": "Tu filtro está DESACTIVADO",
+        "da": "Dit filter er DEAKTIVERET",
+        "ru": "Ваш фильтр ДЕАКТИВИРОВАН",
+        "pl": "Twój filtr jest WYŁĄCZONY"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/State.svg"
+    },
+    "blocking_state": {
+      "type": "enum",
+      "title": {
+        "en": "Blocking state",
+        "de": "Blockierungsstatus",
+        "da": "Blokeringsstatus",
+        "es": "Estado de bloqueo",
+        "fr": "État de blocage",
+        "nl": "Blokkeringsstatus",
+        "no": "Blokkeringsstatus",
+        "pl": "Stan blokowania",
+        "ru": "Состояние блокировки",
+        "sv": "Blockeringsstatus"
+      },
+      "values": [
+        {
+          "id": "enabled",
+          "title": {
+            "en": "Enabled",
+            "de": "Aktiviert",
+            "da": "Aktiveret",
+            "es": "Habilitado",
+            "fr": "Activé",
+            "nl": "Ingeschakeld",
+            "no": "Aktivert",
+            "pl": "Włączony",
+            "ru": "Включено",
+            "sv": "Aktiverad"
+          }
+        },
+        {
+          "id": "disabled",
+          "title": {
+            "en": "Disabled",
+            "de": "Deaktiviert",
+            "da": "Deaktiveret",
+            "es": "Deshabilitado",
+            "fr": "Désactivé",
+            "nl": "Uitgeschakeld",
+            "no": "Deaktivert",
+            "pl": "Wyłączony",
+            "ru": "Отключено",
+            "sv": "Inaktiverad"
+          }
+        },
+        {
+          "id": "failed",
+          "title": {
+            "en": "Failed",
+            "de": "Fehlgeschlagen",
+            "da": "Mislykket",
+            "es": "Fallido",
+            "fr": "Échoué",
+            "nl": "Mislukt",
+            "no": "Mislykket",
+            "pl": "Niepowodzenie",
+            "ru": "Не удалось",
+            "sv": "Misslyckades"
+          }
+        },
+        {
+          "id": "unknown",
+          "title": {
+            "en": "Unknown",
+            "de": "Unbekannt",
+            "da": "Ukendt",
+            "es": "Desconocido",
+            "fr": "Inconnu",
+            "nl": "Onbekend",
+            "no": "Ukjent",
+            "pl": "Nieznany",
+            "ru": "Неизвестно",
+            "sv": "Okänd"
+          }
+        }
+      ],
+      "insights": false,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/shield.svg"
+    },
+    "core_update_available": {
+      "type": "boolean",
+      "title": {
+        "en": "Core Update available",
+        "de": "Core Update?",
+        "nl": "Core Update?",
+        "fr": "Mise à jour du noyau?",
+        "it": "Aggiornamento del core?",
+        "sv": "Kärnuppdatering?",
+        "no": "Kjerneoppdatering?",
+        "es": "Actualización del núcleo?",
+        "da": "Kerneopdatering?",
+        "ru": "Обновление ядра?",
+        "pl": "Aktualizacja jądra?"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/UpdateVersion.svg"
+    },
+    "data_refresh": {
+      "type": "boolean",
+      "title": {
+        "en": "Update",
+        "de": "Aktualisieren",
+        "nl": "Bijwerken",
+        "fr": "Mettre à jour",
+        "it": "Aggiorna",
+        "sv": "Uppdatera",
+        "no": "Oppdater",
+        "es": "Actualizar",
+        "da": "Opdater",
+        "ru": "Обновить",
+        "pl": "Zaktualizować"
+      },
+      "insights": false,
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "./assets/capability_icons/Refresh.svg"
+    },
+    "ftl_update_available": {
+      "type": "boolean",
+      "title": {
+        "en": "FTL Update available",
+        "de": "FTL Update?",
+        "nl": "FTL Update?",
+        "fr": "Mise à jour FTL ?",
+        "it": "Aggiornamento FTL?",
+        "sv": "FTL-uppdatering?",
+        "no": "FTL-oppdatering?",
+        "es": "¿Actualización de FTL?",
+        "da": "FTL-opdatering?",
+        "ru": "Обновление FTL?",
+        "pl": "Aktualizacja FTL?"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/UpdateVersion.svg"
+    },
+    "gravity_last_update": {
+      "type": "string",
+      "title": {
+        "en": "Last Gravity update",
+        "de": "Letztes Gravity-Update",
+        "nl": "Laatste Gravity-update",
+        "fr": "Dernière mise à jour de Gravity",
+        "it": "Ultimo aggiornamento Gravity",
+        "sv": "Senaste Gravity-uppdateringen",
+        "no": "Siste Gravity-oppdatering",
+        "es": "Última actualización de Gravity",
+        "da": "Seneste Gravity-opdatering",
+        "ru": "Последнее обновление Gravity",
+        "pl": "Ostatnia aktualizacja Gravity"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/Gravity.svg"
+    },
+    "last_sync": {
+      "type": "string",
+      "title": {
+        "en": "Last update",
+        "de": "Letzte Aktualisierung",
+        "nl": "Laatste update",
+        "fr": "Dernière mise à jour",
+        "it": "Ultimo aggiornamento",
+        "sv": "Senaste uppdateringen",
+        "no": "Siste oppdatering",
+        "es": "Última actualización",
+        "da": "Seneste opdatering",
+        "ru": "Последнее обновление",
+        "pl": "Ostatnia aktualizacja"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/LastSync.svg"
+    },
+    "measure_active_client_count": {
+      "type": "number",
+      "title": {
+        "en": "Active client count",
+        "de": "Aktive Client-Anzahl",
+        "da": "Aktiv klientantal",
+        "es": "Recuento de clientes activos",
+        "fr": "Nombre de clients actifs",
+        "nl": "Aantal actieve clients",
+        "no": "Antall aktive klienter",
+        "pl": "Liczba aktywnych klientów",
+        "ru": "Количество активных клиентов",
+        "sv": "Antal aktiva klienter"
+      },
+      "insights": true,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/users.svg"
+    },
+    "measure_ads_blocked_today": {
+      "type": "number",
+      "title": {
+        "en": "Advertisements / day",
+        "de": "Werbeanzeigen / Tag",
+        "nl": "Advertenties / dag",
+        "fr": "Publicités / jour",
+        "it": "Pubblicità / giorno",
+        "sv": "Annonser / dag",
+        "no": "Annonser / dag",
+        "es": "Anuncios / día",
+        "da": "Annoncer / dag",
+        "ru": "Реклама / день",
+        "pl": "Reklamy / dzień"
+      },
+      "insights": true,
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/ADDs.svg"
+    },
+    "measure_ads_blocked_today_percent": {
+      "type": "number",
+      "title": {
+        "en": "Advertisements (%) / day",
+        "de": "Werbeanzeigen (%) / Tag",
+        "nl": "Advertenties (%) / dag",
+        "fr": "Publicités (%) / jour",
+        "it": "Pubblicità (%) / giorno",
+        "sv": "Annonser (%) / dag",
+        "no": "Annonser (%) / dag",
+        "es": "Anuncios (%) / día",
+        "da": "Annoncer (%) / dag",
+        "ru": "Реклама (%) / день",
+        "pl": "Reklamy (%)/ dzień"
+      },
+      "units": {
+        "en": "%"
+      },
+      "insights": true,
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/ADDs.svg"
+    },
+    "measure_cpu_temp": {
+      "type": "number",
+      "title": {
+        "en": "CPU temperature",
+        "de": "CPU-Temperatur",
+        "da": "CPU-temperatur",
+        "es": "Temperatura de la CPU",
+        "fr": "Température du CPU",
+        "nl": "CPU-temperatuur",
+        "no": "CPU-temperatur",
+        "pl": "Temperatura CPU",
+        "ru": "Температура процессора",
+        "sv": "CPU-temperatur"
+      },
+      "units": {
+        "en": "°C"
+      },
+      "insights": true,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/temperature.svg"
+    },
+    "measure_dns_queries_today": {
+      "type": "number",
+      "title": {
+        "en": "DNS requests / day",
+        "de": "DNS-Anfragen / Tag",
+        "nl": "DNS-verzoeken / dag",
+        "fr": "Requêtes DNS / jour",
+        "it": "Richieste DNS / giorno",
+        "sv": "DNS-förfrågningar / dag",
+        "no": "DNS-forespørsler / dag",
+        "es": "Solicitudes de DNS / día",
+        "da": "DNS-forespørgsler / dag",
+        "ru": "DNS-запросы / день",
+        "pl": "Zapytania DNS / dzień"
+      },
+      "insights": true,
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/DNS.svg"
+    },
+    "measure_queries_blocked_24h": {
+      "type": "number",
+      "title": {
+        "en": "Blocked queries past 24h",
+        "de": "Blockierte Anfragen letzte 24h",
+        "da": "Blokerede forespørgsler sidste 24 timer",
+        "es": "Consultas bloqueadas últimas 24h",
+        "fr": "Requêtes bloquées dernières 24h",
+        "nl": "Geblokkeerde queries afgelopen 24u",
+        "no": "Blokkerte forespørsler siste 24t",
+        "pl": "Zablokowane zapytania ostatnie 24h",
+        "ru": "Заблокированные запросы за последние 24ч",
+        "sv": "Blockerade förfrågningar senaste 24h"
+      },
+      "insights": true,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/shield.svg"
+    },
+    "measure_queries_blocked_relative_24h": {
+      "type": "number",
+      "title": {
+        "en": "% blocked queries past 24h",
+        "de": "% blockierte Anfragen letzte 24h",
+        "da": "% blokerede forespørgsler sidste 24 timer",
+        "es": "% consultas bloqueadas últimas 24h",
+        "fr": "% requêtes bloquées dernières 24h",
+        "nl": "% geblokkeerde queries afgelopen 24u",
+        "no": "% blokkerte forespørsler siste 24t",
+        "pl": "% zablokowanych zapytań ostatnie 24h",
+        "ru": "% заблокированных запросов за последние 24ч",
+        "sv": "% blockerade förfrågningar senaste 24h"
+      },
+      "units": {
+        "en": "%"
+      },
+      "insights": true,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/shield.svg"
+    },
+    "measure_queries_total_24h": {
+      "type": "number",
+      "title": {
+        "en": "Total queries past 24h",
+        "de": "Gesamte Anfragen der letzten 24 Stunden",
+        "da": "Samlede forespørgsler sidste 24 timer",
+        "es": "Consultas totales últimas 24h",
+        "fr": "Requêtes totales des dernières 24h",
+        "nl": "Totale queries afgelopen 24 uur",
+        "no": "Totale forespørsler siste 24 timer",
+        "pl": "Łączna liczba zapytań z ostatnich 24 godzin",
+        "ru": "Всего запросов за последние 24 часа",
+        "sv": "Totala förfrågningar senaste 24 timmarna"
+      },
+      "insights": true,
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/shield.svg"
+    },
+    "measure_relative_cpu_usage": {
+      "type": "number",
+      "title": {
+        "en": "CPU usage",
+        "de": "CPU-Auslastung",
+        "da": "CPU-brug",
+        "es": "Uso de CPU",
+        "fr": "Utilisation du CPU",
+        "nl": "CPU-gebruik",
+        "no": "CPU-bruk",
+        "pl": "Użycie CPU",
+        "ru": "Использование CPU",
+        "sv": "CPU-användning"
+      },
+      "units": {
+        "en": "%",
+        "de": "%",
+        "da": "%",
+        "es": "%",
+        "fr": "%",
+        "nl": "%",
+        "no": "%",
+        "pl": "%",
+        "ru": "%",
+        "sv": "%"
+      },
+      "insights": true,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/chip.svg"
+    },
+    "measure_relative_memory_usage": {
+      "type": "number",
+      "title": {
+        "en": "Memory usage",
+        "de": "Speichernutzung",
+        "da": "Hukommelsesforbrug",
+        "es": "Uso de memoria",
+        "fr": "Utilisation de la mémoire",
+        "nl": "Geheugengebruik",
+        "no": "Minnebruk",
+        "pl": "Zużycie pamięci",
+        "ru": "Использование памяти",
+        "sv": "Minnesanvändning"
+      },
+      "units": {
+        "en": "%"
+      },
+      "insights": true,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/chip.svg"
+    },
+    "measure_system_uptime_days": {
+      "type": "number",
+      "title": {
+        "en": "System uptime",
+        "de": "Systemlaufzeit",
+        "da": "Systemets oppetid",
+        "es": "Tiempo de actividad del sistema",
+        "fr": "Temps de fonctionnement du système",
+        "nl": "Systeem-uptime",
+        "no": "Systemets oppetid",
+        "pl": "Czas pracy systemu",
+        "ru": "Время работы системы",
+        "sv": "Systemets drifttid"
+      },
+      "units": {
+        "en": "days"
+      },
+      "insights": false,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/clock.svg"
+    },
+    "measure_system_uptime_minutes": {
+      "type": "number",
+      "title": {
+        "en": "System uptime",
+        "de": "Systemlaufzeit",
+        "da": "System oppetid",
+        "es": "Tiempo de actividad del sistema",
+        "fr": "Temps de fonctionnement du système",
+        "nl": "Systeem uptime",
+        "no": "System oppetid",
+        "pl": "Czas pracy systemu",
+        "ru": "Время работы системы",
+        "sv": "Systemets drifttid"
+      },
+      "units": {
+        "en": "minutes",
+        "de": "Minuten",
+        "da": "minutter",
+        "es": "minutos",
+        "fr": "minutes",
+        "nl": "minuten",
+        "no": "minutter",
+        "pl": "minuty",
+        "ru": "минуты",
+        "sv": "minuter"
+      },
+      "insights": false,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/clock.svg"
+    },
+    "pihole_restart_dns": {
+      "type": "boolean",
+      "title": {
+        "en": "Restart DNS",
+        "de": "DNS neu starten",
+        "da": "Genstart DNS",
+        "es": "Reiniciar DNS",
+        "fr": "Redémarrer DNS",
+        "nl": "DNS herstarten",
+        "no": "Start DNS på nytt",
+        "pl": "Zrestartuj DNS",
+        "ru": "Перезапустить DNS",
+        "sv": "Starta om DNS"
+      },
+      "insights": false,
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button"
+    },
+    "pihole_update_gravity": {
+      "type": "boolean",
+      "title": {
+        "en": "Update gravity",
+        "de": "Schwerkraft aktualisieren",
+        "da": "Opdater tyngdekraft",
+        "es": "Actualizar gravedad",
+        "fr": "Mettre à jour la gravité",
+        "nl": "Zwaartekracht bijwerken",
+        "no": "Oppdater tyngdekraft",
+        "pl": "Zaktualizuj grawitację",
+        "ru": "Обновить гравитацию",
+        "sv": "Uppdatera gravitation"
+      },
+      "insights": false,
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button"
+    },
+    "web_update_available": {
+      "type": "boolean",
+      "title": {
+        "en": "Web Update available",
+        "de": "Web Update?",
+        "nl": "Web Update?",
+        "fr": "Mise à jour Web ?",
+        "it": "Aggiornamento web?",
+        "sv": "Webbuppdatering?",
+        "no": "Weboppdatering?",
+        "es": "¿Actualización web?",
+        "da": "Webopdatering?",
+        "ru": "Обновление веб?",
+        "pl": "Aktualizacja webowa?"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "icon": "/assets/capability_icons/UpdateVersion.svg"
+    }
+  }
+}

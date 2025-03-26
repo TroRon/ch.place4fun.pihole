@@ -1,0 +1,135 @@
+<main class="hy-tmpl-manual-input">
+    <div class="hy-tmpl-manual-input-image"></div>
+    <div class="hy-tmpl-manual-input-row">
+        <p data-i18n="manual_input.intro"></p>
+    </div>
+    <form class="hy-tmpl-manual-input-form">
+
+        <div class="hy-tmpl-manual-input-row">
+            <label class="hy-label" for="name" data-i18n="settings.name.title"></label>
+        </div>
+        <div class="hy-tmpl-manual-input-row">
+            <input class="hy-input-text" type="text" id="name" name="name"
+                   data-i18n="[placeholder]settings.name.hint" required/>
+        </div>
+
+        <div class="hy-tmpl-manual-input-row">
+            <label class="homey-form-label" for="host" data-i18n="settings.host.title"></label>
+        </div>
+        <div class="hy-tmpl-manual-input-row">
+            <input class="homey-form-input" type="text" id="host" name="host" pattern="^https?:\/\/.*"
+                   data-i18n="[placeholder]settings.host.hint" required/>
+        </div>
+
+        <div class="hy-tmpl-manual-input-row">
+            <label class="homey-form-label" for="port" data-i18n="settings.port.title"></label>
+        </div>
+        <div class="hy-tmpl-manual-input-row">
+            <input class="homey-form-input" type="number" min="1" max="65535" id="port" name="port"
+                   data-i18n="[placeholder]settings.port.hint"/>
+        </div>
+
+        <div class="hy-tmpl-manual-input-row">
+            <label class="homey-form-label" for="api_key" data-i18n="settings.api_key.title"></label>
+        </div>
+        <div class="hy-tmpl-manual-input-row">
+            <input class="homey-form-input" type="text" id="api_key" name="api_key"
+                   data-i18n="[placeholder]settings.api_key.hint" required/>
+        </div>
+
+        <div class="hy-tmpl-button-next-row">
+            <button class="homey-button-primary-full" type="submit"
+                    data-i18n="settings.test_connection"></button>
+        </div>
+    </form>
+</main>
+
+<script type="text/javascript">
+  Homey.setTitle(Homey.__('settings.title'));
+  // Get the device picked in list_devices. We only allowed one device to be picked through options.singular = true
+  Homey.emit("get_selected_device").then(async function (chosenDevice) {
+    // Load the default values from the device picked in list_devices
+    document.getElementById('name').value = chosenDevice.name;
+    document.getElementById('host').value = chosenDevice.settings.url;
+    document.getElementById('port').value = chosenDevice.settings.port;
+    document.getElementById('api_key').value = chosenDevice.settings.api;
+
+    // used later for storing viewStore values
+    let addDevicesViewId = await Homey.getNextViewByTemplate('add_devices');
+
+    const form = document.querySelector('form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      // Create an updated device object
+      let updatedDevice = {
+        name: document.getElementById('name').value,
+        data: {
+          id: chosenDevice.data.id
+        },
+        icon: "/icon.svg",
+        settings: {
+          url: document.getElementById('host').value,
+          port: document.getElementById('port').value,
+          api: document.getElementById('api_key').value,
+        },
+      };
+
+      // Update the device for the add_devices step
+
+      Homey.setViewStoreValue(addDevicesViewId, "devices", [updatedDevice])
+
+      // Show a loading overlay during testing
+      Homey.showLoadingOverlay()
+
+      console.log("Testing device " + updatedDevice)
+      // Also emit for the backend, so it can be tested before we actually add the device
+      Homey.emit("test_device", updatedDevice).then(result => {
+        console.log("Device tested, result: " + result)
+        Homey.hideLoadingOverlay()
+        if (result == "ok") {
+          Homey.showView('add_device')
+        } else {
+          Homey.alert(result, "error")
+        }
+      })
+
+    });
+  });
+</script>
+
+
+<style>
+    /* Workaround for views without buttons */
+    #hy-views > .hy-view {
+        overflow: initial !important;
+    }
+
+    .hy-tmpl-manual-input {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    .hy-tmpl-manual-input-form {
+        position: relative;
+        width: 100%;
+    }
+
+    .hy-tmpl-manual-input-row {
+        margin-bottom: 1em;
+        max-width: 400px;
+    }
+
+    .hy-input-text {
+        max-width: 400px;
+    }
+
+
+    .hy-tmpl-button-next-row {
+        margin-bottom: 1em;
+        max-width: 400px;
+    }
+
+
+</style>

@@ -1,0 +1,24 @@
+{
+  "type": "number",
+  "title": {
+    "en": "System uptime",
+    "de": "Systemlaufzeit",
+    "da": "Systemets oppetid",
+    "es": "Tiempo de actividad del sistema",
+    "fr": "Temps de fonctionnement du système",
+    "nl": "Systeem-uptime",
+    "no": "Systemets oppetid",
+    "pl": "Czas pracy systemu",
+    "ru": "Время работы системы",
+    "sv": "Systemets drifttid"
+  },
+  "units": {
+    "en": "days"
+  },
+  "insights": false,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "/assets/capability_icons/clock.svg"
+}

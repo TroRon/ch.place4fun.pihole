@@ -1,0 +1,79 @@
+{
+  "warnings": {
+    "deprecated1": "VARNING: Den gamla drivrutinen har tagits bort i version 1.5.0, som meddelats!"
+  },
+  "devices": {
+    "unavailable": "Enheten kunde inte nås på nätverket."
+  },
+  "capabilities": {
+    "gravity_days": "Dag(ar)",
+    "gravity_hours": "Timme(ar)",
+    "gravity_minutes": "Minut(er)"
+  },
+  "welcome": {
+    "titles": {
+      "header": "Ställ in PiHole-enhet",
+      "page": "Inställningen är mycket enkel ..."
+    },
+    "step_by_step": {
+      "intro": "Klicka på 'Fortsätt' för att visa en inställningssida.<br><br>Följande inställningar måste göras på denna sida:",
+      "steps": "<li>IP-adress:<b>t.ex. 192.168.10.1</b></li><li>Portnyckel: <b>80</b></li><li>API-nyckel: <b>0imfnc8mVLWwsAawjYr4Rx-Af50DDqtl</b></li>",
+      "outro": "<b>VIKTIGT:</b><br>Portspecifikationen är<b>ALLTID</b> nödvändig, även om PiHole lyssnar på port 80, vilket skulle vara standard.<br><br>Om en DNS-tjänst är i drift kan PiHole också adresseras med sitt DNS-namn.<br><br><b>Information:</b><br>När flöden körs kan det vara så att inget är synligt på PiHole.<br><br>Detta är inte ett fel i appen, utan ett visningsfel på PiHole-sidan.<br><br>Om detta är fallet kan PiHole-visningen laddas om."
+    },
+    "buttons": {
+      "continue": "Fortsätt"
+    }
+  },
+  "manual_input": {
+    "title": "Lägg till PiHole-instans",
+    "intro": "<i>Vänligen ange de begärda uppgifterna för att lägga till enheten.<br><br><br><b>VIKTIGT:</b><br>Om en DNS-tjänst är i drift kan PiHole också adresseras med sitt DNS-namn.</i>",
+    "inputs": {
+      "name": {
+        "label": "Namn <b>(valfritt)</b>:",
+        "placeholder": "Instansens namn"
+      },
+      "url": {
+        "label": "IP-adress / FQDN med prefix http(s)://",
+        "placeholder": "Vänligen använd FQDN eller IP-adress med prefix HTTP(s)!"
+      },
+      "port": {
+        "label": "Port:",
+        "placeholder": "80"
+      },
+      "api": {
+        "label": "API:",
+        "placeholder": "Vänligen ange API-nyckeln för PiHole här"
+      }
+    },
+    "buttons": {
+      "next": "Lägg till enhet"
+    }
+  },
+  "settings": {
+    "title": "Enhetsinställningar",
+    "test_connection": "Testa anslutning",
+    "name": {
+      "title": "Enhetsnamn",
+      "hint": "Hur enheten ska namnges i Homey"
+    },
+    "host": {
+      "title": "Enhetens värd",
+      "hint": "Vänligen använd FQDN eller IP-adress med prefix HTTP(s)"
+    },
+    "port": {
+      "title": "Port",
+      "hint": "Standard är 80"
+    },
+    "api_key": {
+      "title": "API-nyckel",
+      "hint": "Vänligen ange PiHole API-nyckeln här. Den kan erhållas från PiHole-inställningssidan"
+    }
+  },
+  "pairing": {
+    "add_manually": "Lägg till manuellt",
+    "test_failed": {
+      "invalid_host": "Värdnamnet eller porten är felaktiga.",
+      "invalid_key": "API-nyckeln är ogiltig."
+    }
+  }
+}

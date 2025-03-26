@@ -1,0 +1,19 @@
+{
+    "type": "boolean",
+    "title": {
+      "en": "Update gravity",
+      "de": "Schwerkraft aktualisieren",
+      "da": "Opdater tyngdekraft",
+      "es": "Actualizar gravedad",
+      "fr": "Mettre à jour la gravité",
+      "nl": "Zwaartekracht bijwerken",
+      "no": "Oppdater tyngdekraft",
+      "pl": "Zaktualizuj grawitację",
+      "ru": "Обновить гравитацию",
+      "sv": "Uppdatera gravitation"
+    },
+    "insights": false,
+    "getable": false,
+    "setable": true,
+    "uiComponent": "button"
+  }

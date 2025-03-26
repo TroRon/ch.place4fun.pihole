@@ -1,0 +1,79 @@
+{
+  "warnings": {
+    "deprecated1": "AVERTISSEMENT : L'ancien pilote a été supprimé dans la version 1.5.0, comme annoncé !"
+  },
+  "devices": {
+    "unavailable": "L'appareil n'a pas pu être atteint sur le réseau."
+  },
+  "capabilities": {
+    "gravity_days": "Jour(s)",
+    "gravity_hours": "Heure(s)",
+    "gravity_minutes": "Minute(s)"
+  },
+  "welcome": {
+    "titles": {
+      "header": "Configurer l'appareil PiHole",
+      "page": "La configuration est très simple ..."
+    },
+    "step_by_step": {
+      "intro": "Cliquez sur 'Continuer' pour afficher une page de paramètres.<br><br>Les paramètres suivants doivent être effectués sur cette page :",
+      "steps": "<li>Adresse IP :<b>par ex. 192.168.10.1</b></li><li>Port : <b>80</b></li><li>Clé API : <b>0imfnc8mVLWwsAawjYr4Rx-Af50DDqtl</b></li>",
+      "outro": "<b>IMPORTANT :</b><br>La spécification du port est<b>TOUJOURS</b> requise, même si le PiHole écoute sur le port 80, ce qui serait standard.<br><br>Si un service DNS est en fonctionnement, le PiHole peut également être adressé avec son nom DNS.<br><br><b>Information :</b><br>Lorsque des flux sont exécutés, il se peut que rien ne soit visible sur le PiHole.<br><br>Ce n'est pas une erreur de l'application, mais une erreur d'affichage du côté du PiHole.<br><br>Si tel est le cas, l'affichage du PiHole peut être rechargé."
+    },
+    "buttons": {
+      "continue": "Continuer"
+    }
+  },
+  "manual_input": {
+    "title": "Ajouter une instance PiHole",
+    "intro": "<i>Veuillez entrer les données demandées pour ajouter l'appareil.<br><br><br><b>IMPORTANT :</b><br>Si un service DNS est en fonctionnement, le PiHole peut également être adressé avec son nom DNS.</i>",
+    "inputs": {
+      "name": {
+        "label": "Nom <b>(optionnel)</b> :",
+        "placeholder": "Nom de l'instance"
+      },
+      "url": {
+        "label": "Adresse IP / FQDN avec préfixe http(s)://",
+        "placeholder": "Veuillez utiliser le FQDN ou l'adresse IP avec le préfixe HTTP(s) !"
+      },
+      "port": {
+        "label": "Port :",
+        "placeholder": "80"
+      },
+      "api": {
+        "label": "API :",
+        "placeholder": "Veuillez entrer la clé API du PiHole ici"
+      }
+    },
+    "buttons": {
+      "next": "Ajouter l'appareil"
+    }
+  },
+  "settings": {
+    "title": "Paramètres de l'appareil",
+    "test_connection": "Tester la connexion",
+    "name": {
+      "title": "Nom de l'appareil",
+      "hint": "Comment l'appareil doit être nommé dans Homey"
+    },
+    "host": {
+      "title": "Hôte de l'appareil",
+      "hint": "Veuillez utiliser le FQDN ou l'adresse IP avec le préfixe HTTP(s)"
+    },
+    "port": {
+      "title": "Port",
+      "hint": "Par défaut, c'est 80"
+    },
+    "api_key": {
+      "title": "Clé API",
+      "hint": "Veuillez entrer la clé API du PiHole ici. Elle peut être obtenue à partir de la page des paramètres du PiHole"
+    }
+  },
+  "pairing": {
+    "add_manually": "Ajouter manuellement",
+    "test_failed": {
+      "invalid_host": "Le nom d'hôte ou le port sont incorrects.",
+      "invalid_key": "La clé API est invalide."
+    }
+  }
+}

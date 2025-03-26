@@ -1,0 +1,21 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Total queries past 24h",
+    "de": "Gesamte Anfragen der letzten 24 Stunden",
+    "da": "Samlede forespørgsler sidste 24 timer",
+    "es": "Consultas totales últimas 24h",
+    "fr": "Requêtes totales des dernières 24h",
+    "nl": "Totale queries afgelopen 24 uur",
+    "no": "Totale forespørsler siste 24 timer",
+    "pl": "Łączna liczba zapytań z ostatnich 24 godzin",
+    "ru": "Всего запросов за последние 24 часа",
+    "sv": "Totala förfrågningar senaste 24 timmarna"
+  },
+  "insights": true,
+  "getable": true,
+  "setable": true,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "/assets/capability_icons/shield.svg"
+}

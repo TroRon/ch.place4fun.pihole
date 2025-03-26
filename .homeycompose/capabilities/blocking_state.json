@@ -1,0 +1,83 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Blocking state",
+    "de": "Blockierungsstatus",
+    "da": "Blokeringsstatus",
+    "es": "Estado de bloqueo",
+    "fr": "État de blocage",
+    "nl": "Blokkeringsstatus",
+    "no": "Blokkeringsstatus",
+    "pl": "Stan blokowania",
+    "ru": "Состояние блокировки",
+    "sv": "Blockeringsstatus"
+  },
+  "values": [
+    {
+      "id": "enabled",
+      "title": {
+        "en": "Enabled",
+        "de": "Aktiviert",
+        "da": "Aktiveret",
+        "es": "Habilitado",
+        "fr": "Activé",
+        "nl": "Ingeschakeld",
+        "no": "Aktivert",
+        "pl": "Włączony",
+        "ru": "Включено",
+        "sv": "Aktiverad"
+      }
+    },
+    {
+      "id": "disabled",
+      "title": {
+        "en": "Disabled",
+        "de": "Deaktiviert",
+        "da": "Deaktiveret",
+        "es": "Deshabilitado",
+        "fr": "Désactivé",
+        "nl": "Uitgeschakeld",
+        "no": "Deaktivert",
+        "pl": "Wyłączony",
+        "ru": "Отключено",
+        "sv": "Inaktiverad"
+      }
+    },
+    {
+      "id": "failed",
+      "title": {
+        "en": "Failed",
+        "de": "Fehlgeschlagen",
+        "da": "Mislykket",
+        "es": "Fallido",
+        "fr": "Échoué",
+        "nl": "Mislukt",
+        "no": "Mislykket",
+        "pl": "Niepowodzenie",
+        "ru": "Не удалось",
+        "sv": "Misslyckades"
+      }
+    },
+    {
+      "id": "unknown",
+      "title": {
+        "en": "Unknown",
+        "de": "Unbekannt",
+        "da": "Ukendt",
+        "es": "Desconocido",
+        "fr": "Inconnu",
+        "nl": "Onbekend",
+        "no": "Ukjent",
+        "pl": "Nieznany",
+        "ru": "Неизвестно",
+        "sv": "Okänd"
+      }
+    }
+  ],
+  "insights": false,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "/assets/capability_icons/shield.svg"
+}

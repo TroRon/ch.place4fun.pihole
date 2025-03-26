@@ -1,0 +1,29 @@
+{
+      "id": "pihole-enable-piholes",
+      "title": {
+      "en": "Enable all PiHole(s)",
+      "de": "Alle PiHole(s) aktivieren",
+      "nl": "Activeer alle PiHole(s)",
+      "fr": "Activez tous les PiHole(s)",
+      "it": "Abilita tutti i PiHole(s)",
+      "sv": "Aktivera alla PiHole(s)",
+      "no": "Aktiver alle PiHole(r)",
+      "es": "Activar todos los PiHole(s)",
+      "da": "Aktiver alle PiHole(r)",
+      "ru": "Включить все PiHole(ы)",
+      "pl": "Włącz wszystkie PiHole(s)"
+    },
+    "hint": {
+      "en": "Enable the defined PiHole Instance(s).",
+      "de": "Aktiviert die definierten PiHole Instanzen.",
+      "nl": "Activeert de gedefinieerde PiHole instanties.",
+      "fr": "Active les instance(s) PiHole définie(s).",
+      "it": "Abilita l'istanza(e) PiHole definita(e)",
+      "sv": "Aktiverar de definierade PiHole-instansen(s).",
+      "no": "Aktiverer den definerte PiHole-instansen(e).",
+      "es": "Activa la(s) instancia(s) PiHole definida(s).",
+      "da": "Aktiver den/de definerede PiHole-instans(er).",
+      "ru": "Включает определенный(ые) экземпляр(ы) PiHole.",
+      "pl": "Włącza zdefiniowaną(e) instancję(e) PiHole."
+    }
+  }

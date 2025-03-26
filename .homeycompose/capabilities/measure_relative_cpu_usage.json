@@ -1,0 +1,33 @@
+{
+  "type": "number",
+  "title": {
+    "en": "CPU usage",
+    "de": "CPU-Auslastung",
+    "da": "CPU-brug",
+    "es": "Uso de CPU",
+    "fr": "Utilisation du CPU",
+    "nl": "CPU-gebruik",
+    "no": "CPU-bruk",
+    "pl": "Użycie CPU",
+    "ru": "Использование CPU",
+    "sv": "CPU-användning"
+  },
+  "units": {
+    "en": "%",
+    "de": "%",
+    "da": "%",
+    "es": "%",
+    "fr": "%",
+    "nl": "%",
+    "no": "%",
+    "pl": "%",
+    "ru": "%",
+    "sv": "%"
+  },
+  "insights": true,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "/assets/capability_icons/chip.svg"
+}

@@ -1,0 +1,19 @@
+{
+    "type": "boolean",
+    "title": {
+      "en": "Restart DNS",
+      "de": "DNS neu starten",
+      "da": "Genstart DNS",
+      "es": "Reiniciar DNS",
+      "fr": "Redémarrer DNS",
+      "nl": "DNS herstarten",
+      "no": "Start DNS på nytt",
+      "pl": "Zrestartuj DNS",
+      "ru": "Перезапустить DNS",
+      "sv": "Starta om DNS"
+    },
+    "insights": false,
+    "getable": false,
+    "setable": true,
+    "uiComponent": "button"
+  }

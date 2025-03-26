@@ -1,0 +1,24 @@
+{
+  "type": "number",
+  "title": {
+    "en": "CPU temperature",
+    "de": "CPU-Temperatur",
+    "da": "CPU-temperatur",
+    "es": "Temperatura de la CPU",
+    "fr": "Température du CPU",
+    "nl": "CPU-temperatuur",
+    "no": "CPU-temperatur",
+    "pl": "Temperatura CPU",
+    "ru": "Температура процессора",
+    "sv": "CPU-temperatur"
+  },
+  "units": {
+    "en": "°C"
+  },
+  "insights": true,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "/assets/capability_icons/temperature.svg"
+}

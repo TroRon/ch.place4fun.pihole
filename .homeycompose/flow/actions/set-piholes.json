@@ -1,0 +1,164 @@
+{
+  "id": "set-piholes",
+  "title": {
+    "en": "Deprecated: [[state]] PiHole [[instance]]",
+    "de": "Veraltet: [[state]] PiHole [[instance]]",
+    "nl": "Verouderd: [[state]] PiHole [[instance]]",
+    "fr": "Obsolète : [[state]] PiHole [[instance]]",
+    "it": "Deprecato: [[state]] PiHole [[instance]]",
+    "sv": "Inaktiverad: [[state]] PiHole [[instance]]",
+    "no": "Utgått: [[state]] PiHole [[instance]]",
+    "es": "Obsoleto: [[state]] PiHole [[instance]]",
+    "da": "Forældet: [[state]] PiHole [[instance]]",
+    "ru": "Устарело: [[state]] PiHole [[instance]]",
+    "pl": "Przestarzałe: [[state]] PiHole [[instance]]"
+  },
+  "titleFormatted": {
+    "en": "Deprecated: [[state]] PiHole [[instance]]",
+    "de": "Veraltet: [[state]] PiHole [[instance]]",
+    "nl": "Verouderd: [[state]] PiHole [[instance]]",
+    "fr": "Obsolète : [[state]] PiHole [[instance]]",
+    "it": "Deprecato: [[state]] PiHole [[instance]]",
+    "sv": "Inaktiverad: [[state]] PiHole [[instance]]",
+    "no": "Utgått: [[state]] PiHole [[instance]]",
+    "es": "Obsoleto: [[state]] PiHole [[instance]]",
+    "da": "Forældet: [[state]] PiHole [[instance]]",
+    "ru": "Устарело: [[state]] PiHole [[instance]]",
+    "pl": "Przestarzałe: [[state]] PiHole [[instance]]"
+    },
+  "hint": {
+      "en": "Offer the possibility to stop, or start the filter for the selected instance.",
+      "de": "Bietet die Möglichkeit den Filter für die gewählte Instanz zu stoppen, oder zu starten.",
+      "nl": "Biedt de optie om het filter voor de geselecteerde instantie te stoppen of te starten.",
+      "fr": "Offre la possibilité d'arrêter ou de démarrer le filtre pour l'instance sélectionnée.",
+      "it": "Offre la possibilità di fermare o avviare il filtro per l'istanza selezionata.",
+      "sv": "Erbjuder möjlighet att stoppa eller starta filtret för det valda instansen.",
+      "no": "Tilbyr muligheten til å stoppe eller starte filteret for den valgte instansen.",
+      "es": "Ofrece la posibilidad de detener o iniciar el filtro para la instancia seleccionada.",
+      "da": "Tilbyder muligheden for at stoppe eller starte filteret for den valgte instans.",
+      "ru": "Предлагает возможность остановить или начать фильтрацию для выбранного экземпляра.",
+      "pl": "Oferuje możliwość zatrzymania lub uruchomienia filtra dla wybranej instancji."
+  },
+  "deprecated": true,
+  "args": [
+            {
+          "name": "state",
+          "type": "dropdown",
+          "placeholder": {
+            "en": "Activate",
+            "de": "Aktivieren",
+            "nl": "Activeer",
+            "fr": "Activer",
+            "it": "Attiva",
+            "sv": "Aktivera",
+            "no": "Aktiver",
+            "es": "Activar",
+            "da": "Aktivere",
+            "ru": "Активировать",
+            "pl": "Aktywować"
+          },
+            "values": [
+            { "id": "5", "label": { 
+              "en": "Activate",
+              "de": "Aktivieren",
+              "nl": "Activeer",
+              "fr": "Activer",
+              "it": "Attiva",
+              "sv": "Aktivera",
+              "no": "Aktiver",
+              "es": "Activar",
+              "da": "Aktivere",
+              "ru": "Активировать",
+              "pl": "Aktywować"
+          } },
+            { "id": "10", "label": {
+              "en": "Deactivate",
+              "de": "Deaktivieren",
+              "nl": "Deactiveer",
+              "fr": "Désactiver",
+              "it": "Disattiva",
+              "sv": "Inaktivera",
+              "no": "Deaktiver",
+              "es": "Desactivar",
+              "da": "Deaktiver",
+              "ru": "Деактивировать",
+              "pl": "Dezaktywować"           
+             } 
+           }
+          ]
+        },
+    
+      {
+      "name": "instance",
+      "type": "dropdown",
+      "placeholder": {
+        "en": "Instance 1",
+        "de": "Instanz 1",
+        "nl": "Instantie 1",
+        "fr": "Instance 1",
+        "it": "Istanza 1",
+        "sv": "Instans 1",
+        "no": "Instans 1",
+        "es": "Instancia 1",
+        "da": "Instans 1",
+        "ru": "Экземпляр 1",
+        "pl": "Instancja 1"
+    },
+      "values": [
+        { "id": "5", "label": { 
+          "en": "Instance 1",
+          "de": "Instanz 1",
+          "nl": "Instantie 1",
+          "fr": "Instance 1",
+          "it": "Istanza 1",
+          "sv": "Instans 1",
+          "no": "Instans 1",
+          "es": "Instancia 1",
+          "da": "Instans 1",
+          "ru": "Экземпляр 1",
+          "pl": "Instancja 1"
+        } },
+        { "id": "10", "label": {
+          "en": "Instance 2",
+          "de": "Instanz 2",
+          "nl": "Instantie 2",
+          "fr": "Instance 2",
+          "it": "Istanza 2",
+          "sv": "Instans 2",
+          "no": "Instans 2",
+          "es": "Instancia 2",
+          "da": "Instans 2",
+          "ru": "Экземпляр 2",
+          "pl": "Instancja "
+        } },
+        { "id": "15", "label": {
+          "en": "Instance 3",
+          "de": "Instanz 3",
+          "nl": "Instantie 3",
+          "fr": "Instance 3",
+          "it": "Istanza 3",
+          "sv": "Instans 3",
+          "no": "Instans 3",
+          "es": "Instancia 3",
+          "da": "Instans 3",
+          "ru": "Экземпляр 3",
+          "pl": "Instancja 3"
+       } },
+        { "id": "20", "label": {
+          "en": "Instance 4",
+          "de": "Instanz 4",
+          "nl": "Instantie 4",
+          "fr": "Instance 4",
+          "it": "Istanza 4",
+          "sv": "Instans 4",
+          "no": "Instans 4",
+          "es": "Instancia 4",
+          "da": "Instans 4",
+          "ru": "Экземпляр 4",
+          "pl": "Instancja 4"
+       } 
+     }
+    ]
+   }
+ ]
+}

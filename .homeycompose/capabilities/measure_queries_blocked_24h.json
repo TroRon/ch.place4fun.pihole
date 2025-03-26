@@ -1,0 +1,21 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Blocked queries past 24h",
+    "de": "Blockierte Anfragen letzte 24h",
+    "da": "Blokerede forespørgsler sidste 24 timer",
+    "es": "Consultas bloqueadas últimas 24h",
+    "fr": "Requêtes bloquées dernières 24h",
+    "nl": "Geblokkeerde queries afgelopen 24u",
+    "no": "Blokkerte forespørsler siste 24t",
+    "pl": "Zablokowane zapytania ostatnie 24h",
+    "ru": "Заблокированные запросы за последние 24ч",
+    "sv": "Blockerade förfrågningar senaste 24h"
+  },
+  "insights": true,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "/assets/capability_icons/shield.svg"
+}

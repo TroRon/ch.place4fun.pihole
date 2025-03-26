@@ -1,0 +1,24 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Memory usage",
+    "de": "Speichernutzung",
+    "da": "Hukommelsesforbrug",
+    "es": "Uso de memoria",
+    "fr": "Utilisation de la mémoire",
+    "nl": "Geheugengebruik",
+    "no": "Minnebruk",
+    "pl": "Zużycie pamięci",
+    "ru": "Использование памяти",
+    "sv": "Minnesanvändning"
+  },
+  "units": {
+    "en": "%"
+  },
+  "insights": true,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "/assets/capability_icons/chip.svg"
+}

@@ -1,0 +1,79 @@
+{
+  "warnings": {
+    "deprecated1": "WAARSCHUWING: De oude driver is verwijderd in versie 1.5.0, zoals aangekondigd!"
+  },
+  "devices": {
+    "unavailable": "Het apparaat kon niet worden bereikt op het netwerk."
+  },
+  "capabilities": {
+    "gravity_days": "Dag(en)",
+    "gravity_hours": "Uur(en)",
+    "gravity_minutes": "Minuut(en)"
+  },
+  "welcome": {
+    "titles": {
+      "header": "Stel PiHole-apparaat in",
+      "page": "Instellen is heel eenvoudig ..."
+    },
+    "step_by_step": {
+      "intro": "Klik op 'Doorgaan' om een instellingenpagina weer te geven.<br><br>De volgende instellingen moeten op deze pagina worden gemaakt:",
+      "steps": "<li>IP-adres:<b>bijv. 192.168.10.1</b></li><li>Poort Sleutel: <b>80</b></li><li>API Sleutel: <b>0imfnc8mVLWwsAawjYr4Rx-Af50DDqtl</b></li>",
+      "outro": "<b>BELANGRIJK:</b><br>De poortspecificatie is<b>ALTIJD</b> vereist, zelfs als de PiHole luistert op poort 80, wat standaard zou zijn.<br><br>Als er een DNS-service in werking is, kan de PiHole ook worden aangesproken met zijn DNS-naam.<br><br><b>Informatie:</b><br>Wanneer flows worden uitgevoerd, kan het zijn dat er niets zichtbaar is op de PiHole.<br><br>Dit is geen fout in de app, maar een weergavefout aan de PiHole-kant.<br><br>Als dit het geval is, kan de PiHole-weergave opnieuw worden geladen."
+    },
+    "buttons": {
+      "continue": "Doorgaan"
+    }
+  },
+  "manual_input": {
+    "title": "Voeg PiHole-instantie toe",
+    "intro": "<i>Voer de gevraagde gegevens in om het apparaat toe te voegen.<br><br><br><b>BELANGRIJK:</b><br>Als er een DNS-service in werking is, kan de PiHole ook worden aangesproken met zijn DNS-naam.</i>",
+    "inputs": {
+      "name": {
+        "label": "Naam <b>(optioneel)</b>:",
+        "placeholder": "Naam van de instantie"
+      },
+      "url": {
+        "label": "IP-adres / FQDN met voorvoegsel http(s)://",
+        "placeholder": "Gebruik FQDN of IP-adres met voorvoegsel HTTP(s)!"
+      },
+      "port": {
+        "label": "Poort:",
+        "placeholder": "80"
+      },
+      "api": {
+        "label": "API:",
+        "placeholder": "Voer hier de API-sleutel van de Pihole in"
+      }
+    },
+    "buttons": {
+      "next": "Voeg apparaat toe"
+    }
+  },
+  "settings": {
+    "title": "Apparaatinstellingen",
+    "test_connection": "Test verbinding",
+    "name": {
+      "title": "Apparaatnaam",
+      "hint": "Hoe het apparaat moet worden genoemd in Homey"
+    },
+    "host": {
+      "title": "Apparaathost",
+      "hint": "Gebruik FQDN of IP-adres met voorvoegsel HTTP(s)"
+    },
+    "port": {
+      "title": "Poort",
+      "hint": "Standaard is 80"
+    },
+    "api_key": {
+      "title": "API-sleutel",
+      "hint": "Voer hier de PiHole API-sleutel in. Deze kan worden verkregen van de PiHole-instellingenpagina"
+    }
+  },
+  "pairing": {
+    "add_manually": "Handmatig toevoegen",
+    "test_failed": {
+      "invalid_host": "De hostnaam of poort zijn onjuist.",
+      "invalid_key": "De API-sleutel is ongeldig."
+    }
+  }
+}

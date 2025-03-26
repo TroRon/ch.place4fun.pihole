@@ -1,0 +1,21 @@
+{
+    "type": "boolean",
+    "title": {
+      "en": "Connection lost?",
+      "de": "Verbindung verloren?",
+      "nl": "Verbinding verloren?",
+      "fr": "Connexion perdue?",
+      "it": "Connessione persa?",
+      "sv": "Anslutning förlorad?",
+      "no": "Tilkobling tapt?",
+      "es": "¿Conexión perdida?",
+      "da": "Forbindelse mistet?",
+      "ru": "Соединение потеряно?",
+      "pl": "Połączenie utracone?"
+    },
+    "getable": true,
+    "setable": true,
+    "uiComponent": "sensor",
+    "uiQuickAction": false,
+    "icon": "/assets/capability_icons/Communication.svg" 
+  }

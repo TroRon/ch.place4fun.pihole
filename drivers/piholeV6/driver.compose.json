@@ -1,0 +1,119 @@
+{
+  "id": "piholev6",
+  "name": {
+    "en": "PiHole v6.x",
+    "da": "PiHole v6.x",
+    "de": "PiHole v6.x",
+    "es": "PiHole v6.x",
+    "fr": "PiHole v6.x",
+    "nl": "PiHole v6.x",
+    "no": "PiHole v6.x",
+    "pl": "PiHole v6.x",
+    "ru": "PiHole v6.x",
+    "sv": "PiHole v6.x"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "onoff",
+    "data_refresh",
+    "pihole_restart_dns",
+    "pihole_update_gravity",
+    "alarm_connectivity",
+    "blocking_state",
+    "measure_active_client_count",
+    "measure_queries_total_24h",
+    "measure_queries_blocked_24h",
+    "measure_queries_blocked_relative_24h",
+    "measure_relative_cpu_usage",
+    "measure_relative_memory_usage",
+    "measure_cpu_temp",
+    "measure_system_uptime_minutes",
+    "measure_system_uptime_days",
+    "core_update_available",
+    "ftl_update_available",
+    "web_update_available"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "titleTrue": {
+        "de": "Adblocking aktiv",
+        "en": "Adblocking enabled",
+        "da": "Annonceblokering aktiveret",
+        "es": "Bloqueo de anuncios activado",
+        "fr": "Blocage des publicités activé",
+        "it": "Blocco degli annunci abilitato",
+        "nl": "Advertentieblokkering ingeschakeld",
+        "no": "Annonsesperring aktivert",
+        "pl": "Blokowanie reklam włączone",
+        "ru": "Блокировка рекламы включена",
+        "sv": "Annonsblockering aktiverad"
+      },
+      "titleFalse": {
+        "de": "Adblocking inaktiv",
+        "en": "Adblocking disabled",
+        "da": "Annonceblokering deaktiveret",
+        "es": "Bloqueo de anuncios desactivado",
+        "fr": "Blocage des publicités désactivé",
+        "it": "Blocco degli annunci disabilitato",
+        "nl": "Advertentieblokkering uitgeschakeld",
+        "no": "Annonsesperring deaktivert",
+        "pl": "Blokowanie reklam wyłączone",
+        "ru": "Блокировка рекламы отключена",
+        "sv": "Annonsblockering avaktiverad"
+      },
+      "insightsTitleTrue": {
+        "de": "Adblocking eingeschaltet",
+        "en": "Adblocking has been enabled",
+        "da": "Annonceblokering er blevet aktiveret",
+        "es": "El bloqueo de anuncios ha sido activado",
+        "fr": "Le blocage des publicités a été activé",
+        "it": "Il blocco degli annunci è stato abilitato",
+        "nl": "Advertentieblokkering is ingeschakeld",
+        "no": "Annonsesperring har blitt aktivert",
+        "pl": "Blokowanie reklam zostało włączone",
+        "ru": "Блокировка рекламы была включена",
+        "sv": "Annonsblockering har aktiverats"
+      },
+      "insightsTitleFalse": {
+        "de": "Adblocking ausgeschaltet",
+        "en": "Adblocking has been disabled",
+        "da": "Annonceblokering er blevet deaktiveret",
+        "es": "El bloqueo de anuncios ha sido desactivado",
+        "fr": "Le blocage des publicités a été désactivé",
+        "it": "Il blocco degli annunci è stato disabilitato",
+        "nl": "Advertentieblokkering is uitgeschakeld",
+        "no": "Annonsesperring har blitt deaktivert",
+        "pl": "Blokowanie reklam zostało wyłączone",
+        "ru": "Блокировка рекламы была отключена",
+        "sv": "Annonsblockering har avaktiverats"
+      }
+    }
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "singular": true
+      },
+      "navigation": {
+        "next": "configure_device"
+      }
+    },
+    {
+      "id": "configure_device",
+      "navigation": {
+        "prev": "list_devices"
+      }
+    },
+    {
+      "id": "add_device",
+      "template": "add_devices"
+    }
+  ]
+}

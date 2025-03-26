@@ -1,0 +1,21 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Web Update available",
+    "de": "Web Update?",
+    "nl": "Web Update?",
+    "fr": "Mise à jour Web ?",
+    "it": "Aggiornamento web?",
+    "sv": "Webbuppdatering?",
+    "no": "Weboppdatering?",
+    "es": "¿Actualización web?",
+    "da": "Webopdatering?",
+    "ru": "Обновление веб?",
+    "pl": "Aktualizacja webowa?"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "icon": "/assets/capability_icons/UpdateVersion.svg"
+}

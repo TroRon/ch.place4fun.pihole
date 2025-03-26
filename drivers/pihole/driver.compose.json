@@ -1,0 +1,73 @@
+{
+  "id": "pihole",
+  "name": {
+    "en": "PiHole v5.x",
+    "da": "PiHole v5.x",
+    "de": "PiHole v5.x",
+    "es": "PiHole v5.x",
+    "fr": "PiHole v5.x",
+    "nl": "PiHole v5.x",
+    "no": "PiHole v5.x",
+    "pl": "PiHole v5.x",
+    "ru": "PiHole v5.x",
+    "sv": "PiHole v5.x"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "onoff",
+    "alarm_communication_error",
+    "alarm_filter_state",
+    "last_sync",
+    "measure_dns_queries_today",
+    "measure_ads_blocked_today",
+    "measure_ads_blocked_today_percent",
+    "gravity_last_update",
+    "data_refresh",
+    "core_update_available",
+    "web_update_available",
+    "ftl_update_available"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "titleTrue": {
+        "en": "Adblocking enabled"
+      },
+      "titleFalse": {
+        "en": "Adblocking disabled"
+      },
+      "insightsTitleTrue": {
+        "en": "Adblocking has been enabled"
+      },
+      "insightsTitleFalse": {
+        "en": "Adblocking has been disabled"
+      }
+    }
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "singular": true
+      },
+      "navigation": {
+        "next": "configure_device"
+      }
+    },
+    {
+      "id": "configure_device",
+      "navigation": {
+        "prev": "list_devices"
+      }
+    },
+    {
+      "id": "add_device",
+      "template": "add_devices"
+    }
+  ]
+}

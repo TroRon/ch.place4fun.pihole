@@ -1,0 +1,1834 @@
+{
+  "actions": [
+    {
+      "id": "on",
+      "title": {
+        "en": "Enable ad-blocking",
+        "de": "Werbeblocker aktivieren",
+        "da": "Aktiver annonceblokering",
+        "es": "Habilitar bloqueo de anuncios",
+        "fr": "Activer le blocage des publicités",
+        "nl": "Advertentieblokkering inschakelen",
+        "no": "Aktiver annonseblokkering",
+        "pl": "Włącz blokowanie reklam",
+        "ru": "Включить блокировку рекламы",
+        "sv": "Aktivera annonsblockering"
+      }
+    },
+    {
+      "id": "off",
+      "title": {
+        "en": "Disable ad-blocking",
+        "de": "Werbeblocker deaktivieren",
+        "da": "Deaktiver annonceblokering",
+        "es": "Deshabilitar bloqueo de anuncios",
+        "fr": "Désactiver le blocage des publicités",
+        "nl": "Advertentieblokkering uitschakelen",
+        "no": "Deaktiver annonseblokkering",
+        "pl": "Wyłącz blokowanie reklam",
+        "ru": "Отключить блокировку рекламы",
+        "sv": "Inaktivera annonsblockering"
+      }
+    },
+    {
+      "id": "toggle",
+      "title": {
+        "en": "Toggle ad-blocking",
+        "de": "Werbeblocker umschalten",
+        "da": "Skift annonceblokering",
+        "es": "Alternar bloqueo de anuncios",
+        "fr": "Basculer le blocage des publicités",
+        "nl": "Advertentieblokkering schakelen",
+        "no": "Veksle annonseblokkering",
+        "pl": "Przełącz blokowanie reklam",
+        "ru": "Переключить блокировку рекламы",
+        "sv": "Växla annonsblockering"
+      }
+        },
+    {
+      "id": "pihole_pause",
+      "highlight": true,
+      "title": {
+        "en": "Pause pi-hole for ... seconds",
+        "de": "Pi-hole für ... Sekunden pausieren",
+        "da": "Pause pi-hole i ... sekunder",
+        "es": "Pausar pi-hole durante ... segundos",
+        "fr": "Mettre en pause pi-hole pendant ... secondes",
+        "nl": "Pauzeer pi-hole voor ... seconden",
+        "no": "Pause pi-hole i ... sekunder",
+        "pl": "Wstrzymaj pi-hole na ... sekund",
+        "ru": "Приостановить pi-hole на ... секунд",
+        "sv": "Pausa pi-hole i ... sekunder"
+      },
+      "titleFormatted": {
+        "en": "Pause pi-hole filtering for [[duration]] seconds",
+        "de": "Pi-hole-Filterung für [[duration]] Sekunden pausieren",
+        "da": "Pause pi-hole-filtrering i [[duration]] sekunder",
+        "es": "Pausar el filtrado de pi-hole durante [[duration]] segundos",
+        "fr": "Mettre en pause le filtrage de pi-hole pendant [[duration]] secondes",
+        "nl": "Pi-hole-filtering pauzeren voor [[duration]] seconden",
+        "no": "Pause pi-hole-filtrering i [[duration]] sekunder",
+        "pl": "Wstrzymaj filtrowanie pi-hole na [[duration]] sekund",
+        "ru": "Приостановить фильтрацию pi-hole на [[duration]] секунд",
+        "sv": "Pausa pi-hole-filtrering i [[duration]] sekunder"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "duration",
+            "title": {
+            "en": "Duration",
+            "de": "Dauer",
+            "da": "Varighed",
+            "es": "Duración",
+            "fr": "Durée",
+            "nl": "Duur",
+            "no": "Varighet",
+            "pl": "Czas trwania",
+            "ru": "Продолжительность",
+            "sv": "Varaktighet"
+            },
+          "min": 5,
+          "max": 86400,
+          "step": 5,
+          "placeholder": {
+            "en": "Seconds",
+            "de": "Sekunden",
+            "da": "Sekunder",
+            "es": "Segundos",
+            "fr": "Secondes",
+            "nl": "Seconden",
+            "no": "Sekunder",
+            "pl": "Sekundy",
+            "ru": "Секунды",
+            "sv": "Sekunder"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pihole_restart_dns",
+      "title": {
+        "en": "Restart DNS-server",
+        "de": "DNS-Server neu starten",
+        "da": "Genstart DNS-server",
+        "es": "Reiniciar servidor DNS",
+        "fr": "Redémarrer le serveur DNS",
+        "nl": "DNS-server herstarten",
+        "no": "Start DNS-server på nytt",
+        "pl": "Zrestartuj serwer DNS",
+        "ru": "Перезапустить DNS-сервер",
+        "sv": "Starta om DNS-servern"
+      }
+    },
+    {
+      "id": "pihole_update_gravity",
+      "title": {
+        "en": "Update gravity",
+        "de": "Gravity aktualisieren",
+        "da": "Opdater gravity",
+        "es": "Actualizar gravity",
+        "fr": "Mettre à jour gravity",
+        "nl": "Gravity bijwerken",
+        "no": "Oppdater gravity",
+        "pl": "Zaktualizuj gravity",
+        "ru": "Обновить gravity",
+        "sv": "Uppdatera gravity"
+      }
+    },
+    {
+      "id": "pihole_refresh",
+      "title": {
+        "en": "Refresh data",
+        "de": "Daten aktualisieren",
+        "da": "Opdater data",
+        "es": "Actualizar datos",
+        "fr": "Actualiser les données",
+        "nl": "Gegevens vernieuwen",
+        "no": "Oppdater data",
+        "pl": "Odśwież dane",
+        "ru": "Обновить данные",
+        "sv": "Uppdatera data"
+      }
+    },
+    {
+      "id": "pihole_domain_add",
+      "title": {
+        "en": "Add domain to list of blocked domains",
+        "de": "Domain zur Liste der blockierten Domains hinzufügen",
+        "da": "Tilføj domæne til listen over blokerede domæner",
+        "es": "Agregar dominio a la lista de dominios bloqueados",
+        "fr": "Ajouter un domaine à la liste des domaines bloqués",
+        "nl": "Domein toevoegen aan lijst met geblokkeerde domeinen",
+        "no": "Legg til domene i listen over blokkerte domener",
+        "pl": "Dodaj domenę do listy zablokowanych domen",
+        "ru": "Добавить домен в список заблокированных доменов",
+        "sv": "Lägg till domän i listan över blockerade domäner"
+      },
+      "titleFormatted": {
+        "en": "Add [[domain]] to the list of [[allowedOrBlocked]] domains",
+        "de": "Füge [[domain]] zur Liste der [[allowedOrBlocked]] Domains hinzu",
+        "da": "Tilføj [[domain]] til listen over [[allowedOrBlocked]] domæner",
+        "es": "Agregar [[domain]] a la lista de dominios [[allowedOrBlocked]]",
+        "fr": "Ajouter [[domain]] à la liste des domaines [[allowedOrBlocked]]",
+        "nl": "Voeg [[domain]] toe aan de lijst met [[allowedOrBlocked]] domeinen",
+        "no": "Legg til [[domain]] i listen over [[allowedOrBlocked]] domener",
+        "pl": "Dodaj [[domain]] do listy [[allowedOrBlocked]] domen",
+        "ru": "Добавить [[domain]] в список [[allowedOrBlocked]] доменов",
+        "sv": "Lägg till [[domain]] i listan över [[allowedOrBlocked]] domäner"
+      },
+      "hint": {
+        "en": "Adds a domain to the list of allowed or blocked domains. The domain is added to the 'default' group in Pi-Hole",
+        "de": "Fügt eine Domain zur Liste der erlaubten oder blockierten Domains hinzu. Die Domain wird der 'Standard'-Gruppe in Pi-Hole hinzugefügt",
+        "da": "Tilføjer et domæne til listen over tilladte eller blokerede domæner. Domænet tilføjes til 'standard'-gruppen i Pi-Hole",
+        "es": "Agrega un dominio a la lista de dominios permitidos o bloqueados. El dominio se agrega al grupo 'predeterminado' en Pi-Hole",
+        "fr": "Ajoute un domaine à la liste des domaines autorisés ou bloqués. Le domaine est ajouté au groupe 'par défaut' dans Pi-Hole",
+        "nl": "Voegt een domein toe aan de lijst met toegestane of geblokkeerde domeinen. Het domein wordt toegevoegd aan de 'standaard'-groep in Pi-Hole",
+        "no": "Legger til et domene i listen over tillatte eller blokkerte domener. Domenet legges til i 'standard'-gruppen i Pi-Hole",
+        "pl": "Dodaje domenę do listy dozwolonych lub zablokowanych domen. Domenę dodaje się do grupy 'domyślnej' w Pi-Hole",
+        "ru": "Добавляет домен в список разрешенных или заблокированных доменов. Домен добавляется в группу 'по умолчанию' в Pi-Hole",
+        "sv": "Lägger till en domän i listan över tillåtna eller blockerade domäner. Domänen läggs till i 'standard'-gruppen i Pi-Hole"
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "allowedOrBlocked",
+          "type": "dropdown",
+            "title": {
+            "en": "Allowed/Blocked",
+            "de": "Erlaubt/Blockiert",
+            "da": "Tilladt/Blokeret",
+            "es": "Permitido/Bloqueado",
+            "fr": "Autorisé/Bloqué",
+            "nl": "Toegestaan/Geblokkeerd",
+            "no": "Tillatt/Blokkert",
+            "pl": "Dozwolone/Zablokowane",
+            "ru": "Разрешено/Заблокировано",
+            "sv": "Tillåtet/Blockerat"
+            },
+          "values": [
+            {
+              "id": "allow",
+                "title": {
+                "en": "allowed",
+                "de": "erlaubt",
+                "da": "tilladt",
+                "es": "permitido",
+                "fr": "autorisé",
+                "nl": "toegestaan",
+                "no": "tillatt",
+                "pl": "dozwolone",
+                "ru": "разрешено",
+                "sv": "tillåtet"
+                }
+            },
+            {
+              "id": "deny",
+                "title": {
+                "en": "blocked",
+                "de": "blockiert",
+                "da": "blokeret",
+                "es": "bloqueado",
+                "fr": "bloqué",
+                "nl": "geblokkeerd",
+                "no": "blokkert",
+                "pl": "zablokowane",
+                "ru": "заблокировано",
+                "sv": "blockerat"
+                }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pihole_domain_add_regex",
+      "title": {
+        "en": "Add regex-expression to list of blocked domains",
+        "de": "Regex-Ausdruck zur Liste der blockierten Domains hinzufügen",
+        "da": "Tilføj regex-udtryk til listen over blokerede domæner",
+        "es": "Agregar expresión regex a la lista de dominios bloqueados",
+        "fr": "Ajouter une expression regex à la liste des domaines bloqués",
+        "nl": "Regex-uitdrukking toevoegen aan lijst met geblokkeerde domeinen",
+        "no": "Legg til regex-uttrykk i listen over blokkerte domener",
+        "pl": "Dodaj wyrażenie regex do listy zablokowanych domen",
+        "ru": "Добавить регулярное выражение в список заблокированных доменов",
+        "sv": "Lägg till regex-uttryck i listan över blockerade domäner"
+      },
+      "titleFormatted": {
+        "en": "Add regex [[domain]] to the list of [[allowedOrBlocked]] domains",
+        "de": "Füge Regex [[domain]] zur Liste der [[allowedOrBlocked]] Domains hinzu",
+        "da": "Tilføj regex [[domain]] til listen over [[allowedOrBlocked]] domæner",
+        "es": "Agregar regex [[domain]] a la lista de dominios [[allowedOrBlocked]]",
+        "fr": "Ajouter regex [[domain]] à la liste des domaines [[allowedOrBlocked]]",
+        "nl": "Voeg regex [[domain]] toe aan de lijst met [[allowedOrBlocked]] domeinen",
+        "no": "Legg til regex [[domain]] i listen over [[allowedOrBlocked]] domener",
+        "pl": "Dodaj regex [[domain]] do listy [[allowedOrBlocked]] domen",
+        "ru": "Добавить regex [[domain]] в список [[allowedOrBlocked]] доменов",
+        "sv": "Lägg till regex [[domain]] i listan över [[allowedOrBlocked]] domäner"
+      },
+      "hint": {
+        "en": "Adds a regex-expression to the list of allowed or blocked domains. The domain is added to the 'default' group in Pi-Hole",
+        "de": "Fügt einen Regex-Ausdruck zur Liste der erlaubten oder blockierten Domains hinzu. Die Domain wird der 'Standard'-Gruppe in Pi-Hole hinzugefügt",
+        "da": "Tilføjer et regex-udtryk til listen over tilladte eller blokerede domæner. Domænet tilføjes til 'standard'-gruppen i Pi-Hole",
+        "es": "Agrega una expresión regex a la lista de dominios permitidos o bloqueados. El dominio se agrega al grupo 'predeterminado' en Pi-Hole",
+        "fr": "Ajoute une expression regex à la liste des domaines autorisés ou bloqués. Le domaine est ajouté au groupe 'par défaut' dans Pi-Hole",
+        "nl": "Voegt een regex-uitdrukking toe aan de lijst met toegestane of geblokkeerde domeinen. Het domein wordt toegevoegd aan de 'standaard'-groep in Pi-Hole",
+        "no": "Legger til et regex-uttrykk i listen over tillatte eller blokkerte domener. Domenet legges til i 'standard'-gruppen i Pi-Hole",
+        "pl": "Dodaje wyrażenie regex do listy dozwolonych lub zablokowanych domen. Domenę dodaje się do grupy 'domyślnej' w Pi-Hole",
+        "ru": "Добавляет регулярное выражение в список разрешенных или заблокированных доменов. Домен добавляется в группу 'по умолчанию' в Pi-Hole",
+        "sv": "Lägger till ett regex-uttryck i listan över tillåtna eller blockerade domäner. Domänen läggs till i 'standard'-gruppen i Pi-Hole"
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "allowedOrBlocked",
+          "type": "dropdown",
+            "title": {
+            "en": "Allowed/Blocked",
+            "de": "Erlaubt/Blockiert",
+            "da": "Tilladt/Blokeret",
+            "es": "Permitido/Bloqueado",
+            "fr": "Autorisé/Bloqué",
+            "nl": "Toegestaan/Geblokkeerd",
+            "no": "Tillatt/Blokkert",
+            "pl": "Dozwolone/Zablokowane",
+            "ru": "Разрешено/Заблокировано",
+            "sv": "Tillåtet/Blockerat"
+            },
+          "values": [
+            {
+              "id": "allow",
+                "title": {
+                "en": "allowed",
+                "de": "erlaubt",
+                "da": "tilladt",
+                "es": "permitido",
+                "fr": "autorisé",
+                "nl": "toegestaan",
+                "no": "tillatt",
+                "pl": "dozwolone",
+                "ru": "разрешено",
+                "sv": "tillåtet"
+                }
+            },
+            {
+              "id": "deny",
+                "title": {
+                "en": "blocked",
+                "de": "blockiert",
+                "da": "blokeret",
+                "es": "bloqueado",
+                "fr": "bloqué",
+                "nl": "geblokkeerd",
+                "no": "blokkert",
+                "pl": "zablokowane",
+                "ru": "заблокировано",
+                "sv": "blockerat"
+                }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pihole_domain_remove",
+      "title": {
+        "en": "Remove domain from the list of blocked domains",
+        "de": "Domain aus der Liste der blockierten Domains entfernen",
+        "da": "Fjern domæne fra listen over blokerede domæner",
+        "es": "Eliminar dominio de la lista de dominios bloqueados",
+        "fr": "Supprimer le domaine de la liste des domaines bloqués",
+        "nl": "Domein verwijderen uit de lijst met geblokkeerde domeinen",
+        "no": "Fjern domene fra listen over blokkerte domener",
+        "pl": "Usuń domenę z listy zablokowanych domen",
+        "ru": "Удалить домен из списка заблокированных доменов",
+        "sv": "Ta bort domän från listan över blockerade domäner"
+      },
+      "titleFormatted": {
+        "en": "Remove [[domain]] from the list of [[allowedOrBlocked]] domains",
+        "de": "Entferne [[domain]] aus der Liste der [[allowedOrBlocked]] Domains",
+        "da": "Fjern [[domain]] fra listen over [[allowedOrBlocked]] domæner",
+        "es": "Eliminar [[domain]] de la lista de dominios [[allowedOrBlocked]]",
+        "fr": "Supprimer [[domain]] de la liste des domaines [[allowedOrBlocked]]",
+        "nl": "Verwijder [[domain]] uit de lijst met [[allowedOrBlocked]] domeinen",
+        "no": "Fjern [[domain]] fra listen over [[allowedOrBlocked]] domener",
+        "pl": "Usuń [[domain]] z listy [[allowedOrBlocked]] domen",
+        "ru": "Удалить [[domain]] из списка [[allowedOrBlocked]] доменов",
+        "sv": "Ta bort [[domain]] från listan över [[allowedOrBlocked]] domäner"
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "allowedOrBlocked",
+          "type": "dropdown",
+            "title": {
+            "en": "Allowed/Blocked",
+            "de": "Erlaubt/Blockiert",
+            "da": "Tilladt/Blokeret",
+            "es": "Permitido/Bloqueado",
+            "fr": "Autorisé/Bloqué",
+            "nl": "Toegestaan/Geblokkeerd",
+            "no": "Tillatt/Blokkert",
+            "pl": "Dozwolone/Zablokowane",
+            "ru": "Разрешено/Заблокировано",
+            "sv": "Tillåtet/Blockerat"
+            },
+          "values": [
+            {
+              "id": "allow",
+                "title": {
+                "en": "allowed",
+                "de": "erlaubt",
+                "da": "tilladt",
+                "es": "permitido",
+                "fr": "autorisé",
+                "nl": "toegestaan",
+                "no": "tillatt",
+                "pl": "dozwolone",
+                "ru": "разрешено",
+                "sv": "tillåtet"
+                }
+            },
+            {
+              "id": "deny",
+                "title": {
+                "en": "blocked",
+                "de": "blockiert",
+                "da": "blokeret",
+                "es": "bloqueado",
+                "fr": "bloqué",
+                "nl": "geblokkeerd",
+                "no": "blokkert",
+                "pl": "zablokowane",
+                "ru": "заблокировано",
+                "sv": "blockerat"
+                }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pihole_domain_remove_regex",
+      "title": {
+        "en": "Remove regex-expression from the list of blocked domains",
+        "de": "Regex-Ausdruck aus der Liste der blockierten Domains entfernen",
+        "da": "Fjern regex-udtryk fra listen over blokerede domæner",
+        "es": "Eliminar expresión regex de la lista de dominios bloqueados",
+        "fr": "Supprimer l'expression regex de la liste des domaines bloqués",
+        "nl": "Regex-uitdrukking verwijderen uit de lijst met geblokkeerde domeinen",
+        "no": "Fjern regex-uttrykk fra listen over blokkerte domener",
+        "pl": "Usuń wyrażenie regex z listy zablokowanych domen",
+        "ru": "Удалить регулярное выражение из списка заблокированных доменов",
+        "sv": "Ta bort regex-uttryck från listan över blockerade domäner"
+      },
+      "titleFormatted": {
+        "en": "Remove regex [[domain]] from the list of [[allowedOrBlocked]] domains",
+        "de": "Entferne Regex [[domain]] aus der Liste der [[allowedOrBlocked]] Domains",
+        "da": "Fjern regex [[domain]] fra listen over [[allowedOrBlocked]] domæner",
+        "es": "Eliminar regex [[domain]] de la lista de dominios [[allowedOrBlocked]]",
+        "fr": "Supprimer regex [[domain]] de la liste des domaines [[allowedOrBlocked]]",
+        "nl": "Verwijder regex [[domain]] uit de lijst met [[allowedOrBlocked]] domeinen",
+        "no": "Fjern regex [[domain]] fra listen over [[allowedOrBlocked]] domener",
+        "pl": "Usuń regex [[domain]] z listy [[allowedOrBlocked]] domen",
+        "ru": "Удалить regex [[domain]] из списка [[allowedOrBlocked]] доменов",
+        "sv": "Ta bort regex [[domain]] från listan över [[allowedOrBlocked]] domäner"
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+            "placeholder": {
+            "en": "example.org"
+            }
+        },
+        {
+          "name": "allowedOrBlocked",
+          "type": "dropdown",
+            "title": {
+            "en": "Allowed/Blocked",
+            "de": "Erlaubt/Blockiert",
+            "da": "Tilladt/Blokeret",
+            "es": "Permitido/Bloqueado",
+            "fr": "Autorisé/Bloqué",
+            "nl": "Toegestaan/Geblokkeerd",
+            "no": "Tillatt/Blokkert",
+            "pl": "Dozwolone/Zablokowane",
+            "ru": "Разрешено/Заблокировано",
+            "sv": "Tillåtet/Blockerat"
+            },
+          "values": [
+            {
+              "id": "allow",
+                "title": {
+                "en": "allowed",
+                "de": "erlaubt",
+                "da": "tilladt",
+                "es": "permitido",
+                "fr": "autorisé",
+                "nl": "toegestaan",
+                "no": "tillatt",
+                "pl": "dozwolone",
+                "ru": "разрешено",
+                "sv": "tillåtet"
+                }
+            },
+            {
+              "id": "deny",
+                "title": {
+                "en": "blocked",
+                "de": "blockiert",
+                "da": "blokeret",
+                "es": "bloqueado",
+                "fr": "bloqué",
+                "nl": "geblokkeerd",
+                "no": "blokkert",
+                "pl": "zablokowane",
+                "ru": "заблокировано",
+                "sv": "blockerat"
+                }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pihole_group_add_domain",
+      "title": {
+        "en": "Add domain to Pi-Hole group",
+        "de": "Domain zur Pi-Hole-Gruppe hinzufügen",
+        "da": "Tilføj domæne til Pi-Hole-gruppe",
+        "es": "Agregar dominio al grupo de Pi-Hole",
+        "fr": "Ajouter un domaine au groupe Pi-Hole",
+        "nl": "Domein toevoegen aan Pi-Hole-groep",
+        "no": "Legg til domene i Pi-Hole-gruppe",
+        "pl": "Dodaj domenę do grupy Pi-Hole",
+        "ru": "Добавить домен в группу Pi-Hole",
+        "sv": "Lägg till domän i Pi-Hole-grupp"
+      },
+      "titleFormatted": {
+        "en": "Add [[domain]] to Pi-Hole group [[group]]",
+        "de": "Füge [[domain]] zur Pi-Hole-Gruppe [[group]] hinzu",
+        "da": "Tilføj [[domain]] til Pi-Hole-gruppe [[group]]",
+        "es": "Agregar [[domain]] al grupo de Pi-Hole [[group]]",
+        "fr": "Ajouter [[domain]] au groupe Pi-Hole [[group]]",
+        "nl": "Voeg [[domain]] toe aan Pi-Hole-groep [[group]]",
+        "no": "Legg til [[domain]] i Pi-Hole-gruppe [[group]]",
+        "pl": "Dodaj [[domain]] do grupy Pi-Hole [[group]]",
+        "ru": "Добавить [[domain]] в группу Pi-Hole [[group]]",
+        "sv": "Lägg till [[domain]] i Pi-Hole-grupp [[group]]"
+      },
+      "hint": {
+        "en": "For advanced pi-hole users only. Add domain to a Pi-Hole group, so it also applies to devices in that group. The domain should already be defined in Pi-Hole as a blocked or allowed domain. The group should be manually created in Pi-Hole first.",
+        "de": "Nur für fortgeschrittene Pi-Hole-Benutzer. Fügen Sie eine Domain zu einer Pi-Hole-Gruppe hinzu, damit sie auch für Geräte in dieser Gruppe gilt. Die Domain sollte bereits in Pi-Hole als blockiert oder erlaubt definiert sein. Die Gruppe sollte zuerst manuell in Pi-Hole erstellt werden.",
+        "da": "Kun for avancerede Pi-Hole-brugere. Tilføj domæne til en Pi-Hole-gruppe, så det også gælder for enheder i den gruppe. Domænet skal allerede være defineret i Pi-Hole som blokeret eller tilladt. Gruppen skal først oprettes manuelt i Pi-Hole.",
+        "es": "Solo para usuarios avanzados de Pi-Hole. Agregue un dominio a un grupo de Pi-Hole, para que también se aplique a los dispositivos en ese grupo. El dominio ya debe estar definido en Pi-Hole como bloqueado o permitido. El grupo debe crearse manualmente en Pi-Hole primero.",
+        "fr": "Uniquement pour les utilisateurs avancés de Pi-Hole. Ajoutez un domaine à un groupe Pi-Hole, afin qu'il s'applique également aux appareils de ce groupe. Le domaine doit déjà être défini dans Pi-Hole comme bloqué ou autorisé. Le groupe doit d'abord être créé manuellement dans Pi-Hole.",
+        "nl": "Alleen voor gevorderde Pi-Hole-gebruikers. Voeg een domein toe aan een Pi-Hole-groep, zodat het ook van toepassing is op apparaten in die groep. Het domein moet al in Pi-Hole zijn gedefinieerd als geblokkeerd of toegestaan. De groep moet eerst handmatig in Pi-Hole worden aangemaakt.",
+        "no": "Kun for avanserte Pi-Hole-brukere. Legg til et domene i en Pi-Hole-gruppe, slik at det også gjelder for enheter i den gruppen. Domenet må allerede være definert i Pi-Hole som blokkert eller tillatt. Gruppen må først opprettes manuelt i Pi-Hole.",
+        "pl": "Tylko dla zaawansowanych użytkowników Pi-Hole. Dodaj domenę do grupy Pi-Hole, aby miała zastosowanie również do urządzeń w tej grupie. Domena powinna być już zdefiniowana w Pi-Hole jako zablokowana lub dozwolona. Grupa powinna zostać najpierw ręcznie utworzona w Pi-Hole.",
+        "ru": "Только для опытных пользователей Pi-Hole. Добавьте домен в группу Pi-Hole, чтобы он также применялся к устройствам в этой группе. Домен должен быть уже определен в Pi-Hole как заблокированный или разрешенный. Группа должна быть сначала создана вручную в Pi-Hole.",
+        "sv": "Endast för avancerade Pi-Hole-användare. Lägg till en domän i en Pi-Hole-grupp, så att den även gäller för enheter i den gruppen. Domänen måste redan vara definierad i Pi-Hole som blockerad eller tillåten. Gruppen måste först skapas manuellt i Pi-Hole."
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "group",
+          "type": "autocomplete",
+            "title": {
+            "en": "group name",
+            "de": "Gruppenname",
+            "da": "Gruppenavn",
+            "es": "Nombre del grupo",
+            "fr": "Nom du groupe",
+            "nl": "Groepsnaam",
+            "no": "Gruppenavn",
+            "pl": "Nazwa grupy",
+            "ru": "Имя группы",
+            "sv": "Gruppnamn"
+            }
+        }
+      ]
+    },
+    {
+      "id": "pihole_group_remove_domain",
+      "title": {
+        "en": "Remove domain from Pi-Hole group",
+        "de": "Domain aus Pi-Hole-Gruppe entfernen",
+        "da": "Fjern domæne fra Pi-Hole-gruppe",
+        "es": "Eliminar dominio del grupo de Pi-Hole",
+        "fr": "Supprimer le domaine du groupe Pi-Hole",
+        "nl": "Domein verwijderen uit Pi-Hole-groep",
+        "no": "Fjern domene fra Pi-Hole-gruppe",
+        "pl": "Usuń domenę z grupy Pi-Hole",
+        "ru": "Удалить домен из группы Pi-Hole",
+        "sv": "Ta bort domän från Pi-Hole-grupp"
+      },
+      "titleFormatted": {
+        "en": "Remove [[domain]] from Pi-Hole group [[group]]",
+        "de": "Entferne [[domain]] aus der Pi-Hole-Gruppe [[group]]",
+        "da": "Fjern [[domain]] fra Pi-Hole-gruppe [[group]]",
+        "es": "Eliminar [[domain]] del grupo de Pi-Hole [[group]]",
+        "fr": "Supprimer [[domain]] du groupe Pi-Hole [[group]]",
+        "nl": "Verwijder [[domain]] uit Pi-Hole-groep [[group]]",
+        "no": "Fjern [[domain]] fra Pi-Hole-gruppe [[group]]",
+        "pl": "Usuń [[domain]] z grupy Pi-Hole [[group]]",
+        "ru": "Удалить [[domain]] из группы Pi-Hole [[group]]",
+        "sv": "Ta bort [[domain]] från Pi-Hole-grupp [[group]]"
+      },
+      "hint": {
+        "en": "For advanced pi-hole users only. Remove domain from a Pi-Hole group, so it also applies to devices in that group. The domain should already be defined in Pi-Hole as a blocked or allowed domain. The domain will not be deleted, only unlinked from the group. The group should be manually created in Pi-Hole first.",
+        "de": "Nur für fortgeschrittene Pi-Hole-Benutzer. Entfernen Sie eine Domain aus einer Pi-Hole-Gruppe, damit sie auch für Geräte in dieser Gruppe gilt. Die Domain sollte bereits in Pi-Hole als blockiert oder erlaubt definiert sein. Die Domain wird nicht gelöscht, sondern nur aus der Gruppe entfernt. Die Gruppe sollte zuerst manuell in Pi-Hole erstellt werden.",
+        "da": "Kun for avancerede Pi-Hole-brugere. Fjern domæne fra en Pi-Hole-gruppe, så det også gælder for enheder i den gruppe. Domænet skal allerede være defineret i Pi-Hole som blokeret eller tilladt. Domænet vil ikke blive slettet, kun fjernet fra gruppen. Gruppen skal først oprettes manuelt i Pi-Hole.",
+        "es": "Solo para usuarios avanzados de Pi-Hole. Elimine un dominio de un grupo de Pi-Hole, para que también se aplique a los dispositivos en ese grupo. El dominio ya debe estar definido en Pi-Hole como bloqueado o permitido. El dominio no se eliminará, solo se desvinculará del grupo. El grupo debe crearse manualmente en Pi-Hole primero.",
+        "fr": "Uniquement pour les utilisateurs avancés de Pi-Hole. Supprimez un domaine d'un groupe Pi-Hole, afin qu'il s'applique également aux appareils de ce groupe. Le domaine doit déjà être défini dans Pi-Hole comme bloqué ou autorisé. Le domaine ne sera pas supprimé, seulement dissocié du groupe. Le groupe doit d'abord être créé manuellement dans Pi-Hole.",
+        "nl": "Alleen voor gevorderde Pi-Hole-gebruikers. Verwijder een domein uit een Pi-Hole-groep, zodat het ook van toepassing is op apparaten in die groep. Het domein moet al in Pi-Hole zijn gedefinieerd als geblokkeerd of toegestaan. Het domein wordt niet verwijderd, alleen losgekoppeld van de groep. De groep moet eerst handmatig in Pi-Hole worden aangemaakt.",
+        "no": "Kun for avanserte Pi-Hole-brukere. Fjern et domene fra en Pi-Hole-gruppe, slik at det også gjelder for enheter i den gruppen. Domenet må allerede være definert i Pi-Hole som blokkert eller tillatt. Domenet vil ikke bli slettet, bare fjernet fra gruppen. Gruppen må først opprettes manuelt i Pi-Hole.",
+        "pl": "Tylko dla zaawansowanych użytkowników Pi-Hole. Usuń domenę z grupy Pi-Hole, aby miała zastosowanie również do urządzeń w tej grupie. Domena powinna być już zdefiniowana w Pi-Hole jako zablokowana lub dozwolona. Domena nie zostanie usunięta, tylko odłączona od grupy. Grupa powinna zostać najpierw ręcznie utworzona w Pi-Hole.",
+        "ru": "Только для опытных пользователей Pi-Hole. Удалите домен из группы Pi-Hole, чтобы он также применялся к устройствам в этой группе. Домен должен быть уже определен в Pi-Hole как заблокированный или разрешенный. Домен не будет удален, только отвязан от группы. Группа должна быть сначала создана вручную в Pi-Hole.",
+        "sv": "Endast för avancerade Pi-Hole-användare. Ta bort en domän från en Pi-Hole-grupp, så att den även gäller för enheter i den gruppen. Domänen måste redan vara definierad i Pi-Hole som blockerad eller tillåten. Domänen kommer inte att tas bort, bara kopplas bort från gruppen. Gruppen måste först skapas manuellt i Pi-Hole."
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "group",
+          "type": "autocomplete",
+            "title": {
+            "en": "group name",
+            "de": "Gruppenname",
+            "da": "Gruppenavn",
+            "es": "Nombre del grupo",
+            "fr": "Nom du groupe",
+            "nl": "Groepsnaam",
+            "no": "Gruppenavn",
+            "pl": "Nazwa grupy",
+            "ru": "Имя группы",
+            "sv": "Gruppnamn"
+            }
+        }
+      ]
+    },
+    {
+      "id": "pihole_local_dns_add_record",
+      "title": {
+        "en": "Add local DNS record",
+        "de": "Lokalen DNS-Eintrag hinzufügen",
+        "da": "Tilføj lokal DNS-post",
+        "es": "Agregar registro DNS local",
+        "fr": "Ajouter un enregistrement DNS local",
+        "nl": "Lokale DNS-record toevoegen",
+        "no": "Legg til lokal DNS-post",
+        "pl": "Dodaj lokalny rekord DNS",
+        "ru": "Добавить локальную запись DNS",
+        "sv": "Lägg till lokal DNS-post"
+      },
+      "titleFormatted": {
+        "en": "Add local DNS record [[domain]] pointing to IP-address [[ip]]",
+        "de": "Lokalen DNS-Eintrag [[domain]] hinzufügen, der auf die IP-Adresse [[ip]] zeigt",
+        "da": "Tilføj lokal DNS-post [[domain]], der peger på IP-adressen [[ip]]",
+        "es": "Agregar registro DNS local [[domain]] apuntando a la dirección IP [[ip]]",
+        "fr": "Ajouter un enregistrement DNS local [[domain]] pointant vers l'adresse IP [[ip]]",
+        "nl": "Lokale DNS-record [[domain]] toevoegen die verwijst naar IP-adres [[ip]]",
+        "no": "Legg til lokal DNS-post [[domain]] som peker til IP-adressen [[ip]]",
+        "pl": "Dodaj lokalny rekord DNS [[domain]] wskazujący na adres IP [[ip]]",
+        "ru": "Добавить локальную запись DNS [[domain]], указывающую на IP-адрес [[ip]]",
+        "sv": "Lägg till lokal DNS-post [[domain]] som pekar på IP-adressen [[ip]]"
+      },
+      "hint": {
+        "en": "Adds a local DNS record to Pi-Hole. This will automatically flush the DNS cache.",
+        "de": "Fügt einen lokalen DNS-Eintrag zu Pi-Hole hinzu. Dadurch wird der DNS-Cache automatisch geleert.",
+        "da": "Tilføjer en lokal DNS-post til Pi-Hole. Dette vil automatisk tømme DNS-cachen.",
+        "es": "Agrega un registro DNS local a Pi-Hole. Esto vaciará automáticamente la caché de DNS.",
+        "fr": "Ajoute un enregistrement DNS local à Pi-Hole. Cela videra automatiquement le cache DNS.",
+        "nl": "Voegt een lokale DNS-record toe aan Pi-Hole. Dit zal automatisch de DNS-cache legen.",
+        "no": "Legger til en lokal DNS-post i Pi-Hole. Dette vil automatisk tømme DNS-cachen.",
+        "pl": "Dodaje lokalny rekord DNS do Pi-Hole. Spowoduje to automatyczne opróżnienie pamięci podręcznej DNS.",
+        "ru": "Добавляет локальную запись DNS в Pi-Hole. Это автоматически очистит кэш DNS.",
+        "sv": "Lägger till en lokal DNS-post i Pi-Hole. Detta kommer automatiskt att rensa DNS-cachen."
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+            "title": {
+            "en": "Domain name",
+            "de": "Domainname",
+            "da": "Domænenavn",
+            "es": "Nombre de dominio",
+            "fr": "Nom de domaine",
+            "nl": "Domeinnaam",
+            "no": "Domenenavn",
+            "pl": "Nazwa domeny",
+            "ru": "Имя домена",
+            "sv": "Domännamn"
+            },
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "ip",
+          "type": "text",
+            "title": {
+            "en": "Destination IP-address",
+            "de": "Ziel-IP-Adresse",
+            "da": "Destinationens IP-adresse",
+            "es": "Dirección IP de destino",
+            "fr": "Adresse IP de destination",
+            "nl": "Bestemmings-IP-adres",
+            "no": "Destinasjons-IP-adresse",
+            "pl": "Adres IP docelowy",
+            "ru": "IP-адрес назначения",
+            "sv": "Målets IP-adress"
+            },
+          "placeholder": {
+            "en": "127.0.0.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pihole_local_dns_remove_record",
+      "title": {
+        "en": "Remove local DNS record",
+        "de": "Lokalen DNS-Eintrag entfernen",
+        "da": "Fjern lokal DNS-post",
+        "es": "Eliminar registro DNS local",
+        "fr": "Supprimer un enregistrement DNS local",
+        "nl": "Lokale DNS-record verwijderen",
+        "no": "Fjern lokal DNS-post",
+        "pl": "Usuń lokalny rekord DNS",
+        "ru": "Удалить локальную запись DNS",
+        "sv": "Ta bort lokal DNS-post"
+      },
+      "titleFormatted": {
+        "en": "Remove local DNS record [[domain]]",
+        "de": "Lokalen DNS-Eintrag [[domain]] entfernen",
+        "da": "Fjern lokal DNS-post [[domain]]",
+        "es": "Eliminar registro DNS local [[domain]]",
+        "fr": "Supprimer un enregistrement DNS local [[domain]]",
+        "nl": "Lokale DNS-record [[domain]] verwijderen",
+        "no": "Fjern lokal DNS-post [[domain]]",
+        "pl": "Usuń lokalny rekord DNS [[domain]]",
+        "ru": "Удалить локальную запись DNS [[domain]]",
+        "sv": "Ta bort lokal DNS-post [[domain]]"
+      },
+      "hint": {
+        "en": "Removes a local DNS record from Pi-Hole",
+        "de": "Entfernt einen lokalen DNS-Eintrag aus Pi-Hole",
+        "da": "Fjerner en lokal DNS-post fra Pi-Hole",
+        "es": "Elimina un registro DNS local de Pi-Hole",
+        "fr": "Supprime un enregistrement DNS local de Pi-Hole",
+        "nl": "Verwijdert een lokale DNS-record uit Pi-Hole",
+        "no": "Fjerner en lokal DNS-post fra Pi-Hole",
+        "pl": "Usuwa lokalny rekord DNS z Pi-Hole",
+        "ru": "Удаляет локальную запись DNS из Pi-Hole",
+        "sv": "Tar bort en lokal DNS-post från Pi-Hole"
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+            "title": {
+            "en": "Domain name",
+            "de": "Domainname",
+            "da": "Domænenavn",
+            "es": "Nombre de dominio",
+            "fr": "Nom de domaine",
+            "nl": "Domeinnaam",
+            "no": "Domenenavn",
+            "pl": "Nazwa domeny",
+            "ru": "Имя домена",
+            "sv": "Domännamn"
+            },
+          "placeholder": {
+            "en": "example.org"
+          }
+        }
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "id": "onoff_true",
+      "title": {
+        "en": "Ad-blocking enabled",
+        "de": "Werbeblocker aktiviert",
+        "da": "Annonceblokering aktiveret",
+        "es": "Bloqueo de anuncios habilitado",
+        "fr": "Blocage des publicités activé",
+        "nl": "Advertentieblokkering ingeschakeld",
+        "no": "Annonseblokkering aktivert",
+        "pl": "Blokowanie reklam włączone",
+        "ru": "Блокировка рекламы включена",
+        "sv": "Annonsblockering aktiverad"
+      }
+    },
+    {
+      "id": "onoff_false",
+      "title": {
+        "en": "Ad-Blocking disabled",
+        "de": "Werbeblocker deaktiviert",
+        "da": "Annonceblokering deaktiveret",
+        "es": "Bloqueo de anuncios deshabilitado",
+        "fr": "Blocage des publicités désactivé",
+        "nl": "Advertentieblokkering uitgeschakeld",
+        "no": "Annonseblokkering deaktivert",
+        "pl": "Blokowanie reklam wyłączone",
+        "ru": "Блокировка рекламы отключена",
+        "sv": "Annonsblockering inaktiverad"
+      }
+    },
+    {
+      "id": "pihole_client_query",
+      "title": {
+        "en": "DNS-request from client with ip ...",
+        "de": "DNS-Anfrage von Client mit IP ...",
+        "da": "DNS-forespørgsel fra klient med IP ...",
+        "es": "Solicitud DNS del cliente con IP ...",
+        "fr": "Requête DNS du client avec IP ...",
+        "nl": "DNS-verzoek van client met IP ...",
+        "no": "DNS-forespørsel fra klient med IP ...",
+        "pl": "Żądanie DNS od klienta z IP ...",
+        "ru": "DNS-запрос от клиента с IP ...",
+        "sv": "DNS-förfrågan från klient med IP ..."
+      },
+      "titleFormatted": {
+        "en": "[[recordType]] DNS query from client with ip [[clientIp]]",
+        "de": "[[recordType]] DNS-Anfrage von Client mit IP [[clientIp]]",
+        "da": "[[recordType]] DNS-forespørgsel fra klient med IP [[clientIp]]",
+        "es": "Consulta DNS [[recordType]] del cliente con IP [[clientIp]]",
+        "fr": "Requête DNS [[recordType]] du client avec IP [[clientIp]]",
+        "nl": "[[recordType]] DNS-verzoek van client met IP [[clientIp]]",
+        "no": "[[recordType]] DNS-forespørsel fra klient med IP [[clientIp]]",
+        "pl": "Zapytanie DNS [[recordType]] od klienta z IP [[clientIp]]",
+        "ru": "[[recordType]] DNS-запрос от клиента с IP [[clientIp]]",
+        "sv": "[[recordType]] DNS-förfrågan från klient med IP [[clientIp]]"
+      },
+      "tokens": [
+        {
+          "name": "queryStatus",
+          "type": "string",
+            "title": {
+            "en": "Query status",
+            "de": "Abfrage-Status",
+            "da": "Forespørgselsstatus",
+            "es": "Estado de consulta",
+            "fr": "Statut de la requête",
+            "nl": "Querystatus",
+            "no": "Forespørselsstatus",
+            "pl": "Status zapytania",
+            "ru": "Статус запроса",
+            "sv": "Förfrågningsstatus"
+            },
+            "placeholder": {
+            "en": "DENYLIST",
+            "de": "SPERRLISTE",
+            "da": "SPÆRRELISTE",
+            "es": "LISTA DE BLOQUEO",
+            "fr": "LISTE DE BLOCAGE",
+            "nl": "BLOKKERINGSLIJST",
+            "no": "SPERRELISTE",
+            "pl": "LISTA BLOKAD",
+            "ru": "ЧЕРНЫЙ СПИСОК",
+            "sv": "BLOCKLISTA"
+            },
+            "hint": {
+            "en": "The status from the upstream server. 'Denylist' when the request was blocked. Forwarded, cache, ...",
+            "de": "Der Status vom Upstream-Server. 'Sperrliste', wenn die Anfrage blockiert wurde. Weitergeleitet, Cache, ...",
+            "da": "Status fra upstream-serveren. 'Spærreliste', når forespørgslen blev blokeret. Videregivet, cache, ...",
+            "es": "El estado del servidor upstream. 'Lista de bloqueo' cuando la solicitud fue bloqueada. Reenviado, caché, ...",
+            "fr": "Le statut du serveur en amont. 'Liste de blocage' lorsque la requête a été bloquée. Transféré, cache, ...",
+            "nl": "De status van de upstream-server. 'Blokkeringslijst' wanneer het verzoek werd geblokkeerd. Doorgestuurd, cache, ...",
+            "no": "Status fra oppstrømsserveren. 'Blokkeringsliste' når forespørselen ble blokkert. Viderekoblet, cache, ...",
+            "pl": "Status z serwera nadrzędnego. 'Lista blokad', gdy żądanie zostało zablokowane. Przekazane, pamięć podręczna, ...",
+            "ru": "Статус от вышестоящего сервера. 'Черный список', если запрос был заблокирован. Перенаправлено, кэш, ...",
+            "sv": "Status från uppströmsservern. 'Blocklista' när förfrågan blockerades. Vidarebefordrad, cache, ..."
+            }
+        },
+        {
+          "name": "queryDuration",
+          "type": "number",
+          "example": 5,
+            "title": {
+            "en": "Query duration in ms",
+            "de": "Abfragedauer in ms",
+            "da": "Forespørgselsvarighed i ms",
+            "es": "Duración de la consulta en ms",
+            "fr": "Durée de la requête en ms",
+            "nl": "Queryduur in ms",
+            "no": "Forespørselsvarighet i ms",
+            "pl": "Czas trwania zapytania w ms",
+            "ru": "Длительность запроса в мс",
+            "sv": "Förfrågningsvaraktighet i ms"
+            },
+            "hint": {
+            "en": "Negative if not available",
+            "de": "Negativ, wenn nicht verfügbar",
+            "da": "Negativ, hvis ikke tilgængelig",
+            "es": "Negativo si no está disponible",
+            "fr": "Négatif si non disponible",
+            "nl": "Negatief als niet beschikbaar",
+            "no": "Negativ hvis ikke tilgjengelig",
+            "pl": "Ujemny, jeśli niedostępny",
+            "ru": "Отрицательное значение, если недоступно",
+            "sv": "Negativt om ej tillgängligt"
+            }
+        },
+        {
+          "name": "domain",
+          "type": "string",
+          "placeholder": {
+            "en": "example.org"
+          },
+            "title": {
+            "en": "Domain name",
+            "de": "Domainname",
+            "da": "Domænenavn",
+            "es": "Nombre de dominio",
+            "fr": "Nom de domaine",
+            "nl": "Domeinnaam",
+            "no": "Domenenavn",
+            "pl": "Nazwa domeny",
+            "ru": "Имя домена",
+            "sv": "Domännamn"
+            }
+        },
+        {
+          "name": "recordType",
+          "type": "string",
+          "placeholder": {
+            "en": "CNAME"
+          },
+            "title": {
+            "en": "Domain type",
+            "de": "Domänentyp",
+            "da": "Domænetype",
+            "es": "Tipo de dominio",
+            "fr": "Type de domaine",
+            "nl": "Domeintype",
+            "no": "Domene type",
+            "pl": "Typ domeny",
+            "ru": "Тип домена",
+            "sv": "Domäntyp"
+            },
+          "hint": {
+            "en": "A/AAAA/CNAME/..."
+          }
+        },
+        {
+          "name": "clientIp",
+          "type": "string",
+          "placeholder": {
+            "en": "127.0.0.1"
+          },
+            "title": {
+            "en": "Client ip-address",
+            "de": "Client-IP-Adresse",
+            "da": "Klientens IP-adresse",
+            "es": "Dirección IP del cliente",
+            "fr": "Adresse IP du client",
+            "nl": "Client-IP-adres",
+            "no": "Klientens IP-adresse",
+            "pl": "Adres IP klienta",
+            "ru": "IP-адрес клиента",
+            "sv": "Klientens IP-adress"
+            }
+        },
+        {
+          "name": "clientName",
+          "type": "string",
+          "placeholder": {
+            "en": "computer.local"
+          },
+            "title": {
+            "en": "Client name",
+            "de": "Client-Name",
+            "da": "Klientnavn",
+            "es": "Nombre del cliente",
+            "fr": "Nom du client",
+            "nl": "Clientnaam",
+            "no": "Klientnavn",
+            "pl": "Nazwa klienta",
+            "ru": "Имя клиента",
+            "sv": "Klientnamn"
+            },
+            "hint": {
+            "en": "As reported by Pi-Hole, not available for all clients",
+            "de": "Wie von Pi-Hole gemeldet, nicht für alle Clients verfügbar",
+            "da": "Som rapporteret af Pi-Hole, ikke tilgængelig for alle klienter",
+            "es": "Según lo informado por Pi-Hole, no disponible para todos los clientes",
+            "fr": "Tel que rapporté par Pi-Hole, non disponible pour tous les clients",
+            "nl": "Zoals gerapporteerd door Pi-Hole, niet beschikbaar voor alle clients",
+            "no": "Som rapportert av Pi-Hole, ikke tilgjengelig for alle klienter",
+            "pl": "Zgłoszone przez Pi-Hole, niedostępne dla wszystkich klientów",
+            "ru": "Как сообщается Pi-Hole, недоступно для всех клиентов",
+            "sv": "Som rapporterat av Pi-Hole, inte tillgängligt för alla klienter"
+            }
+        }
+      ],
+      "args": [
+        {
+          "name": "clientIp",
+          "type": "text",
+            "title": {
+            "en": "Client IP address",
+            "de": "Client-IP-Adresse",
+            "da": "Klientens IP-adresse",
+            "es": "Dirección IP del cliente",
+            "fr": "Adresse IP du client",
+            "nl": "Client-IP-adres",
+            "no": "Klientens IP-adresse",
+            "pl": "Adres IP klienta",
+            "ru": "IP-адрес клиента",
+            "sv": "Klientens IP-adress"
+            },
+          "placeholder": {
+            "en": "127.0.0.1"
+          }
+        },
+        {
+          "name": "recordType",
+          "type": "dropdown",
+            "title": {
+            "en": "DNS Record type",
+            "de": "DNS-Eintragstyp",
+            "da": "DNS-posttype",
+            "es": "Tipo de registro DNS",
+            "fr": "Type d'enregistrement DNS",
+            "nl": "DNS-recordtype",
+            "no": "DNS-posttype",
+            "pl": "Typ rekordu DNS",
+            "ru": "Тип записи DNS",
+            "sv": "DNS-posttyp"
+            },
+          "values": [
+            {
+              "id": "*",
+                "title": {
+                "en": "Any",
+                "de": "Beliebig",
+                "da": "Enhver",
+                "es": "Cualquiera",
+                "fr": "N'importe lequel",
+                "nl": "Elke",
+                "no": "Enhver",
+                "pl": "Dowolny",
+                "ru": "Любой",
+                "sv": "Vilken som helst"
+                }
+            },
+            {
+              "id": "A",
+              "title": {
+                "en": "A-type"
+              }
+            },
+            {
+              "id": "AAAA",
+              "title": {
+                "en": "AAAA-type"
+              }
+            },
+            {
+              "id": "CNAME",
+              "title": {
+                "en": "CNAME"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pihole_client_blocked",
+      "title": {
+        "en": "DNS-request from client with ip ... blocked",
+        "de": "DNS-Anfrage von Client mit IP ... blockiert",
+        "da": "DNS-forespørgsel fra klient med IP ... blokeret",
+        "es": "Solicitud DNS del cliente con IP ... bloqueada",
+        "fr": "Requête DNS du client avec IP ... bloquée",
+        "nl": "DNS-verzoek van client met IP ... geblokkeerd",
+        "no": "DNS-forespørsel fra klient med IP ... blokkert",
+        "pl": "Żądanie DNS od klienta z IP ... zablokowane",
+        "ru": "DNS-запрос от клиента с IP ... заблокирован",
+        "sv": "DNS-förfrågan från klient med IP ... blockerad"
+      },
+      "titleFormatted": {
+        "en": "[[recordType]] DNS-request from client with ip [[clientIp]] blocked",
+        "de": "[[recordType]] DNS-Anfrage von Client mit IP [[clientIp]] blockiert",
+        "da": "[[recordType]] DNS-forespørgsel fra klient med IP [[clientIp]] blokeret",
+        "es": "[[recordType]] Solicitud DNS del cliente con IP [[clientIp]] bloqueada",
+        "fr": "[[recordType]] Requête DNS du client avec IP [[clientIp]] bloquée",
+        "nl": "[[recordType]] DNS-verzoek van client met IP [[clientIp]] geblokkeerd",
+        "no": "[[recordType]] DNS-forespørsel fra klient med IP [[clientIp]] blokkert",
+        "pl": "[[recordType]] Zapytanie DNS od klienta z IP [[clientIp]] zablokowane",
+        "ru": "[[recordType]] DNS-запрос от клиента с IP [[clientIp]] заблокирован",
+        "sv": "[[recordType]] DNS-förfrågan från klient med IP [[clientIp]] blockerad"
+      },
+      "tokens": [
+        {
+          "name": "queryStatus",
+          "type": "string",
+            "title": {
+            "en": "Query status",
+            "de": "Abfrage-Status",
+            "da": "Forespørgselsstatus",
+            "es": "Estado de consulta",
+            "fr": "Statut de la requête",
+            "nl": "Querystatus",
+            "no": "Forespørselsstatus",
+            "pl": "Status zapytania",
+            "ru": "Статус запроса",
+            "sv": "Förfrågningsstatus"
+            },
+            "placeholder": {
+            "en": "DENYLIST",
+            "de": "SPERRLISTE",
+            "da": "SPÆRRELISTE",
+            "es": "LISTA DE BLOQUEO",
+            "fr": "LISTE DE BLOCAGE",
+            "nl": "BLOKKERINGSLIJST",
+            "no": "SPERRELISTE",
+            "pl": "LISTA BLOKAD",
+            "ru": "ЧЕРНЫЙ СПИСОК",
+            "sv": "BLOCKLISTA"
+            },
+            "hint": {
+            "en": "The status from the upstream server. 'Denylist' when the request was blocked. Forwarded, cache, ...",
+            "de": "Der Status vom Upstream-Server. 'Sperrliste', wenn die Anfrage blockiert wurde. Weitergeleitet, Cache, ...",
+            "da": "Status fra upstream-serveren. 'Spærreliste', når forespørgslen blev blokeret. Videregivet, cache, ...",
+            "es": "El estado del servidor upstream. 'Lista de bloqueo' cuando la solicitud fue bloqueada. Reenviado, caché, ...",
+            "fr": "Le statut du serveur en amont. 'Liste de blocage' lorsque la requête a été bloquée. Transféré, cache, ...",
+            "nl": "De status van de upstream-server. 'Blokkeringslijst' wanneer het verzoek werd geblokkeerd. Doorgestuurd, cache, ...",
+            "no": "Status fra oppstrømsserveren. 'Blokkeringsliste' når forespørselen ble blokkert. Viderekoblet, cache, ...",
+            "pl": "Status z serwera nadrzędnego. 'Lista blokad', gdy żądanie zostało zablokowane. Przekazane, pamięć podręczna, ...",
+            "ru": "Статус от вышестоящего сервера. 'Черный список', если запрос был заблокирован. Перенаправлено, кэш, ...",
+            "sv": "Status från uppströmsservern. 'Blocklista' när förfrågan blockerades. Vidarebefordrad, cache, ..."
+            }
+        },
+        {
+          "name": "queryDuration",
+          "type": "number",
+          "example": 5,
+            "title": {
+            "en": "Query duration in ms",
+            "de": "Abfragedauer in ms",
+            "da": "Forespørgselsvarighed i ms",
+            "es": "Duración de la consulta en ms",
+            "fr": "Durée de la requête en ms",
+            "nl": "Queryduur in ms",
+            "no": "Forespørselsvarighet i ms",
+            "pl": "Czas trwania zapytania w ms",
+            "ru": "Длительность запроса в мс",
+            "sv": "Förfrågningsvaraktighet i ms"
+            },
+            "hint": {
+            "en": "Negative if not available",
+            "de": "Negativ, wenn nicht verfügbar",
+            "da": "Negativ, hvis ikke tilgængelig",
+            "es": "Negativo si no está disponible",
+            "fr": "Négatif si non disponible",
+            "nl": "Negatief als niet beschikbaar",
+            "no": "Negativ hvis ikke tilgjengelig",
+            "pl": "Ujemny, jeśli niedostępny",
+            "ru": "Отрицательное значение, если недоступно",
+            "sv": "Negativt om ej tillgängligt"
+            }
+        },
+        {
+          "name": "domain",
+          "type": "string",
+          "placeholder": {
+            "en": "example.org"
+          },
+            "title": {
+            "en": "Domain name",
+            "de": "Domainname",
+            "da": "Domænenavn",
+            "es": "Nombre de dominio",
+            "fr": "Nom de domaine",
+            "nl": "Domeinnaam",
+            "no": "Domenenavn",
+            "pl": "Nazwa domeny",
+            "ru": "Имя домена",
+            "sv": "Domännamn"
+            }
+        },
+        {
+          "name": "recordType",
+          "type": "string",
+          "placeholder": {
+            "en": "CNAME"
+          },
+          "title": {
+            "en": "Domain type"
+          },
+          "hint": {
+            "en": "A/AAAA/CNAME/..."
+          }
+        },
+        {
+          "name": "clientIp",
+          "type": "string",
+          "placeholder": {
+            "en": "127.0.0.1"
+          },
+            "title": {
+            "en": "Client ip-address",
+            "de": "Client-IP-Adresse",
+            "da": "Klientens IP-adresse",
+            "es": "Dirección IP del cliente",
+            "fr": "Adresse IP du client",
+            "nl": "Client-IP-adres",
+            "no": "Klientens IP-adresse",
+            "pl": "Adres IP klienta",
+            "ru": "IP-адрес клиента",
+            "sv": "Klientens IP-adress"
+            }
+        },
+        {
+          "name": "clientName",
+          "type": "string",
+          "placeholder": {
+            "en": "computer.local"
+          },
+            "title": {
+            "en": "Client name",
+            "de": "Client-Name",
+            "da": "Klientnavn",
+            "es": "Nombre del cliente",
+            "fr": "Nom du client",
+            "nl": "Clientnaam",
+            "no": "Klientnavn",
+            "pl": "Nazwa klienta",
+            "ru": "Имя клиента",
+            "sv": "Klientnamn"
+            },
+            "hint": {
+            "en": "As reported by Pi-Hole, not available for all clients",
+            "de": "Wie von Pi-Hole gemeldet, nicht für alle Clients verfügbar",
+            "da": "Som rapporteret af Pi-Hole, ikke tilgængelig for alle klienter",
+            "es": "Según lo informado por Pi-Hole, no disponible para todos los clientes",
+            "fr": "Tel que rapporté par Pi-Hole, non disponible pour tous les clients",
+            "nl": "Zoals gerapporteerd door Pi-Hole, niet beschikbaar voor alle clients",
+            "no": "Som rapportert av Pi-Hole, ikke tilgjengelig for alle klienter",
+            "pl": "Zgłoszone przez Pi-Hole, niedostępne dla wszystkich klientów",
+            "ru": "Как сообщается Pi-Hole, недоступно для всех клиентов",
+            "sv": "Som rapporterat av Pi-Hole, inte tillgängligt för alla klienter"
+            }
+        }
+      ],
+      "args": [
+        {
+          "name": "clientIp",
+          "type": "text",
+          "placeholder": {
+            "en": "127.0.0.1"
+          }
+        },
+        {
+          "name": "recordType",
+          "type": "dropdown",
+            "title": {
+            "en": "DNS Record type",
+            "de": "DNS-Eintragstyp",
+            "da": "DNS-posttype",
+            "es": "Tipo de registro DNS",
+            "fr": "Type d'enregistrement DNS",
+            "nl": "DNS-recordtype",
+            "no": "DNS-posttype",
+            "pl": "Typ rekordu DNS",
+            "ru": "Тип записи DNS",
+            "sv": "DNS-posttyp"
+            },
+          "values": [
+            {
+              "id": "*",
+              "title": {
+                "en": "Any"
+              }
+            },
+            {
+              "id": "A",
+              "title": {
+                "en": "A-type"
+              }
+            },
+            {
+              "id": "AAAA",
+              "title": {
+                "en": "AAAA-type"
+              }
+            },
+            {
+              "id": "CNAME",
+              "title": {
+                "en": "CNAME"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pihole_domain_query",
+      "title": {
+        "en": "DNS request for domain ...",
+        "de": "DNS-Anfrage für Domain ...",
+        "da": "DNS-forespørgsel for domæne ...",
+        "es": "Solicitud DNS para el dominio ...",
+        "fr": "Requête DNS pour le domaine ...",
+        "nl": "DNS-verzoek voor domein ...",
+        "no": "DNS-forespørsel for domene ...",
+        "pl": "Żądanie DNS dla domeny ...",
+        "ru": "DNS-запрос для домена ...",
+        "sv": "DNS-förfrågan för domän ..."
+      },
+      "titleFormatted": {
+        "en": "[[recordType]] DNS-record for domain [[domain]] queried",
+        "de": "[[recordType]] DNS-Eintrag für Domain [[domain]] abgefragt",
+        "da": "[[recordType]] DNS-post for domæne [[domain]] forespurgt",
+        "es": "[[recordType]] Registro DNS para el dominio [[domain]] consultado",
+        "fr": "[[recordType]] Enregistrement DNS pour le domaine [[domain]] interrogé",
+        "nl": "[[recordType]] DNS-record voor domein [[domain]] opgevraagd",
+        "no": "[[recordType]] DNS-post for domene [[domain]] forespurt",
+        "pl": "[[recordType]] Rekord DNS dla domeny [[domain]] zapytany",
+        "ru": "[[recordType]] DNS-запись для домена [[domain]] запрошена",
+        "sv": "[[recordType]] DNS-post för domän [[domain]] förfrågad"
+      },
+      "tokens": [
+        {
+          "name": "queryStatus",
+          "type": "string",
+            "title": {
+            "en": "Query status",
+            "de": "Abfrage-Status",
+            "da": "Forespørgselsstatus",
+            "es": "Estado de consulta",
+            "fr": "Statut de la requête",
+            "nl": "Querystatus",
+            "no": "Forespørselsstatus",
+            "pl": "Status zapytania",
+            "ru": "Статус запроса",
+            "sv": "Förfrågningsstatus"
+            },
+            "placeholder": {
+            "en": "DENYLIST",
+            "de": "SPERRLISTE",
+            "da": "SPÆRRELISTE",
+            "es": "LISTA DE BLOQUEO",
+            "fr": "LISTE DE BLOCAGE",
+            "nl": "BLOKKERINGSLIJST",
+            "no": "SPERRELISTE",
+            "pl": "LISTA BLOKAD",
+            "ru": "ЧЕРНЫЙ СПИСОК",
+            "sv": "BLOCKLISTA"
+            },
+            "hint": {
+            "en": "The status from the upstream server. 'Denylist' when the request was blocked. Forwarded, cache, ...",
+            "de": "Der Status vom Upstream-Server. 'Sperrliste', wenn die Anfrage blockiert wurde. Weitergeleitet, Cache, ...",
+            "da": "Status fra upstream-serveren. 'Spærreliste', når forespørgslen blev blokeret. Videregivet, cache, ...",
+            "es": "El estado del servidor upstream. 'Lista de bloqueo' cuando la solicitud fue bloqueada. Reenviado, caché, ...",
+            "fr": "Le statut du serveur en amont. 'Liste de blocage' lorsque la requête a été bloquée. Transféré, cache, ...",
+            "nl": "De status van de upstream-server. 'Blokkeringslijst' wanneer het verzoek werd geblokkeerd. Doorgestuurd, cache, ...",
+            "no": "Status fra oppstrømsserveren. 'Blokkeringsliste' når forespørselen ble blokkert. Viderekoblet, cache, ...",
+            "pl": "Status z serwera nadrzędnego. 'Lista blokad', gdy żądanie zostało zablokowane. Przekazane, pamięć podręczna, ...",
+            "ru": "Статус от вышестоящего сервера. 'Черный список', если запрос был заблокирован. Перенаправлено, кэш, ...",
+            "sv": "Status från uppströmsservern. 'Blocklista' när förfrågan blockerades. Vidarebefordrad, cache, ..."
+            }
+        },
+        {
+          "name": "queryDuration",
+          "type": "number",
+          "example": 5,
+            "title": {
+            "en": "Query duration in ms",
+            "de": "Abfragedauer in ms",
+            "da": "Forespørgselsvarighed i ms",
+            "es": "Duración de la consulta en ms",
+            "fr": "Durée de la requête en ms",
+            "nl": "Queryduur in ms",
+            "no": "Forespørselsvarighet i ms",
+            "pl": "Czas trwania zapytania w ms",
+            "ru": "Длительность запроса в мс",
+            "sv": "Förfrågningsvaraktighet i ms"
+            },
+            "hint": {
+            "en": "Negative if not available",
+            "de": "Negativ, wenn nicht verfügbar",
+            "da": "Negativ, hvis ikke tilgængelig",
+            "es": "Negativo si no está disponible",
+            "fr": "Négatif si non disponible",
+            "nl": "Negatief als niet beschikbaar",
+            "no": "Negativ hvis ikke tilgjengelig",
+            "pl": "Ujemny, jeśli niedostępny",
+            "ru": "Отрицательное значение, если недоступно",
+            "sv": "Negativt om ej tillgängligt"
+            }
+        },
+        {
+          "name": "domain",
+          "type": "string",
+          "placeholder": {
+            "en": "example.org"
+          },
+            "title": {
+            "en": "Domain name",
+            "de": "Domainname",
+            "da": "Domænenavn",
+            "es": "Nombre de dominio",
+            "fr": "Nom de domaine",
+            "nl": "Domeinnaam",
+            "no": "Domenenavn",
+            "pl": "Nazwa domeny",
+            "ru": "Имя домена",
+            "sv": "Domännamn"
+            }
+        },
+        {
+          "name": "recordType",
+          "type": "string",
+          "placeholder": {
+            "en": "CNAME"
+          },
+          "title": {
+            "en": "Domain type"
+          },
+          "hint": {
+            "en": "A/AAAA/CNAME/..."
+          }
+        },
+        {
+          "name": "clientIp",
+          "type": "string",
+          "placeholder": {
+            "en": "127.0.0.1"
+          },
+            "title": {
+            "en": "Client ip-address",
+            "de": "Client-IP-Adresse",
+            "da": "Klientens IP-adresse",
+            "es": "Dirección IP del cliente",
+            "fr": "Adresse IP du client",
+            "nl": "Client-IP-adres",
+            "no": "Klientens IP-adresse",
+            "pl": "Adres IP klienta",
+            "ru": "IP-адрес клиента",
+            "sv": "Klientens IP-adress"
+            }
+        },
+        {
+          "name": "clientName",
+          "type": "string",
+          "placeholder": {
+            "en": "computer.local"
+          },
+            "title": {
+            "en": "Client name",
+            "de": "Client-Name",
+            "da": "Klientnavn",
+            "es": "Nombre del cliente",
+            "fr": "Nom du client",
+            "nl": "Clientnaam",
+            "no": "Klientnavn",
+            "pl": "Nazwa klienta",
+            "ru": "Имя клиента",
+            "sv": "Klientnamn"
+            },
+            "hint": {
+            "en": "As reported by Pi-Hole, not available for all clients",
+            "de": "Wie von Pi-Hole gemeldet, nicht für alle Clients verfügbar",
+            "da": "Som rapporteret af Pi-Hole, ikke tilgængelig for alle klienter",
+            "es": "Según lo informado por Pi-Hole, no disponible para todos los clientes",
+            "fr": "Tel que rapporté par Pi-Hole, non disponible pour tous les clients",
+            "nl": "Zoals gerapporteerd door Pi-Hole, niet beschikbaar voor alle clients",
+            "no": "Som rapportert av Pi-Hole, ikke tilgjengelig for alle klienter",
+            "pl": "Zgłoszone przez Pi-Hole, niedostępne dla wszystkich klientów",
+            "ru": "Как сообщается Pi-Hole, недоступно для всех клиентов",
+            "sv": "Som rapporterat av Pi-Hole, inte tillgängligt för alla klienter"
+            }
+        }
+      ],
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "recordType",
+          "type": "dropdown",
+          "title": {
+            "en": "DNS Record type"
+          },
+          "values": [
+            {
+              "id": "*",
+              "title": {
+                "en": "Any"
+              }
+            },
+            {
+              "id": "A",
+              "title": {
+                "en": "A-type"
+              }
+            },
+            {
+              "id": "AAAA",
+              "title": {
+                "en": "AAAA-type"
+              }
+            },
+            {
+              "id": "CNAME",
+              "title": {
+                "en": "CNAME"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pihole_domain_blocked",
+      "title": {
+        "en": "DNS request for domain ... blocked",
+        "de": "DNS-Anfrage für Domain ... blockiert",
+        "da": "DNS-forespørgsel for domæne ... blokeret",
+        "es": "Solicitud DNS para el dominio ... bloqueada",
+        "fr": "Requête DNS pour le domaine ... bloquée",
+        "nl": "DNS-verzoek voor domein ... geblokkeerd",
+        "no": "DNS-forespørsel for domene ... blokkert",
+        "pl": "Żądanie DNS dla domeny ... zablokowane",
+        "ru": "DNS-запрос для домена ... заблокирован",
+        "sv": "DNS-förfrågan för domän ... blockerad"
+      },
+      "titleFormatted": {
+        "en": "[[recordType]] record for domain [[domain]] blocked",
+        "de": "[[recordType]] Eintrag für Domain [[domain]] blockiert",
+        "da": "[[recordType]] post for domæne [[domain]] blokeret",
+        "es": "[[recordType]] registro para el dominio [[domain]] bloqueado",
+        "fr": "[[recordType]] enregistrement pour le domaine [[domain]] bloqué",
+        "nl": "[[recordType]] record voor domein [[domain]] geblokkeerd",
+        "no": "[[recordType]] post for domene [[domain]] blokkert",
+        "pl": "[[recordType]] rekord dla domeny [[domain]] zablokowany",
+        "ru": "[[recordType]] запись для домена [[domain]] заблокирована",
+        "sv": "[[recordType]] post för domän [[domain]] blockerad"
+      },
+      "highlight": true,
+      "tokens": [
+        {
+          "name": "queryStatus",
+          "type": "string",
+            "title": {
+            "en": "Query status",
+            "de": "Abfrage-Status",
+            "da": "Forespørgselsstatus",
+            "es": "Estado de consulta",
+            "fr": "Statut de la requête",
+            "nl": "Querystatus",
+            "no": "Forespørselsstatus",
+            "pl": "Status zapytania",
+            "ru": "Статус запроса",
+            "sv": "Förfrågningsstatus"
+            },
+            "placeholder": {
+            "en": "DENYLIST",
+            "de": "SPERRLISTE",
+            "da": "SPÆRRELISTE",
+            "es": "LISTA DE BLOQUEO",
+            "fr": "LISTE DE BLOCAGE",
+            "nl": "BLOKKERINGSLIJST",
+            "no": "SPERRELISTE",
+            "pl": "LISTA BLOKAD",
+            "ru": "ЧЕРНЫЙ СПИСОК",
+            "sv": "BLOCKLISTA"
+            },
+            "hint": {
+            "en": "The status from the upstream server. 'Denylist' when the request was blocked. Forwarded, cache, ...",
+            "de": "Der Status vom Upstream-Server. 'Sperrliste', wenn die Anfrage blockiert wurde. Weitergeleitet, Cache, ...",
+            "da": "Status fra upstream-serveren. 'Spærreliste', når forespørgslen blev blokeret. Videregivet, cache, ...",
+            "es": "El estado del servidor upstream. 'Lista de bloqueo' cuando la solicitud fue bloqueada. Reenviado, caché, ...",
+            "fr": "Le statut du serveur en amont. 'Liste de blocage' lorsque la requête a été bloquée. Transféré, cache, ...",
+            "nl": "De status van de upstream-server. 'Blokkeringslijst' wanneer het verzoek werd geblokkeerd. Doorgestuurd, cache, ...",
+            "no": "Status fra oppstrømsserveren. 'Blokkeringsliste' når forespørselen ble blokkert. Viderekoblet, cache, ...",
+            "pl": "Status z serwera nadrzędnego. 'Lista blokad', gdy żądanie zostało zablokowane. Przekazane, pamięć podręczna, ...",
+            "ru": "Статус от вышестоящего сервера. 'Черный список', если запрос был заблокирован. Перенаправлено, кэш, ...",
+            "sv": "Status från uppströmsservern. 'Blocklista' när förfrågan blockerades. Vidarebefordrad, cache, ..."
+            }
+        },
+        {
+          "name": "queryDuration",
+          "type": "number",
+          "example": 5,
+            "title": {
+            "en": "Query duration in ms",
+            "de": "Abfragedauer in ms",
+            "da": "Forespørgselsvarighed i ms",
+            "es": "Duración de la consulta en ms",
+            "fr": "Durée de la requête en ms",
+            "nl": "Queryduur in ms",
+            "no": "Forespørselsvarighet i ms",
+            "pl": "Czas trwania zapytania w ms",
+            "ru": "Длительность запроса в мс",
+            "sv": "Förfrågningsvaraktighet i ms"
+            },
+            "hint": {
+            "en": "Negative if not available",
+            "de": "Negativ, wenn nicht verfügbar",
+            "da": "Negativ, hvis ikke tilgængelig",
+            "es": "Negativo si no está disponible",
+            "fr": "Négatif si non disponible",
+            "nl": "Negatief als niet beschikbaar",
+            "no": "Negativ hvis ikke tilgjengelig",
+            "pl": "Ujemny, jeśli niedostępny",
+            "ru": "Отрицательное значение, если недоступно",
+            "sv": "Negativt om ej tillgängligt"
+            }
+        },
+        {
+          "name": "domain",
+          "type": "string",
+          "placeholder": {
+            "en": "example.org"
+          },
+          "title": {
+            "en": "Domain name"
+          }
+        },
+        {
+          "name": "recordType",
+          "type": "string",
+          "placeholder": {
+            "en": "CNAME"
+          },
+          "title": {
+            "en": "Domain type"
+          },
+          "hint": {
+            "en": "A/AAAA/CNAME/..."
+          }
+        },
+        {
+          "name": "clientIp",
+          "type": "string",
+          "placeholder": {
+            "en": "127.0.0.1"
+          },
+          "title": {
+            "en": "Client ip-address"
+          }
+        },
+        {
+          "name": "clientName",
+          "type": "string",
+          "placeholder": {
+            "en": "computer.local"
+          },
+          "title": {
+            "en": "Client name"
+          },
+          "hint": {
+            "en": "As reported by Pi-Hole, not available for all clients"
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "recordType",
+          "type": "dropdown",
+          "title": {
+            "en": "DNS Record type"
+          },
+          "values": [
+            {
+              "id": "*",
+              "title": {
+                "en": "Any"
+              }
+            },
+            {
+              "id": "A",
+              "title": {
+                "en": "A-type"
+              }
+            },
+            {
+              "id": "AAAA",
+              "title": {
+                "en": "AAAA-type"
+              }
+            },
+            {
+              "id": "CNAME",
+              "title": {
+                "en": "CNAME"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alarm_connectivity_true",
+      "title": {
+        "en": "Is disconnected",
+        "nl": "Is niet verbonden",
+        "da": "Er afbrudt",
+        "fr": "Est déconnectée",
+        "it": "È disconnesso",
+        "ko": "연결 해제됨",
+        "no": "Er frakoblet",
+        "pl": "Odłączony",
+        "ru": "Отключено",
+        "sv": "Frånkopplad",
+        "es": "Está desconectado"
+      }
+    },
+    {
+      "id": "alarm_connectivity_false",
+      "title": {
+        "en": "Is connected",
+        "nl": "Is verbonden",
+        "da": "Er tilsluttet",
+        "fr": "Est connectée",
+        "it": "È connesso",
+        "ko": "연결됨",
+        "no": "Er tilkoblet",
+        "pl": "Połączony",
+        "ru": "Подключено",
+        "sv": "Ansluten",
+        "es": "Está conectado"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "on",
+      "title": {
+        "en": "Ad-Blocking is !{{enabled|disabled}}"
+      }
+    },
+    {
+      "id": "pihole_rule_exists",
+      "title": {
+        "en": "An allow/block rule exists for ..."
+      },
+      "titleFormatted": {
+        "en": "An [[allowedOrBlocked]] rule [[domain]] !{{exists|doesn't exist}}"
+      },
+      "hint": {
+        "en": "Checks if a specific domain or regex expression is defined as a block or allow rule."
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
+        },
+        {
+          "name": "allowedOrBlocked",
+          "type": "dropdown",
+          "title": {
+            "en": "Allowed/Blocked"
+          },
+          "values": [
+            {
+              "id": "allow",
+              "title": {
+                "en": "allow"
+              }
+            },
+            {
+              "id": "deny",
+              "title": {
+                "en": "block"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pihole_domain_blocked",
+      "title": {
+        "en": "Domain ... is blocked"
+      },
+      "titleFormatted": {
+        "en": "Domain [[domain]] is !{{blocked|allowed}}"
+      },
+      "hint": {
+        "en": "Searches the blocklists and custom rules to check if a query would pass or be blocked"
+      },
+      "args": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": {
+            "en": "example.org"
+          }
+        }
+      ]
+    },
+    {
+      "id": "alarm_connectivity",
+      "title": {
+        "en": "Is !{{connected|disconnected}}",
+        "nl": "Is !{{verbonden|niet verbonden}}",
+        "da": "Er !{{tilsluttet|afbrudt}}",
+        "it": "È !{{connesso|disconnesso}}",
+        "ko": "!{{연결됨|연결 해제됨}}",
+        "no": "Er !{{frakoblet|tilkoblet}}",
+        "pl": "Jest !{{połączony|niepołączony}}",
+        "ru": "Устройство !{{подключено|отключено}}",
+        "sv": "Är !{{ansluten|frånkopplad}}",
+        "es": "Está !{{conectado|desconectado}}",
+        "fr": "Est !{{connectée|déconnectée}}"
+      }
+    }
+  ]
+}
