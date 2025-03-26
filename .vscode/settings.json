@@ -1,6 +1,6 @@
 {
     "githubPullRequests.ignoredPullRequestBranches": [
-        "main"
+        "master"
     ],
     "github.branchProtection": true,
     "github.gitAuthentication": true

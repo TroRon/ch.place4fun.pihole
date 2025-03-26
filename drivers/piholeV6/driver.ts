@@ -234,7 +234,7 @@ class PiholeV6Driver extends Homey.Driver {
             },
             iconObj: {
                 // Reverse-engineered from list-devices template, icons as documented do not work correctly
-                url: "/app/ch.place4fun.pihole/drivers/pihole/assets/icon.svg",
+                url: "/app/ch.place4fun.pihole/drivers/piholeV6/assets/icon.svg",
             },
             settings: {
                 base_url: "",
@@ -292,7 +292,7 @@ class PiholeV6Driver extends Homey.Driver {
             },
             iconObj: {
                 // Reverse-engineered from list-devices template, icons as documented do not work correctly
-                url: "/app/ch.place4fun.pihole/drivers/pihole/assets/icon.svg",
+                url: "/app/ch.place4fun.pihole/drivers/piholeV6/assets/icon.svg",
             },
             settings: {
                 base_url: "http://" + address,

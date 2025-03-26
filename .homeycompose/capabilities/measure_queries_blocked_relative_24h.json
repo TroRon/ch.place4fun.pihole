@@ -1,16 +1,16 @@
 {
   "type": "number",
   "title": {
-    "en": "% blocked queries past 24h",
-    "de": "% blockierte Anfragen letzte 24h",
-    "da": "% blokerede forespørgsler sidste 24 timer",
-    "es": "% consultas bloqueadas últimas 24h",
-    "fr": "% requêtes bloquées dernières 24h",
-    "nl": "% geblokkeerde queries afgelopen 24u",
-    "no": "% blokkerte forespørsler siste 24t",
-    "pl": "% zablokowanych zapytań ostatnie 24h",
-    "ru": "% заблокированных запросов за последние 24ч",
-    "sv": "% blockerade förfrågningar senaste 24h"
+    "en": "blocked queries past 24h",
+    "de": "blockierte Anfragen letzte 24h",
+    "da": "blokerede forespørgsler sidste 24 timer",
+    "es": "consultas bloqueadas últimas 24h",
+    "fr": "requêtes bloquées dernières 24h",
+    "nl": "geblokkeerde queries afgelopen 24u",
+    "no": "blokkerte forespørsler siste 24t",
+    "pl": "zablokowanych zapytań ostatnie 24h",
+    "ru": "заблокированных запросов за последние 24ч",
+    "sv": "blockerade förfrågningar senaste 24h"
   },
   "units": {
     "en": "%"
