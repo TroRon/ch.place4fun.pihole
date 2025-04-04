@@ -1,6 +1,7 @@
 {
   "warnings": {
-    "deprecated1": "ATTENZIONE: Il vecchio driver è stato rimosso nella versione 1.5.0, come annunciato!"
+    "deprecated1": "INFO: Per avere supporto per PiHole6, i dispositivi devono essere aggiunti nuovamente.",
+    "deprecated2": "INFO: I flussi devono essere adattati a causa del nuovo driver."
   },
   "devices": {
     "unavailable": "Il dispositivo non è raggiungibile sulla rete."

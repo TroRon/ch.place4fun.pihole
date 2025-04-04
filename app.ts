@@ -8,9 +8,10 @@ class PiHoleControl extends Homey.App {
   //Schreibe ins Log
   this.log(`${Homey.manifest.id}-${Homey.manifest.version}-Initialization ....`);
 
-  //Schreibe eine Meldung in die Time-Line wegen altem Treiber-Modell
-  //this.homey.notifications.createNotification({excerpt: this.homey.__('warnings.deprecated1')}).catch(error => {this.error('Error sending notification: '+error.message)});
-
+  //Schreibe eine Meldung in die Time-Line wegen PiHole 6 Support
+  this.homey.notifications.createNotification({excerpt: this.homey.__('warnings.deprecated1')}).catch(error => {this.error('Error sending notification: '+error.message)});
+  this.homey.notifications.createNotification({excerpt: this.homey.__('warnings.deprecated2')}).catch(error => {this.error('Error sending notification: '+error.message)});
+  
   //Aktions-Karten
   //pihole-disable-piholes.json
   const disablePiholes = this.homey.flow.getActionCard('pihole-disable-piholes');

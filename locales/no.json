@@ -1,6 +1,7 @@
 {
   "warnings": {
-    "deprecated1": "ADVARSEL: Den gamle driveren har blitt fjernet i versjon 1.5.0, som annonsert!"
+    "deprecated1": "INFO: For å støtte PiHole6, må enhetene legges til på nytt.",
+    "deprecated2": "INFO: Flytene må også tilpasses på grunn av den nye driveren."
   },
   "devices": {
     "unavailable": "Enheten kunne ikke nås på nettverket."

@@ -1,6 +1,7 @@
 {
   "warnings": {
-    "deprecated1": "AVERTISSEMENT : L'ancien pilote a été supprimé dans la version 1.5.0, comme annoncé !"
+    "deprecated1": "INFO : Pour prendre en charge le PiHole6, les appareils doivent être ajoutés à nouveau.",
+    "deprecated2": "INFO : Les flux doivent également être ajustés en raison du nouveau pilote."
   },
   "devices": {
     "unavailable": "L'appareil n'a pas pu être atteint sur le réseau."

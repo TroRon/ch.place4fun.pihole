@@ -1,6 +1,7 @@
 {
   "warnings": {
-    "deprecated1": "ADVERTENCIA: ¡El controlador antiguo ha sido eliminado en la versión 1.5.0, como se anunció!"
+    "deprecated1": "INFO: Para tener soporte para el PiHole6, los dispositivos deben ser añadidos nuevamente.",
+    "deprecated2": "INFO: Los flujos también deben ser ajustados debido al nuevo controlador."
   },
   "devices": {
     "unavailable": "El dispositivo no se pudo alcanzar en la red."

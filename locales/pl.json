@@ -1,6 +1,7 @@
 {
   "warnings": {
-    "deprecated1": "UWAGA: Stary sterownik został usunięty w wersji 1.5.0, zgodnie z zapowiedzią!"
+    "deprecated1": "INFO: Aby uzyskać wsparcie dla PiHole6, urządzenia muszą zostać ponownie dodane.",
+    "deprecated2": "INFO: Przepływy muszą zostać dostosowane ze względu na nowy sterownik."
   },
   "devices": {
     "unavailable": "Urządzenie nie mogło zostać osiągnięte w sieci."

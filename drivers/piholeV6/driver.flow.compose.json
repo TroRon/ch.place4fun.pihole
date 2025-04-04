@@ -202,7 +202,7 @@
               "id": "allow",
                 "title": {
                 "en": "allowed",
-                "de": "erlaubt",
+                "de": "erlaubten",
                 "da": "tilladt",
                 "es": "permitido",
                 "fr": "autorisé",
@@ -217,7 +217,7 @@
               "id": "deny",
                 "title": {
                 "en": "blocked",
-                "de": "blockiert",
+                "de": "blockierten",
                 "da": "blokeret",
                 "es": "bloqueado",
                 "fr": "bloqué",
@@ -382,7 +382,7 @@
               "id": "allow",
                 "title": {
                 "en": "allowed",
-                "de": "erlaubt",
+                "de": "erlaubten",
                 "da": "tilladt",
                 "es": "permitido",
                 "fr": "autorisé",
@@ -397,7 +397,7 @@
               "id": "deny",
                 "title": {
                 "en": "blocked",
-                "de": "blockiert",
+                "de": "blockierten",
                 "da": "blokeret",
                 "es": "bloqueado",
                 "fr": "bloqué",

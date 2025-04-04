@@ -1,6 +1,7 @@
 {
   "warnings": {
-    "deprecated1": "VARNING: Den gamla drivrutinen har tagits bort i version 1.5.0, som meddelats!"
+    "deprecated1": "INFO: För att få stöd för PiHole6 måste enheterna läggas till på nytt.",
+    "deprecated2": "INFO: Flödena måste också anpassas på grund av den nya drivrutinen."
   },
   "devices": {
     "unavailable": "Enheten kunde inte nås på nätverket."

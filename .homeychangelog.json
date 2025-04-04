@@ -519,7 +519,7 @@
     "ru": "Исправление ошибки синхронизации",
     "pl": "Naprawa błędu synchronizacji"
   },
-  "1.6.0": {
+  "2.0.0": {
     "en": "Support for PiHole 6",
     "de": "Support für PiHole 6",
     "nl": "Ondersteuning voor PiHole 6",
@@ -531,5 +531,5 @@
     "da": "Support til PiHole 6",
     "ru": "Поддержка для PiHole 6",
     "pl": "Wsparcie dla PiHole 6"
-  } 
+  }
 }

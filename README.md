@@ -48,6 +48,9 @@ This card adds the functionality that all Piholes can be disabled for a limited 
 
 # Version History
 
+### v2.0.0 (Store Release)
+Support for PiHole 6
+
 ### v1.5.5 (Store Release)
 - Bugfixing synchronization error
 
