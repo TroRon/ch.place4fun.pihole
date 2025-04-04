@@ -25,5 +25,13 @@
       "da": "Aktiver den/de definerede PiHole-instans(er).",
       "ru": "Включает определенный(ые) экземпляр(ы) PiHole.",
       "pl": "Włącza zdefiniowaną(e) instancję(e) PiHole."
-    }
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=pihole"
+  
+      }
+    ]
   }

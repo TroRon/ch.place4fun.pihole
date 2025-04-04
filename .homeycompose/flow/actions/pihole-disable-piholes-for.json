@@ -40,7 +40,13 @@
     "pl": "Oferuje możliwość wyłączenia wszystkich PiHoles na określony czas."
   },
   "args": [
-      {
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=pihole"
+
+    },
+    {
           "name": "time",
           "type": "dropdown",
           "placeholder": {
