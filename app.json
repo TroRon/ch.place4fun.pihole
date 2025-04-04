@@ -1633,6 +1633,7 @@
         "id": "alarm_connectivity_true",
         "title": {
           "en": "Is disconnected",
+          "de": "Nicht verbunden",
           "nl": "Is niet verbonden",
           "da": "Er afbrudt",
           "fr": "Est déconnectée",
@@ -1656,6 +1657,7 @@
         "id": "alarm_connectivity_false",
         "title": {
           "en": "Is connected",
+          "de": "Verbunden",
           "nl": "Is verbonden",
           "da": "Er tilsluttet",
           "fr": "Est connectée",
@@ -2244,28 +2246,6 @@
           "pl": "Wyłącz blokowanie reklam",
           "ru": "Отключить блокировку рекламы",
           "sv": "Inaktivera annonsblockering"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=piholeV6"
-          }
-        ]
-      },
-      {
-        "id": "toggle",
-        "title": {
-          "en": "Toggle ad-blocking",
-          "de": "Werbeblocker umschalten",
-          "da": "Skift annonceblokering",
-          "es": "Alternar bloqueo de anuncios",
-          "fr": "Basculer le blocage des publicités",
-          "nl": "Advertentieblokkering schakelen",
-          "no": "Veksle annonseblokkering",
-          "pl": "Przełącz blokowanie reklam",
-          "ru": "Переключить блокировку рекламы",
-          "sv": "Växla annonsblockering"
         },
         "args": [
           {

@@ -1,6 +1,6 @@
 import {AutoDiscoveryProcess} from "./discovery";
 import PairSession from "homey/lib/PairSession";
-import {Pihole6Group, PiHoleConnection} from "./piholev6";
+import {BlockingStatus, Pihole6Group, PiHoleConnection} from "./piholev6";
 import {PiHoleV6Device} from './device';
 import {Device} from "homey";
 
@@ -84,7 +84,20 @@ class PiholeV6Driver extends Homey.Driver {
 
     private registerFlowActionListeners() {
 
-        // Looking for the on, off, toggle action handlers? These are handled by the onoff capability, and only have adjusted titles in the flow compose file.
+        const EnableBlockingAction = this.homey.flow.getActionCard('on');
+        EnableBlockingAction.registerRunListener(async (args: any, state: any) => {
+            // The arguments contain the device on which the card was executed
+            await this.requirePiholeConnection(args).setBlockingState(true);
+            args.device.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
+        });
+
+        const DisableBlockingAction = this.homey.flow.getActionCard('off');
+        DisableBlockingAction.registerRunListener(async (args: any, state: any) => {
+            // The arguments contain the device on which the card was executed
+            await this.requirePiholeConnection(args).setBlockingState(false);
+            args.device.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
+        });
+
 
         const pauseBlockingAction = this.homey.flow.getActionCard('pihole_pause');
         pauseBlockingAction.registerRunListener(async (args: any, state: any) => {
