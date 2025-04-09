@@ -1,33 +1,27 @@
 {
   "warnings": {
     "deprecated1": "INFO: For å støtte PiHole6, må enhetene legges til på nytt.",
-    "deprecated2": "INFO: Flytene må også tilpasses på grunn av den nye driveren."
-  },
-  "devices": {
-    "unavailable": "Enheten kunne ikke nås på nettverket."
+    "deprecated2": "INFO: Flowene må også tilpasses på grunn av den nye driveren."
   },
   "capabilities": {
     "gravity_days": "Dag(er)",
     "gravity_hours": "Time(r)",
     "gravity_minutes": "Minutt(er)"
   },
-  "welcome": {
-    "titles": {
-      "header": "Sett opp PiHole-enhet",
-      "page": "Oppsettet er veldig enkelt ..."
-    },
-    "step_by_step": {
-      "intro": "Klikk på 'Fortsett' for å vise en innstillingsside.<br><br>Følgende innstillinger må gjøres på denne siden:",
-      "steps": "<li>IP-adresse:<b>f.eks. 192.168.10.1</b></li><li>Portnøkkel: <b>80</b></li><li>API-nøkkel: <b>0imfnc8mVLWwsAawjYr4Rx-Af50DDqtl</b></li>",
-      "outro": "<b>VIKTIG:</b><br>Portspesifikasjonen er<b>ALLTID</b> nødvendig, selv om PiHole lytter på port 80, som ville være standard.<br><br>Hvis en DNS-tjeneste er i drift, kan PiHole også adresseres med sitt DNS-navn.<br><br><b>Informasjon:</b><br>Når flyter utføres, kan det hende at ingenting er synlig på PiHole.<br><br>Dette er ikke en feil i appen, men en visningsfeil på PiHole-siden.<br><br>Hvis dette er tilfelle, kan PiHole-visningen lastes inn på nytt."
-    },
-    "buttons": {
-      "continue": "Fortsett"
-    }
+
+  "introV6": {
+    "title": "PiHole Kontrolloppsett",
+    "guide": "<i>Du kan angi nødvendig informasjon for tilkobling på neste side.<br><br><b>VIKTIG:</b><br>Hvis en DNS-tjeneste er i drift, kan PiHole også nås med sitt DNS-navn.</i>",
+    "name": "Navn",
+    "name_guide": "Hva enheten skal hete i Homey",
+    "url": "URL",
+    "url_guide": "Vennligst oppgi endepunktet som PiHole lytter på. Det må være et FQDN med prefikset http(s)://",
+    "api": "API",
+    "api_guide": "Vennligst oppgi PiHole API-passordet her. Dette er passordet du bruker for å logge inn, eller et app-passord hvis du har aktivert tofaktorautentisering."
   },
   "manual_input": {
     "title": "Legg til PiHole-instans",
-    "intro": "<i>Vennligst skriv inn de forespurte dataene for å legge til enheten.<br><br><br><b>VIKTIG:</b><br>Hvis en DNS-tjeneste er i drift, kan PiHole også adresseres med sitt DNS-navn.</i>",
+    "intro": "<i>Vennligst oppgi den forespurte informasjonen for å legge til enheten.<br><br><br><b>VIKTIG:</b><br>Hvis en DNS-tjeneste er i drift, kan PiHole også nås med sitt DNS-navn.</i>",
     "inputs": {
       "name": {
         "label": "Navn <b>(valgfritt)</b>:",
@@ -43,23 +37,28 @@
       },
       "api": {
         "label": "API:",
-        "placeholder": "Vennligst skriv inn API-nøkkelen til Pihole her"
+        "placeholder": "Vennligst oppgi PiHole API-nøkkelen her"
       }
     },
     "buttons": {
       "next": "Legg til enhet"
     }
-  },
+  },  
   "settings": {
     "title": "Enhetsinnstillinger",
     "test_connection": "Test tilkobling",
+    "add_device": "Legg til enhet",
     "name": {
       "title": "Enhetsnavn",
-      "hint": "Hvordan enheten skal navngis i Homey"
+      "hint": "Hva enheten skal hete i Homey"
     },
     "host": {
-      "title": "Enhetsvert",
+      "title": "Enhetens URL",
       "hint": "Vennligst bruk FQDN eller IP-adresse med prefikset HTTP(s)"
+    },
+    "base_url": {
+      "title": "Enhetens URL",
+      "hint": "Vennligst bruk FQDN eller IP-adresse med prefikset HTTP(s), inkludert portnummeret hvis det avviker fra standard."
     },
     "port": {
       "title": "Port",
@@ -67,7 +66,11 @@
     },
     "api_key": {
       "title": "API-nøkkel",
-      "hint": "Vennligst skriv inn PiHole API-nøkkelen her. Den kan fås fra PiHole-innstillingssiden"
+      "hint": "Vennligst oppgi PiHole API-nøkkelen her. Denne kan hentes fra PiHole-innstillingssiden."
+    },
+    "api_password": {
+      "title": "API-passord",
+      "hint": "Vennligst oppgi PiHole API-passordet her. Dette er passordet du bruker for å logge inn, eller et app-passord hvis du har aktivert tofaktorautentisering."
     }
   },
   "pairing": {

@@ -531,5 +531,31 @@
     "da": "Support til PiHole 6",
     "ru": "Поддержка для PiHole 6",
     "pl": "Wsparcie dla PiHole 6"
+  },
+  "2.0.1": {
+    "de": "Bugfixes / Optimierungen",
+    "en": "Bug fixes / Optimizations",
+    "nl": "Bugfixes / Optimalisaties",
+    "fr": "Correctifs / Optimisations",
+    "it": "Bug fix / Ottimizzazioni",
+    "sv": "Buggrättningar / Optimeringar",
+    "no": "Feilrettinger / Optimaliseringer",
+    "es": "Corrección de errores / Optimizaciones",
+    "da": "Fejlrettelser / Optimeringer",
+    "ru": "Исправление ошибок / Оптимизации",
+    "pl": "Naprawy błędów / Optymalizacje"
+  },
+  "2.1.0": {
+    "de": "Überarbeitung Assistent für Geräte Einbindung / Bugfixes",
+    "en": "Bug fixes / Optimizations",
+    "nl": "Bugfixes / Optimalisaties",
+    "fr": "Correctifs / Optimisations",
+    "it": "Bug fix / Ottimizzazioni",
+    "sv": "Buggrättningar / Optimeringar",
+    "no": "Feilrettinger / Optimaliseringer",
+    "es": "Corrección de errores / Optimizaciones",
+    "da": "Fejlrettelser / Optimeringer",
+    "ru": "Исправление ошибок / Оптимизации",
+    "pl": "Naprawy błędów / Optymalizacje"
   }
 }

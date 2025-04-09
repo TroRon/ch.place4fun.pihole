@@ -6,47 +6,14 @@ This application offers the possibility to control the defined PiHole instances 
 
 Many thanks to [Ronny Winkler](https://rwdevelopment.de/) for his support.
 
-# Capabilities
-Connection State
-Filter State
-Last Sync
-DNS Requests per Day
-Blocked Adds per Day
-Blocked Add per Day %
-Last Gravity Update
-Core Update
-FTL Update
-Web Update
-
-# Flow cards
-Flowcards can be used to build flows in Homey's flow editor.
-
-## Action (then)
-
-*Application*
--------------
-
-To use the application cards select 'PiHole Control' in the 'then' column.
-
-## Actions (then)
-
-#### "Enable all PiHole(s)"
-This card starts or stops filtering on the selected PiHole.
-
-#### "Disable all PiHole(s)"
-This card stops the filtering on all PiHoles
-
-#### "Enable/Disable PiHole"
-This card switches the filter on the selected PiHole on or off
-
-#### "Disable PiHole for (x) Minutes"
-This card adds the functionality that a Pihole can be disabled for a limited time.
-
-#### "Disable all PiHoles for (x) Minutes"
-This card adds the functionality that all Piholes can be disabled for a limited time.
-
 
 # Version History
+
+### v2.1.0 (Store Release)
+Bug fixes / Optimizations
+
+### v2.0.1 (Store Release)
+Bugfixing
 
 ### v2.0.0 (Store Release)
 Support for PiHole 6

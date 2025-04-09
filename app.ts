@@ -5,6 +5,16 @@ const Homey = require('homey');
 
 class PiHoleControl extends Homey.App {
   async onInit() {
+  //Stelle Debug Funktionen bereit
+  if (process.env.DEBUG === '1'){
+    try{ 
+      require('inspector').waitForDebugger();
+    }
+    catch(error){
+      require('inspector').open(9225, '0.0.0.0', true);
+    }
+}
+
   //Schreibe ins Log
   this.log(`${Homey.manifest.id}-${Homey.manifest.version}-Initialization ....`);
 

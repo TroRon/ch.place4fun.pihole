@@ -96,6 +96,12 @@
   },
   "pair": [
     {
+      "id": "intro",
+      "navigation": {
+        "next": "list_devices"
+      }
+    },
+    {
       "id": "list_devices",
       "template": "list_devices",
       "options": {
@@ -108,7 +114,6 @@
     {
       "id": "configure_device",
       "navigation": {
-        "prev": "list_devices"
       }
     },
     {

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTRO</title>
+    <style>
+        /* Workaround for views without buttons */
+        #hy-views > .hy-view {
+            overflow: initial !important;
+        }
+
+        .hy-tmpl-manual-input {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+        }
+
+        .hy-tmpl-manual-input-row {
+            margin-bottom: 1em;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <main class="hy-tmpl-manual-input">
+        <div class="hy-tmpl-manual-input-image"></div>
+        <div class="hy-tmpl-manual-input-row">
+            <p style="margin-top: 20px;" data-i18n="introV6.guide"></p>
+        </div>
+        
+        <div class="hy-tmpl-manual-input-row">
+            <div style="margin: 0; padding: 0;">
+                <p style="margin: 0; padding: 0;"><b data-i18n="introV6.name"></b></p>
+                <p style="margin: 0; padding: 0;" data-i18n="introV6.name_guide"></p>
+            </div>
+        </div>
+
+        <div class="hy-tmpl-manual-input-row">
+            <div style="margin: 0; padding: 0;">
+                <p style="margin: 0; padding: 0;"><b data-i18n="introV6.url"></b></p>
+                <p style="margin: 0; padding: 0;" data-i18n="introV6.url_guide"></p>
+            </div>
+        </div>
+
+        <div class="hy-tmpl-manual-input-row">
+            <div style="margin: 0; padding: 0;">
+                <p style="margin: 0; padding: 0;"><b data-i18n="introV6.api"></b></p>
+                <p style="margin: 0; padding: 0;" data-i18n="introV6.api_guide"></p>
+            </div>
+        </div>
+
+    <script type="text/javascript">
+        async function init() {
+            Homey.setTitle(Homey.__('introV6.title'));
+        }
+
+        init();
+    </script>
+</body>
+</html>

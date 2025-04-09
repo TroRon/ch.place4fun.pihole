@@ -1,33 +1,27 @@
 {
   "warnings": {
     "deprecated1": "INFO: For at understøtte PiHole6 skal enhederne tilføjes igen.",
-    "deprecated2": "INFO: Flows skal også tilpasses på grund af den nye driver."
-  },
-  "devices": {
-    "unavailable": "Enheden kunne ikke nås på netværket."
+    "deprecated2": "INFO: Flows skal også justeres på grund af den nye driver."
   },
   "capabilities": {
     "gravity_days": "Dag(e)",
     "gravity_hours": "Time(r)",
     "gravity_minutes": "Minut(ter)"
   },
-  "welcome": {
-    "titles": {
-      "header": "Opsæt PiHole-enhed",
-      "page": "Opsætning er meget enkel ..."
-    },
-    "step_by_step": {
-      "intro": "Klik på 'Fortsæt' for at vise en indstillingsside.<br><br>Følgende indstillinger skal foretages på denne side:",
-      "steps": "<li>IP-adresse:<b>f.eks. 192.168.10.1</b></li><li>Portnøgle: <b>80</b></li><li>API-nøgle: <b>0imfnc8mVLWwsAawjYr4Rx-Af50DDqtl</b></li>",
-      "outro": "<b>VIGTIGT:</b><br>Portspecifikationen er<b>ALTID</b> påkrævet, selvom PiHole lytter på port 80, hvilket ville være standard.<br><br>Hvis en DNS-tjeneste er i drift, kan PiHole også adresseres med sit DNS-navn.<br><br><b>Information:</b><br>Når flows udføres, kan det være, at intet er synligt på PiHole.<br><br>Dette er ikke en fejl i appen, men en visningsfejl på PiHole-siden.<br><br>Hvis dette er tilfældet, kan PiHole-visningen genindlæses."
-    },
-    "buttons": {
-      "continue": "Fortsæt"
-    }
+
+  "introV6": {
+    "title": "PiHole Kontrol Opsætning",
+    "guide": "<i>Du kan indtaste de nødvendige forbindelsesoplysninger på den næste side.<br><br><b>VIGTIGT:</b><br>Hvis en DNS-tjeneste er aktiv, kan PiHole også tilgås med sit DNS-navn.</i>",
+    "name": "Navn",
+    "name_guide": "Hvordan enheden skal navngives i Homey",
+    "url": "URL",
+    "url_guide": "Angiv venligst endpointet, som PiHole lytter på. Det skal være et FQDN med foranstillet http(s)://",
+    "api": "API",
+    "api_guide": "Indtast venligst PiHole API-adgangskoden her. Dette er adgangskoden, du bruger til at logge ind, eller en app-adgangskode, hvis du har aktiveret to-faktor-autentificering."
   },
   "manual_input": {
     "title": "Tilføj PiHole-instans",
-    "intro": "<i>Indtast venligst de ønskede data for at tilføje enheden.<br><br><br><b>VIGTIGT:</b><br>Hvis en DNS-tjeneste er i drift, kan PiHole også adresseres med sit DNS-navn.</i>",
+    "intro": "<i>Indtast venligst de nødvendige oplysninger for at tilføje enheden.<br><br><br><b>VIGTIGT:</b><br>Hvis en DNS-tjeneste er aktiv, kan PiHole også tilgås med sit DNS-navn.</i>",
     "inputs": {
       "name": {
         "label": "Navn <b>(valgfrit)</b>:",
@@ -43,23 +37,28 @@
       },
       "api": {
         "label": "API:",
-        "placeholder": "Indtast venligst API-nøglen til PiHole her"
+        "placeholder": "Indtast venligst PiHole API-nøglen her"
       }
     },
     "buttons": {
       "next": "Tilføj enhed"
     }
-  },
+  },  
   "settings": {
     "title": "Enhedsindstillinger",
     "test_connection": "Test forbindelse",
+    "add_device": "Tilføj enhed",
     "name": {
       "title": "Enhedsnavn",
       "hint": "Hvordan enheden skal navngives i Homey"
     },
     "host": {
-      "title": "Enhedsvært",
+      "title": "Enheds URL",
       "hint": "Brug venligst FQDN eller IP-adresse med foranstillet HTTP(s)"
+    },
+    "base_url": {
+      "title": "Enheds URL",
+      "hint": "Brug venligst FQDN eller IP-adresse med foranstillet HTTP(s), inklusive portnummer, hvis det afviger fra standard."
     },
     "port": {
       "title": "Port",
@@ -67,13 +66,17 @@
     },
     "api_key": {
       "title": "API-nøgle",
-      "hint": "Indtast venligst PiHole API-nøglen her. Den kan fås fra PiHole-indstillingssiden"
+      "hint": "Indtast venligst PiHole API-nøglen her. Denne kan findes på PiHole-indstillingssiden."
+    },
+    "api_password": {
+      "title": "API-adgangskode",
+      "hint": "Indtast venligst PiHole API-adgangskoden her. Dette er adgangskoden, du bruger til at logge ind, eller en app-adgangskode, hvis du har aktiveret to-faktor-autentificering."
     }
   },
   "pairing": {
     "add_manually": "Tilføj manuelt",
     "test_failed": {
-      "invalid_host": "Værtsnavnet eller porten er forkerte.",
+      "invalid_host": "Værtsnavn eller port er forkert.",
       "invalid_key": "API-nøglen er ugyldig."
     }
   }
