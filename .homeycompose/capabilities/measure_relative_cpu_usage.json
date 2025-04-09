@@ -3,14 +3,16 @@
   "title": {
     "en": "CPU usage",
     "de": "CPU-Auslastung",
-    "da": "CPU-brug",
-    "es": "Uso de CPU",
-    "fr": "Utilisation du CPU",
     "nl": "CPU-gebruik",
+    "da": "CPU-brug",
+    "fr": "Utilisation du CPU",
+    "it": "Utilizzo CPU",
+    "ko": "CPU 사용량",
     "no": "CPU-bruk",
     "pl": "Użycie CPU",
     "ru": "Использование CPU",
-    "sv": "CPU-användning"
+    "sv": "CPU-användning",
+    "es": "Uso de CPU"
   },
   "units": {
     "en": "%",

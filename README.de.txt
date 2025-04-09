@@ -6,4 +6,6 @@ Durch Anzeigen wie die Anzahl der Anfragen, gefilterte Anfragen etc. sind Sie im
 
 Die Möglichkeiten sind endlos, wenn Sie Homey mit dieser Funktion erweitern.
 
-Viel Spass mit dieser App
+Viel Spass mit dieser App.
+
+Die Übersetzungen wurden mittels KI erstellt, bei Fehlern melden Sie sich bitte.

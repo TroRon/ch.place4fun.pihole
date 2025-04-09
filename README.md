@@ -9,8 +9,11 @@ Many thanks to [Ronny Winkler](https://rwdevelopment.de/) for his support.
 
 # Version History
 
+### v2.1.2 (Store Release)
+Revision of assistant for device integration / Bug fixes / Add Missing Translations
+
 ### v2.1.1 (Store Release)
-Bug fixes / Optimizations
+Revision of assistant for device integration / Bug fixes
 
 ### v2.0.1 (Store Release)
 Bugfixing

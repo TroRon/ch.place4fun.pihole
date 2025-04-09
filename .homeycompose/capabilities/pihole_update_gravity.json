@@ -3,14 +3,16 @@
     "title": {
       "en": "Update gravity",
       "de": "Gravity aktualisieren",
-      "da": "Opdater tyngdekraft",
-      "es": "Actualizar gravedad",
-      "fr": "Mettre à jour la gravité",
       "nl": "Zwaartekracht bijwerken",
+      "da": "Opdater tyngdekraft",
+      "fr": "Mettre à jour la gravité",
+      "it": "Aggiorna gravità",
+      "ko": "중력 업데이트",
       "no": "Oppdater tyngdekraft",
       "pl": "Zaktualizuj grawitację",
       "ru": "Обновить гравитацию",
-      "sv": "Uppdatera gravitation"
+      "sv": "Uppdatera gravitation",
+      "es": "Actualizar gravedad"
     },
     "insights": false,
     "getable": false,

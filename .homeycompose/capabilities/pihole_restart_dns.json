@@ -3,14 +3,16 @@
     "title": {
       "en": "Restart DNS",
       "de": "DNS neu starten",
+      "nl": "DNS opnieuw starten",
       "da": "Genstart DNS",
-      "es": "Reiniciar DNS",
       "fr": "Redémarrer DNS",
-      "nl": "DNS herstarten",
+      "it": "Riavvia DNS",
+      "ko": "DNS 다시 시작",
       "no": "Start DNS på nytt",
       "pl": "Zrestartuj DNS",
       "ru": "Перезапустить DNS",
-      "sv": "Starta om DNS"
+      "sv": "Starta om DNS",
+      "es": "Reiniciar DNS"
     },
     "insights": false,
     "getable": false,

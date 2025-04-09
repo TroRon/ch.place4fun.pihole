@@ -1,9 +1,11 @@
-Ajoutez à Homey la possibilité de contrôler vos PiHoles.
+Étendez Homey avec la possibilité de contrôler vos PiHoles.
 
 Connectez un nombre quelconque de PiHoles à Homey et contrôlez-les de manière centralisée.
 
-Grâce à des affichages tels que le nombre de demandes, les demandes filtrées, etc., vous êtes toujours au courant des dernières informations.
+Avec des affichages tels que le nombre de requêtes, les requêtes filtrées, etc., vous êtes toujours à jour.
 
-Les possibilités sont infinies si vous ajoutez cette fonction à Homey.
+Les possibilités sont infinies lorsque vous étendez Homey avec cette fonctionnalité.
 
-Nous vous souhaitons beaucoup de plaisir avec cette application
+Amusez-vous bien avec cette application.
+
+Les traductions ont été réalisées à l'aide d'une IA, veuillez signaler toute erreur.

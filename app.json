@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "ch.place4fun.pihole",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#96060c",
@@ -90,14 +90,15 @@
           "en": "Connection restored",
           "de": "Verbindung wiederhergestellt",
           "nl": "Verbinding hersteld",
-          "fr": "Connexion restaurée",
-          "it": "Connessione ripristinata",
-          "sv": "Anslutning återställd",
-          "no": "Tilkoblingen gjenopprettet",
-          "es": "Conexión restablecida",
           "da": "Forbindelse genoprettet",
+          "fr": "Connexion rétablie",
+          "it": "Connessione ripristinata",
+          "ko": "연결 복원됨",
+          "no": "Tilkobling gjenopprettet",
+          "pl": "Połączenie przywrócone",
           "ru": "Соединение восстановлено",
-          "pl": "Połączenie przywrócone"
+          "sv": "Anslutning återställd",
+          "es": "Conexión restaurada"
         },
         "tokens": [
           {
@@ -107,14 +108,15 @@
               "en": "Connection status",
               "de": "Verbindungsstatus",
               "nl": "Verbindingsstatus",
-              "fr": "Statut de la connexion",
-              "it": "Stato della connessione",
-              "sv": "Anslutningsstatus",
-              "no": "Tilkoblingsstatus",
-              "es": "Estado de conexión",
               "da": "Forbindelsesstatus",
-              "ru": "Статус подключения",
-              "pl": "Status połączenia"
+              "fr": "État de la connexion",
+              "it": "Stato della connessione",
+              "ko": "연결 상태",
+              "no": "Tilkoblingsstatus",
+              "pl": "Stan połączenia",
+              "ru": "Состояние соединения",
+              "sv": "Anslutningsstatus",
+              "es": "Estado de la conexión"
             }
           }
         ],
@@ -131,15 +133,16 @@
         "title": {
           "en": "Connection interrupted",
           "de": "Verbindung unterbrochen",
-          "nl": "Verbinding onderbroken",
+          "nl": "Verbinding verbroken",
+          "da": "Forbindelse afbrudt",
           "fr": "Connexion interrompue",
           "it": "Connessione interrotta",
-          "sv": "Anslutning avbruten",
-          "no": "Forbindelsen er brutt",
-          "es": "Conexión interrumpida",
-          "da": "Forbindelsen er afbrudt",
+          "ko": "연결이 끊어졌습니다",
+          "no": "Tilkobling avbrutt",
+          "pl": "Połączenie przerwane",
           "ru": "Соединение прервано",
-          "pl": "Połączenie przerwane"
+          "sv": "Anslutning avbruten",
+          "es": "Conexión interrumpida"
         },
         "tokens": [
           {
@@ -149,14 +152,15 @@
               "en": "Connection status",
               "de": "Verbindungsstatus",
               "nl": "Verbindingsstatus",
-              "fr": "Statut de la connexion",
-              "it": "Stato della connessione",
-              "sv": "Anslutningsstatus",
-              "no": "Tilkoblingsstatus",
-              "es": "Estado de conexión",
               "da": "Forbindelsesstatus",
-              "ru": "Статус подключения",
-              "pl": "Status połączenia"
+              "fr": "État de la connexion",
+              "it": "Stato della connessione",
+              "ko": "연결 상태",
+              "no": "Tilkoblingsstatus",
+              "pl": "Status połączenia",
+              "ru": "Состояние соединения",
+              "sv": "Anslutningsstatus",
+              "es": "Estado de la conexión"
             }
           }
         ],
@@ -172,16 +176,17 @@
       {
         "title": {
           "en": "Core update available",
-          "de": "Core Update vorhanden",
-          "nl": "Core Update beschikbaar",
+          "de": "Core-Update verfügbar",
+          "nl": "Core-update beschikbaar",
+          "da": "Kerneopdatering tilgængelig",
           "fr": "Mise à jour du noyau disponible",
           "it": "Aggiornamento del core disponibile",
-          "sv": "Kärnuppdatering tillgänglig",
+          "ko": "코어 업데이트 가능",
           "no": "Kjerneoppdatering tilgjengelig",
-          "es": "Actualización del núcleo disponible",
-          "da": "Kerneopdatering tilgængelig",
-          "ru": "Обновление ядра доступно",
-          "pl": "Aktualizacja jądra dostępna"
+          "pl": "Aktualizacja rdzenia dostępna",
+          "ru": "Доступно обновление ядра",
+          "sv": "Kärnuppdatering tillgänglig",
+          "es": "Actualización del núcleo disponible"
         },
         "tokens": [
           {
@@ -189,16 +194,17 @@
             "type": "boolean",
             "title": {
               "en": "Core Update",
-              "de": "Core Update",
-              "nl": "Core Update",
+              "de": "Core-Update",
+              "nl": "Core-update",
+              "da": "Kerneopdatering",
               "fr": "Mise à jour du noyau",
               "it": "Aggiornamento del core",
-              "sv": "Kärnuppdatering",
+              "ko": "코어 업데이트",
               "no": "Kjerneoppdatering",
-              "es": "Actualización del núcleo",
-              "da": "Kerneopdatering",
+              "pl": "Aktualizacja rdzenia",
               "ru": "Обновление ядра",
-              "pl": "Aktualizacja jądra"
+              "sv": "Kärnuppdatering",
+              "es": "Actualización del núcleo"
             }
           },
           {
@@ -207,18 +213,30 @@
             "title": {
               "en": "Current Device",
               "de": "Aktuelles Gerät",
-              "nl": "Huidig Apparaat",
-              "fr": "Appareil Actuel",
-              "it": "Dispositivo Attuale",
-              "sv": "Nuvarande Enhet",
-              "no": "Nåværende Enhed",
-              "es": "Dispositivo Actual",
-              "da": "Aktuel Enhed",
-              "ru": "Текущее Устройство",
-              "pl": "Aktualne Urządzenie"
+              "nl": "Huidig apparaat",
+              "da": "Nuværende enhed",
+              "fr": "Appareil actuel",
+              "it": "Dispositivo attuale",
+              "ko": "현재 장치",
+              "no": "Nåværende enhet",
+              "pl": "Bieżące urządzenie",
+              "ru": "Текущее устройство",
+              "sv": "Nuvarande enhet",
+              "es": "Dispositivo actual"
             },
             "example": {
-              "en": "PiHole 1"
+              "en": "PiHole 1",
+              "de": "PiHole 1",
+              "nl": "PiHole 1",
+              "da": "PiHole 1",
+              "fr": "PiHole 1",
+              "it": "PiHole 1",
+              "ko": "PiHole 1",
+              "no": "PiHole 1",
+              "pl": "PiHole 1",
+              "ru": "PiHole 1",
+              "sv": "PiHole 1",
+              "es": "PiHole 1"
             }
           },
           {
@@ -226,29 +244,31 @@
             "type": "string",
             "title": {
               "en": "Update Type",
-              "de": "Art des Updates",
-              "nl": "Type update",
+              "de": "Update-Typ",
+              "nl": "Update-type",
+              "da": "Opdateringstype",
               "fr": "Type de mise à jour",
               "it": "Tipo di aggiornamento",
-              "sv": "Uppdateringstyp",
+              "ko": "업데이트 유형",
               "no": "Oppdateringstype",
-              "es": "Tipo de actualización",
-              "da": "Opdateringstype",
+              "pl": "Typ aktualizacji",
               "ru": "Тип обновления",
-              "pl": "Typ aktualizacji"
+              "sv": "Uppdateringstyp",
+              "es": "Tipo de actualización"
             },
             "example": {
               "en": "Core Update",
-              "de": "Core Update",
-              "nl": "Core Update",
+              "de": "Core-Update",
+              "nl": "Core-update",
+              "da": "Kerneopdatering",
               "fr": "Mise à jour du noyau",
               "it": "Aggiornamento del core",
-              "sv": "Kärnuppdatering",
+              "ko": "코어 업데이트",
               "no": "Kjerneoppdatering",
-              "es": "Actualización del núcleo",
-              "da": "Kerneopdatering",
+              "pl": "Aktualizacja rdzenia",
               "ru": "Обновление ядра",
-              "pl": "Aktualizacja jądra"
+              "sv": "Kärnuppdatering",
+              "es": "Actualización del núcleo"
             }
           }
         ],
@@ -264,16 +284,17 @@
       {
         "title": {
           "en": "Filter status has changed",
-          "de": "Filter wurde aktiviert",
-          "nl": "Filterstatus is veranderd",
+          "de": "Filterstatus hat sich geändert",
+          "nl": "Filterstatus is gewijzigd",
+          "da": "Filterstatus er ændret",
           "fr": "Le statut du filtre a changé",
           "it": "Lo stato del filtro è cambiato",
-          "sv": "Filterstatus har ändrats",
+          "ko": "필터 상태가 변경되었습니다",
           "no": "Filterstatus har endret seg",
-          "es": "El estado del filtro ha cambiado",
-          "da": "Filterstatus er ændret",
+          "pl": "Status filtra został zmieniony",
           "ru": "Статус фильтра изменился",
-          "pl": "Stan filtra uległ zmianie"
+          "sv": "Filterstatus har ändrats",
+          "es": "El estado del filtro ha cambiado"
         },
         "tokens": [
           {
@@ -283,14 +304,15 @@
               "en": "Filter status",
               "de": "Filterstatus",
               "nl": "Filterstatus",
+              "da": "Filterstatus",
               "fr": "Statut du filtre",
               "it": "Stato del filtro",
-              "sv": "Filterstatus",
+              "ko": "필터 상태",
               "no": "Filterstatus",
-              "es": "Estado del filtro",
-              "da": "Filterstatus",
+              "pl": "Status filtra",
               "ru": "Статус фильтра",
-              "pl": "Stan filtra"
+              "sv": "Filterstatus",
+              "es": "Estado del filtro"
             }
           }
         ],
@@ -306,16 +328,17 @@
       {
         "title": {
           "en": "Filter status has changed",
-          "de": "Filter wurde deaktiviert",
-          "nl": "Filterstatus is veranderd",
+          "de": "Filterstatus hat sich geändert",
+          "nl": "Filterstatus is gewijzigd",
+          "da": "Filterstatus er ændret",
           "fr": "Le statut du filtre a changé",
           "it": "Lo stato del filtro è cambiato",
-          "sv": "Filterstatus har ändrats",
+          "ko": "필터 상태가 변경되었습니다",
           "no": "Filterstatus har endret seg",
-          "es": "El estado del filtro ha cambiado",
-          "da": "Filterstatus er ændret",
+          "pl": "Status filtra został zmieniony",
           "ru": "Статус фильтра изменился",
-          "pl": "Stan filtra uległ zmianie"
+          "sv": "Filterstatus har ändrats",
+          "es": "El estado del filtro ha cambiado"
         },
         "tokens": [
           {
@@ -325,14 +348,15 @@
               "en": "Filter status",
               "de": "Filterstatus",
               "nl": "Filterstatus",
+              "da": "Filterstatus",
               "fr": "Statut du filtre",
               "it": "Stato del filtro",
-              "sv": "Filterstatus",
+              "ko": "필터 상태",
               "no": "Filterstatus",
-              "es": "Estado del filtro",
-              "da": "Filterstatus",
+              "pl": "Status filtra",
               "ru": "Статус фильтра",
-              "pl": "Stan filtra"
+              "sv": "Filterstatus",
+              "es": "Estado del filtro"
             }
           }
         ],
@@ -348,16 +372,17 @@
       {
         "title": {
           "en": "FTL Update available",
-          "de": "FTL Update vorhanden",
-          "nl": "FTL Update beschikbaar",
+          "de": "FTL-Update verfügbar",
+          "nl": "FTL-update beschikbaar",
+          "da": "FTL-opdatering tilgængelig",
           "fr": "Mise à jour FTL disponible",
           "it": "Aggiornamento FTL disponibile",
-          "sv": "FTL-uppdatering tillgänglig",
+          "ko": "FTL 업데이트 가능",
           "no": "FTL-oppdatering tilgjengelig",
-          "es": "Actualización de FTL disponible",
-          "da": "FTL-opdatering tilgængelig",
+          "pl": "Aktualizacja FTL dostępna",
           "ru": "Доступно обновление FTL",
-          "pl": "Dostępna aktualizacja FTL"
+          "sv": "FTL-uppdatering tillgänglig",
+          "es": "Actualización FTL disponible"
         },
         "tokens": [
           {
@@ -365,16 +390,17 @@
             "type": "boolean",
             "title": {
               "en": "FTL Update",
-              "de": "FTL Update",
-              "nl": "FTL Update",
+              "de": "FTL-Update",
+              "nl": "FTL-update",
+              "da": "FTL-opdatering",
               "fr": "Mise à jour FTL",
               "it": "Aggiornamento FTL",
-              "sv": "FTL-uppdatering",
+              "ko": "FTL 업데이트",
               "no": "FTL-oppdatering",
-              "es": "Actualización de FTL",
-              "da": "FTL-opdatering",
+              "pl": "Aktualizacja FTL",
               "ru": "Обновление FTL",
-              "pl": "Aktualizacja FTL"
+              "sv": "FTL-uppdatering",
+              "es": "Actualización FTL"
             }
           },
           {
@@ -383,18 +409,30 @@
             "title": {
               "en": "Current Device",
               "de": "Aktuelles Gerät",
-              "nl": "Huidig Apparaat",
-              "fr": "Appareil Actuel",
-              "it": "Dispositivo Attuale",
-              "sv": "Nuvarande Enhet",
-              "no": "Nåværende Enhed",
-              "es": "Dispositivo Actual",
-              "da": "Aktuel Enhed",
-              "ru": "Текущее Устройство",
-              "pl": "Aktualne Urządzenie"
+              "nl": "Huidig apparaat",
+              "da": "Nuværende enhed",
+              "fr": "Appareil actuel",
+              "it": "Dispositivo attuale",
+              "ko": "현재 장치",
+              "no": "Nåværende enhet",
+              "pl": "Bieżące urządzenie",
+              "ru": "Текущее устройство",
+              "sv": "Nuvarande enhet",
+              "es": "Dispositivo actual"
             },
             "example": {
-              "en": "PiHole 1"
+              "en": "PiHole 1",
+              "de": "PiHole 1",
+              "nl": "PiHole 1",
+              "da": "PiHole 1",
+              "fr": "PiHole 1",
+              "it": "PiHole 1",
+              "ko": "PiHole 1",
+              "no": "PiHole 1",
+              "pl": "PiHole 1",
+              "ru": "PiHole 1",
+              "sv": "PiHole 1",
+              "es": "PiHole 1"
             }
           },
           {
@@ -402,29 +440,31 @@
             "type": "string",
             "title": {
               "en": "Update Type",
-              "de": "Art des Updates",
-              "nl": "Type update",
+              "de": "Update-Typ",
+              "nl": "Update-type",
+              "da": "Opdateringstype",
               "fr": "Type de mise à jour",
               "it": "Tipo di aggiornamento",
-              "sv": "Uppdateringstyp",
+              "ko": "업데이트 유형",
               "no": "Oppdateringstype",
-              "es": "Tipo de actualización",
-              "da": "Opdateringstype",
+              "pl": "Typ aktualizacji",
               "ru": "Тип обновления",
-              "pl": "Typ aktualizacji"
+              "sv": "Uppdateringstyp",
+              "es": "Tipo de actualización"
             },
             "example": {
               "en": "FTL Update",
-              "de": "FTL-Aktualisierung",
+              "de": "FTL-Update",
               "nl": "FTL-update",
+              "da": "FTL-opdatering",
               "fr": "Mise à jour FTL",
               "it": "Aggiornamento FTL",
-              "sv": "FTL-uppdatering",
+              "ko": "FTL 업데이트",
               "no": "FTL-oppdatering",
-              "es": "Actualización de FTL",
-              "da": "FTL-opdatering",
+              "pl": "Aktualizacja FTL",
               "ru": "Обновление FTL",
-              "pl": "Aktualizacja FTL"
+              "sv": "FTL-uppdatering",
+              "es": "Actualización FTL"
             }
           }
         ],
@@ -440,16 +480,17 @@
       {
         "title": {
           "en": "Web Update available",
-          "de": "Web Update vorhanden",
-          "nl": "Web Update beschikbaar",
-          "fr": "Mise à jour Web disponible",
-          "it": "Aggiornamento web disponibile",
-          "sv": "Webbuppdatering tillgänglig",
-          "no": "Weboppdatering tilgjengelig",
-          "es": "Actualización web disponible",
+          "de": "Web-Update verfügbar",
+          "nl": "Webupdate beschikbaar",
           "da": "Webopdatering tilgængelig",
-          "ru": "Доступно обновление веб",
-          "pl": "Dostępna aktualizacja webowa"
+          "fr": "Mise à jour Web disponible",
+          "it": "Aggiornamento Web disponibile",
+          "ko": "웹 업데이트 가능",
+          "no": "Weboppdatering tilgjengelig",
+          "pl": "Dostępna aktualizacja sieciowa",
+          "ru": "Доступно веб-обновление",
+          "sv": "Webbuppdatering tillgänglig",
+          "es": "Actualización web disponible"
         },
         "tokens": [
           {
@@ -457,16 +498,17 @@
             "type": "boolean",
             "title": {
               "en": "Web Update",
-              "de": "Web Update",
-              "nl": "Web Update",
-              "fr": "Mise à jour Web",
-              "it": "Aggiornamento web",
-              "sv": "Webbuppdatering",
-              "no": "Weboppdatering",
-              "es": "Actualización web",
+              "de": "Web-Update",
+              "nl": "Webupdate",
               "da": "Webopdatering",
-              "ru": "Обновление веб",
-              "pl": "Aktualizacja webowa"
+              "fr": "Mise à jour Web",
+              "it": "Aggiornamento Web",
+              "ko": "웹 업데이트",
+              "no": "Weboppdatering",
+              "pl": "Aktualizacja sieciowa",
+              "ru": "Веб-обновление",
+              "sv": "Webbuppdatering",
+              "es": "Actualización web"
             }
           },
           {
@@ -475,18 +517,30 @@
             "title": {
               "en": "Current Device",
               "de": "Aktuelles Gerät",
-              "nl": "Huidig Apparaat",
-              "fr": "Appareil Actuel",
-              "it": "Dispositivo Attuale",
-              "sv": "Nuvarande Enhet",
-              "no": "Nåværende Enhed",
-              "es": "Dispositivo Actual",
-              "da": "Aktuel Enhed",
-              "ru": "Текущее Устройство",
-              "pl": "Aktualne Urządzenie"
+              "nl": "Huidig apparaat",
+              "da": "Nuværende enhed",
+              "fr": "Appareil actuel",
+              "it": "Dispositivo attuale",
+              "ko": "현재 장치",
+              "no": "Nåværende enhet",
+              "pl": "Bieżące urządzenie",
+              "ru": "Текущее устройство",
+              "sv": "Nuvarande enhet",
+              "es": "Dispositivo actual"
             },
             "example": {
-              "en": "PiHole 1"
+              "en": "PiHole 1",
+              "de": "PiHole 1",
+              "nl": "PiHole 1",
+              "da": "PiHole 1",
+              "fr": "PiHole 1",
+              "it": "PiHole 1",
+              "ko": "PiHole 1",
+              "no": "PiHole 1",
+              "pl": "PiHole 1",
+              "ru": "PiHole 1",
+              "sv": "PiHole 1",
+              "es": "PiHole 1"
             }
           },
           {
@@ -494,29 +548,31 @@
             "type": "string",
             "title": {
               "en": "Update Type",
-              "de": "Art des Updates",
-              "nl": "Type update",
+              "de": "Aktualisierungstyp",
+              "nl": "Updatetype",
+              "da": "Opdateringstype",
               "fr": "Type de mise à jour",
               "it": "Tipo di aggiornamento",
-              "sv": "Uppdateringstyp",
+              "ko": "업데이트 유형",
               "no": "Oppdateringstype",
-              "es": "Tipo de actualización",
-              "da": "Opdateringstype",
+              "pl": "Typ aktualizacji",
               "ru": "Тип обновления",
-              "pl": "Typ aktualizacji"
+              "sv": "Uppdateringstyp",
+              "es": "Tipo de actualización"
             },
             "example": {
               "en": "Web Update",
-              "de": "Web-Aktualisierung",
+              "de": "Web-Update",
               "nl": "Webupdate",
+              "da": "Webopdatering",
               "fr": "Mise à jour Web",
               "it": "Aggiornamento Web",
-              "sv": "Webbuppdatering",
+              "ko": "웹 업데이트",
               "no": "Weboppdatering",
-              "es": "Actualización web",
-              "da": "Webopdatering",
-              "ru": "Обновление веб-сайта",
-              "pl": "Aktualizacja sieciowa"
+              "pl": "Aktualizacja sieciowa",
+              "ru": "Веб-обновление",
+              "sv": "Webbuppdatering",
+              "es": "Actualización web"
             }
           }
         ],
@@ -532,16 +588,17 @@
       {
         "title": {
           "en": "Blocked advertisements / day updated",
-          "de": "Geblockte Werbeanzeigen / Tag aktualisiert",
+          "de": "Blockierte Werbung / Tag aktualisiert",
           "nl": "Geblokkeerde advertenties / dag bijgewerkt",
-          "fr": "Publicités bloquées / jour mises à jour",
-          "it": "Pubblicità bloccate / giorno aggiornate",
-          "sv": "Blockerade annonser / dag uppdaterad",
-          "no": "Blokkerte annonser / dag oppdatert",
-          "es": "Anuncios bloqueados / día actualizado",
           "da": "Blokerede annoncer / dag opdateret",
+          "fr": "Publicités bloquées / jour mises à jour",
+          "it": "Annunci bloccati / giorno aggiornati",
+          "ko": "차단된 광고 / 일 업데이트됨",
+          "no": "Blokkerte annonser / dag oppdatert",
+          "pl": "Zablokowane reklamy / dzień zaktualizowane",
           "ru": "Заблокированные объявления / день обновлены",
-          "pl": "Zablokowane reklamy / dzień zaktualizowany"
+          "sv": "Blockerade annonser / dag uppdaterad",
+          "es": "Anuncios bloqueados / día actualizados"
         },
         "tokens": [
           {
@@ -549,16 +606,17 @@
             "type": "number",
             "title": {
               "en": "Blocked advertisements / day",
-              "de": "Geblockte Werbeanzeigen / Tag",
+              "de": "Blockierte Werbung / Tag",
               "nl": "Geblokkeerde advertenties / dag",
-              "fr": "Publicités bloquées / jour",
-              "it": "Pubblicità bloccate / giorno",
-              "sv": "Blockerade annonser / dag",
-              "no": "Blokkerte annonser / dag",
-              "es": "Anuncios bloqueados / día",
               "da": "Blokerede annoncer / dag",
+              "fr": "Publicités bloquées / jour",
+              "it": "Annunci bloccati / giorno",
+              "ko": "차단된 광고 / 일",
+              "no": "Blokkerte annonser / dag",
+              "pl": "Zablokowane reklamy / dzień",
               "ru": "Заблокированные объявления / день",
-              "pl": "Zablokowane reklamy / dzień"
+              "sv": "Blockerade annonser / dag",
+              "es": "Anuncios bloqueados / día"
             },
             "example": {
               "en": "16549"
@@ -577,16 +635,17 @@
       {
         "title": {
           "en": "Blocked advertisements (%) / day updated",
-          "de": "Geblockte Werbeanzeigen (%) / Tag aktualisiert",
+          "de": "Blockierte Werbung (%) / Tag aktualisiert",
           "nl": "Geblokkeerde advertenties (%) / dag bijgewerkt",
-          "fr": "Publicités bloquées (%) / jour mises à jour",
-          "it": "Pubblicità bloccate (%) / giorno aggiornate",
-          "sv": "Blockerade annonser (%) / dag uppdaterad",
-          "no": "Blokkerte annonser (%) / dag oppdatert",
-          "es": "Anuncios bloqueados (%) / día actualizado",
           "da": "Blokerede annoncer (%) / dag opdateret",
+          "fr": "Publicités bloquées (%) / jour mises à jour",
+          "it": "Annunci bloccati (%) / giorno aggiornati",
+          "ko": "차단된 광고 (%) / 일 업데이트됨",
+          "no": "Blokkerte annonser (%) / dag oppdatert",
+          "pl": "Zablokowane reklamy (%) / dzień zaktualizowane",
           "ru": "Заблокированные объявления (%) / день обновлены",
-          "pl": "Zablokowane reklamy (%) / dzień zaktualizowany"
+          "sv": "Blockerade annonser (%) / dag uppdaterad",
+          "es": "Anuncios bloqueados (%) / día actualizado"
         },
         "tokens": [
           {
@@ -594,16 +653,17 @@
             "type": "number",
             "title": {
               "en": "Blocked advertisements (%) / day",
-              "de": "Geblockte Werbeanzeigen (%) / Tag",
+              "de": "Blockierte Werbung (%) / Tag",
               "nl": "Geblokkeerde advertenties (%) / dag",
-              "fr": "Publicités bloquées (%) / jour",
-              "it": "Pubblicità bloccate (%) / giorno",
-              "sv": "Blockerade annonser (%) / dag",
-              "no": "Blokkerte annonser (%) / dag",
-              "es": "Anuncios bloqueados (%) / día",
               "da": "Blokerede annoncer (%) / dag",
+              "fr": "Publicités bloquées (%) / jour",
+              "it": "Annunci bloccati (%) / giorno",
+              "ko": "차단된 광고 (%) / 일",
+              "no": "Blokkerte annonser (%) / dag",
+              "pl": "Zablokowane reklamy (%) / dzień",
               "ru": "Заблокированные объявления (%) / день",
-              "pl": "Zablokowane reklamy (%) / dzień"
+              "sv": "Blockerade annonser (%) / dag",
+              "es": "Anuncios bloqueados (%) / día"
             },
             "example": {
               "en": "1.2%"
@@ -622,16 +682,17 @@
       {
         "title": {
           "en": "Blocked DNS requests / day updated",
-          "de": "Geblockte DNS Anfragen / Tag aktualisiert",
-          "nl": "Geblokkeerde DNS-aanvragen / dag bijgewerkt",
+          "de": "Blockierte DNS-Anfragen / Tag aktualisiert",
+          "nl": "Geblokkeerde DNS-verzoeken / dag bijgewerkt",
+          "da": "Blokerede DNS-forespørgsler / dag opdateret",
           "fr": "Requêtes DNS bloquées / jour mises à jour",
           "it": "Richieste DNS bloccate / giorno aggiornate",
-          "sv": "Blockerade DNS-förfrågningar / dag uppdaterade",
+          "ko": "차단된 DNS 요청 / 일 업데이트됨",
           "no": "Blokkerte DNS-forespørsler / dag oppdatert",
-          "es": "Solicitudes de DNS bloqueadas / día actualizadas",
-          "da": "Blokerede DNS-forespørgsler / dag opdateret",
+          "pl": "Zablokowane żądania DNS / dzień zaktualizowane",
           "ru": "Заблокированные DNS-запросы / день обновлены",
-          "pl": "Zablokowane zapytania DNS / dzień zaktualizowany"
+          "sv": "Blockerade DNS-förfrågningar / dag uppdaterad",
+          "es": "Solicitudes DNS bloqueadas / día actualizadas"
         },
         "tokens": [
           {
@@ -639,16 +700,17 @@
             "type": "number",
             "title": {
               "en": "Blocked DNS requests / day updated",
-              "de": "Geblockte DNS Anfragen / Tag aktualisiert",
+              "de": "Blockierte DNS-Anfragen / Tag aktualisiert",
               "nl": "Geblokkeerde DNS-verzoeken / dag bijgewerkt",
+              "da": "Blokerede DNS-forespørgsler / dag opdateret",
               "fr": "Requêtes DNS bloquées / jour mises à jour",
               "it": "Richieste DNS bloccate / giorno aggiornate",
-              "sv": "Blockerade DNS-förfrågningar / dag uppdaterade",
+              "ko": "차단된 DNS 요청 / 일 업데이트됨",
               "no": "Blokkerte DNS-forespørsler / dag oppdatert",
-              "es": "Solicitudes de DNS bloqueadas / día actualizadas",
-              "da": "Blokerede DNS-forespørgsler / dag opdateret",
+              "pl": "Zablokowane żądania DNS / dzień zaktualizowane",
               "ru": "Заблокированные DNS-запросы / день обновлены",
-              "pl": "Zablokowane zapytania DNS / dzień zaktualizowany"
+              "sv": "Blockerade DNS-förfrågningar / dag uppdaterad",
+              "es": "Solicitudes DNS bloqueadas / día actualizadas"
             },
             "example": {
               "en": "16549"
@@ -1683,42 +1745,45 @@
         "id": "pihole-disable-pihole-for",
         "title": {
           "en": "Disable PiHole for [[time]]",
-          "de": "Deaktiviere PiHole für [[time]]",
+          "de": "PiHole deaktivieren für [[time]]",
           "nl": "Schakel PiHole uit voor [[time]]",
-          "fr": "Désactivez PiHole pendant [[time]]",
-          "it": "Disabilita PiHole per [[time]]",
-          "sv": "Avaktivera PiHole under [[time]]",
-          "no": "Deaktiver PiHole for [[time]]",
-          "es": "Desactivar PiHole durante [[time]]",
           "da": "Deaktiver PiHole i [[time]]",
-          "ru": "Отключите PiHole на [[time]]",
-          "pl": "Wyłącz PiHole na [[time]]"
+          "fr": "Désactiver PiHole pendant [[time]]",
+          "it": "Disabilita PiHole per [[time]]",
+          "ko": "[[time]] 동안 PiHole 비활성화",
+          "no": "Deaktiver PiHole i [[time]]",
+          "pl": "Wyłącz PiHole na [[time]]",
+          "ru": "Отключить PiHole на [[time]]",
+          "sv": "Inaktivera PiHole i [[time]]",
+          "es": "Desactivar PiHole durante [[time]]"
         },
         "titleFormatted": {
           "en": "Disable PiHole for [[time]]",
-          "de": "Deaktiviere den PiHole für [[time]]",
+          "de": "PiHole deaktivieren für [[time]]",
           "nl": "Schakel PiHole uit voor [[time]]",
-          "fr": "Désactivez PiHole pour [[time]]",
-          "it": "Disattiva PiHole per [[time]]",
-          "sv": "Avaktivera PiHole för [[time]]",
-          "no": "Deaktiver PiHole for [[time]]",
-          "es": "Desactivar PiHole por [[time]]",
-          "da": "Deaktiver PiHole for [[time]]",
-          "ru": "Отключите PiHole на [[time]]",
-          "pl": "Wyłącz PiHole na [[time]]"
+          "da": "Deaktiver PiHole i [[time]]",
+          "fr": "Désactiver PiHole pendant [[time]]",
+          "it": "Disabilita PiHole per [[time]]",
+          "ko": "[[time]] 동안 PiHole 비활성화",
+          "no": "Deaktiver PiHole i [[time]]",
+          "pl": "Wyłącz PiHole na [[time]]",
+          "ru": "Отключить PiHole на [[time]]",
+          "sv": "Inaktivera PiHole i [[time]]",
+          "es": "Desactivar PiHole durante [[time]]"
         },
         "hint": {
           "en": "Offers the possibility to disable the current PiHole for a specific period of time.",
-          "de": "Bietet die Möglichkeit, den aktuellen PiHole für eine bestimmte Zeitspanne zu deaktivieren.",
-          "nl": "Biedt de mogelijkheid om de huidige PiHole voor een bepaalde tijd te deactiveren.",
-          "fr": "Offre la possibilité de désactiver le PiHole actuel pour une période spécifique.",
-          "it": "Offre la possibilità di disattivare l'attuale PiHole per un periodo di tempo specifico.",
-          "sv": "Erbjuder möjligheten att inaktivera den aktuella PiHole för en specifik tidsperiod.",
-          "no": "Tilbyr muligheten til å deaktivere den nåværende PiHole for en bestemt tidsperiode.",
-          "es": "Ofrece la posibilidad de desactivar el PiHole actual por un período de tiempo específico.",
-          "da": "Tilbyder muligheden for at deaktivere den nuværende PiHole i en bestemt tidsperiode.",
-          "ru": "Предлагает возможность отключить текущий PiHole на определенный период времени.",
-          "pl": "Oferuje możliwość wyłączenia aktualnego PiHole na określony okres czasu."
+          "de": "Bietet die Möglichkeit, den aktuellen PiHole für einen bestimmten Zeitraum zu deaktivieren.",
+          "nl": "Biedt de mogelijkheid om de huidige PiHole voor een bepaalde tijd uit te schakelen.",
+          "da": "Giver mulighed for at deaktivere den aktuelle PiHole i en bestemt periode.",
+          "fr": "Offre la possibilité de désactiver le PiHole actuel pendant une période spécifique.",
+          "it": "Offre la possibilità di disabilitare l'attuale PiHole per un periodo di tempo specifico.",
+          "ko": "현재 PiHole을 특정 시간 동안 비활성화할 수 있습니다.",
+          "no": "Gir mulighet til å deaktivere den nåværende PiHole i en bestemt periode.",
+          "pl": "Umożliwia wyłączenie bieżącego PiHole na określony czas.",
+          "ru": "Предоставляет возможность отключить текущий PiHole на определённый период времени.",
+          "sv": "Erbjuder möjlighet att inaktivera den aktuella PiHole under en viss tidsperiod.",
+          "es": "Ofrece la posibilidad de desactivar el PiHole actual durante un período específico de tiempo."
         },
         "args": [
           {
@@ -1732,15 +1797,16 @@
             "placeholder": {
               "en": "5 Minutes",
               "de": "5 Minuten",
-              "nl": "5 minuten",
+              "nl": "5 Minuten",
+              "da": "5 minutter",
               "fr": "5 minutes",
               "it": "5 minuti",
-              "sv": "5 minuter",
+              "ko": "5분",
               "no": "5 minutter",
-              "es": "5 minutos",
-              "da": "5 minutter",
+              "pl": "5 minut",
               "ru": "5 минут",
-              "pl": "5 minut"
+              "sv": "5 minuter",
+              "es": "5 minutos"
             },
             "values": [
               {
@@ -1748,15 +1814,16 @@
                 "label": {
                   "en": "5 Minutes",
                   "de": "5 Minuten",
-                  "nl": "5 minuten",
+                  "nl": "5 Minuten",
+                  "da": "5 minutter",
                   "fr": "5 minutes",
                   "it": "5 minuti",
-                  "sv": "5 minuter",
+                  "ko": "5분",
                   "no": "5 minutter",
-                  "es": "5 minutos",
-                  "da": "5 minutter",
+                  "pl": "5 minut",
                   "ru": "5 минут",
-                  "pl": "5 minut"
+                  "sv": "5 minuter",
+                  "es": "5 minutos"
                 }
               },
               {
@@ -1764,15 +1831,16 @@
                 "label": {
                   "en": "10 Minutes",
                   "de": "10 Minuten",
-                  "nl": "10 minuten",
+                  "nl": "10 Minuten",
+                  "da": "10 minutter",
                   "fr": "10 minutes",
                   "it": "10 minuti",
-                  "sv": "10 minuter",
+                  "ko": "10분",
                   "no": "10 minutter",
-                  "es": "10 minutos",
-                  "da": "10 minutter",
+                  "pl": "10 minut",
                   "ru": "10 минут",
-                  "pl": "10 minut"
+                  "sv": "10 minuter",
+                  "es": "10 minutos"
                 }
               },
               {
@@ -1780,15 +1848,16 @@
                 "label": {
                   "en": "15 Minutes",
                   "de": "15 Minuten",
-                  "nl": "15 minuten",
+                  "nl": "15 Minuten",
+                  "da": "15 minutter",
                   "fr": "15 minutes",
                   "it": "15 minuti",
-                  "sv": "15 minuter",
+                  "ko": "15분",
                   "no": "15 minutter",
-                  "es": "15 minutos",
-                  "da": "15 minutter",
+                  "pl": "15 minut",
                   "ru": "15 минут",
-                  "pl": "15 minut"
+                  "sv": "15 minuter",
+                  "es": "15 minutos"
                 }
               },
               {
@@ -1796,15 +1865,16 @@
                 "label": {
                   "en": "30 Minutes",
                   "de": "30 Minuten",
-                  "nl": "30 minuten",
+                  "nl": "30 Minuten",
+                  "da": "30 minutter",
                   "fr": "30 minutes",
                   "it": "30 minuti",
-                  "sv": "30 minuter",
+                  "ko": "30분",
                   "no": "30 minutter",
-                  "es": "30 minutos",
-                  "da": "30 minutter",
+                  "pl": "30 minut",
                   "ru": "30 минут",
-                  "pl": "30 minut"
+                  "sv": "30 minuter",
+                  "es": "30 minutos"
                 }
               },
               {
@@ -1812,15 +1882,16 @@
                 "label": {
                   "en": "45 Minutes",
                   "de": "45 Minuten",
-                  "nl": "45 minuten",
+                  "nl": "45 Minuten",
+                  "da": "45 minutter",
                   "fr": "45 minutes",
                   "it": "45 minuti",
-                  "sv": "45 minuter",
+                  "ko": "45분",
                   "no": "45 minutter",
-                  "es": "45 minutos",
-                  "da": "45 minutter",
+                  "pl": "45 minut",
                   "ru": "45 минут",
-                  "pl": "45 minut"
+                  "sv": "45 minuter",
+                  "es": "45 minutos"
                 }
               },
               {
@@ -1828,15 +1899,16 @@
                 "label": {
                   "en": "60 Minutes",
                   "de": "60 Minuten",
-                  "nl": "60 minuten",
+                  "nl": "60 Minuten",
+                  "da": "60 minutter",
                   "fr": "60 minutes",
                   "it": "60 minuti",
-                  "sv": "60 minuter",
+                  "ko": "60분",
                   "no": "60 minutter",
-                  "es": "60 minutos",
-                  "da": "60 minutter",
+                  "pl": "60 minut",
                   "ru": "60 минут",
-                  "pl": "60 minut"
+                  "sv": "60 minuter",
+                  "es": "60 minutos"
                 }
               }
             ]
@@ -1847,30 +1919,32 @@
             "name": "time",
             "type": "number",
             "title": {
+              "en": "Inactivity for (in minutes)",
               "de": "Inaktivität für (in Minuten)",
-              "en": "Inactive for (in minutes)",
-              "nl": "Inactief gedurende (in minuten)",
-              "fr": "Inactif pendant (en minutes)",
-              "it": "Inattivo per (in minuti)",
-              "sv": "Inaktiv i (i minuter)",
-              "no": "Inaktiv i (i minutter)",
-              "es": "Inactivo durante (en minutos)",
-              "da": "Inaktiv i (i minutter)",
-              "ru": "Неактивен в течение (в минутах)",
-              "pl": "Nieaktywny przez (w minutach)"
+              "nl": "Inactiviteit voor (in minuten)",
+              "da": "Inaktivitet i (i minutter)",
+              "fr": "Inactivité pendant (en minutes)",
+              "it": "Inattività per (in minuti)",
+              "ko": "비활성화 시간 (분 단위)",
+              "no": "Inaktivitet i (i minutter)",
+              "pl": "Nieaktywność przez (w minutach)",
+              "ru": "Неактивность в течение (в минутах)",
+              "sv": "Inaktivitet i (i minuter)",
+              "es": "Inactividad durante (en minutos)"
             },
             "example": {
               "en": "10 Minutes",
               "de": "10 Minuten",
-              "nl": "10 minuten",
+              "nl": "10 Minuten",
+              "da": "10 minutter",
               "fr": "10 minutes",
               "it": "10 minuti",
-              "sv": "10 minuter",
+              "ko": "10분",
               "no": "10 minutter",
-              "es": "10 minutos",
-              "da": "10 minutter",
+              "pl": "10 minut",
               "ru": "10 минут",
-              "pl": "10 minut"
+              "sv": "10 minuter",
+              "es": "10 minutos"
             }
           }
         ]
@@ -1879,29 +1953,31 @@
         "id": "pihole-disable-piholes",
         "title": {
           "en": "Disable all PiHole(s),",
-          "de": "Alle Pihole(s) deaktivieren",
-          "nl": "Deactiveer alle pihole(s)",
-          "fr": "Désactivez tous les PiHole(s)",
-          "it": "Disabilita tutti i PiHole(s)",
-          "sv": "Inaktivera alla PiHole(s)",
-          "no": "Deaktiver alle PiHole(r)",
-          "es": "Desactivar todos los PiHole(s)",
-          "da": "Deaktiver alle PiHole(r)",
-          "ru": "Отключить все PiHole(ы)",
-          "pl": "Wyłącz wszystkie PiHole(s)"
+          "de": "Alle PiHole(s) deaktivieren,",
+          "nl": "Alle PiHole(s) uitschakelen,",
+          "da": "Deaktiver alle PiHole(s),",
+          "fr": "Désactiver tous les PiHole(s),",
+          "it": "Disabilita tutti i PiHole,",
+          "ko": "모든 PiHole 비활성화,",
+          "no": "Deaktiver alle PiHole(s),",
+          "pl": "Wyłącz wszystkie PiHole,",
+          "ru": "Отключить все PiHole,",
+          "sv": "Inaktivera alla PiHole(s),",
+          "es": "Desactivar todos los PiHole(s),"
         },
         "hint": {
           "en": "Disable the defined PiHole Instance(s).",
-          "de": "Deaktiviert die definierte(n) PiHole Instanz(en).",
-          "nl": "Deactiveert de gedefinieerde PiHole-instantie(s).",
-          "fr": "Désactive les instance(s) PiHole définie(s).",
-          "it": "Disabilita l'istanza(e) PiHole definita(e)",
-          "sv": "Inaktiverar de definierade PiHole-instansen(s).",
-          "no": "Deaktiverer den definerte PiHole-instansen(e).",
-          "es": "Desactiva la(s) instancia(s) PiHole definida(s).",
-          "da": "Deaktiver den/de definerede PiHole-instans(er).",
-          "ru": "Отключает определенный(ые) экземпляр(ы) PiHole.",
-          "pl": "Wyłącza zdefiniowaną(e) instancję(e) PiHole."
+          "de": "Deaktivieren Sie die definierten PiHole-Instanz(en).",
+          "nl": "Schakel de gedefinieerde PiHole-instantie(s) uit.",
+          "da": "Deaktiver den definerede PiHole-instans(er).",
+          "fr": "Désactivez l'instance(s) PiHole définie(s).",
+          "it": "Disabilita l'istanza(e) PiHole definita.",
+          "ko": "정의된 PiHole 인스턴스를 비활성화합니다.",
+          "no": "Deaktiver den definerte PiHole-instansen(e).",
+          "pl": "Wyłącz zdefiniowaną instancję(e) PiHole.",
+          "ru": "Отключите заданный экземпляр(ы) PiHole.",
+          "sv": "Inaktivera den definierade PiHole-instansen.",
+          "es": "Desactiva la(s) instancia(s) de PiHole definida(s)."
         },
         "args": [
           {
@@ -1917,40 +1993,43 @@
           "en": "Disable all PiHoles for [[time]]",
           "de": "Deaktiviere alle PiHoles für [[time]]",
           "nl": "Schakel alle PiHoles uit voor [[time]]",
-          "fr": "Désactivez tous les PiHoles pour [[time]]",
-          "it": "Disabilita tutti i PiHoles per [[time]]",
-          "sv": "Avaktivera alla PiHoles för [[time]]",
-          "no": "Deaktiver alle PiHoles for [[time]]",
-          "es": "Desactivar todos los PiHoles durante [[time]]",
           "da": "Deaktiver alle PiHoles i [[time]]",
-          "ru": "Отключите все PiHoles на [[time]]",
-          "pl": "Wyłącz wszystkie PiHoles na [[time]]"
+          "fr": "Désactiver tous les PiHoles pendant [[time]]",
+          "it": "Disabilita tutti i PiHole per [[time]]",
+          "ko": "[[time]] 동안 모든 PiHole 비활성화",
+          "no": "Deaktiver alle PiHoles i [[time]]",
+          "pl": "Wyłącz wszystkie PiHole na [[time]]",
+          "ru": "Отключить все PiHole на [[time]]",
+          "sv": "Inaktivera alla PiHoles i [[time]]",
+          "es": "Desactivar todos los PiHoles durante [[time]]"
         },
         "titleFormatted": {
           "en": "Disable all PiHoles for [[time]]",
           "de": "Deaktiviere alle PiHoles für [[time]]",
           "nl": "Schakel alle PiHoles uit voor [[time]]",
-          "fr": "Désactivez tous les PiHoles pour [[time]]",
-          "it": "Disabilita tutti i PiHoles per [[time]]",
-          "sv": "Avaktivera alla PiHoles för [[time]]",
-          "no": "Deaktiver alle PiHoles for [[time]]",
-          "es": "Desactivar todos los PiHoles durante [[time]]",
           "da": "Deaktiver alle PiHoles i [[time]]",
-          "ru": "Отключите все PiHoles на [[time]]",
-          "pl": "Wyłącz wszystkie PiHoles na [[time]]"
+          "fr": "Désactiver tous les PiHoles pendant [[time]]",
+          "it": "Disabilita tutti i PiHole per [[time]]",
+          "ko": "[[time]] 동안 모든 PiHole 비활성화",
+          "no": "Deaktiver alle PiHoles i [[time]]",
+          "pl": "Wyłącz wszystkie PiHole na [[time]]",
+          "ru": "Отключить все PiHole на [[time]]",
+          "sv": "Inaktivera alla PiHoles i [[time]]",
+          "es": "Desactivar todos los PiHoles durante [[time]]"
         },
         "hint": {
           "en": "Offer the possibility disable all Piholes for an amount of time.",
-          "de": "Bietet die Möglichkeit alles Piholes für einen bestimmten Zeitraum zu deaktivieren.",
-          "nl": "Biedt de mogelijkheid om alle Piholes uit te schakelen voor een bepaalde tijd.",
-          "fr": "Offre la possibilité de désactiver tous les Piholes pour une certaine durée.",
-          "it": "Offre la possibilità di disabilitare tutti i Piholes per un certo periodo di tempo.",
-          "sv": "Erbjuder möjligheten att inaktivera alla Piholes för en angiven tid.",
-          "no": "Tilbyr muligheten til å deaktivere alle Piholes for en bestemt tidsperiode.",
-          "es": "Ofrece la posibilidad de desactivar todos los Piholes durante un periodo de tiempo.",
-          "da": "Tilbyder muligheden for at deaktivere alle Piholes i en bestemt tidsperiode.",
-          "ru": "Предлагает возможность отключения всех PiHoles на определенное время.",
-          "pl": "Oferuje możliwość wyłączenia wszystkich PiHoles na określony czas."
+          "de": "Bietet die Möglichkeit, alle PiHoles für eine bestimmte Zeit zu deaktivieren.",
+          "nl": "Biedt de mogelijkheid om alle PiHoles voor een bepaalde tijd uit te schakelen.",
+          "da": "Giver mulighed for at deaktivere alle PiHoles i en periode.",
+          "fr": "Offre la possibilité de désactiver tous les PiHoles pendant un certain temps.",
+          "it": "Offre la possibilità di disabilitare tutti i PiHole per un certo periodo di tempo.",
+          "ko": "모든 PiHole을 일정 시간 동안 비활성화할 수 있는 옵션을 제공합니다.",
+          "no": "Gir muligheten til å deaktivere alle PiHoles i en viss tid.",
+          "pl": "Umożliwia wyłączenie wszystkich PiHole na określony czas.",
+          "ru": "Предоставляет возможность отключить все PiHole на определенное время.",
+          "sv": "Erbjuder möjligheten att inaktivera alla PiHoles under en viss tid.",
+          "es": "Ofrece la posibilidad de desactivar todos los PiHoles durante un tiempo determinado."
         },
         "args": [
           {
@@ -1964,15 +2043,16 @@
             "placeholder": {
               "en": "5 Minutes",
               "de": "5 Minuten",
-              "nl": "5 Notulen",
+              "nl": "5 Minuten",
+              "da": "5 minutter",
               "fr": "5 minutes",
               "it": "5 minuti",
-              "sv": "5 minuter",
+              "ko": "5분",
               "no": "5 minutter",
-              "es": "5 minutos",
-              "da": "5 minutter",
+              "pl": "5 minut",
               "ru": "5 минут",
-              "pl": "5 minut"
+              "sv": "5 minuter",
+              "es": "5 minutos"
             },
             "values": [
               {
@@ -1980,15 +2060,16 @@
                 "label": {
                   "en": "5 Minutes",
                   "de": "5 Minuten",
-                  "nl": "5 Notulen",
+                  "nl": "5 Minuten",
+                  "da": "5 minutter",
                   "fr": "5 minutes",
                   "it": "5 minuti",
-                  "sv": "5 minuter",
+                  "ko": "5분",
                   "no": "5 minutter",
-                  "es": "5 minutos",
-                  "da": "5 minutter",
+                  "pl": "5 minut",
                   "ru": "5 минут",
-                  "pl": "5 minut"
+                  "sv": "5 minuter",
+                  "es": "5 minutos"
                 }
               },
               {
@@ -1996,15 +2077,16 @@
                 "label": {
                   "en": "10 Minutes",
                   "de": "10 Minuten",
-                  "nl": "10 Notulen",
+                  "nl": "10 Minuten",
+                  "da": "10 minutter",
                   "fr": "10 minutes",
                   "it": "10 minuti",
-                  "sv": "10 minuter",
+                  "ko": "10분",
                   "no": "10 minutter",
-                  "es": "10 minutos",
-                  "da": "10 minutter",
+                  "pl": "10 minut",
                   "ru": "10 минут",
-                  "pl": "10 minut"
+                  "sv": "10 minuter",
+                  "es": "10 minutos"
                 }
               },
               {
@@ -2012,15 +2094,16 @@
                 "label": {
                   "en": "15 Minutes",
                   "de": "15 Minuten",
-                  "nl": "15 Notulen",
+                  "nl": "15 Minuten",
+                  "da": "15 minutter",
                   "fr": "15 minutes",
                   "it": "15 minuti",
-                  "sv": "15 minuter",
+                  "ko": "15분",
                   "no": "15 minutter",
-                  "es": "15 minutos",
-                  "da": "15 minutter",
+                  "pl": "15 minut",
                   "ru": "15 минут",
-                  "pl": "15 minut"
+                  "sv": "15 minuter",
+                  "es": "15 minutos"
                 }
               },
               {
@@ -2028,15 +2111,16 @@
                 "label": {
                   "en": "30 Minutes",
                   "de": "30 Minuten",
-                  "nl": "30 Notulen",
+                  "nl": "30 Minuten",
+                  "da": "30 minutter",
                   "fr": "30 minutes",
                   "it": "30 minuti",
-                  "sv": "30 minuter",
+                  "ko": "30분",
                   "no": "30 minutter",
-                  "es": "30 minutos",
-                  "da": "30 minutter",
+                  "pl": "30 minut",
                   "ru": "30 минут",
-                  "pl": "30 minut"
+                  "sv": "30 minuter",
+                  "es": "30 minutos"
                 }
               },
               {
@@ -2044,15 +2128,16 @@
                 "label": {
                   "en": "45 Minutes",
                   "de": "45 Minuten",
-                  "nl": "45 Notulen",
+                  "nl": "45 Minuten",
+                  "da": "45 minutter",
                   "fr": "45 minutes",
                   "it": "45 minuti",
-                  "sv": "45 minuter",
+                  "ko": "45분",
                   "no": "45 minutter",
-                  "es": "45 minutos",
-                  "da": "45 minutter",
+                  "pl": "45 minut",
                   "ru": "45 минут",
-                  "pl": "45 minut"
+                  "sv": "45 minuter",
+                  "es": "45 minutos"
                 }
               },
               {
@@ -2060,15 +2145,16 @@
                 "label": {
                   "en": "60 Minutes",
                   "de": "60 Minuten",
-                  "nl": "60 Notulen",
+                  "nl": "60 Minuten",
+                  "da": "60 minutter",
                   "fr": "60 minutes",
                   "it": "60 minuti",
-                  "sv": "60 minuter",
+                  "ko": "60분",
                   "no": "60 minutter",
-                  "es": "60 minutos",
-                  "da": "60 minutter",
+                  "pl": "60 minut",
                   "ru": "60 минут",
-                  "pl": "60 minut"
+                  "sv": "60 minuter",
+                  "es": "60 minutos"
                 }
               }
             ]
@@ -2080,28 +2166,30 @@
         "title": {
           "en": "Enable all PiHole(s)",
           "de": "Alle PiHole(s) aktivieren",
-          "nl": "Activeer alle PiHole(s)",
-          "fr": "Activez tous les PiHole(s)",
-          "it": "Abilita tutti i PiHole(s)",
+          "nl": "Alle PiHole(s) inschakelen",
+          "da": "Aktiver alle PiHole(s)",
+          "fr": "Activer tous les PiHole(s)",
+          "it": "Abilita tutti i PiHole",
+          "ko": "모든 PiHole 활성화",
+          "no": "Aktiver alle PiHole(s)",
+          "pl": "Włącz wszystkie PiHole",
+          "ru": "Включить все PiHole",
           "sv": "Aktivera alla PiHole(s)",
-          "no": "Aktiver alle PiHole(r)",
-          "es": "Activar todos los PiHole(s)",
-          "da": "Aktiver alle PiHole(r)",
-          "ru": "Включить все PiHole(ы)",
-          "pl": "Włącz wszystkie PiHole(s)"
+          "es": "Habilitar todos los PiHole(s)"
         },
         "hint": {
           "en": "Enable the defined PiHole Instance(s).",
-          "de": "Aktiviert die definierten PiHole Instanzen.",
-          "nl": "Activeert de gedefinieerde PiHole instanties.",
-          "fr": "Active les instance(s) PiHole définie(s).",
-          "it": "Abilita l'istanza(e) PiHole definita(e)",
-          "sv": "Aktiverar de definierade PiHole-instansen(s).",
-          "no": "Aktiverer den definerte PiHole-instansen(e).",
-          "es": "Activa la(s) instancia(s) PiHole definida(s).",
-          "da": "Aktiver den/de definerede PiHole-instans(er).",
-          "ru": "Включает определенный(ые) экземпляр(ы) PiHole.",
-          "pl": "Włącza zdefiniowaną(e) instancję(e) PiHole."
+          "de": "Aktivieren Sie die definierten PiHole-Instanz(en).",
+          "nl": "Schakel de gedefinieerde PiHole-instantie(s) in.",
+          "da": "Aktiver den definerede PiHole-instans(er).",
+          "fr": "Activez l'instance(s) PiHole définie(s).",
+          "it": "Abilita l'istanza(e) PiHole definita.",
+          "ko": "정의된 PiHole 인스턴스를 활성화합니다.",
+          "no": "Aktiver den definerte PiHole-instansen(e).",
+          "pl": "Włącz zdefiniowaną instancję PiHole.",
+          "ru": "Включите определённый экземпляр PiHole.",
+          "sv": "Aktivera den definierade PiHole-instansen.",
+          "es": "Habilite la(s) instancia(s) de PiHole definida(s)."
         },
         "args": [
           {
@@ -2115,42 +2203,45 @@
         "id": "pihole-set-pihole",
         "title": {
           "en": "[[[state]] PiHole",
-          "de": "[[state]] PiHole",
-          "nl": "[[state]] PiHole",
-          "fr": "[[state]] PiHole",
-          "it": "[[state]] PiHole",
-          "sv": "[[state]] PiHole",
-          "no": "[[state]] PiHole",
-          "es": "[[state]] PiHole",
-          "da": "[[state]] PiHole",
-          "ru": "[[state]] PiHole",
-          "pl": "[[state]] PiHole"
+          "de": "[[[state]] PiHole",
+          "nl": "[[[state]] PiHole",
+          "da": "[[[state]] PiHole",
+          "fr": "[[[state]] PiHole",
+          "it": "[[[state]] PiHole",
+          "ko": "[[[state]] PiHole",
+          "no": "[[[state]] PiHole",
+          "pl": "[[[state]] PiHole",
+          "ru": "[[[state]] PiHole",
+          "sv": "[[[state]] PiHole",
+          "es": "[[[state]] PiHole"
         },
         "titleFormatted": {
           "en": "[[state]] PiHole",
           "de": "[[state]] PiHole",
           "nl": "[[state]] PiHole",
+          "da": "[[state]] PiHole",
           "fr": "[[state]] PiHole",
           "it": "[[state]] PiHole",
-          "sv": "[[state]] PiHole",
+          "ko": "[[state]] PiHole",
           "no": "[[state]] PiHole",
-          "es": "[[state]] PiHole",
-          "da": "[[state]] PiHole",
+          "pl": "[[state]] PiHole",
           "ru": "[[state]] PiHole",
-          "pl": "[[state]] PiHole"
+          "sv": "[[state]] PiHole",
+          "es": "[[state]] PiHole"
         },
         "hint": {
           "en": "Offer the possibility to stop, or start the filter for the selected instance.",
-          "de": "Bietet die Möglichkeit den Filter für die gewählte Instanz zu stoppen, oder zu starten.",
-          "nl": "Biedt de optie om het filter voor de geselecteerde instantie te stoppen of te starten.",
-          "fr": "Offre la possibilité d'arrêter ou de démarrer le filtre pour l'instance sélectionnée.",
-          "it": "Offre la possibilità di fermare o avviare il filtro per l'istanza selezionata.",
-          "sv": "Erbjuder möjlighet att stoppa eller starta filtret för det valda instansen.",
-          "no": "Tilbyr muligheten til å stoppe eller starte filteret for den valgte instansen.",
-          "es": "Ofrece la posibilidad de detener o iniciar el filtro para la instancia seleccionada.",
-          "da": "Tilbyder muligheden for at stoppe eller starte filteret for den valgte instans.",
-          "ru": "Предлагает возможность остановить или начать фильтрацию для выбранного экземпляра.",
-          "pl": "Oferuje możliwość zatrzymania lub uruchomienia filtra dla wybranej instancji."
+          "de": "Bietet die Möglichkeit, den Filter für die ausgewählte Instanz zu starten oder zu stoppen.",
+          "nl": "Biedt de mogelijkheid om het filter voor de geselecteerde instantie te starten of te stoppen.",
+          "da": "Giver mulighed for at starte eller stoppe filteret for den valgte instans.",
+          "fr": "Offre la possibilité de démarrer ou d'arrêter le filtre pour l'instance sélectionnée.",
+          "it": "Offre la possibilità di avviare o arrestare il filtro per l'istanza selezionata.",
+          "ko": "선택한 인스턴스에 대해 필터를 시작하거나 중지할 수 있는 기능을 제공합니다.",
+          "no": "Gir muligheten til å starte eller stoppe filteret for den valgte instansen.",
+          "pl": "Umożliwia uruchomienie lub zatrzymanie filtra dla wybranego instancji.",
+          "ru": "Предоставляет возможность запустить или остановить фильтр для выбранного экземпляра.",
+          "sv": "Erbjuder möjlighet att starta eller stoppa filtret för den valda instansen.",
+          "es": "Ofrece la posibilidad de iniciar o detener el filtro para la instancia seleccionada."
         },
         "args": [
           {
@@ -2164,15 +2255,16 @@
             "placeholder": {
               "en": "Activate",
               "de": "Aktivieren",
-              "nl": "Activeer",
+              "nl": "Activeren",
+              "da": "Aktiver",
               "fr": "Activer",
-              "it": "Attiva",
-              "sv": "Aktivera",
+              "it": "Attivare",
+              "ko": "활성화",
               "no": "Aktiver",
-              "es": "Activar",
-              "da": "Aktivere",
+              "pl": "Aktywuj",
               "ru": "Активировать",
-              "pl": "Aktywować"
+              "sv": "Aktivera",
+              "es": "Activar"
             },
             "values": [
               {
@@ -2180,15 +2272,16 @@
                 "label": {
                   "en": "Activate",
                   "de": "Aktivieren",
-                  "nl": "Activeer",
+                  "nl": "Activeren",
+                  "da": "Aktiver",
                   "fr": "Activer",
-                  "it": "Attiva",
-                  "sv": "Aktivera",
+                  "it": "Attivare",
+                  "ko": "활성화",
                   "no": "Aktiver",
-                  "es": "Activar",
-                  "da": "Aktivere",
+                  "pl": "Aktywuj",
                   "ru": "Активировать",
-                  "pl": "Aktywować"
+                  "sv": "Aktivera",
+                  "es": "Activar"
                 }
               },
               {
@@ -2196,15 +2289,16 @@
                 "label": {
                   "en": "Deactivate",
                   "de": "Deaktivieren",
-                  "nl": "Deactiveer",
-                  "fr": "Désactiver",
-                  "it": "Disattiva",
-                  "sv": "Inaktivera",
-                  "no": "Deaktiver",
-                  "es": "Desactivar",
+                  "nl": "Deactiveren",
                   "da": "Deaktiver",
+                  "fr": "Désactiver",
+                  "it": "Disattivare",
+                  "ko": "비활성화",
+                  "no": "Deaktiver",
+                  "pl": "Dezaktywuj",
                   "ru": "Деактивировать",
-                  "pl": "Dezaktywować"
+                  "sv": "Avaktivera",
+                  "es": "Desactivar"
                 }
               }
             ]
@@ -3059,7 +3153,18 @@
       {
         "id": "on",
         "title": {
-          "en": "Ad-Blocking is !{{enabled|disabled}}"
+          "en": "Ad-Blocking is !{{enabled|disabled}}",
+          "de": "Werbeblocker ist !{{aktiviert|deaktiviert}}",
+          "nl": "Advertentieblokkering is !{{ingeschakeld|uitgeschakeld}}",
+          "da": "Annonceblokering er !{{aktiveret|deaktiveret}}",
+          "fr": "Le blocage des publicités est !{{activé|désactivé}}",
+          "it": "Il blocco degli annunci è !{{abilitato|disabilitato}}",
+          "ko": "광고 차단이 !{{활성화됨|비활성화됨}}",
+          "no": "Annonseblokkering er !{{aktivert|deaktivert}}",
+          "pl": "Blokowanie reklam jest !{{włączone|wyłączone}}",
+          "ru": "Блокировка рекламы !{{включена|выключена}}",
+          "sv": "Annonsblockering är !{{aktiverad|inaktiverad}}",
+          "es": "El bloqueo de anuncios está !{{habilitado|deshabilitado}}"
         },
         "args": [
           {
@@ -3075,10 +3180,32 @@
           "en": "An allow/block rule exists for ..."
         },
         "titleFormatted": {
-          "en": "An [[allowedOrBlocked]] rule [[domain]] !{{exists|doesn't exist}}"
+          "en": "An [[allowedOrBlocked]] rule [[domain]] !{{exists|doesn't exist}}",
+          "de": "Eine [[allowedOrBlocked]] Regel [[domain]] !{{existiert|existiert nicht}}",
+          "nl": "Een [[allowedOrBlocked]] regel [[domain]] !{{bestaat|bestaat niet}}",
+          "da": "En [[allowedOrBlocked]] regel [[domain]] !{{eksisterer|eksisterer ikke}}",
+          "fr": "Une règle [[allowedOrBlocked]] [[domain]] !{{existe|n'existe pas}}",
+          "it": "Una regola [[allowedOrBlocked]] [[domain]] !{{esiste|non esiste}}",
+          "ko": "[[allowedOrBlocked]] 규칙 [[domain]]이 !{{존재합니다|존재하지 않습니다}}",
+          "no": "En [[allowedOrBlocked]] regel [[domain]] !{{eksisterer|eksisterer ikke}}",
+          "pl": "Reguła [[allowedOrBlocked]] [[domain]] !{{istnieje|nie istnieje}}",
+          "ru": "Правило [[allowedOrBlocked]] для [[domain]] !{{существует|не существует}}",
+          "sv": "En [[allowedOrBlocked]] regel [[domain]] !{{finns|finns inte}}",
+          "es": "Una regla [[allowedOrBlocked]] [[domain]] !{{existe|no existe}}"
         },
         "hint": {
-          "en": "Checks if a specific domain or regex expression is defined as a block or allow rule."
+          "en": "Checks if a specific domain or regex expression is defined as a block or allow rule.",
+          "de": "Prüft, ob eine bestimmte Domain oder ein Regex-Ausdruck als Blockier- oder Erlaubnisregel definiert ist.",
+          "nl": "Controleert of een specifiek domein of regex-uitdrukking is gedefinieerd als een blokkeer- of toestaanregel.",
+          "da": "Kontrollerer, om et specifikt domæne eller regex-udtryk er defineret som en blok- eller tilladelsesregel.",
+          "fr": "Vérifie si un domaine spécifique ou une expression regex est défini comme une règle de blocage ou d'autorisation.",
+          "it": "Verifica se un dominio specifico o un'espressione regex è definito come regola di blocco o di autorizzazione.",
+          "ko": "특정 도메인 또는 정규식 표현이 차단 또는 허용 규칙으로 정의되어 있는지 확인합니다.",
+          "no": "Sjekker om et spesifikt domene eller regex-uttrykk er definert som en blokk- eller tillatelsesregel.",
+          "pl": "Sprawdza, czy określona domena lub wyrażenie regex jest zdefiniowane jako reguła blokowania lub zezwalania.",
+          "ru": "Проверяет, определен ли конкретный домен или регулярное выражение как правило блокировки или разрешения.",
+          "sv": "Kontrollerar om ett specifikt domännamn eller regex-uttryck är definierat som en blockerings- eller tillåtelseregel.",
+          "es": "Comprueba si un dominio específico o una expresión regex está definido como una regla de bloqueo o de permiso."
         },
         "args": [
           {
@@ -3097,19 +3224,52 @@
             "name": "allowedOrBlocked",
             "type": "dropdown",
             "title": {
-              "en": "Allowed/Blocked"
+              "en": "Allowed/Blocked",
+              "de": "Erlaubt/Blockiert",
+              "nl": "Toegestaan/Geblokkeerd",
+              "da": "Tilladt/Blokeret",
+              "fr": "Autorisé/Bloqué",
+              "it": "Consentito/Bloccato",
+              "ko": "허용됨/차단됨",
+              "no": "Tillatt/Blokkert",
+              "pl": "Dozwolone/Zablokowane",
+              "ru": "Разрешено/Заблокировано",
+              "sv": "Tillåtet/Blockerat",
+              "es": "Permitido/Bloqueado"
             },
             "values": [
               {
                 "id": "allow",
                 "title": {
-                  "en": "allow"
+                  "en": "allow",
+                  "de": "erlauben",
+                  "nl": "toestaan",
+                  "da": "tillad",
+                  "fr": "autoriser",
+                  "it": "consentire",
+                  "ko": "허용",
+                  "no": "tillat",
+                  "pl": "zezwól",
+                  "ru": "разрешить",
+                  "sv": "tillåt",
+                  "es": "permitir"
                 }
               },
               {
                 "id": "deny",
                 "title": {
-                  "en": "block"
+                  "en": "block",
+                  "de": "blockieren",
+                  "nl": "blokkeren",
+                  "da": "blokere",
+                  "fr": "bloquer",
+                  "it": "bloccare",
+                  "ko": "차단",
+                  "no": "blokker",
+                  "pl": "blokuj",
+                  "ru": "блокировать",
+                  "sv": "blockera",
+                  "es": "bloquear"
                 }
               }
             ]
@@ -3119,13 +3279,46 @@
       {
         "id": "pihole_domain_blocked",
         "title": {
-          "en": "Domain ... is blocked"
+          "en": "Domain ... is blocked",
+          "de": "Domain ... ist blockiert",
+          "nl": "Domein ... is geblokkeerd",
+          "da": "Domæne ... er blokeret",
+          "fr": "Le domaine ... est bloqué",
+          "it": "Il dominio ... è bloccato",
+          "ko": "도메인 ...이 차단되었습니다",
+          "no": "Domenet ... er blokkert",
+          "pl": "Domena ... jest zablokowana",
+          "ru": "Домен ... заблокирован",
+          "sv": "Domänen ... är blockerad",
+          "es": "El dominio ... está bloqueado"
         },
         "titleFormatted": {
-          "en": "Domain [[domain]] is !{{blocked|allowed}}"
+          "en": "Domain [[domain]] is !{{blocked|allowed}}",
+          "de": "Domain [[domain]] ist !{{blockiert|erlaubt}}",
+          "nl": "Domein [[domain]] is !{{geblokkeerd|toegestaan}}",
+          "da": "Domæne [[domain]] er !{{blokeret|tilladt}}",
+          "fr": "Le domaine [[domain]] est !{{bloqué|autorisé}}",
+          "it": "Il dominio [[domain]] è !{{bloccato|consentito}}",
+          "ko": "도메인 [[domain]]이 !{{차단됨|허용됨}}",
+          "no": "Domenet [[domain]] er !{{blokkert|tillatt}}",
+          "pl": "Domena [[domain]] jest !{{zablokowana|dozwolona}}",
+          "ru": "Домен [[domain]] !{{заблокирован|разрешен}}",
+          "sv": "Domänen [[domain]] är !{{blockerad|tillåten}}",
+          "es": "El dominio [[domain]] está !{{bloqueado|permitido}}"
         },
         "hint": {
-          "en": "Searches the blocklists and custom rules to check if a query would pass or be blocked"
+          "en": "Searches the blocklists and custom rules to check if a query would pass or be blocked",
+          "de": "Durchsucht die Sperrlisten und benutzerdefinierten Regeln, um zu überprüfen, ob eine Abfrage zugelassen oder blockiert wird",
+          "nl": "Doorzoekt de blokkeerlijsten en aangepaste regels om te controleren of een query wordt toegestaan of geblokkeerd",
+          "da": "Søger i bloklister og brugerdefinerede regler for at kontrollere, om en forespørgsel vil blive tilladt eller blokeret",
+          "fr": "Recherche dans les listes de blocage et les règles personnalisées pour vérifier si une requête serait autorisée ou bloquée",
+          "it": "Cerca nelle liste di blocco e nelle regole personalizzate per verificare se una query sarebbe consentita o bloccata",
+          "ko": "차단 목록과 사용자 정의 규칙을 검색하여 쿼리가 허용되거나 차단되는지 확인합니다",
+          "no": "Søker i blokkeringslister og egendefinerte regler for å sjekke om en forespørsel vil bli tillatt eller blokkert",
+          "pl": "Przeszukuje listy blokad i reguły niestandardowe, aby sprawdzić, czy zapytanie zostanie przepuszczone lub zablokowane",
+          "ru": "Ищет в списках блокировки и пользовательских правилах, чтобы проверить, будет ли запрос разрешен или заблокирован",
+          "sv": "Söker i blocklistor och anpassade regler för att kontrollera om en förfrågan skulle tillåtas eller blockeras",
+          "es": "Busca en las listas de bloqueo y reglas personalizadas para verificar si una consulta sería permitida o bloqueada"
         },
         "args": [
           {
@@ -3145,6 +3338,7 @@
       {
         "id": "alarm_connectivity",
         "title": {
+          "de": "Ist !{{verbunden|nicht verbunden}}",
           "en": "Is !{{connected|disconnected}}",
           "nl": "Is !{{verbonden|niet verbonden}}",
           "da": "Er !{{tilsluttet|afbrudt}}",
@@ -3542,74 +3736,83 @@
         {
           "type": "group",
           "label": {
-            "de": "Geräte Einstellungen",
-            "da": "Enhedsindstillinger",
             "en": "Device Settings",
+            "de": "Geräteeinstellungen",
+            "nl": "Apparaatinstellingen",
+            "da": "Enhedsindstillinger",
             "fr": "Paramètres de l'appareil",
             "it": "Impostazioni del dispositivo",
-            "nl": "Apparaatinstellingen",
+            "ko": "장치 설정",
             "no": "Enhetsinnstillinger",
             "pl": "Ustawienia urządzenia",
             "ru": "Настройки устройства",
-            "sv": "Enhetsinställningar"
+            "sv": "Enhetsinställningar",
+            "es": "Configuración del dispositivo"
           },
           "children": [
             {
               "id": "base_url",
               "type": "text",
               "label": {
-                "de": "Geräte URL",
-                "da": "Enheds URL",
                 "en": "PiHole base URL. Starts with http or https, and includes the port number if it differs from the default port.",
-                "fr": "URL de l'appareil",
-                "it": "URL del dispositivo",
-                "nl": "Apparaat URL",
-                "no": "Enhets URL",
-                "pl": "URL urządzenia",
-                "ru": "URL устройства",
-                "sv": "Enhetens URL"
+                "de": "PiHole-Basis-URL. Beginnt mit http oder https und enthält die Portnummer, falls diese vom Standardport abweicht.",
+                "nl": "PiHole basis-URL. Begint met http of https en bevat het poortnummer als dit afwijkt van de standaardpoort.",
+                "da": "PiHole basis-URL. Starter med http eller https og inkluderer portnummeret, hvis det adskiller sig fra standardporten.",
+                "fr": "URL de base de PiHole. Commence par http ou https et inclut le numéro de port s'il diffère du port par défaut.",
+                "it": "URL di base di PiHole. Inizia con http o https e include il numero di porta se diverso dalla porta predefinita.",
+                "ko": "PiHole 기본 URL. http 또는 https로 시작하며 기본 포트와 다른 경우 포트 번호를 포함합니다.",
+                "no": "PiHole basis-URL. Starter med http eller https og inkluderer portnummeret hvis det avviker fra standardporten.",
+                "pl": "Podstawowy URL PiHole. Zaczyna się od http lub https i zawiera numer portu, jeśli różni się od portu domyślnego.",
+                "ru": "Базовый URL PiHole. Начинается с http или https и включает номер порта, если он отличается от порта по умолчанию.",
+                "sv": "PiHole bas-URL. Börjar med http eller https och inkluderar portnumret om det skiljer sig från standardporten.",
+                "es": "URL base de PiHole. Comienza con http o https e incluye el número de puerto si difiere del puerto predeterminado."
               },
               "value": "",
               "hint": {
-                "de": "Bitte FQDN oder IP Adresse mit vorgestelltem HTTP(s) nutzen!",
-                "da": "Brug venligst FQDN eller IP-adresse med forudstillet HTTP(s)!",
                 "en": "Please use FQDN or IP address with prepended HTTP(s)!",
-                "fr": "Veuillez utiliser FQDN ou adresse IP avec HTTP(s) préfixé!",
-                "it": "Si prega di utilizzare FQDN o indirizzo IP con HTTP(s) anteposto!",
-                "nl": "Gebruik a.u.b. FQDN of IP-adres met voorgevoegd HTTP(s)!",
-                "no": "Vennligst bruk FQDN eller IP-adresse med foranstilt HTTP(s)!",
-                "pl": "Proszę używać FQDN lub adresu IP z poprzedzonym HTTP(s)!",
-                "ru": "Пожалуйста, используйте FQDN или IP-адрес с префиксом HTTP(s)!",
-                "sv": "Använd gärna FQDN eller IP-adress med föregående HTTP(s)!"
+                "de": "Bitte verwenden Sie FQDN oder IP-Adresse mit vorangestelltem HTTP(s)!",
+                "nl": "Gebruik alstublieft een FQDN of IP-adres met voorafgaand HTTP(s)!",
+                "da": "Brug venligst FQDN eller IP-adresse med foranstillet HTTP(s)!",
+                "fr": "Veuillez utiliser un FQDN ou une adresse IP avec HTTP(s) préfixé !",
+                "it": "Si prega di utilizzare un FQDN o un indirizzo IP con HTTP(s) anteposto!",
+                "ko": "HTTP(s)가 앞에 붙은 FQDN 또는 IP 주소를 사용하세요!",
+                "no": "Vennligst bruk FQDN eller IP-adresse med påført HTTP(s)!",
+                "pl": "Proszę użyć FQDN lub adresu IP z poprzedzonym HTTP(s)!",
+                "ru": "Пожалуйста, используйте FQDN или IP-адрес с добавленным HTTP(s)!",
+                "sv": "Använd vänligen FQDN eller IP-adress med tillagt HTTP(s)!",
+                "es": "Por favor, utilice un FQDN o una dirección IP con HTTP(s) antepuesto."
               }
             },
             {
               "id": "api_password",
               "type": "text",
               "label": {
-                "de": "API password",
-                "da": "API password",
                 "en": "API password",
-                "fr": "API password",
-                "it": "API password",
-                "nl": "API password",
-                "no": "API password",
-                "pl": "API password",
-                "ru": "API password",
-                "sv": "API password"
+                "de": "API-Passwort",
+                "nl": "API-wachtwoord",
+                "da": "API-adgangskode",
+                "fr": "Mot de passe API",
+                "it": "Password API",
+                "ko": "API 비밀번호",
+                "no": "API-passord",
+                "pl": "Hasło API",
+                "ru": "Пароль API",
+                "sv": "API-lösenord",
+                "es": "Contraseña de API"
               },
               "hint": {
-                "de": "Bitte geben Sie hier das PiHole-API-Passwort ein. Dies ist das Passwort, das Sie zum Anmelden verwenden, oder ein App-Passwort, wenn Sie die Zwei-Faktor-Authentifizierung aktiviert haben.",
-                "da": "Indtast venligst PiHole API-adgangskoden her. Dette er adgangskoden, du bruger til at logge ind, eller en app-adgangskode, hvis du har aktiveret tofaktorgodkendelse.",
                 "en": "Please enter the PiHole API password here. This is the password you use to login, or an app-password if you enabled 2-factor authentication.",
-                "es": "Por favor, introduzca aquí la contraseña de la API de PiHole. Esta es la contraseña que utiliza para iniciar sesión o una contraseña de aplicación si ha habilitado la autenticación de dos factores.",
-                "fr": "Veuillez entrer ici le mot de passe de l'API PiHole. Il s'agit du mot de passe que vous utilisez pour vous connecter ou d'un mot de passe d'application si vous avez activé l'authentification à deux facteurs.",
-                "it": "Inserisci qui la password dell'API PiHole. Questa è la password che usi per accedere o una password per app se hai abilitato l'autenticazione a due fattori.",
+                "de": "Bitte geben Sie hier das PiHole-API-Passwort ein. Dies ist das Passwort, das Sie zum Anmelden verwenden, oder ein App-Passwort, wenn Sie die Zwei-Faktor-Authentifizierung aktiviert haben.",
                 "nl": "Voer hier het PiHole API-wachtwoord in. Dit is het wachtwoord dat u gebruikt om in te loggen, of een app-wachtwoord als u tweefactorauthenticatie hebt ingeschakeld.",
+                "da": "Indtast venligst PiHole API-adgangskoden her. Dette er adgangskoden, du bruger til at logge ind, eller en app-adgangskode, hvis du har aktiveret tofaktorgodkendelse.",
+                "fr": "Veuillez entrer le mot de passe API de PiHole ici. C'est le mot de passe que vous utilisez pour vous connecter, ou un mot de passe d'application si vous avez activé l'authentification à deux facteurs.",
+                "it": "Inserisci qui la password API di PiHole. Questa è la password che usi per accedere o una password per app se hai abilitato l'autenticazione a due fattori.",
+                "ko": "여기에 PiHole API 비밀번호를 입력하세요. 로그인에 사용하는 비밀번호이거나 2단계 인증을 활성화한 경우 앱 비밀번호입니다.",
                 "no": "Vennligst skriv inn PiHole API-passordet her. Dette er passordet du bruker for å logge inn, eller et app-passord hvis du har aktivert tofaktorautentisering.",
                 "pl": "Proszę wprowadzić tutaj hasło API PiHole. Jest to hasło, którego używasz do logowania, lub hasło aplikacji, jeśli włączyłeś uwierzytelnianie dwuskładnikowe.",
                 "ru": "Пожалуйста, введите здесь пароль API PiHole. Это пароль, который вы используете для входа, или пароль приложения, если вы включили двухфакторную аутентификацию.",
-                "sv": "Ange PiHole API-lösenordet här. Detta är lösenordet du använder för att logga in, eller ett app-lösenord om du har aktiverat tvåfaktorsautentisering."
+                "sv": "Ange PiHole API-lösenordet här. Detta är lösenordet du använder för att logga in, eller ett app-lösenord om du har aktiverat tvåfaktorsautentisering.",
+                "es": "Por favor, introduzca aquí la contraseña de la API de PiHole. Esta es la contraseña que utiliza para iniciar sesión, o una contraseña de aplicación si ha habilitado la autenticación de dos factores."
               },
               "value": ""
             }
@@ -3618,44 +3821,50 @@
         {
           "type": "group",
           "label": {
-            "de": "Aktualisierungs-Intervall",
-            "da": "Opdateringsinterval",
             "en": "Update Interval",
+            "de": "Aktualisierungsintervall",
+            "nl": "Update-interval",
+            "da": "Opdateringsinterval",
             "fr": "Intervalle de mise à jour",
             "it": "Intervallo di aggiornamento",
-            "nl": "Update-interval",
+            "ko": "업데이트 간격",
             "no": "Oppdateringsintervall",
             "pl": "Interwał aktualizacji",
             "ru": "Интервал обновления",
-            "sv": "Uppdateringsintervall"
+            "sv": "Uppdateringsintervall",
+            "es": "Intervalo de actualización"
           },
           "children": [
             {
               "id": "update_interval_seconds",
               "type": "text",
               "label": {
-                "de": "Abruf-Intervall",
-                "da": "Hentningsinterval",
-                "en": "Fetch Interval",
-                "fr": "Intervalle de récupération",
-                "it": "Intervallo di recupero",
-                "nl": "Ophaalinterval",
-                "no": "Henteintervall",
-                "pl": "Interwał pobierania",
-                "ru": "Интервал запроса",
-                "sv": "Hämtningsintervall"
+                "en": "Fetch Interval (in seconds)",
+                "de": "Abrufintervall (in Sekunden)",
+                "nl": "Ophaalinterval (in seconden)",
+                "da": "Hentningsinterval (i sekunder)",
+                "fr": "Intervalle de récupération (en secondes)",
+                "it": "Intervallo di recupero (in secondi)",
+                "ko": "가져오기 간격(초)",
+                "no": "Henteintervall (i sekunder)",
+                "pl": "Interwał pobierania (w sekundach)",
+                "ru": "Интервал выборки (в секундах)",
+                "sv": "Hämtningsintervall (i sekunder)",
+                "es": "Intervalo de obtención (en segundos)"
               },
               "hint": {
-                "de": "Wähle ein Aktualisierungs-Intervall. Wähle eine Intervall bis zu 10 min., um Live-Updates vom Gerät zu ermöglichen.",
-                "da": "Vælg et opdateringsinterval. Vælg et interval på op til 10 min., for at muliggøre live-opdateringer fra enheden.",
                 "en": "Choose an update interval. Select an interval of up to 10 mins to enable live updates from the device.",
-                "fr": "Choisissez un intervalle de mise à jour. Sélectionnez un intervalle jusqu'à 10 min, pour permettre les mises à jour en direct de l'appareil.",
-                "it": "Scegli un intervallo di aggiornamento. Seleziona un intervallo fino a 10 min., per abilitare gli aggiornamenti live dal dispositivo.",
-                "nl": "Kies een update-interval. Kies een interval tot 10 min., om live-updates van het apparaat mogelijk te maken.",
-                "no": "Velg et oppdateringsintervall. Velg et intervall på opptil 10 min., for å muliggjøre direkteoppdateringer fra enheten.",
-                "pl": "Wybierz interwał aktualizacji. Wybierz interwał do 10 min., aby umożliwić aktualizacje na żywo z urządzenia.",
-                "ru": "Выберите интервал обновления. Выберите интервал до 10 мин., чтобы включить живые обновления с устройства.",
-                "sv": "Välj ett uppdateringsintervall. Välj ett intervall på upp till 10 min., för att möjliggöra live-uppdateringar från enheten."
+                "de": "Wählen Sie ein Aktualisierungsintervall. Wählen Sie ein Intervall von bis zu 10 Minuten, um Live-Updates vom Gerät zu aktivieren.",
+                "nl": "Kies een update-interval. Selecteer een interval van maximaal 10 minuten om live-updates van het apparaat in te schakelen.",
+                "da": "Vælg et opdateringsinterval. Vælg et interval på op til 10 minutter for at aktivere liveopdateringer fra enheden.",
+                "fr": "Choisissez un intervalle de mise à jour. Sélectionnez un intervalle allant jusqu'à 10 minutes pour activer les mises à jour en direct depuis l'appareil.",
+                "it": "Scegli un intervallo di aggiornamento. Seleziona un intervallo fino a 10 minuti per abilitare gli aggiornamenti in tempo reale dal dispositivo.",
+                "ko": "업데이트 간격을 선택하세요. 장치에서 실시간 업데이트를 활성화하려면 최대 10분 간격을 선택하세요.",
+                "no": "Velg et oppdateringsintervall. Velg et intervall på opptil 10 minutter for å aktivere sanntidsoppdateringer fra enheten.",
+                "pl": "Wybierz interwał aktualizacji. Wybierz interwał do 10 minut, aby włączyć aktualizacje na żywo z urządzenia.",
+                "ru": "Выберите интервал обновления. Выберите интервал до 10 минут, чтобы включить обновления в реальном времени с устройства.",
+                "sv": "Välj ett uppdateringsintervall. Välj ett intervall på upp till 10 minuter för att aktivera liveuppdateringar från enheten.",
+                "es": "Elija un intervalo de actualización. Seleccione un intervalo de hasta 10 minutos para habilitar actualizaciones en vivo desde el dispositivo."
               },
               "min": 3,
               "value": "15"
@@ -3670,6 +3879,7 @@
       "type": "boolean",
       "title": {
         "en": "Connection lost?",
+        "ko": "연결이 끊어졌습니까?",
         "de": "Verbindung verloren?",
         "nl": "Verbinding verloren?",
         "fr": "Connexion perdue?",
@@ -3706,11 +3916,12 @@
       },
       "desc": {
         "en": "True when disconnected from the network.",
+        "de": "Wird aktiviert, wenn das Gerät nicht mehr mit dem Netzwerk verbunden ist.",
         "nl": "Wordt geactiveerd wanneer het apparaat niet meer verbonden is met het netwerk.",
         "da": "Sandt, når forbindelsen til netværket er afbrudt.",
         "fr": "Se déclenche lorsque le réseau est déconnecté.",
         "it": "Vero quando si è disconnessi dalla rete.",
-        "ko": "네트워크에서 연결 해제되면 참입니다.",
+        "ko": "네트워크에서 연결이 끊어지면 참입니다.",
         "no": "Sann når koblet fra nettverket.",
         "pl": "Prawda, gdy nastąpiło odłączenie od sieci.",
         "ru": "Значение «истина», когда устройство отключено от сети.",
@@ -3720,6 +3931,7 @@
       "insights": true,
       "insightsTitleTrue": {
         "en": "Disconnected",
+        "de": "Nicht verbunden",
         "nl": "Niet verbonden",
         "da": "Afbrudt",
         "fr": "Déconnecté",
@@ -3733,6 +3945,7 @@
       },
       "insightsTitleFalse": {
         "en": "Connected",
+        "de": "Verbunden",
         "nl": "Verbonden",
         "da": "Tilsluttet",
         "fr": "Connecté",
@@ -3761,7 +3974,8 @@
         "es": "Filtro desactivado?",
         "da": "Filter deaktiveret?",
         "ru": "Фильтр отключен?",
-        "pl": "Filtr wyłączony?"
+        "pl": "Filtr wyłączony?",
+        "ko": "필터 비활성화됨?"
       },
       "titleTrue": {
         "en": "Filter deactivated?",
@@ -3774,7 +3988,8 @@
         "es": "Filtro desactivado?",
         "da": "Filter deaktiveret?",
         "ru": "Фильтр отключен?",
-        "pl": "Filtr wyłączony?"
+        "pl": "Filtr wyłączony?",
+        "ko": "필터 비활성화됨?"
       },
       "titleFalse": {
         "en": "Your filter is DEACTIVATED",
@@ -3787,7 +4002,8 @@
         "es": "Tu filtro está DESACTIVADO",
         "da": "Dit filter er DEAKTIVERET",
         "ru": "Ваш фильтр ДЕАКТИВИРОВАН",
-        "pl": "Twój filtr jest WYŁĄCZONY"
+        "pl": "Twój filtr jest WYŁĄCZONY",
+        "ko": "필터가 비활성화되었습니다"
       },
       "getable": true,
       "setable": true,
@@ -3800,14 +4016,16 @@
       "title": {
         "en": "Blocking state",
         "de": "Blockierungsstatus",
-        "da": "Blokeringsstatus",
-        "es": "Estado de bloqueo",
-        "fr": "État de blocage",
         "nl": "Blokkeringsstatus",
+        "da": "Blokeringsstatus",
+        "fr": "État de blocage",
+        "it": "Stato di blocco",
+        "ko": "차단 상태",
         "no": "Blokkeringsstatus",
         "pl": "Stan blokowania",
         "ru": "Состояние блокировки",
-        "sv": "Blockeringsstatus"
+        "sv": "Blockeringsstatus",
+        "es": "Estado de bloqueo"
       },
       "values": [
         {
@@ -3815,14 +4033,16 @@
           "title": {
             "en": "Enabled",
             "de": "Aktiviert",
-            "da": "Aktiveret",
-            "es": "Habilitado",
-            "fr": "Activé",
             "nl": "Ingeschakeld",
+            "da": "Aktiveret",
+            "fr": "Activé",
+            "it": "Abilitato",
+            "ko": "활성화됨",
             "no": "Aktivert",
             "pl": "Włączony",
             "ru": "Включено",
-            "sv": "Aktiverad"
+            "sv": "Aktiverad",
+            "es": "Habilitado"
           }
         },
         {
@@ -3830,14 +4050,16 @@
           "title": {
             "en": "Disabled",
             "de": "Deaktiviert",
-            "da": "Deaktiveret",
-            "es": "Deshabilitado",
-            "fr": "Désactivé",
             "nl": "Uitgeschakeld",
+            "da": "Deaktiveret",
+            "fr": "Désactivé",
+            "it": "Disabilitato",
+            "ko": "비활성화됨",
             "no": "Deaktivert",
             "pl": "Wyłączony",
             "ru": "Отключено",
-            "sv": "Inaktiverad"
+            "sv": "Inaktiverad",
+            "es": "Deshabilitado"
           }
         },
         {
@@ -3845,14 +4067,16 @@
           "title": {
             "en": "Failed",
             "de": "Fehlgeschlagen",
-            "da": "Mislykket",
-            "es": "Fallido",
-            "fr": "Échoué",
             "nl": "Mislukt",
-            "no": "Mislykket",
+            "da": "Mislykket",
+            "fr": "Échoué",
+            "it": "Fallito",
+            "ko": "실패",
+            "no": "Mislyktes",
             "pl": "Niepowodzenie",
             "ru": "Не удалось",
-            "sv": "Misslyckades"
+            "sv": "Misslyckades",
+            "es": "Fallido"
           }
         },
         {
@@ -3860,14 +4084,16 @@
           "title": {
             "en": "Unknown",
             "de": "Unbekannt",
-            "da": "Ukendt",
-            "es": "Desconocido",
-            "fr": "Inconnu",
             "nl": "Onbekend",
+            "da": "Ukendt",
+            "fr": "Inconnu",
+            "it": "Sconosciuto",
+            "ko": "알 수 없음",
             "no": "Ukjent",
             "pl": "Nieznany",
             "ru": "Неизвестно",
-            "sv": "Okänd"
+            "sv": "Okänd",
+            "es": "Desconocido"
           }
         }
       ],
@@ -3882,16 +4108,17 @@
       "type": "boolean",
       "title": {
         "en": "Core Update available",
-        "de": "Core Update?",
-        "nl": "Core Update?",
-        "fr": "Mise à jour du noyau?",
-        "it": "Aggiornamento del core?",
-        "sv": "Kärnuppdatering?",
-        "no": "Kjerneoppdatering?",
-        "es": "Actualización del núcleo?",
-        "da": "Kerneopdatering?",
-        "ru": "Обновление ядра?",
-        "pl": "Aktualizacja jądra?"
+        "de": "Core-Update verfügbar",
+        "nl": "Core-update beschikbaar",
+        "da": "Core-opdatering tilgængelig",
+        "fr": "Mise à jour du noyau disponible",
+        "it": "Aggiornamento del core disponibile",
+        "ko": "코어 업데이트 가능",
+        "no": "Kjerneoppdatering tilgjengelig",
+        "pl": "Aktualizacja rdzenia dostępna",
+        "ru": "Доступно обновление ядра",
+        "sv": "Kärnuppdatering tillgänglig",
+        "es": "Actualización del núcleo disponible"
       },
       "getable": true,
       "setable": false,
@@ -3905,14 +4132,15 @@
         "en": "Update",
         "de": "Aktualisieren",
         "nl": "Bijwerken",
+        "da": "Opdater",
         "fr": "Mettre à jour",
         "it": "Aggiorna",
-        "sv": "Uppdatera",
+        "ko": "업데이트",
         "no": "Oppdater",
-        "es": "Actualizar",
-        "da": "Opdater",
+        "pl": "Aktualizuj",
         "ru": "Обновить",
-        "pl": "Zaktualizować"
+        "sv": "Uppdatera",
+        "es": "Actualizar"
       },
       "insights": false,
       "getable": false,
@@ -3924,16 +4152,17 @@
       "type": "boolean",
       "title": {
         "en": "FTL Update available",
-        "de": "FTL Update?",
-        "nl": "FTL Update?",
-        "fr": "Mise à jour FTL ?",
-        "it": "Aggiornamento FTL?",
-        "sv": "FTL-uppdatering?",
-        "no": "FTL-oppdatering?",
-        "es": "¿Actualización de FTL?",
-        "da": "FTL-opdatering?",
-        "ru": "Обновление FTL?",
-        "pl": "Aktualizacja FTL?"
+        "de": "FTL-Update verfügbar",
+        "nl": "FTL-update beschikbaar",
+        "da": "FTL-opdatering tilgængelig",
+        "fr": "Mise à jour FTL disponible",
+        "it": "Aggiornamento FTL disponibile",
+        "ko": "FTL 업데이트 가능",
+        "no": "FTL-oppdatering tilgjengelig",
+        "pl": "Aktualizacja FTL dostępna",
+        "ru": "Доступно обновление FTL",
+        "sv": "FTL-uppdatering tillgänglig",
+        "es": "Actualización de FTL disponible"
       },
       "getable": true,
       "setable": false,
@@ -3947,14 +4176,15 @@
         "en": "Last Gravity update",
         "de": "Letztes Gravity-Update",
         "nl": "Laatste Gravity-update",
-        "fr": "Dernière mise à jour de Gravity",
+        "da": "Sidste Gravity-opdatering",
+        "fr": "Dernière mise à jour Gravity",
         "it": "Ultimo aggiornamento Gravity",
-        "sv": "Senaste Gravity-uppdateringen",
+        "ko": "마지막 Gravity 업데이트",
         "no": "Siste Gravity-oppdatering",
-        "es": "Última actualización de Gravity",
-        "da": "Seneste Gravity-opdatering",
+        "pl": "Ostatnia aktualizacja Gravity",
         "ru": "Последнее обновление Gravity",
-        "pl": "Ostatnia aktualizacja Gravity"
+        "sv": "Senaste Gravity-uppdatering",
+        "es": "Última actualización de Gravity"
       },
       "getable": true,
       "setable": true,
@@ -3966,16 +4196,17 @@
       "type": "string",
       "title": {
         "en": "Last update",
-        "de": "Letzte Aktualisierung",
+        "de": "Letztes Update",
         "nl": "Laatste update",
+        "da": "Sidste opdatering",
         "fr": "Dernière mise à jour",
         "it": "Ultimo aggiornamento",
-        "sv": "Senaste uppdateringen",
+        "ko": "마지막 업데이트",
         "no": "Siste oppdatering",
-        "es": "Última actualización",
-        "da": "Seneste opdatering",
+        "pl": "Ostatnia aktualizacja",
         "ru": "Последнее обновление",
-        "pl": "Ostatnia aktualizacja"
+        "sv": "Senaste uppdatering",
+        "es": "Última actualización"
       },
       "getable": true,
       "setable": true,
@@ -3988,14 +4219,16 @@
       "title": {
         "en": "Active client count",
         "de": "Aktive Client-Anzahl",
+        "nl": "Actieve clienttelling",
         "da": "Aktiv klientantal",
-        "es": "Recuento de clientes activos",
         "fr": "Nombre de clients actifs",
-        "nl": "Aantal actieve clients",
-        "no": "Antall aktive klienter",
+        "it": "Conteggio client attivi",
+        "ko": "활성 클라이언트 수",
+        "no": "Aktiv klientantall",
         "pl": "Liczba aktywnych klientów",
         "ru": "Количество активных клиентов",
-        "sv": "Antal aktiva klienter"
+        "sv": "Aktivt klientantal",
+        "es": "Conteo de clientes activos"
       },
       "insights": true,
       "getable": true,
@@ -4008,16 +4241,17 @@
       "type": "number",
       "title": {
         "en": "Advertisements / day",
-        "de": "Werbeanzeigen / Tag",
+        "de": "Werbungen / Tag",
         "nl": "Advertenties / dag",
+        "da": "Reklamer / dag",
         "fr": "Publicités / jour",
         "it": "Pubblicità / giorno",
-        "sv": "Annonser / dag",
+        "ko": "광고 / 하루",
         "no": "Annonser / dag",
-        "es": "Anuncios / día",
-        "da": "Annoncer / dag",
+        "pl": "Reklamy / dzień",
         "ru": "Реклама / день",
-        "pl": "Reklamy / dzień"
+        "sv": "Annonser / dag",
+        "es": "Anuncios / día"
       },
       "insights": true,
       "getable": true,
@@ -4030,16 +4264,17 @@
       "type": "number",
       "title": {
         "en": "Advertisements (%) / day",
-        "de": "Werbeanzeigen (%) / Tag",
+        "de": "Werbung (%) / Tag",
         "nl": "Advertenties (%) / dag",
+        "da": "Reklamer (%) / dag",
         "fr": "Publicités (%) / jour",
         "it": "Pubblicità (%) / giorno",
-        "sv": "Annonser (%) / dag",
+        "ko": "광고 (%) / 하루",
         "no": "Annonser (%) / dag",
-        "es": "Anuncios (%) / día",
-        "da": "Annoncer (%) / dag",
+        "pl": "Reklamy (%) / dzień",
         "ru": "Реклама (%) / день",
-        "pl": "Reklamy (%)/ dzień"
+        "sv": "Annonser (%) / dag",
+        "es": "Anuncios (%) / día"
       },
       "units": {
         "en": "%"
@@ -4056,14 +4291,16 @@
       "title": {
         "en": "CPU temperature",
         "de": "CPU-Temperatur",
-        "da": "CPU-temperatur",
-        "es": "Temperatura de la CPU",
-        "fr": "Température du CPU",
         "nl": "CPU-temperatuur",
+        "da": "CPU-temperatur",
+        "fr": "Température du CPU",
+        "it": "Temperatura CPU",
+        "ko": "CPU 온도",
         "no": "CPU-temperatur",
         "pl": "Temperatura CPU",
-        "ru": "Температура процессора",
-        "sv": "CPU-temperatur"
+        "ru": "Температура ЦП",
+        "sv": "CPU-temperatur",
+        "es": "Temperatura de la CPU"
       },
       "units": {
         "en": "°C"
@@ -4081,14 +4318,15 @@
         "en": "DNS requests / day",
         "de": "DNS-Anfragen / Tag",
         "nl": "DNS-verzoeken / dag",
+        "da": "DNS-forespørgsler / dag",
         "fr": "Requêtes DNS / jour",
         "it": "Richieste DNS / giorno",
-        "sv": "DNS-förfrågningar / dag",
+        "ko": "DNS 요청 / 하루",
         "no": "DNS-forespørsler / dag",
-        "es": "Solicitudes de DNS / día",
-        "da": "DNS-forespørgsler / dag",
+        "pl": "Żądania DNS / dzień",
         "ru": "DNS-запросы / день",
-        "pl": "Zapytania DNS / dzień"
+        "sv": "DNS-förfrågningar / dag",
+        "es": "Solicitudes DNS / día"
       },
       "insights": true,
       "getable": true,
@@ -4101,15 +4339,17 @@
       "type": "number",
       "title": {
         "en": "Blocked queries past 24h",
-        "de": "Blockierte Anfragen letzte 24h",
+        "de": "Blockierte Anfragen der letzten 24 Stunden",
+        "nl": "Geblokkeerde queries afgelopen 24 uur",
         "da": "Blokerede forespørgsler sidste 24 timer",
-        "es": "Consultas bloqueadas últimas 24h",
-        "fr": "Requêtes bloquées dernières 24h",
-        "nl": "Geblokkeerde queries afgelopen 24u",
-        "no": "Blokkerte forespørsler siste 24t",
-        "pl": "Zablokowane zapytania ostatnie 24h",
-        "ru": "Заблокированные запросы за последние 24ч",
-        "sv": "Blockerade förfrågningar senaste 24h"
+        "fr": "Requêtes bloquées au cours des dernières 24 heures",
+        "it": "Query bloccate nelle ultime 24 ore",
+        "ko": "지난 24시간 동안 차단된 쿼리",
+        "no": "Blokkerte forespørsler siste 24 timer",
+        "pl": "Zablokowane zapytania w ciągu ostatnich 24 godzin",
+        "ru": "Заблокированные запросы за последние 24 часа",
+        "sv": "Blockerade förfrågningar senaste 24 timmarna",
+        "es": "Consultas bloqueadas en las últimas 24 horas"
       },
       "insights": true,
       "getable": true,
@@ -4121,16 +4361,18 @@
     "measure_queries_blocked_relative_24h": {
       "type": "number",
       "title": {
-        "en": "blocked queries past 24h",
-        "de": "blockierte Anfragen letzte 24h",
-        "da": "blokerede forespørgsler sidste 24 timer",
-        "es": "consultas bloqueadas últimas 24h",
-        "fr": "requêtes bloquées dernières 24h",
-        "nl": "geblokkeerde queries afgelopen 24u",
-        "no": "blokkerte forespørsler siste 24t",
-        "pl": "zablokowanych zapytań ostatnie 24h",
-        "ru": "заблокированных запросов за последние 24ч",
-        "sv": "blockerade förfrågningar senaste 24h"
+        "en": "Blocked queries past 24h",
+        "de": "Blockierte Anfragen letzte 24h",
+        "nl": "Geblokkeerde queries afgelopen 24u",
+        "da": "Blokerede forespørgsler sidste 24 timer",
+        "fr": "Requêtes bloquées dernières 24h",
+        "it": "Query bloccate ultime 24h",
+        "ko": "지난 24시간 동안 차단된 쿼리",
+        "no": "Blokkerte forespørsler siste 24t",
+        "pl": "Zablokowane zapytania ostatnie 24h",
+        "ru": "заблокированные запросы за последние 24 часа",
+        "sv": "Blockerade förfrågningar senaste 24h",
+        "es": "Consultas bloqueadas últimas 24h"
       },
       "units": {
         "en": "%"
@@ -4147,14 +4389,16 @@
       "title": {
         "en": "Total queries past 24h",
         "de": "Gesamte Anfragen der letzten 24 Stunden",
+        "nl": "Totaal aantal queries afgelopen 24 uur",
         "da": "Samlede forespørgsler sidste 24 timer",
-        "es": "Consultas totales últimas 24h",
-        "fr": "Requêtes totales des dernières 24h",
-        "nl": "Totale queries afgelopen 24 uur",
+        "fr": "Requêtes totales des dernières 24 heures",
+        "it": "Query totali ultime 24 ore",
+        "ko": "지난 24시간 총 쿼리",
         "no": "Totale forespørsler siste 24 timer",
-        "pl": "Łączna liczba zapytań z ostatnich 24 godzin",
+        "pl": "Łączna liczba zapytań w ciągu ostatnich 24 godzin",
         "ru": "Всего запросов за последние 24 часа",
-        "sv": "Totala förfrågningar senaste 24 timmarna"
+        "sv": "Totala förfrågningar senaste 24 timmarna",
+        "es": "Consultas totales últimas 24 horas"
       },
       "insights": true,
       "getable": true,
@@ -4168,14 +4412,16 @@
       "title": {
         "en": "CPU usage",
         "de": "CPU-Auslastung",
-        "da": "CPU-brug",
-        "es": "Uso de CPU",
-        "fr": "Utilisation du CPU",
         "nl": "CPU-gebruik",
+        "da": "CPU-brug",
+        "fr": "Utilisation du CPU",
+        "it": "Utilizzo CPU",
+        "ko": "CPU 사용량",
         "no": "CPU-bruk",
         "pl": "Użycie CPU",
         "ru": "Использование CPU",
-        "sv": "CPU-användning"
+        "sv": "CPU-användning",
+        "es": "Uso de CPU"
       },
       "units": {
         "en": "%",
@@ -4201,14 +4447,16 @@
       "title": {
         "en": "Memory usage",
         "de": "Speichernutzung",
-        "da": "Hukommelsesforbrug",
-        "es": "Uso de memoria",
-        "fr": "Utilisation de la mémoire",
         "nl": "Geheugengebruik",
+        "da": "Hukommelsesbrug",
+        "fr": "Utilisation de la mémoire",
+        "it": "Utilizzo della memoria",
+        "ko": "메모리 사용량",
         "no": "Minnebruk",
         "pl": "Zużycie pamięci",
         "ru": "Использование памяти",
-        "sv": "Minnesanvändning"
+        "sv": "Minnesanvändning",
+        "es": "Uso de memoria"
       },
       "units": {
         "en": "%"
@@ -4225,14 +4473,16 @@
       "title": {
         "en": "System uptime",
         "de": "Systemlaufzeit",
-        "da": "Systemets oppetid",
-        "es": "Tiempo de actividad del sistema",
-        "fr": "Temps de fonctionnement du système",
         "nl": "Systeem-uptime",
-        "no": "Systemets oppetid",
+        "da": "Systemoppetid",
+        "fr": "Temps de fonctionnement du système",
+        "it": "Tempo di attività del sistema",
+        "ko": "시스템 가동 시간",
+        "no": "Systemoppetid",
         "pl": "Czas pracy systemu",
         "ru": "Время работы системы",
-        "sv": "Systemets drifttid"
+        "sv": "Systemets drifttid",
+        "es": "Tiempo de actividad del sistema"
       },
       "units": {
         "en": "days"
@@ -4249,26 +4499,30 @@
       "title": {
         "en": "System uptime",
         "de": "Systemlaufzeit",
-        "da": "System oppetid",
-        "es": "Tiempo de actividad del sistema",
+        "nl": "Systeem-uptime",
+        "da": "Systemoppetid",
         "fr": "Temps de fonctionnement du système",
-        "nl": "Systeem uptime",
-        "no": "System oppetid",
+        "it": "Tempo di attività del sistema",
+        "ko": "시스템 가동 시간",
+        "no": "Systemoppetid",
         "pl": "Czas pracy systemu",
         "ru": "Время работы системы",
-        "sv": "Systemets drifttid"
+        "sv": "Systemets drifttid",
+        "es": "Tiempo de actividad del sistema"
       },
       "units": {
         "en": "minutes",
         "de": "Minuten",
-        "da": "minutter",
-        "es": "minutos",
-        "fr": "minutes",
         "nl": "minuten",
+        "da": "minutter",
+        "fr": "minutes",
+        "it": "minuti",
+        "ko": "분",
         "no": "minutter",
         "pl": "minuty",
         "ru": "минуты",
-        "sv": "minuter"
+        "sv": "minuter",
+        "es": "minutos"
       },
       "insights": false,
       "getable": true,
@@ -4282,14 +4536,16 @@
       "title": {
         "en": "Restart DNS",
         "de": "DNS neu starten",
+        "nl": "DNS opnieuw starten",
         "da": "Genstart DNS",
-        "es": "Reiniciar DNS",
         "fr": "Redémarrer DNS",
-        "nl": "DNS herstarten",
+        "it": "Riavvia DNS",
+        "ko": "DNS 다시 시작",
         "no": "Start DNS på nytt",
         "pl": "Zrestartuj DNS",
         "ru": "Перезапустить DNS",
-        "sv": "Starta om DNS"
+        "sv": "Starta om DNS",
+        "es": "Reiniciar DNS"
       },
       "insights": false,
       "getable": false,
@@ -4301,14 +4557,16 @@
       "title": {
         "en": "Update gravity",
         "de": "Gravity aktualisieren",
-        "da": "Opdater tyngdekraft",
-        "es": "Actualizar gravedad",
-        "fr": "Mettre à jour la gravité",
         "nl": "Zwaartekracht bijwerken",
+        "da": "Opdater tyngdekraft",
+        "fr": "Mettre à jour la gravité",
+        "it": "Aggiorna gravità",
+        "ko": "중력 업데이트",
         "no": "Oppdater tyngdekraft",
         "pl": "Zaktualizuj grawitację",
         "ru": "Обновить гравитацию",
-        "sv": "Uppdatera gravitation"
+        "sv": "Uppdatera gravitation",
+        "es": "Actualizar gravedad"
       },
       "insights": false,
       "getable": false,
@@ -4319,16 +4577,17 @@
       "type": "boolean",
       "title": {
         "en": "Web Update available",
-        "de": "Web Update?",
-        "nl": "Web Update?",
-        "fr": "Mise à jour Web ?",
-        "it": "Aggiornamento web?",
-        "sv": "Webbuppdatering?",
-        "no": "Weboppdatering?",
-        "es": "¿Actualización web?",
-        "da": "Webopdatering?",
-        "ru": "Обновление веб?",
-        "pl": "Aktualizacja webowa?"
+        "de": "Web-Update verfügbar",
+        "nl": "Webupdate beschikbaar",
+        "da": "Webopdatering tilgængelig",
+        "fr": "Mise à jour Web disponible",
+        "it": "Aggiornamento Web disponibile",
+        "ko": "웹 업데이트 가능",
+        "no": "Weboppdatering tilgjengelig",
+        "pl": "Aktualizacja internetowa dostępna",
+        "ru": "Веб-обновление доступно",
+        "sv": "Webbuppdatering tillgänglig",
+        "es": "Actualización web disponible"
       },
       "getable": true,
       "setable": false,

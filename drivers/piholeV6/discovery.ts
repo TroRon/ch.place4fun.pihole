@@ -8,9 +8,9 @@ export class AutoDiscoveryProcess {
     }
 
     public async startDiscovery(onDeviceFound: Function): Promise<void> {
-        this.log("Starting auto-discovery for PiHole V6 instances")
+        this.log("PiHoleV6 | Starting auto-discovery for PiHole V6 instances")
         let addresses = await this.getIpsInSubnet();
-        console.log("Testing " + addresses.length + " ip addresses...")
+        console.log("PiHoleV6 | Testing " + addresses.length + " ip addresses...")
         addresses = ["pi.hole", "pihole.local", ...addresses] // also search two DNS names which are likely matches
         for (const address of addresses) {
             // this.homey.arp.getMAC(ipAddress) is horribly slow and unusable as help, so we have to brute-force discovery

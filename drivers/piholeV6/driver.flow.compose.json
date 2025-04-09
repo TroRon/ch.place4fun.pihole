@@ -1735,7 +1735,18 @@
     {
       "id": "on",
       "title": {
-        "en": "Ad-Blocking is !{{enabled|disabled}}"
+        "en": "Ad-Blocking is !{{enabled|disabled}}",
+        "de": "Werbeblocker ist !{{aktiviert|deaktiviert}}",
+        "nl": "Advertentieblokkering is !{{ingeschakeld|uitgeschakeld}}",
+        "da": "Annonceblokering er !{{aktiveret|deaktiveret}}",
+        "fr": "Le blocage des publicités est !{{activé|désactivé}}",
+        "it": "Il blocco degli annunci è !{{abilitato|disabilitato}}",
+        "ko": "광고 차단이 !{{활성화됨|비활성화됨}}",
+        "no": "Annonseblokkering er !{{aktivert|deaktivert}}",
+        "pl": "Blokowanie reklam jest !{{włączone|wyłączone}}",
+        "ru": "Блокировка рекламы !{{включена|выключена}}",
+        "sv": "Annonsblockering är !{{aktiverad|inaktiverad}}",
+        "es": "El bloqueo de anuncios está !{{habilitado|deshabilitado}}"
       }
     },
     {
@@ -1744,10 +1755,32 @@
         "en": "An allow/block rule exists for ..."
       },
       "titleFormatted": {
-        "en": "An [[allowedOrBlocked]] rule [[domain]] !{{exists|doesn't exist}}"
+        "en": "An [[allowedOrBlocked]] rule [[domain]] !{{exists|doesn't exist}}",
+        "de": "Eine [[allowedOrBlocked]] Regel [[domain]] !{{existiert|existiert nicht}}",
+        "nl": "Een [[allowedOrBlocked]] regel [[domain]] !{{bestaat|bestaat niet}}",
+        "da": "En [[allowedOrBlocked]] regel [[domain]] !{{eksisterer|eksisterer ikke}}",
+        "fr": "Une règle [[allowedOrBlocked]] [[domain]] !{{existe|n'existe pas}}",
+        "it": "Una regola [[allowedOrBlocked]] [[domain]] !{{esiste|non esiste}}",
+        "ko": "[[allowedOrBlocked]] 규칙 [[domain]]이 !{{존재합니다|존재하지 않습니다}}",
+        "no": "En [[allowedOrBlocked]] regel [[domain]] !{{eksisterer|eksisterer ikke}}",
+        "pl": "Reguła [[allowedOrBlocked]] [[domain]] !{{istnieje|nie istnieje}}",
+        "ru": "Правило [[allowedOrBlocked]] для [[domain]] !{{существует|не существует}}",
+        "sv": "En [[allowedOrBlocked]] regel [[domain]] !{{finns|finns inte}}",
+        "es": "Una regla [[allowedOrBlocked]] [[domain]] !{{existe|no existe}}"
       },
       "hint": {
-        "en": "Checks if a specific domain or regex expression is defined as a block or allow rule."
+        "en": "Checks if a specific domain or regex expression is defined as a block or allow rule.",
+        "de": "Prüft, ob eine bestimmte Domain oder ein Regex-Ausdruck als Blockier- oder Erlaubnisregel definiert ist.",
+        "nl": "Controleert of een specifiek domein of regex-uitdrukking is gedefinieerd als een blokkeer- of toestaanregel.",
+        "da": "Kontrollerer, om et specifikt domæne eller regex-udtryk er defineret som en blok- eller tilladelsesregel.",
+        "fr": "Vérifie si un domaine spécifique ou une expression regex est défini comme une règle de blocage ou d'autorisation.",
+        "it": "Verifica se un dominio specifico o un'espressione regex è definito come regola di blocco o di autorizzazione.",
+        "ko": "특정 도메인 또는 정규식 표현이 차단 또는 허용 규칙으로 정의되어 있는지 확인합니다.",
+        "no": "Sjekker om et spesifikt domene eller regex-uttrykk er definert som en blokk- eller tillatelsesregel.",
+        "pl": "Sprawdza, czy określona domena lub wyrażenie regex jest zdefiniowane jako reguła blokowania lub zezwalania.",
+        "ru": "Проверяет, определен ли конкретный домен или регулярное выражение как правило блокировки или разрешения.",
+        "sv": "Kontrollerar om ett specifikt domännamn eller regex-uttryck är definierat som en blockerings- eller tillåtelseregel.",
+        "es": "Comprueba si un dominio específico o una expresión regex está definido como una regla de bloqueo o de permiso."
       },
       "args": [
         {
@@ -1761,19 +1794,52 @@
           "name": "allowedOrBlocked",
           "type": "dropdown",
           "title": {
-            "en": "Allowed/Blocked"
+            "en": "Allowed/Blocked",
+            "de": "Erlaubt/Blockiert",
+            "nl": "Toegestaan/Geblokkeerd",
+            "da": "Tilladt/Blokeret",
+            "fr": "Autorisé/Bloqué",
+            "it": "Consentito/Bloccato",
+            "ko": "허용됨/차단됨",
+            "no": "Tillatt/Blokkert",
+            "pl": "Dozwolone/Zablokowane",
+            "ru": "Разрешено/Заблокировано",
+            "sv": "Tillåtet/Blockerat",
+            "es": "Permitido/Bloqueado"
           },
           "values": [
             {
               "id": "allow",
               "title": {
-                "en": "allow"
+                "en": "allow",
+                "de": "erlauben",
+                "nl": "toestaan",
+                "da": "tillad",
+                "fr": "autoriser",
+                "it": "consentire",
+                "ko": "허용",
+                "no": "tillat",
+                "pl": "zezwól",
+                "ru": "разрешить",
+                "sv": "tillåt",
+                "es": "permitir"
               }
             },
             {
               "id": "deny",
               "title": {
-                "en": "block"
+                "en": "block",
+                "de": "blockieren",
+                "nl": "blokkeren",
+                "da": "blokere",
+                "fr": "bloquer",
+                "it": "bloccare",
+                "ko": "차단",
+                "no": "blokker",
+                "pl": "blokuj",
+                "ru": "блокировать",
+                "sv": "blockera",
+                "es": "bloquear"
               }
             }
           ]
@@ -1783,13 +1849,46 @@
     {
       "id": "pihole_domain_blocked",
       "title": {
-        "en": "Domain ... is blocked"
+        "en": "Domain ... is blocked",
+        "de": "Domain ... ist blockiert",
+        "nl": "Domein ... is geblokkeerd",
+        "da": "Domæne ... er blokeret",
+        "fr": "Le domaine ... est bloqué",
+        "it": "Il dominio ... è bloccato",
+        "ko": "도메인 ...이 차단되었습니다",
+        "no": "Domenet ... er blokkert",
+        "pl": "Domena ... jest zablokowana",
+        "ru": "Домен ... заблокирован",
+        "sv": "Domänen ... är blockerad",
+        "es": "El dominio ... está bloqueado"
       },
       "titleFormatted": {
-        "en": "Domain [[domain]] is !{{blocked|allowed}}"
+        "en": "Domain [[domain]] is !{{blocked|allowed}}",
+        "de": "Domain [[domain]] ist !{{blockiert|erlaubt}}",
+        "nl": "Domein [[domain]] is !{{geblokkeerd|toegestaan}}",
+        "da": "Domæne [[domain]] er !{{blokeret|tilladt}}",
+        "fr": "Le domaine [[domain]] est !{{bloqué|autorisé}}",
+        "it": "Il dominio [[domain]] è !{{bloccato|consentito}}",
+        "ko": "도메인 [[domain]]이 !{{차단됨|허용됨}}",
+        "no": "Domenet [[domain]] er !{{blokkert|tillatt}}",
+        "pl": "Domena [[domain]] jest !{{zablokowana|dozwolona}}",
+        "ru": "Домен [[domain]] !{{заблокирован|разрешен}}",
+        "sv": "Domänen [[domain]] är !{{blockerad|tillåten}}",
+        "es": "El dominio [[domain]] está !{{bloqueado|permitido}}"
       },
       "hint": {
-        "en": "Searches the blocklists and custom rules to check if a query would pass or be blocked"
+        "en": "Searches the blocklists and custom rules to check if a query would pass or be blocked",
+        "de": "Durchsucht die Sperrlisten und benutzerdefinierten Regeln, um zu überprüfen, ob eine Abfrage zugelassen oder blockiert wird",
+        "nl": "Doorzoekt de blokkeerlijsten en aangepaste regels om te controleren of een query wordt toegestaan of geblokkeerd",
+        "da": "Søger i bloklister og brugerdefinerede regler for at kontrollere, om en forespørgsel vil blive tilladt eller blokeret",
+        "fr": "Recherche dans les listes de blocage et les règles personnalisées pour vérifier si une requête serait autorisée ou bloquée",
+        "it": "Cerca nelle liste di blocco e nelle regole personalizzate per verificare se una query sarebbe consentita o bloccata",
+        "ko": "차단 목록과 사용자 정의 규칙을 검색하여 쿼리가 허용되거나 차단되는지 확인합니다",
+        "no": "Søker i blokkeringslister og egendefinerte regler for å sjekke om en forespørsel vil bli tillatt eller blokkert",
+        "pl": "Przeszukuje listy blokad i reguły niestandardowe, aby sprawdzić, czy zapytanie zostanie przepuszczone lub zablokowane",
+        "ru": "Ищет в списках блокировки и пользовательских правилах, чтобы проверить, будет ли запрос разрешен или заблокирован",
+        "sv": "Söker i blocklistor och anpassade regler för att kontrollera om en förfrågan skulle tillåtas eller blockeras",
+        "es": "Busca en las listas de bloqueo y reglas personalizadas para verificar si una consulta sería permitida o bloqueada"
       },
       "args": [
         {
@@ -1804,6 +1903,7 @@
     {
       "id": "alarm_connectivity",
       "title": {
+        "de": "Ist !{{verbunden|nicht verbunden}}",
         "en": "Is !{{connected|disconnected}}",
         "nl": "Is !{{verbonden|niet verbonden}}",
         "da": "Er !{{tilsluttet|afbrudt}}",

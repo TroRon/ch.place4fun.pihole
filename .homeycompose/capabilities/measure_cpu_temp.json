@@ -3,14 +3,16 @@
   "title": {
     "en": "CPU temperature",
     "de": "CPU-Temperatur",
-    "da": "CPU-temperatur",
-    "es": "Temperatura de la CPU",
-    "fr": "Température du CPU",
     "nl": "CPU-temperatuur",
+    "da": "CPU-temperatur",
+    "fr": "Température du CPU",
+    "it": "Temperatura CPU",
+    "ko": "CPU 온도",
     "no": "CPU-temperatur",
     "pl": "Temperatura CPU",
-    "ru": "Температура процессора",
-    "sv": "CPU-temperatur"
+    "ru": "Температура ЦП",
+    "sv": "CPU-temperatur",
+    "es": "Temperatura de la CPU"
   },
   "units": {
     "en": "°C"

@@ -1,9 +1,11 @@
-Utöka Homey med möjligheten att styra dina PiHoles.
+Utöka Homey med möjligheten att kontrollera dina PiHoles.
 
-Anslut valfritt antal PiHoles till Homey och styr dem centralt.
+Anslut ett valfritt antal PiHoles till Homey och styr dem centralt.
 
-Med displayer som antal förfrågningar, filtrerade förfrågningar etc. är du alltid uppdaterad.
+Genom att visa information som antalet förfrågningar, filtrerade förfrågningar etc. är du alltid uppdaterad.
 
-Möjligheterna är oändliga om du utökar Homey med denna funktion.
+Möjligheterna är oändliga när du utökar Homey med denna funktion.
 
-Mycket nöje med den här appen
+Ha så kul med denna app.
+
+Översättningarna har skapats med hjälp av AI, vänligen rapportera eventuella fel.

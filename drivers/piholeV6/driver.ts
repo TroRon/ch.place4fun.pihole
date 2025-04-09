@@ -18,7 +18,7 @@ class PiholeV6Driver extends Homey.Driver {
         await this.registerTriggerCardRunListeners();
         this.registerFlowActionListeners();
         this.registerFlowConditionListeners();
-        this.log("PiholeV6Driver initialized");
+        this.log("PiHoleV6 | Driver initialized");
     }
 
     /**
@@ -111,7 +111,7 @@ class PiholeV6Driver extends Homey.Driver {
         restartPiHoleDnsAction.registerRunListener(async (args: any, state: any) => {
             // The arguments contain the device on which the card was executed
             await this.requirePiholeConnection(args).restartDns();
-            args.device.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
+            //args.device.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
         });
 
         const updateGravityAction = this.homey.flow.getActionCard('pihole_update_gravity');
@@ -208,7 +208,8 @@ class PiholeV6Driver extends Homey.Driver {
         domainBlockedCondition.registerRunListener(async (args: any, state: any) => {
             return await this.requirePiholeConnection(args).searchDomain(args.domain).then(
                 domains => {
-                    this.log(JSON.stringify(domains))
+                    //Can be enabled for Debug
+                    //this.log(JSON.stringify(domains))
                     const isWhiteListed = domains.filter(domain => domain.enabled && domain.kind != "gravity" && domain.type == "allow").length > 0
                     const isBlocklistBlocked = domains.filter(domain => domain.enabled && domain.kind == "gravity" && domain.type == "deny").length > 0
                     const isCustomBlocked = domains.filter(domain => domain.enabled && domain.kind != "gravity" && domain.type == "deny").length > 0
@@ -237,7 +238,7 @@ class PiholeV6Driver extends Homey.Driver {
     }
 
     async onPair(session: PairSession) {
-        this.log("PiholeV6Driver onPair()");
+        this.log("PiHoleV6 | onPair()");
 
         // default device when automatic detection fails
         let devices = [{
@@ -259,12 +260,12 @@ class PiholeV6Driver extends Homey.Driver {
         let autoDiscoveryProcess: AutoDiscoveryProcess | undefined = undefined
 
         session.setHandler("list_devices", async () => {
-            this.log("list_devices");
+            //this.log("list_devices");
             // Prevent multiple searches when navigating back and forth in the pairing process
             if (!autoDiscoveryProcess) {
                 autoDiscoveryProcess = new AutoDiscoveryProcess(this.log);
                 autoDiscoveryProcess.startDiscovery((address: string) => {
-                    this.log("Found pihole at address " + address)
+                    this.log("PiHoleV6 | Found pihole at address " + address)
                     devices.push(this.createDeviceStub(address))
                     session.emit("list_devices", devices)
                 })
@@ -274,23 +275,24 @@ class PiholeV6Driver extends Homey.Driver {
 
         session.setHandler("list_devices_selection", async (devicea) => {
             this.selectedDevice = devicea[0];
-            this.log("Set selected device, name " + this.selectedDevice.name)
+            this.log("PiHoleV6 | Set selected device, name " + this.selectedDevice.name)
         });
 
         session.setHandler("get_selected_device", async (device) => {
-            this.log("Get selected device, name " + this.selectedDevice.name)
+            this.log("PiHoleV6 | Get selected device, name " + this.selectedDevice.name)
             return this.selectedDevice;
         });
 
         session.setHandler("test_device", async (device) => {
-            this.log("test_device, received settings: " + JSON.stringify(device.settings));
+            //Can be enabled for Debug
+            //this.log("test_device, received settings: " + JSON.stringify(device.settings));
             const connection = new PiHoleConnection(device.settings.base_url, device.settings.api_password)
             if (!(await connection.hasValidBaseUrl())) {
-                this.log("Test failed, invalid host")
+                this.log("PiHoleV6 | Test failed, invalid host")
                 return this.homey.__("pairing.test_failed.invalid_host");
             }
             if (!(await connection.hasValidPassword())) {
-                this.log("Test failed, invalid password")
+                this.log("PiHoleV6 | Test failed, invalid password")
                 return this.homey.__("pairing.test_failed.invalid_key");
             }
             return "ok"

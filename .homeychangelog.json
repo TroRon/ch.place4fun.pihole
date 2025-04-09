@@ -557,5 +557,18 @@
     "da": "Fejlrettelser / Optimeringer",
     "ru": "Исправление ошибок / Оптимизации",
     "pl": "Naprawy błędów / Optymalizacje"
+  },
+  "2.1.2": {
+    "de": "Überarbeitung Assistent für Geräte Einbindung / Bugfixes",
+    "en": "Revision of assistant for device integration / Bug fixes",
+    "nl": "Herziening van assistent voor apparaatintegratie / Bugfixes",
+    "fr": "Révision de l'assistant pour l'intégration des appareils / Correctifs",
+    "it": "Revisione dell'assistente per l'integrazione dei dispositivi / Correzioni di bug",
+    "sv": "Översyn av assistent för enhetsintegration / Buggrättningar",
+    "no": "Revisjon av assistent for enhetsintegrasjon / Feilrettinger",
+    "es": "Revisión del asistente para la integración de dispositivos / Corrección de errores",
+    "da": "Revision af assistent til enhedsintegration / Fejlrettelser",
+    "ru": "Переработка помощника для интеграции устройств / Исправление ошибок",
+    "pl": "Przegląd asystenta integracji urządzeń / Naprawa błędów"
   }
 }

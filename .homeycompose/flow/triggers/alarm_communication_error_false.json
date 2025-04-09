@@ -1,41 +1,43 @@
 {
-    "title": { 
-      "en": "Connection restored",
-      "de": "Verbindung wiederhergestellt",
-      "nl": "Verbinding hersteld",
-      "fr": "Connexion restaurée",
-      "it": "Connessione ripristinata",
-      "sv": "Anslutning återställd",
-      "no": "Tilkoblingen gjenopprettet",
-      "es": "Conexión restablecida",
-      "da": "Forbindelse genoprettet",
-      "ru": "Соединение восстановлено",
-      "pl": "Połączenie przywrócone"
-      },
-      "tokens": [
-        {
-          "name": "alarm_communication_error",
-          "type": "boolean",
-          "title": { 
-            "en": "Connection status",
-            "de": "Verbindungsstatus",
-            "nl": "Verbindingsstatus",
-            "fr": "Statut de la connexion",
-            "it": "Stato della connessione",
-            "sv": "Anslutningsstatus",
-            "no": "Tilkoblingsstatus",
-            "es": "Estado de conexión",
-            "da": "Forbindelsesstatus",
-            "ru": "Статус подключения",
-            "pl": "Status połączenia"
-          }
-        }
-      ],
-      "args": [
-        {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=pihole"
-        }
-      ]
+  "title": { 
+    "en": "Connection restored",
+    "de": "Verbindung wiederhergestellt",
+    "nl": "Verbinding hersteld",
+    "da": "Forbindelse genoprettet",
+    "fr": "Connexion rétablie",
+    "it": "Connessione ripristinata",
+    "ko": "연결 복원됨",
+    "no": "Tilkobling gjenopprettet",
+    "pl": "Połączenie przywrócone",
+    "ru": "Соединение восстановлено",
+    "sv": "Anslutning återställd",
+    "es": "Conexión restaurada"
+  },
+  "tokens": [
+    {
+      "name": "alarm_communication_error",
+      "type": "boolean",
+      "title": { 
+        "en": "Connection status",
+        "de": "Verbindungsstatus",
+        "nl": "Verbindingsstatus",
+        "da": "Forbindelsesstatus",
+        "fr": "État de la connexion",
+        "it": "Stato della connessione",
+        "ko": "연결 상태",
+        "no": "Tilkoblingsstatus",
+        "pl": "Stan połączenia",
+        "ru": "Состояние соединения",
+        "sv": "Anslutningsstatus",
+        "es": "Estado de la conexión"
+      }
     }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=pihole"
+    }
+  ]
+}

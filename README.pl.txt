@@ -1,9 +1,11 @@
-Rozszerz Homey o możliwość kontrolowania PiHoles.
+Rozszerz Homey o możliwość kontrolowania swoich PiHole.
 
-Podłącz dowolną liczbę PiHoles do Homey i kontroluj je centralnie.
+Podłącz dowolną liczbę urządzeń PiHole do Homey i zarządzaj nimi centralnie.
 
-Dzięki wyświetlaczom takim jak liczba żądań, przefiltrowane żądania itp. jesteś zawsze na bieżąco.
+Dzięki wyświetlaniu takich informacji, jak liczba zapytań, filtrowanych zapytań itp., zawsze będziesz na bieżąco.
 
-Możliwości są nieograniczone, jeśli rozszerzysz Homey o tę funkcję.
+Możliwości są nieograniczone, gdy rozszerzysz Homey o tę funkcję.
 
-Miłej zabawy z tą aplikacją
+Miłej zabawy z tą aplikacją.
+
+Tłumaczenia zostały wykonane za pomocą sztucznej inteligencji, w razie błędów prosimy o kontakt.

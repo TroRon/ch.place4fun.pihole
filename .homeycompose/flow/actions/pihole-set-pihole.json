@@ -2,42 +2,45 @@
   "id": "pihole-set-pihole",
   "title": {
     "en": "[[[state]] PiHole",
-    "de": "[[state]] PiHole",
-    "nl": "[[state]] PiHole",
-    "fr": "[[state]] PiHole",
-    "it": "[[state]] PiHole",
-    "sv": "[[state]] PiHole",
-    "no": "[[state]] PiHole",
-    "es": "[[state]] PiHole",
-    "da": "[[state]] PiHole",
-    "ru": "[[state]] PiHole",
-    "pl": "[[state]] PiHole"
+    "de": "[[[state]] PiHole",
+    "nl": "[[[state]] PiHole",
+    "da": "[[[state]] PiHole",
+    "fr": "[[[state]] PiHole",
+    "it": "[[[state]] PiHole",
+    "ko": "[[[state]] PiHole",
+    "no": "[[[state]] PiHole",
+    "pl": "[[[state]] PiHole",
+    "ru": "[[[state]] PiHole",
+    "sv": "[[[state]] PiHole",
+    "es": "[[[state]] PiHole"
   },
   "titleFormatted": {
     "en": "[[state]] PiHole",
     "de": "[[state]] PiHole",
     "nl": "[[state]] PiHole",
+    "da": "[[state]] PiHole",
     "fr": "[[state]] PiHole",
     "it": "[[state]] PiHole",
-    "sv": "[[state]] PiHole",
+    "ko": "[[state]] PiHole",
     "no": "[[state]] PiHole",
-    "es": "[[state]] PiHole",
-    "da": "[[state]] PiHole",
+    "pl": "[[state]] PiHole",
     "ru": "[[state]] PiHole",
-    "pl": "[[state]] PiHole"
-    },
+    "sv": "[[state]] PiHole",
+    "es": "[[state]] PiHole"
+  },
   "hint": {
-      "en": "Offer the possibility to stop, or start the filter for the selected instance.",
-      "de": "Bietet die Möglichkeit den Filter für die gewählte Instanz zu stoppen, oder zu starten.",
-      "nl": "Biedt de optie om het filter voor de geselecteerde instantie te stoppen of te starten.",
-      "fr": "Offre la possibilité d'arrêter ou de démarrer le filtre pour l'instance sélectionnée.",
-      "it": "Offre la possibilità di fermare o avviare il filtro per l'istanza selezionata.",
-      "sv": "Erbjuder möjlighet att stoppa eller starta filtret för det valda instansen.",
-      "no": "Tilbyr muligheten til å stoppe eller starte filteret for den valgte instansen.",
-      "es": "Ofrece la posibilidad de detener o iniciar el filtro para la instancia seleccionada.",
-      "da": "Tilbyder muligheden for at stoppe eller starte filteret for den valgte instans.",
-      "ru": "Предлагает возможность остановить или начать фильтрацию для выбранного экземпляра.",
-      "pl": "Oferuje możliwość zatrzymania lub uruchomienia filtra dla wybranej instancji."
+    "en": "Offer the possibility to stop, or start the filter for the selected instance.",
+    "de": "Bietet die Möglichkeit, den Filter für die ausgewählte Instanz zu starten oder zu stoppen.",
+    "nl": "Biedt de mogelijkheid om het filter voor de geselecteerde instantie te starten of te stoppen.",
+    "da": "Giver mulighed for at starte eller stoppe filteret for den valgte instans.",
+    "fr": "Offre la possibilité de démarrer ou d'arrêter le filtre pour l'instance sélectionnée.",
+    "it": "Offre la possibilità di avviare o arrestare il filtro per l'istanza selezionata.",
+    "ko": "선택한 인스턴스에 대해 필터를 시작하거나 중지할 수 있는 기능을 제공합니다.",
+    "no": "Gir muligheten til å starte eller stoppe filteret for den valgte instansen.",
+    "pl": "Umożliwia uruchomienie lub zatrzymanie filtra dla wybranego instancji.",
+    "ru": "Предоставляет возможность запустить или остановить фильтр для выбранного экземпляра.",
+    "sv": "Erbjuder möjlighet att starta eller stoppa filtret för den valda instansen.",
+    "es": "Ofrece la posibilidad de iniciar o detener el filtro para la instancia seleccionada."
   },
   "args": [
     {
@@ -45,51 +48,59 @@
       "type": "device",
       "filter": "driver_id=pihole"
     },
-            {
-          "name": "state",
-          "type": "dropdown",
-          "placeholder": {
+    {
+      "name": "state",
+      "type": "dropdown",
+      "placeholder": {
+        "en": "Activate",
+        "de": "Aktivieren",
+        "nl": "Activeren",
+        "da": "Aktiver",
+        "fr": "Activer",
+        "it": "Attivare",
+        "ko": "활성화",
+        "no": "Aktiver",
+        "pl": "Aktywuj",
+        "ru": "Активировать",
+        "sv": "Aktivera",
+        "es": "Activar"
+      },
+      "values": [
+        {
+          "id": "5",
+          "label": {
             "en": "Activate",
             "de": "Aktivieren",
-            "nl": "Activeer",
+            "nl": "Activeren",
+            "da": "Aktiver",
             "fr": "Activer",
-            "it": "Attiva",
-            "sv": "Aktivera",
+            "it": "Attivare",
+            "ko": "활성화",
             "no": "Aktiver",
-            "es": "Activar",
-            "da": "Aktivere",
+            "pl": "Aktywuj",
             "ru": "Активировать",
-            "pl": "Aktywować"
-          },
-            "values": [
-            { "id": "5", "label": { 
-              "en": "Activate",
-              "de": "Aktivieren",
-              "nl": "Activeer",
-              "fr": "Activer",
-              "it": "Attiva",
-              "sv": "Aktivera",
-              "no": "Aktiver",
-              "es": "Activar",
-              "da": "Aktivere",
-              "ru": "Активировать",
-              "pl": "Aktywować"
-          } },
-            { "id": "10", "label": {
-              "en": "Deactivate",
-              "de": "Deaktivieren",
-              "nl": "Deactiveer",
-              "fr": "Désactiver",
-              "it": "Disattiva",
-              "sv": "Inaktivera",
-              "no": "Deaktiver",
-              "es": "Desactivar",
-              "da": "Deaktiver",
-              "ru": "Деактивировать",
-              "pl": "Dezaktywować"           
-             } 
-           }
-          ]
-        }  
- ]
+            "sv": "Aktivera",
+            "es": "Activar"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "Deactivate",
+            "de": "Deaktivieren",
+            "nl": "Deactiveren",
+            "da": "Deaktiver",
+            "fr": "Désactiver",
+            "it": "Disattivare",
+            "ko": "비활성화",
+            "no": "Deaktiver",
+            "pl": "Dezaktywuj",
+            "ru": "Деактивировать",
+            "sv": "Avaktivera",
+            "es": "Desactivar"
+          }
+        }
+      ]
+    }
+  ]
 }

@@ -3,14 +3,16 @@
   "title": {
     "en": "Blocking state",
     "de": "Blockierungsstatus",
-    "da": "Blokeringsstatus",
-    "es": "Estado de bloqueo",
-    "fr": "État de blocage",
     "nl": "Blokkeringsstatus",
+    "da": "Blokeringsstatus",
+    "fr": "État de blocage",
+    "it": "Stato di blocco",
+    "ko": "차단 상태",
     "no": "Blokkeringsstatus",
     "pl": "Stan blokowania",
     "ru": "Состояние блокировки",
-    "sv": "Blockeringsstatus"
+    "sv": "Blockeringsstatus",
+    "es": "Estado de bloqueo"
   },
   "values": [
     {
@@ -18,14 +20,16 @@
       "title": {
         "en": "Enabled",
         "de": "Aktiviert",
-        "da": "Aktiveret",
-        "es": "Habilitado",
-        "fr": "Activé",
         "nl": "Ingeschakeld",
+        "da": "Aktiveret",
+        "fr": "Activé",
+        "it": "Abilitato",
+        "ko": "활성화됨",
         "no": "Aktivert",
         "pl": "Włączony",
         "ru": "Включено",
-        "sv": "Aktiverad"
+        "sv": "Aktiverad",
+        "es": "Habilitado"
       }
     },
     {
@@ -33,14 +37,16 @@
       "title": {
         "en": "Disabled",
         "de": "Deaktiviert",
-        "da": "Deaktiveret",
-        "es": "Deshabilitado",
-        "fr": "Désactivé",
         "nl": "Uitgeschakeld",
+        "da": "Deaktiveret",
+        "fr": "Désactivé",
+        "it": "Disabilitato",
+        "ko": "비활성화됨",
         "no": "Deaktivert",
         "pl": "Wyłączony",
         "ru": "Отключено",
-        "sv": "Inaktiverad"
+        "sv": "Inaktiverad",
+        "es": "Deshabilitado"
       }
     },
     {
@@ -48,14 +54,16 @@
       "title": {
         "en": "Failed",
         "de": "Fehlgeschlagen",
-        "da": "Mislykket",
-        "es": "Fallido",
-        "fr": "Échoué",
         "nl": "Mislukt",
-        "no": "Mislykket",
+        "da": "Mislykket",
+        "fr": "Échoué",
+        "it": "Fallito",
+        "ko": "실패",
+        "no": "Mislyktes",
         "pl": "Niepowodzenie",
         "ru": "Не удалось",
-        "sv": "Misslyckades"
+        "sv": "Misslyckades",
+        "es": "Fallido"
       }
     },
     {
@@ -63,14 +71,16 @@
       "title": {
         "en": "Unknown",
         "de": "Unbekannt",
-        "da": "Ukendt",
-        "es": "Desconocido",
-        "fr": "Inconnu",
         "nl": "Onbekend",
+        "da": "Ukendt",
+        "fr": "Inconnu",
+        "it": "Sconosciuto",
+        "ko": "알 수 없음",
         "no": "Ukjent",
         "pl": "Nieznany",
         "ru": "Неизвестно",
-        "sv": "Okänd"
+        "sv": "Okänd",
+        "es": "Desconocido"
       }
     }
   ],

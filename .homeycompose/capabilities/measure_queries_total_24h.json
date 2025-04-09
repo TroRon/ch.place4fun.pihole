@@ -3,14 +3,16 @@
   "title": {
     "en": "Total queries past 24h",
     "de": "Gesamte Anfragen der letzten 24 Stunden",
+    "nl": "Totaal aantal queries afgelopen 24 uur",
     "da": "Samlede forespørgsler sidste 24 timer",
-    "es": "Consultas totales últimas 24h",
-    "fr": "Requêtes totales des dernières 24h",
-    "nl": "Totale queries afgelopen 24 uur",
+    "fr": "Requêtes totales des dernières 24 heures",
+    "it": "Query totali ultime 24 ore",
+    "ko": "지난 24시간 총 쿼리",
     "no": "Totale forespørsler siste 24 timer",
-    "pl": "Łączna liczba zapytań z ostatnich 24 godzin",
+    "pl": "Łączna liczba zapytań w ciągu ostatnich 24 godzin",
     "ru": "Всего запросов за последние 24 часа",
-    "sv": "Totala förfrågningar senaste 24 timmarna"
+    "sv": "Totala förfrågningar senaste 24 timmarna",
+    "es": "Consultas totales últimas 24 horas"
   },
   "insights": true,
   "getable": true,

@@ -1,9 +1,11 @@
-Erweitern Sie Homey um die Möglichkeit, Ihre PiHoles zu kontrollieren.
+Udvid Homey med muligheden for at kontrollere dine PiHoles.
 
-Schliessen Sie eine beliebige Anzahl von PiHole's an Homey an und steuern Sie diese zentral.
+Tilslut et vilkårligt antal PiHoles til Homey og styr dem centralt.
 
-Durch Anzeigen wie die Anzahl der Anfragen, gefilterte Anfragen etc. sind Sie immer auf dem aktuellsten Stand.
+Ved at vise oplysninger som antallet af forespørgsler, filtrerede forespørgsler osv. er du altid opdateret.
 
-Die Möglichkeiten sind endlos, wenn Sie Homey mit dieser Funktion erweitern.
+Mulighederne er uendelige, når du udvider Homey med denne funktion.
 
-Viel Spass mit dieser App
+Hav det sjovt med denne app.
+
+Oversættelserne er lavet ved hjælp af KI, kontakt os venligst ved fejl.

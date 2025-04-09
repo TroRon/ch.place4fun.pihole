@@ -1,41 +1,43 @@
 {
-    "title": { 
-      "en": "Filter status has changed",
-      "de": "Filter wurde deaktiviert",
-      "nl": "Filterstatus is veranderd",
-      "fr": "Le statut du filtre a changé",
-      "it": "Lo stato del filtro è cambiato",
-      "sv": "Filterstatus har ändrats",
-      "no": "Filterstatus har endret seg",
-      "es": "El estado del filtro ha cambiado",
-      "da": "Filterstatus er ændret",
-      "ru": "Статус фильтра изменился",
-      "pl": "Stan filtra uległ zmianie" 
-    },
-      "tokens": [
-        {
-          "name": "alarm_filter_state",
-          "type": "boolean",
-          "title": { 
-            "en": "Filter status",
-            "de": "Filterstatus",
-            "nl": "Filterstatus",
-            "fr": "Statut du filtre",
-            "it": "Stato del filtro",
-            "sv": "Filterstatus",
-            "no": "Filterstatus",
-            "es": "Estado del filtro",
-            "da": "Filterstatus",
-            "ru": "Статус фильтра",
-            "pl": "Stan filtra"
-        }
-        }
-      ],
-      "args": [
-        {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=pihole"
-        }
-      ]
+  "title": { 
+    "en": "Filter status has changed",
+    "de": "Filterstatus hat sich geändert",
+    "nl": "Filterstatus is gewijzigd",
+    "da": "Filterstatus er ændret",
+    "fr": "Le statut du filtre a changé",
+    "it": "Lo stato del filtro è cambiato",
+    "ko": "필터 상태가 변경되었습니다",
+    "no": "Filterstatus har endret seg",
+    "pl": "Status filtra został zmieniony",
+    "ru": "Статус фильтра изменился",
+    "sv": "Filterstatus har ändrats",
+    "es": "El estado del filtro ha cambiado"
+  },
+  "tokens": [
+    {
+      "name": "alarm_filter_state",
+      "type": "boolean",
+      "title": { 
+        "en": "Filter status",
+        "de": "Filterstatus",
+        "nl": "Filterstatus",
+        "da": "Filterstatus",
+        "fr": "Statut du filtre",
+        "it": "Stato del filtro",
+        "ko": "필터 상태",
+        "no": "Filterstatus",
+        "pl": "Status filtra",
+        "ru": "Статус фильтра",
+        "sv": "Filterstatus",
+        "es": "Estado del filtro"
+      }
     }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=pihole"
+    }
+  ]
+}

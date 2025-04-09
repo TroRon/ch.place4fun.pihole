@@ -1,9 +1,11 @@
-Extend Homey with the option of controlling your PiHoles.
+Expand Homey with the ability to control your PiHoles.
 
 Connect any number of PiHoles to Homey and control them centrally.
 
-With displays such as the number of requests, filtered requests, etc., you are always up to date.
+By displaying information such as the number of requests, filtered requests, etc., you are always up to date.
 
-The possibilities are endless if you expand Homey with this function.
+The possibilities are endless when you expand Homey with this feature.
 
-Have fun with this app
+Have fun with this app.
+
+The translations were created using AI; please report any errors.

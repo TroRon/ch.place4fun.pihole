@@ -31,7 +31,7 @@ export class PiHoleV6Device extends Homey.Device {
     }
 
     async onInit() {
-        this.log('Initializing PiHole v6 device');
+        this.log('PiHoleV6 | Initializing device');
 
         // Update and register capabilities
         this.updateCapabilities();
@@ -54,16 +54,16 @@ export class PiHoleV6Device extends Homey.Device {
         // Register trigger cards arguments and update listeners
         this.registerFlowTriggerListeners();
 
-        this.log('Initialized PiHole v6 device');
+        this.log('PiHoleV6 | Initialized PiHole v6 device');
     }
 
     private registerCapabilityListeners() {
         // Blocking on/off toggle
         this.registerCapabilityListener('onoff', async (value: boolean) => {
-            this.log('onoff value changed to ', value);
+            this.log('PiHoleV6 | onoff value changed to', value);
             if (this._piHoleConnection) {
                 let result = await this._piHoleConnection.setBlockingState(value)
-                // immediately update onoff capability
+                // immediately update onoff capability --> crash
                 await this.setCapabilityValue("onoff", result.blocking == BlockingStatus.Enabled)
                 this.refresh() // immediately refresh data to ensure the UI is updated with the results of this action
             }
@@ -90,7 +90,7 @@ export class PiHoleV6Device extends Homey.Device {
 
     private registerFlowTriggerListeners() {
         // Get the current trigger card arguments, and update the argument lists when a change is made
-        this.log("Registering trigger card argument listeners")
+        this.log("PiHoleV6 | Registering trigger card argument listeners")
 
         this.registerdomainQueryFlowTrigger()
         this.driver.domainQueryFlowTrigger.addListener("update", () => this.registerdomainQueryFlowTrigger());
@@ -147,7 +147,7 @@ export class PiHoleV6Device extends Homey.Device {
 
     private startTriggerCheckInterval() {
         if (this.flowTriggerUpdateIntervalId == undefined) {
-            this.log("Starting flow trigger check")
+            this.log("PiHoleV6 | Starting flow trigger check")
             let intervalMs = PiHoleV6Device.FLOW_TRIGGER_UPDATE_INTERVAL_SECONDS * 1000;
             this.flowTriggerUpdateIntervalId = this.homey.setInterval(this.runTriggerCardsCheck.bind(this), intervalMs)
         }
@@ -159,21 +159,21 @@ export class PiHoleV6Device extends Homey.Device {
             && this.clientBlockedTriggerArgs.length == 0
             && this.clientQueriedTriggerArgs.length == 0;
         if (anyQueryTriggerCardInUse && this.flowTriggerUpdateIntervalId != undefined) {
-            this.log("Stopping flow trigger check, no registered flow cards")
+            this.log("PiHoleV6 | Stopping flow trigger check, no registered flow cards")
             this.homey.clearInterval(this.flowTriggerUpdateIntervalId)
             this.flowTriggerUpdateIntervalId = undefined
         }
     }
 
     async runTriggerCardsCheck() {
-        // this.log("Checking trigger cards based on queries in the past " + PiHoleV6Device.FLOW_TRIGGER_UPDATE_INTERVAL_SECONDS + " seconds")
+        // this.log("PiHoleV6 | Checking trigger cards based on queries in the past " + PiHoleV6Device.FLOW_TRIGGER_UPDATE_INTERVAL_SECONDS + " seconds")
         let recentQueries = undefined
         try {
             let secondsBack = PiHoleV6Device.FLOW_TRIGGER_UPDATE_INTERVAL_SECONDS * (1 + this.failedRecentQueryRequests);
             secondsBack = Math.min(secondsBack, 60); // never go back more than 60s
             recentQueries = await this._piHoleConnection?.getRecentQueries(secondsBack);
         } catch (e) {
-            this.log("Failed to fetch recent queries", e);
+            this.log("PiHoleV6 | Failed to fetch recent queries", e);
             this.failedRecentQueryRequests++
             return
         }
@@ -192,7 +192,7 @@ export class PiHoleV6Device extends Homey.Device {
 
         if (recentQueries != undefined) {
             for (const query of recentQueries.queries) {
-                this.log(JSON.stringify(query));
+                //this.log("PiHoleV6 | ", JSON.stringify(query));
 
                 // the domain state object for domain-based trigger cards
                 let domainstate = {
@@ -258,7 +258,7 @@ export class PiHoleV6Device extends Homey.Device {
      * onAdded is called when the user adds the device, called just after pairing.
      */
     async onAdded() {
-        this.log('PiHoleV6Device device added');
+        this.log('PiHoleV6 | Device device added');
     }
 
     /**
@@ -286,7 +286,7 @@ export class PiHoleV6Device extends Homey.Device {
      * @param {string} name The new name
      */
     async onRenamed(name: string) {
-        this.log('PiHoleV6Device renamed to ' + name);
+        this.log('PiHoleV6 | Device renamed to ' + name);
     }
 
     /**
@@ -350,10 +350,11 @@ export class PiHoleV6Device extends Homey.Device {
 
     async refresh() {
         if (!this._piHoleConnection) {
-            this.log("Cannot refresh, not connected!")
+            console.log("PiHoleV6 | Cannot refresh, not connected!")
             return
         }
         try {
+            console.log("PiHoleV6 | Begin Refreshing Statistic Data")
             // Get all statistics
             let statistics = await this._piHoleConnection.getAllInfo();
             // Update capabilities
@@ -373,12 +374,14 @@ export class PiHoleV6Device extends Homey.Device {
             this.setCapabilityValue('web_update_available', statistics.version.web.local.version != statistics.version.web.remote.version);
             this.setCapabilityValue('alarm_connectivity', false);
             this.setAvailable() // mark device as available in homey
+            console.log("PiHoleV6 | End Refreshing Statistic Data")
         } catch (e: any) {
             // Seeing issues with resolving the domain name pi.hole or pihole.local here?
             // This is a homey "Feature" where it completely ignores any network configuration and just uses googles DNS servers.
-            this.log("Failed to update: " + e)
+            console.log("PiHoleV6 | Failed to update: " + e)
             this.setCapabilityValue('alarm_connectivity', true);
             this.setUnavailable("Failed to update: " + e.message) // mark device as unavailable
+            console.log("PiHoleV6 | Error Refreshing Statistic Data")
         }
     }
 }

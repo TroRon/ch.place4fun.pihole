@@ -1,91 +1,107 @@
 {
-    "title": { 
-      "en": "Core update available",
-      "de": "Core Update vorhanden",
-      "nl": "Core Update beschikbaar",
-      "fr": "Mise à jour du noyau disponible",
-      "it": "Aggiornamento del core disponibile",
-      "sv": "Kärnuppdatering tillgänglig",
-      "no": "Kjerneoppdatering tilgjengelig",
-      "es": "Actualización del núcleo disponible",
-      "da": "Kerneopdatering tilgængelig",
-      "ru": "Обновление ядра доступно",
-      "pl": "Aktualizacja jądra dostępna"
+  "title": { 
+    "en": "Core update available",
+    "de": "Core-Update verfügbar",
+    "nl": "Core-update beschikbaar",
+    "da": "Kerneopdatering tilgængelig",
+    "fr": "Mise à jour du noyau disponible",
+    "it": "Aggiornamento del core disponibile",
+    "ko": "코어 업데이트 가능",
+    "no": "Kjerneoppdatering tilgjengelig",
+    "pl": "Aktualizacja rdzenia dostępna",
+    "ru": "Доступно обновление ядра",
+    "sv": "Kärnuppdatering tillgänglig",
+    "es": "Actualización del núcleo disponible"
+  },
+  "tokens": [
+    {
+      "name": "software_update_available",
+      "type": "boolean",
+      "title": { 
+        "en": "Core Update",
+        "de": "Core-Update",
+        "nl": "Core-update",
+        "da": "Kerneopdatering",
+        "fr": "Mise à jour du noyau",
+        "it": "Aggiornamento del core",
+        "ko": "코어 업데이트",
+        "no": "Kjerneoppdatering",
+        "pl": "Aktualizacja rdzenia",
+        "ru": "Обновление ядра",
+        "sv": "Kärnuppdatering",
+        "es": "Actualización del núcleo"
+      }
+    },
+    {
+      "name": "device",
+      "type": "string",
+      "title": {
+        "en": "Current Device",
+        "de": "Aktuelles Gerät",
+        "nl": "Huidig apparaat",
+        "da": "Nuværende enhed",
+        "fr": "Appareil actuel",
+        "it": "Dispositivo attuale",
+        "ko": "현재 장치",
+        "no": "Nåværende enhet",
+        "pl": "Bieżące urządzenie",
+        "ru": "Текущее устройство",
+        "sv": "Nuvarande enhet",
+        "es": "Dispositivo actual"
       },
-      "tokens": [
-        {
-          "name": "software_update_available",
-          "type": "boolean",
-          "title": { 
-            "en": "Core Update",
-            "de": "Core Update",
-            "nl": "Core Update",
-            "fr": "Mise à jour du noyau",
-            "it": "Aggiornamento del core",
-            "sv": "Kärnuppdatering",
-            "no": "Kjerneoppdatering",
-            "es": "Actualización del núcleo",
-            "da": "Kerneopdatering",
-            "ru": "Обновление ядра",
-            "pl": "Aktualizacja jądra"
-          }
-        },
-        {
-          "name": "device",
-          "type": "string",
-          "title": {
-            "en": "Current Device",
-            "de": "Aktuelles Gerät",
-            "nl": "Huidig Apparaat",
-            "fr": "Appareil Actuel",
-            "it": "Dispositivo Attuale",
-            "sv": "Nuvarande Enhet",
-            "no": "Nåværende Enhed",
-            "es": "Dispositivo Actual",
-            "da": "Aktuel Enhed",
-            "ru": "Текущее Устройство",
-            "pl": "Aktualne Urządzenie"
-             },
-          "example": { 
-            "en": "PiHole 1" 
-          }
-        },
-        {
-          "name": "service",
-          "type": "string",
-          "title": {
-            "en": "Update Type",
-            "de": "Art des Updates",
-            "nl": "Type update",
-            "fr": "Type de mise à jour",
-            "it": "Tipo di aggiornamento",
-            "sv": "Uppdateringstyp",
-            "no": "Oppdateringstype",
-            "es": "Tipo de actualización",
-            "da": "Opdateringstype",
-            "ru": "Тип обновления",
-            "pl": "Typ aktualizacji"
-             },
-          "example": { 
-            "en": "Core Update",
-            "de": "Core Update",
-            "nl": "Core Update",
-            "fr": "Mise à jour du noyau",
-            "it": "Aggiornamento del core",
-            "sv": "Kärnuppdatering",
-            "no": "Kjerneoppdatering",
-            "es": "Actualización del núcleo",
-            "da": "Kerneopdatering",
-            "ru": "Обновление ядра",
-            "pl": "Aktualizacja jądra"
-          }
-        }
-      ],
-      "args": [
-        {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=pihole"
-        }
-      ]
+      "example": { 
+        "en": "PiHole 1",
+        "de": "PiHole 1",
+        "nl": "PiHole 1",
+        "da": "PiHole 1",
+        "fr": "PiHole 1",
+        "it": "PiHole 1",
+        "ko": "PiHole 1",
+        "no": "PiHole 1",
+        "pl": "PiHole 1",
+        "ru": "PiHole 1",
+        "sv": "PiHole 1",
+        "es": "PiHole 1"
+      }
+    },
+    {
+      "name": "service",
+      "type": "string",
+      "title": {
+        "en": "Update Type",
+        "de": "Update-Typ",
+        "nl": "Update-type",
+        "da": "Opdateringstype",
+        "fr": "Type de mise à jour",
+        "it": "Tipo di aggiornamento",
+        "ko": "업데이트 유형",
+        "no": "Oppdateringstype",
+        "pl": "Typ aktualizacji",
+        "ru": "Тип обновления",
+        "sv": "Uppdateringstyp",
+        "es": "Tipo de actualización"
+      },
+      "example": { 
+        "en": "Core Update",
+        "de": "Core-Update",
+        "nl": "Core-update",
+        "da": "Kerneopdatering",
+        "fr": "Mise à jour du noyau",
+        "it": "Aggiornamento del core",
+        "ko": "코어 업데이트",
+        "no": "Kjerneoppdatering",
+        "pl": "Aktualizacja rdzenia",
+        "ru": "Обновление ядра",
+        "sv": "Kärnuppdatering",
+        "es": "Actualización del núcleo"
+      }
     }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=pihole"
+    }
+  ]
+}

@@ -45,7 +45,7 @@ export class PiHoleConnection {
             await this.updateSessionIdIfNeeded()
             return this.session_id != null;
         } catch (e) {
-            console.log("Invalid password: " + e)
+            console.log("PiHoleV6 | Invalid password: " + e)
             return false;
         }
     }
@@ -67,7 +67,7 @@ export class PiHoleConnection {
     }
 
     public async restartDns() {
-        return this.httpPost(PiHoleConnection.ENDPOINT_RESTART_DNS, true)
+        return this.httpPost(PiHoleConnection.ENDPOINT_RESTART_DNS, true)       
     }
 
     public async updateGravity() {
@@ -154,7 +154,7 @@ export class PiHoleConnection {
             ).then(
                 domain => {
                     if (domain.groups.includes(groupId)) {
-                        console.log("Domain " + domainName + " already in group " + groupId + ", no action required")
+                        console.log("PiHoleV6 | Domain " + domainName + " already in group " + groupId + ", no action required")
                         return false;
                     }
 
@@ -188,7 +188,7 @@ export class PiHoleConnection {
             ).then(
                 domain => {
                     if (!domain.groups.includes(groupId)) {
-                        console.log("Domain " + domainName + " is not present in group " + groupId + ", no action required")
+                        console.log("PiHoleV6 | Domain " + domainName + " is not present in group " + groupId + ", no action required")
                         return false;
                     }
 
@@ -247,18 +247,18 @@ export class PiHoleConnection {
                 }
             }
         }
-        console.log(url);
+        //console.log("Zugriffs-URL:" ,url);
         return fetch(url, options)
             .then(PiHoleConnection.parseOptionalJson)
             .then((json: any) => {
-                console.log(JSON.stringify(json));
+                //console.log(JSON.stringify(json));
                 if (json != null && Object.keys(json).includes('error')) {
                     throw new Error(json.error.message);
                 }
                 return json
             })
             .catch(error => {
-                console.log("Error while fetching information from PiHole: " + error)
+                console.log("PiHoleV6 | Error while fetching information from PiHole: " + error)
                 throw error
             });
     }
@@ -267,7 +267,7 @@ export class PiHoleConnection {
         return this.httpRaw(endpoint, "POST", authenticate, body)
             .then(PiHoleConnection.parseOptionalJson)
             .then((json: any) => {
-                console.log(json);
+                //console.log(json);
                 if (json != null && Object.keys(json).includes('error')) {
                     throw new Error(json.error.message);
                 }
@@ -292,7 +292,7 @@ export class PiHoleConnection {
         return this.httpRaw(endpoint, "DELETE", authenticate, body)
             .then(PiHoleConnection.parseOptionalJson)
             .then((json: any) => {
-                console.log(JSON.stringify(json));
+                //console.log(JSON.stringify(json));
                 if (json != null && Object.keys(json).includes('error')) {
                     throw new Error(json.error.message);
                 }
@@ -314,11 +314,11 @@ export class PiHoleConnection {
                 }
             }
         }
-        console.log(method + " " + url);
-        console.log(JSON.stringify(body));
+        //console.log(method + " " + url);
+        //console.log(JSON.stringify(body));
         return fetch(url, options)
             .catch(error => {
-                console.log("Error while fetching information from PiHole through POST request to " + url + ": " + error)
+                console.log("PiHoleV6 | Error while fetching information from PiHole through POST request to " + url + ": " + error)
                 throw error
             });
     }
@@ -367,7 +367,7 @@ export class PiHoleConnection {
                 throw new Error("Invalid API password")
             }
             this.session_id = sessionResponse.session.sid
-            console.log("Updated session id to " + this.session_id)
+            console.log("PiHoleV6 | Updated session id to " + this.session_id)
 
             // convert TTL to absolute timestamp
             this.session_expiry_timestamp = this.timestamp() + sessionResponse.session.validity
@@ -391,7 +391,7 @@ export class PiHoleConnection {
         if (this.session_id == null || this.session_expiry_timestamp <= this.timestamp()) {
             return // nothing to do, session token is already invalid
         }
-        console.log("Closing pihole connection, logging out")
+        console.log("PiHoleV6 | Closing pihole connection, logging out")
         this.httpDelete(PiHoleConnection.ENDPOINT_AUTH, true)
         this.session_id = null
     }

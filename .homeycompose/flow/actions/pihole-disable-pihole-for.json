@@ -1,182 +1,189 @@
 {
   "id": "pihole-disable-pihole-for",
-    "title": {
+  "title": {
     "en": "Disable PiHole for [[time]]",
-    "de": "Deaktiviere PiHole für [[time]]",
+    "de": "PiHole deaktivieren für [[time]]",
     "nl": "Schakel PiHole uit voor [[time]]",
-    "fr": "Désactivez PiHole pendant [[time]]",
-    "it": "Disabilita PiHole per [[time]]",
-    "sv": "Avaktivera PiHole under [[time]]",
-    "no": "Deaktiver PiHole for [[time]]",
-    "es": "Desactivar PiHole durante [[time]]",
     "da": "Deaktiver PiHole i [[time]]",
-    "ru": "Отключите PiHole на [[time]]",
-    "pl": "Wyłącz PiHole na [[time]]"
+    "fr": "Désactiver PiHole pendant [[time]]",
+    "it": "Disabilita PiHole per [[time]]",
+    "ko": "[[time]] 동안 PiHole 비활성화",
+    "no": "Deaktiver PiHole i [[time]]",
+    "pl": "Wyłącz PiHole na [[time]]",
+    "ru": "Отключить PiHole на [[time]]",
+    "sv": "Inaktivera PiHole i [[time]]",
+    "es": "Desactivar PiHole durante [[time]]"
   },
-    "titleFormatted": {
+  "titleFormatted": {
     "en": "Disable PiHole for [[time]]",
-    "de": "Deaktiviere den PiHole für [[time]]",
+    "de": "PiHole deaktivieren für [[time]]",
     "nl": "Schakel PiHole uit voor [[time]]",
-    "fr": "Désactivez PiHole pour [[time]]",
-    "it": "Disattiva PiHole per [[time]]",
-    "sv": "Avaktivera PiHole för [[time]]",
-    "no": "Deaktiver PiHole for [[time]]",
-    "es": "Desactivar PiHole por [[time]]",
-    "da": "Deaktiver PiHole for [[time]]",
-    "ru": "Отключите PiHole на [[time]]",
-    "pl": "Wyłącz PiHole na [[time]]"
+    "da": "Deaktiver PiHole i [[time]]",
+    "fr": "Désactiver PiHole pendant [[time]]",
+    "it": "Disabilita PiHole per [[time]]",
+    "ko": "[[time]] 동안 PiHole 비활성화",
+    "no": "Deaktiver PiHole i [[time]]",
+    "pl": "Wyłącz PiHole na [[time]]",
+    "ru": "Отключить PiHole на [[time]]",
+    "sv": "Inaktivera PiHole i [[time]]",
+    "es": "Desactivar PiHole durante [[time]]"
   },
   "hint": {
     "en": "Offers the possibility to disable the current PiHole for a specific period of time.",
-    "de": "Bietet die Möglichkeit, den aktuellen PiHole für eine bestimmte Zeitspanne zu deaktivieren.",
-    "nl": "Biedt de mogelijkheid om de huidige PiHole voor een bepaalde tijd te deactiveren.",
-    "fr": "Offre la possibilité de désactiver le PiHole actuel pour une période spécifique.",
-    "it": "Offre la possibilità di disattivare l'attuale PiHole per un periodo di tempo specifico.",
-    "sv": "Erbjuder möjligheten att inaktivera den aktuella PiHole för en specifik tidsperiod.",
-    "no": "Tilbyr muligheten til å deaktivere den nåværende PiHole for en bestemt tidsperiode.",
-    "es": "Ofrece la posibilidad de desactivar el PiHole actual por un período de tiempo específico.",
-    "da": "Tilbyder muligheden for at deaktivere den nuværende PiHole i en bestemt tidsperiode.",
-    "ru": "Предлагает возможность отключить текущий PiHole на определенный период времени.",
-    "pl": "Oferuje możliwość wyłączenia aktualnego PiHole na określony okres czasu."
+    "de": "Bietet die Möglichkeit, den aktuellen PiHole für einen bestimmten Zeitraum zu deaktivieren.",
+    "nl": "Biedt de mogelijkheid om de huidige PiHole voor een bepaalde tijd uit te schakelen.",
+    "da": "Giver mulighed for at deaktivere den aktuelle PiHole i en bestemt periode.",
+    "fr": "Offre la possibilité de désactiver le PiHole actuel pendant une période spécifique.",
+    "it": "Offre la possibilità di disabilitare l'attuale PiHole per un periodo di tempo specifico.",
+    "ko": "현재 PiHole을 특정 시간 동안 비활성화할 수 있습니다.",
+    "no": "Gir mulighet til å deaktivere den nåværende PiHole i en bestemt periode.",
+    "pl": "Umożliwia wyłączenie bieżącego PiHole na określony czas.",
+    "ru": "Предоставляет возможность отключить текущий PiHole на определённый период времени.",
+    "sv": "Erbjuder möjlighet att inaktivera den aktuella PiHole under en viss tidsperiod.",
+    "es": "Ofrece la posibilidad de desactivar el PiHole actual durante un período específico de tiempo."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=pihole"
     },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=pihole"
-
+    {
+      "name": "time",
+      "type": "dropdown",
+      "placeholder": {
+        "en": "5 Minutes",
+        "de": "5 Minuten",
+        "nl": "5 Minuten",
+        "da": "5 minutter",
+        "fr": "5 minutes",
+        "it": "5 minuti",
+        "ko": "5분",
+        "no": "5 minutter",
+        "pl": "5 minut",
+        "ru": "5 минут",
+        "sv": "5 minuter",
+        "es": "5 minutos"
       },
-      {
-          "name": "time",
-          "type": "dropdown",
-          "placeholder": {
-              "en": "5 Minutes",
-              "de": "5 Minuten",
-              "nl": "5 minuten",
-              "fr": "5 minutes",
-              "it": "5 minuti",
-              "sv": "5 minuter",
-              "no": "5 minutter",
-              "es": "5 minutos",
-              "da": "5 minutter",
-              "ru": "5 минут",
-              "pl": "5 minut"
-      },
-          "values": [
-              { "id": "5", "label": { 
-                "en": "5 Minutes",
-                "de": "5 Minuten",
-                "nl": "5 minuten",
-                "fr": "5 minutes",
-                "it": "5 minuti",
-                "sv": "5 minuter",
-                "no": "5 minutter",
-                "es": "5 minutos",
-                "da": "5 minutter",
-                "ru": "5 минут",
-                "pl": "5 minut"
-              } 
-             },
-             {  "id": "10", "label": { 
-                "en": "10 Minutes",
-                "de": "10 Minuten",
-                "nl": "10 minuten",
-                "fr": "10 minutes",
-                "it": "10 minuti",
-                "sv": "10 minuter",
-                "no": "10 minutter",
-                "es": "10 minutos",
-                "da": "10 minutter",
-                "ru": "10 минут",
-                "pl": "10 minut"              } 
-            },
-            {   "id": "15", "label": { 
-                "en": "15 Minutes",
-                "de": "15 Minuten",
-                "nl": "15 minuten",
-                "fr": "15 minutes",
-                "it": "15 minuti",
-                "sv": "15 minuter",
-                "no": "15 minutter",
-                "es": "15 minutos",
-                "da": "15 minutter",
-                "ru": "15 минут",
-                "pl": "15 minut"
-              } 
-           },
-           {    "id": "30", "label": { 
-                "en": "30 Minutes",
-                "de": "30 Minuten",
-                "nl": "30 minuten",
-                "fr": "30 minutes",
-                "it": "30 minuti",
-                "sv": "30 minuter",
-                "no": "30 minutter",
-                "es": "30 minutos",
-                "da": "30 minutter",
-                "ru": "30 минут",      
-                "pl": "30 minut"
-             } 
-           },
-           {    "id": "45", "label": { 
-                "en": "45 Minutes",
-                "de": "45 Minuten",
-                "nl": "45 minuten",
-                "fr": "45 minutes",
-                "it": "45 minuti",
-                "sv": "45 minuter",
-                "no": "45 minutter",
-                "es": "45 minutos",
-                "da": "45 minutter",
-                "ru": "45 минут",
-                "pl": "45 minut"               } 
-            },
-            {   "id": "60", "label": { 
-                "en": "60 Minutes",
-                "de": "60 Minuten",
-                "nl": "60 minuten",
-                "fr": "60 minutes",
-                "it": "60 minuti",
-                "sv": "60 minuter",
-                "no": "60 minutter",
-                "es": "60 minutos",
-                "da": "60 minutter",
-                "ru": "60 минут",
-                "pl": "60 minut"
-              } 
-           }
-          ]
-      }
+      "values": [
+        { "id": "5", "label": { 
+          "en": "5 Minutes",
+          "de": "5 Minuten",
+          "nl": "5 Minuten",
+          "da": "5 minutter",
+          "fr": "5 minutes",
+          "it": "5 minuti",
+          "ko": "5분",
+          "no": "5 minutter",
+          "pl": "5 minut",
+          "ru": "5 минут",
+          "sv": "5 minuter",
+          "es": "5 minutos"
+        }},
+        { "id": "10", "label": { 
+          "en": "10 Minutes",
+          "de": "10 Minuten",
+          "nl": "10 Minuten",
+          "da": "10 minutter",
+          "fr": "10 minutes",
+          "it": "10 minuti",
+          "ko": "10분",
+          "no": "10 minutter",
+          "pl": "10 minut",
+          "ru": "10 минут",
+          "sv": "10 minuter",
+          "es": "10 minutos"
+        }},
+        { "id": "15", "label": { 
+          "en": "15 Minutes",
+          "de": "15 Minuten",
+          "nl": "15 Minuten",
+          "da": "15 minutter",
+          "fr": "15 minutes",
+          "it": "15 minuti",
+          "ko": "15분",
+          "no": "15 minutter",
+          "pl": "15 minut",
+          "ru": "15 минут",
+          "sv": "15 minuter",
+          "es": "15 minutos"
+        }},
+        { "id": "30", "label": { 
+          "en": "30 Minutes",
+          "de": "30 Minuten",
+          "nl": "30 Minuten",
+          "da": "30 minutter",
+          "fr": "30 minutes",
+          "it": "30 minuti",
+          "ko": "30분",
+          "no": "30 minutter",
+          "pl": "30 minut",
+          "ru": "30 минут",
+          "sv": "30 minuter",
+          "es": "30 minutos"
+        }},
+        { "id": "45", "label": { 
+          "en": "45 Minutes",
+          "de": "45 Minuten",
+          "nl": "45 Minuten",
+          "da": "45 minutter",
+          "fr": "45 minutes",
+          "it": "45 minuti",
+          "ko": "45분",
+          "no": "45 minutter",
+          "pl": "45 minut",
+          "ru": "45 минут",
+          "sv": "45 minuter",
+          "es": "45 minutos"
+        }},
+        { "id": "60", "label": { 
+          "en": "60 Minutes",
+          "de": "60 Minuten",
+          "nl": "60 Minuten",
+          "da": "60 minutter",
+          "fr": "60 minutes",
+          "it": "60 minuti",
+          "ko": "60분",
+          "no": "60 minutter",
+          "pl": "60 minut",
+          "ru": "60 минут",
+          "sv": "60 minuter",
+          "es": "60 minutos"
+        }}
+      ]
+    }
   ],
   "tokens": [
     {
       "name": "time",
       "type": "number",
       "title": {
+        "en": "Inactivity for (in minutes)",
         "de": "Inaktivität für (in Minuten)",
-        "en": "Inactive for (in minutes)",
-        "nl": "Inactief gedurende (in minuten)",
-        "fr": "Inactif pendant (en minutes)",
-        "it": "Inattivo per (in minuti)",
-        "sv": "Inaktiv i (i minuter)",
-        "no": "Inaktiv i (i minutter)",
-        "es": "Inactivo durante (en minutos)",
-        "da": "Inaktiv i (i minutter)",
-        "ru": "Неактивен в течение (в минутах)",
-        "pl": "Nieaktywny przez (w minutach)"
+        "nl": "Inactiviteit voor (in minuten)",
+        "da": "Inaktivitet i (i minutter)",
+        "fr": "Inactivité pendant (en minutes)",
+        "it": "Inattività per (in minuti)",
+        "ko": "비활성화 시간 (분 단위)",
+        "no": "Inaktivitet i (i minutter)",
+        "pl": "Nieaktywność przez (w minutach)",
+        "ru": "Неактивность в течение (в минутах)",
+        "sv": "Inaktivitet i (i minuter)",
+        "es": "Inactividad durante (en minutos)"
       },
       "example": {
         "en": "10 Minutes",
         "de": "10 Minuten",
-        "nl": "10 minuten",
+        "nl": "10 Minuten",
+        "da": "10 minutter",
         "fr": "10 minutes",
         "it": "10 minuti",
-        "sv": "10 minuter",
+        "ko": "10분",
         "no": "10 minutter",
-        "es": "10 minutos",
-        "da": "10 minutter",
+        "pl": "10 minut",
         "ru": "10 минут",
-        "pl": "10 minut"
+        "sv": "10 minuter",
+        "es": "10 minutos"
       }
     }
   ]

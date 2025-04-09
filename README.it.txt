@@ -1,9 +1,11 @@
-Estendete Homey con la possibilità di controllare i vostri PiHoles.
+Espandi Homey con la possibilità di controllare i tuoi PiHole.
 
-Collegate un numero qualsiasi di PiHoles a Homey e controllateli a livello centrale.
+Collega un numero qualsiasi di PiHole a Homey e gestiscili centralmente.
 
-Con visualizzazioni quali il numero di richieste, le richieste filtrate e così via, sarete sempre aggiornati.
+Con visualizzazioni come il numero di richieste, richieste filtrate, ecc., sarai sempre aggiornato.
 
-Le possibilità sono infinite se si espande Homey con questa funzione.
+Le possibilità sono infinite quando espandi Homey con questa funzione.
 
-Divertitevi con questa applicazione
+Divertiti con questa app.
+
+Le traduzioni sono state create utilizzando l'intelligenza artificiale, per eventuali errori non esitare a segnalarli.

@@ -1,37 +1,38 @@
 {
-      "id": "pihole-enable-piholes",
-      "title": {
-      "en": "Enable all PiHole(s)",
-      "de": "Alle PiHole(s) aktivieren",
-      "nl": "Activeer alle PiHole(s)",
-      "fr": "Activez tous les PiHole(s)",
-      "it": "Abilita tutti i PiHole(s)",
-      "sv": "Aktivera alla PiHole(s)",
-      "no": "Aktiver alle PiHole(r)",
-      "es": "Activar todos los PiHole(s)",
-      "da": "Aktiver alle PiHole(r)",
-      "ru": "Включить все PiHole(ы)",
-      "pl": "Włącz wszystkie PiHole(s)"
-    },
-    "hint": {
-      "en": "Enable the defined PiHole Instance(s).",
-      "de": "Aktiviert die definierten PiHole Instanzen.",
-      "nl": "Activeert de gedefinieerde PiHole instanties.",
-      "fr": "Active les instance(s) PiHole définie(s).",
-      "it": "Abilita l'istanza(e) PiHole definita(e)",
-      "sv": "Aktiverar de definierade PiHole-instansen(s).",
-      "no": "Aktiverer den definerte PiHole-instansen(e).",
-      "es": "Activa la(s) instancia(s) PiHole definida(s).",
-      "da": "Aktiver den/de definerede PiHole-instans(er).",
-      "ru": "Включает определенный(ые) экземпляр(ы) PiHole.",
-      "pl": "Włącza zdefiniowaną(e) instancję(e) PiHole."
-    },
-    "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": "driver_id=pihole"
-  
-      }
-    ]
-  }
+  "id": "pihole-enable-piholes",
+  "title": {
+    "en": "Enable all PiHole(s)",
+    "de": "Alle PiHole(s) aktivieren",
+    "nl": "Alle PiHole(s) inschakelen",
+    "da": "Aktiver alle PiHole(s)",
+    "fr": "Activer tous les PiHole(s)",
+    "it": "Abilita tutti i PiHole",
+    "ko": "모든 PiHole 활성화",
+    "no": "Aktiver alle PiHole(s)",
+    "pl": "Włącz wszystkie PiHole",
+    "ru": "Включить все PiHole",
+    "sv": "Aktivera alla PiHole(s)",
+    "es": "Habilitar todos los PiHole(s)"
+  },
+  "hint": {
+    "en": "Enable the defined PiHole Instance(s).",
+    "de": "Aktivieren Sie die definierten PiHole-Instanz(en).",
+    "nl": "Schakel de gedefinieerde PiHole-instantie(s) in.",
+    "da": "Aktiver den definerede PiHole-instans(er).",
+    "fr": "Activez l'instance(s) PiHole définie(s).",
+    "it": "Abilita l'istanza(e) PiHole definita.",
+    "ko": "정의된 PiHole 인스턴스를 활성화합니다.",
+    "no": "Aktiver den definerte PiHole-instansen(e).",
+    "pl": "Włącz zdefiniowaną instancję PiHole.",
+    "ru": "Включите определённый экземпляр PiHole.",
+    "sv": "Aktivera den definierade PiHole-instansen.",
+    "es": "Habilite la(s) instancia(s) de PiHole definida(s)."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=pihole"
+    }
+  ]
+}

@@ -13,15 +13,16 @@
     "pl": "Alarm łączności",
     "ru": "Сигнал о подключении",
     "sv": "Anslutningslarm",
-    "es": "Alarma de conexión"
+    "es": "Alarma de conexión" 
   },
   "desc": {
     "en": "True when disconnected from the network.",
+    "de": "Wird aktiviert, wenn das Gerät nicht mehr mit dem Netzwerk verbunden ist.",
     "nl": "Wordt geactiveerd wanneer het apparaat niet meer verbonden is met het netwerk.",
     "da": "Sandt, når forbindelsen til netværket er afbrudt.",
     "fr": "Se déclenche lorsque le réseau est déconnecté.",
     "it": "Vero quando si è disconnessi dalla rete.",
-    "ko": "네트워크에서 연결 해제되면 참입니다.",
+    "ko": "네트워크에서 연결이 끊어지면 참입니다.",
     "no": "Sann når koblet fra nettverket.",
     "pl": "Prawda, gdy nastąpiło odłączenie od sieci.",
     "ru": "Значение «истина», когда устройство отключено от сети.",
@@ -31,6 +32,7 @@
   "insights": true,
   "insightsTitleTrue": {
     "en": "Disconnected",
+    "de": "Nicht verbunden",
     "nl": "Niet verbonden",
     "da": "Afbrudt",
     "fr": "Déconnecté",
@@ -44,6 +46,7 @@
   },
   "insightsTitleFalse": {
     "en": "Connected",
+    "de": "Verbunden",
     "nl": "Verbonden",
     "da": "Tilsluttet",
     "fr": "Connecté",

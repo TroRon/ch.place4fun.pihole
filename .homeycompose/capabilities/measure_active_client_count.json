@@ -3,14 +3,16 @@
   "title": {
     "en": "Active client count",
     "de": "Aktive Client-Anzahl",
+    "nl": "Actieve clienttelling",
     "da": "Aktiv klientantal",
-    "es": "Recuento de clientes activos",
     "fr": "Nombre de clients actifs",
-    "nl": "Aantal actieve clients",
-    "no": "Antall aktive klienter",
+    "it": "Conteggio client attivi",
+    "ko": "활성 클라이언트 수",
+    "no": "Aktiv klientantall",
     "pl": "Liczba aktywnych klientów",
     "ru": "Количество активных клиентов",
-    "sv": "Antal aktiva klienter"
+    "sv": "Aktivt klientantal",
+    "es": "Conteo de clientes activos"
   },
   "insights": true,
   "getable": true,

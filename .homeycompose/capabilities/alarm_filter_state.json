@@ -11,7 +11,8 @@
       "es": "Filtro desactivado?",
       "da": "Filter deaktiveret?",
       "ru": "Фильтр отключен?",
-      "pl": "Filtr wyłączony?"
+      "pl": "Filtr wyłączony?",
+      "ko": "필터 비활성화됨?"
     },
     "titleTrue": {
       "en": "Filter deactivated?",
@@ -24,7 +25,8 @@
       "es": "Filtro desactivado?",
       "da": "Filter deaktiveret?",
       "ru": "Фильтр отключен?",
-      "pl": "Filtr wyłączony?"
+      "pl": "Filtr wyłączony?",
+      "ko": "필터 비활성화됨?"
     },
     "titleFalse": {
       "en": "Your filter is DEACTIVATED",
@@ -37,7 +39,8 @@
       "es": "Tu filtro está DESACTIVADO",
       "da": "Dit filter er DEAKTIVERET",
       "ru": "Ваш фильтр ДЕАКТИВИРОВАН",
-      "pl": "Twój filtr jest WYŁĄCZONY"
+      "pl": "Twój filtr jest WYŁĄCZONY",
+      "ko": "필터가 비활성화되었습니다"
     },
     "getable": true,
     "setable": true,

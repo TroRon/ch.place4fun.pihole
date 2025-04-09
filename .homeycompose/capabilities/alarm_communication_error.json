@@ -2,6 +2,7 @@
     "type": "boolean",
     "title": {
       "en": "Connection lost?",
+      "ko": "연결이 끊어졌습니까?",
       "de": "Verbindung verloren?",
       "nl": "Verbinding verloren?",
       "fr": "Connexion perdue?",

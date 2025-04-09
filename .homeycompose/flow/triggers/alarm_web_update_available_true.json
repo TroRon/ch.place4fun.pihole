@@ -1,91 +1,107 @@
 {
-    "title": { 
-      "en": "Web Update available",
-      "de": "Web Update vorhanden",
-      "nl": "Web Update beschikbaar",
-      "fr": "Mise à jour Web disponible",
-      "it": "Aggiornamento web disponibile",
-      "sv": "Webbuppdatering tillgänglig",
-      "no": "Weboppdatering tilgjengelig",
-      "es": "Actualización web disponible",
-      "da": "Webopdatering tilgængelig",
-      "ru": "Доступно обновление веб",
-      "pl": "Dostępna aktualizacja webowa"
+  "title": { 
+    "en": "Web Update available",
+    "de": "Web-Update verfügbar",
+    "nl": "Webupdate beschikbaar",
+    "da": "Webopdatering tilgængelig",
+    "fr": "Mise à jour Web disponible",
+    "it": "Aggiornamento Web disponibile",
+    "ko": "웹 업데이트 가능",
+    "no": "Weboppdatering tilgjengelig",
+    "pl": "Dostępna aktualizacja sieciowa",
+    "ru": "Доступно веб-обновление",
+    "sv": "Webbuppdatering tillgänglig",
+    "es": "Actualización web disponible"
+  },
+  "tokens": [
+    {
+      "name": "software_update_available",
+      "type": "boolean",
+      "title": { 
+        "en": "Web Update",
+        "de": "Web-Update",
+        "nl": "Webupdate",
+        "da": "Webopdatering",
+        "fr": "Mise à jour Web",
+        "it": "Aggiornamento Web",
+        "ko": "웹 업데이트",
+        "no": "Weboppdatering",
+        "pl": "Aktualizacja sieciowa",
+        "ru": "Веб-обновление",
+        "sv": "Webbuppdatering",
+        "es": "Actualización web"
+      }
+    },
+    {
+      "name": "device",
+      "type": "string",
+      "title": {
+        "en": "Current Device",
+        "de": "Aktuelles Gerät",
+        "nl": "Huidig apparaat",
+        "da": "Nuværende enhed",
+        "fr": "Appareil actuel",
+        "it": "Dispositivo attuale",
+        "ko": "현재 장치",
+        "no": "Nåværende enhet",
+        "pl": "Bieżące urządzenie",
+        "ru": "Текущее устройство",
+        "sv": "Nuvarande enhet",
+        "es": "Dispositivo actual"
       },
-      "tokens": [
-        {
-          "name": "software_update_available",
-          "type": "boolean",
-          "title": { 
-            "en": "Web Update",
-            "de": "Web Update",
-            "nl": "Web Update",
-            "fr": "Mise à jour Web",
-            "it": "Aggiornamento web",
-            "sv": "Webbuppdatering",
-            "no": "Weboppdatering",
-            "es": "Actualización web",
-            "da": "Webopdatering",
-            "ru": "Обновление веб",
-            "pl": "Aktualizacja webowa"
-          }
-        },
-        {
-          "name": "device",
-          "type": "string",
-          "title": {
-            "en": "Current Device",
-            "de": "Aktuelles Gerät",
-            "nl": "Huidig Apparaat",
-            "fr": "Appareil Actuel",
-            "it": "Dispositivo Attuale",
-            "sv": "Nuvarande Enhet",
-            "no": "Nåværende Enhed",
-            "es": "Dispositivo Actual",
-            "da": "Aktuel Enhed",
-            "ru": "Текущее Устройство",
-            "pl": "Aktualne Urządzenie"
-             },
-          "example": { 
-            "en": "PiHole 1" 
-          }
-        },
-        {
-          "name": "service",
-          "type": "string",
-          "title": {
-            "en": "Update Type",
-            "de": "Art des Updates",
-            "nl": "Type update",
-            "fr": "Type de mise à jour",
-            "it": "Tipo di aggiornamento",
-            "sv": "Uppdateringstyp",
-            "no": "Oppdateringstype",
-            "es": "Tipo de actualización",
-            "da": "Opdateringstype",
-            "ru": "Тип обновления",
-            "pl": "Typ aktualizacji"
-             },
-          "example": { 
-            "en": "Web Update",
-            "de": "Web-Aktualisierung",
-            "nl": "Webupdate",
-            "fr": "Mise à jour Web",
-            "it": "Aggiornamento Web",
-            "sv": "Webbuppdatering",
-            "no": "Weboppdatering",
-            "es": "Actualización web",
-            "da": "Webopdatering",
-            "ru": "Обновление веб-сайта",
-            "pl": "Aktualizacja sieciowa"
-          }
-        }
-      ],
-      "args": [
-        {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=pihole"
-        }
-      ]
+      "example": { 
+        "en": "PiHole 1",
+        "de": "PiHole 1",
+        "nl": "PiHole 1",
+        "da": "PiHole 1",
+        "fr": "PiHole 1",
+        "it": "PiHole 1",
+        "ko": "PiHole 1",
+        "no": "PiHole 1",
+        "pl": "PiHole 1",
+        "ru": "PiHole 1",
+        "sv": "PiHole 1",
+        "es": "PiHole 1"
+      }
+    },
+    {
+      "name": "service",
+      "type": "string",
+      "title": {
+        "en": "Update Type",
+        "de": "Aktualisierungstyp",
+        "nl": "Updatetype",
+        "da": "Opdateringstype",
+        "fr": "Type de mise à jour",
+        "it": "Tipo di aggiornamento",
+        "ko": "업데이트 유형",
+        "no": "Oppdateringstype",
+        "pl": "Typ aktualizacji",
+        "ru": "Тип обновления",
+        "sv": "Uppdateringstyp",
+        "es": "Tipo de actualización"
+      },
+      "example": { 
+        "en": "Web Update",
+        "de": "Web-Update",
+        "nl": "Webupdate",
+        "da": "Webopdatering",
+        "fr": "Mise à jour Web",
+        "it": "Aggiornamento Web",
+        "ko": "웹 업데이트",
+        "no": "Weboppdatering",
+        "pl": "Aktualizacja sieciowa",
+        "ru": "Веб-обновление",
+        "sv": "Webbuppdatering",
+        "es": "Actualización web"
+      }
     }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=pihole"
+    }
+  ]
+}

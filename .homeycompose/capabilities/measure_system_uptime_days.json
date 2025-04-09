@@ -3,14 +3,16 @@
   "title": {
     "en": "System uptime",
     "de": "Systemlaufzeit",
-    "da": "Systemets oppetid",
-    "es": "Tiempo de actividad del sistema",
-    "fr": "Temps de fonctionnement du système",
     "nl": "Systeem-uptime",
-    "no": "Systemets oppetid",
+    "da": "Systemoppetid",
+    "fr": "Temps de fonctionnement du système",
+    "it": "Tempo di attività del sistema",
+    "ko": "시스템 가동 시간",
+    "no": "Systemoppetid",
     "pl": "Czas pracy systemu",
     "ru": "Время работы системы",
-    "sv": "Systemets drifttid"
+    "sv": "Systemets drifttid",
+    "es": "Tiempo de actividad del sistema"
   },
   "units": {
     "en": "days"

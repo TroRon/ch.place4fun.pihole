@@ -2,36 +2,37 @@
   "id": "pihole-disable-piholes",
   "title": {
     "en": "Disable all PiHole(s),",
-    "de": "Alle Pihole(s) deaktivieren",
-    "nl": "Deactiveer alle pihole(s)",
-    "fr": "Désactivez tous les PiHole(s)",
-    "it": "Disabilita tutti i PiHole(s)",
-    "sv": "Inaktivera alla PiHole(s)",
-    "no": "Deaktiver alle PiHole(r)",
-    "es": "Desactivar todos los PiHole(s)",
-    "da": "Deaktiver alle PiHole(r)",
-    "ru": "Отключить все PiHole(ы)",
-    "pl": "Wyłącz wszystkie PiHole(s)"
+    "de": "Alle PiHole(s) deaktivieren,",
+    "nl": "Alle PiHole(s) uitschakelen,",
+    "da": "Deaktiver alle PiHole(s),",
+    "fr": "Désactiver tous les PiHole(s),",
+    "it": "Disabilita tutti i PiHole,",
+    "ko": "모든 PiHole 비활성화,",
+    "no": "Deaktiver alle PiHole(s),",
+    "pl": "Wyłącz wszystkie PiHole,",
+    "ru": "Отключить все PiHole,",
+    "sv": "Inaktivera alla PiHole(s),",
+    "es": "Desactivar todos los PiHole(s),"
   },
   "hint": {
     "en": "Disable the defined PiHole Instance(s).",
-    "de": "Deaktiviert die definierte(n) PiHole Instanz(en).",
-    "nl": "Deactiveert de gedefinieerde PiHole-instantie(s).",
-    "fr": "Désactive les instance(s) PiHole définie(s).",
-    "it": "Disabilita l'istanza(e) PiHole definita(e)",
-    "sv": "Inaktiverar de definierade PiHole-instansen(s).",
-    "no": "Deaktiverer den definerte PiHole-instansen(e).",
-    "es": "Desactiva la(s) instancia(s) PiHole definida(s).",
-    "da": "Deaktiver den/de definerede PiHole-instans(er).",
-    "ru": "Отключает определенный(ые) экземпляр(ы) PiHole.",
-    "pl": "Wyłącza zdefiniowaną(e) instancję(e) PiHole."
+    "de": "Deaktivieren Sie die definierten PiHole-Instanz(en).",
+    "nl": "Schakel de gedefinieerde PiHole-instantie(s) uit.",
+    "da": "Deaktiver den definerede PiHole-instans(er).",
+    "fr": "Désactivez l'instance(s) PiHole définie(s).",
+    "it": "Disabilita l'istanza(e) PiHole definita.",
+    "ko": "정의된 PiHole 인스턴스를 비활성화합니다.",
+    "no": "Deaktiver den definerte PiHole-instansen(e).",
+    "pl": "Wyłącz zdefiniowaną instancję(e) PiHole.",
+    "ru": "Отключите заданный экземпляр(ы) PiHole.",
+    "sv": "Inaktivera den definierade PiHole-instansen.",
+    "es": "Desactiva la(s) instancia(s) de PiHole definida(s)."
   },
   "args": [
     {
       "name": "device",
       "type": "device",
       "filter": "driver_id=pihole"
-
     }
   ]
 }
