@@ -9,7 +9,7 @@ Many thanks to [Ronny Winkler](https://rwdevelopment.de/) for his support.
 
 # Version History
 
-### v2.1.0 (Store Release)
+### v2.1.1 (Store Release)
 Bug fixes / Optimizations
 
 ### v2.0.1 (Store Release)

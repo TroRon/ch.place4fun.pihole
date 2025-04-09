@@ -1,6 +1,6 @@
 {
   "warnings": {
-    "deprecated1": "INFO: Um Unterstützung für den PiHole6 zu haben, müssen die Geräte neu hinugefügt werden.",
+    "deprecated1": "INFO: Um Unterstützung für den PiHole6 zu haben, müssen die Geräte neu hinzugefügt werden.",
     "deprecated2": "INFO: Die Flows müssen wegen dem neuen Treiber ebenfalls angepasst werden"
   },
   "capabilities": {
